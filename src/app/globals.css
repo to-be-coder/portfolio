@@ -70,3 +70,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .border-border {
+    border-color: theme('colors.border', '#e5e7eb'); /* Default fallback */
+  }
+}
