@@ -10,12 +10,14 @@ export default function Hero() {
           }}
         ></div>
       </div>
-      <div className="mx-auto max-w-4xl flex flex-col justify-center h-[calc(100vh-theme(spacing.14))]">
-        <div className="text-center">
-          <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Disigner & Developer</h1>
-          <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">Hi I am Jess, I strive to simplify the build to achieve better performance</p>
-          <div className="mt-10 flex items-center justify-center gap-x-6"></div>
-        </div>
+      <div className="max-w-4xl flex flex-col justify-center h-[calc(100vh-theme(spacing.14))]">
+        <h1 className="text-balance text-8xl font-semibold tracking-tight text-gray-900 lg:text-[10rem] text-left">
+          UI.
+          <br />
+          UX.
+          <br />
+          Front End.
+        </h1>
       </div>
       <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
         <div
