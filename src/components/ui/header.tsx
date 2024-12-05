@@ -24,21 +24,21 @@ export default function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/#projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-blue-500')}>Projects</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#ff7043]')}>Projects</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-blue-500')}>About</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff7043]')}>About</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-blue-500')}>CV</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#ff7043]')}>CV</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button asChild className="hover:bg-gray-600">
+                <Button asChild className="bg-[#ff7043] text-white shadow-none border-none hover:bg-[#ff8a65] font-bold">
                   <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
                 </Button>
               </NavigationMenuItem>

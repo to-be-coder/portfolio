@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <div className="container mx-auto my-24 pb-48 space-y-16">
         <h2 className="text-5xl font-semibold text-center text-gray-900 leading-relaxed">
-          &ldquo;<span className="bg-[#00a6ff]/20">Simple</span> design, lasting impact. I design with purpose, creating clear and lasting <span className="bg-[#00a6ff]/20">connections</span> between
+          &ldquo;<span className="bg-[#ff7043]/20">Simple</span> design, lasting impact. I design with purpose, creating clear and lasting <span className="bg-[#ff7043]/20">connections</span> between
           products and users.&rdquo;
         </h2>
       </div>
@@ -33,7 +33,7 @@ export default function Home() {
                 </div>
               </CardContent>
               <CardFooter className="px-4">
-                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
                   <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
                     Check it out
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -71,7 +71,7 @@ export default function Home() {
                 </div>
               </CardContent>
               <CardFooter className="px-4">
-                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
                   <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
                     Check it out
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -103,7 +103,7 @@ export default function Home() {
                 </div>
               </CardContent>
               <CardFooter className="px-4">
-                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
                   <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
                     Check it out
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
