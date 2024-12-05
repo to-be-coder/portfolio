@@ -1,7 +1,7 @@
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Hero from '@/components/ui/hero'
-import { Badge } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Home() {
@@ -9,70 +9,107 @@ export default function Home() {
     <>
       <Hero />
       <div className="container mx-auto my-8 space-y-8">
-        <Card className="w-full">
-          <div className=" p-6">
-            <CardTitle className="p-6 text-2xl">Project One</CardTitle>
-            <div className="flex">
-              <div className="flex-1">
-                <CardHeader>
-                  <CardTitle>Create project</CardTitle>
-                  <CardDescription>Deploy your new project in one-click.</CardDescription>
-                  <Button className="hover:bg-gray-600 w-1/2">
-                    <a href="mailto:jessicacheng.code@gmail.com">Check it out</a>
-                  </Button>
-                </CardHeader>
-                <CardContent className="p-4">
-                  <Badge>Badge</Badge>
-                  <Badge>Badge</Badge>
-                  <Badge>Badge</Badge>
-                </CardContent>
-                <CardFooter className="flex justify-between"></CardFooter>
-              </div>
-              <div className="w-[70%] p-6">
-                <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
-              </div>
+        <Card className="w-full shadow-none">
+          <div className="flex">
+            <div className="flex-1">
+              <CardHeader>
+                <CardTitle className="text-2xl">Project One</CardTitle>
+                <CardDescription>Deploy your new project in one-click.</CardDescription>
+              </CardHeader>
+              <CardContent className="px-4">
+                <div className="grid grid-cols-3 gap-3">
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="px-4">
+                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
+                    Check it out
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </a>
+                </Button>
+              </CardFooter>
+            </div>
+            <div className="w-[70%] p-6">
+              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
             </div>
           </div>
         </Card>
 
-        <Card className="w-full">
-          <div className=" p-6">
-            <CardTitle className="p-6 text-2xl">Project One</CardTitle>
-            <div className="flex">
-              <div className="w-[70%] p-6">
-                <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
-              </div>
-              <div className="flex-1">
-                <CardHeader>
-                  <CardTitle>Create project</CardTitle>
-                  <CardDescription>Deploy your new project in one-click.</CardDescription>
-                </CardHeader>
-                <CardContent className="p-4"></CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline">Check it out</Button>
-                </CardFooter>
-              </div>
+        <Card className="w-full shadow-none">
+          <div className="flex">
+            <div className="w-[70%] p-6">
+              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
+            </div>
+            <div className="flex-1">
+              <CardHeader>
+                <CardTitle className="text-2xl">Project One</CardTitle>
+                <CardDescription>Deploy your new project in one-click.</CardDescription>
+              </CardHeader>
+              <CardContent className="px-4">
+                <div className="grid grid-cols-3 gap-3">
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="px-4">
+                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
+                    Check it out
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </a>
+                </Button>
+              </CardFooter>
             </div>
           </div>
         </Card>
 
-        <Card className="w-full">
-          <div className=" p-6">
-            <CardTitle className="p-6 text-2xl">Project One</CardTitle>
-            <div className="flex">
-              <div className="flex-1">
-                <CardHeader>
-                  <CardTitle>Create project</CardTitle>
-                  <CardDescription>Deploy your new project in one-click.</CardDescription>
-                </CardHeader>
-                <CardContent className="p-4"></CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline">Check it out</Button>
-                </CardFooter>
-              </div>
-              <div className="w-[70%] p-6">
-                <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
-              </div>
+        <Card className="w-full shadow-none">
+          <div className="flex">
+            <div className="flex-1">
+              <CardHeader>
+                <CardTitle className="text-2xl">Project One</CardTitle>
+                <CardDescription>Deploy your new project in one-click.</CardDescription>
+              </CardHeader>
+              <CardContent className="px-4">
+                <div className="grid grid-cols-3 gap-3">
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
+                </div>
+              </CardContent>
+              <CardFooter className="px-4">
+                <Button className="bg-transparent border-2 border-[#00a6ff] text-[#00a6ff] font-bold w-1/2 hover:shadow-[0_0_10px_#00a6ff] transition-shadow rounded-full">
+                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
+                    Check it out
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </a>
+                </Button>
+              </CardFooter>
+            </div>
+            <div className="w-[70%] p-6">
+              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
             </div>
           </div>
         </Card>
