@@ -10,7 +10,7 @@ import { Button } from './button'
 export default function Header() {
   return (
     <header>
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div className="mx-auto flex max-w-7sm items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="text-lg font-semibold text-gray-900">
             Jessica Cheng
@@ -34,13 +34,18 @@ export default function Header() {
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>CV</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Button asChild>
+                  <Link
+                    href="mailto:jessicacheng.code@gmail.com
+"
+                  >
+                    Contact Me
+                  </Link>
+                </Button>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button asChild>
-            <Link href="/login">Contact Me</Link>
-          </Button>
         </div>
       </div>
       <div className="lg:hidden" role="dialog" aria-modal="true"></div>
