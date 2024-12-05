@@ -14,7 +14,7 @@ export default function Home() {
             <div className="flex-1">
               <CardHeader>
                 <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>Deploy your new project in one-click.</CardDescription>
+                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
               </CardHeader>
               <CardContent className="px-4">
                 <div className="grid grid-cols-3 gap-3">
@@ -52,7 +52,7 @@ export default function Home() {
             <div className="flex-1">
               <CardHeader>
                 <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>Deploy your new project in one-click.</CardDescription>
+                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
               </CardHeader>
               <CardContent className="px-4">
                 <div className="grid grid-cols-3 gap-3">
@@ -84,7 +84,7 @@ export default function Home() {
             <div className="flex-1">
               <CardHeader>
                 <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>Deploy your new project in one-click.</CardDescription>
+                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
               </CardHeader>
               <CardContent className="px-4">
                 <div className="grid grid-cols-3 gap-3">
