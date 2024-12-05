@@ -23,8 +23,8 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/#craft" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' && 'text-blue-500')}>Craft</NavigationMenuLink>
+                <Link href="/#projects" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-blue-500')}>Projects</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>

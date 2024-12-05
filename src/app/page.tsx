@@ -14,7 +14,7 @@ export default function Home() {
           products and users.&rdquo;
         </h2>
       </div>
-      <div className="container mx-auto my-8 space-y-8">
+      <div className="container mx-auto my-8 space-y-8" id="projects">
         <Card className="w-full shadow-none">
           <div className="flex">
             <div className="flex-1">
