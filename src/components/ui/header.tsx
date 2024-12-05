@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import * as React from 'react'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
@@ -8,6 +9,8 @@ import { cn } from '@/lib/utils'
 import { Button } from './button'
 
 export default function Header() {
+  const pathname = usePathname()
+
   return (
     <header>
       <div className="mx-auto flex max-w-7sm items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -20,28 +23,23 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Craft</NavigationMenuLink>
+                <Link href="/#craft" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' && 'text-blue-500')}>Craft</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>About</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-blue-500')}>About</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>CV</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-blue-500')}>CV</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button asChild>
-                  <Link
-                    href="mailto:jessicacheng.code@gmail.com
-"
-                  >
-                    Contact Me
-                  </Link>
+                <Button asChild className="hover:bg-gray-600">
+                  <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>

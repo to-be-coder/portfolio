@@ -1,6 +1,9 @@
+import Header from './header'
+
 export default function Hero() {
   return (
-    <div className="relative isolate px-6 pt-14 lg:px-8">
+    <div className="relative isolate min-h-screen px-6  lg:px-8">
+      <Header />
       <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div
           className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
@@ -10,7 +13,7 @@ export default function Hero() {
           }}
         ></div>
       </div>
-      <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
+      <div className="mx-auto max-w-4xl flex flex-col justify-center h-[calc(100vh-theme(spacing.14))]">
         <div className="text-center">
           <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">Disigner & Developer</h1>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">Hi I am Jess, I strive to simplify the build to achieve better performance</p>
