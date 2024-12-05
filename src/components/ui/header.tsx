@@ -15,9 +15,9 @@ export default function Header() {
     <header>
       <div className="mx-auto flex max-w-7sm items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="text-lg font-semibold text-gray-900">
+          <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
             Jessica Cheng
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           <NavigationMenu>
@@ -33,7 +33,7 @@ export default function Header() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-blue-500')}>CV</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
