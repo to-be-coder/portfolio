@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function CraftCard() {
   return (
-    <Card className="aspect-square">
+    <Card className="aspect-square max-w-sm">
       <CardHeader>
         <CardTitle>Card Title</CardTitle>
         <CardDescription>Card Description</CardDescription>
