@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import Hero from '@/components/ui/hero'
+import { Badge } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Home() {
@@ -16,11 +17,16 @@ export default function Home() {
                 <CardHeader>
                   <CardTitle>Create project</CardTitle>
                   <CardDescription>Deploy your new project in one-click.</CardDescription>
+                  <Button className="hover:bg-gray-600 w-1/2">
+                    <a href="mailto:jessicacheng.code@gmail.com">Check it out</a>
+                  </Button>
                 </CardHeader>
-                <CardContent className="p-4"></CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button variant="outline">Check it out</Button>
-                </CardFooter>
+                <CardContent className="p-4">
+                  <Badge>Badge</Badge>
+                  <Badge>Badge</Badge>
+                  <Badge>Badge</Badge>
+                </CardContent>
+                <CardFooter className="flex justify-between"></CardFooter>
               </div>
               <div className="w-[70%] p-6">
                 <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
