@@ -10,8 +10,8 @@ export default function Home() {
       <Hero />
       <div className="container mx-auto my-24 pb-48 space-y-16">
         <h2 className="text-5xl font-semibold text-center text-gray-900 leading-relaxed">
-          &ldquo;<span className="bg-[#ff7043]/20">Simple</span> design, lasting impact. I design with purpose, creating clear and lasting <span className="bg-[#ff7043]/20">connections</span> between
-          products and users.&rdquo;
+          &ldquo;<span className="bg-[#ff7043]/20">Simple</span> design, lasting impact. I strive to design clear and lasting <span className="bg-[#ff7043]/20">connections</span> between products and
+          users.&rdquo;
         </h2>
       </div>
       <div className="container mx-auto my-8 space-y-8" id="projects">
