@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
@@ -9,6 +10,15 @@ import { Button } from './button'
 
 export default function Header() {
   const pathname = usePathname()
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+
+  const handleHover = (item: string) => {
+    setHoveredItem(item)
+  }
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null)
+  }
 
   return (
     <header>
@@ -23,30 +33,42 @@ export default function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/#projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#ff7043]', 'relative hover:no-underline')}>
+                  <NavigationMenuLink
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    onMouseEnter={() => handleHover('projects')}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <span className="relative">
                       Projects
-                      <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#ff7043] transition-all duration-300 hover:w-full group-hover:w-full peer-hover:w-full"></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'projects' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff7043]', 'relative hover:no-underline')}>
+                  <NavigationMenuLink
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    onMouseEnter={() => handleHover('about')}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <span className="relative">
                       About
-                      <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#ff7043] transition-all duration-300 hover:w-full group-hover:w-full peer-hover:w-full"></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#ff7043]', 'relative hover:no-underline')}>
+                  <NavigationMenuLink
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    onMouseEnter={() => handleHover('cv')}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <span className="relative">
                       CV
-                      <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-[#ff7043] transition-all duration-300 hover:w-full group-hover:w-full peer-hover:w-full"></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'cv' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
