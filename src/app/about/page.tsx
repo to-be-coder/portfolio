@@ -1,8 +1,40 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function About() {
+  const [activeSection, setActiveSection] = useState('empathy')
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      {
+        threshold: 0.5, // Trigger when section is 50% visible
+        rootMargin: '-10% 0px -10% 0px',
+      }
+    )
+
+    const sections = document.querySelectorAll('section[id]')
+    sections.forEach((section) => observer.observe(section))
+
+    return () => observer.disconnect()
+  }, [])
+
+  const handleClick = (sectionId: string) => {
+    setActiveSection(sectionId)
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const isActive = (sectionId: string) => activeSection === sectionId
+
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto">
