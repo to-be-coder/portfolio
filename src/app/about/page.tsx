@@ -33,7 +33,7 @@ export default function About() {
           {/* Content Section with Sidebar */}
           <section className="relative flex">
             {/* Sidebar */}
-            <aside className="hidden lg:block w-64 sticky top-4 h-[calc(100vh-2rem)]">
+            <aside className="hidden lg:block w-64 sticky top-4" style={{ height: 'min-content' }}>
               <nav className="space-y-4">
                 <Link href="#empathy" className="block px-4 py-2 rounded-lg bg-black text-white hover:bg-black/90">
                   Empathy-Driven Approach
@@ -122,7 +122,7 @@ export default function About() {
       </div>
 
       {/* Dark CTA Section */}
-      <div className="bg-[#1C1C1C]">
+      <div className="bg-[#1C1C1C]" id="cta">
         <div className="max-w-7xl mx-auto">
           <section className="py-16 text-center">
             <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s make something users will love!</h2>
