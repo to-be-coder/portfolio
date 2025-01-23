@@ -34,13 +34,13 @@ export default function Header() {
               <NavigationMenuItem>
                 <Link href="/#projects" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#FFA813]', 'relative hover:no-underline')}
                     onMouseEnter={() => handleHover('projects')}
                     onMouseLeave={handleMouseLeave}
                   >
                     <span className="relative">
                       Projects
-                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'projects' ? 'w-full' : 'w-0')}></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#FFA813] transition-all duration-300', hoveredItem === 'projects' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
@@ -48,13 +48,13 @@ export default function Header() {
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#FFA813]', 'relative hover:no-underline')}
                     onMouseEnter={() => handleHover('about')}
                     onMouseLeave={handleMouseLeave}
                   >
                     <span className="relative">
                       About
-                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#FFA813] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
@@ -62,19 +62,19 @@ export default function Header() {
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
-                    className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#ff7043]', 'relative hover:no-underline')}
+                    className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#FFA813]', 'relative hover:no-underline')}
                     onMouseEnter={() => handleHover('cv')}
                     onMouseLeave={handleMouseLeave}
                   >
                     <span className="relative">
                       CV
-                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff7043] transition-all duration-300', hoveredItem === 'cv' ? 'w-full' : 'w-0')}></span>
+                      <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#FFA813] transition-all duration-300', hoveredItem === 'cv' ? 'w-full' : 'w-0')}></span>
                     </span>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Button asChild className="bg-[#ff7043] text-white shadow-none border-none hover:bg-[#ff8a65] font-bold">
+                <Button asChild className="bg-[#FFA813] text-white shadow-none border-none hover:bg-[#FFA813]/90 font-bold">
                   <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
                 </Button>
               </NavigationMenuItem>

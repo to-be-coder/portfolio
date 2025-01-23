@@ -1,24 +1,36 @@
-import { Github, Instagram, Linkedin } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-gray-500">© {new Date().getFullYear()} Jessica Cheng. All rights reserved.</p>
-          <div className="flex items-center space-x-4">
-            <Link href="https://instagram.com" target="_blank" className="text-gray-500 hover:text-gray-700">
-              <Instagram className="h-5 w-5" />
-            </Link>
-            <Link href="https://linkedin.com" target="_blank" className="text-gray-500 hover:text-gray-700">
-              <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link href="https://github.com" target="_blank" className="text-gray-500 hover:text-gray-700">
-              <Github className="h-5 w-5" />
-            </Link>
-          </div>
+    <footer className="border-t border-gray-200 py-8">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex gap-8">
+          <Link href="/projects" className="text-gray-600">
+            Projects
+          </Link>
+          <Link href="/about" className="text-gray-600">
+            About
+          </Link>
+          <Link href="/contact" className="text-gray-600">
+            Contact
+          </Link>
         </div>
+        <div className="flex gap-6">
+          <Link href="#" className="text-gray-600">
+            <Facebook className="w-5 h-5" />
+          </Link>
+          <Link href="#" className="text-gray-600">
+            <Twitter className="w-5 h-5" />
+          </Link>
+          <Link href="#" className="text-gray-600">
+            <Instagram className="w-5 h-5" />
+          </Link>
+          <Link href="#" className="text-gray-600">
+            <Linkedin className="w-5 h-5" />
+          </Link>
+        </div>
+        <p className="text-gray-600">© 2023 Jessica Cheng</p>
       </div>
     </footer>
   )
