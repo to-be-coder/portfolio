@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container mx-auto px-8 lg:px-32 min-h-screen flex flex-col justify-center">
+      <div className="container mx-auto px-8 min-h-screen flex flex-col justify-center">
         <div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
             Hi I'm Jessica,
@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container mx-auto space-y-8 px-8 lg:px-32" id="projects">
+      <div className="container max-w-7xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8" id="projects">
         {/* Vision Track Project */}
         <div className="group relative overflow-hidden rounded-3xl bg-[#FFD699] p-8">
           <div className="space-y-4">
