@@ -29,7 +29,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Overview Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
+      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-12">
