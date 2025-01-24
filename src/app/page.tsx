@@ -7,7 +7,7 @@ export default function Home() {
       <div className="container mx-auto px-8 min-h-screen flex flex-col justify-center">
         <div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-            Hi I'm Jessica,
+            Hi I&apos;m Jessica,
             <br />
             a UX designer and developer
             <br />

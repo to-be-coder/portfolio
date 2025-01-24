@@ -72,7 +72,7 @@ export default function Lilypad() {
                 <h1 className="text-4xl font-bold mb-6">Hi, I&apos;m Jessica Cheng</h1>
                 <p className="text-gray-600">
                   A <span className="font-semibold">Design Engineer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
-                  <span className="font-semibold">psychology</span> helps me uncover the "why" behind user behavior, while my <span className="font-semibold">coding skills</span>
+                  <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills</span>
                   let me translate insights into real, working solutions. Whether I&apos;m
                   <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
                   friction so people can just get things done.
@@ -103,6 +103,8 @@ export default function Lilypad() {
                     key={id}
                     onClick={() => scrollToSection(id)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
+                    aria-current={activeSection === id ? 'true' : undefined}
+                    aria-label={`Scroll to ${label} section`}
                   >
                     {label}
                   </button>
@@ -191,7 +193,9 @@ export default function Lilypad() {
               <br />
               design thinking, and technical expertise, I&apos;m here to help!
             </p>
-            <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90">Send Message</Button>
+            <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90" aria-label="Send message to contact">
+              Send Message
+            </Button>
           </section>
         </div>
       </div>
@@ -201,7 +205,9 @@ export default function Lilypad() {
         <section className="py-16 text-center">
           <p className="text-[#FFA813] uppercase tracking-wide mb-4">LET&apos;S DESIGN SOMETHING AMAZING</p>
           <h2 className="text-3xl font-bold mb-8">I&apos;m only a message away</h2>
-          <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90">Let&apos;s talk →</Button>
+          <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90" aria-label="Start conversation">
+            Let&apos;s talk →
+          </Button>
         </section>
       </div>
     </div>
