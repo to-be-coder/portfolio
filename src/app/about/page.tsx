@@ -1,5 +1,5 @@
 'use client'
-import { Button } from '@/components/ui/button'
+import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -181,29 +181,7 @@ export default function About() {
         </main>
       </div>
 
-      {/* Dark CTA Section */}
-      <div className="bg-[#1C1C1C]">
-        <div className="max-w-7xl mx-auto">
-          <section className="py-16 text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s make something users will love!</h2>
-            <p className="text-gray-400 mb-8">
-              If you&apos;re looking for a UX Designer / Design Engineer who combines empathy,
-              <br />
-              design thinking, and technical expertise, I&apos;m here to help!
-            </p>
-            <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90">Send Message</Button>
-          </section>
-        </div>
-      </div>
-
-      {/* Final CTA Section */}
-      <div className="max-w-7xl mx-auto">
-        <section className="py-16 text-center">
-          <p className="text-[#FFA813] uppercase tracking-wide mb-4">LET&apos;S DESIGN SOMETHING AMAZING</p>
-          <h2 className="text-3xl font-bold mb-8">I&apos;m only a message away</h2>
-          <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90">Let&apos;s talk →</Button>
-        </section>
-      </div>
+      <CtaSection />
     </div>
   )
 }
