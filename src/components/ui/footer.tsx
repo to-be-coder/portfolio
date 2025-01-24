@@ -6,27 +6,27 @@ export default function Footer() {
     <footer className="py-8 container mx-auto px-8  border-t border-gray-200">
       <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex gap-8">
-          <Link href="/projects" className="text-gray-600">
+          <Link href="/projects" className="text-gray-600 hover:text-[#ff9c6a]">
             Projects
           </Link>
-          <Link href="/about" className="text-gray-600">
+          <Link href="/about" className="text-gray-600 hover:text-[#ff9c6a]">
             About
           </Link>
-          <Link href="/contact" className="text-gray-600">
+          <Link href="/contact" className="text-gray-600 hover:text-[#ff9c6a]">
             Contact
           </Link>
         </div>
         <div className="flex gap-6">
-          <Link href="#" className="text-gray-600">
+          <Link href="#" className="text-gray-600 hover:text-[#ff9c6a]">
             <Facebook className="w-5 h-5" />
           </Link>
-          <Link href="#" className="text-gray-600">
+          <Link href="#" className="text-gray-600 hover:text-[#ff9c6a]">
             <Twitter className="w-5 h-5" />
           </Link>
-          <Link href="#" className="text-gray-600">
+          <Link href="#" className="text-gray-600 hover:text-[#ff9c6a]">
             <Instagram className="w-5 h-5" />
           </Link>
-          <Link href="#" className="text-gray-600">
+          <Link href="#" className="text-gray-600 hover:text-[#ff9c6a]">
             <Linkedin className="w-5 h-5" />
           </Link>
         </div>

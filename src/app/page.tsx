@@ -19,11 +19,11 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="flex flex-wrap gap-4">
-            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">UI Design</span>
-            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">UX Research</span>
-            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">Prototyping</span>
-            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">Frontend Development</span>
+          <div className="flex flex-wrap gap-2">
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UI Design</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Prototyping</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Frontend Development</span>
           </div>
 
           <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
@@ -36,7 +36,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8 my-32" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFD699] p-8 h-[720px]">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[720px]">
           <div className="flex flex-col h-full">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">Vision Track →</h3>

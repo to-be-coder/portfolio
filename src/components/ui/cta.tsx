@@ -11,7 +11,7 @@ export default function CtaSection() {
             <br />
             design thinking, and technical expertise, I&apos;m here to help!
           </p>
-          <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90">Send Message</Button>
+          <Button className="bg-[#ff9c6a] hover:bg-[#ff9c6a]/90">Send Message</Button>
         </section>
       </div>
     </div>

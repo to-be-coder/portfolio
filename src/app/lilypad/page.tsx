@@ -86,7 +86,7 @@ export default function Lilypad() {
                     alt={`Portfolio image ${i}`}
                     width={300}
                     height={300}
-                    className={`rounded-lg w-full h-auto object-cover ${i % 2 ? 'bg-[#FFA813]' : 'bg-gray-400'}`}
+                    className={`rounded-lg w-full h-auto object-cover ${i % 2 ? 'bg-[#FFC157]' : 'bg-gray-400'}`}
                   />
                 ))}
               </div>
@@ -193,7 +193,7 @@ export default function Lilypad() {
               <br />
               design thinking, and technical expertise, I&apos;m here to help!
             </p>
-            <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90" aria-label="Send message to contact">
+            <Button className="bg-[#FFC157] hover:bg-[#FFC157]/90" aria-label="Send message to contact">
               Send Message
             </Button>
           </section>
@@ -203,9 +203,9 @@ export default function Lilypad() {
       {/* Final CTA Section */}
       <div className="max-w-7xl mx-auto">
         <section className="py-16 text-center">
-          <p className="text-[#FFA813] uppercase tracking-wide mb-4">LET&apos;S DESIGN SOMETHING AMAZING</p>
+          <p className="text-[#FFC157] uppercase tracking-wide mb-4">LET&apos;S DESIGN SOMETHING AMAZING</p>
           <h2 className="text-3xl font-bold mb-8">I&apos;m only a message away</h2>
-          <Button className="bg-[#FFA813] hover:bg-[#FFA813]/90" aria-label="Start conversation">
+          <Button className="bg-[#FFC157] hover:bg-[#FFC157]/90" aria-label="Start conversation">
             Let&apos;s talk →
           </Button>
         </section>
