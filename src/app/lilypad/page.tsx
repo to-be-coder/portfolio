@@ -171,39 +171,6 @@ export default function LilypadPage() {
         </div>
       </div>
 
-      {/* Typography Section */}
-      <div className="relative bg-[#212121] text-white ">
-        <div className="max-w-[1728px] mx-auto px-16 py-16">
-          <h2 className="text-4xl font-normal mb-16">Typography</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-            {/* Left Column - Large "Aa" Display */}
-            <div className="flex items-center justify-center">
-              <span className="text-[200px] font-light">Aa</span>
-            </div>
-
-            {/* Right Column - Typography Details */}
-            <div className="space-y-12">
-              {/* Typeface */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400 mb-6">Typeface</h3>
-                <p className="text-[18px]">Plus Jakarta Sans</p>
-              </div>
-
-              {/* Weights */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400 mb-6">Weights</h3>
-                <div className="space-y-2">
-                  <p className="text-[18px] font-normal">Regular</p>
-                  <p className="text-[18px] font-semibold">Semi-Bold</p>
-                  <p className="text-[18px] font-bold">Bold</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Contact Section */}
       <CtaSection />
     </main>
