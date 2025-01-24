@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container mx-auto px-8 lg:px-32 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+      <div className="container mx-auto px-8 lg:px-32 min-h-screen flex flex-col justify-center">
         <div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
             Hi I'm Jessica,
@@ -23,7 +23,7 @@ export default function Home() {
             <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">Frontend Development</span>
           </div>
 
-          <div className="mt-16">
+          <div className="border-t border-gray-200 mt-2 pt-2 flex justify-end">
             <a href="#projects" className="text-gray-900 hover:text-gray-700 flex items-center gap-2 text-base">
               Check Out Projects ↓
             </a>
