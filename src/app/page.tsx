@@ -1,11 +1,8 @@
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import Image from 'next/image'
+import CtaSection from '@/components/ui/cta'
 
 export default function Home() {
   return (
-    <>
+    <main>
       {/* Hero Section */}
       <div className="container mx-auto px-8 lg:px-32 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
         <div>
@@ -35,122 +32,53 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container mx-auto my-8 space-y-8" id="projects">
-        <Card className="w-full shadow-none">
-          <div className="flex">
-            <div className="flex-1">
-              <CardHeader>
-                <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
-              </CardHeader>
-              <CardContent className="px-4">
-                <div className="grid grid-cols-3 gap-3">
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                </div>
-              </CardContent>
-              <CardFooter className="px-4">
-                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
-                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
-                    Check it out
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </a>
-                </Button>
-              </CardFooter>
-            </div>
-            <div className="w-[70%] p-6">
-              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
+      <div className="container mx-auto space-y-8 px-8 lg:px-32" id="projects">
+        {/* Vision Track Project */}
+        <div className="group relative overflow-hidden rounded-3xl bg-[#FFD699] p-8">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Vision Track →</h3>
+            <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-black px-4 py-1 text-sm text-white">UX Research</span>
+              <span className="rounded-full bg-black px-4 py-1 text-sm text-white">B2B</span>
             </div>
           </div>
-        </Card>
-
-        <Card className="w-full shadow-none">
-          <div className="flex">
-            <div className="w-[70%] p-6">
-              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
-            </div>
-            <div className="flex-1">
-              <CardHeader>
-                <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
-              </CardHeader>
-              <CardContent className="px-4">
-                <div className="grid grid-cols-3 gap-3">
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                </div>
-              </CardContent>
-              <CardFooter className="px-4">
-                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
-                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
-                    Check it out
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </a>
-                </Button>
-              </CardFooter>
-            </div>
-          </div>
-        </Card>
-
-        <Card className="w-full shadow-none">
-          <div className="flex">
-            <div className="flex-1">
-              <CardHeader>
-                <CardTitle className="text-2xl">Project One</CardTitle>
-                <CardDescription>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </CardDescription>
-              </CardHeader>
-              <CardContent className="px-4">
-                <div className="grid grid-cols-3 gap-3">
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                  <Badge className="flex items-center justify-center border border-gray-300 shadow-none rounded-full">Badge</Badge>
-                </div>
-              </CardContent>
-              <CardFooter className="px-4">
-                <Button className="bg-[#ff7043] text-white font-bold w-1/2 hover:bg-[#ff8a65] hover:scale-105 transform transition-all duration-200 rounded-full shadow-lg hover:shadow-xl">
-                  <a href="mailto:jessicacheng.code@gmail.com" className="flex items-center gap-2">
-                    Check it out
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </a>
-                </Button>
-              </CardFooter>
-            </div>
-            <div className="w-[70%] p-6">
-              <Image src="/fractional.png" alt="Profile photo" width={400} height={400} className="rounded-lg shadow-lg w-full h-full object-cover" priority />
-            </div>
-          </div>
-        </Card>
-      </div>
-      {/* <div className="container mx-auto min-h-[calc(100vh-5rem)] px-6 py-16 lg:px-40" id="craft">
-        <div className="grid grid-cols-3 gap-4">
-          <CraftCard />
-          <CraftCard />
-          <CraftCard />
-          <CraftCard />
-          <CraftCard />
-          <CraftCard />
         </div>
-      </div> */}
-    </>
+
+        {/* Lilypad Project */}
+        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">Lilypad →</h3>
+            <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-black px-4 py-1 text-sm text-white">UI Design</span>
+              <span className="rounded-full bg-black px-4 py-1 text-sm text-white">Landing Page</span>
+              <span className="rounded-full bg-black px-4 py-1 text-sm text-white">Responsive Design</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Other Fun Works Section */}
+        <div className="group relative overflow-hidden rounded-3xl bg-[#212121] p-8">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold text-white">Other Fun Works →</h3>
+          </div>
+        </div>
+        {/* Mislanious Section*/}
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="rounded-3xl bg-gray-200 p-8">
+              <h4 className="text-xl font-semibold text-gray-600">Fractional (Coming Soon)</h4>
+            </div>
+            <div className="rounded-3xl bg-gray-200 p-8">
+              <h4 className="text-xl font-semibold text-gray-600">To Do List w/ AI (Coming Soon)</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <CtaSection />
+    </main>
   )
 }

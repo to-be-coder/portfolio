@@ -76,3 +76,7 @@ body {
     border-color: theme('colors.border', '#e5e7eb'); /* Default fallback */
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
