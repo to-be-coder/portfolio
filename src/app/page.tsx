@@ -1,19 +1,40 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import Hero from '@/components/ui/hero'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <div className="container mx-auto my-24 pb-48 space-y-16">
-        <h2 className="text-5xl font-semibold text-center text-gray-900 leading-relaxed">
-          &ldquo;<span className="bg-[#ff7043]/20">Simple</span> design, lasting impact. I strive to design clear and lasting <span className="bg-[#ff7043]/20">connections</span> between products and
-          users.&rdquo;
-        </h2>
+      {/* Hero Section */}
+      <div className="container mx-auto px-8 lg:px-32 min-h-[calc(100vh-5rem)] flex flex-col justify-center">
+        <div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+            Hi I'm Jessica,
+            <br />
+            a UX designer and developer
+            <br />
+            who values <span className="text-[#FF9B6A]">simple + human-centered</span>
+            <br />
+            designs that create lasting connections.
+          </h1>
+
+          <div className="flex flex-wrap gap-4 mt-16">
+            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">UI Design</span>
+            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">UX Research</span>
+            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">Prototyping</span>
+            <span className="px-6 py-3 bg-white border border-gray-200 rounded-full text-base">Frontend Development</span>
+          </div>
+
+          <div className="mt-16">
+            <a href="#projects" className="text-gray-900 hover:text-gray-700 flex items-center gap-2 text-base">
+              Check Out Projects ↓
+            </a>
+          </div>
+        </div>
       </div>
+
+      {/* Projects Section */}
       <div className="container mx-auto my-8 space-y-8" id="projects">
         <Card className="w-full shadow-none">
           <div className="flex">
