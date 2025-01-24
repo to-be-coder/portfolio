@@ -93,9 +93,46 @@ export default function VisionTrackPage() {
         </div>
       </div>
 
-      {/* Projects Section */}
+      {/* Hypothesis #1 Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 py-32">
+          <h2 className="text-4xl font-normal mb-16">Hypothesis #1</h2>
+          {/* Grid for 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Target Customers */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Target Customers</h3>
+              </div>
+              <p className="text-[18px]">Startups in the US.</p>
+            </div>
+            {/* Pain Points */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Pain Points (Assumed)</h3>
+              </div>
+              <p className="text-[18px]">Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
+            </div>
+            {/* Proposed Solution */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Proposed Solution</h3>
+              </div>
+              <p className="text-[18px]">A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
+            </div>
+          </div>
 
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-32 space-y-16" id="projects"></div>
+          {/* Why we chose this hypothesis */}
+          <div className="mt-16">
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-light text-gray-400 mb-4">Why we chose this hypothesis?</h3>
+            </div>
+            <p className="text-[18px]">
+              I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Contact Section */}
       <CtaSection />
