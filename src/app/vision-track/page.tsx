@@ -1,5 +1,6 @@
 import CtaSection from '@/components/ui/cta'
 import { MoveDown } from 'lucide-react'
+import Image from 'next/image'
 
 export default function VisionTrackPage() {
   return (
@@ -29,7 +30,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Overview Section */}
-      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-32">
+      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-64 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-12">
@@ -76,6 +77,17 @@ export default function VisionTrackPage() {
               <h2 className="text-2xl font-light text-gray-400 mb-6">Time Frame</h2>
               <p className="text-[18px]">2 months</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Workflow Section */}
+      <div className="relative bg-[#FFC157]">
+        <div className="max-w-[1440px] mx-auto px-16 py-32">
+          <h2 className="text-2xl font-light text-black mb-16 text-center">Workflow</h2>
+
+          <div className="w-full flex justify-center">
+            <Image src="/workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
         </div>
       </div>
