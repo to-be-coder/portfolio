@@ -190,6 +190,30 @@ export default function LilypadPage() {
         </div>
       </div>
 
+      {/* Figma Exploration Section */}
+      <div className="relative bg-[#DDA15F] text-white">
+        <div className="max-w-[1728px] mx-auto px-16 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              <h2 className="text-4xl font-normal mb-4">Explore the Figma File for This Project</h2>
+              <p className="text-[18px] mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+              <a href="#" className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                Check Out Figma
+                <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Right Column - iPhone Image */}
+            <div className="flex justify-center md:justify-end">
+              <Image src="/iphone_1.png" alt="iPhone mockup of Lilypad's mobile design" width={240} height={480} className="w-auto h-auto max-w-[800px]" priority />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <CtaSection />
     </main>
