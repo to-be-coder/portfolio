@@ -9,6 +9,7 @@ export default function VisionTrackPage() {
       <div className="container mx-auto px-8 h-[90vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center items-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">Vision Track</h1>
+          <p className="text-[32px] mt-4 text-center">&ldquo;Team alignment through OKRs&rdquo;</p>
         </div>
 
         <div>
