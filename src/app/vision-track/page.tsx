@@ -1,0 +1,91 @@
+import CtaSection from '@/components/ui/cta'
+import { MoveDown } from 'lucide-react'
+
+export default function VisionTrackPage() {
+  return (
+    <main>
+      {/* Hero Section */}
+      <div className="container mx-auto px-8 h-[90vh] flex flex-col">
+        <div className="flex-1 flex flex-col justify-center items-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">Vision Track</h1>
+        </div>
+
+        <div>
+          <div className="flex flex-wrap gap-2">
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Competitive Analysis</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">User Interviews</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">User Persona</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">B2B</span>
+            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">SaaS</span>
+          </div>
+
+          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
+            <div className="flex items-center text-base text-gray-900 hover:text-gray-700">
+              Check Out the Project <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-[3]" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Overview Section */}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          {/* Left Column - Stacked Overview and Design Objective */}
+          <div className="space-y-12">
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-light text-gray-400 mb-6">Overview</h2>
+              <p className="text-[18px]">
+                VisionTrack is designed to keep everyone on the same page in a remote, fast-paced workplace. Our aim was to help teams stay connected, aligned, and empowered to achieve both their
+                individual goals and the company&apos;s broader vision.
+              </p>
+            </div>
+
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-light text-gray-400 mb-6">Design Objective</h2>
+              <p className="text-[18px]">
+                Our main objective was to apply lean startup principles—experimenting, iterating, and pivoting quickly—to define an MVP that meets user needs. We aimed to address the core pain points
+                around goal alignment, while testing innovative ways to keep teams focused and motivated.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Team, My Role, and Time Frame */}
+          <div className="space-y-12">
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-light text-gray-400 mb-6">Team</h2>
+              <div className="space-y-2">
+                <p className="text-[18px]">Chris Roth</p>
+                <p className="text-[18px]">Jessica Cheng</p>
+              </div>
+            </div>
+
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-light text-gray-400 mb-6">My Role</h2>
+              <div className="space-y-4">
+                <div>
+                  <span className="font-semibold text-[18px]">User Research:</span>
+                  <p className="text-[18px]">
+                    I led the user research efforts, including defining hypotheses, conducting user interviews, synthesizing findings, and guiding the pivot toward a more viable target audience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-light text-gray-400 mb-6">Time Frame</h2>
+              <p className="text-[18px]">2 months</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Projects Section */}
+
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-32 space-y-16" id="projects"></div>
+
+      {/* Contact Section */}
+      <CtaSection />
+    </main>
+  )
+}
