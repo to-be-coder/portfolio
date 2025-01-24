@@ -10,8 +10,16 @@ export default function About() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Only update when section has completely left the viewport at the top
-          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          // When scrolling down
+          if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+            setActiveSection(entry.target.id)
+          }
+          // When scrolling up
+          else if (entry.isIntersecting && entry.boundingClientRect.top <= 0) {
+            setActiveSection(entry.target.id)
+          }
+          // When section exits viewport
+          else if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
             const nextSection = entry.target.nextElementSibling as HTMLElement
             if (nextSection?.id) {
               setActiveSection(nextSection.id)
@@ -20,7 +28,7 @@ export default function About() {
         })
       },
       {
-        threshold: 0,
+        threshold: [0, 0.5, 1],
         rootMargin: '-20% 0px -80% 0px',
       }
     )
