@@ -348,6 +348,26 @@ export default function VisionTrackPage() {
         </div>
       </div>
 
+      {/* Reflection Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 py-32">
+          <h2 className="text-4xl font-normal mb-16">Reflection</h2>
+
+          <div className="space-y-8">
+            <p className="text-[18px]">
+              VisionTrack started as a research-driven project to explore how startups and SMBs align their goals. Through interviews with founders, executives, and product managers, I uncovered
+              recurring pain points—lack of transparency, misalignment between high-level goals and daily tasks, and tool overload.
+            </p>
+
+            <p className="text-[18px]">
+              Although we didn&apos;t fully prototype and validate a final solution within the project&apos;s timeframe, this experience underscored the importance of balancing in-depth research with
+              iterative prototyping and testing. In future projects, I plan to allocate more time to prototyping and user feedback loops, ensuring I can refine solutions based on real-world input as
+              early as possible.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <CtaSection />
     </main>
