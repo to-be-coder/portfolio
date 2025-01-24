@@ -190,6 +190,24 @@ export default function LilypadPage() {
         </div>
       </div>
 
+      {/* Responsive Design Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 pt-32">
+          <h2 className="text-4xl font-normal mb-16">Responsive Design</h2>
+
+          <div className="w-full flex justify-center">
+            <Image
+              src="/lilypad-responsive.png"
+              alt="Responsive design mockups showing Lilypad's website layout adapting across desktop, tablet and mobile devices"
+              width={864}
+              height={450}
+              className="w-full lg:w-1/2 h-auto"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Next Steps Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-32">
         {/* Title */}
