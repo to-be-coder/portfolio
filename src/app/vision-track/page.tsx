@@ -1,34 +1,13 @@
 import CtaSection from '@/components/ui/cta'
-import { MoveDown, User } from 'lucide-react'
+import { ProjectHero } from '@/components/ui/project-hero'
+import { User } from 'lucide-react'
 import Image from 'next/image'
 
 export default function VisionTrackPage() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container mx-auto px-8 h-[90vh] flex flex-col">
-        <div className="flex-1 flex flex-col justify-center items-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">Vision Track</h1>
-          <p className="text-[32px] mt-4 text-center">&ldquo;Team alignment through OKRs&rdquo;</p>
-        </div>
-
-        <div>
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Competitive Analysis</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">User Interviews</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">User Persona</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">B2B</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">SaaS</span>
-          </div>
-
-          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
-            <div className="flex items-center text-base text-gray-900 hover:text-gray-700">
-              Check Out the Project <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-[3]" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProjectHero title="Vision Track" subtitle="Team alignment through OKRs" tags={['UX Research', 'Competitive Analysis', 'User Interviews', 'User Persona', 'B2B', 'SaaS']} />
 
       {/* Overview Section */}
       <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-64 mb-32">
