@@ -190,6 +190,41 @@ export default function LilypadPage() {
         </div>
       </div>
 
+      {/* Next Steps Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-32">
+        {/* Title */}
+        <h2 className="text-4xl font-normal mb-16">Next Steps</h2>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {/* Gather Real-World Feedback */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-light text-[#a0a0a0] mb-6">Gather Real-World Feedback</h3>
+              <p className="text-[18px]">
+                Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.
+              </p>
+            </div>
+          </div>
+
+          {/* Iterative Improvements */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-light text-[#a0a0a0] mb-6">Iterative Improvements</h3>
+              <p className="text-[18px]">Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
+            </div>
+          </div>
+
+          {/* Potential User Testing */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-light text-[#a0a0a0] mb-6">Potential User Testing</h3>
+              <p className="text-[18px]">After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Figma Exploration Section */}
       <div className="relative bg-[#DDA15F] text-white">
         <div className="max-w-[1728px] mx-auto px-16 py-16">
