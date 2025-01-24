@@ -149,7 +149,7 @@ export default function LilypadPage() {
               <h3 className="text-2xl font-light text-gray-400 mb-6">Visual Hierarchy & Layout</h3>
               <p className="text-[18px]">
                 Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and understand
-                the page's content.
+                the page&apos;s content.
               </p>
             </div>
 
