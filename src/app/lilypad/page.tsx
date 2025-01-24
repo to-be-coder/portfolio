@@ -75,6 +75,57 @@ export default function LilypadPage() {
         </div>
       </div>
 
+      {/* Colors Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-64 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Title */}
+          <div>
+            <h2 className="text-4xl font-normal">Colors</h2>
+          </div>
+
+          {/* Primary Colors */}
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#15423D] rounded-lg flex items-end p-4">
+              <span className="text-white">#15423D</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#FEFAE1] rounded-lg flex items-end p-4">
+              <span>#FEFAE1</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#DDA15F] rounded-lg flex items-end p-4">
+              <span>#DDA15F</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Colors Row */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#FFFFFF] rounded-lg flex items-end p-4 border border-gray-200">
+              <span>#FFFFFF</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#F8F8F8] rounded-lg flex items-end p-4 border border-gray-200">
+              <span>#F8F8F8</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#494949] rounded-lg flex items-end p-4">
+              <span className="text-white">#494949</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#000000] rounded-lg flex items-end p-4">
+              <span className="text-white">#000000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <CtaSection />
     </main>
