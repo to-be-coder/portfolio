@@ -348,6 +348,24 @@ export default function VisionTrackPage() {
         </div>
       </div>
 
+      {/* Competitive Analysis Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 pt-32">
+          <h2 className="text-4xl font-normal mb-16">Competitive Analysis</h2>
+
+          <div className="w-full flex justify-center">
+            <Image
+              src="/table-vision-track.png"
+              alt="Competitive analysis table comparing different tools: ClickUp, Weekdone, WorkBoard, and Lattice, showing their focus, integrations, and key differentiators"
+              width={1728}
+              height={900}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Reflection Section */}
       <div className="relative">
         <div className="max-w-[1728px] mx-auto px-16 py-32">
