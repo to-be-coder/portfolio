@@ -1,5 +1,5 @@
 import CtaSection from '@/components/ui/cta'
-import { MoveDown } from 'lucide-react'
+import { MoveDown, User } from 'lucide-react'
 import Image from 'next/image'
 
 export default function VisionTrackPage() {
@@ -95,7 +95,7 @@ export default function VisionTrackPage() {
 
       {/* Hypothesis #1 Section */}
       <div className="relative">
-        <div className="max-w-[1728px] mx-auto px-16 py-32">
+        <div className="max-w-[1728px] mx-auto px-16 pt-32">
           <h2 className="text-4xl font-normal mb-16">Hypothesis #1</h2>
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -130,6 +130,69 @@ export default function VisionTrackPage() {
             <p className="text-[18px]">
               I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Research #1 Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 pt-32">
+          <h2 className="text-4xl font-normal mb-16">Research#1</h2>
+
+          {/* Interviewed */}
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="col-span-1">
+                <h3 className="text-2xl font-light text-gray-400">Interviewed</h3>
+              </div>
+              <div className="col-span-2">
+                <p className="text-[18px]">5 Founders</p>
+                <div className="flex gap-1 mt-2">
+                  <User className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                  <User className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                  <User className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                  <User className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                  <User className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Challenges */}
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="col-span-1">
+                <h3 className="text-2xl font-light text-gray-400">Challenges</h3>
+              </div>
+              <div className="col-span-2">
+                <div className="space-y-4">
+                  <div>
+                    <span className="font-semibold text-[18px]">Budget Constraints:</span>
+                    <span className="text-[18px]"> Founders often hesitate to pay for yet another tool.</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-[18px]">Habitual Tools:</span>
+                    <span className="text-[18px]"> Excel is already free and familiar.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Decision + Learning */}
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-3 gap-4">
+              <div className="col-span-1">
+                <h3 className="text-2xl font-light text-gray-400">Decision + Learning</h3>
+              </div>
+              <div className="col-span-2">
+                <p className="text-[18px]">
+                  Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question
+                  our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
+                  address their unique challenges and needs.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
