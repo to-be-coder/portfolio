@@ -1,0 +1,52 @@
+import CtaSection from '@/components/ui/cta'
+
+export default function Hobby() {
+  return (
+    <main>
+      {/* Hero Section */}
+      <div className="container mx-auto px-8 lg:px-32 min-h-[calc(60vh)] flex flex-col justify-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            When I am not working...
+            <br />I am a self-taught <span className="text-[#FFA149]">photographer</span> who loves <span className="text-[#FFA149]">camping</span> with my <span className="text-[#FFA149]">dog</span>.
+          </h1>
+        </div>
+      </div>
+
+      {/* Masonry Grid Section */}
+      <div className="container mx-auto px-8 lg:px-32 mb-16">
+        <div className="grid grid-cols-4 gap-4">
+          {/* Column 1 */}
+          <div className="flex flex-col gap-4">
+            {[...Array(7)].map((_, i) => (
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+            ))}
+          </div>
+
+          {/* Column 2 */}
+          <div className="flex flex-col gap-4 mt-32">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+            ))}
+          </div>
+
+          {/* Column 3 */}
+          <div className="flex flex-col gap-4 ">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+            ))}
+          </div>
+
+          {/* Column 4 */}
+          <div className="flex flex-col gap-4 mt-32">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <CtaSection />
+    </main>
+  )
+}
