@@ -197,6 +197,43 @@ export default function VisionTrackPage() {
         </div>
       </div>
 
+      {/* Hypothesis #2 Section */}
+      <div className="relative">
+        <div className="max-w-[1728px] mx-auto px-16 pt-32">
+          <h2 className="text-4xl font-normal mb-16">Hypothesis #2</h2>
+          {/* Grid for 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Target Customers */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Target Customers</h3>
+              </div>
+              <p className="text-[18px]">SMB in the US (50-200 people).</p>
+            </div>
+            {/* Pain Points */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Pain Points (Identified)</h3>
+              </div>
+              <div className="space-y-4">
+                <p className="text-[18px]">• High-level company goals become diluted or lost in translation.</p>
+                <p className="text-[18px]">• Employees struggle to connect daily tasks to broader objectives.</p>
+                <p className="text-[18px]">• Existing tools are overwhelming and fail to provide quick clarity.</p>
+              </div>
+            </div>
+            {/* Proposed Solution */}
+            <div className="space-y-4">
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-light text-gray-400">Potential Solution</h3>
+              </div>
+              <p className="text-[18px]">
+                VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback indicators.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <CtaSection />
     </main>
