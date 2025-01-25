@@ -278,8 +278,8 @@ export default function LilypadPage() {
             </div>
 
             {/* Right Column - iPhone Image */}
-            <div className="flex justify-center md:justify-end">
-              <Image src="/iphone_1.png" alt="iPhone mockup of Lilypad's mobile design" width={240} height={480} className="w-auto h-auto max-w-[800px]" priority />
+            <div className="flex justify-center">
+              <Image src="/iphone_1.png" alt="iPhone mockup of Lilypad's mobile design" width={240} height={480} className="h-auto max-w-[800px]" priority />
             </div>
           </div>
         </div>
