@@ -208,6 +208,24 @@ export default function LilypadPage() {
         </div>
       </div>
 
+      {/* UI Kit Section */}
+      <div className="relative bg-[#212121]">
+        <div className="max-w-[1728px] mx-auto px-16 py-16">
+          <h2 className="text-4xl font-normal mb-16 text-white">UI Kit + Responsive Figma Designs</h2>
+
+          <div className="w-full flex justify-center">
+            <Image
+              src="/lilypad-ui-kit.png"
+              alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
+              width={864}
+              height={450}
+              className="w-full lg:w-1/2 h-auto"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Next Steps Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-32">
         {/* Title */}
