@@ -50,7 +50,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-center mt-8">
-                <Image src="/vision_track.png" alt="Vision Track Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
+                <Image src="/vision-track-cover.png" alt="Vision Track Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
               </div>
             </div>
           </a>
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 flex items-center justify-center mt-8">
-                <Image src="/lilypad.png" alt="Lilypad Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
+                <Image src="/lilypad-cover.png" alt="Lilypad Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
               </div>
             </div>
           </a>
