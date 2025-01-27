@@ -36,74 +36,76 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-8 sm:space-y-12 md:space-y-16" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8">
-          <a href="/vision-track">
-            <div className="flex flex-col">
-              <div className="space-y-4">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-8 sm:space-y-8 md:space-y-8" id="projects">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
+          <a href="/vision-track" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-2xl font-bold">Vision Track →</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
-                <div className="flex items-center gap-2">
-                  <span className="rounded-full border border-black px-4 py-1 text-sm text-black">UX Research</span>
-                  <span className="rounded-full border border-black px-4 py-1 text-sm text-black">B2B</span>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-8">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
                 <Image src="/vision-track-cover.png" alt="Vision Track Project" width={500} height={300} className="rounded-lg w-full h-auto object-contain" />
               </div>
             </div>
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8">
-          <a href="/lilypad">
-            <div className="flex flex-col">
-              <div>
+        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8 h-[500px]">
+          <a href="/lilypad" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-2xl font-bold">Lilypad →</h3>
-                <p className="text-lg mt-4">Design and development mobile-first landing page for AI ed-tech startup</p>
-                <div className="flex items-center gap-2 mt-4">
-                  <span className="rounded-full border border-black px-4 py-1 text-sm text-black">UI Design</span>
-                  <span className="rounded-full border border-black px-4 py-1 text-sm text-black">Landing Page</span>
-                  <span className="rounded-full border border-black px-4 py-1 text-sm text-black">Responsive Design</span>
+                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
                 <Image src="/lilypad-cover.png" alt="Lilypad Project" width={500} height={300} className="rounded-lg w-full h-auto object-contain" />
               </div>
             </div>
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#212121] p-8 h-[720px]">
-          <div className="flex flex-col h-full">
-            <a href="/hobby">
-              <h3 className="text-2xl font-bold text-white">Other Fun Works →</h3>
-              <div className="flex-1 columns-2 sm:columns-3 lg:columns-4 gap-4 mt-8 ">
-                <div className="w-full h-40 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-64 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-48 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-56 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-40 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-52 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-44 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-60 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-48 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-40 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-52 bg-gray-400 rounded-lg mb-4"></div>
-                <div className="w-full h-44 bg-gray-400 rounded-lg mb-4"></div>
+        <div className="group relative overflow-hidden rounded-3xl bg-[#212121] p-8 h-[500px]">
+          <a href="/hobby" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
+                <h3 className="text-2xl font-bold text-white">Other Fun Works →</h3>
+                <p className="text-lg text-white">A collection of side projects and creative explorations</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Creative Coding</span>
+                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Experiments</span>
+                </div>
               </div>
-            </a>
-          </div>
+              <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
+                <div className="grid grid-cols-2 gap-4 w-full">
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
 
         {/* Mislanious Section*/}
         <div className="space-y-4">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="rounded-3xl bg-gray-200 p-8 h-[480px]">
+            <div className="rounded-3xl bg-gray-200 p-8 h-[500px]">
               <h4 className="text-xl font-semibold text-gray-600">Fractional (Coming Soon)</h4>
             </div>
-            <div className="rounded-3xl bg-gray-200 p-8 h-[480px]">
+            <div className="rounded-3xl bg-gray-200 p-8 h-[500px]">
               <h4 className="text-xl font-semibold text-gray-600">To Do List w/ AI (Coming Soon)</h4>
             </div>
           </div>
