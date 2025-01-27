@@ -64,9 +64,9 @@ export default function About() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="mb-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+      <section className="mby-24 mx-8">
+        <div className="grid md:grid-cols-3 gap-12 items-center">
+          <div className="md:col-span-2">
             <h1 className="text-4xl font-bold mb-6">Hi, I&apos;m Jessica Cheng</h1>
             <p className="text-gray-600">
               A <span className="font-semibold">Design Engineer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
@@ -76,14 +76,14 @@ export default function About() {
               friction so people can just get things done.
             </p>
           </div>
-          <div className="stack space-y-4">
-            <div className="grid grid-cols-3 gap-4 aspect-[3/4]">
-              <Image src="/profile.jpg" alt="Profile image" width={400} height={400} className="col-span-2 w-full h-full object-cover rounded-lg bg-gray-400" />
-              <div className="w-full h-full bg-[#FFA813] rounded-lg"></div>
+          <div className="stack space-y-4 h-full">
+            <div className="grid grid-cols-8 gap-3 h-auto">
+              <Image src="/profile.jpg" alt="Profile image" width={200} height={200} className="col-span-5 object-cover rounded-lg" />
+              <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
             </div>
-            <div className="grid grid-cols-3 gap-4 aspect-[3/2]">
-              <div className="w-full h-full bg-[#FFA813] rounded-lg"></div>
-              <Image src="/profile.jpg" alt="Profile image" width={400} height={400} className="col-span-2 w-full h-full object-cover rounded-lg bg-gray-400" />
+            <div className="grid grid-cols-8 gap-3 h-auto">
+              <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
+              <Image src="/profile.jpg" alt="Profile image" width={100} height={100} className="col-span-5 object-cover rounded-lg" />
             </div>
           </div>
         </div>
