@@ -9,7 +9,7 @@ export default function LilypadPage() {
       <ProjectHero title="Lilypad" subtitle="EdTech Startup: Student Evaluation Service for School Districts" tags={['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management']} />
 
       {/* Initial Overview and Challenges Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8 lg:my-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Overview */}
           <div className="border-t border-[#C1C1C1] pt-[4px]">
@@ -45,7 +45,7 @@ export default function LilypadPage() {
 
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
-        <div className="max-w-[1728px] mx-auto px-8 lg:px-16 py-8 lg:py-16">
+        <div className="max-w-[1728px] mx-auto px-8 lg:px-16 py-16 lg:py-32">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
@@ -55,7 +55,7 @@ export default function LilypadPage() {
             </div>
 
             {/* Right Column - Typography Details */}
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-8">
               {/* Typeface */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Typeface</h3>
@@ -77,7 +77,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Colors Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8 lg:py-16 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
@@ -128,7 +128,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Design Approach Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8 lg:my-16 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Title */}
           <div>
@@ -174,7 +174,7 @@ export default function LilypadPage() {
 
       {/* Mobile-First Design Section */}
       <div className="relative bg-[#DDA15F] text-white">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-8 lg:py-16">
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-16 lg:py-32">
           <h2 className="text-4xl font-normal mb-2 md:mb-4">Mobile-First Design</h2>
 
           <div className="flex justify-center items-center gap-4">
@@ -192,7 +192,7 @@ export default function LilypadPage() {
 
       {/* Responsive Design Section */}
       <div className="relative">
-        <div className="max-w-[1728px] mx-auto px-16 my-8 lg:py-16">
+        <div className="max-w-[1728px] mx-auto px-16 my-16 lg:my-32">
           <h2 className="text-4xl font-normal mb-2 md:mb-4">Responsive Design</h2>
 
           <div className="w-full flex justify-center">
@@ -210,7 +210,7 @@ export default function LilypadPage() {
 
       {/* UI Kit Section */}
       <div className="relative bg-[#212121]">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-8 lg:py-16 ">
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-16 lg:py-32">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-white">UI Kit + Responsive Figma Designs</h2>
 
           <div className="w-full flex justify-center">
@@ -227,7 +227,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Next Steps Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-8 lg:my-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
         {/* Title */}
         <h2 className="text-4xl font-normal mb-8 lg:mb-12">Next Steps</h2>
 
@@ -263,7 +263,7 @@ export default function LilypadPage() {
 
       {/* Figma Exploration Section */}
       <div className="relative bg-[#DDA15F] text-white">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-16 py-8 lg:py-16">
+        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-16 py-16 lg:py-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>

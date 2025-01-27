@@ -60,7 +60,7 @@ export default function Header() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(navigationMenuTriggerStyle(), pathname === '/docs' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
@@ -73,7 +73,7 @@ export default function Header() {
                     </span>
                   </NavigationMenuLink>
                 </Link>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <Button asChild className="bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
                   <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
@@ -122,13 +122,13 @@ export default function Header() {
                   >
                     About
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/"
                     className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/docs' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     CV
-                  </Link>
+                  </Link> */}
                 </div>
                 <div className="py-6">
                   <Button asChild className="w-full bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
