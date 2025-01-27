@@ -64,7 +64,7 @@ export default function About() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="mby-24 mx-8">
+      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8">
         <div className="grid md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-2">
             <h1 className="text-4xl font-bold mb-6">Hi, I&apos;m Jessica Cheng</h1>
@@ -90,7 +90,7 @@ export default function About() {
       </section>
 
       {/* Content Section with Sidebar */}
-      <section className="relative flex pt-8">
+      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8">
         {/* Sidebar */}
         <aside className="hidden lg:block w-64 sticky top-4" style={{ height: 'min-content' }}>
           <nav className="space-y-4">
