@@ -30,7 +30,7 @@ export default function Footer() {
             <Linkedin className="w-5 h-5" />
           </Link>
         </div>
-        <p className="text-gray-600">© 2023 Jessica Cheng</p>
+        <p className="text-gray-600">© 2025 Jessica Cheng</p>
       </div>
     </footer>
   )
