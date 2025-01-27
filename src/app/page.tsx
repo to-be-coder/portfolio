@@ -37,10 +37,10 @@ export default function Home() {
 
       {/* Projects Section */}
 
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-32 space-y-16" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[720px]">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-8 sm:space-y-12 md:space-y-16" id="projects">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8">
           <a href="/vision-track">
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col">
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold">Vision Track →</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
@@ -49,27 +49,27 @@ export default function Home() {
                   <span className="rounded-full border border-black px-4 py-1 text-sm text-black">B2B</span>
                 </div>
               </div>
-              <div className="flex-1 flex items-center justify-center mt-8">
-                <Image src="/vision-track-cover.png" alt="Vision Track Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
+              <div className="flex items-center justify-center mt-8">
+                <Image src="/vision-track-cover.png" alt="Vision Track Project" width={500} height={300} className="rounded-lg w-full h-auto object-contain" />
               </div>
             </div>
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8 h-[720px]">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8">
           <a href="/lilypad">
-            <div className="flex flex-col h-full">
-              <div className="space-y-4">
+            <div className="flex flex-col">
+              <div>
                 <h3 className="text-2xl font-bold">Lilypad →</h3>
-                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
-                <div className="flex items-center gap-2">
+                <p className="text-lg mt-4">Design and development mobile-first landing page for AI ed-tech startup</p>
+                <div className="flex items-center gap-2 mt-4">
                   <span className="rounded-full border border-black px-4 py-1 text-sm text-black">UI Design</span>
                   <span className="rounded-full border border-black px-4 py-1 text-sm text-black">Landing Page</span>
                   <span className="rounded-full border border-black px-4 py-1 text-sm text-black">Responsive Design</span>
                 </div>
               </div>
-              <div className="flex-1 flex items-center justify-center mt-8">
-                <Image src="/lilypad-cover.png" alt="Lilypad Project" width={500} height={300} className="rounded-lg w-auto h-full object-contain" />
+              <div className="mt-6">
+                <Image src="/lilypad-cover.png" alt="Lilypad Project" width={500} height={300} className="rounded-lg w-full h-auto object-contain" />
               </div>
             </div>
           </a>
