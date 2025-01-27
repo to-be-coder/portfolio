@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container mx-auto px-8 h-[90vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[90vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
             Hi I&apos;m Jessica,
@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-4 md:space-y-8" id="projects">
         <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
@@ -114,7 +114,7 @@ export default function Home() {
         </div>
 
         {/* Mislanious Section*/}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="rounded-3xl bg-gray-200 p-8 h-[500px]">
               <h4 className="text-xl font-semibold text-gray-600">Fractional (Coming Soon)</h4>
@@ -123,7 +123,7 @@ export default function Home() {
               <h4 className="text-xl font-semibold text-gray-600">To Do List w/ AI (Coming Soon)</h4>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Contact Section */}

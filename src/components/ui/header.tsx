@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="container mx-auto px-8 flex items-center justify-between pt-6" aria-label="Global">
+      <div className="container max-w-7xl mx-auto px-8 flex items-center justify-between pt-6" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
             Jessica Cheng
