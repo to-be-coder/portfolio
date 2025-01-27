@@ -178,14 +178,14 @@ export default function LilypadPage() {
           <h2 className="text-4xl font-normal mb-4">Mobile-First Design</h2>
 
           <div className="flex justify-center items-center gap-4">
-            <Image src="/iphone_1.png" alt="First mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/iphone_2.png" alt="Second mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/iphone_3.png" alt="Third mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+            <Image src="/iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+            <Image src="/iphone-2.png" alt="Second mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+            <Image src="/iphone-3.png" alt="Third mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
           </div>
 
           <div className="flex justify-center items-center gap-4 mt-4">
-            <Image src="/iphone_4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/iphone_5.png" alt="Fifth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+            <Image src="/iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+            <Image src="/iphone-5.png" alt="Fifth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
           </div>
         </div>
       </div>
