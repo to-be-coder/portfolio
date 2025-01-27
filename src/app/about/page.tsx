@@ -90,88 +90,116 @@ export default function About() {
       </section>
 
       {/* Content Section with Sidebar */}
-      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8">
-        {/* Sidebar */}
-        <aside className="hidden lg:block w-64 sticky top-4" style={{ height: 'min-content' }}>
-          <nav className="space-y-4">
-            {menuItems.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
-              >
-                {label}
-              </button>
-            ))}
-          </nav>
-        </aside>
+      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar */}
+          <aside className="hidden lg:block w-64 sticky top-4" style={{ height: 'min-content' }}>
+            <nav className="space-y-4">
+              {menuItems.map(({ id, label }) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav>
+          </aside>
 
-        {/* Main Content */}
-        <div className="flex-1 lg:ml-16">
-          <section id="empathy" className="mb-16 scroll-mt-20">
-            <h2 className="text-2xl font-bold mb-6">Empathy-Driven Approach</h2>
-            <p className="text-gray-600">
-              Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active listening
-              and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
-              <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
-            </p>
-          </section>
+          {/* Main Content */}
+          <div className="flex-1">
+            <section id="empathy" className="mb-4 md:mb-6 scroll-mt-10">
+              <h2 className="text-2xl font-bold mb-2 md:mb-4">Empathy-Driven Approach</h2>
+              <p className="text-gray-600">
+                Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
+                listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
+                <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
+              </p>
+            </section>
 
-          <section id="experience" className="mb-16 scroll-mt-20">
-            <h2 className="text-2xl font-bold mb-6">Experience Highlights</h2>
-            <div className="space-y-8">
-              <div>
-                <h3 className="font-semibold mb-4">Thoughtful (3 Years)</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
-                  <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
-                </ul>
+            <section id="experience" className="mb-4 md:mb-6 scroll-mt-10">
+              <h2 className="text-2xl font-bold mb-2 md:mb-4">Experience Highlights</h2>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">Thoughtful (3 Years)</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600">
+                    <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
+                    <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">Fractional (Co-Founder, 2023)</h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600">
+                    <li>
+                      <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
+                    </li>
+                    <li>
+                      <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
+                      maintaining consistency and clarity.
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold mb-4">Fractional (Co-Founder, 2023)</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-600">
-                  <li>
-                    <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
-                  </li>
-                  <li>
-                    <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
-                    maintaining consistency and clarity.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
+            </section>
 
-          <section id="skills" className="mb-16 scroll-mt-20">
-            <h2 className="text-2xl font-bold mb-6">Core Skills</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-semibold mb-3">UX & Design:</h3>
-                <p className="text-gray-600">User Research, Wireframing, Prototyping, Design Systems, Usability Testing.</p>
+            <section id="skills" className="mb-4 md:mb-6 scroll-mt-10">
+              <h2 className="text-2xl font-bold mb-2 md:mb-4">Core Skills</h2>
+              <div className="space-y-2">
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">UX & Design</h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>User Research</li>
+                    <li>Wireframing</li>
+                    <li>Prototyping</li>
+                    <li>Design Systems</li>
+                    <li>Usability Testing</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">Development</h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>TypeScript</li>
+                    <li>React.js</li>
+                    <li>Next.js</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">Tools</h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Figma</li>
+                    <li>Adobe Photoshop/Lightroom</li>
+                    <li>Webflow</li>
+                    <li>ChatGPT</li>
+                    <li>Visual Studio Code</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1 md:mb-2">Languages</h3>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>English</li>
+                    <li>Japanese</li>
+                    <li>Chinese (Mandarin)</li>
+                    <li>Taiwanese</li>
+                  </ul>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold mb-3">Development:</h3>
-                <p className="text-gray-600">HTML, CSS, JavaScript, TypeScript, React.js, Next.js, Node.js, Python.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-3">Tools:</h3>
-                <p className="text-gray-600">Figma, Adobe Photoshop/Lightroom, Webflow, ChatGPT, Visual Studio Code.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-3">Languages:</h3>
-                <p className="text-gray-600">English, Japanese, Chinese (Mandarin), Taiwanese.</p>
-              </div>
-            </div>
-          </section>
+            </section>
 
-          <section id="outside" className="mb-16 scroll-mt-20">
-            <h2 className="text-2xl font-bold mb-6">Outside of Work</h2>
-            <p className="text-gray-600">
-              When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
-              <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries and AI
-              tools to make design workflows smarter and more efficient.
-            </p>
-          </section>
+            <section id="outside" className="mb-4 md:mb-6 scroll-mt-10">
+              <h2 className="text-2xl font-bold mb-2 md:mb-4">Outside of Work</h2>
+              <p className="text-gray-600">
+                When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
+                <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries and
+                AI tools to make design workflows smarter and more efficient.
+              </p>
+            </section>
+          </div>
         </div>
       </section>
       <CtaSection />
