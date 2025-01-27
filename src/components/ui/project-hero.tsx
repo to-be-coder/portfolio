@@ -10,13 +10,13 @@ interface HeroProps {
 export function ProjectHero({ title, subtitle, tags, ctaText = 'Check Out the Project' }: HeroProps) {
   return (
     <div className="container mx-auto px-8 h-[90vh] flex flex-col">
-      <div className="flex-1 flex flex-col justify-center items-center">
+      <div className="flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">{title}</h1>
-        <p className="text-[32px] mt-4 text-center">&ldquo;{subtitle}&rdquo;</p>
+        <p className="text-[32px] mt-4 text-center ">&ldquo;{subtitle}&rdquo;</p>
       </div>
 
       <div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1 md:gap-2">
           {tags.map((tag, index) => (
             <span key={index} className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">
               {tag}
