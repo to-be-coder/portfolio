@@ -118,12 +118,12 @@ export default function VisionTrackPage() {
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
 
           {/* Interviewed */}
-          <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Interviewed</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <p className="text-[18px]">5 Founders</p>
                 <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
                   <div className="flex gap-1">
@@ -138,11 +138,11 @@ export default function VisionTrackPage() {
 
           {/* Challenges */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Challenges</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <div className="space-y-1 md:space-y-2">
                   <div>
                     <span className="font-semibold text-[18px]">Budget Constraints:</span>
@@ -159,11 +159,11 @@ export default function VisionTrackPage() {
 
           {/* Decision + Learning */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Decision + Learning</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <p className="text-[18px]">
                   Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question
                   our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
@@ -219,11 +219,11 @@ export default function VisionTrackPage() {
 
           {/* Interviewed */}
           <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Interviewed</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <p className="text-[18px]">20 People (Product manager, CTO, CEO, CPO, Founder)</p>
                 <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
                   <div className="flex gap-1">
@@ -243,11 +243,11 @@ export default function VisionTrackPage() {
 
           {/* Quotes */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Quotes</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <div className="space-y-1 md:space-y-2">
                   <div>
                     <span className="font-semibold text-[18px]">01</span>
@@ -268,11 +268,11 @@ export default function VisionTrackPage() {
 
           {/* Pain Points */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Pain Points</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <div className="space-y-1 md:space-y-2">
                   <div>
                     <span className="font-semibold text-[18px]">01</span>
@@ -293,11 +293,11 @@ export default function VisionTrackPage() {
 
           {/* Decision + Learning */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
                 <h3 className="text-2xl font-light text-[#a1a1a1]">Decision + Learning</h3>
               </div>
-              <div className="col-span-2">
+              <div className="md:col-span-2">
                 <p className="text-[18px]">
                   We decided to focus on a single department within an SMB—specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
                   avoid developing a watered-down product trying to serve every department at once.
