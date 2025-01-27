@@ -9,7 +9,7 @@ export default function LilypadPage() {
       <ProjectHero title="Lilypad" subtitle="EdTech Startup: Student Evaluation Service for School Districts" tags={['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management']} />
 
       {/* Initial Overview and Challenges Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-64 mb-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-32 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Overview */}
           <div className="border-t border-[#C1C1C1] pt-[4px]">

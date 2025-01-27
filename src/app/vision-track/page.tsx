@@ -10,12 +10,12 @@ export default function VisionTrackPage() {
       <ProjectHero title="Vision Track" subtitle="Team alignment through OKRs" tags={['UX Research', 'Competitive Analysis', 'User Interviews', 'User Persona', 'B2B', 'SaaS']} />
 
       {/* Overview Section */}
-      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-64 mb-32">
+      <div className="container  mx-auto px-4 sm:px-6 lg:px-8 mt-32 mb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-6">Overview</h2>
+              <h2 className="text-2xl font-light text-[#a1a1a1] mb-6">Overview</h2>
               <p className="text-[18px]">
                 VisionTrack is designed to keep everyone on the same page in a remote, fast-paced workplace. Our aim was to help teams stay connected, aligned, and empowered to achieve both their
                 individual goals and the company&apos;s broader vision.
@@ -23,7 +23,7 @@ export default function VisionTrackPage() {
             </div>
 
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-6">Design Objective</h2>
+              <h2 className="text-2xl font-light text-[#a1a1a1] mb-6">Design Objective</h2>
               <p className="text-[18px]">
                 Our main objective was to apply lean startup principles—experimenting, iterating, and pivoting quickly—to define an MVP that meets user needs. We aimed to address the core pain points
                 around goal alignment, while testing innovative ways to keep teams focused and motivated.
@@ -34,7 +34,7 @@ export default function VisionTrackPage() {
           {/* Right Column - Team, My Role, and Time Frame */}
           <div className="space-y-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-6">Team</h2>
+              <h2 className="text-2xl font-light text-[#a1a1a1] mb-6">Team</h2>
               <div className="space-y-2">
                 <p className="text-[18px]">Chris Roth</p>
                 <p className="text-[18px]">Jessica Cheng</p>
@@ -42,7 +42,7 @@ export default function VisionTrackPage() {
             </div>
 
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-6">My Role</h2>
+              <h2 className="text-2xl font-light text-[#a1a1a1] mb-6">My Role</h2>
               <div className="space-y-4">
                 <div>
                   <span className="font-semibold text-[18px]">User Research:</span>
@@ -54,7 +54,7 @@ export default function VisionTrackPage() {
             </div>
 
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-6">Time Frame</h2>
+              <h2 className="text-2xl font-light text-[#a1a1a1] mb-6">Time Frame</h2>
               <p className="text-[18px]">2 months</p>
             </div>
           </div>
@@ -81,21 +81,21 @@ export default function VisionTrackPage() {
             {/* Target Customers */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Target Customers</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Target Customers</h3>
               </div>
               <p className="text-[18px]">Startups in the US.</p>
             </div>
             {/* Pain Points */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Pain Points (Assumed)</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Pain Points (Assumed)</h3>
               </div>
               <p className="text-[18px]">Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
             </div>
             {/* Proposed Solution */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Proposed Solution</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Proposed Solution</h3>
               </div>
               <p className="text-[18px]">A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
             </div>
@@ -104,7 +104,7 @@ export default function VisionTrackPage() {
           {/* Why we chose this hypothesis */}
           <div className="mt-16">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-gray-400 mb-4">Why we chose this hypothesis?</h3>
+              <h3 className="text-2xl font-light text-[#a1a1a1] mb-4">Why we chose this hypothesis?</h3>
             </div>
             <p className="text-[18px]">
               I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.
@@ -122,7 +122,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Interviewed</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Interviewed</h3>
               </div>
               <div className="col-span-2">
                 <p className="text-[18px]">5 Founders</p>
@@ -141,7 +141,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Challenges</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Challenges</h3>
               </div>
               <div className="col-span-2">
                 <div className="space-y-4">
@@ -162,7 +162,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Decision + Learning</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Decision + Learning</h3>
               </div>
               <div className="col-span-2">
                 <p className="text-[18px]">
@@ -185,14 +185,14 @@ export default function VisionTrackPage() {
             {/* Target Customers */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Target Customers</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Target Customers</h3>
               </div>
               <p className="text-[18px]">SMB in the US (50-200 people).</p>
             </div>
             {/* Pain Points */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Pain Points (Identified)</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Pain Points (Identified)</h3>
               </div>
               <div className="space-y-4">
                 <p className="text-[18px]">• High-level company goals become diluted or lost in translation.</p>
@@ -203,7 +203,7 @@ export default function VisionTrackPage() {
             {/* Proposed Solution */}
             <div className="space-y-4">
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400">Potential Solution</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Potential Solution</h3>
               </div>
               <p className="text-[18px]">
                 VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback indicators.
@@ -222,7 +222,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Interviewed</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Interviewed</h3>
               </div>
               <div className="col-span-2">
                 <p className="text-[18px]">20 People (Product manager, CTO, CEO, CPO, Founder)</p>
@@ -246,7 +246,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Quotes</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Quotes</h3>
               </div>
               <div className="col-span-2">
                 <div className="space-y-4">
@@ -271,7 +271,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Pain Points</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Pain Points</h3>
               </div>
               <div className="col-span-2">
                 <div className="space-y-4">
@@ -296,7 +296,7 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-light text-gray-400">Decision + Learning</h3>
+                <h3 className="text-2xl font-light text-[#a1a1a1]">Decision + Learning</h3>
               </div>
               <div className="col-span-2">
                 <p className="text-[18px]">
