@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-8 sm:space-y-8 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8" id="projects">
         <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
@@ -101,7 +101,7 @@ export default function Home() {
 
         {/* Mislanious Section*/}
         <div className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="rounded-3xl bg-gray-200 p-8 h-[500px]">
               <h4 className="text-xl font-semibold text-gray-600">Fractional (Coming Soon)</h4>
             </div>
