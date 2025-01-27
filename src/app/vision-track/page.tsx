@@ -62,7 +62,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Workflow Section */}
-      <div className="relative bg-[#FFC157]">
+      <div className="relative bg-[#FFC157] w-screen -mx-[16px]">
         <div className="max-w-[1440px] mx-auto px-16 py-32">
           <h2 className="text-2xl font-light text-black mb-16 text-center">Workflow</h2>
 
