@@ -8,10 +8,10 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container max-w-7xl mx-auto px-8 h-[90vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
             Hi I&apos;m Jessica,
             <br />
-            a UX designer and developer
+            a Design Engineer
             <br />
             who values <span className="text-[#FF9B6A]">simple + human-centered</span>
             <br />
