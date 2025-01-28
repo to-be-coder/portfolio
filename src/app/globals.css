@@ -80,3 +80,25 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libra+Franklin:wght@400;500;600;700&display=swap');
+
+p,
+.NavigationMenuLink,
+a {
+  font-family: 'Work Sans', sans-serif;
+}
+
+p.bold {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libra Franklin', sans-serif;
+}

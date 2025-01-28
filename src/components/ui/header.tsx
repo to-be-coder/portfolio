@@ -1,5 +1,6 @@
 'use client'
 
+import { Chakra_Petch } from 'next/font/google'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -7,6 +8,11 @@ import { useState } from 'react'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { Button } from './button'
+
+const chakraPetch = Chakra_Petch({
+  subsets: ['latin'],
+  weight: ['600'],
+})
 
 export default function Header() {
   const pathname = usePathname()
@@ -26,7 +32,7 @@ export default function Header() {
       <div className="container max-w-7xl mx-auto px-8 flex items-center justify-between pt-6" aria-label="Global">
         <div className="flex sm:flex-1">
           <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
-            Jessica Cheng
+            <a className={`text-lg font-semibold text-gray-900 ${chakraPetch.className}`}>Jessica Cheng</a>
           </Link>
         </div>
         <div className="hidden sm:flex sm:flex-1 justify-center">
@@ -100,7 +106,7 @@ export default function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" legacyBehavior passHref>
-                <a className="-m-1.5 p-1.5 text-lg font-semibold">Jessica Cheng</a>
+                <a className={`-m-1.5 p-1.5 text-lg font-semibold ${chakraPetch.className}`}>Jessica Cheng</a>
               </Link>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
