@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 space-y-4 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 lg:my-16 space-y-4 md:space-y-8" id="projects">
         <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
