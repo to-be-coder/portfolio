@@ -315,7 +315,7 @@ export default function VisionTrackPage() {
 
           <div className="w-full flex justify-center">
             <Image
-              src="/value-vision-track.png"
+              src="/vision-track-value.png"
               alt="Value proposition diagram showing different roles: IC, Manager, Top-Manager, and Board Member, with their respective workflows and motivations"
               width={1728}
               height={900}
@@ -333,7 +333,7 @@ export default function VisionTrackPage() {
 
           <div className="w-full flex justify-center">
             <Image
-              src="/table-vision-track.png"
+              src="/vision-track-table.png"
               alt="Competitive analysis table comparing different tools: ClickUp, Weekdone, WorkBoard, and Lattice, showing their focus, integrations, and key differentiators"
               width={1728}
               height={900}
