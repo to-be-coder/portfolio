@@ -13,7 +13,7 @@ export default function Footer() {
             <Link href="/about" className="text-white hover:text-[#ff9c6a]">
               About
             </Link>
-            <Link href="/contact" className="text-white hover:text-[#ff9c6a]">
+            <Link href="mailto:jessicacheng.code@gmail.com" className="text-white hover:text-[#ff9c6a]">
               Contact
             </Link>
           </div>
