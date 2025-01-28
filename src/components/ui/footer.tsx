@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-8 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex gap-4 flex-1">
-            <Link href="/projects" className="text-white hover:text-[#ff9c6a]">
+            <Link href="/#projects" className="text-white hover:text-[#ff9c6a]">
               Projects
             </Link>
             <Link href="/about" className="text-white hover:text-[#ff9c6a]">
