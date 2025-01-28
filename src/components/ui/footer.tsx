@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Instagram, Linkedin, X } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -18,13 +18,13 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex gap-6 items-center flex-1 justify-center">
-            <Link href="#" className="text-white hover:text-[#ff9c6a]">
-              <Twitter className="w-5 h-5" />
+            <Link href="https://x.com/_re_ux" className="text-white hover:text-[#ff9c6a]">
+              <X className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-white hover:text-[#ff9c6a]">
+            <Link href="https://www.instagram.com/mukajitu/" className="text-white hover:text-[#ff9c6a]">
               <Instagram className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-white hover:text-[#ff9c6a]">
+            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-[#ff9c6a]">
               <Linkedin className="w-5 h-5" />
             </Link>
           </div>
