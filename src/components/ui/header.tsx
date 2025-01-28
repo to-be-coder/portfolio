@@ -24,12 +24,12 @@ export default function Header() {
   return (
     <header>
       <div className="container max-w-7xl mx-auto px-8 flex items-center justify-between pt-6" aria-label="Global">
-        <div className="flex lg:flex-1">
+        <div className="flex sm:flex-1">
           <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
             Jessica Cheng
           </Link>
         </div>
-        <div className="hidden lg:flex lg:flex-1 justify-center">
+        <div className="hidden sm:flex sm:flex-1 justify-center">
           <NavigationMenu>
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
@@ -79,14 +79,14 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="hidden lg:flex lg:flex-1 justify-end">
+        <div className="hidden sm:flex sm:flex-1 justify-end">
           <NavigationMenuItem className="list-none">
             <Button asChild className="bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
               <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
             </Button>
           </NavigationMenuItem>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex sm:hidden">
           <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <span className="sr-only">Open main menu</span>
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
