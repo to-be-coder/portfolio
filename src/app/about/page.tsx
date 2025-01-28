@@ -78,12 +78,12 @@ export default function About() {
           </div>
           <div className="stack space-y-4 h-full">
             <div className="grid grid-cols-8 gap-3 h-auto">
-              <Image src="/profile.jpg" alt="Profile image" width={200} height={200} className="col-span-5 object-cover rounded-lg" />
+              <Image src="/profile.jpg" alt="Profile image" width={200} height={200} className="col-span-5 object-cover rounded-lg w-full h-[280px]" />
               <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
             </div>
-            <div className="grid grid-cols-8 gap-3 h-auto">
+            <div className="hidden md:grid grid-cols-8 gap-3 h-auto">
               <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
-              <Image src="/profile.jpg" alt="Profile image" width={100} height={100} className="col-span-5 object-cover rounded-lg" />
+              <Image src="/profile-2.jpg" alt="Profile image" width={100} height={100} className="col-span-5 object-cover rounded-lg w-full h-[100px]" />
             </div>
           </div>
         </div>
