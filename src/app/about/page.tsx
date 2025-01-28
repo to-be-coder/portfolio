@@ -108,8 +108,8 @@ export default function About() {
           </aside>
 
           {/* Main Content */}
-          <div className="flex-1">
-            <section id="empathy" className="mb-4 md:mb-6 scroll-mt-10">
+          <div className="flex-1 space-y-16 md:space-y-24 lg:space-y-32">
+            <section id="empathy" className="scroll-mt-10">
               <h2 className="text-2xl font-bold mb-2 md:mb-4">Empathy-Driven Approach</h2>
               <p className="text-gray-600">
                 Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
@@ -118,37 +118,54 @@ export default function About() {
               </p>
             </section>
 
-            <section id="experience" className="mb-4 md:mb-6 scroll-mt-10">
-              <h2 className="text-2xl font-bold mb-2 md:mb-4">Experience Highlights</h2>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">Thoughtful (3 Years)</h3>
-                  <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
-                    <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
-                  </ul>
+            {/* Experience Highlights */}
+            <section id="experience" className="scroll-mt-10">
+              <div className="relative">
+                <h2 className="text-2xl font-bold mb-2 md:mb-4">Experience Highlights</h2>
+
+                {/* Interviewed */}
+                <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="col-span-1">
+                      <h3 className="text-lg font-light text-[#a1a1a1]">Thoughtful (3 Years)</h3>
+                    </div>
+                    <div className="md:col-span-2">
+                      <ul className="list-disc list-inside space-y-2 text-gray-600">
+                        <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
+                        <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">Fractional (Co-Founder, 2023)</h3>
-                  <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>
-                      <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
-                    </li>
-                    <li>
-                      <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
-                      maintaining consistency and clarity.
-                    </li>
-                  </ul>
+                {/* Interviewed */}
+                <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="col-span-1">
+                      <h3 className="text-lg font-light text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
+                    </div>
+                    <div className="md:col-span-2">
+                      <ul className="list-disc list-inside space-y-2 text-gray-600">
+                        <li>
+                          <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
+                        </li>
+                        <li>
+                          <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
+                          maintaining consistency and clarity.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section id="skills" className="mb-4 md:mb-6 scroll-mt-10">
+            <section id="skills" className="scroll-mt-10">
               <h2 className="text-2xl font-bold mb-2 md:mb-4">Core Skills</h2>
-              <div className="space-y-2">
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">UX & Design</h3>
-                  <ul className="list-disc list-inside text-gray-600">
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
+                <div className="border-t border-[#C1C1C1] pt-[4px]">
+                  <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
+                  <ul className="list-disc list-inside space-y-1 md:space-y-2">
                     <li>User Research</li>
                     <li>Wireframing</li>
                     <li>Prototyping</li>
@@ -156,9 +173,10 @@ export default function About() {
                     <li>Usability Testing</li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">Development</h3>
-                  <ul className="list-disc list-inside text-gray-600">
+
+                <div className="border-t border-[#C1C1C1] pt-[4px]">
+                  <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
+                  <ul className="list-disc list-inside space-y-1 md:space-y-2">
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JavaScript</li>
@@ -170,9 +188,9 @@ export default function About() {
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">Tools</h3>
-                  <ul className="list-disc list-inside text-gray-600">
+                <div className="border-t border-[#C1C1C1] pt-[4px]">
+                  <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
+                  <ul className="list-disc list-inside space-y-1 md:space-y-2">
                     <li>Figma</li>
                     <li>Adobe Photoshop/Lightroom</li>
                     <li>Webflow</li>
@@ -180,9 +198,10 @@ export default function About() {
                     <li>Visual Studio Code</li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1 md:mb-2">Languages</h3>
-                  <ul className="list-disc list-inside text-gray-600">
+
+                <div className="border-t border-[#C1C1C1] pt-[4px]">
+                  <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
+                  <ul className="list-disc list-inside space-y-1 md:space-y-2">
                     <li>English</li>
                     <li>Japanese</li>
                     <li>Chinese (Mandarin)</li>
