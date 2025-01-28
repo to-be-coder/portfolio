@@ -13,7 +13,7 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Overview */}
           <div className="border-t border-[#C1C1C1] pt-[4px]">
-            <h2 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Overview</h2>
+            <h2 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Overview</h2>
             <p className="text-[18px]">
               I collaborated with a startup to redesign their landing page concept before it was published. With no existing analytics or user feedback to draw from, I focused on creating a clear and
               compelling layout that highlighted the startup&apos;s value proposition and guided visitors toward key actions—such as requesting more information.
@@ -23,7 +23,7 @@ export default function LilypadPage() {
           {/* Right Column - Challenges */}
           <div className="space-y-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Challenges</h2>
+              <h2 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Challenges</h2>
               <div className="space-y-1 md:space-y-2">
                 <div>
                   <span className="font-semibold text-[18px]">No Historical User Data</span>
@@ -51,20 +51,20 @@ export default function LilypadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
             <div className="flex items-center justify-center">
-              <span className="text-[200px] font-light">Aa</span>
+              <span className="text-[200px] font-regular">Aa</span>
             </div>
 
             {/* Right Column - Typography Details */}
             <div className="space-y-4 md:space-y-8">
               {/* Typeface */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Typeface</h3>
+                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
                 <p className="text-[18px]">Plus Jakarta Sans</p>
               </div>
 
               {/* Weights */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Weights</h3>
+                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
                 <div className="space-y-1 md:space-y-2">
                   <p className="text-[18px] font-normal">Regular</p>
                   <p className="text-[18px] font-semibold">Semi-Bold</p>
@@ -139,7 +139,7 @@ export default function LilypadPage() {
           <div className="space-y-4 md:space-y-8">
             {/* Content */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-gray-400 mb-2 md:mb-4">Content</h3>
+              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Content</h3>
               <p className="text-[18px]">
                 Collaborated with the startup team to define and highlight their core benefits, ensuring every section of the page directly addressed key user questions and pain points.
               </p>
@@ -147,7 +147,7 @@ export default function LilypadPage() {
 
             {/* Visual Hierarchy & Layout */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-gray-400 mb-6">Visual Hierarchy & Layout</h3>
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Visual Hierarchy & Layout</h3>
               <p className="text-[18px]">
                 Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and understand
                 the page&apos;s content.
@@ -156,13 +156,13 @@ export default function LilypadPage() {
 
             {/* Calls-to-Action */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-gray-400 mb-6">Calls-to-Action</h3>
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Calls-to-Action</h3>
               <p className="text-[18px]">Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
             </div>
 
             {/* Responsive Design */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-gray-400 mb-6">Responsive Design</h3>
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Responsive Design</h3>
               <p className="text-[18px]">
                 Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. Also ensured images and text scale
                 appropriately to maintain readability across various screen sizes.
@@ -236,7 +236,7 @@ export default function LilypadPage() {
           {/* Gather Real-World Feedback */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-[#a0a0a0] mb-2 md:mb-4">Gather Real-World Feedback</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Gather Real-World Feedback</h3>
               <p className="text-[18px]">
                 Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.
               </p>
@@ -246,7 +246,7 @@ export default function LilypadPage() {
           {/* Iterative Improvements */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-[#a0a0a0] mb-2 md:mb-4">Iterative Improvements</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Iterative Improvements</h3>
               <p className="text-[18px]">Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function LilypadPage() {
           {/* Potential User Testing */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-light text-[#a0a0a0] mb-2 md:mb-4">Potential User Testing</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Potential User Testing</h3>
               <p className="text-[18px]">After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
             </div>
           </div>

@@ -116,7 +116,7 @@ export default function About() {
                   <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="col-span-1">
-                        <h3 className="text-lg font-light text-[#a1a1a1]">Thoughtful (3 Years)</h3>
+                        <h3 className="text-lg font-regular text-[#a1a1a1]">Thoughtful (3 Years)</h3>
                       </div>
                       <div className="md:col-span-2">
                         <ul className="list-disc list-inside space-y-2 text-gray-600">
@@ -130,7 +130,7 @@ export default function About() {
                   <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="col-span-1">
-                        <h3 className="text-lg font-light text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
+                        <h3 className="text-lg font-regular text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
                       </div>
                       <div className="md:col-span-2">
                         <ul className="list-disc list-inside space-y-2 text-gray-600">
@@ -153,7 +153,7 @@ export default function About() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
                   <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
+                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
                     <ul className="list-disc list-inside space-y-1 md:space-y-2">
                       <li>User Research</li>
                       <li>Wireframing</li>
@@ -164,7 +164,7 @@ export default function About() {
                   </div>
 
                   <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
+                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
                     <ul className="list-disc list-inside space-y-1 md:space-y-2">
                       <li>HTML</li>
                       <li>CSS</li>
@@ -178,7 +178,7 @@ export default function About() {
                   </div>
 
                   <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
+                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
                     <ul className="list-disc list-inside space-y-1 md:space-y-2">
                       <li>Figma</li>
                       <li>Adobe Photoshop/Lightroom</li>
@@ -189,7 +189,7 @@ export default function About() {
                   </div>
 
                   <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-light text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
+                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
                     <ul className="list-disc list-inside space-y-1 md:space-y-2">
                       <li>English</li>
                       <li>Japanese</li>
