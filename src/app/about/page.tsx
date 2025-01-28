@@ -169,6 +169,17 @@ export default function About() {
                     <li>Python</li>
                   </ul>
                 </div>
+                <div className="border-t border-[#C1C1C1] pt-[4px]">
+                  <h2 className="text-2xl font-light text-[#a1a1a1] mmb-2 md:mb-4">My Role</h2>
+                  <div className="space-y-4">
+                    <div>
+                      <span className="font-semibold text-[18px]">User Research:</span>
+                      <p className="text-[18px]">
+                        I led the user research efforts, including defining hypotheses, conducting user interviews, synthesizing findings, and guiding the pivot toward a more viable target audience.
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <div>
                   <h3 className="font-semibold mb-1 md:mb-2">Tools</h3>
                   <ul className="list-disc list-inside text-gray-600">
