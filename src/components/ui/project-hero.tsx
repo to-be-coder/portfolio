@@ -12,7 +12,7 @@ export function ProjectHero({ title, subtitle, tags, ctaText = 'Check Out the Pr
     <div className="container mx-auto px-8 h-[90vh] flex flex-col">
       <div className="flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">{title}</h1>
-        <p className="text-[32px] mt-4 text-center ">&ldquo;{subtitle}&rdquo;</p>
+        <p className="text-[32px] mt-4 text-center ">{subtitle}</p>
       </div>
 
       <div>
