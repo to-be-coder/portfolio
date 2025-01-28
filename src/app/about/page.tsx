@@ -67,7 +67,7 @@ export default function About() {
       <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8">
         <div className="grid md:grid-cols-3 gap-12 items-center">
           <div className="md:col-span-2">
-            <h1 className="text-4xl font-bold mb-6">Hi, I&apos;m Jessica Cheng</h1>
+            <h1 className="text-4xl font-bold mb-6 md:mb-8">Hi, I&apos;m Jessica Cheng</h1>
             <p className="text-gray-600">
               A <span className="font-semibold">Design Engineer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
               <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills</span>
@@ -110,7 +110,7 @@ export default function About() {
           {/* Main Content */}
           <div className="flex-1 space-y-16 md:space-y-24 lg:space-y-32">
             <section id="empathy" className="scroll-mt-10">
-              <h2 className="text-2xl font-bold mb-2 md:mb-4">Empathy-Driven Approach</h2>
+              <h2 className="text-2xl font-bold mb-4 md:mb-6">Empathy-Driven Approach</h2>
               <p className="text-gray-600">
                 Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
                 listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
@@ -121,7 +121,7 @@ export default function About() {
             {/* Experience Highlights */}
             <section id="experience" className="scroll-mt-10">
               <div className="relative">
-                <h2 className="text-2xl font-bold mb-2 md:mb-4">Experience Highlights</h2>
+                <h2 className="text-2xl font-bold mb-4 md:mb-6">Experience Highlights</h2>
 
                 {/* Interviewed */}
                 <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
@@ -160,7 +160,7 @@ export default function About() {
             </section>
 
             <section id="skills" className="scroll-mt-10">
-              <h2 className="text-2xl font-bold mb-2 md:mb-4">Core Skills</h2>
+              <h2 className="text-2xl font-bold mb-4 md:mb-6">Core Skills</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
                 <div className="border-t border-[#C1C1C1] pt-[4px]">
@@ -212,7 +212,7 @@ export default function About() {
             </section>
 
             <section id="outside" className="mb-4 md:mb-6 scroll-mt-10">
-              <h2 className="text-2xl font-bold mb-2 md:mb-4">Outside of Work</h2>
+              <h2 className="text-2xl font-bold mb-4 md:mb-6">Outside of Work</h2>
               <p className="text-gray-600">
                 When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
                 <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries and
