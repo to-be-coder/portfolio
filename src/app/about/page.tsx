@@ -57,7 +57,7 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-12 items-center">
             <div className="md:col-span-2">
               <h1 className="text-4xl font-bold mb-6 md:mb-8">Hi, I&apos;m Jessica Cheng</h1>
-              <p className="text-gray-600">
+              <p className="text-Black">
                 A <span className="font-semibold">Design Engineer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
                 <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills</span>
                 let me translate insights into real, working solutions. Whether I&apos;m
@@ -88,7 +88,7 @@ export default function About() {
                   <button
                     key={id}
                     onClick={() => scrollToSection(id)}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
+                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-Black hover:text-gray-900 hover:bg-gray-100'}`}
                   >
                     {label}
                   </button>
@@ -100,7 +100,7 @@ export default function About() {
             <div className="flex-1 space-y-16 md:space-y-24 lg:space-y-32">
               <section id="empathy" className="scroll-mt-10">
                 <h2 className="text-2xl font-bold mb-4 md:mb-6">Empathy-Driven Approach</h2>
-                <p className="text-gray-600">
+                <p className="text-Black">
                   Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
                   listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
                   <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
@@ -119,7 +119,7 @@ export default function About() {
                         <h3 className="text-lg font-regular text-[#a1a1a1]">Thoughtful (3 Years)</h3>
                       </div>
                       <div className="md:col-span-2">
-                        <ul className="list-disc list-inside space-y-2 text-gray-600">
+                        <ul className="list-disc list-inside space-y-2 text-Black">
                           <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
                           <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
                         </ul>
@@ -133,7 +133,7 @@ export default function About() {
                         <h3 className="text-lg font-regular text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
                       </div>
                       <div className="md:col-span-2">
-                        <ul className="list-disc list-inside space-y-2 text-gray-600">
+                        <ul className="list-disc list-inside space-y-2 Black">
                           <li>
                             <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
                           </li>
@@ -202,7 +202,7 @@ export default function About() {
 
               <section id="outside" className="mb-4 md:mb-6 scroll-mt-10">
                 <h2 className="text-2xl font-bold mb-4 md:mb-6">Outside of Work</h2>
-                <p className="text-gray-600">
+                <p className="text-black">
                   When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
                   <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries and
                   AI tools to make design workflows smarter and more efficient.
