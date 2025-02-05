@@ -18,13 +18,13 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex gap-6 items-center flex-1 justify-center">
-            <Link href="https://x.com/_re_ux" className="text-white hover:text-[#ff9c6a]">
+            <Link href="https://x.com/_re_ux" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
               <X className="w-5 h-5" />
             </Link>
-            <Link href="https://www.instagram.com/mukajitu/" className="text-white hover:text-[#ff9c6a]">
+            <Link href="https://www.instagram.com/mukajitu/" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
               <Instagram className="w-5 h-5" />
             </Link>
-            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-[#ff9c6a]">
+            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5" />
             </Link>
           </div>

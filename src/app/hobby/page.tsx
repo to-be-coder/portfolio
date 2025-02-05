@@ -6,9 +6,12 @@ export default function Hobby() {
       {/* Hero Section */}
       <div className="container mx-auto px-8 lg:px-32 min-h-[calc(60vh)] flex flex-col justify-center">
         <div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
             When I am not working...
-            <br />I am a self-taught <span className="text-[#FFA149]">photographer</span> who loves <span className="text-[#FFA149]">camping</span> with my <span className="text-[#FFA149]">dog</span>.
+            <br />I am a self-taught <span className="text-[#FFA149]">photographer</span> <br /> who loves <span className="text-[#FFA149]">camping</span> with my{' '}
+            <span className="text-[#FFA149]">dog</span>.
+            <br />
+            (Coming Soon...)
           </h1>
         </div>
       </div>

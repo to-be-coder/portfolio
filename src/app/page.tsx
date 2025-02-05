@@ -1,6 +1,7 @@
 import CtaSection from '@/components/ui/cta'
 import { MoveDown } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -28,9 +29,9 @@ export default function Home() {
           </div>
 
           <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
-            <a href="/#projects" className="flex items-center text-base text-gray-900 hover:text-gray-700">
-              Check Out Projects <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-[3]" />
-            </a>
+            <Link href="/#projects" className="flex items-center gap-1 text-base text-gray-900 hover:text-gray-700">
+              Check Out Projects <MoveDown className="text-[#ff9c6a] w-4 h-4 stroke-[3]" />
+            </Link>
           </div>
         </div>
       </div>
