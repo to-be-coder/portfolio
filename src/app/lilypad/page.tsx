@@ -1,6 +1,7 @@
 import CtaSection from '@/components/ui/cta'
 import { ProjectHero } from '@/components/ui/project-hero'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function LilypadPage() {
   return (
@@ -269,12 +270,17 @@ export default function LilypadPage() {
             <div>
               <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
               <p className="text-[18px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
-              <a href="#" className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all">
+              <Link
+                href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
+                className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Check Out Figma
                 <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 17L17 7M17 7H7M17 7V17" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Right Column - iPhone Image */}
