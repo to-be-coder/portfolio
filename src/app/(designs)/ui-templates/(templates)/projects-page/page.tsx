@@ -32,7 +32,7 @@ export default function ComponentPage() {
   return (
     <ComponentLayout preview={<PreviewContent />} code={<CodeContent />}>
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold">Projects Grid</h1>
+        <h1 className="text-4xl font-bold">Projects Page</h1>
       </div>
     </ComponentLayout>
   )
