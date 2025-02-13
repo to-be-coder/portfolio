@@ -1,6 +1,6 @@
 'use client'
 
-import { Link } from 'lucide-react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -21,7 +21,7 @@ export default function Navigation({ items, defaultPage }: NavigationProps) {
     // Extract the last segment from the pathname
     const segment = pathname?.split('/').pop() || defaultPage
     setCurrentPage(segment)
-  }, [pathname, defaultPage])
+  }, [pathname])
 
   return (
     <nav>
