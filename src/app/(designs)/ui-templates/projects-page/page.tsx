@@ -12,13 +12,13 @@ export default function ComponentPage({ params }: { params: { category: string; 
             <TabsList className="flex gap-4 mb-8 justify-start border-b border-[#c0c0c0]">
               <TabsTrigger
                 value="preview"
-                className="border-0 px-4 py-2 font-medium data-[state=active]:border-b-2 data-[state=active]:border-orange-500 data-[state=inactive]:text-gray-500 hover:text-gray-900 shadow-none"
+                className="border-0 px-4 py-2 font-medium data-[state=active]:border-b-2 data-[state=active]:border-[#FFA813] data-[state=active]:text-[#FFA813] data-[state=inactive]:text-gray-500 hover:text-gray-900 shadow-none"
               >
                 Preview
               </TabsTrigger>
               <TabsTrigger
                 value="code"
-                className="border-0 px-4 py-2 font-medium data-[state=active]:border-b-2 data-[state=active]:border-orange-500 data-[state=inactive]:text-gray-500 hover:text-gray-900 shadow-none"
+                className="border-0 px-4 py-2 font-medium data-[state=active]:border-b-2 data-[state=active]:border-[#FFA813] data-[state=active]:text-[#FFA813] data-[state=inactive]:text-gray-500 hover:text-gray-900 shadow-none"
               >
                 Code
               </TabsTrigger>
