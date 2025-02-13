@@ -1,30 +1,10 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import ProjectsPageDemo from '@/components/demo/projects-page-demo'
 import ComponentLayout from '../../../../../components/show-component-layout'
 
 const PreviewContent = () => {
-  return (
-    <div className="flex flex-col gap-4">
-      <div className="grid grid-cols-3 gap-4">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="font-semibold mb-2">Project Alpha</h3>
-          <p className="text-gray-600 mb-4">A revolutionary new app</p>
-          <Button variant="outline">View Details</Button>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="font-semibold mb-2">Project Beta</h3>
-          <p className="text-gray-600 mb-4">Next generation platform</p>
-          <Button variant="outline">View Details</Button>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="font-semibold mb-2">Project Gamma</h3>
-          <p className="text-gray-600 mb-4">Innovation at its finest</p>
-          <Button variant="outline">View Details</Button>
-        </div>
-      </div>
-    </div>
-  )
+  return <ProjectsPageDemo />
 }
 
 const CodeContent = () => {

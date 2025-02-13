@@ -15,11 +15,11 @@ const items = [
 ]
 export default function DesignsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen">
+    <div className="mt-8 flex min-h-screen max-w-7xl mx-auto">
       {/* Left side - Side Menu */}
       <aside className="w-64 hidden lg:block">
         <div className="w-64 bg-white text-black min-h-screen p-4">
-          <h1 className="text-xl font-bold mb-4">Components</h1>
+          <h1 className="text-xl font-semibold mb-4">Components</h1>
           <Navigation items={items} defaultPage={'projects-page'} />
         </div>
       </aside>
