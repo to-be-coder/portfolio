@@ -21,7 +21,7 @@ export default function Navigation({ items, defaultPage }: NavigationProps) {
     // Extract the last segment from the pathname
     const segment = pathname?.split('/').pop() || defaultPage
     setCurrentPage(segment)
-  }, [pathname])
+  }, [pathname, defaultPage])
 
   return (
     <nav>
