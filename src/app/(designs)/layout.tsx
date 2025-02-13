@@ -3,6 +3,11 @@ import Navigation from '@/components/ui/side-navigation'
 // Menu items.
 const items = [
   {
+    title: 'All',
+    url: '/ui-templates',
+    id: 'all',
+  },
+  {
     title: 'Projects Page',
     url: '/ui-templates/projects-page',
     id: 'projects-page',
