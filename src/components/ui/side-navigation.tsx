@@ -25,12 +25,14 @@ export default function Navigation({ items, defaultPage }: NavigationProps) {
 
   return (
     <nav>
-      <ul className="space-y-4">
+      <ul className="space-y-2">
         {items.map((item) => (
           <li key={item.title}>
             <Link
               href={item.url}
-              className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${currentPage === item.id ? 'bg-black text-white' : 'text-black hover:text-gray-900 hover:bg-gray-100'}`}
+              className={`block w-full text-left text-lg px-4 py-2 rounded-lg transition-colors ${
+                currentPage === item.id ? 'bg-black text-white' : 'text-black hover:text-gray-900 hover:bg-gray-100'
+              }`}
             >
               {item.title}
             </Link>
