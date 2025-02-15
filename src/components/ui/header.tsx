@@ -8,6 +8,42 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { cn } from '@/lib/utils'
 import { Button } from './button'
 
+const navigationItems = [
+  { path: '/', label: 'Home', id: 'home' },
+  { path: '/#projects', label: 'Projects', id: 'projects' },
+  { path: '/ui-templates', label: 'UI Templates', id: 'ui-templates' },
+  { path: '/about', label: 'About', id: 'about' },
+]
+
+interface NavItemProps {
+  path: string
+  label: string
+  id: string
+  pathname: string
+  hoveredItem: string | null
+  onMouseEnter: (item: string) => void
+  onMouseLeave: () => void
+  onClick?: () => void
+}
+
+const NavItem = ({ path, label, id, pathname, hoveredItem, onMouseEnter, onMouseLeave, onClick }: NavItemProps) => (
+  <NavigationMenuItem>
+    <Link href={path} legacyBehavior passHref>
+      <NavigationMenuLink
+        className={cn(navigationMenuTriggerStyle(), pathname === path && 'text-[#ff9c6a]', 'relative hover:no-underline')}
+        onMouseEnter={() => onMouseEnter(id)}
+        onMouseLeave={onMouseLeave}
+        onClick={onClick}
+      >
+        <span className="relative">
+          {label}
+          <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === id ? 'w-full' : 'w-0')}></span>
+        </span>
+      </NavigationMenuLink>
+    </Link>
+  </NavigationMenuItem>
+)
+
 export default function Header() {
   const pathname = usePathname()
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
@@ -23,7 +59,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="px-8 flex justify-between py-2 " aria-label="Global">
+      <div className="px-8 flex justify-between py-2" aria-label="Global">
         <div className="flex sm:flex-1">
           <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
             <p className="text-lg font-semibold text-gray-900 font-['Helvetica_Neue']">Jessica Cheng</p>
@@ -33,62 +69,9 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
-                <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(), pathname === '/' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
-                      onMouseEnter={() => handleHover('home')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <span className="relative">
-                        Home
-                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'home' ? 'w-full' : 'w-0')}></span>
-                      </span>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/#projects" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(), pathname === '/#projects' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
-                      onMouseEnter={() => handleHover('projects')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <span className="relative">
-                        Projects
-                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'projects' ? 'w-full' : 'w-0')}></span>
-                      </span>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/ui-templates" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(), pathname === '/ui-templates' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
-                      onMouseEnter={() => handleHover('ui-templates')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <span className="relative">
-                        UI Templates
-                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'ui-templates' ? 'w-full' : 'w-0')}></span>
-                      </span>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/about" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
-                      onMouseEnter={() => handleHover('about')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <span className="relative">
-                        About
-                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
-                      </span>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
+                {navigationItems.map((item) => (
+                  <NavItem key={item.id} {...item} pathname={pathname} hoveredItem={hoveredItem} onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} />
+                ))}
               </div>
             </NavigationMenuList>
           </NavigationMenu>
@@ -126,34 +109,16 @@ export default function Header() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Link
-                    href="/"
-                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <Link
-                    href="/#projects"
-                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/#projects' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Projects
-                  </Link>
-                  <Link
-                    href="/ui-templates"
-                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/ui-templates' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    UI Templates
-                  </Link>
-                  <Link
-                    href="/about"
-                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/about' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    About
-                  </Link>
+                  {navigationItems.map((item) => (
+                    <Link
+                      key={item.id}
+                      href={item.path}
+                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === item.path ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
                 <div className="py-6">
                   <Button asChild className="w-full bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
