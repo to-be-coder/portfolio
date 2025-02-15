@@ -71,12 +71,12 @@ export const portfolioItems: PortfolioItemType[] = [
   },
 ]
 
-interface PortfolioItemProps {
+interface ProjectCardProps {
   item: PortfolioItemType
   showDetails?: boolean
 }
 
-const PortfolioItem = ({ item, showDetails = false }: PortfolioItemProps) => {
+const ProjectCard = ({ item, showDetails = false }: ProjectCardProps) => {
   const { id, name, bgColor, image, tags, href } = item
 
   if (showDetails) {
@@ -115,43 +115,41 @@ const PortfolioItem = ({ item, showDetails = false }: PortfolioItemProps) => {
   )
 }
 
-export const PortfolioGrid = () => {
-  // Sort items by ID to ensure correct order
-  const sortedItems = [...portfolioItems].sort((a, b) => a.id - b.id)
+export const ProjectGrid = () => {
+  const sortedItems = portfolioItems.sort((a, b) => a.id - b.id)
 
   return (
-    <div className="col-span-4 md:col-span-2 w-full mt-0 ">
-      {/* Single column on mobile, two columns on larger screens */}
+    <div className="col-span-4 md:col-span-2 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2">
-        {/* Mobile: Single column with all items */}
+        {/* Mobile view */}
         <div className="sm:hidden">
           {sortedItems.map((item) => (
             <React.Fragment key={item.id}>
-              <PortfolioItem item={item} />
-              <PortfolioItem item={item} showDetails />
+              <ProjectCard item={item} />
+              <ProjectCard item={item} showDetails />
             </React.Fragment>
           ))}
         </div>
 
-        {/* Desktop: Two column layout (hidden on mobile) */}
+        {/* Desktop view */}
         <div className="hidden sm:block">
           {sortedItems
             .filter((_, index) => index % 2 === 0)
             .map((item) => (
               <React.Fragment key={item.id}>
-                <PortfolioItem item={item} />
-                <PortfolioItem item={item} showDetails />
+                <ProjectCard item={item} />
+                <ProjectCard item={item} showDetails />
               </React.Fragment>
             ))}
         </div>
         <div className="hidden sm:block">
-          <div className="p-6 relative aspect-square" /> {/* Empty first cell */}
+          <div className="p-6 relative aspect-square" aria-hidden="true" /> {/* Empty first cell */}
           {sortedItems
             .filter((_, index) => index % 2 === 1)
             .map((item) => (
               <React.Fragment key={item.id}>
-                <PortfolioItem item={item} />
-                <PortfolioItem item={item} showDetails />
+                <ProjectCard item={item} />
+                <ProjectCard item={item} showDetails />
               </React.Fragment>
             ))}
         </div>
