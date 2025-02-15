@@ -15,11 +15,11 @@ export interface PortfolioItemType {
 export const portfolioItems: PortfolioItemType[] = [
   // { id: 1, name: 'Mozilla', bgColor: '#00FF85', image: '/mozilla.svg', tags: ['AI', 'Project Leader'] },
   { id: 1, name: 'Meta', href: '/works/meta', bgColor: '#FF66D4', image: '/demo-logo-thoughtful.svg', tags: ['AI', 'Project Leader'] },
-  { id: 2, name: 'Teachable', href: '/works/teachable', bgColor: '#FFAD56', image: '/teachable.svg', tags: ['AI', 'Project Leader'] },
+  { id: 2, name: 'Teachable', href: '/works/teachable', bgColor: '#FFAD56', image: '/demo-logo-2.svg', tags: ['AI', 'Project Leader'] },
   { id: 3, name: 'Compost Now', href: '/works/compostnow', bgColor: '#3E98FE', image: '/demo-logo-compostnow.png', tags: ['AI', 'Project Leader'] },
   { id: 4, name: 'Spiritune', href: '/works/spiritune', bgColor: '#36CDFF', image: '/demo-logo-spiritune.svg', tags: ['AI', 'Project Leader'] },
   { id: 5, name: 'Fractional', href: '/works/fractional', bgColor: '#FFFC3B', image: '/demo-logo-fractional.svg', tags: ['AI', 'Project Leader'] },
-  { id: 6, name: 'Cyrus', href: '/works/cyrus', bgColor: '#C44FFF', image: '/cyrus.png', tags: ['AI', 'Project Leader'] },
+  { id: 6, name: 'Cyrus', href: '/works/cyrus', bgColor: '#C44FFF', image: '/demo-logo-1.svg', tags: ['AI', 'Project Leader'] },
 ]
 
 interface PortfolioItemProps {
