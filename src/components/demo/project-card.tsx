@@ -37,19 +37,20 @@ export const portfolioItems: PortfolioItemType[] = [
 
   {
     id: 3,
-    name: 'Compost Now',
-    href: '/ui-templates/projects-page',
-    bgColor: '#3E98FE',
-    image: '/demo-logo-3.svg',
-    tags: ['AI', 'Project Leader'],
-  },
-  {
-    id: 4,
     name: 'Spiritune',
     href: '/ui-templates/projects-page',
     bgColor: '#36CDFF',
     image: '/demo-logo-spiritune.svg',
     tags: ['Frontend Engineer'],
+  },
+
+  {
+    id: 4,
+    name: 'Company',
+    href: '/ui-templates/projects-page',
+    bgColor: '#3E98FE',
+    image: '/demo-logo-3.svg',
+    tags: ['AI'],
   },
   {
     id: 5,
@@ -66,7 +67,7 @@ export const portfolioItems: PortfolioItemType[] = [
     href: '/ui-templates/projects-page',
     bgColor: '#C44FFF',
     image: '/demo-logo-1.svg',
-    tags: ['AI', 'Project Leader'],
+    tags: ['Design'],
   },
 ]
 
