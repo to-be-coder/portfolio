@@ -62,20 +62,6 @@ export default function Header() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/about" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
-                      onMouseEnter={() => handleHover('about')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      <span className="relative">
-                        About
-                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
-                      </span>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
                   <Link href="/ui-templates" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={cn(navigationMenuTriggerStyle(), pathname === '/ui-templates' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
@@ -85,6 +71,20 @@ export default function Header() {
                       <span className="relative">
                         UI Templates
                         <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'ui-templates' ? 'w-full' : 'w-0')}></span>
+                      </span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/about" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(navigationMenuTriggerStyle(), pathname === '/about' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
+                      onMouseEnter={() => handleHover('about')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <span className="relative">
+                        About
+                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'about' ? 'w-full' : 'w-0')}></span>
                       </span>
                     </NavigationMenuLink>
                   </Link>
@@ -141,18 +141,18 @@ export default function Header() {
                     Projects
                   </Link>
                   <Link
-                    href="/about"
-                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/about' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    About
-                  </Link>
-                  <Link
                     href="/ui-templates"
                     className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/ui-templates' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     UI Templates
+                  </Link>
+                  <Link
+                    href="/about"
+                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/about' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    About
                   </Link>
                 </div>
                 <div className="py-6">
