@@ -10,16 +10,64 @@ export interface PortfolioItemType {
   bgColor: string
   image: string
   tags: string[]
+  imageSize?: {
+    width: number
+    height: number
+  }
 }
 
 export const portfolioItems: PortfolioItemType[] = [
   // { id: 1, name: 'Mozilla', bgColor: '#00FF85', image: '/mozilla.svg', tags: ['AI', 'Project Leader'] },
-  { id: 1, name: 'Meta', href: '/works/meta', bgColor: '#FF66D4', image: '/demo-logo-thoughtful.svg', tags: ['AI', 'Project Leader'] },
-  { id: 2, name: 'Teachable', href: '/works/teachable', bgColor: '#FFAD56', image: '/demo-logo-2.svg', tags: ['AI', 'Project Leader'] },
-  { id: 3, name: 'Compost Now', href: '/works/compostnow', bgColor: '#3E98FE', image: '/demo-logo-compostnow.png', tags: ['AI', 'Project Leader'] },
-  { id: 4, name: 'Spiritune', href: '/works/spiritune', bgColor: '#36CDFF', image: '/demo-logo-spiritune.svg', tags: ['AI', 'Project Leader'] },
-  { id: 5, name: 'Fractional', href: '/works/fractional', bgColor: '#FFFC3B', image: '/demo-logo-fractional.svg', tags: ['AI', 'Project Leader'] },
-  { id: 6, name: 'Cyrus', href: '/works/cyrus', bgColor: '#C44FFF', image: '/demo-logo-1.svg', tags: ['AI', 'Project Leader'] },
+  {
+    id: 1,
+    name: 'Thoughtful',
+    href: '/ui-templates/projects-page',
+    bgColor: '#FF66D4',
+    image: '/demo-logo-thoughtful.svg',
+    tags: ['Co-Founder'],
+  },
+  {
+    id: 2,
+    name: 'Fractional',
+    href: '/ui-templates/projects-page',
+    bgColor: '#FFAD56',
+    image: '/demo-logo-fractional.svg',
+    tags: ['Founder'],
+  },
+
+  {
+    id: 3,
+    name: 'Compost Now',
+    href: '/ui-templates/projects-page',
+    bgColor: '#3E98FE',
+    image: '/demo-logo-3.svg',
+    tags: ['AI', 'Project Leader'],
+  },
+  {
+    id: 4,
+    name: 'Spiritune',
+    href: '/ui-templates/projects-page',
+    bgColor: '#36CDFF',
+    image: '/demo-logo-spiritune.svg',
+    tags: ['Frontend Engineer'],
+  },
+  {
+    id: 5,
+    name: 'Company',
+    href: '/ui-templates/projects-page',
+    bgColor: '#FFFC3B',
+    image: '/demo-logo-2.svg',
+    tags: ['Project Leader'],
+  },
+
+  {
+    id: 6,
+    name: 'Company',
+    href: '/ui-templates/projects-page',
+    bgColor: '#C44FFF',
+    image: '/demo-logo-1.svg',
+    tags: ['AI', 'Project Leader'],
+  },
 ]
 
 interface PortfolioItemProps {
@@ -36,7 +84,7 @@ const PortfolioItem = ({ item, showDetails = false }: PortfolioItemProps) => {
         <div className="p-4 relative aspect-square group" style={{ backgroundColor: bgColor }}>
           <div className="flex flex-col h-full">
             <div className="flex-1 flex items-center justify-center">
-              <Image src={image} alt={name} width={128} height={128} className="object-contain w-32 h-32 md:w-28 md:h-28 lg:w-26 lg:h-26 transition-transform duration-300 group-hover:scale-150" />
+              <Image src={image} alt={name} width={120} height={120} className="object-contain transition-transform duration-300 group-hover:scale-120" />
             </div>
             <div className="flex justify-end items-center">
               <div className="flex gap-1">
@@ -45,7 +93,7 @@ const PortfolioItem = ({ item, showDetails = false }: PortfolioItemProps) => {
                     {tag}
                   </span>
                 ))}
-                <ArrowRight className="w-6 h-6 text-gray-500 transition-all duration-300 group-hover:text-black group-hover:translate-x-2" />
+                <ArrowRight className="w-6 h-6 text-gray-500 transition-all duration-300 group-hover:text-gray-500 group-hover:translate-x-2" />
               </div>
             </div>
           </div>
