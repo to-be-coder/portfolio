@@ -11,14 +11,26 @@ export default function ProjectsPageDemo() {
             <div
               className="absolute right-0 w-[1px] h-full"
               style={{
-                background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(166, 166, 166, 0.37) 17%, rgba(155, 155, 155, 0.50) 46.5%, #9B9B9B 100%)',
+                background: `linear-gradient(
+                  180deg,
+                  rgba(255, 255, 255, 0.10) 0%,
+                  rgba(166, 166, 166, 0.37) 17%,
+                  rgba(155, 155, 155, 0.50) 46.5%,
+                  #9B9B9B 100%
+                )`,
               }}
             />
             {i === 0 && (
               <div
                 className="absolute left-0 w-[1px] h-full"
                 style={{
-                  background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(166, 166, 166, 0.37) 17%, rgba(155, 155, 155, 0.50) 46.5%, #9B9B9B 100%)',
+                  background: `linear-gradient(
+                  180deg,
+                  rgba(255, 255, 255, 0.10) 0%,
+                  rgba(166, 166, 166, 0.37) 17%,
+                  rgba(155, 155, 155, 0.50) 46.5%,
+                  #9B9B9B 100%
+                )`,
                 }}
               />
             )}
@@ -29,7 +41,7 @@ export default function ProjectsPageDemo() {
       {/* Content with flex structure */}
       <div className="relative max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="flex flex-col md:flex-row pt-20 lg:pt-30 mb-20 md:mb-0 ">
+        <div className="flex flex-col md:flex-row pt-20 lg:pt-30 mb-20 sm:-mb-20 ">
           {/* Content Section - Full width on md screens */}
           <div className="w-full md:w-1/2 px-8 lg:px-16 bg-white text-center md:text-left">
             <div className="flex flex-col items-center md:items-start justify-center h-full">

@@ -17,7 +17,6 @@ export interface PortfolioItemType {
 }
 
 export const portfolioItems: PortfolioItemType[] = [
-  // { id: 1, name: 'Mozilla', bgColor: '#00FF85', image: '/mozilla.svg', tags: ['AI', 'Project Leader'] },
   {
     id: 1,
     name: 'Thoughtful',
