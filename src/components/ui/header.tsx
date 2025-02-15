@@ -26,7 +26,7 @@ export default function Header() {
       <div className="px-8 flex justify-between py-2 " aria-label="Global">
         <div className="flex sm:flex-1">
           <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
-            <a className="text-lg font-semibold text-gray-900 font-['Helvetica_Neue']">Jessica Cheng</a>
+            <p className="text-lg font-semibold text-gray-900 font-['Helvetica_Neue']">Jessica Cheng</p>
           </Link>
         </div>
         <div className="hidden sm:flex sm:flex-1 justify-center">
@@ -75,6 +75,20 @@ export default function Header() {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/ui-templates" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(navigationMenuTriggerStyle(), pathname === '/ui-templates' && 'text-[#ff9c6a]', 'relative hover:no-underline')}
+                      onMouseEnter={() => handleHover('ui-templates')}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <span className="relative">
+                        UI Templates
+                        <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === 'ui-templates' ? 'w-full' : 'w-0')}></span>
+                      </span>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
               </div>
             </NavigationMenuList>
           </NavigationMenu>
@@ -100,7 +114,7 @@ export default function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" legacyBehavior passHref>
-                <a className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</a>
+                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
               </Link>
               <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
@@ -132,6 +146,13 @@ export default function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     About
+                  </Link>
+                  <Link
+                    href="/ui-templates"
+                    className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === '/ui-templates' ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    UI Templates
                   </Link>
                 </div>
                 <div className="py-6">
