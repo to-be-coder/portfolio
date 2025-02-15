@@ -65,7 +65,7 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
       </aside>
 
       {/* Right side - Main Content */}
-      <main className="flex-1 px-8 space-y-8">
+      <main className="flex-1 px-8 space-y-8 ">
         <nav aria-label="Breadcrumb">
           <Breadcrumb>
             <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>

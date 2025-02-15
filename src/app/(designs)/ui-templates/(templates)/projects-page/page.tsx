@@ -12,7 +12,7 @@ const CodeContent = () => {
   const [activeFile, setActiveFile] = useState('demo')
 
   return (
-    <div className="space-y-4 ">
+    <div className="space-y-4">
       <div className="flex gap-2">
         <button onClick={() => setActiveFile('demo')} className={`px-4 py-2 rounded-lg ${activeFile === 'demo' ? 'bg-zinc-800 text-white' : 'text-black hover:bg-gray-200'}`}>
           projects-page-demo.tsx
@@ -22,9 +22,11 @@ const CodeContent = () => {
         </button>
       </div>
 
-      <pre className="bg-zinc-950 text-gray-100 p-4 rounded-lg overflow-x-auto">
-        <code>{activeFile === 'demo' ? demoCode : cardCode}</code>
-      </pre>
+      <div className="relative max-w-full">
+        <pre className="bg-zinc-950 text-gray-100 p-4 rounded-lg overflow-x-scroll whitespace-pre">
+          <code className="block">{activeFile === 'demo' ? demoCode : cardCode}</code>
+        </pre>
+      </div>
     </div>
   )
 }
