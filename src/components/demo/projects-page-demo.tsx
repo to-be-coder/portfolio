@@ -27,36 +27,38 @@ export default function ProjectsPageDemo() {
         ))}
       </div>
 
-      {/* Content with same grid structure */}
+      {/* Content with flex structure */}
       <div className="relative max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="flex flex-col sm:flex-row min-h-[calc(100vh-64px)] items-center justify-center">
-          {/* Content Column */}
-          <div className="w-full px-8 lg:px-16 bg-white text-center">
-            <div className="flex flex-col items-center">
-              <h1 className="text-6xl font-bold mb-6">Our Portfolio</h1>
-              <p className="text-xl mb-16 max-w-2xl ">We deliver a product in a faster pace by solving your problems with thoughtful blueprint and clean/simple structure.</p>
-            </div>
-            {/* Stats Section */}
-            <div className="flex flex-row sm:space-x-4 justify-around">
-              <div className="text-center  flex flex-col items-center">
-                <div className="text-2xl sm:text-4xl font-semibold">12+</div>
-                <div className="text-sm sm:text-lg">Years in Business</div>
-              </div>
+        <div className="flex flex-col md:flex-row pt-20 lg:pt-30 mb-20 md:mb-0 ">
+          {/* Content Section - Full width on md screens */}
+          <div className="w-full md:w-1/2 px-8 lg:px-16 bg-white text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start justify-center h-full">
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6">Our Portfolio</h1>
+              <p className="text-xl mb-16 max-w-2xl">We deliver a product in a faster pace by solving your problems with thoughtful blueprint and clean/simple structure.</p>
 
-              <div className="text-center flex flex-col items-center">
-                <div className="text-2xl sm:text-4xl font-semibold">25+</div>
-                <div className="text-sm sm:text-lg">Products Launched</div>
-              </div>
+              {/* Stats Section */}
+              <div className="flex flex-row sm:space-x-4 justify-around w-full">
+                <div className="text-center flex flex-col items-center">
+                  <div className="text-2xl sm:text-4xl font-semibold">12+</div>
+                  <div className="text-sm sm:text-lg">Years in Business</div>
+                </div>
 
-              <div className="text-center  flex flex-col items-center">
-                <div className="text-2xl sm:text-4xl font-semibold">5+</div>
-                <div className="text-sm sm:text-lg">Clients Acquired</div>
+                <div className="text-center flex flex-col items-center">
+                  <div className="text-2xl sm:text-4xl font-semibold">25+</div>
+                  <div className="text-sm sm:text-lg">Products Launched</div>
+                </div>
+
+                <div className="text-center flex flex-col items-center">
+                  <div className="text-2xl sm:text-4xl font-semibold">5+</div>
+                  <div className="text-sm sm:text-lg">Clients Acquired</div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Empty Right Half */}
+          {/* Right Half - Hidden on mobile */}
+          <div className="hidden md:block md:w-1/2"></div>
         </div>
 
         {/* Portfolio Section */}

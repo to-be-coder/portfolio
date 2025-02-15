@@ -58,15 +58,19 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
       <aside className="w-64 hidden lg:block">
         <div className="w-64 bg-white text-black min-h-screen px-4">
           <p className="text-xl px-4 font-semibold mb-2">Components</p>
-          <Navigation items={navItems} defaultPage={'/all'} />
+          <nav>
+            <Navigation items={navItems} defaultPage={'/all'} />
+          </nav>
         </div>
       </aside>
 
       {/* Right side - Main Content */}
       <main className="flex-1 px-8 space-y-8">
-        <Breadcrumb>
-          <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>
-        </Breadcrumb>
+        <nav aria-label="Breadcrumb">
+          <Breadcrumb>
+            <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>
+          </Breadcrumb>
+        </nav>
         {children}
       </main>
     </div>
