@@ -30,7 +30,7 @@ export default function Home() {
 
           <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
             <Link href="/#projects" className="flex items-center gap-1 text-base text-gray-900 hover:text-gray-700">
-              Check Out Projects <MoveDown className="text-[#ff9c6a] w-4 h-4 stroke-[3]" />
+              Check Out Projects <MoveDown className="text-[#ff9c6a] w-4 h-4 stroke-3" />
             </Link>
           </div>
         </div>

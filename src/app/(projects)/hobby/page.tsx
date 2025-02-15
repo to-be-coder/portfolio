@@ -22,28 +22,28 @@ export default function Hobby() {
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
             {[...Array(7)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
             ))}
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-4 mt-32">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
             ))}
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-4 ">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
             ))}
           </div>
 
           {/* Column 4 */}
           <div className="flex flex-col gap-4 mt-32">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-[3/4] w-full"></div>
+              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
             ))}
           </div>
         </div>

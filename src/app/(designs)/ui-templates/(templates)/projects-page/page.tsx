@@ -15,7 +15,7 @@ const CodeContent = () => {
 export default function ProjectsGrid() {
   return (
     <div className="grid grid-cols-3 gap-4">
-      <div className="bg-white p-6 rounded-lg shadow">
+      <div className="bg-white p-6 rounded-lg shadow-sm">
         <h3 className="font-semibold mb-2">Project Alpha</h3>
         <p className="text-gray-600 mb-4">A revolutionary new app</p>
         <Button variant="outline">View Details</Button>
