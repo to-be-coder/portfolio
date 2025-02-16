@@ -9,7 +9,7 @@ export default function ComponentLayout({ children, preview, code }: { children:
         <div className=" container mx-auto  pb-8">
           {children}
 
-          <Tabs defaultValue="preview" className="max-w-[800px]">
+          <Tabs defaultValue="preview">
             <TabsList className="flex gap-4 justify-start border-b border-[#c0c0c0] mb-8 mt-2">
               <TabsTrigger
                 value="preview"

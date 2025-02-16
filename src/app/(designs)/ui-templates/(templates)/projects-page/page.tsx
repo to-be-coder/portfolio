@@ -1,5 +1,6 @@
 'use client'
 
+import { CodeBlock } from '@/components/code-block'
 import ProjectsPageDemo from '@/components/demo/projects-page-demo'
 import { useState } from 'react'
 import ComponentLayout from '../../../../../components/show-component-layout'
@@ -22,11 +23,7 @@ const CodeContent = () => {
         </button>
       </div>
 
-      <div className="relative max-w-full">
-        <pre className="bg-zinc-950 text-gray-100 p-4 rounded-lg overflow-x-scroll whitespace-pre">
-          <code className="block">{activeFile === 'demo' ? demoCode : cardCode}</code>
-        </pre>
-      </div>
+      <CodeBlock code={cardCode} maxHeight="600px" language="typescript" />
     </div>
   )
 }
