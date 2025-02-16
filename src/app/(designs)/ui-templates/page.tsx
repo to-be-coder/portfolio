@@ -1,6 +1,6 @@
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
   const resolvedParams = await params
-  const _currentPage = resolvedParams.slug?.[0] || 'ai'
+  // const currentPage = resolvedParams.slug?.[0] || 'ai'
 
   return (
     <div className="min-h-screen bg-white">
