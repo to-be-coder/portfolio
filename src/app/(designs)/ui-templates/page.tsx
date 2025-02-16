@@ -1,4 +1,5 @@
-export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
+// export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
+export default function Page() {
   // const resolvedParams = await params
   // const currentPage = resolvedParams.slug?.[0] || 'ai'
 
