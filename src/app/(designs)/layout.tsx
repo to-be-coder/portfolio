@@ -1,12 +1,15 @@
+'use client'
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
 import Navigation from '@/components/ui/side-navigation'
+import { usePathname } from 'next/navigation'
 
 // Menu items.
-const items = [
-  {
-    title: 'All',
-    url: '/ui-templates',
-    id: 'all',
-  },
+const navItems = [
+  // {
+  //   title: 'All',
+  //   url: '/ui-templates',
+  //   id: 'ui-templates',
+  // },
   {
     title: 'Projects Page',
     url: '/ui-templates/projects-page',
@@ -14,18 +17,62 @@ const items = [
   },
 ]
 export default function DesignsLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const paths = pathname.split('/').filter(Boolean)
+
+  const generateBreadcrumbs = () => {
+    const breadcrumbs: JSX.Element[] = []
+    let href = ''
+
+    paths.forEach((path, index) => {
+      href += `/${path}`
+      const formattedPath = path
+        .split('-')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+
+      if (index < paths.length - 1) {
+        breadcrumbs.push(
+          <BreadcrumbItem key={href}>
+            <BreadcrumbLink className="text-gray-500" href={href}>
+              {formattedPath}
+            </BreadcrumbLink>
+            <BreadcrumbSeparator />
+          </BreadcrumbItem>
+        )
+      } else {
+        breadcrumbs.push(
+          <BreadcrumbItem key={href}>
+            <BreadcrumbPage className="text-black">{formattedPath}</BreadcrumbPage>
+          </BreadcrumbItem>
+        )
+      }
+    })
+
+    return breadcrumbs
+  }
+
   return (
-    <div className="flex min-h-screen">
+    <div className="mt-8 flex min-h-screen  mx-auto">
       {/* Left side - Side Menu */}
       <aside className="w-64 hidden lg:block">
-        <div className="w-64 bg-white text-black min-h-screen p-4">
-          <h1 className="text-xl font-bold mb-4">Components</h1>
-          <Navigation items={items} defaultPage={'projects-page'} />
+        <div className="w-64 bg-white text-black min-h-screen px-4">
+          <p className="text-xl px-4 font-semibold mb-2">Components</p>
+          <nav>
+            <Navigation items={navItems} defaultPage={'/all'} />
+          </nav>
         </div>
       </aside>
 
       {/* Right side - Main Content */}
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 px-8 space-y-8 ">
+        <nav aria-label="Breadcrumb">
+          <Breadcrumb>
+            <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>
+          </Breadcrumb>
+        </nav>
+        {children}
+      </main>
     </div>
   )
 }

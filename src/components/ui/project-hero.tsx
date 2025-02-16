@@ -26,7 +26,7 @@ export function ProjectHero({ title, subtitle, tags, ctaText = 'Check Out the Pr
 
         <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
           <div className="flex items-center text-base text-gray-900 hover:text-gray-700">
-            {ctaText} <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-[3]" />
+            {ctaText} <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-3" />
           </div>
         </div>
       </div>
