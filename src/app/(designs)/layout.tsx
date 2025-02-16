@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation'
 
 // Menu items.
 const navItems = [
-  {
-    title: 'All',
-    url: '/ui-templates',
-    id: 'ui-templates',
-  },
+  // {
+  //   title: 'All',
+  //   url: '/ui-templates',
+  //   id: 'ui-templates',
+  // },
   {
     title: 'Projects Page',
     url: '/ui-templates/projects-page',
