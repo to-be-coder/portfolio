@@ -54,7 +54,7 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
   }
 
   return (
-    <div className="flex flex-colmt-8  max-w-7xl  min-h-screen  mx-auto">
+    <div className="flex flex-colmt-8  min-h-screen  mx-auto">
       {/* Left side - Side Menu */}
       <aside className="w-64 hidden lg:block">
         <div className="w-64 bg-white text-black min-h-screen px-4">
