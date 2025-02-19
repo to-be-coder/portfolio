@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -60,12 +61,12 @@ export default function Header() {
   return (
     <header>
       <div className="px-8 flex justify-between py-2" aria-label="Global">
-        <div className="flex sm:flex-1">
-          <Link href="/" legacyBehavior passHref className="text-lg font-semibold text-gray-900">
-            <p className="text-lg font-semibold text-gray-900 font-['Helvetica_Neue']">Jessica Cheng</p>
+        <div className="flex ">
+          <Link href="/" legacyBehavior passHref>
+            <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
           </Link>
         </div>
-        <div className="hidden sm:flex sm:flex-1 justify-center">
+        <div className="hidden sm:flex sm:flex-1 justify-end">
           <NavigationMenu>
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
@@ -73,16 +74,15 @@ export default function Header() {
                   <NavItem key={item.id} {...item} pathname={pathname} hoveredItem={hoveredItem} onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} />
                 ))}
               </div>
+              <NavigationMenuItem className="list-none flex items-center h-full">
+                <Button asChild className="bg-[#ff9c6a] ml-4 text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
+                  <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
+                </Button>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="hidden sm:flex sm:flex-1 justify-end">
-          <NavigationMenuItem className="list-none">
-            <Button asChild className="bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
-              <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
-            </Button>
-          </NavigationMenuItem>
-        </div>
+
         <div className="flex sm:hidden">
           <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <span className="sr-only">Open main menu</span>
