@@ -102,12 +102,12 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
                 <div className="grid grid-cols-2 gap-4 w-full">
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
-                  <div className="w-full h-40 bg-gray-400 rounded-lg"></div>
+                  <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+                  <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+                  <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+                  <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+                  <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+                  <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
                 </div>
               </div>
             </div>
