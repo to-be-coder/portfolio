@@ -1,4 +1,5 @@
 import CtaSection from '@/components/ui/cta'
+import Image from 'next/image'
 
 export default function Hobby() {
   return (
@@ -22,28 +23,28 @@ export default function Hobby() {
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
             {[...Array(7)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
+              <Image key={i} src={`/hobby/${i + 1}.jpg`} alt={`Hobby Image ${i + 1}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
             ))}
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-4 mt-32">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
+              <Image key={i} src={`/hobby/${i + 8}.jpg`} alt={`Hobby Image ${i + 8}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
             ))}
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-4 ">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
+              <Image key={i} src={`/hobby/${i + 16}.jpg`} alt={`Hobby Image ${i + 16}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
             ))}
           </div>
 
           {/* Column 4 */}
           <div className="flex flex-col gap-4 mt-32">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="bg-gray-300 rounded-2xl aspect-3/4 w-full"></div>
+              <Image key={i} src={`/hobby/${i + 24}.jpg`} alt={`Hobby Image ${i + 24}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
             ))}
           </div>
         </div>
