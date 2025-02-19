@@ -23,21 +23,21 @@ export default function Hobby() {
           {/* Column 1 */}
           <div className="flex flex-col gap-4">
             {[...Array(7)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
+              <Image key={i} src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="rounded-2xl min-h-[400px]" width={300} height={400} layout="responsive" />
             ))}
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-4 mt-32">
             {[...Array(7)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 8}.jpeg`} alt={`Hobby Image ${i + 8}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
+              <Image key={i} src={`/hobby-${i + 8}.jpeg`} alt={`Hobby Image ${i + 8}`} className="rounded-2xl min-h-[400px]" width={300} height={400} layout="responsive" />
             ))}
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-4">
             {[...Array(6)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 15}.jpeg`} alt={`Hobby Image ${i + 15}`} className="rounded-2xl" width={300} height={400} layout="responsive" />
+              <Image key={i} src={`/hobby-${i + 15}.jpeg`} alt={`Hobby Image ${i + 15}`} className="rounded-2xl min-h-[400px]" width={300} height={400} layout="responsive" />
             ))}
           </div>
         </div>
