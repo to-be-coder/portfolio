@@ -1,5 +1,6 @@
 'use client'
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb'
+import CtaSection from '@/components/ui/cta'
 import Navigation from '@/components/ui/side-navigation'
 import { usePathname } from 'next/navigation'
 import type { JSX } from 'react'
@@ -54,26 +55,29 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
   }
 
   return (
-    <div className="flex flex-colmt-8  min-h-screen  mx-auto">
-      {/* Left side - Side Menu */}
-      <aside className="w-64 hidden lg:block">
-        <div className="w-64 bg-white text-black min-h-screen px-4">
-          <p className="text-xl px-4 font-semibold mb-2">Components</p>
-          <nav>
-            <Navigation items={navItems} defaultPage={'/all'} />
-          </nav>
-        </div>
-      </aside>
+    <>
+      <div className="flex flex-colmt-8  min-h-screen  mx-auto">
+        {/* Left side - Side Menu */}
+        <aside className="w-64 hidden lg:block">
+          <div className="w-64 bg-white text-black min-h-screen px-4">
+            <p className="text-xl px-4 font-semibold mb-2">Components</p>
+            <nav>
+              <Navigation items={navItems} defaultPage={'/all'} />
+            </nav>
+          </div>
+        </aside>
 
-      {/* Right side - Main Content */}
-      <main className="px-8 space-y-8 ">
-        <nav aria-label="Breadcrumb">
-          <Breadcrumb>
-            <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>
-          </Breadcrumb>
-        </nav>
-        {children}
-      </main>
-    </div>
+        {/* Right side - Main Content */}
+        <main className="px-8 space-y-8 ">
+          <nav aria-label="Breadcrumb">
+            <Breadcrumb>
+              <BreadcrumbList>{generateBreadcrumbs()}</BreadcrumbList>
+            </Breadcrumb>
+          </nav>
+          {children}
+        </main>
+      </div>
+      <CtaSection />
+    </>
   )
 }
