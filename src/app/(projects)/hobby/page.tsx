@@ -11,8 +11,6 @@ export default function Hobby() {
             When I am not working...
             <br />I am a self-taught <span className="text-[#FFA149]">photographer</span> <br /> who loves <span className="text-[#FFA149]">camping</span> with my{' '}
             <span className="text-[#FFA149]">dog</span>.
-            <br />
-            (Coming Soon...)
           </h1>
         </div>
       </div>
