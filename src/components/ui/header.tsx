@@ -75,7 +75,7 @@ export default function Header() {
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
-                <Button asChild className="bg-[#ff9c6a] ml-4 text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
+                <Button asChild className=" ml-4 ">
                   <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
                 </Button>
               </NavigationMenuItem>
@@ -121,7 +121,7 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <Button asChild className="w-full bg-[#ff9c6a] text-white shadow-none border-none hover:bg-[#ff9c6a]/90 font-bold">
+                  <Button asChild className="w-full">
                     <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
                   </Button>
                 </div>
