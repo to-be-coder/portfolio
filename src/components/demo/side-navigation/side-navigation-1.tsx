@@ -31,7 +31,7 @@ export default function SideNavigationDemo() {
   const [currentPage, setCurrentPage] = useState('hone')
 
   return (
-    <nav className="w-64 h-full p-4 overflow-hidden flex flex-col justify-between bg-whitea">
+    <nav className="w-64 h-full p-4 overflow-hidden flex flex-col justify-between bg-white">
       <div className="flex justify-start items-center px-4 mb-8">
         <Image src="/thoughtful-logo.svg" alt="Logo" width={150} height={150} />
       </div>
