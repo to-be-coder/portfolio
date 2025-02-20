@@ -61,7 +61,7 @@ export default function Header() {
   return (
     <header>
       <div className="px-8 flex justify-between py-2" aria-label="Global">
-        <div className="flex ">
+        <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
             <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
           </Link>
