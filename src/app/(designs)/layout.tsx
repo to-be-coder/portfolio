@@ -1,6 +1,7 @@
 'use client'
-import CtaSection from '@/components/ui/cta'
+import { Button } from '@/components/ui/button'
 import Navigation from '@/components/ui/side-navigation'
+import Link from 'next/link'
 
 // Menu items.
 const navItems = [
@@ -39,7 +40,17 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
           <main className="px-8 space-y-8 flex-1 mx-auto ">{children}</main>
         </div>
       </div>
-      <CtaSection />
+      <div className="bg-primary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-8 md:py-16 text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">See any templates you like?</h2>
+            <p className="text-[#ffffff] mb-8">Let me know and I can make it for you!</p>
+            <Button variant={'secondary'}>
+              <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
+            </Button>
+          </section>
+        </div>
+      </div>
     </>
   )
 }
