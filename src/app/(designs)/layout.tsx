@@ -23,7 +23,7 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
           {/* Left side - Side Menu */}
           <aside className="w-64 hidden lg:block">
             <div className="w-64 bg-white text-black min-h-screen px-4">
-              <p className="text-xl px-4 font-semibold mb-2">UI Templates</p>
+              <p className="text-xl px-4 font-semibold mb-2">Collections</p>
               <nav>
                 <Navigation items={navItems} defaultPage={'/all'} />
               </nav>
