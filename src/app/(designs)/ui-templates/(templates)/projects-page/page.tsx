@@ -1,6 +1,6 @@
 'use client'
 
-import ProjectsPageDemo from '@/components/demo/projects-page-demo'
+import ProjectsPageDemo from '@/components/demo/projects-page/projects-page-demo'
 
 // const PreviewContent = () => {
 //   return <ProjectsPageDemo />

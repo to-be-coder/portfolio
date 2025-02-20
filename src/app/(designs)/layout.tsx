@@ -14,6 +14,11 @@ const navItems = [
     url: '/ui-templates/projects-page',
     id: 'projects-page',
   },
+  {
+    title: 'Side Navigation 1',
+    url: '/ui-templates/side-navigation-1',
+    id: 'side-navigation-1',
+  },
 ]
 export default function DesignsLayout({ children }: { children: React.ReactNode }) {
   return (
