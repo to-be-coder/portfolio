@@ -20,6 +20,11 @@ const navItems = [
     url: '/ui-templates/side-navigation-1',
     id: 'side-navigation-1',
   },
+  {
+    title: 'Grid Layout',
+    url: '/ui-templates/grid-layout',
+    id: 'grid-layout',
+  },
 ]
 export default function DesignsLayout({ children }: { children: React.ReactNode }) {
   return (
