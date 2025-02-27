@@ -25,11 +25,16 @@ const navItems = [
     url: '/ui-templates/grid-layout',
     id: 'grid-layout',
   },
+  {
+    title: 'Login Flow',
+    url: '/ui-templates/login-flow',
+    id: 'login-flow',
+  },
 ]
 export default function DesignsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="flex flex-col my-8  container max-w-7xl mx-auto px-8 min-h-screen ">
+      <div className="flex flex-col my-8  container max-w-7xl mx-auto  min-h-screen ">
         <div className="flex mt-8  min-h-screen  ">
           {/* Left side - Side Menu */}
           <aside className="w-64 hidden lg:block">
@@ -49,9 +54,9 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <section className="py-8 md:py-16 text-center">
             <h2 className="text-4xl font-bold text-white mb-4">See any templates you like?</h2>
-            <p className="text-[#ffffff] mb-8">Let me know and I can make it for you!</p>
+            <p className="text-[#ffffff] mb-8">Let me know how I can customize it for you!</p>
             <Button variant={'secondary'}>
-              <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
+              <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
             </Button>
           </section>
         </div>
