@@ -76,7 +76,7 @@ export default function Header() {
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
                 <Button asChild className=" ml-4 ">
-                  <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
+                  <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -122,7 +122,7 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <Button asChild className="w-full">
-                    <Link href="mailto:jessicacheng.code@gmail.com">Contact Me</Link>
+                    <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
                   </Button>
                 </div>
               </div>

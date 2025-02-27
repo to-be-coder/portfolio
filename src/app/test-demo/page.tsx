@@ -1,9 +1,9 @@
-import GridLayoutDemo from '@/components/demo/grid-layout/grid-layout-demo'
+import LoginDemo from '@/components/demo/log-in/login-demo'
 
 export default function TestDemoPage() {
   return (
     <div className="h-screen flex border-2 border-red-500">
-      <GridLayoutDemo />
+      <LoginDemo />
     </div>
   )
 }

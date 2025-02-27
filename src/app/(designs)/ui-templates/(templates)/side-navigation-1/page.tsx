@@ -3,7 +3,7 @@ import SideNavigationDemo from '@/components/demo/side-navigation/side-navigatio
 export default function SideNavigationOneDemoPage() {
   return (
     <div>
-      <h2 className="text-3xl font-bold">Projects Page</h2>
+      <h2 className="text-3xl font-bold">Side Navigation Demo</h2>
       <div className="mt-8 bg-gray-400 p-8 rounded-md">
         <div className="flex h-[700px]">
           <SideNavigationDemo />
