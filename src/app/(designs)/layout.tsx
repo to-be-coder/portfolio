@@ -54,7 +54,7 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <section className="py-8 md:py-16 text-center">
             <h2 className="text-4xl font-bold text-white mb-4">See any templates you like?</h2>
-            <p className="text-[#ffffff] mb-8">Let me know and I can make it for you!</p>
+            <p className="text-[#ffffff] mb-8">Let me know how I can customize it for you!</p>
             <Button variant={'secondary'}>
               <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
             </Button>
