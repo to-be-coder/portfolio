@@ -56,7 +56,7 @@ const LoginDemo = () => {
                   Continue
                 </Button>
               </form>
-              <p>
+              <p className="text-sm">
                 No Account yet?{' '}
                 <Link href="#" className="text-blue-500">
                   Create your Account
