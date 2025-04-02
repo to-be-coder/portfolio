@@ -82,7 +82,7 @@ export default function Header() {
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
                 <Button asChild className=" ml-4 ">
-                  <Link href={`/contact`}>Contact</Link>
+                  <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact</Link>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
