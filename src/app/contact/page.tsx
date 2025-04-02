@@ -9,7 +9,7 @@ export default function DemoPage() {
     <div className="min-h-svh p-8 container mx-auto">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-2 ">
-          <h1 className="text-5xl font-normal">Let&apos;s chat about your next project.</h1>
+          <h1 className="text-5xl font-normal">Let&apos;s get to know each other.</h1>
           <div>
             <p className="text-xl text-muted-foreground mb-6">I&apos;m a UX/UI & Frontend engineer based</p>
             <a href="mailto:jessica@thoughtful.llc">jessica@thoughtful.llc</a>
