@@ -59,7 +59,7 @@ export default function Header() {
   }
 
   return (
-    <header>
+    <header className="sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20">
       <div className="px-8 flex justify-between py-2" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
