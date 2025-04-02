@@ -31,14 +31,14 @@ const NavItem = ({ path, label, id, pathname, hoveredItem, onMouseEnter, onMouse
   <NavigationMenuItem>
     <Link href={path} legacyBehavior passHref>
       <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), pathname === path && 'text-[#ff9c6a]', 'relative hover:no-underline')}
+        className={cn(navigationMenuTriggerStyle(), pathname === path && 'text-secondary', 'relative hover:no-underline')}
         onMouseEnter={() => onMouseEnter(id)}
         onMouseLeave={onMouseLeave}
         onClick={onClick}
       >
         <span className="relative">
           {label}
-          <span className={cn('absolute bottom-0 left-0 h-0.5 bg-[#ff9c6a] transition-all duration-300', hoveredItem === id ? 'w-full' : 'w-0')}></span>
+          <span className={cn('absolute bottom-0 left-0 h-0.5 bg-secondary transition-all duration-300', hoveredItem === id ? 'w-full' : 'w-0')}></span>
         </span>
       </NavigationMenuLink>
     </Link>
@@ -76,7 +76,7 @@ export default function Header() {
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
                 <Button asChild className=" ml-4 ">
-                  <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
+                  <Link href={`/contact`}>Contact</Link>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -122,7 +122,7 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <Button asChild className="w-full">
-                    <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact Me</Link>
+                    <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`}>Contact</Link>
                   </Button>
                 </div>
               </div>

@@ -8,8 +8,9 @@
   --color-foreground: var(--foreground);
   --color-border: #e5e7eb;
 
-  --color-primary: #ff9c6a;
-  --color-secondary: #1c1c1c;
+  --color-primary: #000000;
+  --color-primary-hover: #0082e2;
+  --color-secondary: #0082e2;
 }
 
 /*
