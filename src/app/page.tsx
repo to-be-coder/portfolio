@@ -1,26 +1,24 @@
 import CtaSection from '@/components/ui/cta'
-import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container max-w-7xl mx-auto px-8 h-[90vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
             Hi I&apos;m Jessica,
             <br />
             a Design Engineer
             <br />
-            who values <span className="text-[#FF9B6A]">simple + human-centered</span>
+            who values <span className="text-secondary">simple + human-centered</span>
             <br />
             designs that create lasting connections.
           </h1>
         </div>
 
-        <div>
+        {/* <div>
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UI Design</span>
             <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
@@ -33,12 +31,12 @@ export default function Home() {
               Check Out Projects <ArrowDown className="text-[#ff9c6a] w-4 h-4 stroke-3 transition-transform group-hover:translate-y-1" />
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -63,7 +61,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8 h-[500px]">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -89,7 +87,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#212121] p-8 h-[500px]">
+        <div className="group relative overflow-hidden rounded-3xl bg-[#212121]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
