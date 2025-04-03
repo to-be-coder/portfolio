@@ -1,5 +1,5 @@
 import CtaSection from '@/components/ui/cta'
-import { ProjectHero } from '@/components/ui/project-hero'
+import { MoveDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,8 +7,29 @@ export default function LilypadPage() {
   return (
     <main>
       {/* Hero Section */}
-      <ProjectHero title="Lilypad" subtitle="EdTech Startup: Student Evaluation Service for School Districts" tags={['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management']} />
+      <div className="container mx-auto px-8 h-[90vh] flex flex-col">
+        <div className="flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">Lilypad</h1>
+          <p className="text-[32px] mt-4 text-center ">"EdTech Startup: Student Evaluation Service for School Districts</p>
+        </div>
 
+        <div>
+          <div className="flex flex-wrap gap-1 md:gap-2">
+            {['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management'].map((tag, index) => (
+              <span key={index} className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
+            <div className="flex items-center text-base text-gray-900 hover:text-gray-700">
+              Check Out the Project
+              <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-3" />
+            </div>
+          </div>
+        </div>
+      </div>
       {/* Initial Overview and Challenges Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
