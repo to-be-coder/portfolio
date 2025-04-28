@@ -12,34 +12,25 @@ import { Button } from './button'
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
   { path: '/#projects', label: 'Projects', id: 'projects' },
-  { path: '/ui-templates', label: 'UI Templates', id: 'ui-templates' },
+  { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
 ]
 
 interface NavItemProps {
   path: string
   label: string
-  id: string
   pathname: string
-  hoveredItem: string | null
-  onMouseEnter: (item: string) => void
-  onMouseLeave: () => void
   onClick?: () => void
 }
 
-const NavItem = ({ path, label, id, pathname, hoveredItem, onMouseEnter, onMouseLeave, onClick }: NavItemProps) => (
+const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
   <NavigationMenuItem>
     <Link href={path} legacyBehavior passHref>
       <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), pathname === path && 'text-secondary', 'relative hover:no-underline')}
-        onMouseEnter={() => onMouseEnter(id)}
-        onMouseLeave={onMouseLeave}
+        className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', pathname === path ? 'text-black' : 'text-gray-500', 'hover:bg-gray-100')}
         onClick={onClick}
       >
-        <span className="relative">
-          {label}
-          <span className={cn('absolute bottom-0 left-0 h-0.5 bg-secondary transition-all duration-300', hoveredItem === id ? 'w-full' : 'w-0')}></span>
-        </span>
+        <span className="relative">{label}</span>
       </NavigationMenuLink>
     </Link>
   </NavigationMenuItem>
@@ -47,16 +38,7 @@ const NavItem = ({ path, label, id, pathname, hoveredItem, onMouseEnter, onMouse
 
 export default function Header() {
   const pathname = usePathname()
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const handleHover = (item: string) => {
-    setHoveredItem(item)
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null)
-  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20">
@@ -77,7 +59,7 @@ export default function Header() {
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
                 {navigationItems.map((item) => (
-                  <NavItem key={item.id} {...item} pathname={pathname} hoveredItem={hoveredItem} onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} />
+                  <NavItem key={item.id} {...item} pathname={pathname} onClick={() => {}} />
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
