@@ -91,11 +91,11 @@ export default function Home() {
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold text-white">Other Fun Works →</h3>
-                <p className="text-lg text-white">A collection of my photography and camping adventures</p>
+                <h3 className="text-2xl font-bold">Other Fun Works →</h3>
+                <p className="text-lg">A collection of my photography and camping adventures</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Photography</span>
-                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Camping</span>
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
+                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
