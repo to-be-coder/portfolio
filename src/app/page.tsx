@@ -36,6 +36,33 @@ export default function Home() {
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
+        {/* Mozilla */}
+
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100 backdrop-blur-sm p-8 h-[500px] border border-white/20">
+          <a href="/vision-track" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+              <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/mozilla-cover.png"
+                    alt="Vision Track Project"
+                    className="rounded-lg object-contain lg:object-contain w-full h-full"
+                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start">
+                <h3 className="text-2xl font-bold">Mozilla →</h3>
+                <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
         {/* Project Vision Track */}
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-0 h-[500px] border border-white/20">
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
@@ -51,7 +78,7 @@ export default function Home() {
               <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
                 <div className="relative h-[300px] lg:h-[500px] w-full flex items-end justify-end">
                   <Image
-                    src="/test-2.jpeg"
+                    src="/vision-track-cover.png"
                     alt="Vision Track Project"
                     className="object-contain object-right-bottom"
                     width={700}
@@ -69,38 +96,41 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Mozilla */}
+        {/* Lilypad */}
 
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
-          <a href="/vision-track" className="w-full h-full">
+          <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/tes.jpeg"
-                    alt="Vision Track Project"
+                    src="/test-3.jpeg"
+                    alt="Lilypad Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
                   />
                 </div>
               </div>
-              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Vision Track →</h3>
-                <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
+              <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
+                <h3 className="text-2xl font-bold">Lilypad →</h3>
+                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
                 </div>
               </div>
             </div>
           </a>
         </div>
 
+        {/* Thoughtful */}
+
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Lilypad →</h3>
+                <h3 className="text-2xl font-bold">Thoughtful →</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -111,7 +141,7 @@ export default function Home() {
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/lilypad-cover.png"
+                    src="/test-4.jpeg"
                     alt="Lilypad Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
@@ -122,12 +152,14 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Other Fun Works */}
+
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Other Fun Works →</h3>
-                <p className="text-lg">A collection of my photography and camping adventures</p>
+                <h3 className="text-2xl font-bold">Outside of Work →</h3>
+                <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
