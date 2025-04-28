@@ -43,8 +43,8 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">Vision Track →</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -68,9 +68,9 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">Lilypad →</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -94,8 +94,8 @@ export default function Home() {
                 <h3 className="text-2xl font-bold">Other Fun Works →</h3>
                 <p className="text-lg">A collection of my photography and camping adventures</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
