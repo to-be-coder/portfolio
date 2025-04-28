@@ -7,23 +7,30 @@ export default function LilypadPage() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container mx-auto px-8 h-[90vh] flex flex-col">
-        <div className="flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center">Lilypad</h1>
-          <p className="text-[32px] mt-4 text-center ">"EdTech Startup: Student Evaluation Service for School Districts</p>
+      <div className="w-full h-[90vh] flex flex-col relative">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/lilypad-hero.jpeg" alt="Lilypad hero background" fill className="object-cover" priority />
+          <div className="absolute inset-0 bg-black/85" />
         </div>
 
-        <div>
+        {/* Content */}
+        <div className="relative z-10 flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4 px-8">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center text-white">Lilypad</h1>
+          <p className="text-[32px] mt-4 text-center text-white">&ldquo;EdTech Startup: Student Evaluation Service for School Districts&rdquo;</p>
+        </div>
+
+        <div className="relative z-10 px-8">
           <div className="flex flex-wrap gap-1 md:gap-2">
             {['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management'].map((tag, index) => (
-              <span key={index} className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">
+              <span key={index} className="rounded-full border border-white px-4 py-1 text-sm text-white">
                 {tag}
               </span>
             ))}
           </div>
 
-          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
-            <div className="flex items-center text-base text-gray-900 hover:text-gray-700">
+          <div className="border-t border-white/20 mt-4 pt-4 flex justify-end">
+            <div className="flex items-center text-base text-white hover:text-white/80">
               Check Out the Project
               <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-3" />
             </div>
