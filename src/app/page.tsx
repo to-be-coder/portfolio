@@ -36,7 +36,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -61,7 +61,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -87,7 +87,7 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#212121]/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] border border-white/20">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
