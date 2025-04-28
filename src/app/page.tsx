@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
         {/* Project Vision Track */}
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-0 h-[500px] border border-white/20">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100 backdrop-blur-sm p-0 h-[500px] border border-white/20">
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
@@ -87,7 +87,7 @@ export default function Home() {
                       maxHeight: '100%',
                       width: 'auto',
                       maxWidth: '100%',
-                      [typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'transform' : '']: 'scale(1.4)',
+                      [typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'transform' : '']: 'scale(1.8)',
                     }}
                   />
                 </div>
