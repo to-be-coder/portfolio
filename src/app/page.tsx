@@ -104,7 +104,7 @@ export default function Home() {
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/test-3.jpeg"
+                    src="/lilypad-cover.png"
                     alt="Lilypad Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
@@ -141,7 +141,7 @@ export default function Home() {
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/test-4.jpeg"
+                    src="/thoughtful-cover.png"
                     alt="Lilypad Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
