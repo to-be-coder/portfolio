@@ -52,9 +52,13 @@ const AccordionTrigger = React.forwardRef<React.ElementRef<typeof AccordionPrimi
 
     return (
       <AccordionPrimitive.Header className="flex">
-        <AccordionPrimitive.Trigger ref={handleRefAssign} className={cn('flex flex-1 items-center justify-between p-4 text-sm font-medium transition-all text-left', className)} {...props}>
+        <AccordionPrimitive.Trigger
+          ref={handleRefAssign}
+          className={cn('flex flex-1 items-center justify-between p-4 text-sm font-medium transition-all duration-300 text-left', className)}
+          {...props}
+        >
           {children}
-          <span className={cn('transition-transform duration-200', isOpen && 'rotate-180')}>
+          <span className={cn('transition-transform duration-300', isOpen && 'rotate-180')}>
             {isOpen ? <Minus className="h-4 w-4 shrink-0 text-muted-foreground" /> : <Plus className="h-4 w-4 shrink-0 text-muted-foreground" />}
           </span>
         </AccordionPrimitive.Trigger>
@@ -66,7 +70,11 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
 const AccordionContent = React.forwardRef<React.ElementRef<typeof AccordionPrimitive.Content>, React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>>(
   ({ className, children, ...props }, ref) => (
-    <AccordionPrimitive.Content ref={ref} className="overflow-hidden text-sm p-4 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" {...props}>
+    <AccordionPrimitive.Content
+      ref={ref}
+      className="overflow-hidden text-sm p-4 transition-all duration-300 ease-in-out data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      {...props}
+    >
       <div className={cn('pb-4 pt-0', className)}>{children}</div>
     </AccordionPrimitive.Content>
   )
