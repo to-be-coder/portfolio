@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap') layer(utilities);
 @import url('https://fonts.googleapis.com/css2?family=Libra+Franklin:wght@400;500;600;700&display=swap') layer(utilities);
+/*
+  ---break---
+*/
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-background: var(--background);
@@ -134,4 +138,38 @@ h6 {
 /* https://stackoverflow.com/questions/32035406/how-to-limit-pre-tag-width-inside-flex-container#comment126297471_32038209 */
 * {
   min-width: 0;
+}
+/*
+  ---break---
+*/
+@theme inline {
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+/*
+  ---break---
+*/
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
