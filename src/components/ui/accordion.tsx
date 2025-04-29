@@ -54,7 +54,7 @@ const AccordionTrigger = React.forwardRef<React.ElementRef<typeof AccordionPrimi
       <AccordionPrimitive.Header className="flex">
         <AccordionPrimitive.Trigger
           ref={handleRefAssign}
-          className={cn('flex flex-1 items-center justify-between p-4 text-sm font-medium transition-all duration-300 text-left', className)}
+          className={cn('flex flex-1 items-center justify-between p-4 text-base font-semibold transition-all duration-300 text-left', className)}
           {...props}
         >
           {children}

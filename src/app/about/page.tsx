@@ -54,17 +54,26 @@ export default function About() {
     <>
       <main>
         {/* Hero Section */}
-        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-8 h-[calc(100vh-80px)]">
-          <div className="grid md:grid-cols-3 gap-12 items-center">
+        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-8 lg:h-[calc(100vh-80px)] ">
+          <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="md:col-span-2">
-              <h1 className="text-4xl font-bold mb-6 md:mb-8">Hi, I&apos;m Jessica Cheng</h1>
-              <p className="text-Black">
-                A <span className="font-semibold">Product Designer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
-                <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
-                let me translate insights into real, working solutions. Whether I&apos;m
-                <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
-                friction so people can just get things done.
-              </p>
+              <h1 className="text-2xl font-bold mb-6 md:mb-8 block md:hidden">Hi, I&apos;m Jessica Cheng</h1>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4 justify-between ">
+                <div className="order-2 md:order-1 w-full col-span-2">
+                  <h1 className="text-4xl font-bold mb-6 md:mb-8 hidden md:block">Hi, I&apos;m Jessica Cheng</h1>
+                  <p className="text-Black">
+                    A <span className="font-semibold">Product Designer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
+                    <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
+                    let me translate insights into real, working solutions. Whether I&apos;m
+                    <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
+                    friction so people can just get things done.
+                  </p>
+                </div>
+                <div className="stack space-y-4 h-full block lg:hidden order-1 md:order-2 w-fit col-span-1">
+                  <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-full  w-full md:w-fit h-automd:h-[300px]" />
+                </div>
+              </div>
               <Accordion type="single" collapsible className="w-full mt-8">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>How I can help</AccordionTrigger>
@@ -90,7 +99,7 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-lg font-regular text-[#a1a1a1]">Thoughtful (3 Years)</h3>
+                          <h3 className="text-base font-regular">Thoughtful (3 Years)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-inside space-y-2 text-Black">
@@ -104,7 +113,7 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-lg font-regular text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
+                          <h3 className="text-base font-regular]">Fractional (Co-Founder, 2023)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-inside space-y-2 Black">
@@ -126,7 +135,7 @@ export default function About() {
                   <AccordionContent>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
-                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
+                        <h3 className="text-base font-regular mb-2 md:mb-4">UX & Design</h3>
                         <ul className="list-disc list-inside space-y-1 md:space-y-2">
                           <li>User Research</li>
                           <li>Wireframing</li>
@@ -137,7 +146,7 @@ export default function About() {
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
-                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
+                        <h3 className="text-base font-regular mb-2 md:mb-4">Development</h3>
                         <ul className="list-disc list-inside space-y-1 md:space-y-2">
                           <li>HTML</li>
                           <li>CSS</li>
@@ -151,7 +160,7 @@ export default function About() {
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
-                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
+                        <h3 className="text-base font-regular mb-2 md:mb-4">Tools</h3>
                         <ul className="list-disc list-inside space-y-1 md:space-y-2">
                           <li>Figma</li>
                           <li>Adobe Photoshop/Lightroom</li>
@@ -162,7 +171,7 @@ export default function About() {
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
-                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
+                        <h3 className="text-base font-regular mb-2 md:mb-4">Languages</h3>
                         <ul className="list-disc list-inside space-y-1 md:space-y-2">
                           <li>English</li>
                           <li>Japanese</li>
@@ -185,8 +194,8 @@ export default function About() {
                 </AccordionItem>
               </Accordion>
             </div>
-            <div className="stack space-y-4 h-full">
-              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className=" object-cover rounded-lg w-full h-full" />
+            <div className="stack space-y-4 h-full hidden lg:block">
+              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-cover object-top rounded-full w-full h-[60vh]" />
             </div>
           </div>
         </section>
