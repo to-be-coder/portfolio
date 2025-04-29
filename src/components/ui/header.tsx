@@ -49,7 +49,7 @@ export default function Header() {
               <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
               <div className="flex flex-col">
                 <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                <p className="text-sm text-muted-foreground">UX/UI & Frontend Engineer</p>
+                <p className="text-sm text-muted-foreground">Produc Designer</p>
               </div>
             </div>
           </Link>

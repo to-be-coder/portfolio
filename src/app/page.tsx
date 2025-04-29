@@ -7,14 +7,13 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-center">Jessica Cheng</h1>
-          <h2 className="text-xl md:text-2 xl lg:text-2xl font-bold tracking-tight leading-tight text-center">
-            <span className="text-secondary">Product designer</span> with
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            Hi, I&apos;m Jessica Cheng
+            <br />A <span className="text-secondary">product designer</span>
             <br />
-            <span className="text-secondary">front-end</span> skills and a <span className="text-secondary">psychology</span> background,
-            <br />
-            creating human-centered experiences through a <span className="text-secondary">multicultural</span> lens.
-          </h2>
+            that <span className="text-secondary">codes</span>
+          </h1>
+          <p className="text-lg">Lived in Israel, Japan, Taiwan, CO, NC, NJ, NY</p>
         </div>
         {/* <div>
           <div className="flex flex-wrap gap-2">
