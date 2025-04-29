@@ -1,44 +1,43 @@
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@radix-ui/react-label'
+import CtaSection from '@/components/ui/cta'
+import { Mail } from 'lucide-react'
+import Image from 'next/image'
 
 export default function DemoPage() {
   return (
-    <div className="min-h-svh p-8 container mx-auto">
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="flex flex-col gap-2 ">
-          <h1 className="text-5xl font-normal">Let&apos;s get to know each other.</h1>
-          <div>
-            <p className="text-xl text-muted-foreground mb-6">I&apos;m a UX/UI & Frontend engineer based</p>
-            <a href="mailto:jessica@thoughtful.llc">jessica@thoughtful.llc</a>
+    <main>
+      <div className="min-h-svh p-8 container mx-auto flex flex-col gap-8 justify-between">
+        <div className="flex flex-1">
+          <div className="mx-auto flex flex-col gap-8 justify-center items-center">
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <h1 className="text-5xl font-normal">Let&apos;s get to know each other.</h1>
+              <div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-6 h-6" />
+                  <a href="mailto:jessica@thoughtful.llc">jessica@thoughtful.llc</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="flex items-center">
-          <Card className="p-6 w-full">
-            <form className="space-y-6">
-              <div>
-                <Label htmlFor="firstName">Name</Label>
-                <Input id="firstName" required />
-              </div>
-              <div>
-                <Label htmlFor="workEmail">Email</Label>
-                <Input id="workEmail" type="email" required />
-              </div>
-              <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Type your message here." />
-              </div>
-
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form>
-          </Card>
+        <div className="flex justify-center items-center">
+          <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+        </div>
+        <div className="flex justify-center items-center">
+          <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
+          <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="w-full h-40 rounded-lg object-cover" />
         </div>
       </div>
-    </div>
+
+      <CtaSection />
+    </main>
   )
 }
