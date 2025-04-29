@@ -54,7 +54,7 @@ export default function About() {
     <>
       <main>
         {/* Hero Section */}
-        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16 space-y-8 sm:space-y-8 md:space-y-8">
+        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-8 h-[calc(100vh-80px)]">
           <div className="grid md:grid-cols-3 gap-12 items-center">
             <div className="md:col-span-2">
               <h1 className="text-4xl font-bold mb-6 md:mb-8">Hi, I&apos;m Jessica Cheng</h1>
@@ -65,172 +65,132 @@ export default function About() {
                 <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
                 friction so people can just get things done.
               </p>
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full mt-8">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                  <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+                  <AccordionTrigger>How I can help</AccordionTrigger>
+                  <AccordionContent>
+                    Having worked as a consultant for early-stage startups, I know firsthand how messy and iterative finding product–market fit can be. I&apos;m comfortable navigating ambiguity,
+                    aligning with stakeholders, and evolving designs through continuous feedback. From research and strategy to UI/UX and testing, I help move ideas forward—building focused, usable
+                    products across web and mobile, fast.
+                  </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>Is it styled?</AccordionTrigger>
-                  <AccordionContent>Yes. It comes with default styles that matches the other components&apos; aesthetic.</AccordionContent>
+                  <AccordionTrigger>Empathy-Driven Approach</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-Black">
+                      Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
+                      listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
+                      <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
+                    </p>
+                  </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>Is it animated?</AccordionTrigger>
-                  <AccordionContent>Yes. It's animated by default, but you can disable it if you prefer.</AccordionContent>
+                  <AccordionTrigger>Experience Highlights</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="col-span-1">
+                          <h3 className="text-lg font-regular text-[#a1a1a1]">Thoughtful (3 Years)</h3>
+                        </div>
+                        <div className="md:col-span-2">
+                          <ul className="list-disc list-inside space-y-2 text-Black">
+                            <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
+                            <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Interviewed */}
+                    <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="col-span-1">
+                          <h3 className="text-lg font-regular text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
+                        </div>
+                        <div className="md:col-span-2">
+                          <ul className="list-disc list-inside space-y-2 Black">
+                            <li>
+                              <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
+                            </li>
+                            <li>
+                              <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
+                              maintaining consistency and clarity.
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>Core Skills</AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
+                      <div className="border-t border-[#C1C1C1] pt-[4px]">
+                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
+                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
+                          <li>User Research</li>
+                          <li>Wireframing</li>
+                          <li>Prototyping</li>
+                          <li>Design Systems</li>
+                          <li>Usability Testing</li>
+                        </ul>
+                      </div>
+
+                      <div className="border-t border-[#C1C1C1] pt-[4px]">
+                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
+                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>JavaScript</li>
+                          <li>TypeScript</li>
+                          <li>React.js</li>
+                          <li>Next.js</li>
+                          <li>Node.js</li>
+                          <li>Python</li>
+                        </ul>
+                      </div>
+
+                      <div className="border-t border-[#C1C1C1] pt-[4px]">
+                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
+                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
+                          <li>Figma</li>
+                          <li>Adobe Photoshop/Lightroom</li>
+                          <li>Webflow</li>
+                          <li>ChatGPT</li>
+                          <li>Visual Studio Code</li>
+                        </ul>
+                      </div>
+
+                      <div className="border-t border-[#C1C1C1] pt-[4px]">
+                        <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
+                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
+                          <li>English</li>
+                          <li>Japanese</li>
+                          <li>Chinese (Mandarin)</li>
+                          <li>Taiwanese</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5">
+                  <AccordionTrigger>Outside of Work</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-black">
+                      When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
+                      <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries
+                      and AI tools to make design workflows smarter and more efficient.
+                    </p>
+                  </AccordionContent>
                 </AccordionItem>
               </Accordion>
-              <p className="text-Black">
-                Having worked as a consultant for early-stage startups, I know firsthand how messy and iterative finding product–market fit can be. I’m comfortable navigating ambiguity, aligning with
-                stakeholders, and evolving designs through continuous feedback. From research and strategy to UI/UX and testing, I help move ideas forward—building focused, usable products across web
-                and mobile, fast.
-              </p>
             </div>
             <div className="stack space-y-4 h-full">
-              <div className="grid grid-cols-8 gap-3 h-auto">
-                <Image src="/profile.jpg" alt="Profile image" width={200} height={200} className="col-span-5 object-cover rounded-lg w-full h-[280px]" />
-                <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
-              </div>
-              <div className="hidden md:grid grid-cols-8 gap-3 h-auto">
-                <div className="w-full h-full bg-[#FFA813] rounded-lg col-span-3"></div>
-                <Image src="/profile-2.jpg" alt="Profile image" width={100} height={100} className="col-span-5 object-cover rounded-lg w-full h-[100px]" />
-              </div>
+              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className=" object-cover rounded-lg w-full h-full" />
             </div>
           </div>
         </section>
 
-        {/* Content Section with Sidebar */}
-        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-16">
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar */}
-            <aside className="hidden lg:block w-64 sticky top-4" style={{ height: 'min-content' }}>
-              <nav className="space-y-4">
-                {menuItems.map(({ id, label }) => (
-                  <button
-                    key={id}
-                    onClick={() => scrollToSection(id)}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${activeSection === id ? 'bg-black text-white' : 'text-Black hover:text-gray-900 hover:bg-gray-100'}`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </nav>
-            </aside>
-
-            {/* Main Content */}
-            <div className="flex-1 space-y-16 md:space-y-24 lg:space-y-32">
-              <section id="empathy" className="scroll-mt-10">
-                <h2 className="text-2xl font-bold mb-4 md:mb-6">Empathy-Driven Approach</h2>
-                <p className="text-Black">
-                  Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
-                  listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
-                  <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
-                </p>
-              </section>
-
-              {/* Experience Highlights */}
-              <section id="experience" className="scroll-mt-10">
-                <div className="relative">
-                  <h2 className="text-2xl font-bold mb-4 md:mb-6">Experience Highlights</h2>
-
-                  {/* Interviewed */}
-                  <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="col-span-1">
-                        <h3 className="text-lg font-regular text-[#a1a1a1]">Thoughtful (3 Years)</h3>
-                      </div>
-                      <div className="md:col-span-2">
-                        <ul className="list-disc list-inside space-y-2 text-Black">
-                          <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
-                          <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Interviewed */}
-                  <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="col-span-1">
-                        <h3 className="text-lg font-regular text-[#a1a1a1]">Fractional (Co-Founder, 2023)</h3>
-                      </div>
-                      <div className="md:col-span-2">
-                        <ul className="list-disc list-inside space-y-2 Black">
-                          <li>
-                            <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
-                          </li>
-                          <li>
-                            <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
-                            maintaining consistency and clarity.
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section id="skills" className="scroll-mt-10">
-                <h2 className="text-2xl font-bold mb-4 md:mb-6">Core Skills</h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
-                  <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">UX & Design</h3>
-                    <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                      <li>User Research</li>
-                      <li>Wireframing</li>
-                      <li>Prototyping</li>
-                      <li>Design Systems</li>
-                      <li>Usability Testing</li>
-                    </ul>
-                  </div>
-
-                  <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Development</h3>
-                    <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                      <li>HTML</li>
-                      <li>CSS</li>
-                      <li>JavaScript</li>
-                      <li>TypeScript</li>
-                      <li>React.js</li>
-                      <li>Next.js</li>
-                      <li>Node.js</li>
-                      <li>Python</li>
-                    </ul>
-                  </div>
-
-                  <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Tools</h3>
-                    <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                      <li>Figma</li>
-                      <li>Adobe Photoshop/Lightroom</li>
-                      <li>Webflow</li>
-                      <li>ChatGPT</li>
-                      <li>Visual Studio Code</li>
-                    </ul>
-                  </div>
-
-                  <div className="border-t border-[#C1C1C1] pt-[4px]">
-                    <h3 className="text-lg font-regular text-[#a1a1a1] mb-2 md:mb-4">Languages</h3>
-                    <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                      <li>English</li>
-                      <li>Japanese</li>
-                      <li>Chinese (Mandarin)</li>
-                      <li>Taiwanese</li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
-
-              <section id="outside" className="mb-4 md:mb-6 scroll-mt-10">
-                <h2 className="text-2xl font-bold mb-4 md:mb-6">Outside of Work</h2>
-                <p className="text-black">
-                  When I&apos;m not designing, I&apos;m often <span className="font-semibold">hiking with my dog (Dr. Fizzy)</span>, exploring national parks, or
-                  <span className="font-semibold"> camping</span> and capturing new landscapes on <span className="font-semibold">camera</span>. I also love experimenting with new coding libraries and
-                  AI tools to make design workflows smarter and more efficient.
-                </p>
-              </section>
-            </div>
-          </div>
-        </section>
         <CtaSection />
       </main>
     </>
