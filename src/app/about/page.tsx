@@ -1,4 +1,5 @@
 'use client'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -58,11 +59,30 @@ export default function About() {
             <div className="md:col-span-2">
               <h1 className="text-4xl font-bold mb-6 md:mb-8">Hi, I&apos;m Jessica Cheng</h1>
               <p className="text-Black">
-                A <span className="font-semibold">Design Engineer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
+                A <span className="font-semibold">Product Designer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
                 <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
                 let me translate insights into real, working solutions. Whether I&apos;m
                 <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
                 friction so people can just get things done.
+              </p>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                  <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Is it styled?</AccordionTrigger>
+                  <AccordionContent>Yes. It comes with default styles that matches the other components&apos; aesthetic.</AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Is it animated?</AccordionTrigger>
+                  <AccordionContent>Yes. It's animated by default, but you can disable it if you prefer.</AccordionContent>
+                </AccordionItem>
+              </Accordion>
+              <p className="text-Black">
+                Having worked as a consultant for early-stage startups, I know firsthand how messy and iterative finding product–market fit can be. I’m comfortable navigating ambiguity, aligning with
+                stakeholders, and evolving designs through continuous feedback. From research and strategy to UI/UX and testing, I help move ideas forward—building focused, usable products across web
+                and mobile, fast.
               </p>
             </div>
             <div className="stack space-y-4 h-full">
