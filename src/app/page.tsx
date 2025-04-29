@@ -7,17 +7,15 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Hi I&apos;m Jessica,
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-center">Jessica Cheng</h1>
+          <h2 className="text-xl md:text-2 xl lg:text-2xl font-bold tracking-tight leading-tight text-center">
+            <span className="text-secondary">Product designer</span> with
             <br />
-            a Design Engineer
+            <span className="text-secondary">front-end</span> skills and a <span className="text-secondary">psychology</span> background,
             <br />
-            who values <span className="text-secondary">simple + human-centered</span>
-            <br />
-            designs that create lasting connections.
-          </h1>
+            creating human-centered experiences through a <span className="text-secondary">multicultural</span> lens.
+          </h2>
         </div>
-
         {/* <div>
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UI Design</span>
