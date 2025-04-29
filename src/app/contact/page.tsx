@@ -1,4 +1,5 @@
 import { Marquee } from '@/components/magicui/marquee'
+import { Button } from '@/components/ui/button'
 import CtaSection from '@/components/ui/cta'
 import { Mail } from 'lucide-react'
 import Image from 'next/image'
@@ -25,23 +26,23 @@ export default function DemoPage() {
 
   return (
     <main>
-      <div className="container max-w-7xl mx-auto px-8 h-[50vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[55vh] flex flex-col">
         <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center">
           <div className="flex flex-col gap-8 justify-center items-center">
-            <h1 className="text-5xl font-normal">Let&apos;s get to know each other.</h1>
+            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s get to know each other.</h1>
             <div>
-              <div className="flex items-center gap-2">
+              <Button className="flex items-center gap-2" variant="contact">
                 <Mail className="w-6 h-6" />
-                <a href="mailto:jessica@thoughtful.llc" className="text-blue-600 hover:text-blue-800 text-xl font-medium">
+                <a href="mailto:jessica@thoughtful.llc" className="text-secondary hover:text-secondary text-xl font-medium">
                   jessica@thoughtful.llc
                 </a>
-              </div>
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mb-8">
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden mb-4">
         <Marquee className="[--duration:60s]">
           {firstRow.map((image, index) => (
             <div key={index} className="mx-2">
