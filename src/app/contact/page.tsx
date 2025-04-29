@@ -28,12 +28,14 @@ export default function DemoPage() {
       <div className="min-h-svh p-8 container mx-auto flex flex-col gap-8 justify-between">
         <div className="flex flex-1">
           <div className="mx-auto flex flex-col gap-8 justify-center items-center">
-            <div className="flex flex-col gap-2 justify-center items-center">
+            <div className="flex flex-col gap-8 justify-center items-center">
               <h1 className="text-5xl font-normal">Let&apos;s get to know each other.</h1>
               <div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-6 h-6" />
-                  <a href="mailto:jessica@thoughtful.llc">jessica@thoughtful.llc</a>
+                  <a href="mailto:jessica@thoughtful.llc" className="text-blue-600 hover:text-blue-800 text-xl font-medium">
+                    jessica@thoughtful.llc
+                  </a>
                 </div>
               </div>
             </div>
