@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="w-full bg-[#1C1C1C]">
       <div className="container max-w-7xl mx-auto px-8 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex gap-4 flex-1 justify-center items-center">
+          <div className="flex gap-4 flex-1 items-center">
             <Link href="/#projects" className="text-white hover:text-secondary">
               Projects
             </Link>
