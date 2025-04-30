@@ -49,7 +49,7 @@ export default function Header() {
               <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
               <div className="flex flex-col">
                 <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                <p className="text-sm text-muted-foreground">Produc Designer</p>
+                <p className="text-sm text-muted-foreground">Product Designer</p>
               </div>
             </div>
           </Link>
@@ -63,7 +63,7 @@ export default function Header() {
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
-                <Button asChild className=" ml-4 ">
+                <Button variant="default" className=" ml-4 ">
                   <Link href={`/contact`}>Contact</Link>
                 </Button>
               </NavigationMenuItem>

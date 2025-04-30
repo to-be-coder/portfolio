@@ -1,6 +1,5 @@
-import { Linkedin } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from './button'
 
 export default function Footer() {
   return (
@@ -17,10 +16,9 @@ export default function Footer() {
             <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`} className="text-white hover:text-secondary">
               Contact
             </Link>
-            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-secondary" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="rounded-full aspect-square">
-                <Linkedin className="w-5 h-5" />
-              </Button>
+            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-secondary flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <ArrowUpRight className="w-4 h-4 hover:text-secondary" />
             </Link>
           </div>
           <div className="flex-1 flex justify-end">
