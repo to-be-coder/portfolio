@@ -35,7 +35,7 @@ export default function Home() {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px]0 hover:shadow-lg hover:shadow-gray-300">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -48,8 +48,8 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Mozilla →</h3>
+              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla →</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
@@ -61,11 +61,11 @@ export default function Home() {
         </div>
 
         {/* Project Vision Track */}
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] hover:shadow-lg hover:shadow-gray-300">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
-                <h3 className="text-2xl font-bold">Vision Track →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track →</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
@@ -95,7 +95,7 @@ export default function Home() {
 
         {/* Lilypad */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] hover:shadow-lg hover:shadow-gray-300">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -109,7 +109,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
-                <h3 className="text-2xl font-bold">Lilypad →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad →</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -123,11 +123,11 @@ export default function Home() {
 
         {/* Thoughtful */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-lg hover:shadow-gray-300">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Thoughtful →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful →</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -151,11 +151,11 @@ export default function Home() {
 
         {/* Other Fun Works */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-lg hover:shadow-gray-300">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Outside of Work →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work →</h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
