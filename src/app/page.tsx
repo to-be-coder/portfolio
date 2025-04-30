@@ -13,7 +13,6 @@ export default function Home() {
             <br />
             that <span className="text-secondary">codes</span>
           </h1>
-          <p className="text-lg">Lived in Israel, Japan, Taiwan, CO, NC, NJ, NY</p>
         </div>
         {/* <div>
           <div className="flex flex-wrap gap-2">
