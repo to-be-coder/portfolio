@@ -8,8 +8,8 @@ export default function Home() {
       <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Hi, I&apos;m Jessica Cheng
-            <br />A <span className="text-secondary">product designer</span>
+            Hi, I&apos;m Jessica Cheng,
+            <br />a <span className="text-secondary">product designer</span>
             <br />
             that <span className="text-secondary">codes</span>
           </h1>
@@ -34,7 +34,7 @@ export default function Home() {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-md hover:shadow-gray-300 group">
           <a href="/vision-track" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* Project Vision Track */}
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] hover:shadow-md hover:shadow-gray-300 group">
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
@@ -94,7 +94,7 @@ export default function Home() {
 
         {/* Lilypad */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] hover:shadow-md hover:shadow-gray-300 group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -122,7 +122,7 @@ export default function Home() {
 
         {/* Thoughtful */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-md hover:shadow-gray-300 group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -150,7 +150,7 @@ export default function Home() {
 
         {/* Other Fun Works */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-xl hover:shadow-gray-300 group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] hover:shadow-md hover:shadow-gray-300 group">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">

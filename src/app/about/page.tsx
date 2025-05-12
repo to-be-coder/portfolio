@@ -71,7 +71,7 @@ export default function About() {
                   </p>
                 </div>
                 <div className="stack space-y-4 h-full block lg:hidden order-1 md:order-2 w-fit col-span-1">
-                  <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-full  w-full md:w-fit h-automd:h-[300px]" />
+                  <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-automd:h-[300px]" />
                 </div>
               </div>
               <Accordion type="single" collapsible className="w-full mt-8">
@@ -194,8 +194,8 @@ export default function About() {
                 </AccordionItem>
               </Accordion>
             </div>
-            <div className="stack space-y-4 h-full hidden lg:block">
-              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-cover object-top rounded-full w-full h-[60vh]" />
+            <div className="stack space-y-4 h-full hidden lg:block pb-2">
+              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-cover object-top rounded-xl w-full h-full" />
             </div>
           </div>
         </section>
