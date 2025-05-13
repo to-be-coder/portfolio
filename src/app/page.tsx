@@ -41,14 +41,14 @@ export default function Home() {
                 <div className="relative w-full h-full">
                   <Image
                     src="/mozilla-cover.png"
-                    alt="Vision Track Project"
+                    alt="Mozilla Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
                   />
                 </div>
               </div>
               <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
@@ -64,7 +64,7 @@ export default function Home() {
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
@@ -108,7 +108,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -126,7 +126,7 @@ export default function Home() {
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -154,7 +154,7 @@ export default function Home() {
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work →</h3>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work</h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
