@@ -20,7 +20,7 @@ export default function DemoPage() {
 
   return (
     <main>
-      <div className="container max-w-7xl mx-auto px-8 h-[65vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[63vh] flex flex-col">
         <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center">
           <div className="flex flex-col gap-8 justify-center items-center">
             <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s create thoughtful experiences.</h1>
@@ -40,13 +40,10 @@ export default function DemoPage() {
         <Marquee className="[--duration:60s]">
           {firstRow.map((image, index) => (
             <div key={index} className="mx-2">
-              <Image src={image.src} alt={image.alt} width={500} height={400} className="w-80 h-55 rounded-lg object-cover" />
+              <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
             </div>
           ))}
         </Marquee>
-
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
       </div>
 
       <CtaSection />
