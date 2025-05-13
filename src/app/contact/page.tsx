@@ -1,7 +1,6 @@
 import { Marquee } from '@/components/magicui/marquee'
 import { Button } from '@/components/ui/button'
 import CtaSection from '@/components/ui/cta'
-import { Mail } from 'lucide-react'
 import Image from 'next/image'
 
 export default function DemoPage() {
@@ -26,8 +25,7 @@ export default function DemoPage() {
             <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&rsquo;s create thoughtful experiences.</h1>
             <div>
               <Button className="flex items-center gap-2 group" variant="contact">
-                <Mail className="w-6 h-6 group-hover:text-secondary/80" />
-                <a href="mailto:jessica@thoughtful.llc" className="text-secondary group-hover:text-secondary/80 text-xl font-medium">
+                <a href="mailto:jessica@thoughtful.llc" className="text-secondary group-hover:text-[#00D3CF] text-3xl font-semibold">
                   jessica@thoughtful.llc
                 </a>
               </Button>
