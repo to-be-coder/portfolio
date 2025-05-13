@@ -7,29 +7,23 @@ import Image from 'next/image'
 export default function DemoPage() {
   // Create arrays of image objects for each row
   const firstRow = [
-    { src: '/hobby-14.jpeg', alt: 'Hobby 14' },
-    { src: '/hobby-3.jpeg', alt: 'Hobby 3' },
-    { src: '/hobby-16.jpeg', alt: 'Hobby 16' },
-    { src: '/hobby-17.jpeg', alt: 'Hobby 17' },
-    { src: '/hobby-20.jpeg', alt: 'Hobby 20' },
-    { src: '/hobby-19.jpeg', alt: 'Hobby 19' },
-  ]
-
-  const secondRow = [
-    { src: '/hobby-14.jpeg', alt: 'Hobby 14' },
-    { src: '/hobby-3.jpeg', alt: 'Hobby 3' },
-    { src: '/hobby-16.jpeg', alt: 'Hobby 16' },
-    { src: '/hobby-17.jpeg', alt: 'Hobby 17' },
-    { src: '/hobby-20.jpeg', alt: 'Hobby 20' },
-    { src: '/hobby-19.jpeg', alt: 'Hobby 19' },
+    { src: '/contact-1.png', alt: 'Contact 1' },
+    { src: '/contact-2.png', alt: 'Contact 2' },
+    { src: '/contact-3.png', alt: 'Contact 3' },
+    { src: '/contact-4.png', alt: 'Contact 4' },
+    { src: '/contact-5.png', alt: 'Contact 5' },
+    { src: '/contact-6.png', alt: 'Contact 6' },
+    { src: '/contact-7.png', alt: 'Contact 7' },
+    { src: '/contact-8.png', alt: 'Contact 8' },
+    { src: '/contact-9.png', alt: 'Contact 9' },
   ]
 
   return (
     <main>
-      <div className="container max-w-7xl mx-auto px-8 h-[55vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[65vh] flex flex-col">
         <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center">
           <div className="flex flex-col gap-8 justify-center items-center">
-            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s get to know each other.</h1>
+            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s create thoughtful experiences.</h1>
             <div>
               <Button className="flex items-center gap-2" variant="contact">
                 <Mail className="w-6 h-6" />
@@ -46,17 +40,11 @@ export default function DemoPage() {
         <Marquee className="[--duration:60s]">
           {firstRow.map((image, index) => (
             <div key={index} className="mx-2">
-              <Image src={image.src} alt={image.alt} width={500} height={300} className="w-80 h-40 rounded-lg object-cover" />
+              <Image src={image.src} alt={image.alt} width={500} height={400} className="w-80 h-55 rounded-lg object-cover" />
             </div>
           ))}
         </Marquee>
-        <Marquee reverse className="[--duration:60s]">
-          {secondRow.map((image, index) => (
-            <div key={index} className="mx-2">
-              <Image src={image.src} alt={image.alt} width={500} height={300} className="w-80 h-40 rounded-lg object-cover" />
-            </div>
-          ))}
-        </Marquee>
+
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
       </div>
