@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
 
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
