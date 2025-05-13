@@ -16,9 +16,9 @@ const navItems = [
     id: 'projects-page',
   },
   {
-    title: 'Side Navigation 1',
-    url: '/ui-templates/side-navigation-1',
-    id: 'side-navigation-1',
+    title: 'Side Navigation',
+    url: '/ui-templates/side-navigation',
+    id: 'side-navigation',
   },
   {
     title: 'Grid Layout',
@@ -39,7 +39,7 @@ export default function DesignsLayout({ children }: { children: React.ReactNode 
           {/* Left side - Side Menu */}
           <aside className="w-64 hidden lg:block">
             <div className="w-64 bg-white text-black min-h-screen px-4">
-              <p className="text-xl px-4 font-semibold mb-2">Collections</p>
+              <p className="text-md px-4 font-semibold mb-2 border-b border-gray-200">Collections</p>
               <nav>
                 <Navigation items={navItems} defaultPage={'/all'} />
               </nav>

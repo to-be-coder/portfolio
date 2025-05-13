@@ -1,6 +1,6 @@
 import SideNavigationDemo from '@/components/demo/side-navigation/side-navigation-1'
 
-export default function SideNavigationOneDemoPage() {
+export default function SideNavigationDemoPage() {
   return (
     <div>
       <h2 className="text-3xl font-bold">Side Navigation Demo</h2>
