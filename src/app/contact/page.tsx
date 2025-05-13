@@ -23,7 +23,7 @@ export default function DemoPage() {
       <div className="container max-w-7xl mx-auto px-8 h-[63vh] flex flex-col">
         <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center">
           <div className="flex flex-col gap-8 justify-center items-center">
-            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s create thoughtful experiences.</h1>
+            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&rsquo;s create thoughtful experiences.</h1>
             <div>
               <Button className="flex items-center gap-2 group" variant="contact">
                 <Mail className="w-6 h-6 group-hover:text-secondary/80" />
