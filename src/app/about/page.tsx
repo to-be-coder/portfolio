@@ -2,54 +2,8 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 export default function About() {
-  const [activeSection, setActiveSection] = useState('empathy')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '-20% 0px -50% 0px',
-      }
-    )
-
-    const sections = document.querySelectorAll('section[id]')
-    sections.forEach((section) => observer.observe(section))
-
-    return () => observer.disconnect()
-  }, [])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const headerOffset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
-      setActiveSection(sectionId)
-    }
-  }
-
-  const menuItems = [
-    { id: 'empathy', label: 'Empathy-Driven Approach' },
-    { id: 'experience', label: 'Experience Highlights' },
-    { id: 'skills', label: 'Core Skills' },
-    { id: 'outside', label: 'Outside of Work' },
-  ]
-
   return (
     <>
       <main>
