@@ -17,7 +17,7 @@ export default function About() {
                 <div className="order-2 md:order-1 w-full col-span-2">
                   <h1 className="text-4xl font-bold mb-6 md:mb-8 hidden md:block">Hi, I&apos;m Jessica Cheng</h1>
                   <p className="text-Black">
-                    A <span className="font-semibold">Product Designer</span> devoted to creating digital experiences that feel second nature. My background in{' '}
+                    A <span className="font-semibold">product Designer</span> devoted to creating digital experiences that feel natural. My background in{' '}
                     <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
                     let me translate insights into real, working solutions. Whether I&apos;m
                     <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove

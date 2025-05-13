@@ -17,7 +17,7 @@ export default function LilypadPage() {
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4 px-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center text-white">Lilypad</h1>
-          <p className="text-[32px] mt-4 text-center text-white">&ldquo;EdTech Startup: Student Evaluation Service for School Districts&rdquo;</p>
+          <p className="text-[32px] mt-4 text-center text-white">EdTech Startup: Student Evaluation Service for School Districts</p>
         </div>
 
         <div className="relative z-10 px-8">
