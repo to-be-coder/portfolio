@@ -3,7 +3,7 @@ import { Button } from './button'
 
 export default function CtaSection() {
   return (
-    <div className="bg-[#1C1C1C]">
+    <div className="bg-[#181C19]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <section className="py-8 md:py-16 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s make something users will love!</h2>
