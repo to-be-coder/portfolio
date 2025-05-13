@@ -1,31 +1,24 @@
-import { Instagram, Linkedin, X } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Footer() {
   return (
     <footer className="w-full bg-[#1C1C1C]">
-      <div className="container  mx-auto px-8 py-4">
+      <div className="container max-w-7xl mx-auto px-8 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex gap-4 flex-1">
-            <Link href="/#projects" className="text-white hover:text-[#ff9c6a]">
+          <div className="flex gap-4 flex-1 items-center">
+            <Link href="/#projects" className="text-white hover:text-secondary">
               Projects
             </Link>
-            <Link href="/about" className="text-white hover:text-[#ff9c6a]">
+            <Link href="/about" className="text-white hover:text-secondary">
               About
             </Link>
-            <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`} className="text-white hover:text-[#ff9c6a]">
+            <Link href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_URL}`} className="text-white hover:text-secondary">
               Contact
             </Link>
-          </div>
-          <div className="flex gap-6 items-center flex-1 justify-center">
-            <Link href="https://x.com/_re_ux" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
-              <X className="w-5 h-5" />
-            </Link>
-            <Link href="https://www.instagram.com/mukajitu/" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
-              <Instagram className="w-5 h-5" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-[#ff9c6a]" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
+            <Link href="https://www.linkedin.com/in/jessica-cheng-design-engineer/" className="text-white hover:text-secondary flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <ArrowUpRight className="w-4 h-4 hover:text-secondary" />
             </Link>
           </div>
           <div className="flex-1 flex justify-end">

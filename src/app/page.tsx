@@ -1,26 +1,19 @@
 import CtaSection from '@/components/ui/cta'
-import { ArrowDown } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container max-w-7xl mx-auto px-8 h-[90vh] flex flex-col">
+      <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Hi I&apos;m Jessica,
-            <br />
-            a Design Engineer
-            <br />
-            who values <span className="text-[#FF9B6A]">simple + human-centered</span>
-            <br />
-            designs that create lasting connections.
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">Hi, I&apos;m Jessica Cheng,</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
+            a <span className="text-secondary">product designer </span>
+            that <span className="text-secondary">codes</span>
           </h1>
         </div>
-
-        <div>
+        {/* <div>
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UI Design</span>
             <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
@@ -33,29 +26,66 @@ export default function Home() {
               Check Out Projects <ArrowDown className="text-[#ff9c6a] w-4 h-4 stroke-3 transition-transform group-hover:translate-y-1" />
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-16 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
-        <div className="group relative overflow-hidden rounded-3xl bg-[#FFC157] p-8 h-[500px]">
-          <a href="/vision-track" className="w-full h-full">
+        {/* Mozilla */}
+
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+          <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Vision Track →</h3>
-                <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+              <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/mozilla-cover.png"
+                    alt="Mozilla Project"
+                    className="rounded-lg object-contain lg:object-contain w-full h-full"
+                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+                  />
                 </div>
               </div>
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
-                <div className="relative w-full h-full">
+              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla</h3>
+                <p className="text-lg">Coming Soon</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Prototyping</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">User flow</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* Project Vision Track */}
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+          <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
+              <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track</h3>
+                <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                </div>
+              </div>
+              <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
+                <div className="relative h-[300px] lg:h-[500px] w-full flex items-end justify-end">
                   <Image
                     src="/vision-track-cover.png"
                     alt="Vision Track Project"
-                    className="rounded-lg object-contain lg:object-contain w-full h-full"
-                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+                    className="object-contain object-right-bottom"
+                    width={700}
+                    height={600}
+                    style={{
+                      maxHeight: '100%',
+                      width: 'auto',
+                      maxWidth: '100%',
+                      [typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'transform' : '']: 'scale(1.8)',
+                    }}
                   />
                 </div>
               </div>
@@ -63,18 +93,11 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#99C4FF] p-8 h-[500px]">
+        {/* Lilypad */}
+
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold">Lilypad →</h3>
-                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
-                  <span className="inline-block rounded-full border border-black px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
-                </div>
-              </div>
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
@@ -85,19 +108,58 @@ export default function Home() {
                   />
                 </div>
               </div>
+              <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad</h3>
+                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
+                </div>
+              </div>
             </div>
           </a>
         </div>
 
-        <div className="group relative overflow-hidden rounded-3xl bg-[#212121] p-8 h-[500px]">
+        {/* Thoughtful */}
+
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+          <a href="/thoughtful" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful</h3>
+                <p className="text-lg">Coming Soon</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
+                </div>
+              </div>
+              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/thoughtful-cover.png"
+                    alt="Thoughtful Project"
+                    className="rounded-lg object-contain lg:object-contain w-full h-full"
+                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+                  />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        {/* Other Fun Works */}
+
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold text-white">Other Fun Works →</h3>
-                <p className="text-lg text-white">A collection of my photography and camping adventures</p>
+                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work</h3>
+                <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Photography</span>
-                  <span className="inline-block rounded-full border border-white px-4 py-1 text-sm text-white whitespace-nowrap">Camping</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
+                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
