@@ -195,7 +195,7 @@ export default function About() {
               </Accordion>
             </div>
             <div className="stack space-y-4 h-full hidden lg:block pb-2">
-              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-cover object-top rounded-xl w-full h-full" />
+              <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-cover object-top rounded-xl w-full min-h-[510px]" />
             </div>
           </div>
         </section>
