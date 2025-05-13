@@ -25,9 +25,9 @@ export default function DemoPage() {
           <div className="flex flex-col gap-8 justify-center items-center">
             <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&apos;s create thoughtful experiences.</h1>
             <div>
-              <Button className="flex items-center gap-2" variant="contact">
-                <Mail className="w-6 h-6" />
-                <a href="mailto:jessica@thoughtful.llc" className="text-secondary hover:text-secondary text-xl font-medium">
+              <Button className="flex items-center gap-2 group" variant="contact">
+                <Mail className="w-6 h-6 group-hover:text-secondary/80" />
+                <a href="mailto:jessica@thoughtful.llc" className="text-secondary group-hover:text-secondary/80 text-xl font-medium">
                   jessica@thoughtful.llc
                 </a>
               </Button>
