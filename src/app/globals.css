@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap') layer(utilities);
-@import url('https://fonts.googleapis.com/css2?family=Libra+Franklin:wght@400;500;600;700&display=swap') layer(utilities);
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap') layer(utilities);
 /*
   ---break---
 */
@@ -132,7 +132,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Libra Franklin', sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
 }
 
 /* https://stackoverflow.com/questions/32035406/how-to-limit-pre-tag-width-inside-flex-container#comment126297471_32038209 */

@@ -7,10 +7,9 @@ export default function Home() {
       {/* Hero Section */}
       <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            Hi, I&apos;m Jessica Cheng,
-            <br />a <span className="text-secondary">product designer</span>
-            <br />
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">Hi, I&apos;m Jessica Cheng,</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
+            a <span className="text-secondary">product designer </span>
             that <span className="text-secondary">codes</span>
           </h1>
         </div>
