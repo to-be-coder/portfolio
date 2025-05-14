@@ -30,9 +30,11 @@ interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
    * @default 4
    */
   repeat?: number
+
+  play?: boolean
 }
 
-export function Marquee({ className, reverse = false, pauseOnHover = false, children, vertical = false, repeat = 4, ...props }: MarqueeProps) {
+export function Marquee({ className, reverse = false, pauseOnHover = false, children, vertical = false, repeat = 4, play = true, ...props }: MarqueeProps) {
   return (
     <div
       {...props}
@@ -55,6 +57,7 @@ export function Marquee({ className, reverse = false, pauseOnHover = false, chil
               'animate-marquee-vertical flex-col': vertical,
               'group-hover:[animation-play-state:paused]': pauseOnHover,
               '[animation-direction:reverse]': reverse,
+              '[animation-play-state:paused]': !play,
             })}
           >
             {children}
