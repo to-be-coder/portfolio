@@ -1,44 +1,44 @@
+'use client'
 import { Marquee } from '@/components/magicui/marquee'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 
+const firstCol = [
+  { src: '/contact-1.png', alt: 'Contact 1' },
+  { src: '/contact-2.png', alt: 'Contact 2' },
+  { src: '/contact-3.png', alt: 'Contact 3' },
+  { src: '/contact-4.png', alt: 'Contact 4' },
+  { src: '/contact-5.png', alt: 'Contact 5' },
+  { src: '/contact-6.png', alt: 'Contact 6' },
+  { src: '/contact-7.png', alt: 'Contact 7' },
+  { src: '/contact-8.png', alt: 'Contact 8' },
+  { src: '/contact-9.png', alt: 'Contact 9' },
+]
+
+const twoCol = [
+  { src: '/contact-1.png', alt: 'Contact 1' },
+  { src: '/contact-2.png', alt: 'Contact 2' },
+  { src: '/contact-3.png', alt: 'Contact 3' },
+  { src: '/contact-4.png', alt: 'Contact 4' },
+  { src: '/contact-5.png', alt: 'Contact 5' },
+  { src: '/contact-6.png', alt: 'Contact 6' },
+  { src: '/contact-7.png', alt: 'Contact 7' },
+  { src: '/contact-8.png', alt: 'Contact 8' },
+  { src: '/contact-9.png', alt: 'Contact 9' },
+]
+
+const thirdCol = [
+  { src: '/contact-1.png', alt: 'Contact 1' },
+  { src: '/contact-2.png', alt: 'Contact 2' },
+  { src: '/contact-3.png', alt: 'Contact 3' },
+  { src: '/contact-4.png', alt: 'Contact 4' },
+  { src: '/contact-5.png', alt: 'Contact 5' },
+  { src: '/contact-6.png', alt: 'Contact 6' },
+  { src: '/contact-7.png', alt: 'Contact 7' },
+  { src: '/contact-8.png', alt: 'Contact 8' },
+  { src: '/contact-9.png', alt: 'Contact 9' },
+]
 export default function Home() {
-  const firstCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
-  const twoCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
-  const thirdCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
   return (
     <main>
       {/* Hero Section */}
