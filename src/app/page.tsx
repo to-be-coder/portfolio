@@ -1,5 +1,4 @@
 'use client'
-import { Marquee } from '@/components/magicui/marquee'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 
@@ -8,32 +7,16 @@ const firstCol = [
   { src: '/contact-2.png', alt: 'Contact 2' },
   { src: '/contact-3.png', alt: 'Contact 3' },
   { src: '/contact-4.png', alt: 'Contact 4' },
-  { src: '/contact-5.png', alt: 'Contact 5' },
-  { src: '/contact-6.png', alt: 'Contact 6' },
-  { src: '/contact-7.png', alt: 'Contact 7' },
-  { src: '/contact-8.png', alt: 'Contact 8' },
-  { src: '/contact-9.png', alt: 'Contact 9' },
 ]
 
 const twoCol = [
-  { src: '/contact-1.png', alt: 'Contact 1' },
-  { src: '/contact-2.png', alt: 'Contact 2' },
-  { src: '/contact-3.png', alt: 'Contact 3' },
-  { src: '/contact-4.png', alt: 'Contact 4' },
   { src: '/contact-5.png', alt: 'Contact 5' },
+  { src: '/contact-4.png', alt: 'Contact 4' },
   { src: '/contact-6.png', alt: 'Contact 6' },
-  { src: '/contact-7.png', alt: 'Contact 7' },
-  { src: '/contact-8.png', alt: 'Contact 8' },
-  { src: '/contact-9.png', alt: 'Contact 9' },
+  { src: '/contact-1.png', alt: 'Contact 1' },
 ]
 
 const thirdCol = [
-  { src: '/contact-1.png', alt: 'Contact 1' },
-  { src: '/contact-2.png', alt: 'Contact 2' },
-  { src: '/contact-3.png', alt: 'Contact 3' },
-  { src: '/contact-4.png', alt: 'Contact 4' },
-  { src: '/contact-5.png', alt: 'Contact 5' },
-  { src: '/contact-6.png', alt: 'Contact 6' },
   { src: '/contact-7.png', alt: 'Contact 7' },
   { src: '/contact-8.png', alt: 'Contact 8' },
   { src: '/contact-9.png', alt: 'Contact 9' },
@@ -42,38 +25,63 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex">
-        <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
+      <div className="container max-w-7xl mx-auto px-8 h-[90vh] flex space-x-5">
+        <div className="flex-1 flex flex-col justify-center ">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
             Hi, I&apos;m Jessica Cheng,
             <br />a <span className="text-secondary">product designer </span>
             <br />
             that <span className="text-secondary">codes</span>
           </h1>
         </div>
-        <div className="flex-1 grid grid-cols-2 gap-0 h-full overflow-hidden">
-          <div className="col-span-1">
-            <Marquee className="[--duration:60s]" vertical>
-              {firstCol.map((image, index) => (
-                <div key={index} className="mx-2">
-                  <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
-                </div>
+        <div className="flex-1 overflow-hidden relative">
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white to-transparent z-10"></div>
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
+          <div className="grid grid-cols-3 gap-4 h-full">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-4 transform -translate-y-10">
+              {firstCol.map((image, i) => (
+                <Image
+                  key={i}
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-lg object-cover w-full"
+                  width={300}
+                  height={i % 2 === 0 ? 280 : 220}
+                  style={{ height: i % 2 === 0 ? '280px' : '220px' }}
+                />
               ))}
-            </Marquee>
-          </div>
-          <div className="col-span-1">
-            <Marquee className="[--duration:60s]" vertical reverse>
-              {firstCol.map((image, index) => (
-                <div key={index} className="mx-2">
-                  <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
-                </div>
+            </div>
+
+            {/* Column 2 */}
+            <div className="flex flex-col gap-4 transform -translate-y-40">
+              {twoCol.map((image, i) => (
+                <Image
+                  key={i}
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-lg object-cover w-full"
+                  width={300}
+                  height={i % 2 === 0 ? 220 : 280}
+                  style={{ height: i % 2 === 0 ? '220px' : '280px' }}
+                />
               ))}
-            </Marquee>
-          </div>
-          <div className="col-span-1">
-            {thirdCol.map((item, index) => (
-              <Image key={index} src={item.src} alt={item.alt} width={500} height={500} className="mb-4" />
-            ))}
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex flex-col gap-4 transform -translate-y-10">
+              {thirdCol.map((image, i) => (
+                <Image
+                  key={i}
+                  src={image.src}
+                  alt={image.alt}
+                  className="rounded-lg object-cover w-full"
+                  width={300}
+                  height={i % 2 === 0 ? 260 : 240}
+                  style={{ height: i % 2 === 0 ? '260px' : '240px' }}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
