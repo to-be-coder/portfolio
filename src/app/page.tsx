@@ -51,9 +51,9 @@ export default function Home() {
             that <span className="text-secondary">codes</span>
           </h1>
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-4 h-full overflow-hidden">
+        <div className="flex-1 grid grid-cols-2 gap-0 h-full overflow-hidden">
           <div className="col-span-1">
-            <Marquee className="[--duration:60s] flex-col">
+            <Marquee className="[--duration:60s]" vertical>
               {firstCol.map((image, index) => (
                 <div key={index} className="mx-2">
                   <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
@@ -62,9 +62,13 @@ export default function Home() {
             </Marquee>
           </div>
           <div className="col-span-1">
-            {twoCol.map((item, index) => (
-              <Image key={index} src={item.src} alt={item.alt} width={500} height={500} className="mb-4" />
-            ))}
+            <Marquee className="[--duration:60s]" vertical reverse>
+              {firstCol.map((image, index) => (
+                <div key={index} className="mx-2">
+                  <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
+                </div>
+              ))}
+            </Marquee>
           </div>
           <div className="col-span-1">
             {thirdCol.map((item, index) => (
