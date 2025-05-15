@@ -1,80 +1,17 @@
-import { Marquee } from '@/components/magicui/marquee'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 
 export default function Home() {
-  const firstCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
-  const twoCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
-  const thirdCol = [
-    { src: '/contact-1.png', alt: 'Contact 1' },
-    { src: '/contact-2.png', alt: 'Contact 2' },
-    { src: '/contact-3.png', alt: 'Contact 3' },
-    { src: '/contact-4.png', alt: 'Contact 4' },
-    { src: '/contact-5.png', alt: 'Contact 5' },
-    { src: '/contact-6.png', alt: 'Contact 6' },
-    { src: '/contact-7.png', alt: 'Contact 7' },
-    { src: '/contact-8.png', alt: 'Contact 8' },
-    { src: '/contact-9.png', alt: 'Contact 9' },
-  ]
-
   return (
     <main>
       {/* Hero Section */}
-      <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex">
+      <div className="container max-w-7xl mx-auto px-8 h-[50vh] flex">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight text-center">
             Hi, I&apos;m Jessica Cheng,
             <br />a <span className="text-secondary">product designer </span>
-            <br />
             that <span className="text-secondary">codes</span>
           </h1>
-        </div>
-        <div className="flex-1 grid grid-cols-2 gap-0 h-full overflow-hidden">
-          <div className="col-span-1">
-            <Marquee className="[--duration:60s]" vertical>
-              {firstCol.map((image, index) => (
-                <div key={index} className="mx-2">
-                  <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
-                </div>
-              ))}
-            </Marquee>
-          </div>
-          <div className="col-span-1">
-            <Marquee className="[--duration:60s]" vertical reverse>
-              {firstCol.map((image, index) => (
-                <div key={index} className="mx-2">
-                  <Image src={image.src} alt={image.alt} width={500} height={400} className=" w-60 md:w-80  h-40 md:h-55 rounded-lg object-cover" />
-                </div>
-              ))}
-            </Marquee>
-          </div>
-          <div className="col-span-1">
-            {thirdCol.map((item, index) => (
-              <Image key={index} src={item.src} alt={item.alt} width={500} height={500} className="mb-4" />
-            ))}
-          </div>
         </div>
       </div>
 
@@ -96,7 +33,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla</h3>
+                <h3 className="text-4xl font-bold group-hover:text-secondary">Mozilla</h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">AI Design</span>
@@ -114,7 +51,7 @@ export default function Home() {
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track</h3>
+                <h3 className="text-4xl font-bold group-hover:text-secondary">Vision Track</h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
@@ -158,7 +95,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad</h3>
+                <h3 className="text-4xl font-bold group-hover:text-secondary">Lilypad</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -176,7 +113,7 @@ export default function Home() {
           <a href="/thoughtful" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful</h3>
+                <h3 className="text-4xl font-bold group-hover:text-secondary">Thoughtful</h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -204,7 +141,7 @@ export default function Home() {
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work</h3>
+                <h3 className="text-4xl font-bold group-hover:text-secondary">Outside of Work</h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
