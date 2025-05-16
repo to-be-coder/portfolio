@@ -34,14 +34,6 @@ export default function VisionTrackPage() {
           {/* Right Column - Team, My Role, and Time Frame */}
           <div className="space-y-8 md:space-y-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Team</h2>
-              <div className="space-y-1 md:space-y-2">
-                <p className="text-[18px]">Chris Roth</p>
-                <p className="text-[18px]">Jessica Cheng</p>
-              </div>
-            </div>
-
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mmb-2 md:mb-4">My Role</h2>
               <div className="space-y-4">
                 <div>
