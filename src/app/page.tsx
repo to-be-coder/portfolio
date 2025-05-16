@@ -20,7 +20,7 @@ export default function Home() {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-green-50 backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -34,7 +34,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
-                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent">Mozilla</h3>
+                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-green-400 group-hover:to-green-600 group-hover:bg-clip-text group-hover:text-transparent">Mozilla</h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">AI Design</span>
@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* Project Vision Track */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-blue-50 backdrop-blur-sm pl-8 pt-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
@@ -84,7 +84,7 @@ export default function Home() {
 
         {/* Lilypad */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-[#fff4ea] backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
@@ -98,7 +98,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
-                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent">Lilypad</h3>
+                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-[#ffbb88] group-hover:to-[#ff5003] group-hover:bg-clip-text group-hover:text-transparent">Lilypad</h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -112,7 +112,7 @@ export default function Home() {
 
         {/* Thoughtful */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        {/* <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
           <a href="/thoughtful" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
@@ -136,7 +136,7 @@ export default function Home() {
               </div>
             </div>
           </a>
-        </div>
+        </div> */}
 
         {/* Other Fun Works */}
 
