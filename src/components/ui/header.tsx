@@ -63,7 +63,7 @@ export default function Header() {
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
-                <Button variant="secondary" className=" ml-4" asChild>
+                <Button variant="default" className=" ml-4" asChild>
                   <Link href={`/contact`}>Contact</Link>
                 </Button>
               </NavigationMenuItem>
