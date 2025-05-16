@@ -10,7 +10,7 @@ export default function VideoBackground() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight text-center text-black/70">
-          Hi, I&apos;m Jessica Cheng,
+          Jessica Cheng,
           <br />a <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">product designer </span>
           who <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">codes</span>
         </h1>
