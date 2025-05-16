@@ -46,10 +46,10 @@ export default function Header() {
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
             <div className="flex items-center gap-1">
-              <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
+              <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
               <div className="flex flex-col">
-                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                <p className="text-sm text-muted-foreground">Product Designer</p>
+                <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                {/* <p className="text-sm text-muted-foreground">Product Designer</p> */}
               </div>
             </div>
           </Link>
