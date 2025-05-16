@@ -11,8 +11,8 @@ export default function VideoBackground() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight text-center text-black/70">
           Jessica Cheng,
-          <br />a <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent font-bold">product designer </span>
-          who <span className="bg-gradient-to-r from-orange-300 to-orange-500  bg-clip-text text-transparent font-bold">codes</span>
+          <br />a <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent font-bold">product designer </span>
+          who <span className="bg-gradient-to-r from-sky-400 to-blue-600  bg-clip-text text-transparent font-bold">codes</span>
         </h1>
       </div>
     </div>
