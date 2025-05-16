@@ -140,11 +140,11 @@ export default function Home() {
 
         {/* Other Fun Works */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-rose-50 backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent">
+                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-rose-400 group-hover:to-rose-600 group-hover:bg-clip-text group-hover:text-transparent">
                   Outside of Work
                 </h3>
                 <p className="text-lg">Camping and photography</p>
