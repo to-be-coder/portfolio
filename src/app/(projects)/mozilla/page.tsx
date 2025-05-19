@@ -90,39 +90,17 @@ export default function MozillaPage() {
       {/* Hypothesis #1 Section */}
       <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #1</h2>
-          {/* Grid for 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Target Customers */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
-              </div>
-              <p className="text-[18px]">Startups in the US.</p>
-            </div>
-            {/* Pain Points */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Assumed)</h3>
-              </div>
-              <p className="text-[18px]">Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
-            </div>
-            {/* Proposed Solution */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Proposed Solution</h3>
-              </div>
-              <p className="text-[18px]">A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
-            </div>
-          </div>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
 
           {/* Why we chose this hypothesis */}
           <div className="mt-8 md:mt-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why we chose this hypothesis?</h3>
+              <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
             </div>
             <p className="text-[18px]">
-              I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.
+              Mozilla Assist aims to be a true personal AI assistant — one that understands your preferences and routines while keeping your data secure and private. Unlike traditional assistants that
+              rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully under the user's control, even as the
+              assistant becomes increasingly personalized and context-aware.
             </p>
           </div>
         </div>
@@ -131,48 +109,50 @@ export default function MozillaPage() {
       {/* Research #1 Section */}
       <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
-
-          {/* Interviewed */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
-              </div>
-              <div className="md:col-span-2">
-                <p className="text-[18px]">5 Founders</p>
-                <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <User key={i} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research</h2>
 
           {/* Challenges */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Challenges</h3>
+                <h3 className="text-2xl font-regular text-[#a1a1a1]">Goals</h3>
               </div>
               <div className="md:col-span-2">
                 <div className="space-y-1 md:space-y-2">
-                  <div>
-                    <span className="font-semibold text-[18px]">Budget Constraints:</span>
-                    <span className="text-[18px] "> Founders often hesitate to pay for yet another tool.</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[18px]">Habitual Tools:</span>
-                    <span className="text-[18px]"> Excel is already free and familiar.</span>
-                  </div>
+                  <p className="text-[18px]">
+                    Understand the evolving landscape of personal productivity tools and uncover both user expectations and opportunities for Mozilla Assist to stand apart.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Key Takeaways */}
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="col-span-1">
+                <h3 className="text-2xl font-regular text-[#a1a1a1]">Key Takeaways</h3>
+              </div>
+              <div className="md:col-span-2">
+                <div className="space-y-1 md:space-y-2">
+                  <p className="text-[18px]">
+                    <strong>Privacy is becoming table stakes</strong> — Once a niche concern, privacy is now a mainstream marketing message. Apple, for example, has doubled down on its privacy
+                    narrative, and Anthropic leads with &quot;privacy-first AI.&quot; This shift signals rising user expectations—even from tools not historically focused on data protection.
+                  </p>
+
+                  <p className="text-[18px]">
+                    <strong>Mozilla has a unique positioning</strong> — Beyond privacy, Mozilla is trusted for its openness, neutrality, and public-interest mission. While most competitors compete on
+                    speed or convenience, Mozilla can stand out by building trust into the product&apos;s architecture and interaction model.
+                  </p>
+
+                  <p className="text-[18px]">
+                    <strong>The space is crowded but unsettled</strong> — While major players like Google, Apple, and Microsoft dominate, a new wave of startups and open-source tools is quickly
+                    gaining traction—often by focusing on simplicity, user control, or alternative business models.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           {/* Decision + Learning */}
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
