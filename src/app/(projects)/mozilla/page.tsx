@@ -10,9 +10,9 @@ export default function MozillaPage() {
         {/* Background Image with Overlay */}
 
         {/* Content */}
-        <div className="relative z-10 flex-1 flex flex-col my-10">
-          <h1 className="text-5xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assist</h1>
-          <p className="text-2xl mt-4 text-black">AI-powered browser assistant</p>
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assist</h1>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">AI-powered browser assistant</p>
         </div>
       </div>
       <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
@@ -20,7 +20,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Overview Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-8 md:space-y-12">
@@ -74,7 +74,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Hypothesis #1 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #1</h2>
           {/* Grid for 3 columns */}
@@ -115,7 +115,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Research #1 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
 
@@ -178,7 +178,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Hypothesis #2 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #2</h2>
           {/* Grid for 3 columns */}
@@ -215,7 +215,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Research #2 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #2</h2>
 
@@ -311,7 +311,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Value Propositions Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Value Propositions</h2>
 
@@ -329,7 +329,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Competitive Analysis Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Competitive Analysis</h2>
 
@@ -347,7 +347,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Reflection Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Reflection</h2>
 
@@ -365,7 +365,6 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
-
       {/* Contact Section */}
       <CtaSection />
     </main>
