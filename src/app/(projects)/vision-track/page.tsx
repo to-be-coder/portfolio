@@ -10,7 +10,7 @@ export default function VisionTrackPage() {
       <ProjectHero title="Vision Track" subtitle="Team alignment through OKRs" tags={['UX Research', 'Competitive Analysis', 'User Interviews', 'User Persona', 'B2B', 'SaaS']} />
 
       {/* Overview Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-8 md:space-y-12">
@@ -64,7 +64,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Hypothesis #1 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #1</h2>
           {/* Grid for 3 columns */}
@@ -105,7 +105,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Research #1 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
 
@@ -168,7 +168,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Hypothesis #2 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #2</h2>
           {/* Grid for 3 columns */}
@@ -205,7 +205,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Research #2 Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #2</h2>
 
@@ -301,7 +301,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Value Propositions Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Value Propositions</h2>
 
@@ -319,7 +319,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Competitive Analysis Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Competitive Analysis</h2>
 
@@ -337,7 +337,7 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Reflection Section */}
-      <div className="relative my-16 lg:my-32">
+      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Reflection</h2>
 
