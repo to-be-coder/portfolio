@@ -41,16 +41,13 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20">
+    <header className={`sticky top-0 z-50 ${mobileMenuOpen ? 'bg-white/50' : 'bg-white/50'} backdrop-blur-md border-b border-gray-200/20`}>
       <div className="px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
             <div className="flex items-center gap-1">
               <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
-              <div className="flex flex-col">
-                <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                {/* <p className="text-sm text-muted-foreground">Product Designer</p> */}
-              </div>
+              <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
             </div>
           </Link>
         </div>
@@ -80,23 +77,28 @@ export default function Header() {
           </button>
         </div>
       </div>
-      <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`} role="dialog" aria-modal="true">
-        <div className="fixed inset-0 z-50">
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-0 left-0 z-50 w-full h-full min-h-screen bg-white" role="dialog" aria-modal="true">
+          <div className="px-8 py-2 max-w-7xl mx-auto">
+            <div className="flex items-center justify-between mb-6">
               <Link href="/" legacyBehavior passHref>
-                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                <div className="flex items-center gap-1">
+                  <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
+                  <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                </div>
               </Link>
-              <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                <span className="sr-only">Close menu</span>
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              <div className="flex-1 flex justify-end">
+                <button type="button" className="rounded-md  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
+                  <span className="sr-only">Close menu</span>
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
+            <div className="flow-root">
+              <div className="divide-y divide-gray-500/10">
+                <div className="space-y-4 py-6">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.id}
@@ -110,14 +112,16 @@ export default function Header() {
                 </div>
                 <div className="py-6">
                   <Button asChild className="w-full">
-                    <Link href={`/contact`}>Contact</Link>
+                    <Link href={`/contact`} onClick={() => setMobileMenuOpen(false)}>
+                      Contact
+                    </Link>
                   </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   )
 }
