@@ -1,5 +1,4 @@
 import CtaSection from '@/components/ui/cta'
-import { MoveDown } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,36 +6,17 @@ export default function LilypadPage() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="w-full h-[90vh] flex flex-col relative">
+      <div className="w-full h-auto flex flex-col relative max-w-7xl mx-auto px-8">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image src="/lilypad-hero.jpeg" alt="Lilypad hero background" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-black/85" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4 px-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center text-white">Lilypad</h1>
-          <p className="text-[32px] mt-4 text-center text-white">EdTech Startup: Student Evaluation Service for School Districts</p>
-        </div>
-
-        <div className="relative z-10 px-8">
-          <div className="flex flex-wrap gap-1 md:gap-2">
-            {['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management'].map((tag, index) => (
-              <span key={index} className="rounded-full border border-white px-4 py-1 text-sm text-white">
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="border-t border-white/20 mt-4 pt-4 flex justify-end">
-            <div className="flex items-center text-base text-white hover:text-white/80">
-              Check Out the Project
-              <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-3" />
-            </div>
-          </div>
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Lilypad</h1>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">EdTech Startup: Student Evaluation Service for School Districts</p>
         </div>
       </div>
+      <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
+        <Image src="/lilypad-hero.png" alt="Lilypad hero background" width={1000} height={100} className="w-full flex-1 object-cover h-[100px] object-center rounded-lg" />
+      </div>
+
       {/* Initial Overview and Challenges Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
