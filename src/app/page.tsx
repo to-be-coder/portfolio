@@ -124,7 +124,7 @@ export default function Home() {
             ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80'}`}
         >
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'visionTrack' ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
@@ -139,8 +139,8 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
-                <div className="relative h-[250px] md:h-[280px] lg:h-[500px] w-full flex items-end justify-end">
+              <div className="mt-0 lg:w-2/3 h-full flex items-end justify-end absolute bottom-0 right-0 lg:relative">
+                <div className="relative h-[300px] lg:h-[400px] w-full flex items-end justify-end">
                   <Image
                     src="/vision-track-cover.png"
                     alt="Vision Track Project"
