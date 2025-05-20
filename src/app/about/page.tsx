@@ -13,7 +13,7 @@ export default function About() {
             <div className="md:col-span-2">
               <h1 className="text-2xl font-bold mb-6 md:mb-8 block md:hidden">Hi, I&apos;m Jessica Cheng</h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4 justify-between ">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 md:gap-4 gap-0 justify-between ">
                 <div className="order-2 md:order-1 w-full col-span-2">
                   <h1 className="text-4xl font-bold mb-6 md:mb-8 hidden md:block">Hi, I&apos;m Jessica Cheng</h1>
                   <p className="text-Black">
@@ -24,9 +24,9 @@ export default function About() {
                     friction so people can just get things done.
                   </p>
                 </div>
-                <div className="stack space-y-4 h-full w-full block lg:hidden order-1 md:order-2 col-span-1">
+                <div className="stack space-y-4 h-full w-full block lg:hidden order-1 md:order-2 col-span-1 mb-4 md:mb-0">
                   <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-auto md:h-[300px] hidden md:block lg:hidden" />
-                  <Image src="/profile-small.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-auto md:hidden" />
+                  <Image src="/profile-small.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl w-full md:w-fit h-auto md:hidden" />
                 </div>
               </div>
               <Accordion type="single" collapsible className="w-full mt-8">
