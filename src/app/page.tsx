@@ -11,7 +11,6 @@ export default function Home() {
   const hobbyRef = useRef<HTMLDivElement>(null)
 
   const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [isMobile, setIsMobile] = useState(false)
 
   // Set up scroll detection
   useEffect(() => {
