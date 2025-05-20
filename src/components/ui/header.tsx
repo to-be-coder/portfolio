@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
+import { Menu, X } from 'lucide-react'
 import { Button } from './button'
 
 const navigationItems = [
@@ -42,7 +43,7 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 ${mobileMenuOpen ? 'bg-white/50' : 'bg-white/50'} backdrop-blur-md border-b border-gray-200/20`}>
-      <div className="px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
+      <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
             <div className="flex items-center gap-1">
@@ -70,16 +71,13 @@ export default function Header() {
 
         <div className="flex sm:hidden">
           <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <span className="sr-only">Open main menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <Menu />
           </button>
         </div>
       </div>
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-0 left-0 z-50 w-full h-full min-h-screen bg-white" role="dialog" aria-modal="true">
-          <div className="px-8 py-2 max-w-7xl mx-auto">
+          <div className="px-4 sm:px-6 lg:px-8 py-2">
             <div className="flex items-center justify-between mb-6">
               <Link href="/" legacyBehavior passHref>
                 <div className="flex items-center gap-1">
@@ -89,10 +87,7 @@ export default function Header() {
               </Link>
               <div className="flex-1 flex justify-end">
                 <button type="button" className="rounded-md  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                  <span className="sr-only">Close menu</span>
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X />
                 </button>
               </div>
             </div>
@@ -103,7 +98,7 @@ export default function Header() {
                     <Link
                       key={item.id}
                       href={item.path}
-                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === item.path ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
+                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === item.path ? 'text-secondary' : 'text-gray-900 hover:bg-gray-50')}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
@@ -111,7 +106,7 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <Button asChild className="w-full">
+                  <Button variant="secondary" className="w-full">
                     <Link href={`/contact`} onClick={() => setMobileMenuOpen(false)}>
                       Contact
                     </Link>
