@@ -24,12 +24,12 @@ export default function Home() {
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-green-50 backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
-                <div className="relative w-full h-full ">
+              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+                <div className="relative w-full h-full">
                   <Image
                     src="/mozilla-cover.png"
                     alt="Mozilla Project"
-                    className="rounded-lg object-contain lg:object-contain w-110 h-auto ml-20"
+                    className="rounded-lg object-contain lg:object-contain w-full h-full"
                     {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
                   />
                 </div>

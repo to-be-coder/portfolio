@@ -27,7 +27,13 @@ export default function CtaSection() {
         {/* Top row */}
         <div className="absolute top-0 left-0 right-0 h-1/2 flex gap-4 p-4">
           {topRowImages.map((image, index) => (
-            <div key={index} className="relative flex-1 min-w-0">
+            <div
+              key={index}
+              className={`relative flex-1 min-w-0 ${
+                // Show only 2 photos on small screens, 3 on medium, all 5 on large
+                index >= 2 ? 'hidden md:block' : index >= 3 ? 'hidden lg:block' : ''
+              }`}
+            >
               <Image src={image.src} alt={image.alt} fill className="object-cover rounded-lg" />
             </div>
           ))}
@@ -36,7 +42,13 @@ export default function CtaSection() {
         {/* Bottom row */}
         <div className="absolute bottom-0 left-0 right-0 h-1/2 flex gap-4 p-4">
           {bottomRowImages.map((image, index) => (
-            <div key={index} className="relative flex-1 min-w-0">
+            <div
+              key={index}
+              className={`relative flex-1 min-w-0 ${
+                // Hide last image on medium screens
+                index >= 2 ? 'hidden md:block' : index >= 3 ? 'hidden lg:block' : ''
+              }`}
+            >
               <Image src={image.src} alt={image.alt} fill className="object-cover rounded-lg" />
             </div>
           ))}
