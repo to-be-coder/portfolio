@@ -95,7 +95,7 @@ export default function Home() {
         <div
           ref={mozillaRef}
           className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
-            ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 hover:bg-green-50'}`}
+            ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
@@ -129,7 +129,7 @@ export default function Home() {
         <div
           ref={visionTrackRef}
           className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
-            ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80 hover:bg-blue-50'}`}
+            ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80'}`}
         >
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
@@ -167,7 +167,7 @@ export default function Home() {
         <div
           ref={lilypadRef}
           className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
-            ${activeSection === 'lilypad' ? 'bg-[#fff4ea]' : 'bg-gray-100/80 hover:bg-[#fff4ea]'}`}
+            ${activeSection === 'lilypad' ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
         >
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
