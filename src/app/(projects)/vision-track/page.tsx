@@ -64,8 +64,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Hypothesis #1 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #1</h2>
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -105,8 +105,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Research #1 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
 
           {/* Interviewed */}
@@ -168,8 +168,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Hypothesis #2 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #2</h2>
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -205,8 +205,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Research #2 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #2</h2>
 
           {/* Interviewed */}
@@ -301,8 +301,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Value Propositions Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Value Propositions</h2>
 
           <div className="w-full flex justify-center">
@@ -319,8 +319,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Competitive Analysis Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Competitive Analysis</h2>
 
           <div className="w-full flex justify-center">
@@ -337,8 +337,8 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Reflection Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="mx-auto">
           <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Reflection</h2>
 
           <div className="space-y-4 md:space-y-8">

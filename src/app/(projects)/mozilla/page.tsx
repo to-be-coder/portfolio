@@ -21,7 +21,7 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="flex flex-col  gap-x-16 gap-y-12">
+        <div className="flex flex-col gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
