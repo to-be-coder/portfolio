@@ -63,15 +63,6 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      {/* <div className="container max-w-7xl mx-auto px-8 h-[50vh] flex">
-        <div className="flex-1 flex flex-col justify-center w-full">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-tight text-center">
-            Hi, I&apos;m Jessica Cheng,
-            <br />a <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">product designer </span>
-            who <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">codes</span>
-          </h1>
-        </div>
-      </div> */}
       <VideoBackground />
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
