@@ -24,7 +24,7 @@ export default function Home() {
         <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 hover:bg-green-50 backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] group">
           <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[400px]">
                 <div className="relative w-full h-full">
                   <Image
                     src="/mozilla-cover.png"
@@ -64,7 +64,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
-                <div className="relative h-[300px] lg:h-[500px] w-full flex items-end justify-end">
+                <div className="relative h-[250px] md:h-[280px] lg:h-[500px] w-full flex items-end justify-end">
                   <Image
                     src="/vision-track-cover.png"
                     alt="Vision Track Project"
