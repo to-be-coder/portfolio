@@ -115,10 +115,18 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">AI Design</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Web App</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Prototyping</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">User flow</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-gray-800 whitespace-nowrap`}>
+                    AI Design
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-gray-800 whitespace-nowrap`}>
+                    Web App
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-gray-800 whitespace-nowrap`}>
+                    Prototyping
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-gray-800 whitespace-nowrap`}>
+                    User flow
+                  </span>
                 </div>
               </div>
             </div>
@@ -139,8 +147,12 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    UX Research
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    B2B
+                  </span>
                 </div>
               </div>
               <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
@@ -187,9 +199,15 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    UI Design
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    Landing Page
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    Responsive Design
+                  </span>
                 </div>
               </div>
             </div>
@@ -238,8 +256,10 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
-                  <span className="inline-block rounded-sm bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-rose-50'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                    Photography
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-rose-50'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
