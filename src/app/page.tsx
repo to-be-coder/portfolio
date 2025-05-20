@@ -230,10 +230,10 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-rose-50'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>
                     Photography
                   </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-rose-50'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>Camping</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs font-medium text-black whitespace-nowrap`}>Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
