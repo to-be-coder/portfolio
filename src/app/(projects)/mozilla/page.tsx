@@ -16,7 +16,7 @@ export default function MozillaPage() {
         </div>
       </div>
       <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
-        <Image src="/mozilla-hero.png" alt="Mozilla hero background" width={1000} height={100} className="w-full flex-1 object-cover h-[100px] object-center rounded-lg" />
+        <Image src="/mozilla-hero.png" alt="Mozilla hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
       </div>
 
       {/* Overview Section */}

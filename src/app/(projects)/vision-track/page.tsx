@@ -1,5 +1,4 @@
 import CtaSection from '@/components/ui/cta'
-import { ProjectHero } from '@/components/ui/project-hero'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 
@@ -7,8 +6,16 @@ export default function VisionTrackPage() {
   return (
     <main>
       {/* Hero Section */}
-      <ProjectHero title="Vision Track" subtitle="Team alignment through OKRs" tags={['UX Research', 'Competitive Analysis', 'User Interviews', 'User Persona', 'B2B', 'SaaS']} />
-
+      <div className="w-full h-auto flex flex-col relative max-w-7xl mx-auto px-8">
+        {/* Background Image with Overlay */}
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Vision Track</h1>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">Team alignment through OKRs</p>
+        </div>
+      </div>
+      <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
+        <Image src="/vision-track-hero.png" alt="Vision Track hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
+      </div>
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
