@@ -111,7 +111,7 @@ export default function Home() {
               </div>
               <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
                 <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'mozilla' ? 'bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent' : ''}>Mozilla</span>
+                  <span className={activeSection === 'mozilla' ? 'bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent' : ''}>Mozilla</span>
                 </h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
@@ -183,7 +183,7 @@ export default function Home() {
         >
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+              <div className="flex items-center justify-center mt-0 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
                     src="/lilypad-cover.png"
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
                 <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'lilypad' ? 'bg-gradient-to-r from-[#ffbb88] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
+                  <span className={activeSection === 'lilypad' ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
                 </h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
@@ -246,13 +246,13 @@ export default function Home() {
         <div
           ref={hobbyRef}
           className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
-            ${activeSection === 'hobby' ? 'bg-rose-50' : 'bg-gray-100/80 hover:bg-rose-50'}`}
+            ${activeSection === 'hobby' ? 'bg-rose-50' : 'bg-gray-100/80'}`}
         >
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-rose-400 group-hover:to-rose-600 group-hover:bg-clip-text group-hover:text-transparent">
-                  <span className={activeSection === 'hobby' ? 'bg-gradient-to-r from-rose-400 to-rose-600 bg-clip-text text-transparent' : ''}>Outside of Work</span>
+                <h3 className="text-4xl font-bold ">
+                  <span className={activeSection === 'hobby' ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
                 </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
