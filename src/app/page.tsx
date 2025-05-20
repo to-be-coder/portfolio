@@ -13,22 +13,6 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string | null>(null)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Set up mobile detection
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
-
-    // Initial check
-    checkIfMobile()
-
-    // Add event listener for window resize
-    window.addEventListener('resize', checkIfMobile)
-
-    // Clean up
-    return () => window.removeEventListener('resize', checkIfMobile)
-  }, [])
-
   // Set up scroll detection
   useEffect(() => {
     if (typeof window === 'undefined') return
