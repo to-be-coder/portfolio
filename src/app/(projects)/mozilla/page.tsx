@@ -1,7 +1,7 @@
 import CtaSection from '@/components/ui/cta'
-import { User } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
-
+import Link from 'next/link'
 export default function MozillaPage() {
   return (
     <main>
@@ -78,11 +78,11 @@ export default function MozillaPage() {
       {/* Workflow Section */}
 
       {/* Workflow Section */}
-      <div className="relative bg-[#FFC157]">
+      <div className="relative bg-[#49DF58]">
         <div className="max-w-[1440px] mx-auto px-16 py-16 lg:py-32">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">Workflow</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center text-black">Workflow</h2>
           <div className="w-full flex justify-center">
-            <Image src="/workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
+            <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
         </div>
       </div>
@@ -261,194 +261,34 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
-      {/* Hypothesis Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Forming Hypothesis</h2>
-          {/* Grid for 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Target Customers */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
-              </div>
-              <p className="text-[18px]">SMB in the US (50-200 people).</p>
+
+      {/* Figma Exploration Section */}
+      <div className="relative bg-primary text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
+              <p className="text-[18px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+              <Link
+                href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
+                className="inline-flex items-center bg-white text-black px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check Out Figma
+                <ArrowUpRight className="ml-2 w-5 h-5" />
+              </Link>
             </div>
-            {/* Pain Points */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Identified)</h3>
-              </div>
-              <div className="space-y-1 md:space-y-2">
-                <p className="text-[18px]">• High-level company goals become diluted or lost in translation.</p>
-                <p className="text-[18px]">• Employees struggle to connect daily tasks to broader objectives.</p>
-                <p className="text-[18px]">• Existing tools are overwhelming and fail to provide quick clarity.</p>
-              </div>
-            </div>
-            {/* Proposed Solution */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Potential Solution</h3>
-              </div>
-              <p className="text-[18px]">
-                VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback indicators.
-              </p>
+
+            {/* Right Column - iPhone Image */}
+            <div className="flex justify-center">
+              <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Research #2 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #2</h2>
-
-          {/* Interviewed */}
-          <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
-              </div>
-              <div className="md:col-span-2">
-                <p className="text-[18px]">20 People (Product manager, CTO, CEO, CPO, Founder)</p>
-                <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
-                  <div className="flex gap-1">
-                    {[...Array(10)].map((_, i) => (
-                      <User key={i} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
-                    ))}
-                  </div>
-                  <div className="flex gap-1">
-                    {[...Array(10)].map((_, i) => (
-                      <User key={i + 10} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Quotes */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Quotes</h3>
-              </div>
-              <div className="md:col-span-2">
-                <div className="space-y-1 md:space-y-2">
-                  <div>
-                    <span className="font-semibold text-[18px]">01</span>
-                    <span className="text-[18px]"> &ldquo;Goals often get lost in translation—through constant updates or simply being forgotten.&rdquo;</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[18px]">02</span>
-                    <span className="text-[18px]"> &ldquo;Great leadership means catching all ideas, nurturing innovation, and knowing when to let go of those that don&apos;t fit.&rdquo;</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[18px]">03</span>
-                    <span className="text-[18px]"> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Pain Points */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Pain Points</h3>
-              </div>
-              <div className="md:col-span-2">
-                <div className="space-y-1 md:space-y-2">
-                  <div>
-                    <span className="font-semibold text-[18px]">01</span>
-                    <span className="text-[18px]"> Translating abstract goals into actionable tasks.</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[18px]">02</span>
-                    <span className="text-[18px]"> Employees already juggling multiple logins.</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-[18px]">03</span>
-                    <span className="text-[18px]"> Not everything is captured by KPIs alone—some critical tasks are unquantifiable yet vital.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Decision + Learning */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
-              </div>
-              <div className="md:col-span-2">
-                <p className="text-[18px]">
-                  We decided to focus on a single department within an SMB—specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
-                  avoid developing a watered-down product trying to serve every department at once.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Value Propositions Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Value Propositions</h2>
-
-          <div className="w-full flex justify-center">
-            <Image
-              src="/vision-track-value.png"
-              alt="Value proposition diagram showing different roles: IC, Manager, Top-Manager, and Board Member, with their respective workflows and motivations"
-              width={1728}
-              height={900}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Competitive Analysis Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Competitive Analysis</h2>
-
-          <div className="w-full flex justify-center">
-            <Image
-              src="/vision-track-table.png"
-              alt="Competitive analysis table comparing different tools: ClickUp, Weekdone, WorkBoard, and Lattice, showing their focus, integrations, and key differentiators"
-              width={1728}
-              height={900}
-              className="w-full h-auto"
-              priority
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Reflection Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Reflection</h2>
-
-          <div className="space-y-4 md:space-y-8">
-            <p className="text-[18px]">
-              VisionTrack started as a research-driven project to explore how startups and SMBs align their goals. Through interviews with founders, executives, and product managers, I uncovered
-              recurring pain points—lack of transparency, misalignment between high-level goals and daily tasks, and tool overload.
-            </p>
-
-            <p className="text-[18px]">
-              Although we didn&apos;t fully prototype and validate a final solution within the project&apos;s timeframe, this experience underscored the importance of balancing in-depth research with
-              iterative prototyping and testing. In future projects, I plan to allocate more time to prototyping and user feedback loops, ensuring I can refine solutions based on real-world input as
-              early as possible.
-            </p>
-          </div>
-        </div>
-      </div>
       {/* Contact Section */}
       <CtaSection />
     </main>
