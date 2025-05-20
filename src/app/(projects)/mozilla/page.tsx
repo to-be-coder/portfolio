@@ -12,7 +12,7 @@ export default function MozillaPage() {
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
           <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assist</h1>
-          <p className="items-end text-lg md:text-2xl mb-1 text-black">AI-powered browser assistant</p>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">On-device AI assistant</p>
         </div>
       </div>
       <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
@@ -87,83 +87,137 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Hypothesis #1 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
+      {/* Vision Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
 
-          {/* Why we chose this hypothesis */}
-          <div className="mt-8 md:mt-12">
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
-            </div>
-            <p className="text-[18px]">
-              Mozilla Assist aims to be a true personal AI assistant — one that understands your preferences and routines while keeping your data secure and private. Unlike traditional assistants that
-              rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully under the user's control, even as the
-              assistant becomes increasingly personalized and context-aware.
-            </p>
+        {/* Why we chose this hypothesis */}
+        <div className="mt-8 md:mt-12">
+          <div className="border-t border-[#C1C1C1] pt-[4px]">
+            <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
           </div>
+          <p className="text-[18px]">
+            Mozilla Assist aims to be a true personal AI assistant — one that understands your preferences and routines while keeping your data secure and private. Unlike traditional assistants that
+            rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully under the user's control, even as the
+            assistant becomes increasingly personalized and context-aware.
+          </p>
         </div>
       </div>
 
-      {/* Research #1 Section */}
-      <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
-        <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research</h2>
+      {/* ResearchSection */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research</h2>
 
-          {/* Challenges */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Goals</h3>
-              </div>
-              <div className="md:col-span-2">
-                <div className="space-y-1 md:space-y-2">
-                  <p className="text-[18px]">
-                    Understand the evolving landscape of personal productivity tools and uncover both user expectations and opportunities for Mozilla Assist to stand apart.
-                  </p>
-                </div>
+        {/* Challenges */}
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">Goals</h3>
+            </div>
+            <div className="md:col-span-2">
+              <div className="space-y-1 md:space-y-2">
+                <p className="text-[18px]">Understand the evolving landscape of personal productivity tools and uncover both user expectations and opportunities for Mozilla Assist to stand apart.</p>
               </div>
             </div>
           </div>
+        </div>
+        <Image src="/mozilla-competitive-analysis.png" alt="Mozilla competitive analysis" width={1728} height={900} className="w-full h-auto" priority />
 
-          {/* Key Takeaways */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Key Takeaways</h3>
-              </div>
-              <div className="md:col-span-2">
-                <div className="space-y-1 md:space-y-2">
-                  <p className="text-[18px]">
-                    <strong>Privacy is becoming table stakes</strong> — Once a niche concern, privacy is now a mainstream marketing message. Apple, for example, has doubled down on its privacy
-                    narrative, and Anthropic leads with &quot;privacy-first AI.&quot; This shift signals rising user expectations—even from tools not historically focused on data protection.
-                  </p>
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">Notable Competitors</h3>
+            </div>
+            <div className="md:col-span-2">
+              <p className="text-[18px]">
+                <strong>AI Assistants for Email & Calendar</strong>
+              </p>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>Jace – An AI that scans your inbox, calendar, files, and web content to suggest responses and schedule meetings automatically.</li>
+                <li>Lobby – A hands-free AI email assistant that aims to eliminate inbox management.</li>
+              </ul>
 
-                  <p className="text-[18px]">
-                    <strong>Mozilla has a unique positioning</strong> — Beyond privacy, Mozilla is trusted for its openness, neutrality, and public-interest mission. While most competitors compete on
-                    speed or convenience, Mozilla can stand out by building trust into the product&apos;s architecture and interaction model.
-                  </p>
+              <p className="text-[18px] mt-4">
+                <strong>Privacy-Focused Productivity Tools</strong>
+              </p>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>Proton – Privacy-first email and calendar suite with limited AI integration.</li>
+                <li>Canary Mail – Combines AI assistance with encrypted email and calendar features.</li>
+                <li>Superhuman – Optimized for speed and productivity, with growing AI features.</li>
+                <li>Amie – Email, calendar, and to-dos in a sleek interface built for Apple users.</li>
+                <li>Notion Mail & Calendar – Recently expanded into the space, with AI-assisted productivity tools.</li>
+                <li>Dola / Katch – Text-based AI scheduling tools integrated into messaging platforms like WhatsApp.</li>
+              </ul>
 
-                  <p className="text-[18px]">
-                    <strong>The space is crowded but unsettled</strong> — While major players like Google, Apple, and Microsoft dominate, a new wave of startups and open-source tools is quickly
-                    gaining traction—often by focusing on simplicity, user control, or alternative business models.
-                  </p>
-                </div>
-              </div>
+              <p className="text-[18px] mt-4">
+                <strong>General-Purpose AI Assistants</strong>
+              </p>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>Elephas – Desktop AI tool with customizable model integration and local data access.</li>
+                <li>ChatGPT / GPTs / Tasks – Not built for email/calendar yet, but rapidly expanding capabilities.</li>
+              </ul>
+
+              <p className="text-[18px] mt-4">
+                <strong>Enterprise & Big Tech Ecosystems</strong>
+              </p>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>Google Workspace + Gemini</li>
+                <li>Microsoft 365 + Copilot</li>
+                <li>Apple + Siri / System-Level AI Integration</li>
+              </ul>
+
+              <p className="text-[18px] mt-4">
+                <strong>B2B and Specialized Agents</strong>
+              </p>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>LindyAI – AI agents for managing business workflows, especially email.</li>
+                <li>Clara – AI scheduling assistant for professionals and teams.</li>
+                <li>Shortwave – An AI-native email platform built around smart summarization and automation.</li>
+              </ul>
             </div>
           </div>
-          {/* Decision + Learning */}
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
-              </div>
-              <div className="md:col-span-2">
+        </div>
+
+        {/* Key Takeaways */}
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">Key Takeaways</h3>
+            </div>
+            <div className="md:col-span-2">
+              <div className="space-y-1 md:space-y-2">
                 <p className="text-[18px]">
-                  Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question
-                  our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
-                  address their unique challenges and needs.
+                  <strong>Privacy is becoming table stakes</strong> — Once a niche concern, privacy is now a mainstream marketing message. Apple, for example, has doubled down on its privacy
+                  narrative, and Anthropic leads with &quot;privacy-first AI.&quot; This shift signals rising user expectations—even from tools not historically focused on data protection.
+                </p>
+
+                <p className="text-[18px]">
+                  <strong>Mozilla has a unique positioning</strong> — Beyond privacy, Mozilla is trusted for its openness, neutrality, and public-interest mission. While most competitors compete on
+                  speed or convenience, Mozilla can stand out by building trust into the product&apos;s architecture and interaction model.
+                </p>
+
+                <p className="text-[18px]">
+                  <strong>The space is crowded but unsettled</strong> — While major players like Google, Apple, and Microsoft dominate, a new wave of startups and open-source tools is quickly gaining
+                  traction—often by focusing on simplicity, user control, or alternative business models.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Realization: On-Devide AI Has Limits */}
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">
+                Realization: <br /> On-Devide AI Has Limits
+              </h3>
+            </div>
+            <div className="md:col-span-2">
+              <div className="space-y-1 md:space-y-2">
+                <p className="text-[18px]">
+                  During the research phase, we found that on-device AI—while strong on privacy—may fall short in performance and context handling for more complex tasks. This led us to explore a
+                  hybrid model: keeping data local by default, while selectively using Confidential Cloud support to maintain a smooth and capable user experience.
                 </p>
               </div>
             </div>
@@ -171,10 +225,46 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Hypothesis #2 Section */}
+      {/* Hypothesis Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Forming Hypothesis</h2>
+
+        <div className="flex flex-col  gap-x-16 gap-y-12">
+          {/* Left Column - Stacked Overview and Design Objective */}
+          <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
+            <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
+              <p className="text-[18px]">
+                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> built on a <strong>hybrid On-Device &lt;&gt; Confidential Cloud architecture</strong>. The direction emphasizes
+                openness, portability, and extendability—enabling users to switch between email or calendar providers, choose different AI models, and easily integrate plugins or extensions.
+                <br /> <br />
+                Transparency is a core principle: permission requests are clearly surfaced in the UI, and no data would be sent to the cloud without <strong>explicit user opt-in</strong>. The goal is
+                to make trusted opt-ins seamless and non-disruptive.
+                <br /> <br />
+                Security is treated as a <strong>first-class priority</strong>, guiding decisions from architecture to interface.
+                <br /> <br />
+                To maintain user trust, the proposed business model focuses on <strong>subscriptions</strong>, avoiding ad-based tracking entirely.
+                <br /> <br />
+                Given the scope, the product would follow a <strong>phased release strategy</strong>, starting with a lightweight MVP focused on high-privacy use cases—such as private chat—to validate
+                early assumptions.
+              </p>
+            </div>
+
+            <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
+              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
+              <ul className="list-disc ml-5 text-[18px]">
+                <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
+                <li>Most AI assistants today do not offer local-only functionality — this is a potential differentiator.</li>
+                <li>Early user research showed a willingness to engage with AI if it respected data boundaries and explained what it was doing.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Hypothesis Section */}
       <div className="relative my-16 lg:my-32 max-w-7xl mx-auto">
         <div className="max-w-[1728px] mx-auto px-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #2</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Forming Hypothesis</h2>
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Target Customers */}
