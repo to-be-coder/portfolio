@@ -24,8 +24,9 @@ export default function About() {
                     friction so people can just get things done.
                   </p>
                 </div>
-                <div className="stack space-y-4 h-full block lg:hidden order-1 md:order-2 w-fit col-span-1">
-                  <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-automd:h-[300px]" />
+                <div className="stack space-y-4 h-full w-full block lg:hidden order-1 md:order-2 col-span-1">
+                  <Image src="/profile.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-auto md:h-[300px] hidden md:block lg:hidden" />
+                  <Image src="/profile-small.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl  w-full md:w-fit h-auto md:hidden" />
                 </div>
               </div>
               <Accordion type="single" collapsible className="w-full mt-8">
