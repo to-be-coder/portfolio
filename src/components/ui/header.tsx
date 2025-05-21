@@ -28,10 +28,10 @@ const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
   <NavigationMenuItem>
     <Link href={path} legacyBehavior passHref>
       <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', pathname === path ? 'text-black' : 'text-gray-500', 'hover:bg-gray-100')}
+        className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', pathname === path ? 'text-secondary' : 'text-black', 'hover:bg-gray-100')}
         onClick={onClick}
       >
-        <span className="relative">{label}</span>
+        <p className="relative font-medium">{label}</p>
       </NavigationMenuLink>
     </Link>
   </NavigationMenuItem>

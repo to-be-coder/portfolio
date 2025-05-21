@@ -69,7 +69,7 @@ export default function LilypadPage() {
               {/* Typeface */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
-                <p className="text-[18px]">Plus Jakarta Sans</p>
+                <p className="text-[18px] font-['Plus_Jakarta_Sans']">Plus Jakarta Sans</p>
               </div>
 
               {/* Weights */}

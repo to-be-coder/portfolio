@@ -78,7 +78,7 @@ export default function MozillaPage() {
       {/* Workflow Section */}
 
       {/* Workflow Section */}
-      <div className="relative bg-[#49DF58]">
+      <div className="relative bg-green-300">
         <div className="max-w-[1440px] mx-auto px-16 py-16 lg:py-32">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center text-black">Workflow</h2>
           <div className="w-full flex justify-center">
@@ -257,6 +257,107 @@ export default function MozillaPage() {
                 <li>Most AI assistants today do not offer local-only functionality — this is a potential differentiator.</li>
                 <li>Early user research showed a willingness to engage with AI if it respected data boundaries and explained what it was doing.</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Typography Section */}
+      <div className="relative bg-[#212121] text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+            {/* Left Column - Large "Aa" Display */}
+            <div className="flex items-center justify-center">
+              <span className="text-[200px] font-regular font-['Inter'] tracking-tight">Aa</span>
+            </div>
+
+            {/* Right Column - Typography Details */}
+            <div className="space-y-4 md:space-y-8">
+              {/* Typeface */}
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
+                <p className="text-[18px]">Inter</p>
+              </div>
+
+              {/* Weights */}
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
+                <div className="space-y-1 md:space-y-2">
+                  <p className="text-[18px] font-normal">Regular</p>
+                  <p className="text-[18px] font-semibold">Semi-Bold</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Colors Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Title */}
+          <div>
+            <h2 className="text-4xl font-normal">Main Colors</h2>
+          </div>
+
+          {/* Primary Colors */}
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#BBF3C0] rounded-lg flex items-end p-4">
+              <span>#BBF3C0</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#09320D] rounded-lg flex items-end p-4">
+              <span className="text-white">#09320D</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#FF2E2E] rounded-lg flex items-end p-4">
+              <span>#FF2E2E</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Colors Row */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#FFFFFF] rounded-lg flex items-end p-4 border border-gray-200">
+              <span>#FFFFFF</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#F7F7F8] rounded-lg flex items-end p-4 border border-gray-200">
+              <span>#F7F7F8</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#191919] rounded-lg flex items-end p-4">
+              <span className="text-white">#191919</span>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="h-48 bg-[#000000] rounded-lg flex items-end p-4">
+              <span className="text-white">#000000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Light and Dark Mode Mockups */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Light and Dark Mode Mockups</h2>
+
+          <div className="flex justify-center gap-x-4 lg:gap-x-8 xl:gap-x-16">
+            <div className="flex justify-center">
+              <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            </div>
+
+            {/* Right Column - iPhone Image */}
+            <div className="flex justify-center">
+              <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
             </div>
           </div>
         </div>
