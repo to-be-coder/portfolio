@@ -198,16 +198,16 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Ideation Section */}
+      {/* Exploring Early Concepts Section */}
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Exploring Early Concepts</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-            <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-v1-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          <div className="flex gap-x-8">
+            <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-v1-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
@@ -388,10 +388,10 @@ export default function MozillaPage() {
                   <TabsTrigger value="dark">Dark Mode</TabsTrigger>
                 </TabsList>
                 <TabsContent value="light" className="flex justify-center">
-                  <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-lg border border-gray-800" priority />
+                  <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-md border border-gray-800" priority />
                 </TabsContent>
                 <TabsContent value="dark" className="flex justify-center">
-                  <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-lg border border-gray-800" priority />
+                  <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-md border border-gray-800" priority />
                 </TabsContent>
               </Tabs>
             </div>
