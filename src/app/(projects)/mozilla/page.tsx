@@ -262,6 +262,20 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/* Ideation Section */}
+      <div className="relative bg-gray-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+            <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-v1-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -290,6 +304,17 @@ export default function MozillaPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Playground Section */}
+      <div className="relative bg-gray-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
+
+          <div className="flex justify-center ">
+            <Image src="/mozilla-ideation.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
           </div>
         </div>
       </div>
