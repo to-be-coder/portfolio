@@ -87,11 +87,10 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Vision Section */}
+      {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
 
-        {/* Why we chose this hypothesis */}
         <div className="mt-8 md:mt-12">
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
@@ -104,124 +103,14 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* ResearchSection */}
+      {/* Competitive Research Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research</h2>
-
-        {/* Challenges */}
-        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="col-span-1">
-              <h3 className="text-2xl font-regular text-[#a1a1a1]">Goals</h3>
-            </div>
-            <div className="md:col-span-2">
-              <div className="space-y-1 md:space-y-2">
-                <p className="text-[18px]">Understand the evolving landscape of personal productivity tools and uncover both user expectations and opportunities for Mozilla Assist to stand apart.</p>
-              </div>
-            </div>
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Competitive Research</h2>
+        <div className="mt-8 md:mt-12">
+          <div className="border-t border-[#C1C1C1] pt-[4px]">
+            <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
           </div>
-        </div>
-        <Image src="/mozilla-competitive-analysis.png" alt="Mozilla competitive analysis" width={1728} height={900} className="w-full h-auto" priority />
-
-        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="col-span-1">
-              <h3 className="text-2xl font-regular text-[#a1a1a1]">Notable Competitors</h3>
-            </div>
-            <div className="md:col-span-2">
-              <p className="text-[18px]">
-                <strong>AI Assistants for Email & Calendar</strong>
-              </p>
-              <ul className="list-disc ml-5 text-[18px]">
-                <li>Jace – An AI that scans your inbox, calendar, files, and web content to suggest responses and schedule meetings automatically.</li>
-                <li>Lobby – A hands-free AI email assistant that aims to eliminate inbox management.</li>
-              </ul>
-
-              <p className="text-[18px] mt-4">
-                <strong>Privacy-Focused Productivity Tools</strong>
-              </p>
-              <ul className="list-disc ml-5 text-[18px]">
-                <li>Proton – Privacy-first email and calendar suite with limited AI integration.</li>
-                <li>Canary Mail – Combines AI assistance with encrypted email and calendar features.</li>
-                <li>Superhuman – Optimized for speed and productivity, with growing AI features.</li>
-                <li>Amie – Email, calendar, and to-dos in a sleek interface built for Apple users.</li>
-                <li>Notion Mail & Calendar – Recently expanded into the space, with AI-assisted productivity tools.</li>
-                <li>Dola / Katch – Text-based AI scheduling tools integrated into messaging platforms like WhatsApp.</li>
-              </ul>
-
-              <p className="text-[18px] mt-4">
-                <strong>General-Purpose AI Assistants</strong>
-              </p>
-              <ul className="list-disc ml-5 text-[18px]">
-                <li>Elephas – Desktop AI tool with customizable model integration and local data access.</li>
-                <li>ChatGPT / GPTs / Tasks – Not built for email/calendar yet, but rapidly expanding capabilities.</li>
-              </ul>
-
-              <p className="text-[18px] mt-4">
-                <strong>Enterprise & Big Tech Ecosystems</strong>
-              </p>
-              <ul className="list-disc ml-5 text-[18px]">
-                <li>Google Workspace + Gemini</li>
-                <li>Microsoft 365 + Copilot</li>
-                <li>Apple + Siri / System-Level AI Integration</li>
-              </ul>
-
-              <p className="text-[18px] mt-4">
-                <strong>B2B and Specialized Agents</strong>
-              </p>
-              <ul className="list-disc ml-5 text-[18px]">
-                <li>LindyAI – AI agents for managing business workflows, especially email.</li>
-                <li>Clara – AI scheduling assistant for professionals and teams.</li>
-                <li>Shortwave – An AI-native email platform built around smart summarization and automation.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Key Takeaways */}
-        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="col-span-1">
-              <h3 className="text-2xl font-regular text-[#a1a1a1]">Key Takeaways</h3>
-            </div>
-            <div className="md:col-span-2">
-              <div className="space-y-1 md:space-y-2">
-                <p className="text-[18px]">
-                  <strong>Privacy is becoming table stakes</strong> — Once a niche concern, privacy is now a mainstream marketing message. Apple, for example, has doubled down on its privacy
-                  narrative, and Anthropic leads with &quot;privacy-first AI.&quot; This shift signals rising user expectations—even from tools not historically focused on data protection.
-                </p>
-
-                <p className="text-[18px]">
-                  <strong>Mozilla has a unique positioning</strong> — Beyond privacy, Mozilla is trusted for its openness, neutrality, and public-interest mission. While most competitors compete on
-                  speed or convenience, Mozilla can stand out by building trust into the product&apos;s architecture and interaction model.
-                </p>
-
-                <p className="text-[18px]">
-                  <strong>The space is crowded but unsettled</strong> — While major players like Google, Apple, and Microsoft dominate, a new wave of startups and open-source tools is quickly gaining
-                  traction—often by focusing on simplicity, user control, or alternative business models.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Realization: On-Devide AI Has Limits */}
-        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="col-span-1">
-              <h3 className="text-2xl font-regular text-[#a1a1a1]">
-                Realization: <br /> On-Devide AI Has Limits
-              </h3>
-            </div>
-            <div className="md:col-span-2">
-              <div className="space-y-1 md:space-y-2">
-                <p className="text-[18px]">
-                  During the research phase, we found that on-device AI—while strong on privacy—may fall short in performance and context handling for more complex tasks. This led us to explore a
-                  hybrid model: keeping data local by default, while selectively using Confidential Cloud support to maintain a smooth and capable user experience.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p className="text-[18px]">I am not able to show this section due to NDA.</p>
         </div>
       </div>
 
@@ -244,9 +133,6 @@ export default function MozillaPage() {
                 Security is treated as a <strong>first-class priority</strong>, guiding decisions from architecture to interface.
                 <br /> <br />
                 To maintain user trust, the proposed business model focuses on <strong>subscriptions</strong>, avoiding ad-based tracking entirely.
-                <br /> <br />
-                Given the scope, the product would follow a <strong>phased release strategy</strong>, starting with a lightweight MVP focused on high-privacy use cases—such as private chat—to validate
-                early assumptions.
               </p>
             </div>
 
@@ -257,6 +143,55 @@ export default function MozillaPage() {
                 <li>Most AI assistants today do not offer local-only functionality — this is a potential differentiator.</li>
                 <li>Early user research showed a willingness to engage with AI if it respected data boundaries and explained what it was doing.</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Design Challenge Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          {/* Left Column - Title */}
+          <div>
+            <h2 className="text-4xl font-normal">Design Challenge</h2>
+          </div>
+
+          {/* Right Column - Approach Details */}
+          <div className="space-y-4 md:space-y-8">
+            {/* Content */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Technical collaboration</h3>
+              <p className="text-[18px]">Partnered closely with engineering to align on limitations around on-device AI, encryption, and data storage.</p>
+            </div>
+
+            {/* Privacy-first UX */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Privacy-first UX</h3>
+              <p className="text-[18px]">Needed to clearly communicate how data is used, stored, and controlled — without overwhelming users.</p>
+            </div>
+
+            {/* Fast-to-ship MVP */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Fast-to-ship MVP</h3>
+              <p className="text-[18px]">Prioritized simplicity and speed by using familiar UX patterns and minimizing custom UI logic.</p>
+            </div>
+
+            {/* Designing for scale */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Designing for scale</h3>
+              <p className="text-[18px]">Created flexible flows that could support both a fully on-device model and a future hybrid architecture (On-Device &lt;&gt; Confidential Cloud).</p>
+            </div>
+
+            {/* Reducing friction */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">Reducing friction</h3>
+              <p className="text-[18px]">Avoided unnecessary novelty in interaction or layout — leveraged established conventions to support user intuition.</p>
+            </div>
+
+            {/* De-risking unknowns */}
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-gray-400 mb-6">De-risking unknowns</h3>
+              <p className="text-[18px]">Built optionality into the UX to account for technical uncertainties (e.g., fallback states if on-device processing fails).</p>
             </div>
           </div>
         </div>
@@ -304,17 +239,6 @@ export default function MozillaPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Playground Section */}
-      <div className="relative bg-gray-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
-
-          <div className="flex justify-center ">
-            <Image src="/mozilla-ideation.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
           </div>
         </div>
       </div>
@@ -411,6 +335,40 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/* Warning Responsescreens */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">War screens</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
+            We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
+      {/* Warning Responsescreens */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">War screens</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
+            We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-setting-account.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-billing.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-extentions-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-extentions-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-memory.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-models.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -442,6 +400,67 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/*Learning Section */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+        {/* Title */}
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {/* Gather Real-World Feedback */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Embracing an Agile, Test-and-Learn Mindset</h3>
+              <p className="text-[18px]">
+                This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world feedback
+                is essential—not just for usability, but for achieving product-market fit.
+              </p>
+            </div>
+          </div>
+
+          {/* Iterative Improvements */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Fast, Focused Progress with Gated Releases</h3>
+              <p className="text-[18px]">
+                One key takeaway was the value of combining an agile approach with a gated release strategy—moving quickly, but within clearly defined phases. This allows us to learn fast while
+                keeping scope focused and risk manageable at each stage.
+              </p>
+            </div>
+          </div>
+
+          {/* Potential User Testing */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Letting User Behavior Lead the Way</h3>
+              <p className="text-[18px]">
+                While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against user behavior, data, and testing signals. I am not the user—and assuming otherwise can
+                derail even the best ideas. The real impact comes from asking better questions, observing how people actually use the product, and knowing what to test next and why.
+              </p>
+            </div>
+          </div>
+
+          {/* Potential User Testing */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Designing with Privacy and Trust at the Core</h3>
+              <p className="text-[18px]">
+              Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It’s not just about features—it’s about ensuring the experience reflects user values and long-term strategy.
+            </div>
+          </div>
+
+          {/* Potential User Testing */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
+              <p className="text-[18px]">
+              Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.   
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Figma Exploration Section */}
       <div className="relative bg-primary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -465,6 +484,17 @@ export default function MozillaPage() {
             <div className="flex justify-center">
               <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Playground Section */}
+      <div className="relative bg-gray-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
+
+          <div className="flex justify-center ">
+            <Image src="/mozilla-ideation.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
           </div>
         </div>
       </div>
