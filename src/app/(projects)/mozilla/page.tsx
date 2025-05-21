@@ -1,4 +1,5 @@
 import CtaSection from '@/components/ui/cta'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -370,24 +371,25 @@ export default function MozillaPage() {
       </div>
 
       {/* Light and Dark Mode Mockups */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Can&apos;t leave dark mode behind</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
             I designed a light and dark mode mockup to ensure the product could be used in both environments. The light mode is a more traditional design, while the dark mode is a more modern,
             minimalistic design.
           </p>
-
-          <div className="flex justify-center gap-x-4 lg:gap-x-8 xl:gap-x-16">
-            <div className="flex justify-center">
+          <Tabs defaultValue="dark" className="w-[400px]">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="light">Light Mode</TabsTrigger>
+              <TabsTrigger value="dark">Dark Mode</TabsTrigger>
+            </TabsList>
+            <TabsContent value="light">
               <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            </div>
-
-            {/* Right Column - iPhone Image */}
-            <div className="flex justify-center">
+            </TabsContent>
+            <TabsContent value="dark">
               <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            </div>
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
 
