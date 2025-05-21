@@ -403,58 +403,62 @@ export default function MozillaPage() {
       {/*Learning Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {/* Gather Real-World Feedback */}
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
+
+          {/* Build Fast, Learn Faster */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Embracing an Agile, Test-and-Learn Mindset</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Build Fast, Learn Faster</h3>
               <p className="text-[18px]">
                 This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world feedback
-                is essential—not just for usability, but for achieving product-market fit.
+                is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
               </p>
             </div>
           </div>
 
-          {/* Iterative Improvements */}
+          {/* Balancing Agility with Control */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Fast, Focused Progress with Gated Releases</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Balancing Agility with Control</h3>
               <p className="text-[18px]">
-                One key takeaway was the value of combining an agile approach with a gated release strategy—moving quickly, but within clearly defined phases. This allows us to learn fast while
-                keeping scope focused and risk manageable at each stage.
+                One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to learn
+                fast while keeping scope focused and risk manageable at each stage.
               </p>
             </div>
           </div>
 
-          {/* Potential User Testing */}
+          {/* I Am Not the User */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Letting User Behavior Lead the Way</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">I Am Not the User</h3>
               <p className="text-[18px]">
-                While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against user behavior, data, and testing signals. I am not the user—and assuming otherwise can
-                derail even the best ideas. The real impact comes from asking better questions, observing how people actually use the product, and knowing what to test next and why.
+                While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user—and
+                assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and knowing what
+                to test next and why.
               </p>
             </div>
           </div>
 
-          {/* Potential User Testing */}
+          {/* Designing for Trust */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Designing with Privacy and Trust at the Core</h3>
+              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Designing for Trust</h3>
               <p className="text-[18px]">
-              Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It’s not just about features—it’s about ensuring the experience reflects user values and long-term strategy.
+                Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It's not just about
+                features—it's about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+              </p>
             </div>
           </div>
 
-          {/* Potential User Testing */}
+          {/* Staying Curious and Outcome-Oriented */}
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
               <p className="text-[18px]">
-              Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.   
+                Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
               </p>
             </div>
           </div>
