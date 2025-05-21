@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
@@ -28,7 +28,12 @@ const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
   <NavigationMenuItem>
     <Link href={path} legacyBehavior passHref>
       <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', pathname === path ? 'text-secondary' : 'text-black', 'hover:bg-gray-100')}
+        className={cn(
+          navigationMenuTriggerStyle(),
+          'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
+          pathname === path || (path === '/#projects' && pathname === '/' && typeof window !== 'undefined' && window.location.hash === '#projects') ? 'text-secondary' : 'text-black',
+          'hover:bg-gray-100'
+        )}
         onClick={onClick}
       >
         <p className="relative font-medium">{label}</p>
@@ -40,6 +45,67 @@ const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
 export default function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isProjectsSection, setIsProjectsSection] = useState(false)
+
+  useEffect(() => {
+    // Function to check if projects section is visible
+    const checkProjectsSection = () => {
+      if (pathname !== '/') {
+        setIsProjectsSection(false)
+        return
+      }
+
+      const projectsSection = document.getElementById('projects')
+      if (!projectsSection) {
+        setIsProjectsSection(false)
+        return
+      }
+
+      const rect = projectsSection.getBoundingClientRect()
+      const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2
+
+      setIsProjectsSection(isVisible)
+    }
+
+    // Initial check
+    checkProjectsSection()
+
+    // Add scroll event listener
+    window.addEventListener('scroll', checkProjectsSection)
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', checkProjectsSection)
+    }
+  }, [pathname])
+
+  const isNavItemActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/' && !isProjectsSection
+    }
+    if (path === '/#projects') {
+      return (pathname === '/' && isProjectsSection) || pathname === '/#projects'
+    }
+    return pathname === path
+  }
+
+  const NavItem = ({ path, label, onClick }: { path: string; label: string; onClick?: () => void }) => (
+    <NavigationMenuItem>
+      <Link href={path} legacyBehavior passHref>
+        <NavigationMenuLink
+          className={cn(
+            navigationMenuTriggerStyle(),
+            'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
+            isNavItemActive(path) ? 'text-secondary' : 'text-black',
+            'hover:bg-gray-100'
+          )}
+          onClick={onClick}
+        >
+          <p className="relative font-medium">{label}</p>
+        </NavigationMenuLink>
+      </Link>
+    </NavigationMenuItem>
+  )
 
   return (
     <header className={`sticky top-0 z-50 ${mobileMenuOpen ? 'bg-white/50' : 'bg-white/50'} backdrop-blur-md border-b border-gray-200/20`}>
@@ -57,7 +123,7 @@ export default function Header() {
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
                 {navigationItems.map((item) => (
-                  <NavItem key={item.id} {...item} pathname={pathname} onClick={() => {}} />
+                  <NavItem key={item.id} path={item.path} label={item.label} onClick={() => {}} />
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
@@ -98,7 +164,7 @@ export default function Header() {
                     <Link
                       key={item.id}
                       href={item.path}
-                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === item.path ? 'text-secondary' : 'text-gray-900 hover:bg-gray-50')}
+                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50')}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
