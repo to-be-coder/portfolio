@@ -354,7 +354,7 @@ export default function MozillaPage() {
       {/* Warning Responsescreens */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">War screens</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Settings Pages</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
             These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
             We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
@@ -371,14 +371,14 @@ export default function MozillaPage() {
       </div>
 
       {/* Light and Dark Mode Mockups */}
-      <div className="relative bg-black text-white">
+      <div className="relative bg-green-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             <div className="flex flex-col">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Can&apos;t leave dark mode behind</h2>
+              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Dark Mode for Modern Use</h2>
               <p className="text-[18px] mb-8 lg:mb-12">
-                I designed a light and dark mode mockup to ensure the product could be used in both environments. The light mode is a more traditional design, while the dark mode is a more modern,
-                minimalistic design.
+                The dark mode version of the product—designed not just to look good, but to make the experience more comfortable, especially in low-light environments. It&apos;s about reducing eye
+                strain and meeting user expectations on modern devices.
               </p>
             </div>
             <div className="flex">
@@ -408,9 +408,9 @@ export default function MozillaPage() {
             experience could <strong>translate to smaller screens with minimal rework.</strong>
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-mobile-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-mobile-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-mobile-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-mobile-1.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
+            <Image src="/mozilla-mobile-2.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
+            <Image src="/mozilla-mobile-3.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
           </div>
         </div>
       </div>
