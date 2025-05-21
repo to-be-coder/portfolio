@@ -370,6 +370,47 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/* Sign up flow */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Sign up flow</h2>
+
+          <div className="flex flex-col gap-y-16">
+            <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
+      {/* chat screens */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Chat screens</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
+      {/* Warning screens */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">War screens</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
+            We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-warning-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -384,6 +425,19 @@ export default function MozillaPage() {
             <div className="flex justify-center">
               <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Mockups */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Mobile Mockups</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-mobile-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-mobile-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-mobile-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
           </div>
         </div>
       </div>
