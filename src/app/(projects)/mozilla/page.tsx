@@ -227,16 +227,16 @@ export default function MozillaPage() {
       {/* Sign up flow */}
       <div className="relative bg-green-200 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Sign up flow</h2>
-          <Carousel>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Made process visible</h2>
+          <Carousel className="w-full">
             <CarouselContent>
               <CarouselItem>
-                <div className="flex gap-x-8">
+                <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
                     <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Sign up flow</h3>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
                     <p className="text-[18px] mb-8 lg:mb-12">
                       These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
                       information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
@@ -245,12 +245,12 @@ export default function MozillaPage() {
                 </div>
               </CarouselItem>
               <CarouselItem>
-                <div className="flex gap-x-8">
+                <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
                     <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Sign up flow</h3>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
                     <p className="text-[18px] mb-8 lg:mb-12">
                       These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
                       information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
@@ -259,12 +259,12 @@ export default function MozillaPage() {
                 </div>
               </CarouselItem>
               <CarouselItem>
-                <div className="flex gap-x-8">
+                <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
                     <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Sign up flow</h3>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
                     <p className="text-[18px] mb-8 lg:mb-12">
                       These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
                       information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
@@ -279,7 +279,7 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Warning screens */}
+      {/* Transparency about data usag */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex-1 flex-col space-y-16">
@@ -321,34 +321,21 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* chat screens */}
-      <div className="relative bg-green-300 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Chat screens</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-          </div>
-        </div>
-      </div>
-
       {/* Settings screens */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-black text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Settings Pages</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing Trust Through Settings</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
             These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
             We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-setting-account.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-setting-billing.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-setting-extentions-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-setting-extentions-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-setting-memory.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-setting-models.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-setting-account.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-setting-billing.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-setting-extentions-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-setting-extentions-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-setting-memory.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-setting-models.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
@@ -380,6 +367,26 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
+      {/* chat screens */}
+      <div className="relative bg-green-300 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing for Fast Iteration and Familiar Use</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            For the chat experience, I prioritized speed of iteration by using familiar UX patterns and minimizing custom UI logic. This approach reduces development complexity and sets us up to
+            prototype and evolve quickly as we learn more. <br />
+            <br />
+            By keeping the design simple and grounded in proven interaction models, we can move faster in future testing and development—without sacrificing usability.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
+            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          </div>
+        </div>
+      </div>
+
       {/* Mobile Mockups */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -570,9 +577,21 @@ export default function MozillaPage() {
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            A playground for the project to test the design and get feedback from the team. The playground is a collection of images that show the design in action.
+          </p>
 
-          <div className="flex justify-center ">
-            <Image src="/mozilla-ideation.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+          <div className="grid grid-cols-3 md:grid-cols-5 gap-x-16 gap-y-8">
+            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-7.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-8.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
           </div>
         </div>
       </div>
