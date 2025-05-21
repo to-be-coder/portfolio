@@ -372,7 +372,11 @@ export default function MozillaPage() {
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Light and Dark Mode Mockups</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Can&apos;t leave dark mode behind</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            I designed a light and dark mode mockup to ensure the product could be used in both environments. The light mode is a more traditional design, while the dark mode is a more modern,
+            minimalistic design.
+          </p>
 
           <div className="flex justify-center gap-x-4 lg:gap-x-8 xl:gap-x-16">
             <div className="flex justify-center">
@@ -390,8 +394,11 @@ export default function MozillaPage() {
       {/* Mobile Mockups */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Mobile Mockups</h2>
-
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
+          <p className="text-[18px] mb-8 lg:mb-12">
+            Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
+            experience could <strong>translate to smaller screens with minimal rework.</strong>
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
             <Image src="/mozilla-mobile-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
             <Image src="/mozilla-mobile-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
