@@ -223,14 +223,14 @@ export default function MozillaPage() {
               <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">1. Account Connection</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">The flow begins by guiding users to connect their account </p>
+                <p className="text-[16px]">The flow begins by guiding users to connect their account </p>
               </div>
             </div>
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
               <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">2. Syncing Progress</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">
+                <p className="text-[16px]">
                   Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
                   wait time.
                 </p>
@@ -240,7 +240,7 @@ export default function MozillaPage() {
               <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">3. Ready to Chat</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">
+                <p className="text-[16px]">
                   Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
                   momentum going.
                 </p>
