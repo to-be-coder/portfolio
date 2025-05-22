@@ -22,49 +22,41 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="flex flex-col gap-x-16 gap-y-12">
-          {/* Left Column - Stacked Overview and Design Objective */}
-          <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
-            <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
-              <p className="text-[16px]">
-                <strong>Mozilla Assist</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question:{' '}
-                <strong>Can we deliver intelligent, context-aware</strong> assistance without sending user data to the cloud? <br /> <br />
-                This raised key UX challenges: How do you build trust in a system that operates mostly in the background? How do you support power users who expect transparency and control—without
-                overwhelming them with complexity? <br /> <br />I collaborated closely with engineering to design a prototype for early user testing and stakeholder review. This work laid the
-                foundation for understanding how users perceive local AI, and how much visibility and control they actually want.
-              </p>
-            </div>
-
-            <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
-              <p className="text-[16px]">
-                Our goal was to <strong>define and test early product hypotheses</strong> for Mozilla Assist—a privacy-first, on-device AI assistant—through rapid prototyping and iteration. The
-                experience needed to be lightweight and test-ready, while still reflecting Mozilla's core values: <strong>privacy, transparency, and user control</strong>. <br /> <br />
-                Given the technical complexity, I served as a <strong>bridge between design and engineering</strong>, translating constraints like local processing and encryption limits into
-                practical, user-friendly design solutions. <br /> <br />
-                We took a <strong>lean, hypothesis-driven approach</strong>, prioritizing speed and insight over polish. The focus was to uncover early user signals and inform both the next design
-                phase and internal stakeholder alignment.
-              </p>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-12">
+          <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
+            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
+            <p className="text-[16px]">
+              <strong>Mozilla Assist</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question: Can we deliver intelligent,
+              context-aware assistance without sending user data to the cloud? <br /> <br />
+              <strong>This raised key UX challenges</strong>: How do you build trust in a system that operates mostly in the background? How do you support power users who expect transparency and
+              control—without overwhelming them with complexity? <br /> <br />I collaborated closely with engineering to design a prototype for early user testing and stakeholder review. This work
+              laid the foundation for future research into how people perceive local AI and how much visibility and control they actually want.
+            </p>
           </div>
 
-          <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
-            <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
-              <div className="space-y-4">
-                <div>
-                  <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
-                  <p className="text-[16px]">I contributed to the hypothesis-driven design process, helping the team frame product assumptions and identify what to test first.</p>
-                </div>
-                <div>
-                  <span className="font-semibold text-[16px]">Design & Prototyping:</span>
-                  <p className="text-[16px]">I designed core user flows and created low- to high-fidelity prototypes in Figma, optimized for fast iteration and engineering collaboration.</p>
-                </div>
-                <div>
-                  <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
-                  <p className="text-[16px]">Collaborated with engineers to align designs with local LLM and encryption limits, iterating quickly through regular syncs.</p>
-                </div>
+          <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
+            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
+            <p className="text-[16px]">
+              To test early hypotheses for Mozilla Assist, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla’s values: privacy, transparency, and
+              user control. <br /> <br />I acted as a <strong>bridge between design and engineering</strong>, translating technical constraints—like local processing and encryption limits—into
+              practical, user-friendly experiences. We prioritized speed and insight over polish, aiming to uncover early user signals and align internal stakeholders.
+            </p>
+          </div>
+
+          <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
+            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
+            <div className="space-y-4">
+              <div>
+                <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
+                <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
+              </div>
+              <div>
+                <span className="font-semibold text-[16px]">Design & Prototyping:</span>
+                <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
+              </div>
+              <div>
+                <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
+                <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
               </div>
             </div>
           </div>
