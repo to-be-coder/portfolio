@@ -26,7 +26,7 @@ export default function DemoPage() {
             <div>
               <Button className="flex items-center gap-2 group" variant="contact">
                 <a href="mailto:jessica@thoughtful.llc" className="text-secondary group-hover:text-[#00D3CF] text-3xl font-semibold">
-                  jessica@thoughtful.llc
+                  jess@jessicacheng.studio
                 </a>
               </Button>
             </div>

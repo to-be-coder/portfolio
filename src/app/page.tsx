@@ -114,7 +114,15 @@ export default function Home() {
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UX Research</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
+                    Competitive Analysis
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
+                    User Interviews
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Persona</span>
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>B2B</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>SaaS</span>
                 </div>
               </div>
               <div className="mt-0 lg:w-2/3 h-full flex items-end justify-end absolute bottom-0 right-0 lg:relative">
