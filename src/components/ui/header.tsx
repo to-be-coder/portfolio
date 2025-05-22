@@ -17,31 +17,6 @@ const navigationItems = [
   { path: '/about', label: 'About', id: 'about' },
 ]
 
-interface NavItemProps {
-  path: string
-  label: string
-  pathname: string
-  onClick?: () => void
-}
-
-const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
-  <NavigationMenuItem>
-    <Link href={path} legacyBehavior passHref>
-      <NavigationMenuLink
-        className={cn(
-          navigationMenuTriggerStyle(),
-          'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
-          pathname === path || (path === '/#projects' && pathname === '/' && typeof window !== 'undefined' && window.location.hash === '#projects') ? 'text-secondary' : 'text-black',
-          'hover:bg-gray-100'
-        )}
-        onClick={onClick}
-      >
-        <p className="relative font-medium">{label}</p>
-      </NavigationMenuLink>
-    </Link>
-  </NavigationMenuItem>
-)
-
 export default function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
