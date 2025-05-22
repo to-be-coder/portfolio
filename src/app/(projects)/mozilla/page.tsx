@@ -107,7 +107,7 @@ export default function MozillaPage() {
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
           </div>
-          <p className="text-[18px]">I am not able to show this section due to NDA.</p>
+          <p className="text-[18px]">I am not able to show this section due to a request.</p>
         </div>
       </div>
       {/* Hypothesis Section */}
@@ -143,8 +143,9 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Design Challenge Section */}
-      <div className="relative bg-gray-100 text-black">
+      <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
             {/* Left Column - Title */}
@@ -225,7 +226,7 @@ export default function MozillaPage() {
         </div>
       </div>
       {/* Sign up flow */}
-      <div className="relative bg-green-200 text-black">
+      <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Made process visible</h2>
           <Carousel className="w-full">
@@ -280,15 +281,16 @@ export default function MozillaPage() {
       </div>
 
       {/* Transparency about data usag */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-green-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-18 text-center">Transparency about data usage</h2>
           <div className="flex-1 flex-col space-y-16">
             <div className="flex gap-x-8">
               <div className="flex-1 flex-col">
-                <h2 className="text-4xl font-normal mb-8 lg:mb-12">Transparency about data usage</h2>
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
-                  These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                  information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what’s
+                  being asked and why, without digging through settings.
                 </p>
               </div>
               <div className="flex-1 flex-col space-y-8">
@@ -300,17 +302,18 @@ export default function MozillaPage() {
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
               <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency, Not a Dead End</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
-                  These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                  information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+                  When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
+                  interrupting the flow.
                 </p>
               </div>
             </div>
             <div className="flex gap-x-8">
               <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
-                  These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                  information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+                  If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                 </p>
               </div>
               <div className="flex-1 flex-col space-y-8">
@@ -322,23 +325,35 @@ export default function MozillaPage() {
       </div>
 
       {/* Settings screens */}
-      <div className="relative bg-black text-white">
+
+      <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing Trust Through Settings</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
-            These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety information.
-            We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+            Trust in AI starts with transparency and control. These settings were designed to give users meaningful choices over their data, preferences, and assistant behavior—turning control into a
+            core part of the experience.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-setting-account.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-setting-billing.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-setting-extentions-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-setting-extentions-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-setting-memory.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-setting-models.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
+            <div className="flex flex-col gap-y-2">
+              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+              <p>Users can delete their account at any time—no questions asked.</p>
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+              <p>Users can clear their memory and past interactions whenever they choose.</p>
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+              <p>Users can select which AI model powers their assistant experience.</p>
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+              <p>Users can enable or disable extensions based on what they need or trust.</p>
+            </div>
           </div>
         </div>
       </div>
+
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -369,36 +384,35 @@ export default function MozillaPage() {
       </div>
 
       {/* chat screens */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-green-200 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing for Fast Iteration and Familiar Use</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
             For the chat experience, I prioritized speed of iteration by using familiar UX patterns and minimizing custom UI logic. This approach reduces development complexity and sets us up to
-            prototype and evolve quickly as we learn more. <br />
-            <br />
-            By keeping the design simple and grounded in proven interaction models, we can move faster in future testing and development—without sacrificing usability.
+            prototype and evolve quickly as we learn more. By keeping the design simple and grounded in proven interaction models, we can move faster in future testing and development—without
+            sacrificing usability.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
 
       {/* Mobile Mockups */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
-          <p className="text-[18px] mb-8 lg:mb-12">
-            Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
-            experience could <strong>translate to smaller screens with minimal rework.</strong>
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-mobile-1.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
-            <Image src="/mozilla-mobile-2.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
-            <Image src="/mozilla-mobile-3.png" alt="mozilla mockup" width={800} height={800} className="h-[400px] w-auto" priority />
+          <div className="flex space-x-8 items-center justify-center">
+            <div className="flex-1 flex-col gap-y-8 items-center justify-center">
+              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
+              <p className="text-[18px] mb-8 lg:mb-12">
+                Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
+                experience could <strong>translate to smaller screens with minimal rework.</strong>
+              </p>
+            </div>
+            <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={1600} height={1600} className="flex-1 h-auto w-full" priority />
           </div>
         </div>
       </div>
@@ -433,6 +447,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Colors Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -483,70 +498,72 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/*Learning Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        {/* Title */}
+      <div className="relative bg-gray-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          {/* Title */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
-
-          {/* Build Fast, Learn Faster */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Build Fast, Learn Faster</h3>
-              <p className="text-[18px]">
-                This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world feedback
-                is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
-              </p>
+            {/* Build Fast, Learn Faster */}
+            <div>
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Build Fast, Learn Faster</h3>
+                <p className="text-[18px]">
+                  This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
+                  feedback is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Balancing Agility with Control */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Balancing Agility with Control</h3>
-              <p className="text-[18px]">
-                One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to learn
-                fast while keeping scope focused and risk manageable at each stage.
-              </p>
+            {/* Balancing Agility with Control */}
+            <div>
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Balancing Agility with Control</h3>
+                <p className="text-[18px]">
+                  One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
+                  learn fast while keeping scope focused and risk manageable at each stage.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* I Am Not the User */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">I Am Not the User</h3>
-              <p className="text-[18px]">
-                While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user—and
-                assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and knowing what
-                to test next and why.
-              </p>
+            {/* I Am Not the User */}
+            <div>
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">I Am Not the User</h3>
+                <p className="text-[18px]">
+                  While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
+                  user—and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
+                  knowing what to test next and why.
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Designing for Trust */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Designing for Trust</h3>
-              <p className="text-[18px]">
-                Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It's not just about
-                features—it's about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
-              </p>
+            {/* Designing for Trust */}
+            <div>
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
+                <p className="text-[18px]">
+                  Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It's not just about
+                  features—it's about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Staying Curious and Outcome-Oriented */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
-              <p className="text-[18px]">
-                Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
-              </p>
+            {/* Staying Curious and Outcome-Oriented */}
+            <div>
+              <div className="border-t border-[#C1C1C1] pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
+                <p className="text-[18px]">
+                  Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       {/* Figma Exploration Section */}
       <div className="relative bg-primary text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -573,6 +590,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Playground Section */}
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
