@@ -90,9 +90,9 @@ export default function MozillaPage() {
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
           </div>
           <p className="text-[16px]">
-            Mozilla Assist aims to be a true personal AI assistant — one that understands your preferences and routines while keeping your data secure and private. Unlike traditional assistants that
-            rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully under the user's control, even as the
-            assistant becomes increasingly personalized and context-aware.
+            Mozilla Assist aims to be a true <strong>personal AI assistant</strong> — one that understands your preferences and routines while keeping your data <strong>secure and private</strong>.
+            Unlike traditional assistants that rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully
+            under the user's <strong>control</strong>, even as the assistant becomes increasingly personalized and context-aware.
           </p>
         </div>
       </div>
@@ -151,8 +151,8 @@ export default function MozillaPage() {
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
                 <p className="text-[16px]">
-                  To set the team up for a fast, feasible MVP, I worked closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                  shaped how I approached the UX—favoring familiar patterns and reducing custom logic to keep designs implementation-ready and adaptable as technical decisions evolved.
+                  To enable a fast, feasible MVP, I partnered closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment shaped my UX
+                  approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions evolved.
                 </p>
               </div>
             </div>
@@ -163,8 +163,8 @@ export default function MozillaPage() {
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
                 <p className="text-[16px]">
                   Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
-                  used—while giving people control without creating friction. Beyond compliance, the goal was to build trust: making transparency intuitive, choices meaningful, and ensuring the
-                  assistant felt helpful—not intrusive.
+                  used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
+                  meaningful, and ensuring the assistant felt helpful—not intrusive.
                 </p>
               </div>
 
@@ -172,8 +172,8 @@ export default function MozillaPage() {
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
                 <p className="text-[16px]">
-                  With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                  evolved—minimizing rework and enabling faster iteration down the line.
+                  With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product evolved—
+                  <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
                 </p>
               </div>
             </div>
@@ -190,15 +190,19 @@ export default function MozillaPage() {
             <div className="flex-1">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Exploring Early Concepts</h2>
 
-              <p className="text-[16px] mb-8">
-                I used low-fidelity wireframes to quickly shape core user flows and bring early alignment across design, product, and engineering. This approach allowed me to:
-              </p>
+              <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
               <ul className="list-disc pl-8 mb-8 text-[16px]">
-                <li>Explore layout and interaction ideas without heavy lift</li>
-                <li>Facilitate fast, actionable feedback from stakeholders</li>
-                <li>Spot technical constraints early and adjust with confidence</li>
+                <li>
+                  <strong>Explore layout and interaction ideas with speed</strong>
+                </li>
+                <li>
+                  <strong>Gather fast, actionable feedback from stakeholders</strong>
+                </li>
+                <li>
+                  <strong>Identify technical constraints early and adapt confidently</strong>
+                </li>
               </ul>
-              <p className="text-[16px]">By working lean and sharing concepts early, I helped the team stay aligned, reduce rework, and move into high-fidelity design with clarity and momentum.</p>
+              <p className="text-[16px]">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
             </div>
 
             {/* Right Column - Images */}
@@ -300,8 +304,8 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing Trust Through Settings</h2>
           <p className="text-[16px] mb-8 lg:mb-12">
-            Trust in AI starts with transparency and control. These settings were designed to give users meaningful choices over their data, preferences, and assistant behavior—turning control into a
-            core part of the experience.
+            Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
+            the experience.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
@@ -331,8 +335,8 @@ export default function MozillaPage() {
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Dark Mode for Modern Use</h2>
               <p className="text-[16px]">
-                The dark mode version of the product—designed not just to look good, but to make the experience more comfortable, especially in low-light environments. It&apos;s about reducing eye
-                strain and meeting user expectations on modern devices.
+                Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
+                <strong>modern platform expectations.</strong>
               </p>
             </div>
             <div className="flex">
@@ -358,9 +362,8 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing for Fast Iteration and Familiar Use</h2>
           <p className="text-[16px] mb-8 lg:mb-12">
-            For the chat experience, I prioritized speed of iteration by using familiar UX patterns and minimizing custom UI logic. This approach reduces development complexity and sets us up to
-            prototype and evolve quickly as we learn more. By keeping the design simple and grounded in proven interaction models, we can move faster in future testing and development—without
-            sacrificing usability.
+            To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+            <strong>quickly prototype and evolve</strong>—without compromising usability.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
