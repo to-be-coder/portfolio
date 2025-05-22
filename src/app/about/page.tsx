@@ -8,7 +8,7 @@ export default function About() {
     <>
       <main>
         {/* Hero Section */}
-        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-8 lg:h-[calc(100vh-80px)] ">
+        <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:my-8 lg:min-h-[calc(100vh-80px)] ">
           <div className="grid lg:grid-cols-3 gap-12 items-center">
             <div className="md:col-span-2">
               <h1 className="text-2xl font-bold mb-6 md:mb-8 block md:hidden">Hi, I&apos;m Jessica Cheng</h1>
@@ -58,8 +58,9 @@ export default function About() {
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-inside space-y-2 text-Black">
-                            <li>Partnered with founders to shape MVPs and define intuitive user flows.</li>
-                            <li>Conducted user interviews and tests to pinpoint friction points, then proposed and implemented solutions to streamline the product experience.</li>
+                            <li>Designed and shipped 0→1 digital products for early-stage startups, balancing user needs, speed, and business outcomes.</li>
+                            <li>Led end-to-end design for 2 internal product experiments — from user research and rapid prototyping to high-fidelity UI and polish.</li>
+                            <li>Collaborated with engineers across 4 startup projects to translate designs into scalable, responsive components—bridging design and implementation.</li>
                           </ul>
                         </div>
                       </div>
@@ -72,13 +73,8 @@ export default function About() {
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-inside space-y-2 Black">
-                            <li>
-                              <span className="font-semibold">UX Lead:</span> Designed an all-in-one client portal, reducing onboarding times for agencies and freelancers.
-                            </li>
-                            <li>
-                              <span className="font-semibold">Cross-Functional Collaboration:</span> Worked closely with engineers to ensure designs transitioned smoothly from prototype to production,
-                              maintaining consistency and clarity.
-                            </li>
+                            <li>Led end-to-end design for a web-based client portal used by 5+ agencies and freelancers, covering UX strategy, wireframes, prototypes, and high- fidelity UI.</li>
+                            <li>Designed and launched an all-in-one client portal in 4 months that streamlined workflows and reduced onboarding time for agencies and freelancers.</li>
                           </ul>
                         </div>
                       </div>
