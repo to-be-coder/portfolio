@@ -17,7 +17,32 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Jessica Cheng's Design Studio",
-  description: "Hi! I'm Jessica, a design engineer crafting delightful digital experiences through thoughtful UX and clean code.",
+  description:
+    'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
+  openGraph: {
+    title: "Jessica Cheng's Design Studio",
+    description:
+      'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
+    url: 'https://jessicacheng.studio',
+    siteName: "Jessica Cheng's Design Studio",
+    images: [
+      {
+        url: '/cover.png',
+        width: 1200,
+        height: 630,
+        alt: "Jessica Cheng's Design Portfolio",
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Jessica Cheng's Design Studio",
+    description:
+      'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
+    images: ['/cover.png'],
+  },
 }
 
 export default function RootLayout({
