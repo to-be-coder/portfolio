@@ -13,7 +13,7 @@ import { Button } from './button'
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
   { path: '/#projects', label: 'Works', id: 'works' },
-  { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
+  // { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
 ]
 

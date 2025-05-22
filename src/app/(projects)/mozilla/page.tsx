@@ -75,7 +75,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
-      {/* Workflow Section */}
+
       {/* Workflow Section */}
       <div className="relative bg-green-300">
         <div className="max-w-[1440px] mx-auto px-16 py-16 lg:py-32">
@@ -85,6 +85,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
