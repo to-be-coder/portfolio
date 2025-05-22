@@ -120,15 +120,13 @@ export default function MozillaPage() {
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[18px]">
-                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> built on a <strong>hybrid On-Device &lt;&gt; Confidential Cloud architecture</strong>. The direction emphasizes
-                openness, portability, and extendability—enabling users to switch between email or calendar providers, choose different AI models, and easily integrate plugins or extensions.
-                <br /> <br />
-                Transparency is a core principle: permission requests are clearly surfaced in the UI, and no data would be sent to the cloud without <strong>explicit user opt-in</strong>. The goal is
-                to make trusted opt-ins seamless and non-disruptive.
-                <br /> <br />
-                Security is treated as a <strong>first-class priority</strong>, guiding decisions from architecture to interface.
-                <br /> <br />
-                To maintain user trust, the proposed business model focuses on <strong>subscriptions</strong>, avoiding ad-based tracking entirely.
+                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> designed to prioritize user trust and control. The direction emphasizes openness, portability, and
+                extendability—allowing users to switch between email or calendar providers, choose different AI models, and easily integrate plugins or extensions. <br />
+                <br />
+                <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
+                data sharing feel intentional, seamless, and respectful—never disruptive. <br />
+                <br />
+                <strong>Security is treated as a first-class priority</strong>, influencing decisions across both interface and experience design.
               </p>
             </div>
 
@@ -200,17 +198,14 @@ export default function MozillaPage() {
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Exploring Early Concepts</h2>
 
               <p className="text-[18px] mb-8">
-                These early wireframes helped define the structure of key flows while aligning the team around core user goals from the start. Working at low fidelity allowed for:
+                I used low-fidelity wireframes to quickly shape core user flows and bring early alignment across design, product, and engineering. This approach allowed me to:
               </p>
               <ul className="list-disc pl-8 mb-8 text-[18px]">
-                <li>Fast iteration on layout and interaction ideas</li>
-                <li>Quick feedback from both stakeholders and developers</li>
-                <li>Early conversations around technical feasibility and edge cases</li>
+                <li>Explore layout and interaction ideas without heavy lift</li>
+                <li>Facilitate fast, actionable feedback from stakeholders</li>
+                <li>Spot technical constraints early and adjust with confidence</li>
               </ul>
-              <p className="text-[18px]">
-                By sharing these concepts early, we were able to surface constraints, explore alternatives, and build shared confidence before moving into high-fidelity design. This stage helped
-                bridge design intent with engineering reality—without slowing momentum.
-              </p>
+              <p className="text-[18px]">By working lean and sharing concepts early, I helped the team stay aligned, reduce rework, and move into high-fidelity design with clarity and momentum.</p>
             </div>
 
             {/* Right Column - Images */}
@@ -286,7 +281,7 @@ export default function MozillaPage() {
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
-                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what’s
+                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what's
                   being asked and why, without digging through settings.
                 </p>
               </div>
@@ -590,23 +585,23 @@ export default function MozillaPage() {
 
       {/* Playground Section */}
       <div className="relative bg-gray-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-6 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
           <p className="text-[18px] mb-8 lg:mb-12">
             A playground for the project to test the design and get feedback from the team. The playground is a collection of images that show the design in action.
           </p>
 
           <div className="grid grid-cols-3 md:grid-cols-5 gap-x-16 gap-y-8">
-            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-7.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-8.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
-            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-7.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-8.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
