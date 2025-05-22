@@ -27,7 +27,7 @@ export default function MozillaPage() {
           <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 <strong>Mozilla Assist</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question:{' '}
                 <strong>Can we deliver intelligent, context-aware</strong> assistance without sending user data to the cloud? <br /> <br />
                 This raised key UX challenges: How do you build trust in a system that operates mostly in the background? How do you support power users who expect transparency and control—without
@@ -38,7 +38,7 @@ export default function MozillaPage() {
 
             <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 Our goal was to <strong>define and test early product hypotheses</strong> for Mozilla Assist—a privacy-first, on-device AI assistant—through rapid prototyping and iteration. The
                 experience needed to be lightweight and test-ready, while still reflecting Mozilla's core values: <strong>privacy, transparency, and user control</strong>. <br /> <br />
                 Given the technical complexity, I served as a <strong>bridge between design and engineering</strong>, translating constraints like local processing and encryption limits into
@@ -54,16 +54,16 @@ export default function MozillaPage() {
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
               <div className="space-y-4">
                 <div>
-                  <span className="font-semibold text-[18px]">UX Strategy & Hypothesis Building:</span>
-                  <p className="text-[18px]">I contributed to the hypothesis-driven design process, helping the team frame product assumptions and identify what to test first.</p>
+                  <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
+                  <p className="text-[16px]">I contributed to the hypothesis-driven design process, helping the team frame product assumptions and identify what to test first.</p>
                 </div>
                 <div>
-                  <span className="font-semibold text-[18px]">Design & Prototyping:</span>
-                  <p className="text-[18px]">I designed core user flows and created low- to high-fidelity prototypes in Figma, optimized for fast iteration and engineering collaboration.</p>
+                  <span className="font-semibold text-[16px]">Design & Prototyping:</span>
+                  <p className="text-[16px]">I designed core user flows and created low- to high-fidelity prototypes in Figma, optimized for fast iteration and engineering collaboration.</p>
                 </div>
                 <div>
-                  <span className="font-semibold text-[18px]">Cross-Functional Collaboration:</span>
-                  <p className="text-[18px]">Collaborated with engineers to align designs with local LLM and encryption limits, iterating quickly through regular syncs.</p>
+                  <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
+                  <p className="text-[16px]">Collaborated with engineers to align designs with local LLM and encryption limits, iterating quickly through regular syncs.</p>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function MozillaPage() {
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
           </div>
-          <p className="text-[18px]">
+          <p className="text-[16px]">
             Mozilla Assist aims to be a true personal AI assistant — one that understands your preferences and routines while keeping your data secure and private. Unlike traditional assistants that
             rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully under the user's control, even as the
             assistant becomes increasingly personalized and context-aware.
@@ -103,7 +103,7 @@ export default function MozillaPage() {
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
           </div>
-          <p className="text-[18px]">I am not able to show this section due to a request.</p>
+          <p className="text-[16px]">I am not able to show this section due to a request.</p>
         </div>
       </div>
       {/* Hypothesis Section */}
@@ -115,7 +115,7 @@ export default function MozillaPage() {
           <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 We envision Mozilla Assist as a <strong>privacy-first assistant</strong> designed to prioritize user trust and control. The direction emphasizes openness, portability, and
                 extendability—allowing users to switch between email or calendar providers, choose different AI models, and easily integrate plugins or extensions. <br />
                 <br />
@@ -128,7 +128,7 @@ export default function MozillaPage() {
 
             <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
-              <ul className="list-disc ml-5 text-[18px]">
+              <ul className="list-disc ml-5 text-[16px]">
                 <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
                 <li>Most AI assistants today do not offer local-only functionality — this is a potential differentiator.</li>
                 <li>Early user research showed a willingness to engage with AI if it respected data boundaries and explained what it was doing.</li>
@@ -150,7 +150,7 @@ export default function MozillaPage() {
               {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   To set the team up for a fast, feasible MVP, I worked closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment
                   shaped how I approached the UX—favoring familiar patterns and reducing custom logic to keep designs implementation-ready and adaptable as technical decisions evolved.
                 </p>
@@ -161,7 +161,7 @@ export default function MozillaPage() {
               {/* Privacy-first UX */}
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
                   used—while giving people control without creating friction. Beyond compliance, the goal was to build trust: making transparency intuitive, choices meaningful, and ensuring the
                   assistant felt helpful—not intrusive.
@@ -171,7 +171,7 @@ export default function MozillaPage() {
               {/* Designing for scale */}
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                   evolved—minimizing rework and enabling faster iteration down the line.
                 </p>
@@ -190,15 +190,15 @@ export default function MozillaPage() {
             <div className="flex-1">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Exploring Early Concepts</h2>
 
-              <p className="text-[18px] mb-8">
+              <p className="text-[16px] mb-8">
                 I used low-fidelity wireframes to quickly shape core user flows and bring early alignment across design, product, and engineering. This approach allowed me to:
               </p>
-              <ul className="list-disc pl-8 mb-8 text-[18px]">
+              <ul className="list-disc pl-8 mb-8 text-[16px]">
                 <li>Explore layout and interaction ideas without heavy lift</li>
                 <li>Facilitate fast, actionable feedback from stakeholders</li>
                 <li>Spot technical constraints early and adjust with confidence</li>
               </ul>
-              <p className="text-[18px]">By working lean and sharing concepts early, I helped the team stay aligned, reduce rework, and move into high-fidelity design with clarity and momentum.</p>
+              <p className="text-[16px]">By working lean and sharing concepts early, I helped the team stay aligned, reduce rework, and move into high-fidelity design with clarity and momentum.</p>
             </div>
 
             {/* Right Column - Images */}
@@ -215,56 +215,40 @@ export default function MozillaPage() {
       </div>
 
       {/* Sign up flow */}
-      {/* <div className="relative bg-white text-black">
+      <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Made process visible</h2>
-          <Carousel className="w-full">
-            <CarouselContent>
-              <CarouselItem>
-                <div className="flex gap-x-8 px-5">
-                  <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  </div>
-                  <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">1. Account Connection</h3>
-                    <p className="text-[18px] mb-8 lg:mb-12">The flow begins by guiding users to connect their account </p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="flex gap-x-8 px-5">
-                  <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  </div>
-                  <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">2. Syncing Progress</h3>
-                    <p className="text-[18px] mb-8 lg:mb-12">
-                      Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
-                      wait time.
-                    </p>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="flex gap-x-8 px-5">
-                  <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  </div>
-                  <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">3. Ready to Chat</h3>
-                    <p className="text-[18px] mb-8 lg:mb-12">
-                      Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
-                      momentum going.
-                    </p>
-                  </div>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious variant="default" />
-            <CarouselNext variant="default" />
-          </Carousel>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">1. Account Connection</h3>
+                <p className="text-[16px] mb-8 lg:mb-12">The flow begins by guiding users to connect their account </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">2. Syncing Progress</h3>
+                <p className="text-[16px] mb-8 lg:mb-12">
+                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
+                  wait time.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">3. Ready to Chat</h3>
+                <p className="text-[16px] mb-8 lg:mb-12">
+                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                  momentum going.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Transparency about data usag */}
       <div className="relative bg-green-300 text-black">
@@ -274,7 +258,7 @@ export default function MozillaPage() {
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
-                <p className="text-[18px] mb-8 lg:mb-12">
+                <p className="text-[16px] mb-8 lg:mb-12">
                   This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what's
                   being asked and why, without digging through settings.
                 </p>
@@ -289,7 +273,7 @@ export default function MozillaPage() {
               </div>
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency, Not a Dead End</h3>
-                <p className="text-[18px] mb-8 lg:mb-12">
+                <p className="text-[16px] mb-8 lg:mb-12">
                   When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
                   interrupting the flow.
                 </p>
@@ -298,7 +282,7 @@ export default function MozillaPage() {
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
-                <p className="text-[18px] mb-8 lg:mb-12">
+                <p className="text-[16px] mb-8 lg:mb-12">
                   If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                 </p>
               </div>
@@ -315,7 +299,7 @@ export default function MozillaPage() {
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing Trust Through Settings</h2>
-          <p className="text-[18px] mb-8 lg:mb-12">
+          <p className="text-[16px] mb-8 lg:mb-12">
             Trust in AI starts with transparency and control. These settings were designed to give users meaningful choices over their data, preferences, and assistant behavior—turning control into a
             core part of the experience.
           </p>
@@ -346,7 +330,7 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Dark Mode for Modern Use</h2>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 The dark mode version of the product—designed not just to look good, but to make the experience more comfortable, especially in low-light environments. It&apos;s about reducing eye
                 strain and meeting user expectations on modern devices.
               </p>
@@ -373,7 +357,7 @@ export default function MozillaPage() {
       <div className="relative bg-green-200 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing for Fast Iteration and Familiar Use</h2>
-          <p className="text-[18px] mb-8 lg:mb-12">
+          <p className="text-[16px] mb-8 lg:mb-12">
             For the chat experience, I prioritized speed of iteration by using familiar UX patterns and minimizing custom UI logic. This approach reduces development complexity and sets us up to
             prototype and evolve quickly as we learn more. By keeping the design simple and grounded in proven interaction models, we can move faster in future testing and development—without
             sacrificing usability.
@@ -395,7 +379,7 @@ export default function MozillaPage() {
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
               <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
-              <p className="text-[18px] items-center">
+              <p className="text-[16px] items-center">
                 Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
                 experience could <strong>translate to smaller screens with minimal rework.</strong>
               </p>
@@ -420,15 +404,15 @@ export default function MozillaPage() {
               {/* Typeface */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
-                <p className="text-[18px]">Inter</p>
+                <p className="text-[16px]">Inter</p>
               </div>
 
               {/* Weights */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
                 <div className="space-y-1 md:space-y-2">
-                  <p className="text-[18px] font-normal">Regular</p>
-                  <p className="text-[18px] font-semibold">Semi-Bold</p>
+                  <p className="text-[16px] font-normal">Regular</p>
+                  <p className="text-[16px] font-semibold">Semi-Bold</p>
                 </div>
               </div>
             </div>
@@ -498,7 +482,7 @@ export default function MozillaPage() {
             <div>
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Build Fast, Learn Faster</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
                   feedback is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
                 </p>
@@ -509,7 +493,7 @@ export default function MozillaPage() {
             <div>
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Balancing Agility with Control</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
                   learn fast while keeping scope focused and risk manageable at each stage.
                 </p>
@@ -520,7 +504,7 @@ export default function MozillaPage() {
             <div>
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">I Am Not the User</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
                   user—and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
                   knowing what to test next and why.
@@ -532,7 +516,7 @@ export default function MozillaPage() {
             <div>
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It's not just about
                   features—it's about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
                 </p>
@@ -543,7 +527,7 @@ export default function MozillaPage() {
             <div>
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
-                <p className="text-[18px]">
+                <p className="text-[16px]">
                   Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
                 </p>
               </div>
@@ -559,7 +543,7 @@ export default function MozillaPage() {
             {/* Left Column - Text Content */}
             <div>
               <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
-              <p className="text-[18px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+              <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
                 className="inline-flex items-center bg-white text-black px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
