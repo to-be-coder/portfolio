@@ -1,4 +1,3 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import CtaSection from '@/components/ui/cta'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -142,9 +141,9 @@ export default function MozillaPage() {
       {/* Design Challenge Section */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col gap-y-16">
+          <div className="flex flex-col gap-y-8 lg:gap-y-16">
             {/* top row */}
-            <div className="flex gap-x-16">
+            <div className="flex flex-col lg:flex-row gap-x-16 gap-y-8 lg:gap-y-0">
               <div className="flex-1">
                 <h2 className="text-4xl font-normal">Design Challenges</h2>
               </div>
@@ -158,7 +157,7 @@ export default function MozillaPage() {
               </div>
             </div>
             {/* bottom row */}
-            <div className="flex gap-x-16">
+            <div className="flex flex-col lg:flex-row gap-x-16 gap-y-8 lg:gap-y-0">
               {/* Privacy-first UX */}
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
@@ -216,7 +215,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Sign up flow */}
-      <div className="relative bg-white text-black">
+      {/* <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Made process visible</h2>
           <Carousel className="w-full">
@@ -224,7 +223,7 @@ export default function MozillaPage() {
               <CarouselItem>
                 <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
                     <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">1. Account Connection</h3>
@@ -235,7 +234,7 @@ export default function MozillaPage() {
               <CarouselItem>
                 <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
                     <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">2. Syncing Progress</h3>
@@ -249,7 +248,7 @@ export default function MozillaPage() {
               <CarouselItem>
                 <div className="flex gap-x-8 px-5">
                   <div className="flex-1 flex-col space-y-8">
-                    <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
                     <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">3. Ready to Chat</h3>
@@ -265,28 +264,27 @@ export default function MozillaPage() {
             <CarouselNext variant="default" />
           </Carousel>
         </div>
-      </div>
+      </div> */}
 
       {/* Transparency about data usag */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-18 text-center">Transparency about data usage</h2>
-          <div className="flex-1 flex-col space-y-16">
-            <div className="flex gap-x-8">
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
-                {' '}
+          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center">Transparency about data usage</h2>
+          <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+              <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
                   This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what's
                   being asked and why, without digging through settings.
                 </p>
               </div>
-              <div className="flex-1 flex-col space-y-8">
+              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
                 <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
             </div>
-            <div className="flex gap-x-8">
-              <div className="flex-1 flex-col space-y-8">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+              <div className="flex flex-1 flex-col space-y-8">
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
@@ -297,15 +295,14 @@ export default function MozillaPage() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-x-8">
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
-                {' '}
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+              <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
                   If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                 </p>
               </div>
-              <div className="flex-1 flex-col space-y-8">
+              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last ">
                 <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
             </div>
@@ -323,20 +320,20 @@ export default function MozillaPage() {
             core part of the experience.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16">
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can delete their account at any time—no questions asked.</p>
             </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can clear their memory and past interactions whenever they choose.</p>
             </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can select which AI model powers their assistant experience.</p>
             </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can enable or disable extensions based on what they need or trust.</p>
             </div>
           </div>
@@ -349,22 +346,22 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Dark Mode for Modern Use</h2>
-              <p className="text-[18px] mb-8 lg:mb-12">
+              <p className="text-[18px]">
                 The dark mode version of the product—designed not just to look good, but to make the experience more comfortable, especially in low-light environments. It&apos;s about reducing eye
                 strain and meeting user expectations on modern devices.
               </p>
             </div>
             <div className="flex">
-              <Tabs defaultValue="dark" className="w-full gap-y-8">
+              <Tabs defaultValue="dark" className="w-full gap-y-4 lg:gap-y-8">
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="light">Light Mode</TabsTrigger>
                   <TabsTrigger value="dark">Dark Mode</TabsTrigger>
                 </TabsList>
                 <TabsContent value="light" className="flex justify-center">
-                  <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-md" priority />
+                  <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
                 </TabsContent>
                 <TabsContent value="dark" className="flex justify-center">
-                  <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-auto rounded-md" priority />
+                  <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
                 </TabsContent>
               </Tabs>
             </div>
@@ -383,9 +380,9 @@ export default function MozillaPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
@@ -393,15 +390,17 @@ export default function MozillaPage() {
       {/* Mobile Mockups */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex space-x-8 items-center justify-center">
-            <div className="flex-1 flex-col gap-y-8 items-center justify-center">
+          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-8 items-center justify-center">
+            <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
               <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
-              <p className="text-[18px] mb-8 lg:mb-12">
+              <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
+
+              <p className="text-[18px] items-center">
                 Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
                 experience could <strong>translate to smaller screens with minimal rework.</strong>
               </p>
             </div>
-            <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={1600} height={1600} className="flex-1 h-auto w-full" priority />
+            <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
           </div>
         </div>
       </div>
@@ -574,7 +573,7 @@ export default function MozillaPage() {
 
             {/* Right Column - iPhone Image */}
             <div className="flex justify-center">
-              <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto" priority />
+              <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
             </div>
           </div>
         </div>
@@ -583,22 +582,20 @@ export default function MozillaPage() {
       {/* Playground Section */}
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-6 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Playground</h2>
-          <p className="text-[18px] mb-8 lg:mb-12">
-            A playground for the project to test the design and get feedback from the team. The playground is a collection of images that show the design in action.
-          </p>
-
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-x-16 gap-y-8">
-            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-7.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-8.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8">
+            <div className="flex col-span-2 justify-center items-center">
+              <h2 className="text-4xl font-normal">Previous Explorations</h2>
+            </div>
+            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-7.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-8.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
