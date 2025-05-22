@@ -22,7 +22,7 @@ export default function CtaSection() {
       {/* Background with gradient opacity mask */}
       <div className="absolute inset-0">
         {/* Gradient overlay - darker center with same edge opacity */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#181C19]/70 via-[#181C19]/95 to-[#181C19]/70 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#181C19]/90  via-[#181C19]  to-[#181C19]/90 z-10"></div>
 
         {/* Top row */}
         <div className="absolute top-0 left-0 right-0 h-1/2 flex gap-4 p-4">
