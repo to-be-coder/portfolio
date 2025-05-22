@@ -31,7 +31,7 @@ export default function About() {
               </div>
               <Accordion type="single" collapsible className="w-full mt-8">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>How I can help</AccordionTrigger>
+                  <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
                     Having worked as a consultant for early-stage startups, I know firsthand how messy and iterative finding product–market fit can be. I&apos;m comfortable navigating ambiguity,
                     aligning with stakeholders, and evolving designs through continuous feedback. From research and strategy to UI/UX and testing, I help move ideas forward—building focused, usable
