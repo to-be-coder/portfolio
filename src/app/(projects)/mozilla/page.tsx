@@ -37,8 +37,8 @@ export default function MozillaPage() {
           <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
             <p className="text-[16px]">
-              To test early hypotheses for Mozilla Assist, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla’s values: privacy, transparency, and
-              user control. <br /> <br />I acted as a <strong>bridge between design and engineering</strong>, translating technical constraints—like local processing and encryption limits—into
+              To test early hypotheses for Mozilla Assist, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla&apos;s values: privacy, transparency,
+              and user control. <br /> <br />I acted as a <strong>bridge between design and engineering</strong>, translating technical constraints—like local processing and encryption limits—into
               practical, user-friendly experiences. We prioritized speed and insight over polish, aiming to uncover early user signals and align internal stakeholders.
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function MozillaPage() {
           <p className="text-[16px]">
             Mozilla Assist aims to be a true <strong>personal AI assistant</strong> — one that understands your preferences and routines while keeping your data <strong>secure and private</strong>.
             Unlike traditional assistants that rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully
-            under the user's <strong>control</strong>, even as the assistant becomes increasingly personalized and context-aware.
+            under the user&apos;s <strong>control</strong>, even as the assistant becomes increasingly personalized and context-aware.
           </p>
         </div>
       </div>
@@ -164,7 +164,8 @@ export default function MozillaPage() {
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
                 <p className="text-[16px]">
-                  With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product evolved—
+                  With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
+                  evolved—
                   <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
                 </p>
               </div>
@@ -255,8 +256,8 @@ export default function MozillaPage() {
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
-                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what's
-                  being asked and why, without digging through settings.
+                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
+                  what&apos;s being asked and why, without digging through settings.
                 </p>
               </div>
               <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
@@ -391,7 +392,7 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
             <div className="flex items-center justify-center">
-              <span className="text-[200px] font-regular font-['Inter'] tracking-tight">Aa</span>
+              <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
             </div>
 
             {/* Right Column - Typography Details */}
@@ -512,8 +513,8 @@ export default function MozillaPage() {
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
                 <p className="text-[16px]">
-                  Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It's not just about
-                  features—it's about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+                  Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
+                  features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
                 </p>
               </div>
             </div>
