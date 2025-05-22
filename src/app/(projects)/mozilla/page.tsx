@@ -22,7 +22,7 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-8 lg:gap-x-16 gap-y-12">
           <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
@@ -200,7 +200,7 @@ export default function MozillaPage() {
 
             {/* Right Column - Images */}
             <div className="flex-1">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
                 <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
                 <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
                 <Image src="/mozilla-v1-2.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
@@ -538,10 +538,10 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
+              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore my portfolio in Figma</h2>
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
-                href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
+                href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
                 className="inline-flex items-center bg-white text-black px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
