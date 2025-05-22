@@ -33,18 +33,18 @@ export default function About() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
-                    Having worked as a consultant for early-stage startups, I know firsthand how messy and iterative finding product–market fit can be. I&apos;m comfortable navigating ambiguity,
-                    aligning with stakeholders, and evolving designs through continuous feedback. From research and strategy to UI/UX and testing, I help move ideas forward—building focused, usable
-                    products across web and mobile, fast.
+                    I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>—aligning
+                    teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it’s product strategy, hands-on design, or rapid prototyping, I build focused, usable
+                    experiences that ship fast—across web and mobile.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
                   <AccordionTrigger>Empathy-Driven Approach</AccordionTrigger>
                   <AccordionContent>
                     <p className="text-Black">
-                      Before focusing on UX, I <span className="font-semibold">volunteered</span> at Mount Sinai Hospital, where I <span className="font-semibold">learned</span> the power of active
-                      listening and how to navigate challenging conversations—skills I now use every day when conducting user interviews or facilitating team workshops. This empathy{' '}
-                      <span className="font-semibold">guides</span> every design decision I make, ensuring real human needs remain at the heart of my work.
+                      Before UX, I spent <strong>2+ years volunteering</strong> at a hospital, where I learned the <strong>power of active listening</strong> and navigating difficult
+                      conversations—skills I now bring to user interviews and team workshops. That foundation in empathy shapes every design decision I make, keeping real human needs at the core of my
+                      work.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
