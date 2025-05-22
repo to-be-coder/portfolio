@@ -87,12 +87,15 @@ export default function Home() {
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'mozilla' ? 'bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent' : ''}>Mozilla</span>
                 </h3>
-                <p className="text-lg">Coming Soon</p>
+                <p className="text-lg">A privacy-first, on-device AI assistant.</p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>AI Design</span>
                   <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>Web App</span>
                   <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>Prototyping</span>
                   <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>User flow</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>
+                    Transparency and Trust
+                  </span>
                 </div>
               </div>
             </div>
