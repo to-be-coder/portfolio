@@ -20,6 +20,7 @@ export default function MozillaPage() {
       <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
         <Image src="/mozilla-hero.png" alt="Mozilla hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
       </div>
+
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="flex flex-col gap-x-16 gap-y-12">
@@ -66,11 +67,6 @@ export default function MozillaPage() {
                   <p className="text-[18px]">Collaborated with engineers to align designs with local LLM and encryption limits, iterating quickly through regular syncs.</p>
                 </div>
               </div>
-            </div>
-
-            <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Time Frame</h2>
-              <p className="text-[18px]">3 months</p>
             </div>
           </div>
         </div>
@@ -146,23 +142,26 @@ export default function MozillaPage() {
       {/* Design Challenge Section */}
       <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-            {/* Left Column - Title */}
-            <div>
-              <h2 className="text-4xl font-normal">Design Challenge</h2>
-            </div>
-
-            {/* Right Column - Approach Details */}
-            <div className="space-y-4 md:space-y-8">
-              {/* Content */}
-              <div className="border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Technical collaboration</h3>
-                <p className="text-[18px]">Partnered closely with engineering to align on limitations around on-device AI, encryption, and data storage.</p>
+          <div className="flex flex-col gap-y-16">
+            {/* top row */}
+            <div className="flex gap-x-16">
+              <div className="flex-1">
+                <h2 className="text-4xl font-normal">Design Challenges</h2>
               </div>
-
+              {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
+                <p className="text-[18px]">
+                  To set the team up for a fast, feasible MVP, I worked closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment
+                  shaped how I approached the UX—favoring familiar patterns and reducing custom logic to keep designs implementation-ready and adaptable as technical decisions evolved.
+                </p>
+              </div>
+            </div>
+            {/* bottom row */}
+            <div className="flex gap-x-16">
               {/* Privacy-first UX */}
-              <div className="border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular text-black mb-6">Privacy-first UX</h3>
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
                 <p className="text-[18px]">
                   Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
                   used—while giving people control without creating friction. Beyond compliance, the goal was to build trust: making transparency intuitive, choices meaningful, and ensuring the
@@ -170,15 +169,9 @@ export default function MozillaPage() {
                 </p>
               </div>
 
-              {/* Fast-to-ship MVP */}
-              <div className="border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular text-black mb-6">Fast-to-ship MVP</h3>
-                <p className="text-[18px]">Prioritized simplicity and speed by using familiar UX patterns and minimizing custom UI logic.</p>
-              </div>
-
               {/* Designing for scale */}
-              <div className="border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular text-black mb-6">Designing for scale</h3>
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
                 <p className="text-[18px]">
                   With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                   evolved—minimizing rework and enabling faster iteration down the line.
@@ -221,6 +214,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Sign up flow */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -279,7 +273,8 @@ export default function MozillaPage() {
           <h2 className="text-4xl font-normal mb-8 lg:mb-18 text-center">Transparency about data usage</h2>
           <div className="flex-1 flex-col space-y-16">
             <div className="flex gap-x-8">
-              <div className="flex-1 flex-col">
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                {' '}
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
                   This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what's
@@ -294,7 +289,7 @@ export default function MozillaPage() {
               <div className="flex-1 flex-col space-y-8">
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
-              <div className="flex-1 flex-col">
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency, Not a Dead End</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
                   When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
@@ -303,7 +298,8 @@ export default function MozillaPage() {
               </div>
             </div>
             <div className="flex gap-x-8">
-              <div className="flex-1 flex-col">
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                {' '}
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[18px] mb-8 lg:mb-12">
                   If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
