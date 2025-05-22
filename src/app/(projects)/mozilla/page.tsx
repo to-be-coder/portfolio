@@ -145,7 +145,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Design Challenge Section */}
-      <div className="relative bg-green-100 text-black">
+      <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
             {/* Left Column - Title */}
@@ -156,14 +156,14 @@ export default function MozillaPage() {
             {/* Right Column - Approach Details */}
             <div className="space-y-4 md:space-y-8">
               {/* Content */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Technical collaboration</h3>
+              <div className="border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Technical collaboration</h3>
                 <p className="text-[18px]">Partnered closely with engineering to align on limitations around on-device AI, encryption, and data storage.</p>
               </div>
 
               {/* Privacy-first UX */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-gray-400 mb-6">Privacy-first UX</h3>
+              <div className="border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-6">Privacy-first UX</h3>
                 <p className="text-[18px]">
                   Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
                   used—while giving people control without creating friction. Beyond compliance, the goal was to build trust: making transparency intuitive, choices meaningful, and ensuring the
@@ -172,14 +172,14 @@ export default function MozillaPage() {
               </div>
 
               {/* Fast-to-ship MVP */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-gray-400 mb-6">Fast-to-ship MVP</h3>
+              <div className="border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-6">Fast-to-ship MVP</h3>
                 <p className="text-[18px]">Prioritized simplicity and speed by using familiar UX patterns and minimizing custom UI logic.</p>
               </div>
 
               {/* Designing for scale */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
-                <h3 className="text-2xl font-regular text-gray-400 mb-6">Designing for scale</h3>
+              <div className="border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-regular text-black mb-6">Designing for scale</h3>
                 <p className="text-[18px]">
                   With many unknowns in the product's roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                   evolved—minimizing rework and enabling faster iteration down the line.
@@ -237,11 +237,8 @@ export default function MozillaPage() {
                     <Image src="/mozilla-signup-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
-                    <p className="text-[18px] mb-8 lg:mb-12">
-                      These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                      information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
-                    </p>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">1. Account Connection</h3>
+                    <p className="text-[18px] mb-8 lg:mb-12">The flow begins by guiding users to connect their account </p>
                   </div>
                 </div>
               </CarouselItem>
@@ -251,10 +248,10 @@ export default function MozillaPage() {
                     <Image src="/mozilla-signup-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">2. Syncing Progress</h3>
                     <p className="text-[18px] mb-8 lg:mb-12">
-                      These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                      information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+                      Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
+                      wait time.
                     </p>
                   </div>
                 </div>
@@ -265,10 +262,10 @@ export default function MozillaPage() {
                     <Image src="/mozilla-signup-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-auto rounded-md border border-gray-200" priority />
                   </div>
                   <div className="flex-1 flex-col">
-                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Sign up flow</h3>
+                    <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">3. Ready to Chat</h3>
                     <p className="text-[18px] mb-8 lg:mb-12">
-                      These warning screens require A/B testing to determine which version is less disruptive and feels more natural to users while still effectively communicating important safety
-                      information. We designed a series of warning screens to help users understand the risks of using AI and to help them make informed decisions.
+                      Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                      momentum going.
                     </p>
                   </div>
                 </div>
@@ -281,7 +278,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Transparency about data usag */}
-      <div className="relative bg-green-900 text-white">
+      <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-18 text-center">Transparency about data usage</h2>
           <div className="flex-1 flex-col space-y-16">
@@ -355,7 +352,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Light and Dark Mode Mockups */}
-      <div className="relative bg-green-900 text-white">
+      <div className="relative bg-green-300 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             <div className="flex flex-col">
