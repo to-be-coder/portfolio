@@ -12,7 +12,7 @@ export default function MozillaPage() {
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
-          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assist</h1>
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assistant</h1>
           <p className="items-end text-lg md:text-2xl mb-1 text-black">On-device AI assistant</p>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default function MozillaPage() {
           <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
-              <strong>Mozilla Assist</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question: Can we deliver intelligent,
+              <strong>Mozilla Assistant</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question: Can we deliver intelligent,
               context-aware assistance without sending user data to the cloud? <br /> <br />
               <strong>This raised key UX challenges</strong>: How do you build trust in a system that operates mostly in the background? How do you support power users who expect transparency and
               control—without overwhelming them with complexity? <br /> <br />I collaborated closely with engineering to design a prototype for early user testing and stakeholder review. This work
@@ -37,7 +37,7 @@ export default function MozillaPage() {
           <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
             <p className="text-[16px]">
-              To test early hypotheses for Mozilla Assist, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla&apos;s values: privacy, transparency,
+              To test early hypotheses for Mozilla Assistant, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla&apos;s values: privacy, transparency,
               and user control. <br /> <br />I acted as a <strong>bridge between design and engineering</strong>, translating technical constraints—like local processing and encryption limits—into
               practical, user-friendly experiences. We prioritized speed and insight over polish, aiming to uncover early user signals and align internal stakeholders.
             </p>
@@ -75,14 +75,14 @@ export default function MozillaPage() {
 
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assist</h2>
+        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assistant</h2>
 
         <div className="mt-8 md:mt-12">
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
           </div>
           <p className="text-[16px]">
-            Mozilla Assist aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a
+            Mozilla Assistant aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a
             local, encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function MozillaPage() {
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[16px]">
-                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
+                We envision Mozilla Assistant as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
                 <br />
                 <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
                 data sharing feel intentional, seamless, and respectful—never disruptive. <br />
