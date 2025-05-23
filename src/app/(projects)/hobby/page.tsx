@@ -17,27 +17,13 @@ export default function Hobby() {
 
       {/* Masonry Grid Section */}
       <div className="container mx-auto px-8 lg:px-32 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* Column 1 */}
-          <div className="lg:flex flex-col space-y-4 hidden ">
-            {[...Array(7)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="lg:block rounded-2xl min-h-[400px] object-cover w-full hidden" width={300} height={400} />
-            ))}
-          </div>
-
-          {/* Column 2 */}
-          <div className="flex flex-col gap-4 mt-32">
-            {[...Array(7)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 8}.jpeg`} alt={`Hobby Image ${i + 8}`} className="rounded-2xl min-h-[400px] object-cover w-full" width={300} height={400} />
-            ))}
-          </div>
-
-          {/* Column 3 */}
-          <div className="flex flex-col gap-4">
-            {[...Array(6)].map((_, i) => (
-              <Image key={i} src={`/hobby-${i + 15}.jpeg`} alt={`Hobby Image ${i + 15}`} className="rounded-2xl min-h-[400px] object-cover w-full" width={300} height={400} />
-            ))}
-          </div>
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+          {/* Images */}
+          {[...Array(40)].map((_, i) => (
+            <div key={i} className="break-inside-avoid">
+              <Image src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="rounded-md w-full h-auto object-cover" width={600} height={600} />
+            </div>
+          ))}
         </div>
       </div>
 
