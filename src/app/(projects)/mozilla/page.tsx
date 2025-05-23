@@ -212,13 +212,13 @@ export default function MozillaPage() {
       {/* Sign up flow */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Made process visible</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Clarity at Every Step</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
               <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
-                <p className="text-[16px]">The flow begins by guiding users to connect their account </p>
+                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
               </div>
             </div>
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
@@ -267,7 +267,7 @@ export default function MozillaPage() {
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency, Not a Dead End</h3>
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
                   When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
                   interrupting the flow.
