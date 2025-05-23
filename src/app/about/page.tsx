@@ -107,31 +107,40 @@ export default function About() {
                         <h3 className="text-base font-regular mb-2 md:mb-4">UX & Design</h3>
                         <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">User Research</span>
+                            <span className="block ml-[-1px]">Design Thinking & Product Strategy</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Wireframing</span>
+                            <span className="block ml-[-1px]">User Research & Usability Testing</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Prototyping</span>
+                            <span className="block ml-[-1px]">Wireframing, Prototyping & Interaction Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Systems</span>
+                            <span className="block ml-[-1px]">Information Architecture & Journey Mapping</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Usability Testing</span>
+                            <span className="block ml-[-1px]">Design Systems & Scalable UI Patterns</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Systems Architecture</span>
+                            <span className="block ml-[-1px]">Inclusive & Accessible Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Systematic Design Thinking Across Products</span>
+                            <span className="block ml-[-1px]">Mobile & Web App Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Inclusive & Accessible Design Advocacy</span>
+                            <span className="block ml-[-1px]">A/B Testing & Data-Driven Iteration</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Stakeholder Communication</span>
+                            <span className="block ml-[-1px]">Cross-Functional Collaboration</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Stakeholder Communication & Alignment</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Design Reviews & Constructive Critique</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Systematic Design Across Products</span>
                           </li>
                         </ul>
                       </div>
