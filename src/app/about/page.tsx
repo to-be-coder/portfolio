@@ -34,7 +34,7 @@ export default function About() {
                   <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
                     I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>—aligning
-                    teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it's product strategy, hands-on design, or rapid prototyping, I build focused, usable
+                    teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it&apos;s product strategy, hands-on design, or rapid prototyping, I build focused, usable
                     experiences that ship fast—across web and mobile.
                   </AccordionContent>
                 </AccordionItem>
