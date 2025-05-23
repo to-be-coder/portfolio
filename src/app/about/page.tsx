@@ -170,10 +170,10 @@ export default function About() {
                             <span className="block ml-[-1px]">Tailwind CSS</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Mantine UI</span>
+                            <span className="block ml-[-1px]">Shadcn UI</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Shadcn UI</span>
+                            <span className="block ml-[-1px]">Mantine UI</span>
                           </li>
                         </ul>
                       </div>
@@ -196,9 +196,15 @@ export default function About() {
                           <li className="pl-1">
                             <span className="block ml-[-1px]">Visual Studio Code</span>
                           </li>
-                          <li className="pl-1">Relume</li>
-                          <li className="pl-1">Cursor</li>
-                          <li className="pl-1">Linear</li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Relume</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Cursor</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Linear</span>
+                          </li>
                         </ul>
                       </div>
 
