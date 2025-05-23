@@ -82,9 +82,8 @@ export default function MozillaPage() {
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
           </div>
           <p className="text-[16px]">
-            Mozilla Assist aims to be a true <strong>personal AI assistant</strong> — one that understands your preferences and routines while keeping your data <strong>secure and private</strong>.
-            Unlike traditional assistants that rely on cloud processing, Mozilla Assist builds a local, encrypted, on-device knowledge base. This architecture ensures that user data remains fully
-            under the user&apos;s <strong>control</strong>, even as the assistant becomes increasingly personalized and context-aware.
+            Mozilla Assist aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a
+            local, encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
           </p>
         </div>
       </div>
@@ -108,8 +107,7 @@ export default function MozillaPage() {
             <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[16px]">
-                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> designed to prioritize user trust and control. The direction emphasizes openness, portability, and
-                extendability—allowing users to switch between email or calendar providers, choose different AI models, and easily integrate plugins or extensions. <br />
+                We envision Mozilla Assist as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
                 <br />
                 <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
                 data sharing feel intentional, seamless, and respectful—never disruptive. <br />
@@ -122,8 +120,8 @@ export default function MozillaPage() {
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
               <ul className="list-disc ml-5 text-[16px]">
                 <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
-                <li>Most AI assistants today do not offer local-only functionality — this is a potential differentiator.</li>
-                <li>Early user research showed a willingness to engage with AI if it respected data boundaries and explained what it was doing.</li>
+                <li>Users expect control; transparent, opt-in permissions make data sharing feel safe and intentional.</li>
+                <li>Security isn&apos;t optional; it&apos;s foundational to earning and maintaining user confidence.</li>
               </ul>
             </div>
           </div>
