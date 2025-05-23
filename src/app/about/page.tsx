@@ -34,7 +34,7 @@ export default function About() {
                   <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
                     I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>—aligning
-                    teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it’s product strategy, hands-on design, or rapid prototyping, I build focused, usable
+                    teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it's product strategy, hands-on design, or rapid prototyping, I build focused, usable
                     experiences that ship fast—across web and mobile.
                   </AccordionContent>
                 </AccordionItem>
@@ -57,10 +57,20 @@ export default function About() {
                           <h3 className="text-base font-regular">Thoughtful (3 Years)</h3>
                         </div>
                         <div className="md:col-span-2">
-                          <ul className="list-disc list-inside space-y-2 text-Black">
-                            <li>Designed and shipped 0→1 digital products for early-stage startups, balancing user needs, speed, and business outcomes.</li>
-                            <li>Led end-to-end design for 2 internal product experiments — from user research and rapid prototyping to high-fidelity UI and polish.</li>
-                            <li>Collaborated with engineers across 4 startup projects to translate designs into scalable, responsive components—bridging design and implementation.</li>
+                          <ul className="list-disc list-outside space-y-2 text-Black pl-5">
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Designed and shipped 0→1 digital products for early-stage startups, balancing user needs, speed, and business outcomes.</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Led end-to-end design for 2 internal product experiments — from user research and rapid prototyping to high-fidelity UI and polish.
+                              </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Collaborated with engineers across 4 startup projects to translate designs into scalable, responsive components—bridging design and implementation.
+                              </span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -72,9 +82,17 @@ export default function About() {
                           <h3 className="text-base font-regular]">Fractional (Co-Founder, 2023)</h3>
                         </div>
                         <div className="md:col-span-2">
-                          <ul className="list-disc list-inside space-y-2 Black">
-                            <li>Led end-to-end design for a web-based client portal used by 5+ agencies and freelancers, covering UX strategy, wireframes, prototypes, and high- fidelity UI.</li>
-                            <li>Designed and launched an all-in-one client portal in 4 months that streamlined workflows and reduced onboarding time for agencies and freelancers.</li>
+                          <ul className="list-disc list-outside space-y-2 Black pl-5">
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Led end-to-end design for a web-based client portal used by 5+ agencies and freelancers, covering UX strategy, wireframes, prototypes, and high- fidelity UI.
+                              </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Designed and launched an all-in-one client portal in 4 months that streamlined workflows and reduced onboarding time for agencies and freelancers.
+                              </span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -87,47 +105,103 @@ export default function About() {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-8">
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
                         <h3 className="text-base font-regular mb-2 md:mb-4">UX & Design</h3>
-                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                          <li>User Research</li>
-                          <li>Wireframing</li>
-                          <li>Prototyping</li>
-                          <li>Design Systems</li>
-                          <li>Usability Testing</li>
+                        <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">User Research</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Wireframing</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Prototyping</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Design Systems</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Usability Testing</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Design Systems Architecture</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Systematic Design Thinking Across Products</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Inclusive & Accessible Design Advocacy</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Stakeholder Communication</span>
+                          </li>
                         </ul>
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
                         <h3 className="text-base font-regular mb-2 md:mb-4">Development</h3>
-                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                          <li>HTML</li>
-                          <li>CSS</li>
-                          <li>JavaScript</li>
-                          <li>TypeScript</li>
-                          <li>React.js</li>
-                          <li>Next.js</li>
-                          <li>Node.js</li>
-                          <li>Python</li>
+                        <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">HTML</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">CSS</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">JavaScript</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">TypeScript</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">React.js</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Next.js</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Node.js</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Python</span>
+                          </li>
                         </ul>
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
                         <h3 className="text-base font-regular mb-2 md:mb-4">Tools</h3>
-                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                          <li>Figma</li>
-                          <li>Adobe Photoshop/Lightroom</li>
-                          <li>Webflow</li>
-                          <li>ChatGPT</li>
-                          <li>Visual Studio Code</li>
+                        <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Figma</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Webflow</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">ChatGPT</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Visual Studio Code</span>
+                          </li>
                         </ul>
                       </div>
 
                       <div className="border-t border-[#C1C1C1] pt-[4px]">
                         <h3 className="text-base font-regular mb-2 md:mb-4">Languages</h3>
-                        <ul className="list-disc list-inside space-y-1 md:space-y-2">
-                          <li>English</li>
-                          <li>Japanese</li>
-                          <li>Chinese (Mandarin)</li>
-                          <li>Taiwanese</li>
+                        <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">English</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Japanese</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Chinese (Mandarin)</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Taiwanese</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
