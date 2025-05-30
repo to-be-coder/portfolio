@@ -17,21 +17,21 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Jessica Cheng's Design Studio",
+  title: "Jessica Cheng's portfolio",
   description:
     'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
   openGraph: {
-    title: "Jessica Cheng's Design Studio",
+    title: "Jessica Cheng's portfolio",
     description:
       'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
     url: 'https://jessicacheng.studio',
-    siteName: "Jessica Cheng's Design Studio",
+    siteName: "Jessica Cheng's portfolio",
     images: [
       {
         url: '/cover.png',
         width: 1200,
         height: 630,
-        alt: "Jessica Cheng's Design Portfolio",
+        alt: "Jessica Cheng's portfolio",
       },
     ],
     locale: 'en_US',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Jessica Cheng's Design Studio",
+    title: "Jessica Cheng's portfolio",
     description:
       'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
     images: ['/cover.png'],
