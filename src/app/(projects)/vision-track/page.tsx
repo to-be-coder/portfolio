@@ -61,11 +61,11 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Workflow Section */}
-      <div className="relative bg-[#FFC157]">
+      <div className="relative bg-blue-400">
         <div className="max-w-[1440px] mx-auto px-16 py-16 lg:py-32">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">Workflow</h2>
           <div className="w-full flex justify-center">
-            <Image src="/workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
+            <Image src="/vision-track-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function VisionTrackPage() {
                 <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
-                      <User key={i} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                      <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
                     ))}
                   </div>
                 </div>
@@ -227,12 +227,12 @@ export default function VisionTrackPage() {
                 <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
                   <div className="flex gap-1">
                     {[...Array(10)].map((_, i) => (
-                      <User key={i} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                      <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
                     ))}
                   </div>
                   <div className="flex gap-1">
                     {[...Array(10)].map((_, i) => (
-                      <User key={i + 10} className="w-6 h-6 fill-[#FF9B6A] stroke-none" />
+                      <User key={i + 10} className="w-6 h-6 fill-blue-400 stroke-none" />
                     ))}
                   </div>
                 </div>
