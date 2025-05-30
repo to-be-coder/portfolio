@@ -13,8 +13,33 @@
   --color-border: #e5e7eb;
 
   --color-primary: #000000;
-  --color-primary-hover: #0082e2;
-  --color-secondary: #46e678;
+  --color-primary-hover: #0098f6;
+  --color-secondary: #0098f6;
+  --color-secondary-hover: #3ba4eb;
+  --color-secondary-foreground: #fff;
+
+  --color-secondary-dark: #fff;
+
+  --animate-accordion-down: accordion-down 0.15s ease-out;
+  --animate-accordion-up: accordion-up 0.15s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
 }
 
 /*
@@ -113,6 +138,36 @@
 @layer utilities {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@layer base {
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-accordion-down {
+    animation: var(--animate-accordion-down);
+  }
+
+  .animate-accordion-up {
+    animation: var(--animate-accordion-up);
   }
 }
 

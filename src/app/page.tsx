@@ -1,42 +1,79 @@
+'use client'
 import CtaSection from '@/components/ui/cta'
+import VideoBackground from '@/components/video-background'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
+  const mozillaRef = useRef<HTMLDivElement>(null)
+  const visionTrackRef = useRef<HTMLDivElement>(null)
+  const lilypadRef = useRef<HTMLDivElement>(null)
+  const hobbyRef = useRef<HTMLDivElement>(null)
+
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+
+  // Set up scroll detection
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      // Get all sections
+      const sections = [
+        { id: 'mozilla', ref: mozillaRef.current },
+        { id: 'visionTrack', ref: visionTrackRef.current },
+        { id: 'lilypad', ref: lilypadRef.current },
+        { id: 'hobby', ref: hobbyRef.current },
+      ]
+
+      // Find the section that is most visible
+      let active = null
+
+      for (const section of sections) {
+        if (!section.ref) continue
+
+        const rect = section.ref.getBoundingClientRect()
+        const sectionTop = rect.top + window.scrollY
+        const sectionBottom = sectionTop + rect.height
+
+        // If the middle of the viewport is within this section
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          active = section.id
+          break
+        }
+      }
+
+      setActiveSection(active)
+    }
+
+    // Initial check
+    handleScroll()
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll)
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <main>
       {/* Hero Section */}
-      <div className="container max-w-7xl mx-auto px-8 h-[70vh] flex flex-col">
-        <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight">Hi, I&apos;m Jessica Cheng,</h1>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight">
-            a <span className="text-secondary">product designer </span>
-            that <span className="text-secondary">codes</span>
-          </h1>
-        </div>
-        {/* <div>
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UI Design</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">UX Research</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Prototyping</span>
-            <span className="rounded-full border border-[#C1C1C1] px-4 py-1 text-sm text-black">Frontend Development</span>
-          </div>
-
-          <div className="border-t border-gray-200 mt-4 pt-4 flex justify-end">
-            <Link href="/#projects" className="group flex items-center gap-1 text-base text-gray-900 hover:text-gray-700">
-              Check Out Projects <ArrowDown className="text-[#ff9c6a] w-4 h-4 stroke-3 transition-transform group-hover:translate-y-1" />
-            </Link>
-          </div>
-        </div> */}
-      </div>
-
+      <VideoBackground />
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
-
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div
+          ref={mozillaRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+            ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 '}`}
+        >
           <a href="/mozilla" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 order-last lg:order-first lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[400px]">
                 <div className="relative w-full h-full">
                   <Image
                     src="/mozilla-cover.png"
@@ -47,13 +84,17 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Mozilla</h3>
-                <p className="text-lg">Coming Soon</p>
+                <h3 className="text-4xl font-bold">
+                  <span className={activeSection === 'mozilla' ? 'bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent' : ''}>Mozilla</span>
+                </h3>
+                <p className="text-lg">Led UX, designed flows, and synced with engineering.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Design</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Prototyping</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">User flow</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>AI Design</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>App Design</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>Prototyping</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>
+                    Transparency and Trust
+                  </span>
                 </div>
               </div>
             </div>
@@ -61,19 +102,33 @@ export default function Home() {
         </div>
 
         {/* Project Vision Track */}
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 pt-8 pl-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div
+          ref={visionTrackRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+            ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80'}`}
+        >
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-8 h-full">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Vision Track</h3>
+                <h3 className="text-4xl font-bold">
+                  <span className={activeSection === 'visionTrack' ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
+                </h3>
                 <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UX Research</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">B2B</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UX Research</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
+                    Competitive Analysis
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
+                    User Interviews
+                  </span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Persona</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>B2B</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>SaaS</span>
                 </div>
               </div>
-              <div className="mt-4 lg:mt-0 lg:w-2/3 h-full lg:self-end flex items-end justify-end">
-                <div className="relative h-[300px] lg:h-[500px] w-full flex items-end justify-end">
+              <div className="mt-0 lg:w-2/3 h-full flex items-end justify-end absolute bottom-0 right-0 lg:relative">
+                <div className="relative h-[300px] lg:h-[400px] w-full flex items-end justify-end">
                   <Image
                     src="/vision-track-cover.png"
                     alt="Vision Track Project"
@@ -84,7 +139,6 @@ export default function Home() {
                       maxHeight: '100%',
                       width: 'auto',
                       maxWidth: '100%',
-                      [typeof window !== 'undefined' && window.innerWidth >= 1024 ? 'transform' : '']: 'scale(1.8)',
                     }}
                   />
                 </div>
@@ -94,11 +148,14 @@ export default function Home() {
         </div>
 
         {/* Lilypad */}
-
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div
+          ref={lilypadRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+            ${activeSection === 'lilypad' ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
+        >
           <a href="/lilypad" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
+              <div className="flex items-center justify-center mt-0 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
                 <div className="relative w-full h-full">
                   <Image
                     src="/lilypad-cover.png"
@@ -109,12 +166,16 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 lg:w-1/3 lg:self-start order-first lg:order-last">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Lilypad</h3>
+                <h3 className="text-4xl font-bold">
+                  <span className={activeSection === 'lilypad' ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
+                </h3>
                 <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UI Design</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs  text-black whitespace-nowrap`}>Landing Page</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
+                    Responsive Design
+                  </span>
                 </div>
               </div>
             </div>
@@ -123,11 +184,11 @@ export default function Home() {
 
         {/* Thoughtful */}
 
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        {/* <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
           <a href="/thoughtful" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Thoughtful</h3>
+                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent">Thoughtful</h3>
                 <p className="text-lg">Coming Soon</p>
                 <div className="flex flex-wrap gap-2">
                   <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
@@ -147,19 +208,24 @@ export default function Home() {
               </div>
             </div>
           </a>
-        </div>
+        </div> */}
 
         {/* Other Fun Works */}
-
-        <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
+        <div
+          ref={hobbyRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+            ${activeSection === 'hobby' ? 'bg-rose-50' : 'bg-gray-100/80'}`}
+        >
           <a href="/hobby" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-full">
               <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-2xl font-bold group-hover:text-secondary">Outside of Work</h3>
+                <h3 className="text-4xl font-bold ">
+                  <span className={activeSection === 'hobby' ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
+                </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Photography</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Camping</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Photography</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Camping</span>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
@@ -188,7 +254,6 @@ export default function Home() {
           </div>
         </div> */}
       </div>
-
       {/* Contact Section */}
       <CtaSection />
     </main>

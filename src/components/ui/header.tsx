@@ -3,54 +3,93 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
+import { Menu, X } from 'lucide-react'
 import { Button } from './button'
 
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
   { path: '/#projects', label: 'Works', id: 'works' },
-  { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
+  // { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
 ]
-
-interface NavItemProps {
-  path: string
-  label: string
-  pathname: string
-  onClick?: () => void
-}
-
-const NavItem = ({ path, label, pathname, onClick }: NavItemProps) => (
-  <NavigationMenuItem>
-    <Link href={path} legacyBehavior passHref>
-      <NavigationMenuLink
-        className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', pathname === path ? 'text-black' : 'text-gray-500', 'hover:bg-gray-100')}
-        onClick={onClick}
-      >
-        <span className="relative">{label}</span>
-      </NavigationMenuLink>
-    </Link>
-  </NavigationMenuItem>
-)
 
 export default function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isProjectsSection, setIsProjectsSection] = useState(false)
+
+  useEffect(() => {
+    // Function to check if projects section is visible
+    const checkProjectsSection = () => {
+      if (pathname !== '/') {
+        setIsProjectsSection(false)
+        return
+      }
+
+      const projectsSection = document.getElementById('projects')
+      if (!projectsSection) {
+        setIsProjectsSection(false)
+        return
+      }
+
+      const rect = projectsSection.getBoundingClientRect()
+      const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2
+
+      setIsProjectsSection(isVisible)
+    }
+
+    // Initial check
+    checkProjectsSection()
+
+    // Add scroll event listener
+    window.addEventListener('scroll', checkProjectsSection)
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', checkProjectsSection)
+    }
+  }, [pathname])
+
+  const isNavItemActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/' && !isProjectsSection
+    }
+    if (path === '/#projects') {
+      return (pathname === '/' && isProjectsSection) || pathname === '/#projects'
+    }
+    return pathname === path
+  }
+
+  const NavItem = ({ path, label, onClick }: { path: string; label: string; onClick?: () => void }) => (
+    <NavigationMenuItem>
+      <Link href={path} legacyBehavior passHref>
+        <NavigationMenuLink
+          className={cn(
+            navigationMenuTriggerStyle(),
+            'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
+            isNavItemActive(path) ? 'text-secondary' : 'text-black',
+            'hover:bg-gray-100'
+          )}
+          onClick={onClick}
+        >
+          <p className="relative font-medium">{label}</p>
+        </NavigationMenuLink>
+      </Link>
+    </NavigationMenuItem>
+  )
 
   return (
-    <header className="sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20">
-      <div className="px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
+    <header className={`sticky top-0 z-50 ${mobileMenuOpen ? 'bg-white/50' : 'bg-white/50'} backdrop-blur-md border-b border-gray-200/20`}>
+      <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
             <div className="flex items-center gap-1">
-              <Image src="/icon.svg" alt="Jessica Cheng" width={50} height={50} />
-              <div className="flex flex-col">
-                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                <p className="text-sm text-muted-foreground">Product Designer</p>
-              </div>
+              <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
+              <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
             </div>
           </Link>
         </div>
@@ -59,7 +98,7 @@ export default function Header() {
             <NavigationMenuList className="list-none">
               <div className="flex gap-2">
                 {navigationItems.map((item) => (
-                  <NavItem key={item.id} {...item} pathname={pathname} onClick={() => {}} />
+                  <NavItem key={item.id} path={item.path} label={item.label} onClick={() => {}} />
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
@@ -73,35 +112,34 @@ export default function Header() {
 
         <div className="flex sm:hidden">
           <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <span className="sr-only">Open main menu</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+            <Menu />
           </button>
         </div>
       </div>
-      <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`} role="dialog" aria-modal="true">
-        <div className="fixed inset-0 z-50">
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 top-0 left-0 z-50 w-full h-full min-h-screen bg-white" role="dialog" aria-modal="true">
+          <div className="px-4 sm:px-6 lg:px-8 py-2">
+            <div className="flex items-center justify-between mb-6">
               <Link href="/" legacyBehavior passHref>
-                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                <div className="flex items-center gap-1">
+                  <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
+                  <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                </div>
               </Link>
-              <button type="button" className="-m-2.5 rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                <span className="sr-only">Close menu</span>
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+              <div className="flex-1 flex justify-end">
+                <button type="button" className="rounded-md  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
+                  <X />
+                </button>
+              </div>
             </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
+            <div className="flow-root">
+              <div className="divide-y divide-gray-500/10">
+                <div className="space-y-4 py-6">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.id}
                       href={item.path}
-                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', pathname === item.path ? 'text-[#ff9c6a]' : 'text-gray-900 hover:bg-gray-50')}
+                      className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50')}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
@@ -109,15 +147,17 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <Button asChild className="w-full">
-                    <Link href={`/contact`}>Contact</Link>
+                  <Button variant="secondary" className="w-full">
+                    <Link href={`/contact`} onClick={() => setMobileMenuOpen(false)}>
+                      Contact
+                    </Link>
                   </Button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   )
 }

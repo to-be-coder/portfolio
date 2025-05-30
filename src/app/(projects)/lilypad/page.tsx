@@ -1,5 +1,5 @@
 import CtaSection from '@/components/ui/cta'
-import { MoveDown } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -7,43 +7,24 @@ export default function LilypadPage() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="w-full h-[90vh] flex flex-col relative">
+      <div className="w-full h-auto flex flex-col relative max-w-7xl mx-auto px-8">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image src="/lilypad-hero.jpeg" alt="Lilypad hero background" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-black/85" />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex-1 flex flex-col justify-center items-center gap-y-2 md:gap-y-4 px-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-center text-white">Lilypad</h1>
-          <p className="text-[32px] mt-4 text-center text-white">EdTech Startup: Student Evaluation Service for School Districts</p>
-        </div>
-
-        <div className="relative z-10 px-8">
-          <div className="flex flex-wrap gap-1 md:gap-2">
-            {['UI Design', 'Landing Page', 'Responsive Design', 'Stakeholder Management'].map((tag, index) => (
-              <span key={index} className="rounded-full border border-white px-4 py-1 text-sm text-white">
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="border-t border-white/20 mt-4 pt-4 flex justify-end">
-            <div className="flex items-center text-base text-white hover:text-white/80">
-              Check Out the Project
-              <MoveDown className="text-[#ff9c6a] w-6 h-4 stroke-3" />
-            </div>
-          </div>
+        <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Lilypad</h1>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">EdTech Startup: Student Evaluation Service for School Districts</p>
         </div>
       </div>
+      <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
+        <Image src="/lilypad-hero.png" alt="Lilypad hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
+      </div>
+
       {/* Initial Overview and Challenges Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Overview */}
           <div className="border-t border-[#C1C1C1] pt-[4px]">
             <h2 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Overview</h2>
-            <p className="text-[18px]">
+            <p className="text-[16px]">
               I collaborated with a startup to redesign their landing page concept before it was published. With no existing analytics or user feedback to draw from, I focused on creating a clear and
               compelling layout that highlighted the startup&apos;s value proposition and guided visitors toward key actions—such as requesting more information.
             </p>
@@ -55,16 +36,16 @@ export default function LilypadPage() {
               <h2 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Challenges</h2>
               <div className="space-y-1 md:space-y-2">
                 <div>
-                  <span className="font-semibold text-[18px]">No Historical User Data</span>
-                  <p className="text-[18px]">Since this was the first version of the landing page, all design decisions were based on best practices and internal stakeholder feedback.</p>
+                  <span className="font-semibold text-[16px]">No Historical User Data</span>
+                  <p className="text-[16px]">Since this was the first version of the landing page, all design decisions were based on best practices and internal stakeholder feedback.</p>
                 </div>
                 <div>
-                  <span className="font-semibold text-[18px]">Clarity of Value Proposition</span>
-                  <p className="text-[18px]">The startup needed a concise way to explain what they do and why it matters.</p>
+                  <span className="font-semibold text-[16px]">Clarity of Value Proposition</span>
+                  <p className="text-[16px]">The startup needed a concise way to explain what they do and why it matters.</p>
                 </div>
                 <div>
-                  <span className="font-semibold text-[18px]">Future Scalability</span>
-                  <p className="text-[18px]">The design had to be flexible enough to evolve as the startup&apos;s product offerings expand.</p>
+                  <span className="font-semibold text-[16px]">Future Scalability</span>
+                  <p className="text-[16px]">The design had to be flexible enough to evolve as the startup&apos;s product offerings expand.</p>
                 </div>
               </div>
             </div>
@@ -74,7 +55,7 @@ export default function LilypadPage() {
 
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
-        <div className="max-w-[1728px] mx-auto px-8 lg:px-16 py-16 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
@@ -88,16 +69,16 @@ export default function LilypadPage() {
               {/* Typeface */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
-                <p className="text-[18px]">Plus Jakarta Sans</p>
+                <p className="text-[16px] font-['Plus_Jakarta_Sans']">Plus Jakarta Sans</p>
               </div>
 
               {/* Weights */}
               <div className="border-t border-[#C1C1C1] pt-[4px]">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
                 <div className="space-y-1 md:space-y-2">
-                  <p className="text-[18px] font-normal">Regular</p>
-                  <p className="text-[18px] font-semibold">Semi-Bold</p>
-                  <p className="text-[18px] font-bold">Bold</p>
+                  <p className="text-[16px] font-normal">Regular</p>
+                  <p className="text-[16px] font-semibold">Semi-Bold</p>
+                  <p className="text-[16px] font-bold">Bold</p>
                 </div>
               </div>
             </div>
@@ -106,7 +87,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Colors Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
@@ -157,7 +138,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Design Approach Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Title */}
           <div>
@@ -169,7 +150,7 @@ export default function LilypadPage() {
             {/* Content */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Content</h3>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 Collaborated with the startup team to define and highlight their core benefits, ensuring every section of the page directly addressed key user questions and pain points.
               </p>
             </div>
@@ -177,7 +158,7 @@ export default function LilypadPage() {
             {/* Visual Hierarchy & Layout */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-gray-400 mb-6">Visual Hierarchy & Layout</h3>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and understand
                 the page&apos;s content.
               </p>
@@ -186,13 +167,13 @@ export default function LilypadPage() {
             {/* Calls-to-Action */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-gray-400 mb-6">Calls-to-Action</h3>
-              <p className="text-[18px]">Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
+              <p className="text-[16px]">Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
             </div>
 
             {/* Responsive Design */}
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-gray-400 mb-6">Responsive Design</h3>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. Also ensured images and text scale
                 appropriately to maintain readability across various screen sizes.
               </p>
@@ -203,8 +184,8 @@ export default function LilypadPage() {
 
       {/* Mobile-First Design Section */}
       <div className="relative bg-[#DDA15F] text-white">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-16 lg:py-32">
-          <h2 className="text-4xl font-normal mb-2 md:mb-4">Mobile-First Design</h2>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Mobile-First Design</h2>
 
           <div className="flex justify-center items-center gap-4">
             <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
@@ -221,8 +202,8 @@ export default function LilypadPage() {
 
       {/* Responsive Design Section */}
       <div className="relative">
-        <div className="max-w-[1728px] mx-auto px-16 my-16 lg:my-32">
-          <h2 className="text-4xl font-normal mb-2 md:mb-4">Responsive Design</h2>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Responsive Design</h2>
 
           <div className="w-full flex justify-center">
             <Image
@@ -239,7 +220,7 @@ export default function LilypadPage() {
 
       {/* UI Kit Section */}
       <div className="relative bg-[#212121]">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 py-16 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-white">UI Kit + Responsive Figma Designs</h2>
 
           <div className="w-full flex justify-center">
@@ -256,7 +237,7 @@ export default function LilypadPage() {
       </div>
 
       {/* Next Steps Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
         <h2 className="text-4xl font-normal mb-8 lg:mb-12">Next Steps</h2>
 
@@ -266,7 +247,7 @@ export default function LilypadPage() {
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Gather Real-World Feedback</h3>
-              <p className="text-[18px]">
+              <p className="text-[16px]">
                 Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.
               </p>
             </div>
@@ -276,7 +257,7 @@ export default function LilypadPage() {
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Iterative Improvements</h3>
-              <p className="text-[18px]">Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
+              <p className="text-[16px]">Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
             </div>
           </div>
 
@@ -284,7 +265,7 @@ export default function LilypadPage() {
           <div>
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Potential User Testing</h3>
-              <p className="text-[18px]">After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
+              <p className="text-[16px]">After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
             </div>
           </div>
         </div>
@@ -292,12 +273,12 @@ export default function LilypadPage() {
 
       {/* Figma Exploration Section */}
       <div className="relative bg-[#DDA15F] text-white">
-        <div className="max-w-[1728px] mx-auto px-4 sm:px-8 lg:px-16 py-16 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
               <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
-              <p className="text-[18px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+              <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
                 className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
@@ -305,9 +286,7 @@ export default function LilypadPage() {
                 rel="noopener noreferrer"
               >
                 Check Out Figma
-                <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M7 17L17 7M17 7H7M17 7V17" />
-                </svg>
+                <ArrowUpRight className="ml-2 w-5 h-5" />
               </Link>
             </div>
 
