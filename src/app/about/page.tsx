@@ -29,7 +29,7 @@ export default function About() {
                   <Image src="/profile-small.jpg" alt="Profile image" height={280} width={280} className="object-contain rounded-xl w-full md:w-fit h-auto md:hidden" />
                 </div>
               </div>
-              <Accordion type="single" collapsible className="w-full mt-8">
+              <Accordion type="single" collapsible className="w-full mt-8 ">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
