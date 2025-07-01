@@ -54,7 +54,7 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-base font-regular">Thoughtful (3 Years)</h3>
+                          <h3 className="text-base font-regular">Thoughtful (Co-Founder & Design Engineer)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 text-Black pl-5">
@@ -89,7 +89,7 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-base font-regular]">Fractional (Co-Founder, 2023)</h3>
+                          <h3 className="text-base font-regular]">Fractional (Co-Founder)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 Black pl-5">
