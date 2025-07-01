@@ -95,13 +95,17 @@ export default function About() {
                           <ul className="list-disc list-outside space-y-2 Black pl-5">
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Led end-to-end design for a web-based client portal used by 5+ agencies and freelancers, covering UX strategy, wireframes, prototypes, and high- fidelity UI.
+                                Designed and launched a web-based client portal used by 5+ agencies and freelancers to manage clients, projects, and billing — shipped MVP in under 4 months.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Designed and launched an all-in-one client portal in 4 months that streamlined workflows and reduced onboarding time for agencies and freelancers.
+                                Led end-to-end UX/UI, from early research and wireframes to polished, responsive UIs — balanced business constraints with user needs to streamline onboarding and daily
+                                workflows.
                               </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Built a component-based design system from scratch, enabling faster iteration and visual consistency across the app.</span>
                             </li>
                           </ul>
                         </div>
