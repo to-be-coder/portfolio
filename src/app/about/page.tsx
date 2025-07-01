@@ -59,16 +59,26 @@ export default function About() {
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 text-Black pl-5">
                             <li className="pl-1">
-                              <span className="block ml-[-1px]">Designed and shipped 0→1 digital products for early-stage startups, balancing user needs, speed, and business outcomes.</span>
-                            </li>
-                            <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Led end-to-end design for 2 internal product experiments — from user research and rapid prototyping to high-fidelity UI and polish.
+                                Bootstrapped 3 internal products from 0→1 — led user research, UX strategy, UI design, and front-end development to validate product–market fit.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Collaborated with engineers across 4 startup projects to translate designs into scalable, responsive components—bridging design and implementation.
+                                Led UX/UI design for Spiritune and Mozilla Thunderbird, defining core flows and collaborating with engineers to ship responsive, scalable consumer interfaces.
+                              </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Defined MVP workflows for early-stage products, stripping non-essential features and prioritizing high-value tasks across client portals and dashboards.
+                              </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Built modular design systems reused across projects, improving consistency, speeding dev handoff, and enabling rapid iteration.</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                Ran feedback loops with users and stakeholders, helping teams validate assumptions, refine UX, and deliver usable MVPs under tight constraints.
                               </span>
                             </li>
                           </ul>
