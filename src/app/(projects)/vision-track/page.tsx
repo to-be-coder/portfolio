@@ -10,7 +10,7 @@ export default function VisionTrackPage() {
         {/* Background Image with Overlay */}
         <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
           <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Vision Track</h1>
-          <p className="items-end text-lg md:text-2xl mb-1 text-black">Team alignment through OKRs</p>
+          <p className="items-end text-lg md:text-2xl mb-1 text-black">Helping teams translate company goals into day-to-day clarity</p>
         </div>
       </div>
       <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
@@ -18,16 +18,16 @@ export default function VisionTrackPage() {
       </div>
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Project Introduction</h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
           <div className="space-y-8 md:space-y-12">
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
               <p className="text-[16px]">
-                VisionTrack is designed to keep everyone on the same page in a remote, fast-paced workplace. Our aim was to help teams stay connected, aligned, and empowered to achieve both their
-                individual goals and the company&apos;s broader vision.
+                VisionTrack helps teams stay aligned in fast-paced, remote environments by translating company goals into daily clarity. We started by designing for startup founders—but early research
+                revealed they didn&apos;t want another tool to log into. More importantly, they weren&apos;t struggling to set goals—they were struggling to act on them. People understood company
+                priorities, but couldn&apos;t connect them to day-to-day decisions. Alignment wasn&apos;t the issue—translation was. So we pivoted to SMB Sales and Marketing teams, cut 80% of
+                features, and defined a Slack-based MVP: one reminder loop, delivered inside the tools they already used.
               </p>
             </div>
 
@@ -63,36 +63,61 @@ export default function VisionTrackPage() {
       </div>
 
       {/* Project Summary Section */}
-      <div className="relative bg-[#212121] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Conclusion</h2>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">Research & Findings</h3>
+            </div>
+            <div className="md:col-span-2 space-y-1 md:space-y-2">
+              <p className="text-[16px]">
+                We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of pitching features, we focused on context and behavior. Using open-ended prompts like
+                “walk me through how your team tracks goals today.”
+              </p>
+              <div className="space-y-1 md:space-y-2">
+                <p className="text-[16px]">What we found challenged our assumptions:</p>
+                <ul className="list-disc list-inside">
+                  <li> Founders didn&apos;t want “another dashboard”—they defaulted to Excel or Notion.</li>
+                  <li> They didn&apos;t want another tool to manage and log into.</li>
+                  <li> The real pain was not “setting goals,” but translating them into meaningful, actionable work.</li>
+                  <li> Slack was the best channel for driving behavior change without requiring login friction.</li>
+                  <li> Trying to serve every team diluted the value. Narrowing to Sales and Marketing gave us clarity and focus.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Project Summary</h3>
-              </div>
-              <div className="md:col-span-2">
-                <p className="text-[16px]">
-                  We started building for startup founders. But they didn&apos;t want another tool. Interviews revealed that alignment wasn&apos;t the problem—translation was. People understood
-                  company goals, but couldn&apos;t map them to their day-to-day work. So we pivoted to SMB Sales and Marketing teams, cut 80% of features, and designed a Slack-based MVP: one goal
-                  reminder loop, delivered inside a tool they already used.
-                </p>
-              </div>
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">What Surprised Me</h3>
+            </div>
+            <div className="md:col-span-2 space-y-1 md:space-y-2">
+              <p className="text-[16px]">
+                Most teams didn’t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company’s mission or top-line OKRs. But they struggled to
+                answer: “What does this mean for me today?” “We already have goals. We just don’t know what to do with them day to day.” — Marketing Manager This realization reframed our entire
+                direction.
+              </p>
             </div>
           </div>
 
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Findings</h3>
+                <h3 className="text-2xl font-regular text-[#a1a1a1]">MVP Direction</h3>
               </div>
-              <div className="md:col-span-2 space-y-1 md:space-y-2">
+              <div className="md:col-span-2 space-y-2">
+                <p className="text-[16px]">We cut 80% of our feature ideas—dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.</p>
+                <p className="text-[16px] font-bold ">
+                  Why Slack? <br />
+                  Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow—and frictionless adoption was a requirement, not a nice-to-have.{' '}
+                </p>
+                <p className="text-[16px]">We designed a lightweight flow:</p>
                 <ul className="list-disc list-inside">
-                  <li> Founders didn&apos;t want “another dashboard”—they defaulted to Excel or Notion.</li>
-                  <li> The real pain was not “setting goals,” but translating them into meaningful, actionable work.</li>
-                  <li> Slack was the best channel for driving behavior change without requiring login friction.</li>
-                  <li> A one-size-fits-all alignment platform diluted value—department-level focus gave us clarity.</li>
+                  <li>Manager sets OKRs at the start of the cycle.</li>
+                  <li>ICs get simple, periodic Slack nudges: “Which of your tasks support this objective?”</li>
+                  <li>Managers get aggregate insights via Slack thread summaries—no login required.</li>
                 </ul>
               </div>
             </div>
@@ -101,98 +126,32 @@ export default function VisionTrackPage() {
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">What Surprised Me</h3>
+                <h3 className="text-2xl font-regular text-[#a1a1a1]">Outcome</h3>
               </div>
-              <div className="md:col-span-2 space-y-1 md:space-y-2">
+              <div className="md:col-span-2 space-y-2">
                 <p className="text-[16px]">
-                  Most teams didn’t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company’s mission or top-line OKRs. But they struggled to
-                  answer: “What does this mean for me today?” “We already have goals. We just don’t know what to do with them day to day.” — Marketing Manager This realization reframed our entire
-                  direction.
+                  We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
+                </p>
+                <p className="text-[16px]">
+                  We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around “goal translation,” and scoped a focused MVP: one Slack-based reminder loop, delivered
+                  inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future
+                  prototyping.
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-1">
-                  <h3 className="text-2xl font-regular text-[#a1a1a1]">How UXR Drove the Pivot</h3>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <p className="text-[16px]">
-                    We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of validating our feature ideas, we focused on context and behavior. Using open-ended
-                    prompts like “walk me through how your team tracks goals today,” we uncovered behavioral truths that challenged our assumptions:
-                  </p>
-                  <div className="space-y-1 md:space-y-2">
-                    <ul className="list-disc list-inside">
-                      <li> Startup founders made alignment decisions verbally or in Notion.</li>
-                      <li> They wouldn&apos;t pay for a dedicated goal-setting app.</li>
-                      <li> SMB teams had OKRs, but needed help making them feel actionable.</li>
-                    </ul>
-                  </div>
-                </div>
+          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="col-span-1">
+                <h3 className="text-2xl font-regular text-[#a1a1a1]">What I Learned</h3>
               </div>
-            </div>
-
-            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-1">
-                  <h3 className="text-2xl font-regular text-[#a1a1a1]">The Strategic Pivot</h3>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <p className="text-[16px]">
-                    We killed our startup-focused direction. We pivoted to SMB Sales/Marketing teams and reframed the problem from “goal setting” to “goal translation.” These teams had structure,
-                    repeatable tasks, and measurable outcomes—but they lacked clarity. New direction: Help teams translate company goals into daily action, without adding another tool to manage.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-1">
-                  <h3 className="text-2xl font-regular text-[#a1a1a1]">MVP Direction</h3>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <p className="text-[16px]">We cut 80% of our feature ideas—dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.</p>
-                  <p className="text-[16px] font-bold ">
-                    Why Slack? <br />
-                    Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow—and frictionless adoption was a requirement, not a nice-to-have.{' '}
-                  </p>
-                  <p className="text-[16px]">We designed a lightweight flow:</p>
-                  <ul className="list-disc list-inside">
-                    <li>Manager sets OKRs at the start of the cycle.</li>
-                    <li>ICs get simple, periodic Slack nudges: “Which of your tasks support this objective?”</li>
-                    <li>Managers get aggregate insights via Slack thread summaries—no login required.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-1">
-                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Outcome</h3>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <p className="text-[16px]">
-                    We killed our startup-focused direction, reframed the problem from “goal setting” to “goal translation,” and scoped an MVP for SMB Sales/Marketing teams: a single Slack-based
-                    reminder loop. Users didn&apos;t want another tool—so we built where they already work. This let us validate behavior fast, reduce product complexity, and avoid adoption friction.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-[4px]">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="col-span-1">
-                  <h3 className="text-2xl font-regular text-[#a1a1a1]">What I&apos;d Do Differently</h3>
-                </div>
-                <div className="md:col-span-2 space-y-2">
-                  <p className="text-[16px]">
-                    We spent too long validating the segment before testing the behavior. In future projects, I&apos;d prototype much sooner—test one high-signal behavior after just 5 interviews
-                    instead of over-validating with 25.
-                  </p>
-                </div>
+              <div className="md:col-span-2 space-y-2">
+                <p className="text-[16px]">
+                  We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
+                  came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing
+                  one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
+                </p>
               </div>
             </div>
           </div>
