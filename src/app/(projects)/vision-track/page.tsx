@@ -441,8 +441,10 @@ export default function VisionTrackPage() {
       {/* Competitive Analysis Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="mx-auto">
-          <h2 className="text-4xl font-normal  mb-8 lg:mb-12">Competitive Analysis</h2>
-
+          <h2 className="text-4xl font-normal mb-2">
+            Competitive Analysis<span className="text-blue-400 text-[64px]">.</span>
+          </h2>
+          <div className="flex-1 border-t border-[#C1C1C1] mb-8 lg:mb-12"></div>
           <div className="w-full flex justify-center">
             <Image
               src="/vision-track-table.png"

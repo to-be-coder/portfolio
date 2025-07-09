@@ -84,7 +84,7 @@ export default function MozillaPage() {
             </h2>
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
           </div>
-          <div className="w-full flex justify-center mt-16 lg:mt-24">
+          <div className="w-full flex justify-center mt-16">
             <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
         </div>
@@ -423,7 +423,9 @@ export default function MozillaPage() {
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+            Typography<span className="text-green-500 text-[64px]">.</span>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -457,7 +459,9 @@ export default function MozillaPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">Main Colors</h2>
+            <h2 className="text-4xl font-normal">
+              Main Colors<span className="text-green-500 text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Primary Colors */}
@@ -508,7 +512,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           {/* Title */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
+            <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+              Learning<span className="text-green-500 text-[64px]">.</span>
+            </h2>
 
             {/* Build Fast, Learn Faster */}
             <div>
@@ -574,7 +580,10 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Explore my portfolio in Figma</h2>
+              <h2 className="text-4xl font-normal mb-2">
+                Explore my portfolio in Figma<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
@@ -600,7 +609,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8">
             <div className="flex col-span-2 justify-center items-center">
-              <h2 className="text-4xl font-normal">Previous Explorations</h2>
+              <h2 className="text-4xl font-normal">
+                Previous Explorations<span className="text-green-500 text-[64px]">.</span>
+              </h2>
             </div>
             <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
