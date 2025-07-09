@@ -77,7 +77,9 @@ export default function LilypadPage() {
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+            Typography<span className="text-[#DDA15F] text-[64px]">.</span>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -112,7 +114,9 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">Colors</h2>
+            <h2 className="text-4xl font-normal">
+              Colors<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Primary Colors */}
@@ -163,7 +167,9 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Title */}
           <div>
-            <h2 className="text-4xl font-normal">Design Approach</h2>
+            <h2 className="text-4xl font-normal">
+              Design Approach<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Right Column - Approach Details */}
@@ -208,7 +214,12 @@ export default function LilypadPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex flex-col gap-16">
             <div className="flex justify-center items-center h-full">
-              <h2 className="text-4xl font-normal">Mobile-First Design</h2>
+              <h2 className="text-4xl font-normal">
+                Mobile-First Design<span className="text-[#af5800] text-[64px]">.</span>
+              </h2>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <Image src="/lilypad-mobile-first.png" alt="First mobile screen of Lilypad's responsive design" width={120} height={240} className="w-auto h-auto" priority />
             </div>
             <div className="flex justify-between w-full h-auto space-x-4">
               <div className="flex-1 flex justify-center">
@@ -238,7 +249,9 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-12">
           {/* Left Column - Title and Navigation */}
           <div className="lg:col-span-1 flex flex-col">
-            <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">Responsive Design</h2>
+            <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">
+              Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
 
             <div className="flex-1 flex flex-col justify-center space-y-4">
               <div className="pt-[4px] flex-1">
@@ -278,7 +291,7 @@ export default function LilypadPage() {
 
           {/* Right Column - Image */}
           <div className="lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border border-gray-200 rounded-lg">
-            <Image src={imageData[selectedImage].src} alt={imageData[selectedImage].alt} width={864} height={450} className="w-auto max-h-[800px] " priority />
+            <Image src="/lilypad-mobile-view.png" alt="Fifth mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
           </div>
         </div>
       </div>
@@ -286,7 +299,9 @@ export default function LilypadPage() {
       {/* UI Kit Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center text-white">Design System from Programmer&apos;s Perspective</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center text-white">
+            Design System from Programmer&apos;s Perspective<span className="text-[#DDA15F] text-[64px]">.</span>
+          </h2>
           <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
@@ -333,7 +348,9 @@ export default function LilypadPage() {
       {/* Next Steps Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Next Steps</h2>
+        <h2 className="text-4xl font-normal mb-2">
+          Next Steps<span className="text-[#DDA15F] text-[64px]">.</span>
+        </h2>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -371,7 +388,9 @@ export default function LilypadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
+              <h2 className="text-4xl font-normalmb-8 lg:mb-12">
+                Explore the Figma File for This Project<span className="text-[#af5800] text-[64px]">.</span>
+              </h2>
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
