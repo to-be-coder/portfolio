@@ -57,7 +57,7 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal">
+          <h2 className="text-4xl font-normal mb-2">
             Conclusion First<span className="text-blue-400 text-[64px]">.</span>
           </h2>
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
@@ -97,7 +97,7 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal">
+          <h2 className="text-4xl font-normal mb-2">
             Research & Findings<span className="text-blue-400 text-[64px]">.</span>
           </h2>
           <div className="border-t border-[#C1C1C1]  mb-8 lg:mb-9"></div>
@@ -146,7 +146,7 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal">
+          <h2 className="text-4xl font-normal mb-2">
             What Changed Our Mind<span className="text-blue-400 text-[64px]">.</span>
           </h2>
           <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
@@ -199,7 +199,7 @@ export default function VisionTrackPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
-            <h2 className="text-4xl font-normal">
+            <h2 className="text-4xl font-normal mb-2">
               Discovery Sprint<span className="text-blue-400 text-[64px]">.</span>
             </h2>
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
