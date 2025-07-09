@@ -196,7 +196,7 @@ export default function VisionTrackPage() {
 
       {/* Workflow Section */}
       <div className="relative bg-blue-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
             <h2 className="text-4xl font-normal">
@@ -208,8 +208,8 @@ export default function VisionTrackPage() {
             <Image src="/vision-track-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
 
-          <div className="py-8 lg:py-12 max-w-7xl">
-            <h2 className="text-3xl font-normal mb-8 lg:mb-12">Hypothesis #1</h2>
+          <div className="mt-16 lg:mt-24">
+            <h2 className="text-3xl font-normal mb-4">Hypothesis #1</h2>
             {/* Grid for 3 columns */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Target Customers */}
@@ -246,209 +246,197 @@ export default function VisionTrackPage() {
             </div>
           </div>
 
-          <div className="py-8 lg:py-12 max-w-7xl">
-            <div className="mx-auto">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #1</h2>
+          <div className="mt-16 lg:mt-24">
+            <h2 className="text-3xl font-normal mb-4">Research #1</h2>
 
-              {/* Interviewed */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <p className="text-[16px]">5 Founders</p>
-                    <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            {/* Interviewed */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
                 </div>
-              </div>
-
-              {/* Challenges */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Challenges</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="space-y-1 md:space-y-2">
-                      <div>
-                        <span className="font-semibold text-[16px]">Budget Constraints:</span>
-                        <span className="text-[16px] "> Founders often hesitate to pay for yet another tool.</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-[16px]">Habitual Tools:</span>
-                        <span className="text-[16px]"> Excel is already free and familiar.</span>
-                      </div>
+                <div className="md:col-span-2">
+                  <p className="text-[16px]">5 Founders</p>
+                  <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                      ))}
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decision + Learning */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <p className="text-[16px]">
-                      Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to
-                      question our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our
-                      hypothesis to better address their unique challenges and needs.
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="my-8 lg:my-12 max-w-7xl">
-            <div className="mx-auto">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Hypothesis #2</h2>
-              {/* Grid for 3 columns */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Target Customers */}
-                <div className="space-y-4">
-                  <div className="border-t border-[#C1C1C1] pt-2">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
-                  </div>
-                  <p className="text-[16px]">SMB in the US (50-200 people).</p>
+            {/* Challenges */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Challenges</h3>
                 </div>
-                {/* Pain Points */}
-                <div className="space-y-4">
-                  <div className="border-t border-[#C1C1C1] pt-2">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Identified)</h3>
-                  </div>
+                <div className="md:col-span-2">
                   <div className="space-y-1 md:space-y-2">
-                    <ul className="list-disc list-inside">
-                      <li> High-level company goals become diluted or lost in translation.</li>
-                      <li> Employees struggle to connect daily tasks to broader objectives.</li>
-                      <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
-                    </ul>
+                    <div>
+                      <span className="font-semibold text-[16px]">Budget Constraints:</span>
+                      <span className="text-[16px]"> Founders often hesitate to pay for yet another tool.</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[16px]">Habitual Tools:</span>
+                      <span className="text-[16px]"> Excel is already free and familiar.</span>
+                    </div>
                   </div>
                 </div>
-                {/* Proposed Solution */}
-                <div className="space-y-4">
-                  <div className="border-t border-[#C1C1C1] pt-2">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Potential Solution</h3>
-                  </div>
+              </div>
+            </div>
+
+            {/* Decision + Learning */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
+                </div>
+                <div className="md:col-span-2">
                   <p className="text-[16px]">
-                    VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback
-                    indicators.
+                    Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question
+                    our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to
+                    better address their unique challenges and needs.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="my-8 lg:my-12 max-w-7xl">
-            <div className="mx-auto">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Research #2</h2>
-
-              {/* Interviewed */}
-              <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <p className="text-[16px]">20 People (Product manager, CTO, CEO, CPO, Founder)</p>
-                    <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
-                      <div className="flex gap-1">
-                        {[...Array(10)].map((_, i) => (
-                          <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
-                        ))}
-                      </div>
-                      <div className="flex gap-1">
-                        {[...Array(10)].map((_, i) => (
-                          <User key={i + 10} className="w-6 h-6 fill-blue-400 stroke-none" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+          <div className="mt-16 lg:mt-24">
+            <h2 className="text-3xl font-normal mb-4">Hypothesis #2</h2>
+            {/* Grid for 3 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Target Customers */}
+              <div className="space-y-4">
+                <div className="border-t border-[#C1C1C1] pt-2">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
                 </div>
+                <p className="text-[16px]">SMB in the US (50-200 people).</p>
               </div>
-
-              {/* Quotes */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Quotes</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="space-y-1 md:space-y-2">
-                      <div>
-                        <span className="font-semibold text-[16px]">01</span>
-                        <span className="text-[16px]"> &ldquo;Goals often get lost in translation—through constant updates or simply being forgotten.&rdquo;</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-[16px]">02</span>
-                        <span className="text-[16px]"> &ldquo;Great leadership means catching all ideas, nurturing innovation, and knowing when to let go of those that don&apos;t fit.&rdquo;</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-[16px]">03</span>
-                        <span className="text-[16px]"> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Pain Points */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Pain Points</h3>
-                  </div>
-                  <div className="md:col-span-2">
-                    <div className="space-y-1 md:space-y-2">
-                      <div>
-                        <span className="font-semibold text-[16px]">01</span>
-                        <span className="text-[16px]"> Translating abstract goals into actionable tasks.</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-[16px]">02</span>
-                        <span className="text-[16px]"> Employees already juggling multiple logins.</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold text-[16px]">03</span>
-                        <span className="text-[16px]"> Not everything is captured by KPIs alone—some critical tasks are unquantifiable yet vital.</span>
-                      </div>
+              <div className="space-y-4">
+                <div className="border-t border-[#C1C1C1] pt-2">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Identified)</h3>
+                </div>
+                <div className="space-y-1 md:space-y-2">
+                  <ul className="list-disc list-inside">
+                    <li> High-level company goals become diluted or lost in translation.</li>
+                    <li> Employees struggle to connect daily tasks to broader objectives.</li>
+                    <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
+                  </ul>
+                </div>
+              </div>
+              {/* Proposed Solution */}
+              <div className="space-y-4">
+                <div className="border-t border-[#C1C1C1] pt-2">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Potential Solution</h3>
+                </div>
+                <p className="text-[16px]">
+                  VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback
+                  indicators.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 lg:mt-24">
+            <h2 className="text-3xl font-normal mb-4">Research #2</h2>
+
+            {/* Interviewed */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="text-[16px]">20 People (Product manager, CTO, CEO, CPO, Founder)</p>
+                  <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
+                    <div className="flex gap-1">
+                      {[...Array(10)].map((_, i) => (
+                        <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                      ))}
+                    </div>
+                    <div className="flex gap-1">
+                      {[...Array(10)].map((_, i) => (
+                        <User key={i + 10} className="w-6 h-6 fill-blue-400 stroke-none" />
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Decision + Learning */}
-              <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="col-span-1">
-                    <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
+            {/* Quotes */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Quotes</h3>
+                </div>
+                <div className="md:col-span-2">
+                  <div className="space-y-1 md:space-y-2">
+                    <div>
+                      <span className="font-semibold text-[16px]">01</span>
+                      <span className="text-[16px]"> &ldquo;Goals often get lost in translation—through constant updates or simply being forgotten.&rdquo;</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[16px]">02</span>
+                      <span className="text-[16px]"> &ldquo;Great leadership means catching all ideas, nurturing innovation, and knowing when to let go of those that don&apos;t fit.&rdquo;</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[16px]">03</span>
+                      <span className="text-[16px]"> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
+                    </div>
                   </div>
-                  <div className="md:col-span-2">
-                    <p className="text-[16px]">
-                      We decided to focus on a single department within an SMB—specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
-                      avoid developing a watered-down product trying to serve every department at once.
-                    </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pain Points */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Pain Points</h3>
+                </div>
+                <div className="md:col-span-2">
+                  <div className="space-y-1 md:space-y-2">
+                    <div>
+                      <span className="font-semibold text-[16px]">01</span>
+                      <span className="text-[16px]"> Translating abstract goals into actionable tasks.</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[16px]">02</span>
+                      <span className="text-[16px]"> Employees already juggling multiple logins.</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold text-[16px]">03</span>
+                      <span className="text-[16px]"> Not everything is captured by KPIs alone—some critical tasks are unquantifiable yet vital.</span>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decision + Learning */}
+            <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="col-span-1">
+                  <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="text-[16px]">
+                    We decided to focus on a single department within an SMB—specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
+                    avoid developing a watered-down product trying to serve every department at once.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Research #1 Section */}
-
-      {/* Hypothesis #2 Section */}
-
-      {/* Research #2 Section */}
 
       {/* Competitive Analysis Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
