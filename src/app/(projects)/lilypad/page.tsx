@@ -1,9 +1,16 @@
+'use client'
+
 import CtaSection from '@/components/ui/cta'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function LilypadPage() {
+  type ImageType = 'desktop' | 'tablet' | 'mobile'
+  const [selectedImage, setSelectedImage] = useState<ImageType>('desktop')
+
   return (
     <main>
       {/* Hero Section */}
@@ -56,7 +63,9 @@ export default function LilypadPage() {
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+            Typography<span className="text-[#DDA15F] text-[64px]">.</span>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -91,7 +100,9 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">Colors</h2>
+            <h2 className="text-4xl font-normal">
+              Colors<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Primary Colors */}
@@ -142,7 +153,9 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Title */}
           <div>
-            <h2 className="text-4xl font-normal">Design Approach</h2>
+            <h2 className="text-4xl font-normal">
+              Design Approach<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Right Column - Approach Details */}
@@ -185,53 +198,159 @@ export default function LilypadPage() {
       {/* Mobile-First Design Section */}
       <div className="relative bg-[#DDA15F] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Mobile-First Design</h2>
+          <div className="flex flex-col gap-16">
+            <div className="flex justify-center items-center h-full">
+              <h2 className="text-4xl font-normal">
+                Mobile-First Design<span className="text-[#af5800] text-[64px]">.</span>
+              </h2>
+            </div>
 
-          <div className="flex justify-center items-center gap-4">
-            <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/lilypad-iphone-2.png" alt="Second mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/lilypad-iphone-3.png" alt="Third mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-          </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-5 w-full h-auto">
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
+              </div>
 
-          <div className="flex justify-center items-center gap-4 mt-4">
-            <Image src="/lilypad-iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
-            <Image src="/lilypad-iphone-5.png" alt="Fifth mobile screen of Lilypad's responsive design" width={120} height={240} className="w-full max-w-[120px]" priority />
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-2.png" alt="Second mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
+              </div>
+
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-3.png" alt="Third mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
+              </div>
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Responsive Design Section */}
-      <div className="relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Responsive Design</h2>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl max-h-[600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-12">
+          {/* Left Column - Title and Navigation */}
+          <div className="lg:col-span-1 flex flex-col">
+            <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">
+              Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
+            </h2>
 
-          <div className="w-full flex justify-center">
-            <Image
-              src="/lilypad-responsive.png"
-              alt="Responsive design mockups showing Lilypad's website layout adapting across desktop, tablet and mobile devices"
-              width={864}
-              height={450}
-              className="w-full lg:w-1/2 h-auto"
-              priority
-            />
+            {/* Mobile Select - Hidden on md and larger */}
+            <div className="md:hidden mb-0">
+              <Select value={selectedImage} onValueChange={(value: ImageType) => setSelectedImage(value)}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select view" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="desktop">Desktop View</SelectItem>
+                  <SelectItem value="tablet">Tablet View</SelectItem>
+                  <SelectItem value="mobile">Mobile View</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Desktop Buttons - Hidden on small screens */}
+            <div className="hidden md:flex flex-1 flex-col justify-center space-y-4">
+              <div className="pt-[4px] flex-1">
+                <button
+                  onClick={() => setSelectedImage('desktop')}
+                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
+                    selectedImage === 'desktop' ? 'bg-green-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
+                  }`}
+                >
+                  <h3 className="text-2xl font-regular">Desktop View</h3>
+                </button>
+              </div>
+
+              <div className="pt-[4px] flex-1">
+                <button
+                  onClick={() => setSelectedImage('tablet')}
+                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
+                    selectedImage === 'tablet' ? 'bg-yellow-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
+                  }`}
+                >
+                  <h3 className="text-2xl font-regular">Tablet View</h3>
+                </button>
+              </div>
+
+              <div className="pt-[4px] flex-1">
+                <button
+                  onClick={() => setSelectedImage('mobile')}
+                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
+                    selectedImage === 'mobile' ? 'bg-blue-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
+                  }`}
+                >
+                  <h3 className="text-2xl font-regular">Mobile View</h3>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Image */}
+          <div
+            className={`lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border  rounded-lg ${
+              selectedImage === 'desktop' ? 'bg-green-50 border-green-100' : selectedImage === 'tablet' ? 'bg-yellow-50 border-yellow-100' : 'bg-blue-50 border-blue-100'
+            }`}
+          >
+            {selectedImage === 'mobile' && (
+              <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
+            {selectedImage === 'tablet' && (
+              <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
+            {selectedImage === 'desktop' && (
+              <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
           </div>
         </div>
       </div>
 
       {/* UI Kit Section */}
-      <div className="relative bg-[#212121]">
+      <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-white">UI Kit + Responsive Figma Designs</h2>
-
-          <div className="w-full flex justify-center">
-            <Image
-              src="/lilypad-ui-kit.png"
-              alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
-              width={864}
-              height={450}
-              className="w-full lg:w-1/2 h-auto"
-              priority
-            />
+          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center text-white">
+            Design System from Programmer&apos;s Perspective<span className="text-[#DDA15F] text-[64px]">.</span>
+          </h2>
+          <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+              <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Consistent Layout Primitives</h3>
+                <p className="text-[16px] mb-8 lg:mb-12">
+                  The layout system was built on a strict, responsive grid — not just for visual balance, but to make development predictable and scalable. <br />
+                  <br />
+                  Each breakpoint uses a defined column count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl,
+                  px-8, and my-16.
+                </p>
+              </div>
+              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
+                <Image
+                  src="/lilypad-grid.png"
+                  alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
+                  width={800}
+                  height={800}
+                  className="h-auto w-auto rounded-md border"
+                  priority
+                />
+              </div>
+            </div>
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+              <div className="flex flex-1 flex-col space-y-8">
+                <Image
+                  src="/lilypad-breakpoints.png"
+                  alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
+                  width={800}
+                  height={400}
+                  className="w-full h-[400px] rounded-md border object-cover object-top"
+                  priority
+                />
+              </div>
+              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Built for Responsive & Future Growth</h3>
+                <p className="text-[16px] mb-8 lg:mb-12">
+                  I designed every section with clear breakpoints in mind — mobile, tablet, desktop — so devs could rely on consistent stacking behavior and spacing logic. The system also leaves room
+                  to scale as new content types or layouts are added.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -239,7 +358,9 @@ export default function LilypadPage() {
       {/* Next Steps Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Next Steps</h2>
+        <h2 className="text-4xl font-normal mb-2">
+          Next Steps<span className="text-[#DDA15F] text-[64px]">.</span>
+        </h2>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -277,7 +398,9 @@ export default function LilypadPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore the Figma File for This Project</h2>
+              <h2 className="text-4xl font-normalmb-8 lg:mb-12">
+                Explore the Figma File for This Project<span className="text-[#af5800] text-[64px]">.</span>
+              </h2>
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"

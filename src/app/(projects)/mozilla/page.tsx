@@ -3,47 +3,53 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
 export default function MozillaPage() {
   return (
     <main>
       {/* Hero Section */}
-      <div className="w-full h-auto flex flex-col relative max-w-7xl mx-auto px-8">
+      <div className="w-full h-auto flex flex-col relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Background Image with Overlay */}
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
-          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla Assistant</h1>
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla - Ghost Cat</h1>
           <p className="items-end text-lg md:text-2xl mb-1 text-black">On-device AI assistant</p>
         </div>
       </div>
-      <div className="w-full h-auto max-w-7xl mx-auto px-8 flex flex-col items-center rounded-lg overflow-hidden">
+      <div className="w-full h-auto max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center rounded-lg overflow-hidden">
         <Image src="/mozilla-hero.png" alt="Mozilla hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
       </div>
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-8 lg:gap-x-16 gap-y-12">
-          <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 gap-y-12">
+          <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
-              <strong>Mozilla Assistant</strong> is a privacy-first, on-device AI assistant. Our goal was to design a lightweight prototype to explore a core question: Can we deliver intelligent,
-              context-aware assistance without sending user data to the cloud? <br /> <br />
-              <strong>This raised key UX challenges</strong>: How do you build trust in a system that operates mostly in the background? How do you support power users who expect transparency and
-              control—without overwhelming them with complexity? <br /> <br />I collaborated closely with engineering to design a prototype for early user testing and stakeholder review. This work
-              laid the foundation for future research into how people perceive local AI and how much visibility and control they actually want.
+              Ghost Cat is an early-stage prototype of a <strong>privacy-first, on-device AI assistant</strong> built at Mozilla.
+              <br /> <br />
+              The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
+              could shape real product behavior. <br /> <br /> We focused on a few core questions:
+            </p>
+            <ul className="list-disc ml-5 text-[16px] mb-4">
+              <li>
+                <strong>How can consent feel seamless—not disruptive?</strong>
+              </li>
+              <li>
+                <strong>How much control can we offer without overwhelming people?</strong>
+              </li>
+              <li>
+                <strong>What familiar patterns work within strict on-device constraints?</strong>
+              </li>
+            </ul>
+            <p className="text-[16px] mt-5">
+              I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid the
+              foundation for deeper testing and iteration.
             </p>
           </div>
 
-          <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
-            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Design Objective</h2>
-            <p className="text-[16px]">
-              To test early hypotheses for Mozilla Assistant, we used rapid prototyping to explore a lightweight, privacy-first AI assistant that reflects Mozilla&apos;s values: privacy, transparency,
-              and user control. <br /> <br />I acted as a <strong>bridge between design and engineering</strong>, translating technical constraints—like local processing and encryption limits—into
-              practical, user-friendly experiences. We prioritized speed and insight over polish, aiming to uncover early user signals and align internal stakeholders.
-            </p>
-          </div>
-
-          <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
             <div className="space-y-4">
               <div>
@@ -64,10 +70,16 @@ export default function MozillaPage() {
       </div>
 
       {/* Workflow Section */}
-      <div className="relative bg-green-300">
-        <div className="max-w-[1440px] mx-auto px-16 py-16 lg:py-32">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center text-black">Workflow</h2>
-          <div className="w-full flex justify-center">
+      <div className="relative bg-green-100">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
+          <div className="flex items-center justify-center gap-4">
+            <div className="flex-1 border-t border-[#C1C1C1]"></div>
+            <h2 className="text-4xl font-normal mb-2">
+              Workflow<span className="text-green-500 text-[64px]">.</span>
+            </h2>
+            <div className="flex-1 border-t border-[#C1C1C1]"></div>
+          </div>
+          <div className="w-full flex justify-center mt-16">
             <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
           </div>
         </div>
@@ -75,39 +87,38 @@ export default function MozillaPage() {
 
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Initial Vision of Mozilla Assistant</h2>
+        <h2 className="text-4xl font-normal mb-2">
+          Initial Vision of Ghost Cat<span className="text-green-500 text-[64px]">.</span>
+        </h2>
+
+        <div className="border-t border-[#C1C1C1] pt-2">
+          <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
+        </div>
+        <p className="text-[16px]">
+          Ghost Cat aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a local,
+          encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
+        </p>
 
         <div className="mt-8 md:mt-12">
-          <div className="border-t border-[#C1C1C1] pt-[4px]">
-            <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
-          </div>
-          <p className="text-[16px]">
-            Mozilla Assistant aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a
-            local, encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
-          </p>
-        </div>
-      </div>
-      {/* Competitive Research Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Competitive Research</h2>
-        <div className="mt-8 md:mt-12">
-          <div className="border-t border-[#C1C1C1] pt-[4px]">
+          <div className="border-t border-[#C1C1C1] pt-2">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
           </div>
           <p className="text-[16px]">I am not able to show this section due to a request.</p>
         </div>
       </div>
+
       {/* Hypothesis Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-8 lg:mb-12">Forming Hypothesis</h2>
-
-        <div className="flex flex-col  gap-x-16 gap-y-12">
+        <h2 className="text-4xl font-normal mb-2">
+          Forming Hypothesis<span className="text-green-500 text-[64px]">.</span>
+        </h2>
+        <div className="flex flex-col gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
-          <div className=" flex flex-col lg:flex-row space-x-9 space-y-9 lg:space-y-0">
-            <div className=" flex-1 border-t border-[#C1C1C1] pt-[4px]">
+          <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 space-y-9 lg:space-y-0">
+            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[16px]">
-                We envision Mozilla Assistant as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
+                We envision Ghost Cat as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
                 <br />
                 <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
                 data sharing feel intentional, seamless, and respectful—never disruptive. <br />
@@ -116,7 +127,7 @@ export default function MozillaPage() {
               </p>
             </div>
 
-            <div className="flex-1 border-t border-[#C1C1C1] pt-[4px]">
+            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
               <ul className="list-disc ml-5 text-[16px]">
                 <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
@@ -129,16 +140,18 @@ export default function MozillaPage() {
       </div>
 
       {/* Design Challenge Section */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex flex-col gap-y-8 lg:gap-y-16">
             {/* top row */}
-            <div className="flex flex-col lg:flex-row gap-x-16 gap-y-8 lg:gap-y-0">
+            <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
               <div className="flex-1">
-                <h2 className="text-4xl font-normal">Design Challenges</h2>
+                <h2 className="text-4xl font-normal mb-2">
+                  Design Challenges<span className="text-green-500 text-[64px]">.</span>
+                </h2>
               </div>
               {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+              <div className="flex-1 border-t border-gray-600 pt-2">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
                 <p className="text-[16px]">
                   To enable a fast, feasible MVP, I partnered closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment shaped my UX
@@ -147,9 +160,9 @@ export default function MozillaPage() {
               </div>
             </div>
             {/* bottom row */}
-            <div className="flex flex-col lg:flex-row gap-x-16 gap-y-8 lg:gap-y-0">
+            <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
               {/* Privacy-first UX */}
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+              <div className="flex-1 border-t border-gray-600 pt-2">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
                 <p className="text-[16px]">
                   Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
@@ -159,7 +172,7 @@ export default function MozillaPage() {
               </div>
 
               {/* Designing for scale */}
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+              <div className="flex-1 border-t border-gray-600 pt-2">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
                 <p className="text-[16px]">
                   With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
@@ -175,11 +188,14 @@ export default function MozillaPage() {
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16">
             {/* Left Column - Text Content */}
 
             <div className="flex-1">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Exploring Early Concepts</h2>
+              <h2 className="text-4xl font-normal mb-2">
+                Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
 
               <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
               <ul className="list-disc pl-8 mb-8 text-[16px]">
@@ -212,7 +228,10 @@ export default function MozillaPage() {
       {/* Sign up flow */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Clarity at Every Step</h2>
+          <h2 className="text-4xl font-normal mb-2">
+            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
               <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
@@ -245,13 +264,15 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Transparency about data usag */}
-      <div className="relative bg-green-300 text-black">
+      {/* Transparency about data usage */}
+      <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center">Transparency about data usage</h2>
-          <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-12">
+            Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="flex-1 flex-col space-y-8 lg:space-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-              <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
+              <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
                   This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
@@ -266,7 +287,7 @@ export default function MozillaPage() {
               <div className="flex flex-1 flex-col space-y-8">
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
-              <div className="flex-1 border-t border-gray-600 pt-[4px]">
+              <div className="flex-1 border-t border-gray-600 pt-2">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
                   When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
@@ -275,13 +296,13 @@ export default function MozillaPage() {
               </div>
             </div>
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-              <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
+              <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
                   If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                 </p>
               </div>
-              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last ">
+              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
                 <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
             </div>
@@ -290,10 +311,12 @@ export default function MozillaPage() {
       </div>
 
       {/* Settings screens */}
-
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing Trust Through Settings</h2>
+          <h2 className="text-4xl font-normal mb-2">
+            Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <p className="text-[16px] mb-8 lg:mb-12">
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
             the experience.
@@ -320,11 +343,14 @@ export default function MozillaPage() {
       </div>
 
       {/* Light and Dark Mode Mockups */}
-      <div className="relative bg-green-300 text-black">
+      <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             <div className="flex flex-col">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Dark Mode for Modern Use</h2>
+              <h2 className="text-4xl font-normal mb-2">
+                Dark Mode for Modern Use<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <p className="text-[16px]">
                 Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
                 <strong>modern platform expectations.</strong>
@@ -351,7 +377,10 @@ export default function MozillaPage() {
       {/* chat screens */}
       <div className="relative bg-green-200 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing for Fast Iteration and Familiar Use</h2>
+          <h2 className="text-4xl font-normal mb-2">
+            Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <p className="text-[16px] mb-8 lg:mb-12">
             To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
             <strong>quickly prototype and evolve</strong>—without compromising usability.
@@ -370,7 +399,10 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-8 items-center justify-center">
             <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
-              <h2 className="text-4xl font-normal mb-8 lg:mb-12">Designing with Mobile in Mind</h2>
+              <h2 className="text-4xl font-normal mb-2">
+                Designing with Mobile in Mind<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
               <p className="text-[16px] items-center">
@@ -382,10 +414,13 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">Typography</h2>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+            Typography<span className="text-green-500 text-[64px]">.</span>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -396,13 +431,13 @@ export default function MozillaPage() {
             {/* Right Column - Typography Details */}
             <div className="space-y-4 md:space-y-8">
               {/* Typeface */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
                 <p className="text-[16px]">Inter</p>
               </div>
 
               {/* Weights */}
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
                 <div className="space-y-1 md:space-y-2">
                   <p className="text-[16px] font-normal">Regular</p>
@@ -419,7 +454,9 @@ export default function MozillaPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">Main Colors</h2>
+            <h2 className="text-4xl font-normal">
+              Main Colors<span className="text-green-500 text-[64px]">.</span>
+            </h2>
           </div>
 
           {/* Primary Colors */}
@@ -465,16 +502,18 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/*Learning Section */}
+      {/* Learning Section */}
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           {/* Title */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            <h2 className="text-4xl font-normal mb-8 lg:mb-12">Learning</h2>
+            <h2 className="text-4xl font-normal mb-8 lg:mb-12">
+              Learning<span className="text-green-500 text-[64px]">.</span>
+            </h2>
 
             {/* Build Fast, Learn Faster */}
             <div>
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Build Fast, Learn Faster</h3>
                 <p className="text-[16px]">
                   This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
@@ -485,7 +524,7 @@ export default function MozillaPage() {
 
             {/* Balancing Agility with Control */}
             <div>
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Balancing Agility with Control</h3>
                 <p className="text-[16px]">
                   One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
@@ -496,7 +535,7 @@ export default function MozillaPage() {
 
             {/* I Am Not the User */}
             <div>
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">I Am Not the User</h3>
                 <p className="text-[16px]">
                   While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
@@ -508,7 +547,7 @@ export default function MozillaPage() {
 
             {/* Designing for Trust */}
             <div>
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
                 <p className="text-[16px]">
                   Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
@@ -519,7 +558,7 @@ export default function MozillaPage() {
 
             {/* Staying Curious and Outcome-Oriented */}
             <div>
-              <div className="border-t border-[#C1C1C1] pt-[4px]">
+              <div className="border-t border-[#C1C1C1] pt-2">
                 <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
                 <p className="text-[16px]">
                   Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
@@ -536,7 +575,10 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normalmb-8 lg:mb-12">Explore my portfolio in Figma</h2>
+              <h2 className="text-4xl font-normal mb-2">
+                Explore my portfolio in Figma<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
@@ -559,10 +601,12 @@ export default function MozillaPage() {
 
       {/* Playground Section */}
       <div className="relative bg-gray-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-6 py-16 lg:py-32 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8">
             <div className="flex col-span-2 justify-center items-center">
-              <h2 className="text-4xl font-normal">Previous Explorations</h2>
+              <h2 className="text-4xl font-normal">
+                Previous Explorations<span className="text-green-500 text-[64px]">.</span>
+              </h2>
             </div>
             <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
@@ -577,6 +621,7 @@ export default function MozillaPage() {
           </div>
         </div>
       </div>
+
       {/* Contact Section */}
       <CtaSection />
     </main>

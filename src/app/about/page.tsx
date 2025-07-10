@@ -54,31 +54,26 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-base font-regular">Thoughtful (Co-Founder & Design Engineer)</h3>
+                          <h3 className="text-base font-regular">Thoughtful (Product Designer & Engineer)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 text-Black pl-5">
                             <li className="pl-1">
+                              <span className="block ml-[-1px]">Designed and built software for 5 clients over 3 years by splitting time between design and front-end development:</span>
+                            </li>
+                            <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Bootstrapped 3 internal products from 0→1 — led user research, UX strategy, UI design, and front-end development to validate product–market fit.
+                                <strong>Mozilla Ghostcat</strong> - privacy-focused AI assistant - 3 month project from market research to high-fidelity Figma designs.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Led UX/UI design for Spiritune and Mozilla Thunderbird, defining core flows and collaborating with engineers to ship responsive, scalable consumer interfaces.
+                                <strong>Spiritune</strong> - music streaming that adapts to your mood - ongoing design help including revamping the signup and login flow.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Defined MVP workflows for early-stage products, stripping non-essential features and prioritizing high-value tasks across client portals and dashboards.
-                              </span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">Built modular design systems reused across projects, improving consistency, speeding dev handoff, and enabling rapid iteration.</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">
-                                Ran feedback loops with users and stakeholders, helping teams validate assumptions, refine UX, and deliver usable MVPs under tight constraints.
+                                <strong>Lilypad Learning</strong> - edtech startup helping schools manage student psychology evaluations - 3 month project to design SaaS product and website.
                               </span>
                             </li>
                           </ul>
@@ -89,23 +84,27 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-base font-regular]">Fractional (Co-Founder)</h3>
+                          <h3 className="text-base font-regular]">Fractional (Product Designer & Engineer - Founding Team)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 Black pl-5">
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Designed and launched a web-based client portal used by 5+ agencies and freelancers to manage clients, projects, and billing — shipped MVP in under 4 months.
+                                Co-founded SaaS startup as front-end engineer and designer to help fractional consultants manage invoicing, payments, and client communications.
+                              </span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Conducted market research, &gt; 60 user interviews, and live user testing to validate market demand and user needs.</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">
+                                <strong>Shipped MVP in &lt; 4 months</strong> with a complex onboarding flow where users connect their bank, accept payments, and send contracts to clients.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Led end-to-end UX/UI, from early research and wireframes to polished, responsive UIs — balanced business constraints with user needs to streamline onboarding and daily
-                                workflows.
+                                Worked on front-end development to build out UI with React, TypeScript, and Mantine UI component library with a senior back-end engineering co-founder.
                               </span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">Built a component-based design system from scratch, enabling faster iteration and visual consistency across the app.</span>
                             </li>
                           </ul>
                         </div>
@@ -121,40 +120,28 @@ export default function About() {
                         <h3 className="text-base font-regular mb-2 md:mb-4">UX & Design</h3>
                         <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Thinking & Product Strategy</span>
+                            <span className="block ml-[-1px]">Prototyping (Figma, Cursor)</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">User Research & Usability Testing</span>
+                            <span className="block ml-[-1px]">Interaction Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Wireframing, Prototyping & Interaction Design</span>
+                            <span className="block ml-[-1px]">Visual Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Information Architecture & Journey Mapping</span>
+                            <span className="block ml-[-1px]">Design Systems</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Systems & Scalable UI Patterns</span>
+                            <span className="block ml-[-1px]">Systematic UX</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Inclusive & Accessible Design</span>
+                            <span className="block ml-[-1px]">Modular Thinking</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Mobile & Web App Design</span>
+                            <span className="block ml-[-1px]">User Research</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">A/B Testing & Data-Driven Iteration</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Cross-Functional Collaboration</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Stakeholder Communication & Alignment</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Reviews & Constructive Critique</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Systematic Design Across Products</span>
+                            <span className="block ml-[-1px]">0→1 Product Design</span>
                           </li>
                         </ul>
                       </div>
@@ -184,12 +171,6 @@ export default function About() {
                             <span className="block ml-[-1px]">Node.js</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">PostgreSQL</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Prisma</span>
-                          </li>
-                          <li className="pl-1">
                             <span className="block ml-[-1px]">Tailwind CSS</span>
                           </li>
                           <li className="pl-1">
@@ -208,25 +189,25 @@ export default function About() {
                             <span className="block ml-[-1px]">Figma</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Webflow</span>
+                            <span className="block ml-[-1px]">Cursor</span>
                           </li>
                           <li className="pl-1">
                             <span className="block ml-[-1px]">ChatGPT</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Visual Studio Code</span>
+                            <span className="block ml-[-1px]">VS Code</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Relume</span>
+                            <span className="block ml-[-1px]">UX Pilot</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Cursor</span>
+                            <span className="block ml-[-1px]">Midjourney</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Linear</span>
+                            <span className="block ml-[-1px]">DSLR</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
                           </li>
                         </ul>
                       </div>
