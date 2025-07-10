@@ -121,40 +121,28 @@ export default function About() {
                         <h3 className="text-base font-regular mb-2 md:mb-4">UX & Design</h3>
                         <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Thinking & Product Strategy</span>
+                            <span className="block ml-[-1px]">Prototyping (Figma, Cursor)</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">User Research & Usability Testing</span>
+                            <span className="block ml-[-1px]">Interaction Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Wireframing, Prototyping & Interaction Design</span>
+                            <span className="block ml-[-1px]">Visual Design</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Information Architecture & Journey Mapping</span>
+                            <span className="block ml-[-1px]">Design Systems</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Systems & Scalable UI Patterns</span>
+                            <span className="block ml-[-1px]">Systematic UX</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Inclusive & Accessible Design</span>
+                            <span className="block ml-[-1px]">Modular Thinking</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Mobile & Web App Design</span>
+                            <span className="block ml-[-1px]">User Research</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">A/B Testing & Data-Driven Iteration</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Cross-Functional Collaboration</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Stakeholder Communication & Alignment</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Design Reviews & Constructive Critique</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Systematic Design Across Products</span>
+                            <span className="block ml-[-1px]">0→1 Product Design</span>
                           </li>
                         </ul>
                       </div>
@@ -184,12 +172,6 @@ export default function About() {
                             <span className="block ml-[-1px]">Node.js</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">PostgreSQL</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Prisma</span>
-                          </li>
-                          <li className="pl-1">
                             <span className="block ml-[-1px]">Tailwind CSS</span>
                           </li>
                           <li className="pl-1">
@@ -208,25 +190,25 @@ export default function About() {
                             <span className="block ml-[-1px]">Figma</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
-                          </li>
-                          <li className="pl-1">
-                            <span className="block ml-[-1px]">Webflow</span>
+                            <span className="block ml-[-1px]">Cursor</span>
                           </li>
                           <li className="pl-1">
                             <span className="block ml-[-1px]">ChatGPT</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Visual Studio Code</span>
+                            <span className="block ml-[-1px]">VS Code</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Relume</span>
+                            <span className="block ml-[-1px]">UX Pilot</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Cursor</span>
+                            <span className="block ml-[-1px]">Midjourney</span>
                           </li>
                           <li className="pl-1">
-                            <span className="block ml-[-1px]">Linear</span>
+                            <span className="block ml-[-1px]">DSLR</span>
+                          </li>
+                          <li className="pl-1">
+                            <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
                           </li>
                         </ul>
                       </div>
