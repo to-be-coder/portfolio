@@ -111,13 +111,13 @@ export default function VisionTrackPage() {
             <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
 
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p className="text-[16px]">Founders didn&apos;t want "another dashboard"—they defaulted to Excel or Notion.</p>
+              <p className="text-[16px]">Founders didn&apos;t want &ldquo;another dashboard&rdquo;—they defaulted to Excel or Notion.</p>
             </div>
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
               <p className="text-[16px]">They didn&apos;t want another tool to manage and log into.</p>
             </div>
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p className="text-[16px]">The real pain was not "setting goals," but translating them into meaningful, actionable work.</p>
+              <p className="text-[16px]">The real pain was not &ldquo;setting goals,&rdquo; but translating them into meaningful, actionable work.</p>
             </div>
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
               <p className="text-[16px]">Slack was the best channel for driving behavior change without requiring login friction.</p>
@@ -156,9 +156,9 @@ export default function VisionTrackPage() {
               </div>
               <div className="md:col-span-2 space-y-2">
                 <p className="text-[16px]">
-                  Most teams didn’t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company’s mission or top-line OKRs. But they struggled to
-                  answer: “What does this mean for me today?” “We already have goals. We just don’t know what to do with them day to day.” — Marketing Manager This realization reframed our entire
-                  direction.
+                  Most teams didn&apos;t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
+                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing Manager
+                  This realization reframed our entire direction.
                 </p>
               </div>
             </div>
