@@ -1,6 +1,7 @@
 'use client'
 
 import CtaSection from '@/components/ui/cta'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -233,7 +234,22 @@ export default function LilypadPage() {
               Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
             </h2>
 
-            <div className="flex-1 flex flex-col justify-center space-y-4">
+            {/* Mobile Select - Hidden on md and larger */}
+            <div className="md:hidden mb-0">
+              <Select value={selectedImage} onValueChange={(value: ImageType) => setSelectedImage(value)}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select view" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="desktop">Desktop View</SelectItem>
+                  <SelectItem value="tablet">Tablet View</SelectItem>
+                  <SelectItem value="mobile">Mobile View</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Desktop Buttons - Hidden on small screens */}
+            <div className="hidden md:flex flex-1 flex-col justify-center space-y-4">
               <div className="pt-[4px] flex-1">
                 <button
                   onClick={() => setSelectedImage('desktop')}
