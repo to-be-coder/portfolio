@@ -204,20 +204,20 @@ export default function LilypadPage() {
               </h2>
             </div>
 
-            <div className="flex justify-between w-full h-auto space-x-4">
-              <div className="flex-1 flex justify-center">
-                <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={240} height={480} className="w-full h-auto" priority />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-5 w-full h-auto">
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
               </div>
 
-              <div className="flex-1 flex justify-center">
-                <Image src="/lilypad-iphone-2.png" alt="Second mobile screen of Lilypad's responsive design" width={240} height={480} className="w-full h-auto" priority />
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-2.png" alt="Second mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
               </div>
 
-              <div className="flex-1 flex justify-center">
-                <Image src="/lilypad-iphone-3.png" alt="Third mobile screen of Lilypad's responsive design" width={240} height={480} className="w-full h-auto" priority />
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-3.png" alt="Third mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
               </div>
-              <div className="flex-1 flex justify-center">
-                <Image src="/lilypad-iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={240} height={480} className="w-full h-auto" priority />
+              <div className="flex justify-center">
+                <Image src="/lilypad-iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
               </div>
             </div>
           </div>
