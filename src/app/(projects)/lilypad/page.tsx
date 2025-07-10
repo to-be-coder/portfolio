@@ -10,21 +10,6 @@ export default function LilypadPage() {
   type ImageType = 'desktop' | 'tablet' | 'mobile'
   const [selectedImage, setSelectedImage] = useState<ImageType>('desktop')
 
-  const imageData: Record<ImageType, { src: string; alt: string }> = {
-    desktop: {
-      src: '/lilypad-responsive.png',
-      alt: 'Desktop responsive design mockup for Lilypad',
-    },
-    tablet: {
-      src: '/lilypad-responsive.png',
-      alt: 'Tablet responsive design mockup for Lilypad',
-    },
-    mobile: {
-      src: '/lilypad-responsive.png',
-      alt: 'Mobile responsive design mockup for Lilypad',
-    },
-  }
-
   return (
     <main>
       {/* Hero Section */}
@@ -286,9 +271,15 @@ export default function LilypadPage() {
 
           {/* Right Column - Image */}
           <div className="lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border border-gray-200 rounded-lg">
-            <Image src="/lilypad-mobile-view.png" alt="Fifth mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-            <Image src="/lilypad-ipad-view.png" alt="Fifth tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-            <Image src="/lilypad-desktop-view.png" alt="Fifth tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            {selectedImage === 'mobile' && (
+              <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
+            {selectedImage === 'tablet' && (
+              <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
+            {selectedImage === 'desktop' && (
+              <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            )}
           </div>
         </div>
       </div>
