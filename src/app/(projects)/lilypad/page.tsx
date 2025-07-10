@@ -238,7 +238,7 @@ export default function LilypadPage() {
                 <button
                   onClick={() => setSelectedImage('desktop')}
                   className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'desktop' ? 'bg-black text-white' : 'bg-gray-100 text-black hover:bg-gray-200'
+                    selectedImage === 'desktop' ? 'bg-green-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
                   }`}
                 >
                   <h3 className="text-2xl font-regular">Desktop View</h3>
@@ -249,7 +249,7 @@ export default function LilypadPage() {
                 <button
                   onClick={() => setSelectedImage('tablet')}
                   className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'tablet' ? 'bg-black text-white' : 'bg-gray-100 text-black hover:bg-gray-200'
+                    selectedImage === 'tablet' ? 'bg-yellow-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
                   }`}
                 >
                   <h3 className="text-2xl font-regular">Tablet View</h3>
@@ -260,7 +260,7 @@ export default function LilypadPage() {
                 <button
                   onClick={() => setSelectedImage('mobile')}
                   className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'mobile' ? 'bg-black text-white' : 'bg-gray-100 text-black hover:bg-gray-200'
+                    selectedImage === 'mobile' ? 'bg-blue-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
                   }`}
                 >
                   <h3 className="text-2xl font-regular">Mobile View</h3>
@@ -270,7 +270,11 @@ export default function LilypadPage() {
           </div>
 
           {/* Right Column - Image */}
-          <div className="lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border border-gray-200 rounded-lg">
+          <div
+            className={`lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border  rounded-lg ${
+              selectedImage === 'desktop' ? 'bg-green-50 border-green-100' : selectedImage === 'tablet' ? 'bg-yellow-50 border-yellow-100' : 'bg-blue-50 border-blue-100'
+            }`}
+          >
             {selectedImage === 'mobile' && (
               <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
             )}
@@ -293,15 +297,17 @@ export default function LilypadPage() {
           <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Consistent Layout Primitives</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
-                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
-                  what&apos;s being asked and why, without digging through settings.
+                  The layout system was built on a strict, responsive grid — not just for visual balance, but to make development predictable and scalable. <br />
+                  <br />
+                  Each breakpoint uses a defined column count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl,
+                  px-8, and my-16.
                 </p>
               </div>
               <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
                 <Image
-                  src="/lilypad-ui-kit.png"
+                  src="/lilypad-grid.png"
                   alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
                   width={800}
                   height={800}
@@ -313,19 +319,19 @@ export default function LilypadPage() {
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex flex-1 flex-col space-y-8">
                 <Image
-                  src="/lilypad-ui-kit.png"
+                  src="/lilypad-breakpoints.png"
                   alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
                   width={800}
-                  height={800}
-                  className="h-auto w-auto rounded-md border"
+                  height={400}
+                  className="w-full h-[400px] rounded-md border object-cover object-top"
                   priority
                 />
               </div>
               <div className="flex-1 border-t border-gray-600 pt-[4px]">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
+                <h3 className="text-2xl font-regular mb-2 md:mb-4">Built for Responsive & Future Growth</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
-                  When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
-                  interrupting the flow.
+                  I designed every section with clear breakpoints in mind — mobile, tablet, desktop — so devs could rely on consistent stacking behavior and spacing logic. The system also leaves room
+                  to scale as new content types or layouts are added.
                 </p>
               </div>
             </div>
