@@ -17,7 +17,7 @@ export default function VisionTrackPage() {
         <Image src="/vision-track-hero.png" alt="Vision Track hero background" width={1000} height={100} className="w-full flex-1 object-cover max-h-[600px] object-center rounded-lg" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
           <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
             <p className="text-[16px] font-semibold">Role: </p>
             <p className="text-[16px]">UX Research & Product Discovery</p>
