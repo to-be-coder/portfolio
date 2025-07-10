@@ -188,14 +188,14 @@ export default function MozillaPage() {
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-16">
             {/* Left Column - Text Content */}
 
             <div className="flex-1">
               <h2 className="text-4xl font-normal mb-2">
                 Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
               </h2>
-              <div className="border-t border-[#C1C1C1] mb-8"></div>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
 
               <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
               <ul className="list-disc pl-8 mb-8 text-[16px]">
@@ -231,7 +231,7 @@ export default function MozillaPage() {
           <h2 className="text-4xl font-normal mb-2">
             Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
           </h2>
-          <div className="border-t border-[#C1C1C1] mb-8"></div>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
               <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
@@ -267,10 +267,10 @@ export default function MozillaPage() {
       {/* Transparency about data usage */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
+          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-12">
             Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
           </h2>
-          <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+          <div className="flex-1 flex-col space-y-8 lg:space-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
@@ -316,7 +316,7 @@ export default function MozillaPage() {
           <h2 className="text-4xl font-normal mb-2">
             Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
           </h2>
-          <div className="border-t border-[#C1C1C1] mb-8"></div>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <p className="text-[16px] mb-8 lg:mb-12">
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
             the experience.
@@ -350,7 +350,7 @@ export default function MozillaPage() {
               <h2 className="text-4xl font-normal mb-2">
                 Dark Mode for Modern Use<span className="text-green-500 text-[64px]">.</span>
               </h2>
-              <div className="border-t border-[#C1C1C1] mb-8"></div>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <p className="text-[16px]">
                 Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
                 <strong>modern platform expectations.</strong>
@@ -380,7 +380,7 @@ export default function MozillaPage() {
           <h2 className="text-4xl font-normal mb-2">
             Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
           </h2>
-          <div className="border-t border-[#C1C1C1] mb-8"></div>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <p className="text-[16px] mb-8 lg:mb-12">
             To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
             <strong>quickly prototype and evolve</strong>—without compromising usability.
@@ -402,7 +402,7 @@ export default function MozillaPage() {
               <h2 className="text-4xl font-normal mb-2">
                 Designing with Mobile in Mind<span className="text-green-500 text-[64px]">.</span>
               </h2>
-              <div className="border-t border-[#C1C1C1] mb-8"></div>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
               <p className="text-[16px] items-center">
