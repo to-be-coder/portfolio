@@ -254,7 +254,7 @@ export default function VisionTrackPage() {
             <h2 className="text-3xl font-normal mb-4">Research #1</h2>
 
             {/* Interviewed */}
-            <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
+            <div className="space-y-4 mb-12 border-t border-[#C1C1C1] pt-2">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <h3 className="text-2xl font-regular text-[#a1a1a1]">Interviewed</h3>
@@ -273,7 +273,7 @@ export default function VisionTrackPage() {
             </div>
 
             {/* Challenges */}
-            <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
+            <div className="space-y-4 mb-12 border-t border-[#C1C1C1] pt-2">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <h3 className="text-2xl font-regular text-[#a1a1a1]">Challenges</h3>
@@ -294,7 +294,7 @@ export default function VisionTrackPage() {
             </div>
 
             {/* Decision + Learning */}
-            <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
+            <div className="space-y-4 mb-12 border-t border-[#C1C1C1] pt-2">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <h3 className="text-2xl font-regular text-[#a1a1a1]">Decision + Learning</h3>
