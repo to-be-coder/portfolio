@@ -1,7 +1,7 @@
 'use client'
 
 import CtaSection from '@/components/ui/cta'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -229,78 +229,37 @@ export default function LilypadPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl max-h-[600px]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-16 gap-y-12">
           {/* Left Column - Title and Navigation */}
-          <div className="lg:col-span-1 flex flex-col">
-            <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">
-              Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
-            </h2>
-
-            {/* Mobile Select - Hidden on md and larger */}
-            <div className="md:hidden mb-0">
-              <Select value={selectedImage} onValueChange={(value: ImageType) => setSelectedImage(value)}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select view" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="desktop">Desktop View</SelectItem>
-                  <SelectItem value="tablet">Tablet View</SelectItem>
-                  <SelectItem value="mobile">Mobile View</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Desktop Buttons - Hidden on small screens */}
-            <div className="hidden md:flex flex-1 flex-col justify-center space-y-4">
-              <div className="pt-[4px] flex-1">
-                <button
-                  onClick={() => setSelectedImage('desktop')}
-                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'desktop' ? 'bg-green-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
-                  }`}
-                >
-                  <h3 className="text-2xl font-regular">Desktop View</h3>
-                </button>
+          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">
+            Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
+          </h2>
+          <Tabs defaultValue="desktop" className="w-full ">
+            <TabsList className="w-full bg-gray-100">
+              <TabsTrigger value="desktop" className="w-full data-[state=active]:bg-green-200 data-[state=active]:text-black text-black">
+                Desktop
+              </TabsTrigger>
+              <TabsTrigger value="tablet" className="w-full data-[state=active]:bg-yellow-200 data-[state=active]:text-black text-black">
+                Tablet
+              </TabsTrigger>
+              <TabsTrigger value="mobile" className="w-full data-[state=active]:bg-blue-200 data-[state=active]:text-black text-black">
+                Mobile
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="desktop">
+              <div className="flex justify-center items-center h-full border border-green-200 bg-green-50 rounded-lg">
+                <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
               </div>
-
-              <div className="pt-[4px] flex-1">
-                <button
-                  onClick={() => setSelectedImage('tablet')}
-                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'tablet' ? 'bg-yellow-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
-                  }`}
-                >
-                  <h3 className="text-2xl font-regular">Tablet View</h3>
-                </button>
+            </TabsContent>
+            <TabsContent value="tablet">
+              <div className="flex justify-center items-center h-full border border-yellow-200 bg-yellow-50 rounded-lg">
+                <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
               </div>
-
-              <div className="pt-[4px] flex-1">
-                <button
-                  onClick={() => setSelectedImage('mobile')}
-                  className={`text-left w-full h-full transition-all flex items-center justify-center px-4 py-3 rounded-lg cursor-pointer ${
-                    selectedImage === 'mobile' ? 'bg-blue-200 text-black' : 'bg-gray-100 text-black hover:bg-gray-200'
-                  }`}
-                >
-                  <h3 className="text-2xl font-regular">Mobile View</h3>
-                </button>
+            </TabsContent>
+            <TabsContent value="mobile">
+              <div className="flex justify-center items-center h-full border border-blue-200 bg-blue-50 rounded-lg">
+                <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
               </div>
-            </div>
-          </div>
-
-          {/* Right Column - Image */}
-          <div
-            className={`lg:col-span-2 flex justify-center items-center w-full max-h-[800px] border  rounded-lg ${
-              selectedImage === 'desktop' ? 'bg-green-50 border-green-100' : selectedImage === 'tablet' ? 'bg-yellow-50 border-yellow-100' : 'bg-blue-50 border-blue-100'
-            }`}
-          >
-            {selectedImage === 'mobile' && (
-              <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-            )}
-            {selectedImage === 'tablet' && (
-              <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-            )}
-            {selectedImage === 'desktop' && (
-              <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-            )}
-          </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
 
