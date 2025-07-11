@@ -13,7 +13,7 @@ export default function MozillaPage() {
 
         {/* Content */}
         <div className="relative z-10 flex-1 flex flex-col lg:flex-row w-full space-between justify-end lg:items-end my-10 border-b border-gray-200">
-          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla - Ghost Cat</h1>
+          <h1 className="flex-1 text-4xl md:text-5xl font-bold tracking-tight leading-tight text-black">Mozilla - Ghostcat</h1>
           <p className="items-end text-lg md:text-2xl mb-1 text-black">On-device AI assistant</p>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function MozillaPage() {
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
-              Ghost Cat is an early-stage prototype of a <strong>privacy-first, on-device AI assistant</strong> built at Mozilla.
+              Ghostcat is an early-stage prototype of a <strong>privacy-first, on-device AI assistant</strong> built at Mozilla.
               <br /> <br />
               The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
               could shape real product behavior. <br /> <br /> We focused on a few core questions:
@@ -88,14 +88,14 @@ export default function MozillaPage() {
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <h2 className="text-4xl font-normal mb-2">
-          Initial Vision of Ghost Cat<span className="text-green-500 text-[64px]">.</span>
+          Initial Vision of Ghostcat<span className="text-green-500 text-[64px]">.</span>
         </h2>
 
         <div className="border-t border-[#C1C1C1] pt-2">
           <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
         </div>
         <p className="text-[16px]">
-          Ghost Cat aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a local,
+          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a local,
           encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
         </p>
 
@@ -118,7 +118,7 @@ export default function MozillaPage() {
             <div className="flex-1 border-t border-[#C1C1C1] pt-2">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[16px]">
-                We envision Ghost Cat as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
+                We envision Ghostcat as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
                 <br />
                 <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
                 data sharing feel intentional, seamless, and respectful—never disruptive. <br />
