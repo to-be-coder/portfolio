@@ -474,7 +474,7 @@ export default function MozillaPage() {
           </div>
           <div className="flex flex-col">
             <div className="h-48 bg-[#FF2E2E] rounded-lg flex items-end p-4">
-              <span>#FF2E2E</span>
+              <span className="text-white">#FF2E2E</span>
             </div>
           </div>
         </div>
