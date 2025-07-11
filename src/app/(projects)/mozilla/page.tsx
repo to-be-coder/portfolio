@@ -154,8 +154,9 @@ export default function MozillaPage() {
               <div className="flex-1 border-t border-gray-600 pt-2">
                 <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
                 <p className="text-[16px]">
-                  To enable a fast, feasible MVP, I partnered closely with engineering to understand constraints around on-device AI, encryption, and data storage. This early alignment shaped my UX
-                  approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions evolved.
+                  To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
+                  shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
+                  evolved.
                 </p>
               </div>
             </div>
