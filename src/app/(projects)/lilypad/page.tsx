@@ -247,10 +247,7 @@ export default function LilypadPage() {
                 >
                   Tablet
                 </TabsTrigger>
-                <TabsTrigger
-                  value="mobile"
-                  className="w-full data-[state=active]:bg-blue-200 data-[state=active]:text-blue-800 text-black text-[16px] lg:text-2xl border-b data-[state=active]:border-b-0 border-gray-200 "
-                >
+                <TabsTrigger value="mobile" className="w-full data-[state=active]:bg-blue-200 data-[state=active]:text-blue-800 text-black text-[16px] lg:text-2xl ">
                   Mobile
                 </TabsTrigger>
               </TabsList>
