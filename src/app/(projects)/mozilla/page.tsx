@@ -37,7 +37,7 @@ export default function MozillaPage() {
                 <strong>How can consent feel seamless—not disruptive?</strong>
               </li>
               <li>
-                <strong>How much control can we offer without overwhelming people?</strong>
+                <strong>How much control can we offer without overwhelming users?</strong>
               </li>
               <li>
                 <strong>What familiar patterns work within strict on-device constraints?</strong>
