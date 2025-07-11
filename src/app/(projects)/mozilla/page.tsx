@@ -145,7 +145,7 @@ export default function MozillaPage() {
           <div className="flex flex-col gap-y-8 lg:gap-y-16">
             {/* top row */}
             <div className="flex flex-col md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
-              <div className="flex-1 justify-center items-center">
+              <div className="flex-1 justify-center items-center mb-0 lg:mb-4">
                 <h2 className="text-4xl font-normal text-center mb-8 lg:mb-12">
                   Design Challenges<span className="text-green-500 text-[64px]">.</span>
                 </h2>
@@ -604,7 +604,7 @@ export default function MozillaPage() {
       {/* Playground Section */}
       <div className="relative bg-gray-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="flex col-span-2 justify-center items-center">
               <h2 className="text-4xl font-normal">
                 Previous Explorations<span className="text-green-500 text-[64px]">.</span>
