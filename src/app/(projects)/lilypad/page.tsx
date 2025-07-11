@@ -223,59 +223,51 @@ export default function LilypadPage() {
 
       {/* Responsive Design Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="flex flex-col items-center">
-          {/* Title */}
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12 text-center">
-            Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
-          </h2>
+        {/* Title */}
 
-          {/* Tabs and Content Container */}
-          <div className="flex flex-col lg:flex-row gap-8 w-full max-w-6xl">
-            <Tabs defaultValue="desktop" className="w-full flex flex-col lg:flex-row gap-4">
-              {/* Left Side - Vertical Tabs */}
+        <h2 className="text-4xl font-normal mb-2">
+          Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
+        </h2>
+        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
 
-              <TabsList className="w-full bg-gray-50 flex-row lg:flex-col h-full lg:w-1/3 border border-gray-200 rounded-lg">
-                <TabsTrigger
-                  value="desktop"
-                  className="w-full data-[state=active]:bg-green-200 data-[state=active]:text-green-700  text-black text-[16px] lg:text-2xl border-b data-[state=active]:border-b-0 border-gray-200 "
-                >
-                  Desktop
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tablet"
-                  className="w-full data-[state=active]:bg-yellow-200 data-[state=active]:text-yellow-800 text-black  text-[16px] lg:text-2xl border-b data-[state=active]:border-b-0 border-gray-200 "
-                >
-                  Tablet
-                </TabsTrigger>
-                <TabsTrigger value="mobile" className="w-full data-[state=active]:bg-blue-200 data-[state=active]:text-blue-800 text-black text-[16px] lg:text-2xl ">
-                  Mobile
-                </TabsTrigger>
-              </TabsList>
+        {/* Tabs and Content Container */}
 
-              {/* Right Side - Content */}
-              <div className="flex-1">
-                <TabsContent value="desktop">
-                  <div className="flex justify-center items-center h-[600px] border border-green-200 bg-green-50 rounded-lg">
-                    <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-                  </div>
-                </TabsContent>
-                <TabsContent value="tablet">
-                  <div className="flex justify-center items-center h-[600px] border border-yellow-200 bg-yellow-50 rounded-lg">
-                    <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-                  </div>
-                </TabsContent>
-                <TabsContent value="mobile">
-                  <div className="flex justify-center items-center h-[600px] border border-blue-200 bg-blue-50 rounded-lg">
-                    <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
-                  </div>
-                </TabsContent>
-              </div>
-            </Tabs>
-          </div>
-        </div>
+        <Tabs defaultValue="desktop" className="w-full flex flex-col lg:flex-row gap-4">
+          {/* Left Side - Vertical Tabs */}
+
+          <TabsList className="w-full bg-gray-50 flex-row lg:flex-col  h-auto lg:h-[500px]  lg:w-1/3 border border-gray-200 rounded-lg">
+            <TabsTrigger value="desktop" className="w-full data-[state=active]:bg-green-200 data-[state=active]:text-green-700  text-black text-[16px] lg:text-2xl lg:border-b border-gray-200 ">
+              Desktop
+            </TabsTrigger>
+            <TabsTrigger value="tablet" className="w-full data-[state=active]:bg-yellow-200 data-[state=active]:text-yellow-800 text-black  text-[16px] lg:text-2xl lg:border-b border-gray-200">
+              Tablet
+            </TabsTrigger>
+
+            <TabsTrigger value="mobile" className="w-full data-[state=active]:bg-blue-200 data-[state=active]:text-blue-800 text-black text-[16px] lg:text-2xl ">
+              Mobile
+            </TabsTrigger>
+          </TabsList>
+
+          {/* Right Side - Content */}
+          <TabsContent value="desktop">
+            <div className="flex justify-center items-center h-[300px] lg:h-[500px] border border-green-200 bg-green-50 rounded-lg">
+              <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            </div>
+          </TabsContent>
+          <TabsContent value="tablet">
+            <div className="flex justify-center items-center  h-[300px] lg:h-[500px] border border-yellow-200 bg-yellow-50 rounded-lg">
+              <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            </div>
+          </TabsContent>
+          <TabsContent value="mobile">
+            <div className="flex justify-center items-center h-[300px] lg:h-[500px] border border-blue-200 bg-blue-50 rounded-lg">
+              <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="w-full h-full object-contain" priority />
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
 
-      {/* UI Kit Section */}
+      {/* Programmer's Perspective Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center text-white">
