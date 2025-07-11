@@ -110,7 +110,7 @@ export default function MozillaPage() {
       {/* Hypothesis Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <h2 className="text-4xl font-normal mb-2">
-          Forming Hypothesis<span className="text-green-500 text-[64px]">.</span>
+          Forming the Hypothesis<span className="text-green-500 text-[64px]">.</span>
         </h2>
         <div className="flex flex-col gap-x-16 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
