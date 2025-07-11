@@ -189,10 +189,10 @@ export default function MozillaPage() {
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-8 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2  md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
             {/* Left Column - Text Content */}
 
-            <div className="flex-1">
+            <div className="col-span-1">
               <h2 className="text-4xl font-normal mb-2">
                 Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
               </h2>
@@ -214,14 +214,13 @@ export default function MozillaPage() {
             </div>
 
             {/* Right Column - Images */}
-            <div className="flex-1">
-              <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
-                <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-                <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-                <Image src="/mozilla-v1-2.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-                <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-              </div>
+            <div className="col-span-1 flex items-end">
+              <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
             </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0 mt-8 md:mt-12">
+            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
