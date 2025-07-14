@@ -113,7 +113,7 @@ export default function Home() {
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'visionTrack' ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
                 </h3>
-                <p className="text-lg">Competitive analysis and user interviews for B2B SaaS startup</p>
+                <p className="text-lg">Competitive analysis and user interviews for a B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UX Research</span>
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
@@ -122,7 +122,7 @@ export default function Home() {
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
                     User Interviews
                   </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Persona</span>
+                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Personas</span>
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>B2B</span>
                   <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>SaaS</span>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'lilypad' ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
                 </h3>
-                <p className="text-lg">Designed and developed mobile-first landing page for AI ed-tech startup</p>
+                <p className="text-lg">Designed and developed a mobile-first landing page for an AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UI Design</span>
                   <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs  text-black whitespace-nowrap`}>Landing Page</span>
@@ -242,7 +242,7 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Mislanious Section*/}
+        {/* Miscellaneous Section*/}
         {/* <div className="space-y-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="rounded-3xl bg-gray-200 p-8 h-[500px]">
