@@ -23,18 +23,18 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 gap-y-12">
+        <div className="flex flex-col">
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
-              Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built at Mozilla.
+              Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
               <br /> <br />
               The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
-              could shape real product behavior. <br /> <br /> We focused on a few core questions:
+              could shape the product. <br /> <br /> We focused on a few core questions:
             </p>
             <ul className="list-disc ml-5 text-[16px] mb-4">
               <li>
-                <strong>How can consent feel seamless—not disruptive?</strong>
+                <strong>How can consent feel seamless, not disruptive?</strong>
               </li>
               <li>
                 <strong>How much control can we offer without overwhelming users?</strong>
@@ -48,19 +48,20 @@ export default function MozillaPage() {
               foundation for deeper testing and iteration.
             </p>
           </div>
-
+        </div>
+        <div className="flex flex-col mt-12">
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
-            <div className="space-y-4">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
                 <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
               </div>
-              <div>
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">Design & Prototyping:</span>
                 <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
               </div>
-              <div>
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
                 <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
               </div>
@@ -71,7 +72,7 @@ export default function MozillaPage() {
 
       {/* Workflow Section */}
       <div className="relative bg-green-100">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
             <h2 className="text-4xl font-normal mb-2">
@@ -95,8 +96,8 @@ export default function MozillaPage() {
           <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
         </div>
         <p className="text-[16px]">
-          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a local,
-          encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
+          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
+          encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under <strong>users&apos; control</strong>.
         </p>
 
         <div className="mt-12">
@@ -107,33 +108,47 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Hypothesis Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-2">
-          Forming the Hypothesis<span className="text-green-500 text-[64px]">.</span>
-        </h2>
-        <div className="flex flex-col gap-x-16 gap-y-12">
-          {/* Left Column - Stacked Overview and Design Objective */}
-          <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 space-y-12 lg:space-y-0">
-            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
-              <p className="text-[16px]">
-                We envision Ghostcat as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
-                <br />
-                <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
-                data sharing feel intentional, seamless, and respectful—never disruptive. <br />
-                <br />
-                <strong>Security is treated as a first-class priority</strong>, influencing decisions across both interface and experience design.
-              </p>
-            </div>
+      {/*Hypothesis Section */}
 
-            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
-              <ul className="list-disc ml-5 text-[16px]">
-                <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
-                <li>Users expect control; transparent, opt-in permissions make data sharing feel safe and intentional.</li>
-                <li>Security isn&apos;t optional; it&apos;s foundational to earning and maintaining user confidence.</li>
-              </ul>
+      <div className="relative bg-[#212121] text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2 text-white">
+            Hypothesis<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <div className="flex flex-col p-4 lg:p-8 relative">
+            <div className="flex flex-col max-w-3xl mx-auto relative">
+              <div className="flex justify-start h-[64px] lg:h-[92px]">
+                <span className="text-green-500 text-[64px] lg:text-[92px]">"</span>
+              </div>
+              <div className="flex flex-col">
+                <p className="text-[16px] lg:text-[32px] font-medium text-center text-white">
+                  For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
+                </p>
+              </div>
+              <div className="flex justify-end h-[64px] lg:h-[92px]">
+                <span className="text-green-500 text-[64px] lg:text-[92px] ">"</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex-1 pt-2 mt-12">
+            <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
+            <div className="border-t border-[#C1C1C1] "></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Be transparent about data usage</span>
+                <p className="text-[16px]">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
+              </div>
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Control users&apos; data in settings</span>
+                <p className="text-[16px]">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
+              </div>
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Use familiar patterns to reduce friction</span>
+                <p className="text-[16px]">We leaned on UI people already know to make privacy feel simple, not technical.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -188,88 +203,10 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Exploring Early Concepts Section */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
-            {/* Left Column - Text Content */}
-
-            <div className="col-span-1">
-              <h2 className="text-4xl font-normal mb-2">
-                Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
-              </h2>
-              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-
-              <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
-              <ul className="list-disc pl-8 mb-8 text-[16px]">
-                <li>
-                  <strong>Explore layout and interaction ideas with speed</strong>
-                </li>
-                <li>
-                  <strong>Gather fast, actionable feedback from stakeholders</strong>
-                </li>
-                <li>
-                  <strong>Identify technical constraints early and adapt confidently</strong>
-                </li>
-              </ul>
-              <p className="text-[16px]">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
-            </div>
-
-            {/* Right Column - Images */}
-            <div className="col-span-1 flex items-end">
-              <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 md:mt-12">
-            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-          </div>
-        </div>
-      </div>
-
-      {/* Sign up flow */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
-                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
-                <p className="text-[16px]">
-                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
-                  wait time.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
-                <p className="text-[16px]">
-                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
-                  momentum going.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Transparency about data usage */}
-      <div className="relative bg-green-100 text-black">
+      <div className="relative text-black bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-12">
+          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-16">
             Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
           </h2>
           <div className="flex-1 flex-col space-y-12 lg:space-y-16">
@@ -313,7 +250,7 @@ export default function MozillaPage() {
       </div>
 
       {/* Settings screens */}
-      <div className="relative bg-white text-black">
+      <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <h2 className="text-4xl font-normal mb-2">
             Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
@@ -323,20 +260,20 @@ export default function MozillaPage() {
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
             the experience.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 lg:gap-y-8">
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-4 lg:gap-y-8">
+            <div className="flex flex-col gap-y-2 ">
               <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can delete their account at any time—no questions asked.</p>
             </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can clear their memory and past interactions whenever they choose.</p>
             </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can select which AI model powers their assistant experience.</p>
             </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can enable or disable extensions based on what they need or trust.</p>
             </div>
@@ -344,10 +281,129 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/* chat screens */}
+      <div className="relative bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+            <div className="flex flex-col">
+              <h2 className="text-4xl font-normal mb-2">
+                Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+              <p className="text-[16px] mb-8 lg:mb-12">
+                To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+                <strong>quickly prototype and evolve</strong>—without compromising usability.
+              </p>
+            </div>
+            <Tabs defaultValue="3" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
+              <TabsList className="grid w-full grid-cols-3 bg-gray-100 text-black rounded-md">
+                <TabsTrigger value="3" className="border-r border-gray-200">
+                  Full Screen
+                </TabsTrigger>
+                <TabsTrigger value="2" className="border-r border-gray-200">
+                  Right Sidebar Closed
+                </TabsTrigger>
+                <TabsTrigger value="1" className="">
+                  Both Sidebars Closed
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="3" className="flex justify-center w-full">
+                <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+              <TabsContent value="2" className="flex justify-center  w-full">
+                <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+              <TabsContent value="1" className="flex justify-center  w-full">
+                <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div>
+      </div>
+
+      {/* Sign up flow */}
+      <div className="relative bg-green-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2">
+            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+            <div className="flex flex-col gap-y-4">
+              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
+                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
+                <p className="text-[16px]">
+                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
+                  wait time.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
+                <p className="text-[16px]">
+                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                  momentum going.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Exploring Early Concepts Section */}
+      <div className="relative bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
+            {/* Left Column - Text Content */}
+
+            <div className="col-span-1">
+              <h2 className="text-4xl font-normal mb-2">
+                Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+
+              <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
+              <ul className="list-disc pl-8 mb-8 text-[16px]">
+                <li>
+                  <strong>Explore layout and interaction ideas with speed</strong>
+                </li>
+                <li>
+                  <strong>Gather fast, actionable feedback from stakeholders</strong>
+                </li>
+                <li>
+                  <strong>Identify technical constraints early and adapt confidently</strong>
+                </li>
+              </ul>
+              <p className="text-[16px]">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
+            </div>
+
+            {/* Right Column - Images */}
+            <div className="col-span-1 flex items-end">
+              <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 lg:mt-8">
+            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+          </div>
+        </div>
+      </div>
+
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-2">
                 Dark Mode for Modern Use<span className="text-green-500 text-[64px]">.</span>
@@ -376,30 +432,10 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* chat screens */}
-      <div className="relative bg-green-200 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <p className="text-[16px] mb-8 lg:mb-12">
-            To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-            <strong>quickly prototype and evolve</strong>—without compromising usability.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-4 lg:gap-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-          </div>
-        </div>
-      </div>
-
       {/* Mobile Mockups */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-8 items-center justify-center">
+          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
             <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
               <h2 className="text-4xl font-normal mb-2">
                 Designing with Mobile in Mind<span className="text-green-500 text-[64px]">.</span>
@@ -424,7 +460,7 @@ export default function MozillaPage() {
             Typography<span className="text-green-500 text-[64px]">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
             <div className="flex items-center justify-center">
               <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
