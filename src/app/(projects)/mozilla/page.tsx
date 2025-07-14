@@ -117,16 +117,21 @@ export default function MozillaPage() {
           </h2>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="flex flex-col bg-white p-4 lg:p-8 rounded-lg border border-gray-200 relative">
-            <div className="flex flex-col max-w-3xl mx-auto relative mt-8">
-              <span className="text-green-500 text-[64px] absolute top-0 left-0">"</span>
-              <div className="flex flex-col p-4 mb-4">
-                <p className="text-[16px] lg:text-[24px] font-semibold text-center mt-16 mb-16">
+            <div className="flex flex-col max-w-3xl mx-auto relative">
+              <div className="flex justify-start h-[64px] lg:h-[92px]">
+                <span className="text-green-500 text-[64px] lg:text-[92px]">"</span>
+              </div>
+              <div className="flex flex-col">
+                <p className="text-[16px] lg:text-[24px] font-semibold text-center">
                   For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
                 </p>
               </div>
-              <span className="text-green-500 text-[64px] absolute bottom-0 right-0">"</span>
+              <div className="flex justify-end h-[64px] lg:h-[92px]">
+                <span className="text-green-500 text-[64px] lg:text-[92px] ">"</span>
+              </div>
             </div>
           </div>
+
           <div className="flex-1 pt-2 mt-12">
             <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
             <div className="border-t border-[#C1C1C1] "></div>
