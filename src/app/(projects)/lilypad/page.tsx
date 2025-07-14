@@ -183,7 +183,7 @@ export default function LilypadPage() {
             <div className="border-t border-[#C1C1C1] pt-[4px]">
               <h3 className="text-2xl font-regular text-gray-400 mb-6">Responsive Design</h3>
               <p className="text-[16px]">
-                Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. Also ensured images and text scale
+                Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. and ensured images and text scaled
                 appropriately to maintain readability across various screen sizes.
               </p>
             </div>
