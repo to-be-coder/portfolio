@@ -1,6 +1,6 @@
 'use client'
+import HomeHeroSection from '@/components/home-hero-section'
 import CtaSection from '@/components/ui/cta'
-import VideoBackground from '@/components/video-background'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
@@ -62,7 +62,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <VideoBackground />
+      <HomeHeroSection />
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
@@ -169,7 +169,7 @@ export default function Home() {
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'lilypad' ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
                 </h3>
-                <p className="text-lg">Design and development mobile-first landing page for AI ed-tech startup</p>
+                <p className="text-lg">Designed and developed mobile-first landing page for AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UI Design</span>
                   <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs  text-black whitespace-nowrap`}>Landing Page</span>

@@ -27,7 +27,7 @@ export default function MozillaPage() {
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
-              Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built at Mozilla.
+              Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
               <br /> <br />
               The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
               could shape real product behavior. <br /> <br /> We focused on a few core questions:
