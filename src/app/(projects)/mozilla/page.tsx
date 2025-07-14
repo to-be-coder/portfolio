@@ -122,7 +122,7 @@ export default function MozillaPage() {
                 <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
               </div>
               <div className="flex flex-col">
-                <p className="text-[16px] lg:text-[32px] font-medium text-center text-white">
+                <p className="text-[24px] lg:text-[32px] font-medium text-center text-white">
                   For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
                 </p>
               </div>
