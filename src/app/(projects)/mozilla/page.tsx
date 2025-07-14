@@ -197,7 +197,7 @@ export default function MozillaPage() {
             Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
           </h2>
           <div className="flex-1 flex-col space-y-12 lg:space-y-16">
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
@@ -209,7 +209,7 @@ export default function MozillaPage() {
                 <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
             </div>
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex flex-1 flex-col space-y-8">
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
@@ -221,7 +221,7 @@ export default function MozillaPage() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
@@ -247,7 +247,7 @@ export default function MozillaPage() {
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
             the experience.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 lg:gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-4 lg:gap-y-16">
             <div className="flex flex-col gap-y-4 ">
               <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can delete their account at any time—no questions asked.</p>
@@ -271,19 +271,40 @@ export default function MozillaPage() {
       {/* chat screens */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <p className="text-[16px] mb-8 lg:mb-12">
-            To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-            <strong>quickly prototype and evolve</strong>—without compromising usability.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+            <div className="flex flex-col">
+              <h2 className="text-4xl font-normal mb-2">
+                Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
+              </h2>
+              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+              <p className="text-[16px] mb-8 lg:mb-12">
+                To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+                <strong>quickly prototype and evolve</strong>—without compromising usability.
+              </p>
+            </div>
+            <Tabs defaultValue="3" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
+              <TabsList className="grid w-full grid-cols-3 bg-gray-100 text-black rounded-md">
+                <TabsTrigger value="3" className="border-r border-gray-200">
+                  Full Screen
+                </TabsTrigger>
+                <TabsTrigger value="2" className="border-r border-gray-200">
+                  Right Sidebar Closed
+                </TabsTrigger>
+                <TabsTrigger value="1" className="">
+                  Both Sidebars Closed
+                </TabsTrigger>
+              </TabsList>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-4 lg:gap-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <TabsContent value="3" className="flex justify-center w-full">
+                <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+              <TabsContent value="2" className="flex justify-center  w-full">
+                <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+              <TabsContent value="1" className="flex justify-center  w-full">
+                <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </div>
@@ -330,7 +351,7 @@ export default function MozillaPage() {
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-16">
             {/* Left Column - Text Content */}
 
             <div className="col-span-1">
@@ -359,7 +380,7 @@ export default function MozillaPage() {
               <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 md:mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-16 mt-4 lg:mt-16">
             <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
             <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
           </div>
@@ -401,7 +422,7 @@ export default function MozillaPage() {
       {/* Mobile Mockups */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-8 items-center justify-center">
+          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
             <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
               <h2 className="text-4xl font-normal mb-2">
                 Designing with Mobile in Mind<span className="text-green-500 text-[64px]">.</span>
