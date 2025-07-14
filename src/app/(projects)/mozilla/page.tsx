@@ -23,7 +23,7 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 lg:gap-x-16 gap-y-12">
+        <div className="flex flex-col">
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
             <p className="text-[16px]">
@@ -48,19 +48,20 @@ export default function MozillaPage() {
               foundation for deeper testing and iteration.
             </p>
           </div>
-
+        </div>
+        <div className="flex flex-col mt-12">
           <div className="flex-1 border-t border-[#C1C1C1] pt-2">
             <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
-            <div className="space-y-4">
-              <div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
                 <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
               </div>
-              <div>
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">Design & Prototyping:</span>
                 <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
               </div>
-              <div>
+              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
                 <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
               </div>
@@ -112,9 +113,9 @@ export default function MozillaPage() {
         <h2 className="text-4xl font-normal mb-2">
           Forming the Hypothesis<span className="text-green-500 text-[64px]">.</span>
         </h2>
-        <div className="flex flex-col gap-x-16 gap-y-12">
+        <div className="flex flex-col gap-x-8 gap-y-12">
           {/* Left Column - Stacked Overview and Design Objective */}
-          <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 space-y-12 lg:space-y-0">
+          <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-8 space-y-12 lg:space-y-0">
             <div className="flex-1 border-t border-[#C1C1C1] pt-2">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
               <p className="text-[16px]">For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.</p>
@@ -193,11 +194,11 @@ export default function MozillaPage() {
       {/* Transparency about data usage */}
       <div className="relative text-black bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-12">
+          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-16">
             Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
           </h2>
           <div className="flex-1 flex-col space-y-12 lg:space-y-16">
-            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
@@ -209,7 +210,7 @@ export default function MozillaPage() {
                 <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
             </div>
-            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex flex-1 flex-col space-y-8">
                 <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
@@ -221,7 +222,7 @@ export default function MozillaPage() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-x-16 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
                 <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
                 <p className="text-[16px] mb-8 lg:mb-12">
@@ -247,20 +248,20 @@ export default function MozillaPage() {
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
             the experience.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-16 gap-y-4 lg:gap-y-16">
-            <div className="flex flex-col gap-y-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-4 lg:gap-y-8">
+            <div className="flex flex-col gap-y-2 ">
               <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can delete their account at any time—no questions asked.</p>
             </div>
-            <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can clear their memory and past interactions whenever they choose.</p>
             </div>
-            <div className="flex flex-col gap-y-4 ">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can select which AI model powers their assistant experience.</p>
             </div>
-            <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-2">
               <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <p>Users can enable or disable extensions based on what they need or trust.</p>
             </div>
@@ -271,7 +272,7 @@ export default function MozillaPage() {
       {/* chat screens */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-2">
                 Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
@@ -351,7 +352,7 @@ export default function MozillaPage() {
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
             {/* Left Column - Text Content */}
 
             <div className="col-span-1">
@@ -380,7 +381,7 @@ export default function MozillaPage() {
               <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-16 mt-4 lg:mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 lg:mt-8">
             <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
             <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
           </div>
@@ -390,7 +391,7 @@ export default function MozillaPage() {
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <div className="flex flex-col">
               <h2 className="text-4xl font-normal mb-2">
                 Dark Mode for Modern Use<span className="text-green-500 text-[64px]">.</span>
@@ -447,7 +448,7 @@ export default function MozillaPage() {
             Typography<span className="text-green-500 text-[64px]">.</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
             <div className="flex items-center justify-center">
               <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
