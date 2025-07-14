@@ -97,14 +97,14 @@ export default function MozillaPage() {
         </div>
         <p className="text-[16px]">
           Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
-          encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under <strong>users&apos; control</strong>.
+          encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
         </p>
 
         <div className="mt-12">
           <div className="border-t border-[#C1C1C1] pt-2">
             <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
           </div>
-          <p className="text-[16px]">I am not able to show this section due to a request.</p>
+          <p className="text-[16px]">I am unable to show this section due to a request.</p>
         </div>
       </div>
 
@@ -142,12 +142,12 @@ export default function MozillaPage() {
                 <p className="text-[16px]">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
               </div>
               <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px] mb-2">Control users&apos; data in settings</span>
+                <span className="font-semibold text-[16px] mb-2">Let users control their data in settings</span>
                 <p className="text-[16px]">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
               </div>
               <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
                 <span className="font-semibold text-[16px] mb-2">Use familiar patterns to reduce friction</span>
-                <p className="text-[16px]">We leaned on UI people already know to make privacy feel simple, not technical.</p>
+                <p className="text-[16px]">We leaned on UI patterns people already know to make privacy feel simple, not technical.</p>
               </div>
             </div>
           </div>
