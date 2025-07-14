@@ -30,11 +30,11 @@ export default function MozillaPage() {
               Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
               <br /> <br />
               The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
-              could shape real product behavior. <br /> <br /> We focused on a few core questions:
+              could shape the product. <br /> <br /> We focused on a few core questions:
             </p>
             <ul className="list-disc ml-5 text-[16px] mb-4">
               <li>
-                <strong>How can consent feel seamless—not disruptive?</strong>
+                <strong>How can consent feel seamless, not disruptive?</strong>
               </li>
               <li>
                 <strong>How much control can we offer without overwhelming users?</strong>
