@@ -71,7 +71,7 @@ export default function MozillaPage() {
 
       {/* Workflow Section */}
       <div className="relative bg-green-100">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
             <h2 className="text-4xl font-normal mb-2">
@@ -117,22 +117,25 @@ export default function MozillaPage() {
           <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-16 space-y-12 lg:space-y-0">
             <div className="flex-1 border-t border-[#C1C1C1] pt-2">
               <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
-              <p className="text-[16px]">
-                We envision Ghostcat as a <strong>privacy-first assistant</strong> designed to <strong>prioritize user trust and control</strong>. <br />
-                <br />
-                <strong>Transparency is a core principle.</strong> Permission requests are clearly surfaced in the interface, and no data is shared without explicit user opt-in. The goal is to make
-                data sharing feel intentional, seamless, and respectful—never disruptive. <br />
-                <br />
-                <strong>Security is treated as a first-class priority</strong>, influencing decisions across both interface and experience design.
-              </p>
+              <p className="text-[16px]">For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.</p>
             </div>
 
             <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why This Hypothesis</h2>
+              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">HMW</h2>
+              <p className="text-[16px]">
+                How might we design data practices that build trust with privacy-aware users? <br /> <br />
+              </p>
               <ul className="list-disc ml-5 text-[16px]">
-                <li>Trust is the primary barrier to adoption for AI in privacy-aware audiences.</li>
-                <li>Users expect control; transparent, opt-in permissions make data sharing feel safe and intentional.</li>
-                <li>Security isn&apos;t optional; it&apos;s foundational to earning and maintaining user confidence.</li>
+                <li>
+                  <strong>Consent should be clear and contextual</strong> - We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the
+                  chat.
+                </li>
+                <li>
+                  <strong>Let users stay in control at every step</strong> - Users can delete their account, clear memory, or opt out at any time—with no friction or loss of functionality.
+                </li>
+                <li>
+                  <strong>Use familiar patterns to reduce friction</strong> - We leaned on UI people already know to make privacy feel simple, not technical.
+                </li>
               </ul>
             </div>
           </div>
