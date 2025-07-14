@@ -119,7 +119,7 @@ export default function MozillaPage() {
           <div className="flex flex-col p-4 lg:p-8 relative">
             <div className="flex flex-col max-w-3xl mx-auto relative">
               <div className="flex justify-start h-[64px] lg:h-[92px]">
-                <span className="text-green-500 text-[64px] lg:text-[92px]">"</span>
+                <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
               </div>
               <div className="flex flex-col">
                 <p className="text-[16px] lg:text-[32px] font-medium text-center text-white">
@@ -127,7 +127,7 @@ export default function MozillaPage() {
                 </p>
               </div>
               <div className="flex justify-end h-[64px] lg:h-[92px]">
-                <span className="text-green-500 text-[64px] lg:text-[92px] ">"</span>
+                <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>
               </div>
             </div>
           </div>
