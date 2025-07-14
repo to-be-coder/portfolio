@@ -95,8 +95,8 @@ export default function MozillaPage() {
           <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
         </div>
         <p className="text-[16px]">
-          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands user&apos;s preferences and routines while keeping data secure and private. It builds a local,
-          encrypted, on-device knowledge base, ensuring that user&apos;s information remains fully under <strong>user&apos;s control</strong>.
+          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
+          encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under <strong>users&apos; control</strong>.
         </p>
 
         <div className="mt-12">
