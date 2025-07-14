@@ -16,7 +16,7 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 md:gap-4 gap-0 justify-between ">
                 <div className="order-2 md:order-1 w-full col-span-2">
                   <h1 className="text-4xl font-bold mb-6 md:mb-8 hidden md:block">Hi, I&apos;m Jessica Cheng</h1>
-                  <p className="text-Black">
+                  <p className="text-black">
                     A <span className="font-semibold">product designer</span> devoted to creating digital experiences that feel natural. My background in{' '}
                     <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
                     let me translate insights into real, working solutions. Whether I&apos;m
@@ -63,17 +63,17 @@ export default function About() {
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Mozilla Ghostcat</strong> - privacy-focused AI assistant - 3 month project from market research to high-fidelity Figma designs.
+                                <strong>Mozilla Ghostcat</strong> - privacy-focused AI assistant — 3 month project, from market research to high-fidelity Figma designs.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Spiritune</strong> - music streaming that adapts to your mood - ongoing design help including revamping the signup and login flow.
+                                <strong>Spiritune</strong> - music streaming that adapts to your mood — ongoing design support, including revamping the sign-up and login flow.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Lilypad Learning</strong> - edtech startup helping schools manage student psychology evaluations - 3 month project to design SaaS product and website.
+                                <strong>Lilypad Learning</strong> - edtech startup helping schools manage student psychological evaluations — 3-month project to design the SaaS product and website.
                               </span>
                             </li>
                           </ul>
@@ -84,7 +84,7 @@ export default function About() {
                     <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-1">
-                          <h3 className="text-base font-regular]">Fractional (Product Designer & Engineer - Founding Team)</h3>
+                          <h3 className="text-base font-regular">Fractional (Product Designer & Engineer - Founding Team)</h3>
                         </div>
                         <div className="md:col-span-2">
                           <ul className="list-disc list-outside space-y-2 Black pl-5">
@@ -94,16 +94,17 @@ export default function About() {
                               </span>
                             </li>
                             <li className="pl-1">
-                              <span className="block ml-[-1px]">Conducted market research, &gt; 60 user interviews, and live user testing to validate market demand and user needs.</span>
+                              <span className="block ml-[-1px]">Conducted market research, more than 60 user interviews, and live user testing to validate market demand and user needs.</span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Shipped MVP in &lt; 4 months</strong> with a complex onboarding flow where users connect their bank, accept payments, and send contracts to clients.
+                                <strong>Shipped MVP in under 4 months</strong> with a complex onboarding flow where users connect their bank, accept payments, and send contracts to clients.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                Worked on front-end development to build out UI with React, TypeScript, and Mantine UI component library with a senior back-end engineering co-founder.
+                                Worked on front-end development, building the UI with React, TypeScript, and the Mantine UI component library, in collaboration with a senior back-end-engineer
+                                co-founder.
                               </span>
                             </li>
                           </ul>
