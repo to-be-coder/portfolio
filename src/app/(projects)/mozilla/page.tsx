@@ -131,7 +131,7 @@ export default function MozillaPage() {
                   chat.
                 </li>
                 <li>
-                  <strong>Let users stay in control at every step</strong> - Users can delete their account, clear memory, or opt out at any time—with no friction or loss of functionality.
+                  <strong>Let users stay in control at every step</strong> - Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
                 </li>
                 <li>
                   <strong>Use familiar patterns to reduce friction</strong> - We leaned on UI people already know to make privacy feel simple, not technical.
@@ -237,6 +237,97 @@ export default function MozillaPage() {
         </div>
       </div>
 
+      {/* Settings screens */}
+      <div className="relative bg-green-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2">
+            Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <p className="text-[16px] mb-8 lg:mb-12">
+            Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
+            the experience.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 lg:gap-y-8">
+            <div className="flex flex-col gap-y-4 ">
+              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <p>Users can delete their account at any time—no questions asked.</p>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <p>Users can clear their memory and past interactions whenever they choose.</p>
+            </div>
+            <div className="flex flex-col gap-y-4 ">
+              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <p>Users can select which AI model powers their assistant experience.</p>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <p>Users can enable or disable extensions based on what they need or trust.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* chat screens */}
+      <div className="relative bg-white text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2">
+            Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <p className="text-[16px] mb-8 lg:mb-12">
+            To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+            <strong>quickly prototype and evolve</strong>—without compromising usability.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-4 lg:gap-8">
+            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          </div>
+        </div>
+      </div>
+
+      {/* Sign up flow */}
+      <div className="relative bg-green-100 text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2">
+            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
+                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
+                <p className="text-[16px]">
+                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
+                  wait time.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+              <div className="flex-1 flex-col">
+                <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
+                <p className="text-[16px]">
+                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                  momentum going.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Exploring Early Concepts Section */}
       <div className="relative bg-white text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -276,77 +367,6 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Sign up flow */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
-                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
-                <p className="text-[16px]">
-                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
-                  wait time.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
-                <p className="text-[16px]">
-                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
-                  momentum going.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Settings screens */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <p className="text-[16px] mb-8 lg:mb-12">
-            Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
-            the experience.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 lg:gap-y-8">
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can delete their account at any time—no questions asked.</p>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can clear their memory and past interactions whenever they choose.</p>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can select which AI model powers their assistant experience.</p>
-            </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
-              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can enable or disable extensions based on what they need or trust.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Light and Dark Mode Mockups */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
@@ -375,26 +395,6 @@ export default function MozillaPage() {
                 </TabsContent>
               </Tabs>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* chat screens */}
-      <div className="relative bg-green-200 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
-          </h2>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <p className="text-[16px] mb-8 lg:mb-12">
-            To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-            <strong>quickly prototype and evolve</strong>—without compromising usability.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-4 lg:gap-8">
-            <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
           </div>
         </div>
       </div>
