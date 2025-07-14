@@ -108,35 +108,42 @@ export default function MozillaPage() {
         </div>
       </div>
 
-      {/* Hypothesis Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-2">
-          Forming the Hypothesis<span className="text-green-500 text-[64px]">.</span>
-        </h2>
-        <div className="flex flex-col gap-x-8 gap-y-12">
-          {/* Left Column - Stacked Overview and Design Objective */}
-          <div className="flex flex-col lg:flex-row md:gap-x-8 lg:gap-x-8 space-y-12 lg:space-y-0">
-            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Hypothesis</h2>
-              <p className="text-[16px]">For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.</p>
-            </div>
+      {/*Hypothesis Section */}
 
-            <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-              <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">HMW</h2>
-              <p className="text-[16px]">
-                How might we design data practices that build trust with privacy-aware users? <br /> <br />
-              </p>
-              <ul className="list-disc ml-5 text-[16px]">
-                <li>
-                  <strong>Be transparent about data usage</strong> — We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
-                </li>
-                <li>
-                  <strong>Control users&apos; data in settings</strong> — Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
-                </li>
-                <li>
-                  <strong>Use familiar patterns to reduce friction</strong> — We leaned on UI people already know to make privacy feel simple, not technical.
-                </li>
-              </ul>
+      <div className="relative bg-[#212121] text-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
+          <h2 className="text-4xl font-normal mb-2 text-white">
+            Hypothesis<span className="text-green-500 text-[64px]">.</span>
+          </h2>
+          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+          <div className="flex flex-col bg-white p-4 lg:p-8 rounded-lg border border-gray-200 relative">
+            <div className="flex flex-col max-w-3xl mx-auto relative mt-8">
+              <span className="text-green-500 text-[64px] absolute top-0 left-0">"</span>
+              <div className="flex flex-col p-4 mb-4">
+                <p className="text-[16px] lg:text-[24px] font-semibold text-center mt-16 mb-16">
+                  For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
+                </p>
+              </div>
+              <span className="text-green-500 text-[64px] absolute bottom-0 right-0">"</span>
+            </div>
+          </div>
+          <div className="flex-1 pt-2 mt-12">
+            <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
+            <div className="border-t border-[#C1C1C1] "></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Be transparent about data usage</span>
+                <p className="text-[16px]">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
+              </div>
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Control users&apos; data in settings</span>
+                <p className="text-[16px]">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
+              </div>
+              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                <span className="font-semibold text-[16px] mb-2">Use familiar patterns to reduce friction</span>
+                <p className="text-[16px]">We leaned on UI people already know to make privacy feel simple, not technical.</p>
+              </div>
             </div>
           </div>
         </div>
