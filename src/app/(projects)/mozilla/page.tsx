@@ -127,14 +127,13 @@ export default function MozillaPage() {
               </p>
               <ul className="list-disc ml-5 text-[16px]">
                 <li>
-                  <strong>Consent should be clear and contextual</strong> - We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the
-                  chat.
+                  <strong>Be transparent about data usage</strong> — We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
                 </li>
                 <li>
-                  <strong>Let users stay in control at every step</strong> - Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
+                  <strong>Control users&apos; data in settings</strong> — Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
                 </li>
                 <li>
-                  <strong>Use familiar patterns to reduce friction</strong> - We leaned on UI people already know to make privacy feel simple, not technical.
+                  <strong>Use familiar patterns to reduce friction</strong> — We leaned on UI people already know to make privacy feel simple, not technical.
                 </li>
               </ul>
             </div>
@@ -297,14 +296,14 @@ export default function MozillaPage() {
           </h2>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-4">
               <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
                 <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
               </div>
             </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-4">
               <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
@@ -314,7 +313,7 @@ export default function MozillaPage() {
                 </p>
               </div>
             </div>
-            <div className="flex flex-col gap-y-4 border border-gray-100 p-4 rounded-lg bg-gray-100">
+            <div className="flex flex-col gap-y-4">
               <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
               <div className="flex-1 flex-col">
                 <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
