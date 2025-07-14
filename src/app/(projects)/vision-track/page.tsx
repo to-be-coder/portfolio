@@ -157,8 +157,8 @@ export default function VisionTrackPage() {
               <div className="md:col-span-2 space-y-2">
                 <p className="text-[16px]">
                   Most teams didn&apos;t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
-                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing Manager
-                  This realization reframed our entire direction.
+                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing
+                  Manager. This realization reframed our entire direction.
                 </p>
               </div>
             </div>
