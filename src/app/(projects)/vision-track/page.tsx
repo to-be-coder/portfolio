@@ -348,6 +348,15 @@ export default function VisionTrackPage() {
           </div>
 
           <div className="mt-16 lg:mt-32">
+            <h2 className="text-3xl font-normal mb-4">User Personas</h2>
+            <div className="border-t border-[#C1C1C1] mb-4 md:mb-4"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Image src="/vision-track-user-1.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
+              <Image src="/vision-track-user-2.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
+            </div>
+          </div>
+
+          <div className="mt-16 lg:mt-32">
             <h2 className="text-3xl font-normal mb-4">Research #2</h2>
 
             {/* Interviewed */}
