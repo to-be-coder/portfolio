@@ -3,8 +3,8 @@ import Header from '@/components/ui/header'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import Script from 'next/script'
+import 'react-notion-x/src/styles.css'
 import './globals.css'
-
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans',

@@ -1,5 +1,3 @@
-'use client'
-
 import CtaSection from '@/components/ui/cta'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -25,7 +23,7 @@ const articles = [
   },
 ]
 
-export default function ArticlesPage() {
+export default function ThoughtsPage() {
   //   const [activeFilter, setActiveFilter] = useState('all')
 
   // Filter articles based on selected category
