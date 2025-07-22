@@ -9,7 +9,7 @@ interface ProjectSectionTitleProps {
   borderColor?: string
 }
 
-export default function ProjectSectionTitle({ children, color = 'text-black', dotColor, textAlign, showBorder = false, borderColor = '#C1C1C1' }: ProjectSectionTitleProps) {
+export default function ProjectSectionTitle({ children, color = 'text-black', dotColor, textAlign, showBorder = false, borderColor = 'border-[#C1C1C1]' }: ProjectSectionTitleProps) {
   return (
     <div className="flex flex-col mb-8 md:mb-12">
       <h2 className={`text-4xl font-normal mb-2 ${color} ${textAlign}`}>

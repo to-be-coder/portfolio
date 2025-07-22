@@ -67,14 +67,16 @@ export default function MozillaPage() {
           </ProjectSectionTitle>
           <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
         </div>
-        <div className="w-full flex justify-center mt-16">
+        <div className="w-full flex justify-center mt-8">
           <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
         </div>
       </ProjectSection>
 
       {/* Initial Vision Section */}
       <ProjectSection>
-        <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
+        <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
+          Initial Vision of Ghostcat
+        </ProjectSectionTitle>
         <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <p>
             Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
@@ -89,7 +91,7 @@ export default function MozillaPage() {
       {/*Hypothesis Section */}
 
       <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-        <ProjectSectionTitle color="text-white" dotColor="text-green-500" showBorder={true} borderColor="border-white">
+        <ProjectSectionTitle color="text-white" dotColor="text-green-500" showBorder={true}>
           Hypothesis
         </ProjectSectionTitle>
 
@@ -111,7 +113,7 @@ export default function MozillaPage() {
 
         <div className="flex-1 pt-2 mt-12">
           <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
-          <div className="border-t border-[#C1C1C1] "></div>
+          <div className="border-t border-[#C1C1C1]"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
@@ -136,7 +138,7 @@ export default function MozillaPage() {
           Design Challenges
         </ProjectSectionTitle>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
           {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
           <VerticalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
             <p className="text-[16px] text-black">
@@ -210,8 +212,9 @@ export default function MozillaPage() {
 
       {/* Settings screens */}
       <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-        <ProjectSectionTitle dotColor="text-green-500">Designing Trust Through Settings</ProjectSectionTitle>
-        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+        <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+          Designing Trust Through Settings
+        </ProjectSectionTitle>
         <p className="text-[16px] mb-8 lg:mb-12">
           Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
           the experience.
@@ -240,8 +243,9 @@ export default function MozillaPage() {
       <ProjectSection bgClassName="bg-white" textClassName="text-black">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
           <div className="flex flex-col">
-            <ProjectSectionTitle dotColor="text-green-500">Designing for Fast Iteration and Familiar Use</ProjectSectionTitle>
-            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+              Designing for Fast Iteration and Familiar Use
+            </ProjectSectionTitle>
             <p className="text-[16px] mb-8 lg:mb-12">
               To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
               <strong>quickly prototype and evolve</strong>—without compromising usability.
@@ -275,8 +279,9 @@ export default function MozillaPage() {
 
       {/* Sign up flow */}
       <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-        <ProjectSectionTitle dotColor="text-green-500">Clarity at Every Step</ProjectSectionTitle>
-        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+        <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+          Clarity at Every Step
+        </ProjectSectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
           <div className="flex flex-col gap-y-4">
             <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
@@ -314,8 +319,9 @@ export default function MozillaPage() {
           {/* Left Column - Text Content */}
 
           <div className="col-span-1">
-            <ProjectSectionTitle dotColor="text-green-500">Exploring Early Concepts</ProjectSectionTitle>
-            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+              Exploring Early Concepts
+            </ProjectSectionTitle>
 
             <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
             <ul className="list-disc pl-8 mb-8 text-[16px]">
@@ -347,8 +353,9 @@ export default function MozillaPage() {
       <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
           <div className="flex flex-col">
-            <ProjectSectionTitle dotColor="text-green-500">Dark Mode for Modern Use</ProjectSectionTitle>
-            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+              Dark Mode for Modern Use
+            </ProjectSectionTitle>
             <p className="text-[16px]">
               Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
               <strong>modern platform expectations.</strong>
@@ -375,8 +382,9 @@ export default function MozillaPage() {
       <ProjectSection bgClassName="bg-white" textClassName="text-black">
         <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
           <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
-            <ProjectSectionTitle dotColor="text-green-500">Designing with Mobile in Mind</ProjectSectionTitle>
-            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+              Designing with Mobile in Mind
+            </ProjectSectionTitle>
             <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
             <p className="text-[16px] items-center">
