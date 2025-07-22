@@ -166,7 +166,7 @@ export default function MozillaPage() {
 
       {/* Transparency about data usage */}
       <ProjectSection bgClassName="bg-white" textClassName="text-black">
-        <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+        <ProjectSectionTitle color="text-black" dotColor="text-green-500" textAlign="text-center">
           Transparency about data usage
         </ProjectSectionTitle>
         <div className="flex-1 flex-col space-y-12 lg:space-y-16">
