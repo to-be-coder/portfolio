@@ -1,6 +1,7 @@
 'use client'
 
 import ProjectColorsSection from '@/components/project-colors-section'
+import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
@@ -196,51 +197,60 @@ export default function LilypadPage() {
         </Tabs>
       </ProjectSection>
 
+      {/* Design System from Programmer’s Perspective */}
       <ProjectSection bgClassName="bg-[#212121] text-white">
         <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]" textAlign="text-center">
           Design System from Programmer&apos;s Perspective
         </ProjectSectionTitle>
         <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
-          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-            <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
-              <h3 className="text-2xl font-regular mb-2 md:mb-4">Consistent Layout Primitives</h3>
-              <p className=" mb-8 lg:mb-12">
-                The layout system was built on a strict, responsive grid — not just for visual balance, but to make development predictable and scalable. <br />
-                <br />
-                Each breakpoint uses a defined column count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl,
-                px-8, and my-16.
-              </p>
-            </div>
-            <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
-              <Image
-                src="/lilypad-grid.png"
-                alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
-                width={800}
-                height={800}
-                className="h-auto w-auto rounded-md border"
-                priority
-              />
-            </div>
-          </div>
-          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-            <div className="flex flex-1 flex-col space-y-8">
-              <Image
-                src="/lilypad-breakpoints.png"
-                alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
-                width={800}
-                height={400}
-                className="w-full h-[400px] rounded-md border object-cover object-top"
-                priority
-              />
-            </div>
-            <div className="flex-1 border-t border-gray-600 pt-[4px]">
-              <h3 className="text-2xl font-regular mb-2 md:mb-4">Built for Responsive & Future Growth</h3>
-              <p className=" mb-8 lg:mb-12">
-                I designed every section with clear breakpoints in mind — mobile, tablet, desktop — so devs could rely on consistent stacking behavior and spacing logic. The system also leaves room to
-                scale as new content types or layouts are added.
-              </p>
-            </div>
-          </div>
+          <ProjectFlexBlock
+            left={
+              <ProjectVerticalBlock title="Consistent Layout Primitives" titleColor="text-white" borderColor="border-[#C1C1C1]">
+                <p>
+                  The layout system was built on a strict, responsive grid — not just for visual balance, but to make development predictable and scalable. <br />
+                  <br />
+                  Each breakpoint uses a defined column count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl,
+                  px-8, and my-16.
+                </p>
+              </ProjectVerticalBlock>
+            }
+            right={
+              <div className="flex flex-col space-y-8">
+                <Image
+                  src="/lilypad-grid.png"
+                  alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
+                  width={800}
+                  height={800}
+                  className="h-auto w-auto rounded-md border"
+                  priority
+                />
+              </div>
+            }
+            reverseOnDesktop={true}
+          />
+          <ProjectFlexBlock
+            left={
+              <div className="flex flex-col space-y-8">
+                <Image
+                  src="/lilypad-breakpoints.png"
+                  alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
+                  width={800}
+                  height={400}
+                  className="w-full h-[400px] rounded-md border object-cover object-top"
+                  priority
+                />
+              </div>
+            }
+            right={
+              <ProjectVerticalBlock title="Built for Responsive & Future Growth" titleColor="text-white" borderColor="border-[#C1C1C1]">
+                <p>
+                  I designed every section with clear breakpoints in mind — mobile, tablet, desktop — so devs could rely on consistent stacking behavior and spacing logic. The system also leaves room
+                  to scale as new content types or layouts are added.
+                </p>
+              </ProjectVerticalBlock>
+            }
+            reverseOnDesktop={false}
+          />
         </div>
       </ProjectSection>
 
