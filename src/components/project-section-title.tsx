@@ -6,7 +6,7 @@ interface ProjectSectionTitleProps {
   dotColor?: string // Tailwind color class for dot
 }
 
-export default function ProjectSectionTitle({ children, color, dotColor }: ProjectSectionTitleProps) {
+export default function ProjectSectionTitle({ children, color = 'text-black', dotColor }: ProjectSectionTitleProps) {
   return (
     <h2 className={`text-4xl font-normal mb-2 ${color}`}>
       {children}
