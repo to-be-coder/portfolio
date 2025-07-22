@@ -1,6 +1,7 @@
 import ProjectColorsSection from '@/components/project-colors-section'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectSectionTitle from '@/components/project-section-title'
+import VerticalBlock from '@/components/project-vertical-block'
 import CtaSection from '@/components/ui/cta'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -14,53 +15,45 @@ export default function MozillaPage() {
       <ProjectHeroSection title="Mozilla - Ghostcat" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
 
       {/* Overview Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <div className="flex flex-col">
-          <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Overview</h2>
-            <p className="text-[16px]">
-              Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
-              <br /> <br />
-              The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
-              could shape the product. <br /> <br /> We focused on a few core questions:
-            </p>
-            <ul className="list-disc ml-5 text-[16px] mb-4">
-              <li>
-                <strong>How can consent feel seamless, not disruptive?</strong>
-              </li>
-              <li>
-                <strong>How much control can we offer without overwhelming users?</strong>
-              </li>
-              <li>
-                <strong>What familiar patterns work within strict on-device constraints?</strong>
-              </li>
-            </ul>
-            <p className="text-[16px] mt-5">
-              I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid the
-              foundation for deeper testing and iteration.
-            </p>
+      <VerticalBlock title="Overview">
+        <p>
+          Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
+          <br /> <br />
+          The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong> could
+          shape the product. <br /> <br /> We focused on a few core questions:
+        </p>
+        <ul className="list-disc ml-5 text-[16px] mb-4">
+          <li>
+            <strong>How can consent feel seamless, not disruptive?</strong>
+          </li>
+          <li>
+            <strong>How much control can we offer without overwhelming users?</strong>
+          </li>
+          <li>
+            <strong>What familiar patterns work within strict on-device constraints?</strong>
+          </li>
+        </ul>
+        <p className="text-[16px] mt-5">
+          I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid the
+          foundation for deeper testing and iteration.
+        </p>
+      </VerticalBlock>
+      <VerticalBlock title="My Role">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+            <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
+            <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
+          </div>
+          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+            <span className="font-semibold text-[16px]">Design & Prototyping:</span>
+            <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
+          </div>
+          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+            <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
+            <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
           </div>
         </div>
-        <div className="flex flex-col mt-12">
-          <div className="flex-1 border-t border-[#C1C1C1] pt-2">
-            <h2 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">My Role</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
-              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
-                <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
-              </div>
-              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px]">Design & Prototyping:</span>
-                <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
-              </div>
-              <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
-                <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </VerticalBlock>
 
       {/* Workflow Section */}
       <div className="relative bg-green-100">
@@ -81,21 +74,15 @@ export default function MozillaPage() {
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
-
-        <div className="border-t border-[#C1C1C1] pt-2">
-          <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
-        </div>
-        <p className="text-[16px]">
-          Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
-          encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
-        </p>
-
-        <div className="mt-12">
-          <div className="border-t border-[#C1C1C1] pt-2">
-            <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Competitive Research</h3>
-          </div>
-          <p className="text-[16px]">I am unable to show this section due to a request.</p>
-        </div>
+        <VerticalBlock title="Our Vision">
+          <p>
+            Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
+            encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
+          </p>
+        </VerticalBlock>
+        <VerticalBlock title="Competitive Research">
+          <p>I am unable to show this section due to a request.</p>
+        </VerticalBlock>
       </div>
 
       {/*Hypothesis Section */}
