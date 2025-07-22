@@ -42,7 +42,7 @@ export default function MozillaPage() {
           </p>
         </VerticalBlock>
         <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
             <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
               <span className="font-semibold">UX Strategy & Hypothesis Building:</span>
               <p>Framed product assumptions and prioritized what to explore first.</p>
@@ -233,7 +233,7 @@ export default function MozillaPage() {
           Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
           the experience.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-4 lg:gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-12 lg:gap-y-8">
           <div className="flex flex-col gap-y-2 ">
             <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <p>Users can delete their account at any time—no questions asked.</p>
@@ -291,36 +291,33 @@ export default function MozillaPage() {
 
       {/* Sign up flow */}
       <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-        <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
+        <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
           Clarity at Every Step
         </ProjectSectionTitle>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-0 gap-x-8">
           <div className="flex flex-col gap-y-4">
             <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <div className="flex-1 flex-col">
-              <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
+            <VerticalBlock title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
               <p>The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
-            </div>
+            </VerticalBlock>
           </div>
           <div className="flex flex-col gap-y-4">
             <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <div className="flex-1 flex-col">
-              <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
+            <VerticalBlock title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
               <p>
                 Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during wait
                 time.
               </p>
-            </div>
+            </VerticalBlock>
           </div>
           <div className="flex flex-col gap-y-4">
             <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <div className="flex-1 flex-col">
-              <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
+            <VerticalBlock title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
               <p>
                 Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
                 momentum going.
               </p>
-            </div>
+            </VerticalBlock>
           </div>
         </div>
       </ProjectSection>
