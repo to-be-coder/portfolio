@@ -44,11 +44,11 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
             <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
               <span className="font-semibold">UX Strategy & Hypothesis Building:</span>
-              <p className="">Framed product assumptions and prioritized what to explore first.</p>
+              <p>Framed product assumptions and prioritized what to explore first.</p>
             </div>
             <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
               <span className="font-semibold">Design & Prototyping:</span>
-              <p className="">Designed core flows and built prototypes in Figma for fast iteration.</p>
+              <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
             </div>
             <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
               <span className="font-semibold">Cross-Functional Collaboration:</span>
@@ -259,9 +259,7 @@ export default function MozillaPage() {
               <TabsTrigger value="2" className="border-r border-gray-200">
                 Right Sidebar Closed
               </TabsTrigger>
-              <TabsTrigger value="1" className="">
-                Both Sidebars Closed
-              </TabsTrigger>
+              <TabsTrigger value="1">Both Sidebars Closed</TabsTrigger>
             </TabsList>
 
             <TabsContent value="3" className="flex justify-center w-full">
@@ -287,14 +285,14 @@ export default function MozillaPage() {
             <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <div className="flex-1 flex-col">
               <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
-              <p className="">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
+              <p>The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
             </div>
           </div>
           <div className="flex flex-col gap-y-4">
             <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <div className="flex-1 flex-col">
               <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
-              <p className="">
+              <p>
                 Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during wait
                 time.
               </p>
@@ -304,7 +302,7 @@ export default function MozillaPage() {
             <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <div className="flex-1 flex-col">
               <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
-              <p className="">
+              <p>
                 Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
                 momentum going.
               </p>
@@ -335,7 +333,7 @@ export default function MozillaPage() {
                 <strong>Identify technical constraints early and adapt confidently</strong>
               </li>
             </ul>
-            <p className="">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
+            <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
           </div>
 
           {/* Right Column - Images */}
@@ -356,7 +354,7 @@ export default function MozillaPage() {
             <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
               Dark Mode for Modern Use
             </ProjectSectionTitle>
-            <p className="">
+            <p>
               Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
               <strong>modern platform expectations.</strong>
             </p>
@@ -412,7 +410,7 @@ export default function MozillaPage() {
           <div className="flex flex-col">
             {/* Typeface */}
             <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-              <p className="">Inter</p>
+              <p>Inter</p>
             </VerticalBlock>
 
             {/* Weights */}
@@ -449,7 +447,7 @@ export default function MozillaPage() {
 
           {/* Build Fast, Learn Faster */}
           <VerticalBlock title="Build Fast, Learn Faster" titleColor="text-black" borderColor="border-[#C1C1C1]">
-            <p className="">
+            <p>
               This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world feedback
               is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
             </p>
@@ -457,7 +455,7 @@ export default function MozillaPage() {
 
           {/* Balancing Agility with Control */}
           <VerticalBlock title="Balancing Agility with Control" titleColor="text-black" borderColor="border-[#C1C1C1]">
-            <p className="">
+            <p>
               One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to learn
               fast while keeping scope focused and risk manageable at each stage.
             </p>
@@ -465,7 +463,7 @@ export default function MozillaPage() {
 
           {/* I Am Not the User */}
           <VerticalBlock title="I Am Not the User" titleColor="text-black" borderColor="border-[#C1C1C1]">
-            <p className="">
+            <p>
               While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user—and
               assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and knowing what to
               test next and why.
@@ -474,7 +472,7 @@ export default function MozillaPage() {
 
           {/* Designing for Trust */}
           <VerticalBlock title="Designing for Trust" titleColor="text-black" borderColor="border-[#C1C1C1]">
-            <p className="">
+            <p>
               Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
               features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
             </p>
@@ -482,9 +480,7 @@ export default function MozillaPage() {
 
           {/* Staying Curious and Outcome-Oriented */}
           <VerticalBlock title="Staying Curious and Outcome-Oriented" titleColor="text-black" borderColor="border-[#C1C1C1]">
-            <p className="">
-              Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
-            </p>
+            <p>Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.</p>
           </VerticalBlock>
         </div>
       </ProjectSection>
