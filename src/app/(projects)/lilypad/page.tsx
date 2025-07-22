@@ -19,7 +19,7 @@ export default function LilypadPage() {
 
       {/* Initial Overview and Challenges Section */}
       <ProjectSection>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
           {/* Left Column - Overview */}
           <ProjectVerticalBlock title="Overview" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
             <p>
@@ -30,17 +30,17 @@ export default function LilypadPage() {
 
           {/* Right Column - Challenges */}
           <ProjectVerticalBlock title="Challenges" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-            <div className="space-y-1 md:space-y-2 ">
+            <div className="space-y-1 md:space-y-2">
               <div>
-                <span className="font-semibold ">No Historical User Data</span>
+                <span className="font-semibold">No Historical User Data</span>
                 <p>Since this was the first version of the landing page, all design decisions were based on best practices and internal stakeholder feedback.</p>
               </div>
               <div>
-                <span className="font-semibold ">Clarity of Value Proposition</span>
+                <span className="font-semibold">Clarity of Value Proposition</span>
                 <p>The startup needed a concise way to explain what they do and why it matters.</p>
               </div>
               <div>
-                <span className="font-semibold ">Future Scalability</span>
+                <span className="font-semibold">Future Scalability</span>
                 <p>The design had to be flexible enough to evolve as the startup&apos;s product offerings expand.</p>
               </div>
             </div>
@@ -63,20 +63,18 @@ export default function LilypadPage() {
           {/* Right Column - Typography Details */}
           <div className="space-y-4 md:space-y-8">
             {/* Typeface */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
+            <ProjectVerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p className=" font-['Plus_Jakarta_Sans']">Plus Jakarta Sans</p>
-            </div>
+            </ProjectVerticalBlock>
 
             {/* Weights */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
+            <ProjectVerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <p className=" font-normal">Regular</p>
                 <p className=" font-semibold">Semi-Bold</p>
                 <p className=" font-bold">Bold</p>
               </div>
-            </div>
+            </ProjectVerticalBlock>
           </div>
         </div>
       </ProjectSection>
@@ -109,34 +107,30 @@ export default function LilypadPage() {
           {/* Right Column - Approach Details */}
           <div className="space-y-4 md:space-y-8">
             {/* Content */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Content</h3>
+            <ProjectVerticalBlock title="Content" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p>Collaborated with the startup team to define and highlight their core benefits, ensuring every section of the page directly addressed key user questions and pain points.</p>
-            </div>
+            </ProjectVerticalBlock>
 
             {/* Visual Hierarchy & Layout */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-6">Visual Hierarchy & Layout</h3>
+            <ProjectVerticalBlock title="Visual Hierarchy & Layout" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p>
                 Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and understand
                 the page&apos;s content.
               </p>
-            </div>
+            </ProjectVerticalBlock>
 
             {/* Calls-to-Action */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-6">Calls-to-Action</h3>
+            <ProjectVerticalBlock title="Calls-to-Action" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p>Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
-            </div>
+            </ProjectVerticalBlock>
 
             {/* Responsive Design */}
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-gray-400 mb-6">Responsive Design</h3>
+            <ProjectVerticalBlock title="Responsive Design" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p>
                 Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. and ensured images and text scaled
                 appropriately to maintain readability across various screen sizes.
               </p>
-            </div>
+            </ProjectVerticalBlock>
           </div>
         </div>
       </ProjectSection>
@@ -203,7 +197,7 @@ export default function LilypadPage() {
       </ProjectSection>
 
       <ProjectSection bgClassName="bg-[#212121] text-white">
-        <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]">
+        <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]" textAlign="text-center">
           Design System from Programmer&apos;s Perspective
         </ProjectSectionTitle>
         <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
@@ -254,28 +248,21 @@ export default function LilypadPage() {
       <ProjectSection>
         <ProjectSectionTitle dotColor="text-[#DDA15F]">Next Steps</ProjectSectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Gather Real-World Feedback</h3>
-              <p>Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.</p>
-            </div>
-          </div>
+          <ProjectVerticalBlock title="Gather Real-World Feedback" titleColor="text-[#a0a0a0]" borderColor="border-[#C1C1C1]">
+            <p>Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.</p>
+          </ProjectVerticalBlock>
 
           {/* Iterative Improvements */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Iterative Improvements</h3>
-              <p>Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
-            </div>
-          </div>
+
+          <ProjectVerticalBlock title="Iterative Improvements" titleColor="text-[#a0a0a0]" borderColor="border-[#C1C1C1]">
+            <p>Based on early insights, we will refine the messaging, visuals, and CTA placement to optimize the user journey.</p>
+          </ProjectVerticalBlock>
 
           {/* Potential User Testing */}
-          <div>
-            <div className="border-t border-[#C1C1C1] pt-[4px]">
-              <h3 className="text-2xl font-regular text-[#a0a0a0] mb-2 md:mb-4">Potential User Testing</h3>
-              <p>After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
-            </div>
-          </div>
+
+          <ProjectVerticalBlock title="Potential User Testing" titleColor="text-[#a0a0a0]" borderColor="border-[#C1C1C1]">
+            <p>After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
+          </ProjectVerticalBlock>
         </div>
       </ProjectSection>
 
@@ -285,7 +272,7 @@ export default function LilypadPage() {
           {/* Left Column - Text Content */}
           <div>
             <ProjectSectionTitle dotColor="text-[#af5800]">Explore the Figma File for This Project</ProjectSectionTitle>
-            <p className=" mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+            <p className="mb-12">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
             <Link
               href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
               className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
