@@ -1,4 +1,5 @@
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -78,9 +79,7 @@ export default function MozillaPage() {
 
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <h2 className="text-4xl font-normal mb-2">
-          Initial Vision of Ghostcat<span className="text-green-500 text-[64px]">.</span>
-        </h2>
+        <ProjectSectionTitle color="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
 
         <div className="border-t border-[#C1C1C1] pt-2">
           <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
