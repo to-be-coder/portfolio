@@ -1,5 +1,6 @@
 import ProjectColorsSection from '@/components/project-colors-section'
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import VerticalBlock from '@/components/project-vertical-block'
 import CtaSection from '@/components/ui/cta'
@@ -87,49 +88,47 @@ export default function MozillaPage() {
 
       {/*Hypothesis Section */}
 
-      <div className="relative bg-[#212121] text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-            Hypothesis
-          </ProjectSectionTitle>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <div className="flex flex-col p-4 lg:p-8 relative">
-            <div className="flex flex-col max-w-3xl mx-auto relative">
-              <div className="flex justify-start h-[64px] lg:h-[92px]">
-                <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-[24px] lg:text-[32px] font-medium text-center text-white">
-                  For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
-                </p>
-              </div>
-              <div className="flex justify-end h-[64px] lg:h-[92px]">
-                <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>
-              </div>
+      <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
+        <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+          Hypothesis
+        </ProjectSectionTitle>
+        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+        <div className="flex flex-col p-4 lg:p-8 relative">
+          <div className="flex flex-col max-w-3xl mx-auto relative">
+            <div className="flex justify-start h-[64px] lg:h-[92px]">
+              <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
             </div>
-          </div>
-
-          <div className="flex-1 pt-2 mt-12">
-            <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
-            <div className="border-t border-[#C1C1C1] "></div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
-              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px] mb-2">Be transparent about data usage</span>
-                <p className="text-[16px]">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
-              </div>
-              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px] mb-2">Let users control their data in settings</span>
-                <p className="text-[16px]">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
-              </div>
-              <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                <span className="font-semibold text-[16px] mb-2">Use familiar patterns to reduce friction</span>
-                <p className="text-[16px]">We leaned on UI patterns people already know to make privacy feel simple, not technical.</p>
-              </div>
+            <div className="flex flex-col">
+              <p className="text-[24px] lg:text-[32px] font-medium text-center text-white">
+                For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
+              </p>
+            </div>
+            <div className="flex justify-end h-[64px] lg:h-[92px]">
+              <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="flex-1 pt-2 mt-12">
+          <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
+          <div className="border-t border-[#C1C1C1] "></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
+            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px] mb-2 text-black">Be transparent about data usage</span>
+              <p className="text-[16px] text-black">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
+            </div>
+            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px] mb-2 text-black">Let users control their data in settings</span>
+              <p className="text-[16px] text-black">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
+            </div>
+            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px] mb-2 text-black">Use familiar patterns to reduce friction</span>
+              <p className="text-[16px] text-black">We leaned on UI patterns people already know to make privacy feel simple, not technical.</p>
+            </div>
+          </div>
+        </div>
+      </ProjectSection>
 
       {/* Design Challenge Section */}
       <div className="relative bg-green-100 text-black">
