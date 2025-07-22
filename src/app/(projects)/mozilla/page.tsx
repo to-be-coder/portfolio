@@ -1,8 +1,9 @@
 import ProjectColorsSection from '@/components/project-colors-section'
+import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
-import VerticalBlock from '@/components/project-vertical-block'
+import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/project-vertical-block'
 import CtaSection from '@/components/ui/cta'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -171,42 +172,55 @@ export default function MozillaPage() {
         <ProjectSectionTitle color="text-black" dotColor="text-green-500" textAlign="text-center">
           Transparency about data usage
         </ProjectSectionTitle>
-        <div className="flex-1 flex-col space-y-12 lg:space-y-16">
-          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-            <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
-              <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
-              <p className=" mb-8 lg:mb-12">
-                This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what&apos;s
-                being asked and why, without digging through settings.
-              </p>
-            </div>
-            <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
-              <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-            </div>
-          </div>
-          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-            <div className="flex flex-1 flex-col space-y-8">
-              <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-            </div>
-            <div className="flex-1 border-t border-gray-600 pt-2">
-              <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
-              <p className=" mb-8 lg:mb-12">
-                When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
-                interrupting the flow.
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-            <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
-              <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
-              <p className=" mb-8 lg:mb-12">
-                If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
-              </p>
-            </div>
-            <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
-              <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-            </div>
-          </div>
+        <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+          <ProjectFlexBlock
+            left={
+              <ProjectVerticalBlock title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <p>
+                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
+                  what&apos;s being asked and why, without digging through settings.
+                </p>
+              </ProjectVerticalBlock>
+            }
+            right={
+              <div className="flex flex-col space-y-8">
+                <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+              </div>
+            }
+            reverseOnDesktop={true}
+          />
+
+          <ProjectFlexBlock
+            left={
+              <div className="flex flex-col space-y-8">
+                <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+              </div>
+            }
+            right={
+              <ProjectVerticalBlock title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <p className=" mb-8 lg:mb-12">
+                  When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
+                  interrupting the flow.
+                </p>
+              </ProjectVerticalBlock>
+            }
+          />
+
+          <ProjectFlexBlock
+            left={
+              <ProjectVerticalBlock title="Graceful Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <p className=" mb-8 lg:mb-12">
+                  If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
+                </p>
+              </ProjectVerticalBlock>
+            }
+            right={
+              <div className="flex flex-col space-y-8">
+                <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+              </div>
+            }
+            reverseOnDesktop={true}
+          />
         </div>
       </ProjectSection>
 
