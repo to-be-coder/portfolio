@@ -1,3 +1,4 @@
+import { NotionPosts } from '@/components/notion'
 import CtaSection from '@/components/ui/cta'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -76,6 +77,7 @@ export default function ThoughtsPage() {
             </Link>
           ))}
         </div>
+        <NotionPosts />
       </div>
       <CtaSection />
     </>
