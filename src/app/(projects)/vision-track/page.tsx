@@ -12,8 +12,9 @@ export default function VisionTrackPage() {
       {/* Hero Section */}
       <ProjectHeroSection title="Vision Track" subtitle="2-Month Discovery Sprint" imageSrc="/vision-track-hero.png" imageAlt="Vision Track hero background" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
+      {/* Overview Section */}
+      <ProjectSection>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-16">
           <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
             <p className=" font-semibold">Role: </p>
             <p>UX Research & Product Discovery</p>
@@ -27,9 +28,6 @@ export default function VisionTrackPage() {
             <p> Pre-MVP</p>
           </div>
         </div>
-      </div>
-      {/* Overview Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
           <VerticalBlock title="Overview" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>
@@ -46,7 +44,7 @@ export default function VisionTrackPage() {
             </p>
           </VerticalBlock>
         </div>
-      </div>
+      </ProjectSection>
 
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
