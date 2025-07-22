@@ -17,7 +17,7 @@ export default function MozillaPage() {
 
       {/* Overview Section */}
       <ProjectSection>
-        <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]">
+        <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <p>
             Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
             <br /> <br />
@@ -40,7 +40,7 @@ export default function MozillaPage() {
             foundation for deeper testing and iteration.
           </p>
         </VerticalBlock>
-        <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]">
+        <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
             <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
               <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
@@ -75,13 +75,13 @@ export default function MozillaPage() {
       {/* Initial Vision Section */}
       <ProjectSection>
         <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
-        <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]">
+        <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <p>
             Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
             encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
           </p>
         </VerticalBlock>
-        <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]">
+        <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <p>I am unable to show this section due to a request.</p>
         </VerticalBlock>
       </ProjectSection>
