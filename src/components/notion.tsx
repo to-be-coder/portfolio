@@ -15,7 +15,7 @@ export const NotionPosts = async () => {
   return (
     <>
       {posts.map((post: Post, index: number) => (
-        <NotionCard key={index} title={post.title} description={post.subtitle} link={post.path} />
+        <NotionCard key={index} title={post.title} description={post.subtitle} url={post.path} category={'AI'} image={''} />
       ))}
     </>
   )
