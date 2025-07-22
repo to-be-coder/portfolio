@@ -1,4 +1,5 @@
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectHorizontalBlock from '@/components/project-horizontal-block'
 import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import VerticalBlock from '@/components/project-vertical-block'
@@ -51,38 +52,24 @@ export default function VisionTrackPage() {
           <ProjectSectionTitle color="text-white" dotColor="text-blue-400">
             Conclusion First
           </ProjectSectionTitle>
-          <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">Outcome</h3>
-              </div>
-              <div className="md:col-span-2 space-y-2">
-                <p>
-                  We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
-                </p>
-                <p>
-                  We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around “goal translation,” and scoped a focused MVP: one Slack-based reminder loop, delivered
-                  inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future
-                  prototyping.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ProjectHorizontalBlock title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <p>
+              We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
+            </p>
+            <p>
+              We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around “goal translation,” and scoped a focused MVP: one Slack-based reminder loop, delivered
+              inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future
+              prototyping.
+            </p>
+          </ProjectHorizontalBlock>
 
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">What I Learned</h3>
-              </div>
-              <div className="md:col-span-2 space-y-2">
-                <p>
-                  We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
-                  came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing
-                  one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <p>
+              We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it came
+              at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing one
+              high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
+            </p>
+          </ProjectHorizontalBlock>
         </div>
       </div>
 
