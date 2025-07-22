@@ -409,7 +409,7 @@ export default function MozillaPage() {
           </div>
 
           {/* Right Column - Typography Details */}
-          <div className="space-y-4 md:space-y-8">
+          <div className="flex flex-col">
             {/* Typeface */}
             <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p className="text-[16px]">Inter</p>
