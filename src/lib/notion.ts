@@ -56,19 +56,20 @@ export const getPortfolioPages = async () => {
 export const getArticles = async () => {
   const data = await notionOfficialClient.databases.query({
     database_id: process.env.NOTION_PAGES_DATABASE_ID!,
-    sorts: [
-      {
-        property: 'Date',
-        direction: 'descending',
-      },
-    ],
-    filter: {
-      property: 'Type',
-      multi_select: {
-        contains: 'Article',
-      },
-    },
+    // sorts: [
+    //   {
+    //     property: 'Date',
+    //     direction: 'descending',
+    //   },
+    // ],
+    // filter: {
+    //   property: 'Type',
+    //   multi_select: {
+    //     contains: 'Article',
+    //   },
+    // },
   })
+  console.log('fuuuuucccckkkkk', data)
 
   return getPageData(data)
 }
