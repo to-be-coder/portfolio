@@ -16,75 +16,75 @@ export default function MozillaPage() {
       <ProjectHeroSection title="Mozilla - Ghostcat" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
 
       {/* Overview Section */}
-      <VerticalBlock title="Overview">
-        <p>
-          Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
-          <br /> <br />
-          The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong> could
-          shape the product. <br /> <br /> We focused on a few core questions:
-        </p>
-        <ul className="list-disc ml-5 text-[16px] mb-4">
-          <li>
-            <strong>How can consent feel seamless, not disruptive?</strong>
-          </li>
-          <li>
-            <strong>How much control can we offer without overwhelming users?</strong>
-          </li>
-          <li>
-            <strong>What familiar patterns work within strict on-device constraints?</strong>
-          </li>
-        </ul>
-        <p className="text-[16px] mt-5">
-          I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid the
-          foundation for deeper testing and iteration.
-        </p>
-      </VerticalBlock>
-      <VerticalBlock title="My Role">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
-          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-            <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
-            <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
+      <ProjectSection>
+        <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]">
+          <p>
+            Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
+            <br /> <br />
+            The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and <strong>user control</strong>{' '}
+            could shape the product. <br /> <br /> We focused on a few core questions:
+          </p>
+          <ul className="list-disc ml-5 text-[16px] mb-4">
+            <li>
+              <strong>How can consent feel seamless, not disruptive?</strong>
+            </li>
+            <li>
+              <strong>How much control can we offer without overwhelming users?</strong>
+            </li>
+            <li>
+              <strong>What familiar patterns work within strict on-device constraints?</strong>
+            </li>
+          </ul>
+          <p className="text-[16px] mt-5">
+            I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid the
+            foundation for deeper testing and iteration.
+          </p>
+        </VerticalBlock>
+        <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+            <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px]">UX Strategy & Hypothesis Building:</span>
+              <p className="text-[16px]">Framed product assumptions and prioritized what to explore first.</p>
+            </div>
+            <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px]">Design & Prototyping:</span>
+              <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
+            </div>
+            <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+              <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
+              <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
+            </div>
           </div>
-          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-            <span className="font-semibold text-[16px]">Design & Prototyping:</span>
-            <p className="text-[16px]">Designed core flows and built prototypes in Figma for fast iteration.</p>
-          </div>
-          <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-            <span className="font-semibold text-[16px]">Cross-Functional Collaboration:</span>
-            <p className="text-[16px]">Partnered with engineering to translate technical limits into UX.</p>
-          </div>
-        </div>
-      </VerticalBlock>
+        </VerticalBlock>
+      </ProjectSection>
 
       {/* Workflow Section */}
-      <div className="relative bg-green-100">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex items-center justify-center gap-4">
-            <div className="flex-1 border-t border-[#C1C1C1]"></div>
-            <ProjectSectionTitle color="text-black" dotColor="text-green-500">
-              Workflow
-            </ProjectSectionTitle>
-            <div className="flex-1 border-t border-[#C1C1C1]"></div>
-          </div>
-          <div className="w-full flex justify-center mt-16">
-            <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
-          </div>
+      <ProjectSection bgClassName="bg-green-100">
+        <div className="flex items-center justify-center gap-4">
+          <div className="flex-1 border-t border-[#C1C1C1]"></div>
+          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+            Workflow
+          </ProjectSectionTitle>
+          <div className="flex-1 border-t border-[#C1C1C1]"></div>
         </div>
-      </div>
+        <div className="w-full flex justify-center mt-16">
+          <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
+        </div>
+      </ProjectSection>
 
       {/* Initial Vision Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
+      <ProjectSection>
         <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
-        <VerticalBlock title="Our Vision">
+        <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]">
           <p>
             Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
             encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
           </p>
         </VerticalBlock>
-        <VerticalBlock title="Competitive Research">
+        <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]">
           <p>I am unable to show this section due to a request.</p>
         </VerticalBlock>
-      </div>
+      </ProjectSection>
 
       {/*Hypothesis Section */}
 
@@ -132,46 +132,35 @@ export default function MozillaPage() {
 
       {/* Design Challenge Section */}
       <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-        <div className="flex flex-col gap-y-8 lg:gap-y-16">
-          {/* top row */}
-          <div className="flex flex-col md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
-            <ProjectSectionTitle dotColor="text-green-500" textAlign="center">
-              Design Challenges
-            </ProjectSectionTitle>
+        <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
+          Design Challenges
+        </ProjectSectionTitle>
 
-            {/* bottom row */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-              {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-              <div className="flex-1 border-t border-gray-600 pt-2">
-                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
-                <p className="text-[16px]">
-                  To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                  shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
-                  evolved.
-                </p>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+          {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
+          <VerticalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
+            <p className="text-[16px] text-black">
+              To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment shaped
+              my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions evolved.
+            </p>
+          </VerticalBlock>
 
-              {/* Privacy-first UX */}
-              <div className="flex-1 border-t border-gray-600 pt-2">
-                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
-                <p className="text-[16px]">
-                  Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
-                  used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
-                  meaningful, and ensuring the assistant felt helpful—not intrusive.
-                </p>
-              </div>
+          {/* Privacy-first UX */}
+          <VerticalBlock title="Privacy-first UX">
+            <p className="text-[16px] text-black">
+              Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used—while
+              giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices meaningful, and
+              ensuring the assistant felt helpful—not intrusive.
+            </p>
+          </VerticalBlock>
 
-              {/* Designing for scale */}
-              <div className="flex-1 border-t border-gray-600 pt-2">
-                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
-                <p className="text-[16px]">
-                  With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                  evolved—
-                  <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Designing for scale */}
+          <VerticalBlock title="Designing for scale">
+            <p className="text-[16px] text-black">
+              With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product evolved—
+              <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
+            </p>
+          </VerticalBlock>
         </div>
       </ProjectSection>
 
