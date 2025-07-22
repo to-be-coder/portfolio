@@ -13,6 +13,7 @@ export const notionOfficialClient = new Client({
 export const CodePlugin = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code))
 
 export const getPageData = async (pages: QueryDatabaseResponse) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data = pages.results.map((result: any) => {
     const date = result.properties.Date.date ? dayjs(result.properties.Date.date.start).format('LL') : undefined
     const image = result.properties.Image.files[0]?.file.url
@@ -20,7 +21,8 @@ export const getPageData = async (pages: QueryDatabaseResponse) => {
     const title = result.properties.Name.title[0]?.plain_text
     const subtitle = result.properties.Subtitle.rich_text[0]?.plain_text
     const description = result.properties.Description.rich_text[0]?.plain_text
-
+    const category = result.properties.Category.select?.name
+    console.log('fuuuuucccckkkkk', category)
     return {
       date,
       title,
@@ -28,6 +30,7 @@ export const getPageData = async (pages: QueryDatabaseResponse) => {
       image,
       subtitle,
       description,
+      category,
     }
   })
   return data
@@ -69,7 +72,5 @@ export const getArticles = async () => {
     //   },
     // },
   })
-  console.log('fuuuuucccckkkkk', data)
-
   return getPageData(data)
 }

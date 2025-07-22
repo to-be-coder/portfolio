@@ -18,9 +18,7 @@ export default function NotionCard({ title, image, category, url, description }:
 
       {/* Category badge */}
       <div className="mb-2">
-        <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">
-          {category === 'ai' ? 'AI' : category === 'startups' ? 'Startups' : category === 'design' ? 'Design' : 'Others'}
-        </span>
+        <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">{category}</span>
       </div>
 
       {/* Article title */}
