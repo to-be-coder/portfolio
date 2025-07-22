@@ -1,5 +1,6 @@
 'use client'
 import HomeHeroSection from '@/components/home-hero-section'
+import { Badge } from '@/components/ui/badge'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -89,12 +90,10 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Designed a privacy-first AI assistant from the ground-up.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>AI Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>App Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>Prototyping</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>
-                    Transparency and Trust
-                  </span>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>AI Design</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>App Design</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Prototyping</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Transparency and Trust</Badge>
                 </div>
               </div>
             </div>
