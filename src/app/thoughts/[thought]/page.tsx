@@ -1,10 +1,8 @@
 import NotionContent from '@/components/notion-content'
 import CtaSection from '@/components/ui/cta'
 import { getAllPaths, getPageByPath } from '@/lib/notion'
-import { ArrowLeft } from 'lucide-react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
@@ -62,24 +60,24 @@ export default async function ThoughtPage({ params }: PageProps) {
     <main>
       {/* Header Section */}
       <section className="container mx-auto px-4 py-8 max-w-4xl">
-        <Link href="/thoughts" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors">
+        {/* <Link href="/thoughts" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Thoughts
-        </Link>
+        </Link> */}
 
         {/* Article Header */}
         <div className="mb-12">
-          {metadata.category && (
+          {/* {metadata.category && (
             <div className="mb-4">
               <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">{metadata.category}</span>
             </div>
-          )}
+          )} */}
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{metadata.title}</h1>
 
-          {metadata.subtitle && <p className="text-xl text-gray-600 mb-4">{metadata.subtitle}</p>}
+          {/* {metadata.subtitle && <p className="text-xl text-gray-600 mb-4">{metadata.subtitle}</p>} */}
 
-          {metadata.date && <p className="text-sm text-gray-500">{metadata.date}</p>}
+          {/* {metadata.date && <p className="text-sm text-gray-500">{metadata.date}</p>} */}
         </div>
 
         {/* Featured Image */}
