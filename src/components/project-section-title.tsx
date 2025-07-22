@@ -2,14 +2,15 @@ import React from 'react'
 
 interface ProjectSectionTitleProps {
   children: React.ReactNode
-  color?: string // Tailwind color class
+  color?: string // Tailwind color class for main text
+  dotColor?: string // Tailwind color class for dot
 }
 
-export default function ProjectSectionTitle({ children, color = 'text-green-500' }: ProjectSectionTitleProps) {
+export default function ProjectSectionTitle({ children, color, dotColor }: ProjectSectionTitleProps) {
   return (
-    <h2 className="text-4xl font-normal mb-2">
+    <h2 className={`text-4xl font-normal mb-2 ${color}`}>
       {children}
-      <span className={`${color} text-[64px]`}>.</span>
+      <span className={`text-[64px] ${dotColor}`}>.</span>
     </h2>
   )
 }

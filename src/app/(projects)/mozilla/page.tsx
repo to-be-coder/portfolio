@@ -66,9 +66,9 @@ export default function MozillaPage() {
         <div className="mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
-            <h2 className="text-4xl font-normal mb-2">
-              Workflow<span className="text-green-500 text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+              Workflow
+            </ProjectSectionTitle>
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
           </div>
           <div className="w-full flex justify-center mt-16">
@@ -79,7 +79,9 @@ export default function MozillaPage() {
 
       {/* Initial Vision Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
-        <ProjectSectionTitle color="text-green-500">Initial Vision of Ghostcat</ProjectSectionTitle>
+        <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+          Initial Vision of Ghostcat
+        </ProjectSectionTitle>
 
         <div className="border-t border-[#C1C1C1] pt-2">
           <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Our Vision</h3>
@@ -101,9 +103,9 @@ export default function MozillaPage() {
 
       <div className="relative bg-[#212121] text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2 text-white">
-            Hypothesis<span className="text-green-500 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+            Hypothesis
+          </ProjectSectionTitle>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="flex flex-col p-4 lg:p-8 relative">
             <div className="flex flex-col max-w-3xl mx-auto relative">
@@ -150,9 +152,9 @@ export default function MozillaPage() {
             {/* top row */}
             <div className="flex flex-col md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
               <div className="flex-1 justify-center items-center mb-0 lg:mb-4">
-                <h2 className="text-4xl font-normal text-center mb-8 lg:mb-12">
-                  Design Challenges<span className="text-green-500 text-[64px]">.</span>
-                </h2>
+                <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                  Design Challenges
+                </ProjectSectionTitle>
               </div>
 
               {/* bottom row */}
@@ -195,9 +197,9 @@ export default function MozillaPage() {
       {/* Transparency about data usage */}
       <div className="relative text-black bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal flex-1 text-center mb-8 md:mb-16">
-            Transparency about data usage<span className="text-green-500 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+            Transparency about data usage
+          </ProjectSectionTitle>
           <div className="flex-1 flex-col space-y-12 lg:space-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
@@ -241,9 +243,9 @@ export default function MozillaPage() {
       {/* Settings screens */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Designing Trust Through Settings<span className="text-green-500 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+            Designing Trust Through Settings
+          </ProjectSectionTitle>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <p className="text-[16px] mb-8 lg:mb-12">
             Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
@@ -275,9 +277,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <div className="flex flex-col">
-              <h2 className="text-4xl font-normal mb-2">
-                Designing for Fast Iteration and Familiar Use<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Designing for Fast Iteration and Familiar Use
+              </ProjectSectionTitle>
               <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <p className="text-[16px] mb-8 lg:mb-12">
                 To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
@@ -314,9 +316,9 @@ export default function MozillaPage() {
       {/* Sign up flow */}
       <div className="relative bg-green-100 text-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Clarity at Every Step<span className="text-green-500 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+            Clarity at Every Step
+          </ProjectSectionTitle>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
             <div className="flex flex-col gap-y-4">
@@ -357,9 +359,9 @@ export default function MozillaPage() {
             {/* Left Column - Text Content */}
 
             <div className="col-span-1">
-              <h2 className="text-4xl font-normal mb-2">
-                Exploring Early Concepts<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Exploring Early Concepts
+              </ProjectSectionTitle>
               <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
 
               <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
@@ -394,9 +396,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             <div className="flex flex-col">
-              <h2 className="text-4xl font-normal mb-2">
-                Dark Mode for Modern Use<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Dark Mode for Modern Use
+              </ProjectSectionTitle>
               <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <p className="text-[16px]">
                 Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
@@ -426,9 +428,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
             <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
-              <h2 className="text-4xl font-normal mb-2">
-                Designing with Mobile in Mind<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Designing with Mobile in Mind
+              </ProjectSectionTitle>
               <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
               <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
@@ -445,9 +447,9 @@ export default function MozillaPage() {
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
-            Typography<span className="text-green-500 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+            Typography
+          </ProjectSectionTitle>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -481,9 +483,9 @@ export default function MozillaPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">
-              Main Colors<span className="text-green-500 text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+              Main Colors
+            </ProjectSectionTitle>
           </div>
 
           {/* Primary Colors */}
@@ -534,9 +536,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           {/* Title */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <h2 className="text-4xl font-normal">
-              Learning<span className="text-green-500 text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+              Learning
+            </ProjectSectionTitle>
 
             {/* Build Fast, Learn Faster */}
             <div>
@@ -602,9 +604,9 @@ export default function MozillaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normal mb-2">
-                Explore my portfolio in Figma<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Explore my portfolio in Figma
+              </ProjectSectionTitle>
 
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
@@ -631,9 +633,9 @@ export default function MozillaPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="flex col-span-2 justify-center items-center">
-              <h2 className="text-4xl font-normal">
-                Previous Explorations<span className="text-green-500 text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+                Previous Explorations
+              </ProjectSectionTitle>
             </div>
             <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
             <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
