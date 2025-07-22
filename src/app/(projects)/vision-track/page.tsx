@@ -414,8 +414,9 @@ export default function VisionTrackPage() {
 
       {/* Competitive Analysis Section */}
       <ProjectSection>
-        <ProjectSectionTitle dotColor="text-blue-400">Competitive Analysis</ProjectSectionTitle>
-        <div className="flex-1 border-t border-[#C1C1C1] mb-8 lg:mb-12"></div>
+        <ProjectSectionTitle dotColor="text-blue-400" showBorder={true} borderColor="border-[#C1C1C1]">
+          Competitive Analysis
+        </ProjectSectionTitle>
         <div className="w-full flex justify-center">
           <Image
             src="/vision-track-table.png"
