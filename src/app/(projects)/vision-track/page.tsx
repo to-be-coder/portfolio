@@ -47,129 +47,122 @@ export default function VisionTrackPage() {
         </div>
       </ProjectSection>
 
-      <div className="relative bg-[#212121] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle color="text-white" dotColor="text-blue-400">
-            Conclusion First
-          </ProjectSectionTitle>
-          <ProjectHorizontalBlock title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-            <p>
-              We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
-            </p>
-            <p>
-              We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around “goal translation,” and scoped a focused MVP: one Slack-based reminder loop, delivered
-              inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future
-              prototyping.
-            </p>
-          </ProjectHorizontalBlock>
-
-          <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-            <p>
-              We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it came
-              at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing one
-              high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
-            </p>
-          </ProjectHorizontalBlock>
-        </div>
-      </div>
-
-      <div className="relative bg-blue-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle dotColor="text-blue-400" showBorder={true} borderColor="border-[#C1C1C1]">
-            Research & Findings
-          </ProjectSectionTitle>
+      <ProjectSection bgClassName="bg-[#212121] text-white">
+        <ProjectSectionTitle color="text-white" dotColor="text-blue-400">
+          Conclusion First
+        </ProjectSectionTitle>
+        <ProjectHorizontalBlock title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
           <p>
-            We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of pitching features, we focused on context and behavior. Using open-ended prompts like “walk me
-            through how your team tracks goals today.”
+            We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mt-8 md:mt-12 items-stretch">
-            <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
+          <p>
+            We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around “goal translation,” and scoped a focused MVP: one Slack-based reminder loop, delivered inside
+            the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future prototyping.
+          </p>
+        </ProjectHorizontalBlock>
 
-            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p>Founders didn&apos;t want &ldquo;another dashboard&rdquo;—they defaulted to Excel or Notion.</p>
-            </div>
-            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p>They didn&apos;t want another tool to manage and log into.</p>
-            </div>
-            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p>The real pain was not &ldquo;setting goals,&rdquo; but translating them into meaningful, actionable work.</p>
-            </div>
-            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p>Slack was the best channel for driving behavior change without requiring login friction.</p>
-            </div>
-            <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
-              <p>Trying to serve every team diluted the value. Narrowing to Sales and Marketing gave us clarity and focus.</p>
-            </div>
+        <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+          <p>
+            We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it came at
+            the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing one
+            high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
+          </p>
+        </ProjectHorizontalBlock>
+      </ProjectSection>
+
+      <ProjectSection bgClassName="bg-blue-50">
+        <ProjectSectionTitle dotColor="text-blue-400" showBorder={true} borderColor="border-[#C1C1C1]">
+          Research & Findings
+        </ProjectSectionTitle>
+        <p>
+          We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of pitching features, we focused on context and behavior. Using open-ended prompts like “walk me
+          through how your team tracks goals today.”
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mt-8 md:mt-12 items-stretch">
+          <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
+
+          <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
+            <p>Founders didn&apos;t want &ldquo;another dashboard&rdquo;—they defaulted to Excel or Notion.</p>
           </div>
+          <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
+            <p>They didn&apos;t want another tool to manage and log into.</p>
+          </div>
+          <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
+            <p>The real pain was not &ldquo;setting goals,&rdquo; but translating them into meaningful, actionable work.</p>
+          </div>
+          <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
+            <p>Slack was the best channel for driving behavior change without requiring login friction.</p>
+          </div>
+          <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200 flex-1">
+            <p>Trying to serve every team diluted the value. Narrowing to Sales and Marketing gave us clarity and focus.</p>
+          </div>
+        </div>
 
-          {/* Value Propositions Section */}
-          <div className="col-span-1 space-y-4 mt-16">
-            <p className="text-xl font-bold">Value Propositions</p>
-            <div className="w-full flex justify-center rounded-lg border border-[#C1C1C1] p-4">
-              <Image
-                src="/vision-track-value.png"
-                alt="Value proposition diagram showing different roles: IC, Manager, Top-Manager, and Board Member, with their respective workflows and motivations"
-                width={1728}
-                height={900}
-                className="w-full h-auto max-h-[700px] object-contain"
-                priority
-              />
+        {/* Value Propositions Section */}
+        <div className="col-span-1 space-y-4 mt-16">
+          <p className="text-xl font-bold">Value Propositions</p>
+          <div className="w-full flex justify-center rounded-lg border border-[#C1C1C1] p-4">
+            <Image
+              src="/vision-track-value.png"
+              alt="Value proposition diagram showing different roles: IC, Manager, Top-Manager, and Board Member, with their respective workflows and motivations"
+              width={1728}
+              height={900}
+              className="w-full h-auto max-h-[700px] object-contain"
+              priority
+            />
+          </div>
+        </div>
+      </ProjectSection>
+
+      <ProjectSection bgClassName="bg-white">
+        <ProjectSectionTitle dotColor="text-blue-400">What Changed Our Mind</ProjectSectionTitle>
+        <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">What Surprised Me</h3>
+            </div>
+            <div className="md:col-span-2 space-y-2">
+              <p>
+                Most teams didn&apos;t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
+                struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing Manager.
+                This realization reframed our entire direction.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="relative bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle dotColor="text-blue-400">What Changed Our Mind</ProjectSectionTitle>
-          <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">What Surprised Me</h3>
-              </div>
-              <div className="md:col-span-2 space-y-2">
-                <p>
-                  Most teams didn&apos;t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
-                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing
-                  Manager. This realization reframed our entire direction.
-                </p>
-              </div>
+        <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="col-span-1">
+              <h3 className="text-2xl font-regular text-[#a1a1a1]">MVP Direction</h3>
             </div>
-          </div>
-          <div className="space-y-4 mb-8 border-t border-[#C1C1C1] pt-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="col-span-1">
-                <h3 className="text-2xl font-regular text-[#a1a1a1]">MVP Direction</h3>
-              </div>
-              <div className="md:col-span-2 space-y-6 md:space-y-8">
-                <p>
-                  We cut <span className="font-bold">80%</span> of our feature ideas—dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
+            <div className="md:col-span-2 space-y-6 md:space-y-8">
+              <p>
+                We cut <span className="font-bold">80%</span> of our feature ideas—dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
+              </p>
+              <div className="flex flex-col gap-2">
+                <p className=" font-semibold">Why Build on Slack?</p>
+                <p className=" bg-blue-50 p-4 rounded-lg border border-blue-100">
+                  Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow—and frictionless adoption was a requirement, not a nice-to-have.
                 </p>
-                <div className="flex flex-col gap-2">
-                  <p className=" font-semibold">Why Build on Slack?</p>
-                  <p className=" bg-blue-50 p-4 rounded-lg border border-blue-100">
-                    Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow—and frictionless adoption was a requirement, not a nice-to-have.
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className=" font-semibold">We designed a lightweight flow:</p>
+                <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-stretch">
+                  <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
+                    <span className="font-bold">1. Manager</span> sets OKRs at the start of the cycle.
+                  </p>
+                  <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
+                    <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: “Which of your tasks support this objective?”
+                  </p>
+                  <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
+                    <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries—no login required.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <p className=" font-semibold">We designed a lightweight flow:</p>
-                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-stretch">
-                    <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
-                      <span className="font-bold">1. Manager</span> sets OKRs at the start of the cycle.
-                    </p>
-                    <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
-                      <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: “Which of your tasks support this objective?”
-                    </p>
-                    <p className=" bg-blue-50 p-4 rounded-lg flex-1 border border-blue-100">
-                      <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries—no login required.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Workflow Section */}
       <ProjectSection bgClassName="bg-blue-50">
