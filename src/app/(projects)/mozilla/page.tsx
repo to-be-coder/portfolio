@@ -411,19 +411,17 @@ export default function MozillaPage() {
           {/* Right Column - Typography Details */}
           <div className="space-y-4 md:space-y-8">
             {/* Typeface */}
-            <div className="border-t border-[#C1C1C1] pt-2">
-              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
+            <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p className="text-[16px]">Inter</p>
-            </div>
+            </VerticalBlock>
 
             {/* Weights */}
-            <div className="border-t border-[#C1C1C1] pt-2">
-              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
+            <VerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <p className="text-[16px] font-normal">Regular</p>
                 <p className="text-[16px] font-semibold">Semi-Bold</p>
               </div>
-            </div>
+            </VerticalBlock>
           </div>
         </div>
       </ProjectSection>
