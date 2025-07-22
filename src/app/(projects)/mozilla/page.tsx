@@ -90,12 +90,10 @@ export default function MozillaPage() {
       </ProjectSection>
 
       {/*Hypothesis Section */}
-
       <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
         <ProjectSectionTitle color="text-white" dotColor="text-green-500" showBorder={true}>
           Hypothesis
         </ProjectSectionTitle>
-
         <div className="flex flex-col p-4 lg:p-8 relative">
           <div className="flex flex-col max-w-3xl mx-auto relative">
             <div className="flex justify-start h-[64px] lg:h-[92px]">
@@ -111,11 +109,9 @@ export default function MozillaPage() {
             </div>
           </div>
         </div>
-
         <div className="flex-1 pt-2 mt-12">
           <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
           <div className="border-t border-[#C1C1C1]"></div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
             <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
               <span className="font-semibold  mb-2 text-black">Be transparent about data usage</span>
@@ -138,7 +134,6 @@ export default function MozillaPage() {
         <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
           Design Challenges
         </ProjectSectionTitle>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
           {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
           <VerticalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
@@ -147,7 +142,6 @@ export default function MozillaPage() {
               my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions evolved.
             </p>
           </VerticalBlock>
-
           {/* Privacy-first UX */}
           <VerticalBlock title="Privacy-first UX">
             <p className=" text-black">
@@ -156,7 +150,6 @@ export default function MozillaPage() {
               ensuring the assistant felt helpful—not intrusive.
             </p>
           </VerticalBlock>
-
           {/* Designing for scale */}
           <VerticalBlock title="Designing for scale">
             <p className=" text-black">
@@ -189,7 +182,6 @@ export default function MozillaPage() {
             }
             reverseOnDesktop={true}
           />
-
           <ProjectFlexBlock
             left={
               <div className="flex flex-col space-y-8">
@@ -205,7 +197,6 @@ export default function MozillaPage() {
               </ProjectVerticalBlock>
             }
           />
-
           <ProjectFlexBlock
             left={
               <ProjectVerticalBlock title="Graceful Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
@@ -275,7 +266,6 @@ export default function MozillaPage() {
               </TabsTrigger>
               <TabsTrigger value="1">Both Sidebars Closed</TabsTrigger>
             </TabsList>
-
             <TabsContent value="3" className="flex justify-center w-full">
               <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
             </TabsContent>
@@ -326,12 +316,10 @@ export default function MozillaPage() {
       <ProjectSection bgClassName="bg-white" textClassName="text-black">
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
           {/* Left Column - Text Content */}
-
           <div className="col-span-1">
             <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
               Exploring Early Concepts
             </ProjectSectionTitle>
-
             <p className=" mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
             <ul className="list-disc pl-8 mb-8 ">
               <li>
@@ -346,7 +334,6 @@ export default function MozillaPage() {
             </ul>
             <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
           </div>
-
           {/* Right Column - Images */}
           <div className="col-span-1 flex items-end">
             <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
@@ -395,7 +382,6 @@ export default function MozillaPage() {
               Designing with Mobile in Mind
             </ProjectSectionTitle>
             <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
-
             <p className=" items-center">
               Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
               experience could <strong>translate to smaller screens with minimal rework.</strong>
@@ -410,20 +396,17 @@ export default function MozillaPage() {
         <ProjectSectionTitle color="text-white" dotColor="text-green-500">
           Typography
         </ProjectSectionTitle>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
           {/* Left Column - Large "Aa" Display */}
           <div className="flex items-center justify-center">
             <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
           </div>
-
           {/* Right Column - Typography Details */}
           <div className="flex flex-col">
             {/* Typeface */}
             <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <p>Inter</p>
             </VerticalBlock>
-
             {/* Weights */}
             <VerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
@@ -455,7 +438,6 @@ export default function MozillaPage() {
         {/* Title */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
-
           {/* Build Fast, Learn Faster */}
           <VerticalBlock title="Build Fast, Learn Faster" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>
@@ -463,7 +445,6 @@ export default function MozillaPage() {
               is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
             </p>
           </VerticalBlock>
-
           {/* Balancing Agility with Control */}
           <VerticalBlock title="Balancing Agility with Control" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>
@@ -471,7 +452,6 @@ export default function MozillaPage() {
               fast while keeping scope focused and risk manageable at each stage.
             </p>
           </VerticalBlock>
-
           {/* I Am Not the User */}
           <VerticalBlock title="I Am Not the User" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>
@@ -480,7 +460,6 @@ export default function MozillaPage() {
               test next and why.
             </p>
           </VerticalBlock>
-
           {/* Designing for Trust */}
           <VerticalBlock title="Designing for Trust" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>
@@ -488,7 +467,6 @@ export default function MozillaPage() {
               features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
             </p>
           </VerticalBlock>
-
           {/* Staying Curious and Outcome-Oriented */}
           <VerticalBlock title="Staying Curious and Outcome-Oriented" titleColor="text-black" borderColor="border-[#C1C1C1]">
             <p>Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.</p>
@@ -504,7 +482,6 @@ export default function MozillaPage() {
             <ProjectSectionTitle color="text-white" dotColor="text-green-500">
               Explore my portfolio in Figma
             </ProjectSectionTitle>
-
             <p className=" mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
             <Link
               href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
@@ -516,7 +493,6 @@ export default function MozillaPage() {
               <ArrowUpRight className="ml-2 w-5 h-5" />
             </Link>
           </div>
-
           {/* Right Column - iPhone Image */}
           <div className="flex justify-center">
             <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
