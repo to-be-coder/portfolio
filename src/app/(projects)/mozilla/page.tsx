@@ -61,11 +61,11 @@ export default function MozillaPage() {
       {/* Workflow Section */}
       <ProjectSection bgClassName="bg-green-100">
         <div className="flex items-center justify-center gap-4">
-          <div className="flex-1 border-t border-[#C1C1C1]"></div>
+          <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
           <ProjectSectionTitle color="text-black" dotColor="text-green-500">
             Workflow
           </ProjectSectionTitle>
-          <div className="flex-1 border-t border-[#C1C1C1]"></div>
+          <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
         </div>
         <div className="w-full flex justify-center mt-16">
           <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
@@ -89,10 +89,10 @@ export default function MozillaPage() {
       {/*Hypothesis Section */}
 
       <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-        <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+        <ProjectSectionTitle color="text-white" dotColor="text-green-500" showBorder={true} borderColor="border-white">
           Hypothesis
         </ProjectSectionTitle>
-        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+
         <div className="flex flex-col p-4 lg:p-8 relative">
           <div className="flex flex-col max-w-3xl mx-auto relative">
             <div className="flex justify-start h-[64px] lg:h-[92px]">
