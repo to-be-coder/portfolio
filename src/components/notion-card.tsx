@@ -22,10 +22,10 @@ export default function NotionCard({ title, image, category, url, description }:
       </div>
 
       {/* Article title */}
-      <h2 className="text-xl font-bold  group-hover:text-blue-500 transition-colors">{title}</h2>
+      <h2 className="text-xl font-bold  group-hover:text-secondary">{title}</h2>
       {/* <p className="text-sm text-gray-500 mb-2">{description}</p> */}
       {/* Read more link */}
-      <div className="inline-flex items-center text-blue-500 group-hover:text-blue-700 mt-auto">
+      <div className="inline-flex items-center text-secondary group-hover:text-secondary mt-auto">
         Read more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
       </div>
     </Link>
