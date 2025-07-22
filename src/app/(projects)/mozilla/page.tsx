@@ -131,51 +131,49 @@ export default function MozillaPage() {
       </ProjectSection>
 
       {/* Design Challenge Section */}
-      <div className="relative bg-green-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col gap-y-8 lg:gap-y-16">
-            {/* top row */}
-            <div className="flex flex-col md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
-              <div className="flex-1 justify-center items-center mb-0 lg:mb-4">
-                <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
+      <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
+        <div className="flex flex-col gap-y-8 lg:gap-y-16">
+          {/* top row */}
+          <div className="flex flex-col md:gap-x-8 lg:gap-x-16 gap-y-8 lg:gap-y-0">
+            <ProjectSectionTitle dotColor="text-green-500" textAlign="center">
+              Design Challenges
+            </ProjectSectionTitle>
+
+            {/* bottom row */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+              {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
+              <div className="flex-1 border-t border-gray-600 pt-2">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
+                <p className="text-[16px]">
+                  To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
+                  shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
+                  evolved.
+                </p>
               </div>
 
-              {/* bottom row */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-                {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-                <div className="flex-1 border-t border-gray-600 pt-2">
-                  <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for a Fast MVP, Aligned with Tech Constraints</h3>
-                  <p className="text-[16px]">
-                    To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                    shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
-                    evolved.
-                  </p>
-                </div>
+              {/* Privacy-first UX */}
+              <div className="flex-1 border-t border-gray-600 pt-2">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
+                <p className="text-[16px]">
+                  Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
+                  used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
+                  meaningful, and ensuring the assistant felt helpful—not intrusive.
+                </p>
+              </div>
 
-                {/* Privacy-first UX */}
-                <div className="flex-1 border-t border-gray-600 pt-2">
-                  <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Privacy-first UX</h3>
-                  <p className="text-[16px]">
-                    Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
-                    used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
-                    meaningful, and ensuring the assistant felt helpful—not intrusive.
-                  </p>
-                </div>
-
-                {/* Designing for scale */}
-                <div className="flex-1 border-t border-gray-600 pt-2">
-                  <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
-                  <p className="text-[16px]">
-                    With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                    evolved—
-                    <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
-                  </p>
-                </div>
+              {/* Designing for scale */}
+              <div className="flex-1 border-t border-gray-600 pt-2">
+                <h3 className="text-2xl font-medium text-black mb-2 md:mb-4">Designing for scale</h3>
+                <p className="text-[16px]">
+                  With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
+                  evolved—
+                  <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Transparency about data usage */}
       <div className="relative text-black bg-white">

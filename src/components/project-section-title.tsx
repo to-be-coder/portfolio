@@ -4,11 +4,12 @@ interface ProjectSectionTitleProps {
   children: React.ReactNode
   color?: string // Tailwind color class for main text
   dotColor?: string // Tailwind color class for dot
+  textAlign?: 'left' | 'center' | 'right'
 }
 
-export default function ProjectSectionTitle({ children, color = 'text-black', dotColor }: ProjectSectionTitleProps) {
+export default function ProjectSectionTitle({ children, color = 'text-black', dotColor, textAlign = 'left' }: ProjectSectionTitleProps) {
   return (
-    <h2 className={`text-4xl font-normal mb-2 ${color}`}>
+    <h2 className={`text-4xl font-normal mb-2 ${color} ${textAlign}`}>
       {children}
       <span className={`text-[64px] ${dotColor}`}>.</span>
     </h2>
