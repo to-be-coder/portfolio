@@ -1,6 +1,7 @@
 'use client'
 
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -51,9 +52,9 @@ export default function LilypadPage() {
       {/* Typography Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-12">
-            Typography<span className="text-[#DDA15F] text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]">
+            Typography
+          </ProjectSectionTitle>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
             {/* Left Column - Large "Aa" Display */}
@@ -88,9 +89,7 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Title */}
           <div>
-            <h2 className="text-4xl font-normal">
-              Colors<span className="text-[#DDA15F] text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle dotColor="text-[#DDA15F]">Colors</ProjectSectionTitle>
           </div>
 
           {/* Primary Colors */}
@@ -141,9 +140,7 @@ export default function LilypadPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
           {/* Left Column - Title */}
           <div>
-            <h2 className="text-4xl font-normal">
-              Design Approach<span className="text-[#DDA15F] text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle dotColor="text-[#DDA15F]">Design Approach</ProjectSectionTitle>
           </div>
 
           {/* Right Column - Approach Details */}
@@ -188,9 +185,7 @@ export default function LilypadPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex flex-col gap-16">
             <div className="flex justify-center items-center h-full">
-              <h2 className="text-4xl font-normal">
-                Mobile-First Design<span className="text-[#af5800] text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle dotColor="text-[#af5800]">Mobile-First Design</ProjectSectionTitle>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-5 w-full h-auto">
@@ -217,9 +212,7 @@ export default function LilypadPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
 
-        <h2 className="text-4xl font-normal mb-2">
-          Responsive Design<span className="text-[#DDA15F] text-[64px]">.</span>
-        </h2>
+        <ProjectSectionTitle dotColor="text-[#DDA15F]">Responsive Design</ProjectSectionTitle>
         <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
 
         {/* Tabs and Content Container */}
@@ -262,9 +255,9 @@ export default function LilypadPage() {
       {/* Programmer's Perspective Section */}
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-8 lg:mb-18 md:text-center text-white">
-            Design System from Programmer&apos;s Perspective<span className="text-[#DDA15F] text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]">
+            Design System from Programmer&apos;s Perspective
+          </ProjectSectionTitle>
           <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
             <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
               <div className="flex-1 border-t border-gray-600 pt-[4px] order-last lg:order-first">
@@ -313,9 +306,7 @@ export default function LilypadPage() {
       {/* Next Steps Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         {/* Title */}
-        <h2 className="text-4xl font-normal mb-2">
-          Next Steps<span className="text-[#DDA15F] text-[64px]">.</span>
-        </h2>
+        <ProjectSectionTitle dotColor="text-[#DDA15F]">Next Steps</ProjectSectionTitle>
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -348,14 +339,12 @@ export default function LilypadPage() {
       </div>
 
       {/* Figma Exploration Section */}
-      <div className="relative bg-[#DDA15F] text-white">
+      <div className="relative bg-[#DDA15F]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <h2 className="text-4xl font-normalmb-8 lg:mb-12">
-                Explore the Figma File for This Project<span className="text-[#af5800] text-[64px]">.</span>
-              </h2>
+              <ProjectSectionTitle dotColor="text-[#af5800]">Explore the Figma File for This Project</ProjectSectionTitle>
               <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
               <Link
                 href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
