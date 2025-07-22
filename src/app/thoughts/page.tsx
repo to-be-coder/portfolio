@@ -76,8 +76,8 @@ export default function ThoughtsPage() {
               </div>
             </Link>
           ))}
+          <NotionPosts />
         </div>
-        <NotionPosts />
       </div>
       <CtaSection />
     </>
