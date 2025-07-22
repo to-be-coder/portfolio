@@ -114,16 +114,12 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Competitive analysis and user interviews for a B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UX Research</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    Competitive Analysis
-                  </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    User Interviews
-                  </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Personas</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>B2B</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>SaaS</span>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>UX Research</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>Competitive Analysis</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>User Interviews</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>User Personas</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>B2B</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
                 </div>
               </div>
               <div className="mt-0 lg:w-2/3 h-full flex items-end justify-end absolute bottom-0 right-0 lg:relative">
@@ -170,11 +166,9 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Designed and developed a mobile-first landing page for an AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UI Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs  text-black whitespace-nowrap`}>Landing Page</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    Responsive Design
-                  </span>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>UI Design</Badge>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>Landing Page</Badge>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
                 </div>
               </div>
             </div>
@@ -195,8 +189,8 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Photography</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Camping</span>
+                  <Badge className={`${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} `}>Photography</Badge>
+                  <Badge className={`${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">
