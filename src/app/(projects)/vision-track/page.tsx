@@ -1,4 +1,5 @@
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
 import { User } from 'lucide-react'
 import Image from 'next/image'
@@ -50,9 +51,9 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-[#212121] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Conclusion First<span className="text-blue-400 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle color="text-white" dotColor="text-blue-400">
+            Conclusion First
+          </ProjectSectionTitle>
           <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
@@ -90,9 +91,7 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            Research & Findings<span className="text-blue-400 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle dotColor="text-blue-400">Research & Findings</ProjectSectionTitle>
           <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
           <div className="flex flex-col">
             <p className="text-[16px]">
@@ -139,9 +138,7 @@ export default function VisionTrackPage() {
 
       <div className="relative bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <h2 className="text-4xl font-normal mb-2">
-            What Changed Our Mind<span className="text-blue-400 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle dotColor="text-blue-400">What Changed Our Mind</ProjectSectionTitle>
           <div className="space-y-4 mb-8 md:mb-12 border-t border-[#C1C1C1] pt-2">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="col-span-1">
@@ -196,9 +193,7 @@ export default function VisionTrackPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
-            <h2 className="text-4xl font-normal mb-2">
-              Discovery Sprint<span className="text-blue-400 text-[64px]">.</span>
-            </h2>
+            <ProjectSectionTitle dotColor="text-blue-400">Discovery Sprint</ProjectSectionTitle>
             <div className="flex-1 border-t border-[#C1C1C1]"></div>
           </div>
           <div className="w-full flex justify-center mt-12 bg-blue-200 rounded-lg p-8">
@@ -447,9 +442,7 @@ export default function VisionTrackPage() {
       {/* Competitive Analysis Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
         <div className="mx-auto">
-          <h2 className="text-4xl font-normal mb-2">
-            Competitive Analysis<span className="text-blue-400 text-[64px]">.</span>
-          </h2>
+          <ProjectSectionTitle dotColor="text-blue-400">Competitive Analysis</ProjectSectionTitle>
           <div className="flex-1 border-t border-[#C1C1C1] mb-8 lg:mb-12"></div>
           <div className="w-full flex justify-center">
             <Image
