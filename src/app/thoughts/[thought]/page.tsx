@@ -59,14 +59,14 @@ export default async function ThoughtPage({ params }: PageProps) {
   return (
     <main>
       {/* Header Section */}
-      <section className="container mx-auto px-4 py-8 max-w-4xl">
+      <section className="container mx-auto px-4 py-8 max-w-3xl">
         {/* <Link href="/thoughts" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Thoughts
         </Link> */}
 
         {/* Article Header */}
-        <div className="mb-12">
+        <div className="mb-12 px-6">
           {/* {metadata.category && (
             <div className="mb-4">
               <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">{metadata.category}</span>
@@ -93,10 +93,8 @@ export default async function ThoughtPage({ params }: PageProps) {
         )} */}
 
         {/* Notion Content */}
-        <div className="prose prose-lg min-h-screen">
-          <div className=" leading-relaxed">
-            <NotionContent recordMap={recordMap} fullPage={false} darkMode={false} />
-          </div>
+        <div className="min-h-screen ">
+          <NotionContent recordMap={recordMap} fullPage={false} darkMode={false} />
         </div>
       </section>
 
