@@ -75,21 +75,26 @@ export default async function ThoughtPage({ params }: PageProps) {
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{metadata.title}</h1>
 
+          <div className="border-b border-gray-200 w-full"></div>
+          <div className="flex items-center gap-2 mt-3">
+            <Image src={'/profile-small.jpg'} alt={'Jessica Cheng'} width={30} height={30} className="rounded-full object-cover aspect-square" />
+            <p className="text-sm text-gray-500">Jessica Cheng</p>
+          </div>
+
           {/* {metadata.subtitle && <p className="text-xl text-gray-600 mb-4">{metadata.subtitle}</p>} */}
 
           {/* {metadata.date && <p className="text-sm text-gray-500">{metadata.date}</p>} */}
         </div>
-
         {/* Featured Image */}
-        {metadata.image && (
+        {/* {metadata.image && (
           <div className="relative aspect-video mb-12 rounded-lg overflow-hidden">
             <Image src={metadata.image} alt={metadata.title || 'Featured image'} fill className="object-cover" />
           </div>
-        )}
+        )} */}
 
         {/* Notion Content */}
-        <div className="prose prose-lg max-w-none">
-          <div className="text-gray-900 leading-relaxed">
+        <div className="prose prose-lg min-h-screen">
+          <div className=" leading-relaxed">
             <NotionContent recordMap={recordMap} fullPage={false} darkMode={false} />
           </div>
         </div>
