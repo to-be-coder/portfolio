@@ -1,5 +1,6 @@
 'use client'
 
+import ProjectColorsSection from '@/components/project-colors-section'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
@@ -85,55 +86,21 @@ export default function LilypadPage() {
       </div>
 
       {/* Colors Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Title */}
-          <div>
-            <ProjectSectionTitle dotColor="text-[#DDA15F]">Colors</ProjectSectionTitle>
-          </div>
-
-          {/* Primary Colors */}
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#15423D] rounded-lg flex items-end p-4">
-              <span className="text-white">#15423D</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#FEFAE1] rounded-lg flex items-end p-4">
-              <span>#FEFAE1</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#DDA15F] rounded-lg flex items-end p-4">
-              <span>#DDA15F</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Secondary Colors Row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#FFFFFF] rounded-lg flex items-end p-4 border border-gray-200">
-              <span>#FFFFFF</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#F8F8F8] rounded-lg flex items-end p-4 border border-gray-200">
-              <span>#F8F8F8</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#494949] rounded-lg flex items-end p-4">
-              <span className="text-white">#494949</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#000000] rounded-lg flex items-end p-4">
-              <span className="text-white">#000000</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProjectColorsSection
+        title="Colors"
+        dotColor="text-[#DDA15F]"
+        colors={[
+          // Primary Colors (row 1)
+          { hex: '#15423D', textClass: 'text-white' },
+          { hex: '#FEFAE1', border: true },
+          { hex: '#DDA15F' },
+          // Secondary Colors (row 2)
+          { hex: '#FFFFFF', border: true },
+          { hex: '#F8F8F8', border: true },
+          { hex: '#494949', textClass: 'text-white' },
+          { hex: '#000000', textClass: 'text-white' },
+        ]}
+      />
 
       {/* Design Approach Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 my-16 lg:my-32 max-w-7xl">
