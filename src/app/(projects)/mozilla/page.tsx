@@ -165,276 +165,260 @@ export default function MozillaPage() {
       </ProjectSection>
 
       {/* Transparency about data usage */}
-      <div className="relative text-black bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle color="text-black" dotColor="text-green-500">
-            Transparency about data usage
-          </ProjectSectionTitle>
-          <div className="flex-1 flex-col space-y-12 lg:space-y-16">
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-              <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">
-                  This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
-                  what&apos;s being asked and why, without digging through settings.
-                </p>
-              </div>
-              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
-                <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-              </div>
-            </div>
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-              <div className="flex flex-1 flex-col space-y-8">
-                <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-              </div>
-              <div className="flex-1 border-t border-gray-600 pt-2">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">
-                  When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
-                  interrupting the flow.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
-              <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
-                <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
-                <p className="text-[16px] mb-8 lg:mb-12">
-                  If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
-                </p>
-              </div>
-              <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
-                <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Settings screens */}
-      <div className="relative bg-green-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle dotColor="text-green-500">Designing Trust Through Settings</ProjectSectionTitle>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <p className="text-[16px] mb-8 lg:mb-12">
-            Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
-            the experience.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-4 lg:gap-y-8">
-            <div className="flex flex-col gap-y-2 ">
-              <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can delete their account at any time—no questions asked.</p>
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can clear their memory and past interactions whenever they choose.</p>
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can select which AI model powers their assistant experience.</p>
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <p>Users can enable or disable extensions based on what they need or trust.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* chat screens */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-            <div className="flex flex-col">
-              <ProjectSectionTitle dotColor="text-green-500">Designing for Fast Iteration and Familiar Use</ProjectSectionTitle>
-              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+      <ProjectSection bgClassName="bg-white" textClassName="text-black">
+        <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+          Transparency about data usage
+        </ProjectSectionTitle>
+        <div className="flex-1 flex-col space-y-12 lg:space-y-16">
+          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
+              <h3 className="text-2xl font-regular mb-2 md:mb-4">Designing for Informed Choice</h3>
               <p className="text-[16px] mb-8 lg:mb-12">
-                To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-                <strong>quickly prototype and evolve</strong>—without compromising usability.
+                This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know what&apos;s
+                being asked and why, without digging through settings.
               </p>
             </div>
-            <Tabs defaultValue="3" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
-              <TabsList className="grid w-full grid-cols-3 bg-gray-100 text-black rounded-md">
-                <TabsTrigger value="3" className="border-r border-gray-200">
-                  Full Screen
-                </TabsTrigger>
-                <TabsTrigger value="2" className="border-r border-gray-200">
-                  Right Sidebar Closed
-                </TabsTrigger>
-                <TabsTrigger value="1" className="">
-                  Both Sidebars Closed
-                </TabsTrigger>
-              </TabsList>
+            <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
+              <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+            </div>
+          </div>
+          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex flex-1 flex-col space-y-8">
+              <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+            </div>
+            <div className="flex-1 border-t border-gray-600 pt-2">
+              <h3 className="text-2xl font-regular mb-2 md:mb-4">Respectful Transparency</h3>
+              <p className="text-[16px] mb-8 lg:mb-12">
+                When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural—without
+                interrupting the flow.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0">
+            <div className="flex-1 border-t border-gray-600 pt-2 order-last lg:order-first">
+              <h3 className="text-2xl font-regular mb-2 md:mb-4">Graceful Opt-Outs Without Penalty</h3>
+              <p className="text-[16px] mb-8 lg:mb-12">
+                If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
+              </p>
+            </div>
+            <div className="flex flex-1 flex-col space-y-8 order-first lg:order-last">
+              <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+            </div>
+          </div>
+        </div>
+      </ProjectSection>
 
-              <TabsContent value="3" className="flex justify-center w-full">
-                <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+      {/* Settings screens */}
+      <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
+        <ProjectSectionTitle dotColor="text-green-500">Designing Trust Through Settings</ProjectSectionTitle>
+        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+        <p className="text-[16px] mb-8 lg:mb-12">
+          Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core part of
+          the experience.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-4 lg:gap-y-8">
+          <div className="flex flex-col gap-y-2 ">
+            <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <p>Users can delete their account at any time—no questions asked.</p>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <p>Users can clear their memory and past interactions whenever they choose.</p>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <p>Users can select which AI model powers their assistant experience.</p>
+          </div>
+          <div className="flex flex-col gap-y-2">
+            <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <p>Users can enable or disable extensions based on what they need or trust.</p>
+          </div>
+        </div>
+      </ProjectSection>
+
+      {/* Iteration and Familiar Use */}
+      <ProjectSection bgClassName="bg-white" textClassName="text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <div className="flex flex-col">
+            <ProjectSectionTitle dotColor="text-green-500">Designing for Fast Iteration and Familiar Use</ProjectSectionTitle>
+            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <p className="text-[16px] mb-8 lg:mb-12">
+              To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+              <strong>quickly prototype and evolve</strong>—without compromising usability.
+            </p>
+          </div>
+          <Tabs defaultValue="3" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
+            <TabsList className="grid w-full grid-cols-3 bg-gray-100 text-black rounded-md">
+              <TabsTrigger value="3" className="border-r border-gray-200">
+                Full Screen
+              </TabsTrigger>
+              <TabsTrigger value="2" className="border-r border-gray-200">
+                Right Sidebar Closed
+              </TabsTrigger>
+              <TabsTrigger value="1" className="">
+                Both Sidebars Closed
+              </TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="3" className="flex justify-center w-full">
+              <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+            </TabsContent>
+            <TabsContent value="2" className="flex justify-center  w-full">
+              <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+            </TabsContent>
+            <TabsContent value="1" className="flex justify-center  w-full">
+              <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+            </TabsContent>
+          </Tabs>
+        </div>
+      </ProjectSection>
+
+      {/* Sign up flow */}
+      <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
+        <ProjectSectionTitle dotColor="text-green-500">Clarity at Every Step</ProjectSectionTitle>
+        <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+          <div className="flex flex-col gap-y-4">
+            <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <div className="flex-1 flex-col">
+              <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
+              <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <div className="flex-1 flex-col">
+              <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
+              <p className="text-[16px]">
+                Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during wait
+                time.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+            <div className="flex-1 flex-col">
+              <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
+              <p className="text-[16px]">
+                Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                momentum going.
+              </p>
+            </div>
+          </div>
+        </div>
+      </ProjectSection>
+
+      {/* Exploring Early Concepts Section */}
+      <ProjectSection bgClassName="bg-white" textClassName="text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
+          {/* Left Column - Text Content */}
+
+          <div className="col-span-1">
+            <ProjectSectionTitle dotColor="text-green-500">Exploring Early Concepts</ProjectSectionTitle>
+            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+
+            <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
+            <ul className="list-disc pl-8 mb-8 text-[16px]">
+              <li>
+                <strong>Explore layout and interaction ideas with speed</strong>
+              </li>
+              <li>
+                <strong>Gather fast, actionable feedback from stakeholders</strong>
+              </li>
+              <li>
+                <strong>Identify technical constraints early and adapt confidently</strong>
+              </li>
+            </ul>
+            <p className="text-[16px]">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
+          </div>
+
+          {/* Right Column - Images */}
+          <div className="col-span-1 flex items-end">
+            <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 lg:mt-8">
+          <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
+        </div>
+      </ProjectSection>
+
+      {/* Light and Dark Mode Mockups */}
+      <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <div className="flex flex-col">
+            <ProjectSectionTitle dotColor="text-green-500">Dark Mode for Modern Use</ProjectSectionTitle>
+            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <p className="text-[16px]">
+              Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
+              <strong>modern platform expectations.</strong>
+            </p>
+          </div>
+          <div className="flex">
+            <Tabs defaultValue="dark" className="w-full gap-y-4 lg:gap-y-8">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="light">Light Mode</TabsTrigger>
+                <TabsTrigger value="dark">Dark Mode</TabsTrigger>
+              </TabsList>
+              <TabsContent value="light" className="flex justify-center">
+                <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
               </TabsContent>
-              <TabsContent value="2" className="flex justify-center  w-full">
-                <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
-              </TabsContent>
-              <TabsContent value="1" className="flex justify-center  w-full">
-                <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
+              <TabsContent value="dark" className="flex justify-center">
+                <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
               </TabsContent>
             </Tabs>
           </div>
         </div>
-      </div>
-
-      {/* Sign up flow */}
-      <div className="relative bg-green-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle dotColor="text-green-500">Clarity at Every Step</ProjectSectionTitle>
-          <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-            <div className="flex flex-col gap-y-4">
-              <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">1. Account Connection</h3>
-                <p className="text-[16px]">The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4">
-              <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">2. Syncing Progress</h3>
-                <p className="text-[16px]">
-                  Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
-                  wait time.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-4">
-              <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-              <div className="flex-1 flex-col">
-                <h3 className="text-2xl font-regular text-black mb-2">3. Ready to Chat</h3>
-                <p className="text-[16px]">
-                  Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
-                  momentum going.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Exploring Early Concepts Section */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
-            {/* Left Column - Text Content */}
-
-            <div className="col-span-1">
-              <ProjectSectionTitle dotColor="text-green-500">Exploring Early Concepts</ProjectSectionTitle>
-              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-
-              <p className="text-[16px] mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
-              <ul className="list-disc pl-8 mb-8 text-[16px]">
-                <li>
-                  <strong>Explore layout and interaction ideas with speed</strong>
-                </li>
-                <li>
-                  <strong>Gather fast, actionable feedback from stakeholders</strong>
-                </li>
-                <li>
-                  <strong>Identify technical constraints early and adapt confidently</strong>
-                </li>
-              </ul>
-              <p className="text-[16px]">Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
-            </div>
-
-            {/* Right Column - Images */}
-            <div className="col-span-1 flex items-end">
-              <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 lg:mt-8">
-            <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-          </div>
-        </div>
-      </div>
-
-      {/* Light and Dark Mode Mockups */}
-      <div className="relative bg-green-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-            <div className="flex flex-col">
-              <ProjectSectionTitle dotColor="text-green-500">Dark Mode for Modern Use</ProjectSectionTitle>
-              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-              <p className="text-[16px]">
-                Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
-                <strong>modern platform expectations.</strong>
-              </p>
-            </div>
-            <div className="flex">
-              <Tabs defaultValue="dark" className="w-full gap-y-4 lg:gap-y-8">
-                <TabsList className="grid w-full grid-cols-2">
-                  <TabsTrigger value="light">Light Mode</TabsTrigger>
-                  <TabsTrigger value="dark">Dark Mode</TabsTrigger>
-                </TabsList>
-                <TabsContent value="light" className="flex justify-center">
-                  <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
-                </TabsContent>
-                <TabsContent value="dark" className="flex justify-center">
-                  <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
-                </TabsContent>
-              </Tabs>
-            </div>
-          </div>
-        </div>
-      </div>
+      </ProjectSection>
 
       {/* Mobile Mockups */}
-      <div className="relative bg-white text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
-            <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
-              <ProjectSectionTitle dotColor="text-green-500">Designing with Mobile in Mind</ProjectSectionTitle>
-              <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
-              <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
+      <ProjectSection bgClassName="bg-white" textClassName="text-black">
+        <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
+          <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
+            <ProjectSectionTitle dotColor="text-green-500">Designing with Mobile in Mind</ProjectSectionTitle>
+            <div className="border-t border-[#C1C1C1] mb-8 md:mb-12"></div>
+            <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
 
-              <p className="text-[16px] items-center">
-                Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
-                experience could <strong>translate to smaller screens with minimal rework.</strong>
-              </p>
-            </div>
-            <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
+            <p className="text-[16px] items-center">
+              Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
+              experience could <strong>translate to smaller screens with minimal rework.</strong>
+            </p>
           </div>
+          <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Typography Section */}
-      <div className="relative bg-[#212121] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-            Typography
-          </ProjectSectionTitle>
+      <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
+        <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+          Typography
+        </ProjectSectionTitle>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-            {/* Left Column - Large "Aa" Display */}
-            <div className="flex items-center justify-center">
-              <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          {/* Left Column - Large "Aa" Display */}
+          <div className="flex items-center justify-center">
+            <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
+          </div>
+
+          {/* Right Column - Typography Details */}
+          <div className="space-y-4 md:space-y-8">
+            {/* Typeface */}
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
+              <p className="text-[16px]">Inter</p>
             </div>
 
-            {/* Right Column - Typography Details */}
-            <div className="space-y-4 md:space-y-8">
-              {/* Typeface */}
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Typeface</h3>
-                <p className="text-[16px]">Inter</p>
-              </div>
-
-              {/* Weights */}
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
-                <div className="space-y-1 md:space-y-2">
-                  <p className="text-[16px] font-normal">Regular</p>
-                  <p className="text-[16px] font-semibold">Semi-Bold</p>
-                </div>
+            {/* Weights */}
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-gray-400 mb-2 md:mb-4">Weights</h3>
+              <div className="space-y-1 md:space-y-2">
+                <p className="text-[16px] font-normal">Regular</p>
+                <p className="text-[16px] font-semibold">Semi-Bold</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Colors Section */}
       <ProjectColorsSection
@@ -452,120 +436,114 @@ export default function MozillaPage() {
       />
 
       {/* Learning Section */}
-      <div className="relative bg-gray-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          {/* Title */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
+      <ProjectSection bgClassName="bg-gray-100" textClassName="text-black">
+        {/* Title */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
 
-            {/* Build Fast, Learn Faster */}
-            <div>
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Build Fast, Learn Faster</h3>
-                <p className="text-[16px]">
-                  This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
-                  feedback is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
-                </p>
-              </div>
+          {/* Build Fast, Learn Faster */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Build Fast, Learn Faster</h3>
+              <p className="text-[16px]">
+                This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world feedback
+                is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
+              </p>
             </div>
+          </div>
 
-            {/* Balancing Agility with Control */}
-            <div>
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Balancing Agility with Control</h3>
-                <p className="text-[16px]">
-                  One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
-                  learn fast while keeping scope focused and risk manageable at each stage.
-                </p>
-              </div>
+          {/* Balancing Agility with Control */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Balancing Agility with Control</h3>
+              <p className="text-[16px]">
+                One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to learn
+                fast while keeping scope focused and risk manageable at each stage.
+              </p>
             </div>
+          </div>
 
-            {/* I Am Not the User */}
-            <div>
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">I Am Not the User</h3>
-                <p className="text-[16px]">
-                  While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
-                  user—and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
-                  knowing what to test next and why.
-                </p>
-              </div>
+          {/* I Am Not the User */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">I Am Not the User</h3>
+              <p className="text-[16px]">
+                While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user—and
+                assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and knowing what
+                to test next and why.
+              </p>
             </div>
+          </div>
 
-            {/* Designing for Trust */}
-            <div>
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
-                <p className="text-[16px]">
-                  Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
-                  features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
-                </p>
-              </div>
+          {/* Designing for Trust */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Designing for Trust</h3>
+              <p className="text-[16px]">
+                Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
+                features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+              </p>
             </div>
+          </div>
 
-            {/* Staying Curious and Outcome-Oriented */}
-            <div>
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
-                <p className="text-[16px]">
-                  Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
-                </p>
-              </div>
+          {/* Staying Curious and Outcome-Oriented */}
+          <div>
+            <div className="border-t border-[#C1C1C1] pt-2">
+              <h3 className="text-2xl font-regular text-black mb-2 md:mb-4">Staying Curious and Outcome-Oriented</h3>
+              <p className="text-[16px]">
+                Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Figma Exploration Section */}
-      <div className="relative bg-primary text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* Left Column - Text Content */}
-            <div>
-              <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-                Explore my portfolio in Figma
-              </ProjectSectionTitle>
+      <ProjectSection bgClassName="bg-primary" textClassName="text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Left Column - Text Content */}
+          <div>
+            <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+              Explore my portfolio in Figma
+            </ProjectSectionTitle>
 
-              <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
-              <Link
-                href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
-                className="inline-flex items-center bg-green-300 hover:bg-green-500 text-black px-6 py-3 rounded-lg transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check Out Figma
-                <ArrowUpRight className="ml-2 w-5 h-5" />
-              </Link>
-            </div>
+            <p className="text-[16px] mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+            <Link
+              href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1"
+              className="inline-flex items-center bg-green-300 hover:bg-green-500 text-black px-6 py-3 rounded-lg transition-all"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Check Out Figma
+              <ArrowUpRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
 
-            {/* Right Column - iPhone Image */}
-            <div className="flex justify-center">
-              <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
-            </div>
+          {/* Right Column - iPhone Image */}
+          <div className="flex justify-center">
+            <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
           </div>
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Playground Section */}
-      <div className="relative bg-gray-100 text-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <div className="flex col-span-2 justify-center items-center">
-              <ProjectSectionTitle dotColor="text-green-500">Previous Explorations</ProjectSectionTitle>
-            </div>
-            <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-7.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-8.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-            <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+      <ProjectSection bgClassName="bg-gray-100" textClassName="text-black">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="flex col-span-2 justify-center items-center">
+            <ProjectSectionTitle dotColor="text-green-500">Previous Explorations</ProjectSectionTitle>
           </div>
+          <Image src="/mozilla-playground-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-4.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-5.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-6.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-7.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-8.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-9.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+          <Image src="/mozilla-playground-10.jpg" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
         </div>
-      </div>
+      </ProjectSection>
 
       {/* Contact Section */}
       <CtaSection />
