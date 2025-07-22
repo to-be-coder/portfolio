@@ -203,35 +203,23 @@ export default function VisionTrackPage() {
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Target Customers */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
-              </div>
+            <VerticalBlock title="Target Customers" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>Startups in the US.</p>
-            </div>
+            </VerticalBlock>
             {/* Pain Points */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Assumed)</h3>
-              </div>
+            <VerticalBlock title="Pain Points (Assumed)" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
-            </div>
+            </VerticalBlock>
             {/* Proposed Solution */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Proposed Solution</h3>
-              </div>
+            <VerticalBlock title="Proposed Solution" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
-            </div>
+            </VerticalBlock>
           </div>
 
           {/* Why we chose this hypothesis */}
-          <div className="mt-8 md:mt-12 mb-8 md:mb-12">
-            <div className="border-t border-[#C1C1C1] pt-2">
-              <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Why we chose this hypothesis?</h3>
-            </div>
+          <VerticalBlock title="Why we chose this hypothesis?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
             <p>I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.</p>
-          </div>
+          </VerticalBlock>
         </div>
 
         <div className="mt-16 lg:mt-32">
@@ -299,17 +287,11 @@ export default function VisionTrackPage() {
           {/* Grid for 3 columns */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Target Customers */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Target Customers</h3>
-              </div>
+            <VerticalBlock title="Target Customers" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>SMB in the US (50-200 people).</p>
-            </div>
+            </VerticalBlock>
             {/* Pain Points */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Pain Points (Identified)</h3>
-              </div>
+            <VerticalBlock title="Pain Points (Identified)" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <ul className="list-disc list-inside">
                   <li> High-level company goals become diluted or lost in translation.</li>
@@ -317,16 +299,13 @@ export default function VisionTrackPage() {
                   <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
                 </ul>
               </div>
-            </div>
+            </VerticalBlock>
             {/* Proposed Solution */}
-            <div className="space-y-4">
-              <div className="border-t border-[#C1C1C1] pt-2">
-                <h3 className="text-2xl font-regular text-[#a1a1a1] mb-2 md:mb-4">Potential Solution</h3>
-              </div>
+            <VerticalBlock title="Potential Solution" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
                 VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback indicators.
               </p>
-            </div>
+            </VerticalBlock>
           </div>
         </div>
 
