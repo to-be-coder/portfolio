@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { thought } = params
+  const { thought } = await params
   const pageData = await getPageByPath(thought)
 
   if (!pageData) {
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ThoughtPage({ params }: PageProps) {
-  const { thought } = params
+  const { thought } = await params
 
   // Get the page data from Notion
   const pageData = await getPageByPath(thought)

@@ -1,8 +1,5 @@
 import { NotionPosts } from '@/components/notion'
 import CtaSection from '@/components/ui/cta'
-import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
 
 // Filter tabs for article categories
 // const filterTabs = [
@@ -53,29 +50,6 @@ export default function ThoughtsPage() {
 
         {/* Articles grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.map((article) => (
-            <Link key={article.id} href={article.url} className="group flex flex-col transition-all duration-200 hover:scale-[1.02] cursor-pointer">
-              {/* Article image */}
-              <div className="relative aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
-                <Image src={article.image} alt={article.title} fill className="object-cover" />
-              </div>
-
-              {/* Category badge */}
-              <div className="mb-2">
-                <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">
-                  {article.category === 'ai' ? 'AI' : article.category === 'startups' ? 'Startups' : article.category === 'design' ? 'Design' : 'Others'}
-                </span>
-              </div>
-
-              {/* Article title */}
-              <h2 className="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">{article.title}</h2>
-
-              {/* Read more link */}
-              <div className="inline-flex items-center text-blue-500 group-hover:text-blue-700 mt-auto">
-                Read more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-          ))}
           <NotionPosts />
         </div>
       </div>
