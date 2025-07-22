@@ -1,3 +1,4 @@
+import ProjectColorsSection from '@/components/project-colors-section'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
@@ -463,55 +464,19 @@ export default function MozillaPage() {
       </div>
 
       {/* Colors Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-8 mb-8">
-          {/* Title */}
-          <div>
-            <ProjectSectionTitle dotColor="text-green-500">Main Colors</ProjectSectionTitle>
-          </div>
-
-          {/* Primary Colors */}
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#BBF3C0] rounded-lg flex items-end p-4">
-              <span>#BBF3C0</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#09320D] rounded-lg flex items-end p-4">
-              <span className="text-white">#09320D</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#FF2E2E] rounded-lg flex items-end p-4">
-              <span className="text-white">#FF2E2E</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Secondary Colors Row */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#FFFFFF] rounded-lg flex items-end p-4 border border-gray-200">
-              <span>#FFFFFF</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#F7F7F8] rounded-lg flex items-end p-4 border border-gray-200">
-              <span>#F7F7F8</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#191919] rounded-lg flex items-end p-4">
-              <span className="text-white">#191919</span>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <div className="h-48 bg-[#000000] rounded-lg flex items-end p-4">
-              <span className="text-white">#000000</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProjectColorsSection
+        title="Main Colors"
+        dotColor="text-green-500"
+        colors={[
+          { hex: '#BBF3C0', textClass: 'text-black' },
+          { hex: '#09320D', textClass: 'text-white' },
+          { hex: '#FF2E2E', textClass: 'text-white' },
+          { hex: '#FFFFFF', textClass: 'text-black', border: true },
+          { hex: '#F7F7F8', textClass: 'text-black', border: true },
+          { hex: '#191919', textClass: 'text-white' },
+          { hex: '#000000', textClass: 'text-white' },
+        ]}
+      />
 
       {/* Learning Section */}
       <div className="relative bg-gray-100 text-black">
