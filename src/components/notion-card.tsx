@@ -1,3 +1,7 @@
+import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+
 type Props = {
   title: string
   image?: string
@@ -5,10 +9,6 @@ type Props = {
   url: string
   description?: string
 }
-
-import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
 
 export default function NotionCard({ title, image, category, url }: Props) {
   return (
@@ -23,7 +23,7 @@ export default function NotionCard({ title, image, category, url }: Props) {
 
       {/* Article title */}
       <h2 className="text-xl font-bold">{title}</h2>
-      {/* <p className="text-sm text-gray-500 mb-2">{description}</p> */}
+
       {/* Read more link */}
       <div className="inline-flex items-center text-secondary group-hover:text-secondary mt-auto">
         Read more <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
