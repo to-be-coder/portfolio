@@ -76,7 +76,7 @@ export default async function ThoughtPage({ params }: PageProps) {
     <main>
       <section className="container mx-auto px-4 py-8 max-w-3xl">
         {/* Article Header */}
-        <div className="mb-12 px-6">
+        <div className="my-12 px-6">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{metadata.title}</h1>
 
           <div className="border-b border-gray-200 w-full" />
