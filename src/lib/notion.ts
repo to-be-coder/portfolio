@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 import dynamic from 'next/dynamic'
 import { NotionAPI } from 'notion-client'
 
-// Type for Notion page properties
+// Type definitions
 type NotionPageProperties = {
   Date: { date: { start: string } | null }
   Image: { files: Array<{ file: { url: string } }> }
@@ -19,117 +19,133 @@ type NotionPage = DatabaseObjectResponse & {
   properties: NotionPageProperties
 }
 
+export type ProcessedPageData = {
+  date?: string
+  title?: string
+  path?: string
+  image?: string
+  subtitle?: string
+  description?: string
+  category?: string
+}
+
+export type PageWithContent = {
+  recordMap: any
+  pageData: ProcessedPageData
+}
+
+// Initialize clients
 export const notionX = new NotionAPI()
 
 export const notionOfficialClient = new Client({
   auth: process.env.NOTION_API_KEY,
 })
 
+// Dynamic imports
 export const CodePlugin = dynamic(() => import('react-notion-x/build/third-party/code').then((m) => m.Code))
 
-export const getPageData = async (pages: QueryDatabaseResponse) => {
-  const data = pages.results.map((result) => {
+// Helper function to process page data
+const processPageData = (page: NotionPage): ProcessedPageData => {
+  return {
+    date: page.properties.Date.date ? dayjs(page.properties.Date.date.start).format('LL') : undefined,
+    image: page.properties.Image.files[0]?.file.url,
+    path: page.properties.Path.rich_text[0]?.plain_text,
+    title: page.properties.Name.title[0]?.plain_text,
+    subtitle: page.properties.Subtitle.rich_text[0]?.plain_text,
+    description: page.properties.Description.rich_text[0]?.plain_text,
+    category: page.properties.Category.select?.name,
+  }
+}
+
+// Helper function to get processed data from query response
+const getProcessedData = (pages: QueryDatabaseResponse): ProcessedPageData[] => {
+  return pages.results.map((result) => {
     const page = result as NotionPage
-    const date = page.properties.Date.date ? dayjs(page.properties.Date.date.start).format('LL') : undefined
-    const image = page.properties.Image.files[0]?.file.url
-    const path = page.properties.Path.rich_text[0]?.plain_text //.split('/').filter((part: string) => part)[0]
-    const title = page.properties.Name.title[0]?.plain_text
-    const subtitle = page.properties.Subtitle.rich_text[0]?.plain_text
-    const description = page.properties.Description.rich_text[0]?.plain_text
-    const category = page.properties.Category.select?.name
-    return {
-      date,
-      title,
-      path,
-      image,
-      subtitle,
-      description,
-      category,
-    }
+    return processPageData(page)
   })
-  return data
 }
 
-export const getPortfolioPages = async () => {
-  const data = await notionOfficialClient.databases.query({
-    database_id: process.env.NOTION_PAGES_DATABASE_ID!,
-    sorts: [
-      {
-        property: 'Date',
-        direction: 'descending',
+// Database queries
+export const getPortfolioPages = async (): Promise<ProcessedPageData[]> => {
+  try {
+    const data = await notionOfficialClient.databases.query({
+      database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+      sorts: [
+        {
+          property: 'Date',
+          direction: 'descending',
+        },
+      ],
+      filter: {
+        property: 'Type',
+        multi_select: {
+          contains: 'Portfolio',
+        },
       },
-    ],
-    filter: {
-      property: 'Type',
-      multi_select: {
-        contains: 'Portfolio',
-      },
-    },
-  })
+    })
 
-  return getPageData(data)
+    return getProcessedData(data)
+  } catch (error) {
+    console.error('Error fetching portfolio pages:', error)
+    return []
+  }
 }
 
-export const getArticles = async () => {
-  const data = await notionOfficialClient.databases.query({
-    database_id: process.env.NOTION_PAGES_DATABASE_ID!,
-    // sorts: [
-    //   {
-    //     property: 'Date',
-    //     direction: 'descending',
-    //   },
-    // ],
-    // filter: {
-    //   property: 'Type',
-    //   multi_select: {
-    //     contains: 'Article',
-    //   },
-    // },
-  })
-  return getPageData(data)
+export const getArticles = async (): Promise<ProcessedPageData[]> => {
+  try {
+    const data = await notionOfficialClient.databases.query({
+      database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+    })
+    return getProcessedData(data)
+  } catch (error) {
+    console.error('Error fetching articles:', error)
+    return []
+  }
 }
 
 // Get a specific page by its path
-export const getPageByPath = async (path: string) => {
-  const data = await notionOfficialClient.databases.query({
-    database_id: process.env.NOTION_PAGES_DATABASE_ID!,
-    filter: {
-      property: 'Path',
-      rich_text: {
-        equals: path,
+export const getPageByPath = async (path: string): Promise<PageWithContent | null> => {
+  try {
+    const data = await notionOfficialClient.databases.query({
+      database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+      filter: {
+        property: 'Path',
+        rich_text: {
+          equals: path,
+        },
       },
-    },
-  })
+    })
 
-  if (data.results.length === 0) {
+    if (data.results.length === 0) {
+      return null
+    }
+
+    const page = data.results[0] as NotionPage
+    const pageId = page.id
+
+    // Get the page content using notion-client
+    const recordMap = await notionX.getPage(pageId)
+
+    return {
+      recordMap,
+      pageData: processPageData(page),
+    }
+  } catch (error) {
+    console.error(`Error fetching page with path "${path}":`, error)
     return null
-  }
-
-  const page = data.results[0] as NotionPage
-  const pageId = page.id
-
-  // Get the page content using notion-client
-  const recordMap = await notionX.getPage(pageId)
-
-  return {
-    recordMap,
-    pageData: {
-      date: page.properties.Date.date ? dayjs(page.properties.Date.date.start).format('LL') : undefined,
-      image: page.properties.Image.files[0]?.file.url,
-      path: page.properties.Path.rich_text[0]?.plain_text,
-      title: page.properties.Name.title[0]?.plain_text,
-      subtitle: page.properties.Subtitle.rich_text[0]?.plain_text,
-      description: page.properties.Description.rich_text[0]?.plain_text,
-      category: page.properties.Category.select?.name,
-    },
   }
 }
 
 // Get all available paths for static generation
-export const getAllPaths = async () => {
-  const data = await notionOfficialClient.databases.query({
-    database_id: process.env.NOTION_PAGES_DATABASE_ID!,
-  })
+export const getAllPaths = async (): Promise<string[]> => {
+  try {
+    const data = await notionOfficialClient.databases.query({
+      database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+    })
 
-  return data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean)
+    return data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean) as string[]
+  } catch (error) {
+    console.error('Error fetching all paths:', error)
+    return []
+  }
 }
