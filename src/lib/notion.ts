@@ -3,6 +3,7 @@ import { DatabaseObjectResponse, QueryDatabaseResponse } from '@notionhq/client/
 import dayjs from 'dayjs'
 import dynamic from 'next/dynamic'
 import { NotionAPI } from 'notion-client'
+import { type ExtendedRecordMap } from 'notion-types'
 
 // Type definitions
 type NotionPageProperties = {
@@ -30,7 +31,7 @@ export type ProcessedPageData = {
 }
 
 export type PageWithContent = {
-  recordMap: any
+  recordMap: ExtendedRecordMap
   pageData: ProcessedPageData
 }
 

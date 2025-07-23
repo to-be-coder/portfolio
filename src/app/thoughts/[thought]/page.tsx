@@ -11,15 +11,6 @@ interface PageProps {
   }>
 }
 
-interface PageMetadata {
-  title?: string
-  description?: string
-  subtitle?: string
-  image?: string
-  category?: string
-  date?: string
-}
-
 const DEFAULT_METADATA = {
   title: 'Blog Post',
   description: 'A blog post from Jessica Cheng',
