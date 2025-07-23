@@ -7,7 +7,7 @@ type Post = {
   path: string
   image?: string
   subtitle: string
-  category: string
+  category?: string
 }
 
 export const NotionPosts = async () => {
@@ -16,7 +16,8 @@ export const NotionPosts = async () => {
   return (
     <>
       {posts.map(
-        (post: Post, index: number) => post.path && <NotionCard key={index} title={post.title} description={post.subtitle} url={post.path} category={post.category} image={post.image || ''} />
+        (post: Post, index: number) =>
+          post.path && <NotionCard key={index} title={post.title} description={post.subtitle} url={post.path} category={post.category || 'Uncategorized'} image={post.image || ''} />
       )}
     </>
   )

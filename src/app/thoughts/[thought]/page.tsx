@@ -6,9 +6,9 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     thought: string
-  }
+  }>
 }
 
 // Generate static params for all blog posts

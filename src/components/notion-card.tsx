@@ -3,14 +3,14 @@ type Props = {
   image?: string
   category: string
   url: string
-  description: string
+  description?: string
 }
 
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function NotionCard({ title, image, category, url, description }: Props) {
+export default function NotionCard({ title, image, category, url }: Props) {
   return (
     <Link href={`/thoughts/${url}`} className="group flex flex-col transition-all duration-200 hover:scale-[1.02] cursor-pointer">
       {/* Article image */}

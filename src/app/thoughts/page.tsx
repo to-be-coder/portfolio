@@ -10,16 +10,16 @@ import CtaSection from '@/components/ui/cta'
 //     { id: 'others', label: 'Others' },
 // ]
 
-// Sample article data
-const articles = [
-  {
-    id: 1,
-    title: 'The 10 minute LangChain crash course',
-    category: 'ai',
-    image: '/mozilla-cover.png',
-    url: '/articles/langchain-crash-course',
-  },
-]
+// Sample article data - commented out since not currently used
+// const articles = [
+//   {
+//     id: 1,
+//     title: 'The 10 minute LangChain crash course',
+//     category: 'ai',
+//     image: '/mozilla-cover.png',
+//     url: '/articles/langchain-crash-course',
+//   },
+// ]
 
 export default function ThoughtsPage() {
   //   const [activeFilter, setActiveFilter] = useState('all')
@@ -34,7 +34,7 @@ export default function ThoughtsPage() {
           <p className="text-gray-600 text-lg mb-2">On the Art of Product</p>
           <h1 className="text-5xl md:text-6xl font-bold text-black">Thoughts</h1>
         </div>
-        <div className="flex overflow-x-auto space-x-4 pb-0 mb-8 border-b border-gray-100"></div>
+        {/* <div className="flex overflow-x-auto space-x-4 pb-0 mb-8 border-b border-gray-100"></div> */}
         {/* Filter tabs */}
         {/* <div className="flex overflow-x-auto space-x-4 pb-0 mb-8 border-b border-gray-100">
           {filterTabs.map((tab) => (
