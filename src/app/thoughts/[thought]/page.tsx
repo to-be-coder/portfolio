@@ -11,6 +11,22 @@ interface PageProps {
   }>
 }
 
+interface PageMetadata {
+  title?: string
+  description?: string
+  subtitle?: string
+  image?: string
+  category?: string
+  date?: string
+}
+
+const DEFAULT_METADATA = {
+  title: 'Blog Post',
+  description: 'A blog post from Jessica Cheng',
+  author: 'Jessica Cheng',
+  profileImage: '/profile-small.jpg',
+} as const
+
 // Generate static params for all blog posts
 export async function generateStaticParams() {
   const paths = await getAllPaths()
@@ -32,13 +48,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const { pageData: metadata } = pageData
+  const title = metadata.title || DEFAULT_METADATA.title
+  const description = metadata.description || metadata.subtitle || DEFAULT_METADATA.description
 
   return {
-    title: metadata.title || 'Blog Post',
-    description: metadata.description || metadata.subtitle || 'A blog post from Jessica Cheng',
+    title,
+    description,
     openGraph: {
-      title: metadata.title || 'Blog Post',
-      description: metadata.description || metadata.subtitle || 'A blog post from Jessica Cheng',
+      title,
+      description,
       images: metadata.image ? [metadata.image] : [],
     },
   }
@@ -46,8 +64,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ThoughtPage({ params }: PageProps) {
   const { thought } = await params
-
-  // Get the page data from Notion
   const pageData = await getPageByPath(thought)
 
   if (!pageData) {
@@ -58,42 +74,21 @@ export default async function ThoughtPage({ params }: PageProps) {
 
   return (
     <main>
-      {/* Header Section */}
       <section className="container mx-auto px-4 py-8 max-w-3xl">
-        {/* <Link href="/thoughts" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Thoughts
-        </Link> */}
-
         {/* Article Header */}
         <div className="mb-12 px-6">
-          {/* {metadata.category && (
-            <div className="mb-4">
-              <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">{metadata.category}</span>
-            </div>
-          )} */}
-
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{metadata.title}</h1>
 
-          <div className="border-b border-gray-200 w-full"></div>
+          <div className="border-b border-gray-200 w-full" />
+
           <div className="flex items-center gap-2 mt-3">
-            <Image src={'/profile-small.jpg'} alt={'Jessica Cheng'} width={30} height={30} className="rounded-full object-cover aspect-square" />
-            <p className="text-sm text-gray-500">Jessica Cheng</p>
+            <Image src={DEFAULT_METADATA.profileImage} alt={DEFAULT_METADATA.author} width={30} height={30} className="rounded-full object-cover aspect-square" />
+            <p className="text-sm text-gray-500">{DEFAULT_METADATA.author}</p>
           </div>
-
-          {/* {metadata.subtitle && <p className="text-xl text-gray-600 mb-4">{metadata.subtitle}</p>} */}
-
-          {/* {metadata.date && <p className="text-sm text-gray-500">{metadata.date}</p>} */}
         </div>
-        {/* Featured Image */}
-        {/* {metadata.image && (
-          <div className="relative aspect-video mb-12 rounded-lg overflow-hidden">
-            <Image src={metadata.image} alt={metadata.title || 'Featured image'} fill className="object-cover" />
-          </div>
-        )} */}
 
         {/* Notion Content */}
-        <div className="min-h-screen ">
+        <div className="min-h-screen">
           <NotionContent recordMap={recordMap} fullPage={false} darkMode={false} />
         </div>
       </section>
