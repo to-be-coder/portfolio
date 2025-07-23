@@ -96,6 +96,12 @@ export const getArticles = async (): Promise<ProcessedPageData[]> => {
   try {
     const data = await notionOfficialClient.databases.query({
       database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+      filter: {
+        property: 'Visibility',
+        select: {
+          equals: 'Visible',
+        },
+      },
     })
     return getProcessedData(data)
   } catch (error) {
