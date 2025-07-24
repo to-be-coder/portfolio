@@ -37,7 +37,7 @@ export default function Page() {
           </div>
         ) : (
           messages.map((message) => (
-            <div key={message.id} className="mb-4">
+            <div key={message.id} className="mb-4 h-full">
               {message.role === 'user' ? (
                 <div className="flex justify-end w-full">
                   <div className="bg-gray-800 border border-gray-200 rounded-lg p-4 w-[50%]">

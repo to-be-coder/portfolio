@@ -16,7 +16,7 @@ try {
     // Combine the system string with the rest of the context
     let context = ''
     if (json.person) {
-      context = `\n\nContext about Jessica Cheng and her work: ${JSON.stringify(json.person)}`
+      context = `\n\nDon't hallucinate. Here is some information about Jessica Cheng and her work: ${JSON.stringify(json.person)}`
     }
     systemMessage = json.system + context
   }
