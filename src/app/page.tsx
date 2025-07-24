@@ -1,5 +1,4 @@
 'use client'
-import Chat from '@/components/chat'
 import HomeHeroSection from '@/components/home-hero-section'
 import { Badge } from '@/components/ui/badge'
 import CtaSection from '@/components/ui/cta'
@@ -65,13 +64,13 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <HomeHeroSection />
-      <Chat />
+
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
         <div
           ref={mozillaRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02] 
             ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/mozilla" className="w-full h-full">

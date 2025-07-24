@@ -15,23 +15,42 @@ export default function Page() {
   const [input, setInput] = useState('')
 
   return (
-    <div className="flex flex-col w-full max-w-md py-4 mx-auto stretch bg-gray-50/60 px-4 rounded-lg border border-gray-200 justify-between h-full">
+    <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-lg border border-gray-200 justify-between h-full min-h-[70vh]">
       <div>
-        {messages.map((message) => (
-          <div key={message.id} className="mb-4">
-            {message.role === 'user' ? (
-              <div className="flex justify-end w-full">
-                <div className="bg-gray-800 border border-gray-200 rounded-lg p-4 w-[50%]">
-                  <div className="text-white">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
-                </div>
-              </div>
-            ) : (
-              <div className="p-2">
-                <div className="">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
-              </div>
-            )}
+        {messages.length === 0 ? (
+          <div className="relative w-full h-[60vh] mx-auto">
+            {/* Background Video */}
+            <video className="absolute top-8 left-1/2 -translate-x-1/2 w-auto h-full object-cover -z-10" src="/videos/background.mp4" autoPlay muted loop playsInline />
+
+            {/* Optional Overlay */}
+            {/* <div className="absolute top-0 left-0 w-full h-full bg-black/40 -z-10" /> */}
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-15">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight text-center text-black/70">
+                Jessica Cheng
+                <br />a <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent font-bold">product designer </span>
+                who <span className="bg-gradient-to-r from-sky-400 to-blue-600  bg-clip-text text-transparent font-bold">codes</span>
+              </h1>
+            </div>
           </div>
-        ))}
+        ) : (
+          messages.map((message) => (
+            <div key={message.id} className="mb-4">
+              {message.role === 'user' ? (
+                <div className="flex justify-end w-full">
+                  <div className="bg-gray-800 border border-gray-200 rounded-lg p-4 w-[50%]">
+                    <div className="text-white">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
+                  </div>
+                </div>
+              ) : (
+                <div className="p-2">
+                  <div className="">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
+                </div>
+              )}
+            </div>
+          ))
+        )}
       </div>
       <form
         onSubmit={(e) => {
