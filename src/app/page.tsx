@@ -104,12 +104,12 @@ export default function Home() {
         {/* Project Vision Track */}
         <div
           ref={visionTrackRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 md:pt-10 h-[500px] transition-all duration-300 hover:scale-[1.02] 
             ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80'}`}
         >
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'visionTrack' ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
                 </h3>
