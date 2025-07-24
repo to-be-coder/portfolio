@@ -25,6 +25,7 @@
     "dayjs": "^1.11.13",
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.465.0",
+    "motion": "^12.23.9",
     "next": "15.0.3",
     "notion-client": "^7.4.2",
     "prismjs": "^1.29.0",
