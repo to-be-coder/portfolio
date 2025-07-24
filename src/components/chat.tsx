@@ -17,8 +17,8 @@ export default function Page() {
 
   return (
     <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-3xl border border-gray-200 justify-between h-[70vh]">
-      <div className="w-3xl mx-auto">
-        {messages.length === 0 ? (
+      {messages.length === 0 ? (
+        <div className="w-3xl mx-auto">
           <div className="relative w-full h-[50vh] mx-auto">
             {/* Background Video */}
             <video className="absolute top-8 left-1/2 -translate-x-1/2 w-auto h-full object-cover -z-10" src="/videos/background.mp4" autoPlay muted loop playsInline />
@@ -35,9 +35,11 @@ export default function Page() {
               </h1>
             </div>
           </div>
-        ) : (
-          messages.map((message) => (
-            <div key={message.id} className="mb-4 h-full">
+        </div>
+      ) : (
+        <div className="w-3xl mx-auto overflow-y-auto">
+          {messages.map((message) => (
+            <div key={message.id} className="mb-4">
               {message.role === 'user' ? (
                 <div className="flex justify-end w-full">
                   <div className="bg-gray-800 border border-gray-200 rounded-lg p-4 w-[50%]">
@@ -50,9 +52,10 @@ export default function Page() {
                 </div>
               )}
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
+
       <form
         onSubmit={(e) => {
           e.preventDefault()
