@@ -2,6 +2,7 @@
 
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
+import { ArrowUp } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Page() {
@@ -36,11 +37,25 @@ export default function Page() {
             setInput('')
           }
         }}
+        className="flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-lg p-4 flex-col"
       >
-        <input value={input} onChange={(e) => setInput(e.target.value)} disabled={status !== 'ready'} placeholder="Say something..." />
-        <button type="submit" disabled={status !== 'ready'}>
-          Submit
-        </button>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          disabled={status !== 'ready'}
+          placeholder="Say something..."
+          className="flex-1 w-full  px-4 py-2 text-gray-800 placeholder-gray-400  disabled:bg-gray-50 disabled:cursor-not-allowed"
+        />
+        <div className="flex justify-end gap-2 w-full">
+          <button
+            type="submit"
+            disabled={status !== 'ready'}
+            className="ml-1 rounded-full bg-gray-800 p-2 text-white shadow-md hover:bg-gray-700 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed flex items-center justify-center transition-colors duration-150"
+            aria-label="Send"
+          >
+            <ArrowUp />
+          </button>
+        </div>
       </form>
     </div>
   )
