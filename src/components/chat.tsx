@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-lg border border-gray-200 justify-between h-full min-h-[70vh]">
-      <div>
+      <div className="w-3xl mx-auto">
         {messages.length === 0 ? (
           <div className="relative w-full h-[60vh] mx-auto">
             {/* Background Video */}
@@ -60,7 +60,7 @@ export default function Page() {
             setInput('')
           }
         }}
-        className="flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-lg p-4 flex-col"
+        className="flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-lg p-4 flex-col w-3xl mx-auto"
       >
         <Input variant="chat" value={input} onChange={(e) => setInput(e.target.value)} disabled={status !== 'ready'} placeholder="Ask me about Jessica..." className="flex-1 w-full text-gray-800" />
         <div className="flex justify-end gap-2 w-full">
