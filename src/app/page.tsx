@@ -1,4 +1,5 @@
 'use client'
+import Chat from '@/components/chat'
 import HomeHeroSection from '@/components/home-hero-section'
 import { Badge } from '@/components/ui/badge'
 import CtaSection from '@/components/ui/cta'
@@ -64,6 +65,7 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <HomeHeroSection />
+      <Chat />
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
