@@ -66,7 +66,7 @@ export default function Home() {
       <HomeHeroSection />
 
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-10 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-8 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
         <div
           ref={mozillaRef}
