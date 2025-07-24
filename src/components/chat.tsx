@@ -61,7 +61,7 @@ export default function Page() {
             setInput('')
           }
         }}
-        className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-lg p-4 flex-col w-3xl mx-auto"
+        className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-4 flex-col w-3xl mx-auto"
       >
         <BorderBeam duration={4} size={180} className="from-transparent via-secondary to-transparent" />
         <Input variant="chat" value={input} onChange={(e) => setInput(e.target.value)} disabled={status !== 'ready'} placeholder="Ask me about Jessica..." className="flex-1 w-full text-gray-800" />
