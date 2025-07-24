@@ -3,7 +3,7 @@
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 import { ArrowUp } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BorderBeam } from './magicui/border-beam'
 import { Input } from './ui/input'
 
@@ -14,6 +14,16 @@ export default function Page() {
     }),
   })
   const [input, setInput] = useState('')
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTo({
+        top: messagesEndRef.current.scrollHeight,
+        behavior: 'smooth',
+      })
+    }
+  }, [messages])
 
   return (
     <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-3xl border border-gray-200 justify-between h-[70vh]">
@@ -37,7 +47,7 @@ export default function Page() {
           </div>
         </div>
       ) : (
-        <div className="w-3xl mx-auto overflow-y-auto">
+        <div className="w-3xl mx-auto overflow-y-auto" ref={messagesEndRef}>
           {messages.map((message) => (
             <div key={message.id} className="mb-4">
               {message.role === 'user' ? (
