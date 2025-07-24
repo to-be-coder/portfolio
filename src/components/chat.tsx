@@ -16,10 +16,10 @@ export default function Page() {
   const [input, setInput] = useState('')
 
   return (
-    <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-lg border border-gray-200 justify-between h-full min-h-[70vh]">
+    <div className="flex w-full flex-col py-4 stretch bg-gray-50/60 px-4 rounded-3xl border border-gray-200 justify-between h-[70vh]">
       <div className="w-3xl mx-auto">
         {messages.length === 0 ? (
-          <div className="relative w-full h-[60vh] mx-auto">
+          <div className="relative w-full h-[50vh] mx-auto">
             {/* Background Video */}
             <video className="absolute top-8 left-1/2 -translate-x-1/2 w-auto h-full object-cover -z-10" src="/videos/background.mp4" autoPlay muted loop playsInline />
 
