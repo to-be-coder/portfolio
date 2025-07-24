@@ -15,9 +15,16 @@ export default function Page() {
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages.map((message) => (
-        <div key={message.id}>
-          {message.role === 'user' ? 'User: ' : 'AI: '}
-          {message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}
+        <div key={message.id} className="mb-4">
+          {message.role === 'user' ? (
+            <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div className="text-gray-700">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
+            </div>
+          ) : (
+            <div className="p-2">
+              <div className="text-gray-700">{message.parts.map((part, index) => (part.type === 'text' ? <span key={index}>{part.text}</span> : null))}</div>
+            </div>
+          )}
         </div>
       ))}
 
