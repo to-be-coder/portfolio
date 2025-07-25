@@ -79,6 +79,7 @@ const ProjectCard = ({ item, showDetails = false }: ProjectCardProps) => {
 
   if (showDetails) {
     return (
+      // change this to Link component when we use in a real page
       <div className="block cursor-pointer">
         <div className="p-4 relative aspect-square group" style={{ backgroundColor: bgColor }}>
           <div className="flex flex-col h-full">
@@ -102,6 +103,7 @@ const ProjectCard = ({ item, showDetails = false }: ProjectCardProps) => {
   }
 
   return (
+    // change this to Link component when we use in a real page
     <div className="block cursor-pointer">
       <div className="p-2 relative  aspect-none sm:aspect-square">
         <div className="flex justify-between items-end h-full">
