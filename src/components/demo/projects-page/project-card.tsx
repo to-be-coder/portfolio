@@ -1,6 +1,5 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 
 export interface PortfolioItemType {
@@ -22,7 +21,7 @@ export const portfolioItems: PortfolioItemType[] = [
     name: 'Thoughtful',
     href: '/ui-templates/projects-page',
     bgColor: '#FF66D4',
-    image: '/demo-logo-thoughtful.svg',
+    image: '/demo-logo-1.svg',
     tags: ['Co-Founder'],
   },
   {
@@ -76,11 +75,12 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ item, showDetails = false }: ProjectCardProps) => {
-  const { id, name, bgColor, image, tags, href } = item
+  const { id, name, bgColor, image, tags } = item
 
   if (showDetails) {
     return (
-      <Link href={href} className="block">
+      // change this to Link component when we use in a real page
+      <div className="block cursor-pointer">
         <div className="p-4 relative aspect-square group" style={{ backgroundColor: bgColor }}>
           <div className="flex flex-col h-full">
             <div className="flex-1 flex items-center justify-center">
@@ -98,19 +98,20 @@ const ProjectCard = ({ item, showDetails = false }: ProjectCardProps) => {
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     )
   }
 
   return (
-    <Link href={href} className="block">
+    // change this to Link component when we use in a real page
+    <div className="block cursor-pointer">
       <div className="p-2 relative  aspect-none sm:aspect-square">
         <div className="flex justify-between items-end h-full">
           <h3 className="text-2xl font-medium">{name}</h3>
           <span className="text-3xl md:text-4xl font-medium">{String(id).padStart(2, '0')}</span>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 

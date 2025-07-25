@@ -1,5 +1,6 @@
 'use client'
 import HomeHeroSection from '@/components/home-hero-section'
+import { Badge } from '@/components/ui/badge'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -63,12 +64,13 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <HomeHeroSection />
+
       {/* Projects Section */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-20 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-8 mb-8 lg:mb-16 space-y-4 md:space-y-8" id="projects">
         {/* Mozilla */}
         <div
           ref={mozillaRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02] 
             ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/mozilla" className="w-full h-full">
@@ -89,12 +91,10 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Designed a privacy-first AI assistant from the ground-up.</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>AI Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>App Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>Prototyping</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-gray-800 whitespace-nowrap`}>
-                    Transparency and Trust
-                  </span>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>AI Design</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>App Design</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Prototyping</Badge>
+                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Transparency and Trust</Badge>
                 </div>
               </div>
             </div>
@@ -104,27 +104,23 @@ export default function Home() {
         {/* Project Vision Track */}
         <div
           ref={visionTrackRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 h-[500px] transition-all duration-300 hover:scale-[1.02] 
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm pl-8 pt-8 md:pt-10 h-[500px] transition-all duration-300 hover:scale-[1.02] 
             ${activeSection === 'visionTrack' ? 'bg-blue-50' : 'bg-gray-100/80'}`}
         >
           <a href="/vision-track" className="w-full h-full md:flex md:flex-col flex-space-between">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 p-8 lg:self-start">
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'visionTrack' ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
                 </h3>
                 <p className="text-lg">Competitive analysis and user interviews for a B2B SaaS startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UX Research</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    Competitive Analysis
-                  </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    User Interviews
-                  </span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>User Personas</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>B2B</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>SaaS</span>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>UX Research</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>Competitive Analysis</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>User Interviews</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>User Personas</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>B2B</Badge>
+                  <Badge className={`${activeSection === 'visionTrack' ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
                 </div>
               </div>
               <div className="mt-0 lg:w-2/3 h-full flex items-end justify-end absolute bottom-0 right-0 lg:relative">
@@ -171,44 +167,14 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Designed and developed a mobile-first landing page for an AI ed-tech startup</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>UI Design</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs  text-black whitespace-nowrap`}>Landing Page</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>
-                    Responsive Design
-                  </span>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>UI Design</Badge>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>Landing Page</Badge>
+                  <Badge className={`${activeSection === 'lilypad' ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
                 </div>
               </div>
             </div>
           </a>
         </div>
-
-        {/* Thoughtful */}
-
-        {/* <div className="group relative overflow-hidden rounded-3xl bg-gray-100/80 backdrop-blur-sm p-8 h-[500px] transition-transform duration-300 hover:scale-[1.02] group">
-          <a href="/thoughtful" className="w-full h-full">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-blue-600 group-hover:bg-clip-text group-hover:text-transparent">Thoughtful</h3>
-                <p className="text-lg">Coming Soon</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">UI Design</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Landing Page</span>
-                  <span className="inline-block rounded-sm bg-gray-200 px-4 py-1 text-sm text-black whitespace-nowrap">Responsive Design</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-auto">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/thoughtful-cover.png"
-                    alt="Thoughtful Project"
-                    className="rounded-lg object-contain lg:object-contain w-full h-full"
-                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
-                  />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div> */}
 
         {/* Other Fun Works */}
         <div
@@ -224,8 +190,8 @@ export default function Home() {
                 </h3>
                 <p className="text-lg">Camping and photography</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Photography</span>
-                  <span className={`inline-block rounded-full ${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} px-4 py-1.5 text-xs text-black whitespace-nowrap`}>Camping</span>
+                  <Badge className={`${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} `}>Photography</Badge>
+                  <Badge className={`${activeSection === 'hobby' ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
                 </div>
               </div>
               <div className="flex items-center justify-center mt-8 lg:mt-0 lg:w-2/3">

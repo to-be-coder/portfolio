@@ -1,9 +1,5 @@
-import LoginDemo from '@/components/demo/log-in/login-demo'
+import ProjectsPageDemo from '@/components/demo/projects-page/projects-page-demo'
 
 export default function TestDemoPage() {
-  return (
-    <div className="h-screen flex border-2 border-red-500">
-      <LoginDemo />
-    </div>
-  )
+  return <ProjectsPageDemo />
 }

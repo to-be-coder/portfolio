@@ -1,0 +1,154 @@
+{
+  "person": {
+    "name": "Jessica Cheng",
+    "role": "Design Engineer",
+    "about": {
+      "summary": "Jessica Cheng is a product designer with a background in psychology and front-end development. She's passionate about designing digital experiences that feel intuitive and reduce friction. Jessica specializes in early-stage product discovery, rapid prototyping, and translating ambiguous ideas into clear, scalable UX.",
+      "approach": {
+        "philosophy": "Empathy-driven and outcome-oriented. Jessica brings structure to messy problems, aligning teams quickly and iterating through constant feedback.",
+        "influences": ["Background in psychology", "2+ years volunteering in hospitals — active listening & empathy", "Hybrid design-engineering fluency"],
+        "how_she_helps": "Helps early-stage teams turn ambiguity into clarity. Brings a blend of product strategy, hands-on UX, and lightweight prototyping to ship fast across web and mobile."
+      },
+      "interview": {
+        "owning_end_to_end": "Yes, I've owned product features end-to-end, especially in early-stage and self-directed projects where I lead from concept to deployment. For example, in a SaaS startup I co-founded, I handled everything from market research and user interviews to designing the product experience and building the front-end using React and TypeScript. We shipped the MVP in under four months, including onboarding, payments, and client communication flows. I also designed and built my personal portfolio from scratch. I designed the system in Figma, developed it using Next.js, TypeScript, and Tailwind CSS, and used Notion as the database for my article page, pulling structured content directly into the site. I deployed it with Vercel and recently integrated an AI chat interface using the Vercel AI SDK, connected to a structured JSON system that lets users ask questions about my work. The site is fully responsive and optimized for both mobile and desktop. I specialize in the design to code layer and focus on UX, UI, and front-end implementation.",
+        "complex_ui": "You could probably get a better sense by just seeing it in action. Here's the Figma file: https://www.figma.com/design/JHavp12nNcrFtzaat7Gred/Demo--Don-t-Change-?node-id=0-1&t=aFHj7enrumPYtwYB-1. And the live page: https://www.jessicacheng.studio/test-demo. It looks simple at first, but there's actually a lot going on behind the scenes. I designed and built this layout from scratch using a mix of grid and flexbox. The challenge was making everything line up cleanly across different screen sizes, especially with the asymmetrical layout and how elements collapse from desktop to mobile. Some rows shift between one and two columns depending on the screen width, and I had to make sure spacing and alignment still felt intentional. I tested a lot of that directly in the browser to make sure it responded the way I wanted. Since I handled both the design and front-end, I could move quickly between ideas and tweaks without back-and-forth. It made it easier to balance visual precision with what's actually realistic to build and maintain.",
+        "user_needs_process": "When I'm designing a product, I start by understanding both user needs and stakeholder goals. I usually begin by learning the existing product, studying the market landscape, and figuring out what's working and what's not. This helps me avoid reinventing the wheel and quickly spot gaps or opportunities. Sometimes founders or product leads already have research and a clear sense of what matters. In those cases, I work closely with them to stay aligned. If there isn't much research, I'll talk to users or review behavior using tools like Hotjar to ground the work in real needs. Once we have a clear direction, I focus on alignment. I build relationships early with engineers, PMs, and researchers to make sure we're on the same page about the problem we're solving and what success looks like. I share early concepts, gather feedback, and adjust as we go. I've seen how complex UIs can take up too much time and effort, especially when teams try to do everything up front without knowing if the idea actually works. I usually start with the simplest version that solves the core problem, get it in front of people, and then refine the design once we know it's worth investing in. Since I also write front-end code, I design with implementation in mind from the beginning. That helps me move faster, reduce unnecessary complexity, and make sure the final product holds up in production.",
+        "technical_background": "I've spent the last 3 years focused on frontend engineering, designing and building production interfaces with React, TypeScript, Next.js, Tailwind CSS, and ShadCN. Most of my projects are deployed with Vercel, and I care about writing clean, maintainable code and keeping design and implementation tightly aligned. I've also worked with JavaScript and libraries like Mantine, and I'm comfortable learning new tools by reading the docs and building with them. For example, I recently implemented the Vercel AI SDK in my portfolio to experiment with structured prompts and chat integration. I also use tools like Cursor and Claude to stay efficient and make my work more productive, especially when exploring ideas, debugging, or bridging design and code. In my downtime I enjoy trying out new frameworks and tools to stay sharp and keep up with how the frontend ecosystem is evolving.",
+        "tool_comfort_level": "I've used PostgreSQL and Prisma in past projects, including building a live MVP for a startup, though they're not part of my daily stack right now. I haven't worked directly with Go, but I had a client whose backend was built in Go and I worked with their APIs using Postman and Axios, so I'm comfortable collaborating across that boundary. I haven't used FastAPI, SQLAlchemy, Railway, or OpenTelemetry yet, but I'm confident picking up new tools quickly. Coming from a consulting background, I've gotten used to jumping into different teams and tech stacks and figuring out how to be useful quickly, even if the tools are new to me."
+      },
+      "experience": [
+        {
+          "company": "Thoughtful",
+          "role": "Product Designer & Engineer",
+          "notes": ["Designed and built software for 5 clients over 3 years.", "Led UX and front-end work on projects including Mozilla Ghostcat, Spiritune, and Lilypad Learning."]
+        },
+        {
+          "company": "Fractional (Startup)",
+          "role": "Founding Team - Product Designer & Engineer",
+          "notes": [
+            "Co-founded SaaS tool for fractional consultants (invoicing, payments, client communication).",
+            "Conducted 60+ interviews, market validation, and live user testing.",
+            "Shipped MVP in under 4 months using React, TypeScript, and Mantine UI."
+          ]
+        }
+      ],
+      "skills": {
+        "ux_and_design": ["Prototyping (Figma, Cursor)", "Interaction Design", "Visual Design", "Design Systems", "Systematic UX", "Modular Thinking", "User Research", "0→1 Product Design"],
+        "development": ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "Tailwind CSS", "Shadcn UI", "Mantine UI"],
+        "tools": ["Figma", "Cursor", "ChatGPT", "VS Code", "UX Pilot", "Midjourney", "DSLR", "Adobe Photoshop/Lightroom"],
+        "languages": ["English", "Japanese", "Chinese (Mandarin)", "Taiwanese"]
+      },
+      "outside_work": "Jessica enjoys hiking with her dog (Dr. Fizzy), camping, visiting national parks, and experimenting with new coding libraries and AI tools."
+    },
+    "projects": [
+      {
+        "name": "Mozilla - Ghostcat",
+        "description": "Ghostcat is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values—trust, transparency, and user control—could shape an AI experience.",
+        "goals": [
+          "Design AI interactions with trust and transparency as core principles.",
+          "Ensure privacy by default through on-device processing.",
+          "Create seamless and non-disruptive consent flows."
+        ],
+        "responsibilities": [
+          "Led UX strategy and hypothesis building.",
+          "Designed core flows and prototypes using Figma.",
+          "Collaborated with engineers to explore feasibility and design risks.",
+          "Conducted competitive research and concept iteration.",
+          "Built a scalable UX system designed for flexibility and rapid iteration."
+        ],
+        "key_contributions": [
+          "Framed product assumptions to prioritize design exploration.",
+          "Translated technical constraints into user-friendly designs.",
+          "Enabled MVP delivery aligned with on-device AI constraints.",
+          "Designed privacy settings and opt-in flows that supported user trust.",
+          "Created transparent data usage UI embedded directly in the chat interface."
+        ],
+        "principles": [
+          "Build fast, learn faster.",
+          "Balance agility with control.",
+          "Always design for trust and user control.",
+          "I am not the user—design must reflect real behavior and feedback.",
+          "Design with scalability and clarity in mind."
+        ],
+        "media": {
+          "figma_portfolio": "https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1",
+          "hero_image": "/mozilla-hero.png",
+          "workflow_diagram": "/mozilla-workflow.png"
+        }
+      },
+      {
+        "name": "Vision Track",
+        "description": "Vision Track was a 2-month discovery sprint aimed at improving daily goal alignment in fast-moving remote teams. Jessica focused on research, product discovery, and lean experimentation to define a focused MVP.",
+        "goals": ["Translate high-level company goals into daily team action.", "Reduce tool fatigue by integrating into Slack.", "Test behavior early and pivot based on real user insight."],
+        "responsibilities": [
+          "Led UX research across 25 interviews (founders, execs, PMs).",
+          "Framed hypotheses, defined target segments, and ran discovery sprints.",
+          "Synthesized qualitative insights into actionable product direction.",
+          "Validated MVP scope through behavior-first testing.",
+          "Created lightweight flows and Slack-based UX concepts."
+        ],
+        "key_contributions": [
+          "Identified core pain: people understood goals, but couldn't act on them daily.",
+          "Pivoted target from startup founders to SMB Sales/Marketing teams.",
+          "Scoped MVP down to one reminder loop inside Slack to reduce friction.",
+          "Uncovered value in aligning without dashboards or logins.",
+          "Learned that early behavior signals beat over-validating assumptions."
+        ],
+        "principles": [
+          "Start testing after 5–6 interviews, not 20.",
+          "Frictionless adoption > feature completeness.",
+          "Research must move at the speed of product discovery.",
+          "Narrow focus leads to better product-market fit.",
+          "Design in tools users already use (like Slack), not around them."
+        ],
+        "media": {
+          "hero_image": "/vision-track-hero.png",
+          "workflow_diagram": "/vision-track-workflow.png",
+          "value_prop_image": "/vision-track-value.png"
+        }
+      },
+      {
+        "name": "Lilypad",
+        "description": "Lilypad is an EdTech startup offering a student evaluation service for school districts. Jessica collaborated on redesigning the startup's landing page to clearly communicate value, guide users to action, and support future scalability.",
+        "goals": [
+          "Redesign the landing page from the ground up without prior user data.",
+          "Create a clear, credible layout that highlights Lilypad's value.",
+          "Design for flexibility, responsive behavior, and future product expansion."
+        ],
+        "responsibilities": [
+          "Worked directly with the Lilypad team to define content strategy.",
+          "Designed a mobile-first, responsive layout using a consistent grid system.",
+          "Created a scalable, minimalist visual hierarchy and defined typography rules.",
+          "Built a design system developers could implement predictably and scale.",
+          "Integrated clear, well-placed CTAs to guide users through the experience."
+        ],
+        "key_contributions": [
+          "Designed from scratch without analytics or existing feedback.",
+          "Solved for clarity of value proposition, despite complex subject matter.",
+          "Optimized visual hierarchy, layout, and responsive behavior across devices.",
+          "Defined a modular layout system with future growth in mind.",
+          "Delivered a polished, production-ready Figma file for developers."
+        ],
+        "principles": [
+          "Start with user clarity—even without data, anticipate key questions.",
+          "Design systems that scale with the product.",
+          "Build for responsiveness from the start.",
+          "Let design reflect confidence and clarity in early-stage messaging.",
+          "Simplicity and utility over complexity."
+        ],
+        "media": {
+          "figma_portfolio": "https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0",
+          "hero_image": "/lilypad-hero.png",
+          "mobile_screens": ["/lilypad-iphone-1.png", "/lilypad-iphone-2.png", "/lilypad-iphone-3.png", "/lilypad-iphone-4.png"],
+          "responsive_views": {
+            "desktop": "/lilypad-desktop-view.png",
+            "tablet": "/lilypad-ipad-view.png",
+            "mobile": "/lilypad-mobile-view.png"
+          },
+          "design_system": ["/lilypad-grid.png", "/lilypad-breakpoints.png"]
+        }
+      }
+    ]
+  },
+  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed—especially on Mozilla's Ghostcat AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
+}
