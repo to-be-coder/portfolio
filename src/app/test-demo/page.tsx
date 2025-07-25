@@ -1,9 +1,5 @@
-import Chat from '@/components/chat'
+import ProjectsPageDemo from '@/components/demo/projects-page/projects-page-demo'
 
 export default function TestDemoPage() {
-  return (
-    <div className="h-screen flex border-2 border-red-500">
-      <Chat />
-    </div>
-  )
+  return <ProjectsPageDemo />
 }
