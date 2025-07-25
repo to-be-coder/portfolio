@@ -18,7 +18,7 @@ try {
     if (json.person) {
       context = `\n\nDon't hallucinate. Here is some information about Jessica Cheng and her work: ${JSON.stringify(
         json.person
-      )}Always respond in plain text. Do not use any formatting, links, or hypertext. Do not use markdown.`
+      )}Always respond in plain text. Do not use any formatting, links, or hypertext. Do not use markdown. Always reply without any markdown.`
     }
     systemMessage = json.system + context
   }
