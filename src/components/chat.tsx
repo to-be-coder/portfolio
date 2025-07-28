@@ -15,6 +15,7 @@ export default function Page() {
   })
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -24,6 +25,22 @@ export default function Page() {
       })
     }
   }, [messages])
+
+  const handleInputFocus = () => {
+    // Scroll the HomeHeroSection to y=0 when input is focused
+    const homeHeroSection = document.querySelector('[data-home-hero-section]')
+    if (homeHeroSection) {
+      // Add some top spacing to avoid header overlap
+      const headerHeight = 80 // Adjust this value based on your header height
+      const elementTop = homeHeroSection.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementTop - headerHeight - 20 // 20px additional spacing
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
+  }
 
   return (
     <div className="flex flex-col py-4 stretch bg-gray-50/60 px-4 rounded-3xl border border-gray-200 justify-between h-[70vh] w-full max-w-7xl mx-auto">
@@ -76,14 +93,16 @@ export default function Page() {
         }}
         className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-3 flex-col w-full max-w-3xl mx-auto "
       >
-        {messages.length === 0 && <BorderBeam duration={4} size={180} className="from-transparent via-secondary to-transparent" />}
+        {messages.length === 0 && <BorderBeam duration={4} size={100} className="from-transparent via-secondary to-transparent" />}
         <Input
+          ref={inputRef}
           variant="chat"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onFocus={handleInputFocus}
           disabled={status !== 'ready'}
           placeholder="Ask me about Jessica..."
-          className="flex-1 w-full text-gray-800 text-sm sm:text-base"
+          className="flex-1 w-full"
         />
         <div className="flex justify-end gap-2 w-full">
           <button
