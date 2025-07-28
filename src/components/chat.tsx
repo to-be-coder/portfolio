@@ -76,15 +76,8 @@ export default function Page() {
         }}
         className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-3 flex-col w-full max-w-3xl mx-auto "
       >
-        {messages.length === 0 && <BorderBeam duration={4} size={180} className="from-transparent via-secondary to-transparent" />}
-        <Input
-          variant="chat"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          disabled={status !== 'ready'}
-          placeholder="Ask me about Jessica..."
-          className="flex-1 w-full text-gray-800 text-sm sm:text-base"
-        />
+        {messages.length === 0 && <BorderBeam duration={4} size={120} className="from-transparent via-secondary to-transparent sm:size-150 md:size-180" />}
+        <Input variant="chat" value={input} onChange={(e) => setInput(e.target.value)} disabled={status !== 'ready'} placeholder="Ask me about Jessica..." className="flex-1 w-full" />
         <div className="flex justify-end gap-2 w-full">
           <button
             type="submit"
