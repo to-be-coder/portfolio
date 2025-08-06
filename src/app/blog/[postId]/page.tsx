@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 
 interface PageProps {
   params: Promise<{
-    thought: string
+    postId: string
   }>
 }
 
@@ -22,14 +22,14 @@ const DEFAULT_METADATA = {
 export async function generateStaticParams() {
   const paths = await getAllPaths()
   return paths.map((path: string) => ({
-    thought: path,
+    postId: path,
   }))
 }
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { thought } = await params
-  const pageData = await getPageByPath(thought)
+  const { postId } = await params
+  const pageData = await getPageByPath(postId)
 
   if (!pageData) {
     return {
@@ -53,9 +53,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default async function ThoughtPage({ params }: PageProps) {
-  const { thought } = await params
-  const pageData = await getPageByPath(thought)
+export default async function BlogPostPage({ params }: PageProps) {
+  const { postId } = await params
+  const pageData = await getPageByPath(postId)
 
   if (!pageData) {
     notFound()
