@@ -12,7 +12,7 @@ type Props = {
 
 export default function NotionCard({ title, image, category, url }: Props) {
   return (
-    <Link href={`/thoughts/${url}`} className="group flex flex-col transition-all duration-200 hover:scale-[1.02] cursor-pointer">
+    <Link href={`/blog/${url}`} className="group flex flex-col transition-all duration-200 hover:scale-[1.02] cursor-pointer">
       {/* Article image */}
       <div className="relative aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">{image && <Image src={image} alt={title} fill className="object-cover" />}</div>
 
