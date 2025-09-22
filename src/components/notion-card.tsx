@@ -1,5 +1,4 @@
 import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
@@ -13,7 +12,14 @@ export default function NotionCard({ title, image, category, url }: Props) {
   return (
     <Link href={`/blog/${url}`} className="group flex flex-col transition-all duration-200 hover:scale-[1.02] cursor-pointer">
       {/* Article image */}
-      <div className="relative aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">{image && <Image src={image} alt={title} fill className="object-cover" />}</div>
+      <div className="relative aspect-video bg-gray-200 mb-4 rounded-lg overflow-hidden">
+        {image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={image} alt={title} className="w-full h-full object-cover" />
+        ) : (
+          <div className="flex items-center justify-center text-gray-400">No image</div>
+        )}
+      </div>
 
       {/* Category badge */}
       <div className="mb-2">

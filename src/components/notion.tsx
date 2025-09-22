@@ -11,15 +11,25 @@ type Post = {
 }
 
 export const NotionPosts = async () => {
-  const posts = await getArticles()
+  try {
+    const posts = await getArticles()
 
-  return (
-    <>
-      {posts
-        .filter((post): post is Post => Boolean(post.path && post.title))
-        .map((post, index) => (
-          <NotionCard key={index} title={post.title} description={post.subtitle} url={post.path} category={post.category || 'Uncategorized'} image={post.image || ''} />
-        ))}
-    </>
-  )
+    if (posts.length === 0) {
+      console.warn('No posts found from Notion API')
+      return <div className="text-center text-gray-500">No articles found.</div>
+    }
+
+    return (
+      <>
+        {posts
+          .filter((post): post is Post => Boolean(post.path && post.title))
+          .map((post, index) => (
+            <NotionCard key={index} title={post.title} url={post.path} category={post.category || 'Uncategorized'} image={post.image || ''} />
+          ))}
+      </>
+    )
+  } catch (error) {
+    console.error('Error loading Notion posts:', error)
+    return <div className="text-center text-red-500">Error loading articles. Please try again later.</div>
+  }
 }

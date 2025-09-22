@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const { pageData: metadata } = pageData
   const title = metadata.title || DEFAULT_METADATA.title
-  const description = metadata.description || metadata.subtitle || DEFAULT_METADATA.description
+  const description = metadata.subtitle || DEFAULT_METADATA.description
 
   return {
     title,
