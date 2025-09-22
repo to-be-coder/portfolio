@@ -7,7 +7,6 @@ type Props = {
   image?: string
   category: string
   url: string
-  description?: string
 }
 
 export default function NotionCard({ title, image, category, url }: Props) {

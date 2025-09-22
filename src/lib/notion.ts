@@ -12,7 +12,6 @@ type NotionPageProperties = {
   Path: { rich_text: Array<{ plain_text: string }> }
   Name: { title: Array<{ plain_text: string }> }
   Subtitle: { rich_text: Array<{ plain_text: string }> }
-  Description: { rich_text: Array<{ plain_text: string }> }
   Category: { select: { name: string } | null }
 }
 
@@ -26,7 +25,6 @@ export type ProcessedPageData = {
   path?: string
   image?: string
   subtitle?: string
-  description?: string
   category?: string
 }
 
@@ -53,7 +51,6 @@ const processPageData = (page: NotionPage): ProcessedPageData => {
     path: page.properties.Path.rich_text[0]?.plain_text,
     title: page.properties.Name.title[0]?.plain_text,
     subtitle: page.properties.Subtitle.rich_text[0]?.plain_text,
-    description: page.properties.Description.rich_text[0]?.plain_text,
     category: page.properties.Category.select?.name,
   }
 }
