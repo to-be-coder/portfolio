@@ -1,13 +1,12 @@
 'use client'
 
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
+import { cn } from '@/lib/utils'
+import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { cn } from '@/lib/utils'
-import { Menu, X } from 'lucide-react'
 import { Button } from './button'
 
 const navigationItems = [
@@ -15,6 +14,7 @@ const navigationItems = [
   { path: '/#projects', label: 'Works', id: 'works' },
   // { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
+  { path: '/blog', label: 'Thoughts', id: 'thoughts' },
 ]
 
 export default function Header() {
