@@ -74,12 +74,6 @@ export const getPortfolioPages = async (): Promise<ProcessedPageData[]> => {
           direction: 'descending',
         },
       ],
-      filter: {
-        property: 'Type',
-        multi_select: {
-          contains: 'Portfolio',
-        },
-      },
     })
 
     return getProcessedData(data)
@@ -91,6 +85,7 @@ export const getPortfolioPages = async (): Promise<ProcessedPageData[]> => {
 
 export const getArticles = async (): Promise<ProcessedPageData[]> => {
   try {
+    console.log('[getArticles] Fetching articles...')
     const data = await notionOfficialClient.databases.query({
       database_id: process.env.NOTION_PAGES_DATABASE_ID!,
       filter: {
@@ -100,7 +95,14 @@ export const getArticles = async (): Promise<ProcessedPageData[]> => {
         },
       },
     })
-    return getProcessedData(data)
+
+    const processedData = getProcessedData(data)
+    console.log(
+      `[getArticles] Found ${processedData.length} articles:`,
+      processedData.map((p) => p.title)
+    )
+
+    return processedData
   } catch (error) {
     console.error('Error fetching articles:', error)
     return []
@@ -145,9 +147,18 @@ export const getAllPaths = async (): Promise<string[]> => {
   try {
     const data = await notionOfficialClient.databases.query({
       database_id: process.env.NOTION_PAGES_DATABASE_ID!,
+      filter: {
+        property: 'Visibility',
+        select: {
+          equals: 'Visible',
+        },
+      },
     })
 
-    return data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean) as string[]
+    const paths = data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean) as string[]
+    console.log(`[getAllPaths] Found ${paths.length} paths for static generation:`, paths)
+
+    return paths
   } catch (error) {
     console.error('Error fetching all paths:', error)
     return []
