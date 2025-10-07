@@ -16,7 +16,7 @@ export default function NotionCard({ title, category, url }: Props) {
       <div className="mt-1">
         {/* Category badge */}
         <div className="mb-1">
-          <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-gray-200 rounded-md">{category}</span>
+          <span className="inline-block px-3 py-1 text-xs font-medium bg-white border border-border rounded-md">{category}</span>
         </div>
 
         {/* Read more link */}
