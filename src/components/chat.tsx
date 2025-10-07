@@ -5,7 +5,7 @@ import { DefaultChatTransport } from 'ai'
 import { ArrowUp } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { BorderBeam } from './magicui/border-beam'
-import { Input } from './ui/input'
+import { Textarea } from './ui/textarea'
 
 export default function Page() {
   const { messages, sendMessage, status } = useChat({
@@ -15,7 +15,7 @@ export default function Page() {
   })
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -94,9 +94,8 @@ export default function Page() {
         className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-3 flex-col w-full max-w-3xl mx-auto "
       >
         {messages.length === 0 && <BorderBeam duration={4} size={100} className="from-transparent via-secondary to-transparent" />}
-        <Input
+        <Textarea
           ref={inputRef}
-          variant="chat"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onFocus={handleInputFocus}
@@ -104,7 +103,7 @@ export default function Page() {
           placeholder="Ask me about Jessica..."
           className="flex-1 w-full"
         />
-        <div className="flex justify-end gap-2 w-full">
+        <div className="absolute right-2 bottom-2">
           <button
             type="submit"
             disabled={status !== 'ready'}
