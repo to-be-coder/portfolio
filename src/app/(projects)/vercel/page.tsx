@@ -210,7 +210,7 @@ export default function VercelPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Solution 1 */}
-          <div className="bg-gray-100 border-2 border-[#3888D0] rounded-lg p-6 relative">
+          <div className="bg-gray-100 border-2 border-[#3888D0] rounded-lg p-6 relative flex flex-col justify-around items-center">
             <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
             <h3 className="text-xl font-semibold mb-3 mt-2">Solution 1: Persistent Chevron Icon</h3>
             <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
@@ -230,7 +230,7 @@ export default function VercelPage() {
           </div>
 
           {/* Solution 2 */}
-          <div className="bg-gray-100 border border-gray-300 rounded-lg p-6">
+          <div className="bg-gray-100 border border-gray-300 rounded-lg p-6 flex flex-col justify-around items-center">
             <h3 className="text-xl font-semibold mb-3">Solution 2: Subtle Border Treatment</h3>
             <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
 
@@ -249,7 +249,7 @@ export default function VercelPage() {
           </div>
 
           {/* Solution 3 */}
-          <div className="bg-gray-100 border border-gray-300 rounded-lg p-6">
+          <div className="bg-gray-100 border border-gray-300 rounded-lg p-6 flex flex-col justify-around items-center">
             <h3 className="text-xl font-semibold mb-3">Solution 3: Text Label Indicator</h3>
             <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
 
