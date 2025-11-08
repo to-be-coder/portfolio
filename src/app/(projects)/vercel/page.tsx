@@ -13,7 +13,13 @@ export default function VercelPage() {
   return (
     <main>
       {/* Hero Section */}
-      <ProjectHeroSection title="V0 Design Thinking Exercise" subtitle="Improving Visual Affordances in Chat Interfaces" imageSrc="/vercel-full-screen.png" imageAlt="Vercel V0 interface showcase" />
+      <ProjectHeroSection
+        title="V0 Design Thinking Exercise"
+        subtitle="Improving Visual Affordances in Chat Interfaces"
+        imageSrc="/vercel-cover.png"
+        imageAlt="Vercel V0 interface showcase"
+        imagePosition="top"
+      />
 
       {/* Overview Section */}
       <ProjectSection>
