@@ -211,22 +211,24 @@ export default function VercelPage() {
 
           {/* Design Exploration Section */}
           <ScrollSpySection value="design-exploration">
-            <ProjectSection bgClassName="bg-wihte" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]">Design Exploration</ProjectSectionTitle>
-              <p className="mx-auto mb-12">
-                Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
-                <strong>engineering complexity</strong>.
-              </p>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Design Exploration</ProjectSectionTitle>
+            <p className="mx-auto mb-12">
+              Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
+              <strong>engineering complexity</strong>.
+            </p>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Solution 1 */}
-                <div className="bg-gray-100 border-2 border-[#3888D0] rounded-lg p-6 relative flex flex-col justify-around items-center">
-                  <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
-                  <h3 className="text-xl font-semibold mb-3 mt-2">Solution 1: Persistent Chevron Icon</h3>
-                  <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
-
-                  <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="h-auto w-auto  rounded-md border border-gray-200" priority />
-
+            <div className="flex flex-col gap-8">
+              {/* Solution 1 */}
+              <div className="bg-gray-50 border-2 border-[#3888D0] rounded-lg p-6 relative flex gap-4">
+                <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
+                <div className="flex flex-col flex-1 justify-between">
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl font-semibold">
+                      Solution 1: <br />
+                      Persistent Chevron Icon
+                    </h3>
+                    <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
+                  </div>
                   <div className="space-y-2 text-sm mt-4">
                     <div>
                       <span className="font-semibold text-[#3888D0]">Pros:</span>
@@ -238,14 +240,19 @@ export default function VercelPage() {
                     </div>
                   </div>
                 </div>
+                <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-md border border-gray-200" priority />
+              </div>
 
-                {/* Solution 2 */}
-                <div className="bg-gray-100 border border-gray-300 rounded-lg p-6 flex flex-col justify-around items-center">
-                  <h3 className="text-xl font-semibold mb-3">Solution 2: Subtle Border Treatment</h3>
-                  <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
-
-                  <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-
+              {/* Solution 2 */}
+              <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                <div className="flex flex-col flex-1 justify-between">
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl font-semibold">
+                      Solution 2: <br />
+                      Subtle Border Treatment
+                    </h3>
+                    <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
+                  </div>
                   <div className="space-y-2 text-sm mt-4">
                     <div>
                       <span className="font-semibold text-[#3888D0]">Pros:</span>
@@ -257,14 +264,19 @@ export default function VercelPage() {
                     </div>
                   </div>
                 </div>
+                <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
+              </div>
 
-                {/* Solution 3 */}
-                <div className="bg-gray-100 border border-gray-300 rounded-lg p-6 flex flex-col justify-around items-center">
-                  <h3 className="text-xl font-semibold mb-3">Solution 3: Text Label Indicator</h3>
-                  <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
-
-                  <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-
+              {/* Solution 3 */}
+              <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                <div className="flex flex-col flex-1 justify-between">
+                  <div className="flex flex-col gap-4">
+                    <h3 className="text-xl font-semibold">
+                      Solution 3: <br />
+                      Text Label Indicator
+                    </h3>
+                    <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
+                  </div>
                   <div className="space-y-2 text-sm mt-4">
                     <div>
                       <span className="font-semibold text-[#3888D0]">Pros:</span>
@@ -276,65 +288,64 @@ export default function VercelPage() {
                     </div>
                   </div>
                 </div>
+                <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
-            </ProjectSection>
+            </div>
           </ScrollSpySection>
 
           {/* Proposed Solution Section */}
           <ScrollSpySection value="proposed-solution">
-            <ProjectSection bgClassName="bg-[#D7E7F5]" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                <div className="flex flex-col">
-                  <ProjectVerticalBlock title="Why This Solution?" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                    <p className="mb-6">After exploring these options, the persistent chevron felt like the best fit. Here&apos;s why:</p>
-                    <ul className="space-y-3">
-                      <li className="flex">
-                        <span className="mr-3">•</span>
-                        <span>
-                          It&apos;s a <strong>widely understood pattern</strong> (familiar from file explorers, navigation menus, FAQs)
-                        </span>
-                      </li>
-                      <li className="flex">
-                        <span className="mr-3">•</span>
-                        <span>
-                          It provides <strong>immediate visual feedback</strong> without requiring hover states
-                        </span>
-                      </li>
-                      <li className="flex">
-                        <span className="mr-3">•</span>
-                        <span>
-                          It maintains V0&apos;s <strong>clean aesthetic</strong> while adding functional clarity
-                        </span>
-                      </li>
-                      <li className="flex">
-                        <span className="mr-3">•</span>
-                        <span>
-                          It supports <strong>keyboard navigation and screen reader patterns</strong> naturally
-                        </span>
-                      </li>
-                    </ul>
-                  </ProjectVerticalBlock>
-                </div>
-                <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
-                  <TabsList className="grid w-full grid-cols-2 bg-gray-100 text-black rounded-md">
-                    <TabsTrigger value="1" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
-                      New Design
-                    </TabsTrigger>
-                    <TabsTrigger value="2" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
-                      Current Design
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="1" className="flex justify-center w-full">
-                    <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
-                  </TabsContent>
-                  <TabsContent value="2" className="flex justify-center  w-full">
-                    <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
-                  </TabsContent>
-                </Tabs>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+              <div className="flex flex-col">
+                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Why This Solution?</h2>
+
+                <p className="mb-6">After exploring these options, the persistent chevron felt like the best fit. Here&apos;s why:</p>
+                <ul className="space-y-3">
+                  <li className="flex">
+                    <span className="mr-3">•</span>
+                    <span>
+                      It&apos;s a <strong>widely understood pattern</strong> (familiar from file explorers, navigation menus, FAQs)
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <span className="mr-3">•</span>
+                    <span>
+                      It provides <strong>immediate visual feedback</strong> without requiring hover states
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <span className="mr-3">•</span>
+                    <span>
+                      It maintains V0&apos;s <strong>clean aesthetic</strong> while adding functional clarity
+                    </span>
+                  </li>
+                  <li className="flex">
+                    <span className="mr-3">•</span>
+                    <span>
+                      It supports <strong>keyboard navigation and screen reader patterns</strong> naturally
+                    </span>
+                  </li>
+                </ul>
               </div>
-            </ProjectSection>
+              <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
+                <TabsList className="grid w-full grid-cols-2 bg-gray-100 text-black rounded-md">
+                  <TabsTrigger value="1" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
+                    New Design
+                  </TabsTrigger>
+                  <TabsTrigger value="2" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
+                    Current Design
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="1" className="flex justify-center w-full">
+                  <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
+                </TabsContent>
+                <TabsContent value="2" className="flex justify-center  w-full">
+                  <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
+                </TabsContent>
+              </Tabs>
+            </div>
           </ScrollSpySection>
 
           {/* Success Metrics Section */}
