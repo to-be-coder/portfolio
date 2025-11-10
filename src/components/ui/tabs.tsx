@@ -46,7 +46,7 @@ function TabsTrigger({ className, children, value, ...props }: React.ComponentPr
     >
       <span className="relative z-10">{children}</span>
       {isActive && (
-        <motion.span layoutId="pill-tab" transition={{ type: 'spring', duration: 0.5 }} className="absolute inset-0 z-0 bg-blue-500 dark:bg-input/30 rounded-full" style={{ pointerEvents: 'none' }} />
+        <motion.span layoutId="pill-tab" transition={{ type: 'spring', duration: 0.5 }} className="absolute inset-0 z-0 bg-black dark:bg-input/30 rounded-full" style={{ pointerEvents: 'none' }} />
       )}
     </TabsPrimitive.Trigger>
   )

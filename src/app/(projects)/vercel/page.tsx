@@ -297,7 +297,7 @@ export default function VercelPage() {
           <ScrollSpySection value="proposed-solution">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+            <div className="flex flex-col gap-x-8 gap-y-8">
               <div className="flex flex-col">
                 <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Why This Solution?</h2>
 
@@ -329,16 +329,16 @@ export default function VercelPage() {
                   </li>
                 </ul>
               </div>
-              <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
+              <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4">
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="1">New Design</TabsTrigger>
                   <TabsTrigger value="2">Current Design</TabsTrigger>
                 </TabsList>
                 <TabsContent value="1" className="flex justify-center w-full">
-                  <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
+                  <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto " priority />
                 </TabsContent>
                 <TabsContent value="2" className="flex justify-center  w-full">
-                  <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
+                  <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto " priority />
                 </TabsContent>
               </Tabs>
             </div>
@@ -347,9 +347,7 @@ export default function VercelPage() {
           {/* Success Metrics Section */}
           <ScrollSpySection value="success-metrics">
             <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]" textAlign="text-center">
-                Expected Impact & Success Metrics
-              </ProjectSectionTitle>
+              <ProjectSectionTitle dotColor="text-[#3888D0]">Expected Impact & Success Metrics</ProjectSectionTitle>
               <VerticalBlock title="Impact" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
                   <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
