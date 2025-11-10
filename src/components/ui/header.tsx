@@ -161,10 +161,12 @@ export default function Header() {
                   <NavItem key={item.id} path={item.path} label={item.label} onClick={() => {}} />
                 ))}
               </div>
-              <NavigationMenuItem className="list-none flex items-center h-full">
-                <CallToActionButton className="ml-4" asChild>
-                  <Link href={`/contact`}>Contact</Link>
-                </CallToActionButton>
+              <NavigationMenuItem className="list-none flex h-full shrink-0">
+                <div className="w-[120px] flex justify-end">
+                  <CallToActionButton asChild>
+                    <Link href={`/contact`}>Contact</Link>
+                  </CallToActionButton>
+                </div>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
