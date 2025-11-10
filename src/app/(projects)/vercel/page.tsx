@@ -25,7 +25,7 @@ export default function VercelPage() {
       />
 
       <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full">
-        <ScrollSpyNav className="hidden lg:flex w-48 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
+        <ScrollSpyNav className="hidden lg:flex w-60 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
           <ScrollSpyLink value="overview">Overview</ScrollSpyLink>
           <ScrollSpyLink value="observation">Observation & Research</ScrollSpyLink>
           <ScrollSpyLink value="problem-statement">Problem Statement</ScrollSpyLink>
@@ -36,204 +36,183 @@ export default function VercelPage() {
           <ScrollSpyLink value="constraints">Constraints & Tradeoffs</ScrollSpyLink>
           <ScrollSpyLink value="final-thoughts">Final Thoughts</ScrollSpyLink>
         </ScrollSpyNav>
-        <ScrollSpyViewport className="flex-1">
+        <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
           {/* Overview Section */}
           <ScrollSpySection value="overview">
-            <ProjectSection>
-              <VerticalBlock title="Context" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <p>
-                  This is a <strong>design thinking exercise</strong> exploring how I approach product improvement opportunities. I have tremendous respect for Vercel&apos;s design team and the work
-                  they&apos;ve done with V0.
-                  <br /> <br />
-                  As a user of V0, I noticed a recurring moment of friction that sparked this exploration. Rather than a critique of existing decisions, this case study demonstrates{' '}
-                  <strong>my process</strong>, <strong>systems thinking</strong>, and how I <strong>balance user needs with constraints</strong>.
-                  <br /> <br />
-                  The focus is on answering:
-                </p>
-                <ul className="list-disc ml-5">
-                  <li>
-                    <strong>How can visual affordances reduce cognitive load?</strong>
-                  </li>
-                  <li>
-                    <strong>What patterns work without adding unnecessary complexity?</strong>
-                  </li>
-                </ul>
-              </VerticalBlock>
-              <VerticalBlock title="My Approach" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Problem Identification:</span>
-                    <p>Observed friction during real usage and defined the user impact.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Solution Exploration:</span>
-                    <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Strategic Thinking:</span>
-                    <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
-                  </div>
-                </div>
-              </VerticalBlock>
-            </ProjectSection>
+            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+              Overview
+            </ProjectSectionTitle>
+            <p>
+              This is a <strong>design thinking exercise</strong> exploring how I approach product improvement opportunities. I have tremendous respect for Vercel&apos;s design team and the work
+              they&apos;ve done with V0.
+              <br /> <br />
+              As a user of V0, I noticed a recurring moment of friction that sparked this exploration. Rather than a critique of existing decisions, this case study demonstrates{' '}
+              <strong>my process</strong>, <strong>systems thinking</strong>, and how I <strong>balance user needs with constraints</strong>.
+              <br /> <br />
+            </p>
+            <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">My Approach</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
+              <div className="flex flex-col p-4 rounded-lg border border-border">
+                <span className="font-semibold">Problem Identification:</span>
+                <p>Observed friction during real usage and defined the user impact.</p>
+              </div>
+              <div className="flex flex-col p-4 rounded-lg border border-border">
+                <span className="font-semibold">Solution Exploration:</span>
+                <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
+              </div>
+              <div className="flex flex-col p-4 rounded-lg border border-border">
+                <span className="font-semibold">Strategic Thinking:</span>
+                <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
+              </div>
+            </div>
           </ScrollSpySection>
 
           {/* The Observation Section */}
           <ScrollSpySection value="observation">
-            <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-              <ProjectSectionTitle color="text-white" dotColor="text-[#3888D0]" showBorder={true}>
-                The Observation & Research
-              </ProjectSectionTitle>
-              <div className="flex-1 pt-2 mt-4">
-                <p className="text-white mb-8">
-                  While reviewing past interactions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
-                  distinguish between expandable accordions and static content when scanning through the conversation.
-                </p>
-                <div className="flex-1 pt-2 mt-12 mb-20">
-                  <h2 className="text-2xl font-regular pb-2 text-white">Reserach</h2>
-                  <ProjectHorizontalBlock title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <p>3 friends</p>
-                    <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
-                      <div className="flex gap-1">
-                        {[...Array(3)].map((_, i) => (
-                          <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
-                        ))}
-                      </div>
+            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+              The Observation & Research
+            </ProjectSectionTitle>
+            <div className="flex-1">
+              <p className="text-black mb-8">
+                While reviewing past interactions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
+                distinguish between expandable accordions and static content when scanning through the conversation.
+              </p>
+              <div className="flex-1 pt-2 mt-12 mb-20">
+                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Research</h2>
+                <ProjectHorizontalBlock title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                  <p>3 friends</p>
+                  <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
+                    <div className="flex gap-1">
+                      {[...Array(3)].map((_, i) => (
+                        <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                      ))}
                     </div>
-                  </ProjectHorizontalBlock>
-                  <ProjectHorizontalBlock title="Methods" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <div className="space-y-1 md:space-y-2">
-                      <div>
-                        <span className="font-semibold">Observation:</span>
-                        <span> Watched friends naturally navigate through their V0 chat sessions, noting how they interacted with different components</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold">Follow-up Question:</span>
-                        <span> Asked if they could tell which components were expandable (accordions) just by looking at them, without hovering or clicking</span>
-                      </div>
+                  </div>
+                </ProjectHorizontalBlock>
+                <ProjectHorizontalBlock title="Methods" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                  <div className="space-y-1 md:space-y-2">
+                    <div>
+                      <span className="font-semibold">Observation:</span>
+                      <span> Watched friends naturally navigate through their V0 chat sessions, noting how they interacted with different components</span>
                     </div>
-                  </ProjectHorizontalBlock>
-                  <ProjectHorizontalBlock title="Key Findings" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <div className="space-y-1 md:space-y-2">
-                      <div>
-                        <span className="font-semibold">Trial & Error:</span>
-                        <span> All 3 participants clicked or hovered on multiple components to discover which were expandable.</span>
-                      </div>
-                      <div>
-                        <span className="font-semibold">Frustration:</span>
-                        <span> Participants expressed minor frustration at having to &quot;guess&quot; which blocks contained hidden content.</span>
-                      </div>
+                    <div>
+                      <span className="font-semibold">Follow-up Question:</span>
+                      <span> Asked if they could tell which components were expandable (accordions) just by looking at them, without hovering or clicking</span>
                     </div>
-                  </ProjectHorizontalBlock>
-                </div>
+                  </div>
+                </ProjectHorizontalBlock>
+                <ProjectHorizontalBlock title="Key Findings" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                  <div className="space-y-1 md:space-y-2">
+                    <div>
+                      <span className="font-semibold">Trial & Error:</span>
+                      <span> All 3 participants clicked or hovered on multiple components to discover which were expandable.</span>
+                    </div>
+                    <div>
+                      <span className="font-semibold">Frustration:</span>
+                      <span> Participants expressed minor frustration at having to &quot;guess&quot; which blocks contained hidden content.</span>
+                    </div>
+                  </div>
+                </ProjectHorizontalBlock>
+              </div>
 
-                <div className="flex-1 pt-2 mt-12">
-                  <h2 className="text-2xl font-regular pb-2 text-white">When This Matters Most </h2>
-                  <div className="border-t border-[#C1C1C1]"></div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
-                    <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                      <span className="font-semibold mb-2 text-black">Long Conversations</span>
-                      <p className="text-black">When users have 10+ exchanges and need to reference previous outputs quickly.</p>
-                    </div>
-                    <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                      <span className="font-semibold mb-2 text-black">Skimming Mode</span>
-                      <p className="text-black">When quickly scanning for specific information without reading every detail.</p>
-                    </div>
-                    <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
-                      <span className="font-semibold mb-2 text-black">Decision-Making</span>
-                      <p className="text-black">When choosing which details to explore without trial-and-error clicking.</p>
-                    </div>
+              <div className="flex-1 pt-2 mt-12">
+                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When This Matters Most</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold mb-2 text-black">Long Conversations</span>
+                    <p className="text-black">When users have 10+ exchanges and need to reference previous outputs quickly.</p>
+                  </div>
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold mb-2 text-black">Skimming Mode</span>
+                    <p className="text-black">When quickly scanning for specific information without reading every detail.</p>
+                  </div>
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold mb-2 text-black">Decision-Making</span>
+                    <p className="text-black">When choosing which details to explore without trial-and-error clicking.</p>
                   </div>
                 </div>
               </div>
-            </ProjectSection>
+            </div>
           </ScrollSpySection>
 
           {/* Problem Statement Section */}
           <ScrollSpySection value="problem-statement">
-            <ProjectSection bgClassName="bg-[#D7E7F5]" textClassName="text-black">
-              <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]" showBorder={true} borderColor="border-[#000000]">
-                The Problem Statement
-              </ProjectSectionTitle>
-              <div className="flex flex-col p-4 lg:p-8 relative">
-                <div className="flex flex-col max-w-3xl mx-auto relative">
-                  <div className="flex justify-start h-[64px] lg:h-[92px]">
-                    <span className="text-[#3888D0] text-[64px] lg:text-[92px]">&quot;</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-[24px] lg:text-[32px] font-medium text-center text-black">
-                      When users skim through V0 chat history, there&apos;s <strong>no persistent visual indicator</strong> to distinguish expandable components (accordions) from static ones. This
-                      creates <strong>unnecessary cognitive load and friction</strong>, as users must hover or click to discover interactivity.
-                    </p>
-                  </div>
-                  <div className="flex justify-end h-[64px] lg:h-[92px]">
-                    <span className="text-[#3888D0] text-[64px] lg:text-[92px] ">&quot;</span>
-                  </div>
+            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+              The Problem Statement
+            </ProjectSectionTitle>
+            <div className="flex flex-col relative">
+              <div className="flex flex-col max-w-3xl mx-auto relative">
+                <div className="flex justify-start h-[64px] lg:h-[92px]">
+                  <span className="text-[#3888D0] text-[64px] lg:text-[92px]">&quot;</span>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-[24px] lg:text-[24px] font-medium text-center text-black">
+                    When users skim through V0 chat history, there&apos;s <strong>no persistent visual indicator</strong> to distinguish expandable components (accordions) from static ones. This
+                    creates <strong>unnecessary cognitive load and friction</strong>, as users must hover or click to discover interactivity.
+                  </p>
+                </div>
+                <div className="flex justify-end h-[64px] lg:h-[92px]">
+                  <span className="text-[#3888D0] text-[64px] lg:text-[92px] ">&quot;</span>
                 </div>
               </div>
-            </ProjectSection>
+            </div>
           </ScrollSpySection>
 
           {/* Current State Section */}
           <ScrollSpySection value="current-state">
-            <ProjectSection bgClassName="bg-gray-50" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]" showBorder={true} borderColor="border-[#C1C1C1]">
-                Current App Behavior
-              </ProjectSectionTitle>
-              <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
-                <ProjectFlexBlock
-                  left={
-                    <ProjectVerticalBlock title="No Visual Indicator for Expandable Components" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p>
-                        When users skim through the V0 chat, there&apos;s no visual indicator to distinguish which components are accordions (expandable) from those that aren&apos;t. This creates
-                        unnecessary friction as users must click or hover to discover expandability.
-                      </p>
-                    </ProjectVerticalBlock>
-                  }
-                  right={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/vercel-chat.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  reverseOnDesktop={true}
-                />
-                <ProjectFlexBlock
-                  left={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/vercel-onhover.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  right={
-                    <ProjectVerticalBlock title="On Hover" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p className=" mb-8 lg:mb-12">
-                        Chevron shows up only on hover. Without hovering, it is unclear that this component is an accordion. This will also require Vercel to design a new UI for the mobile view.
-                      </p>
-                    </ProjectVerticalBlock>
-                  }
-                />
-                <ProjectFlexBlock
-                  left={
-                    <ProjectVerticalBlock title="When Accordion is Expanded" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p className=" mb-8 lg:mb-12">Icon on the left turns into a chevron down icon. </p>
-                    </ProjectVerticalBlock>
-                  }
-                  right={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/vercel-chat-expand.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  reverseOnDesktop={true}
-                />
-              </div>
-            </ProjectSection>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Current App Behavior</ProjectSectionTitle>
+            <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+              <ProjectFlexBlock
+                left={
+                  <ProjectVerticalBlock title="No Visual Indicator for Expandable Components" titleColor="text-black" borderColor="border-border">
+                    <p>
+                      When users skim through the V0 chat, there&apos;s no visual indicator to distinguish which components are accordions (expandable) from those that aren&apos;t. This creates
+                      unnecessary friction as users must click or hover to discover expandability.
+                    </p>
+                  </ProjectVerticalBlock>
+                }
+                right={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/vercel-chat.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                  </div>
+                }
+                reverseOnDesktop={true}
+              />
+              <ProjectFlexBlock
+                left={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/vercel-onhover.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                  </div>
+                }
+                right={
+                  <ProjectVerticalBlock title="On Hover" titleColor="text-black" borderColor="border-border">
+                    <p className=" mb-8 lg:mb-12">
+                      Chevron shows up only on hover. Without hovering, it is unclear that this component is an accordion. This will also require Vercel to design a new UI for the mobile view.
+                    </p>
+                  </ProjectVerticalBlock>
+                }
+              />
+              <ProjectFlexBlock
+                left={
+                  <ProjectVerticalBlock title="When Accordion is Expanded" titleColor="text-black" borderColor="border-border">
+                    <p className=" mb-8 lg:mb-12">Icon on the left turns into a chevron down icon. </p>
+                  </ProjectVerticalBlock>
+                }
+                right={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/vercel-chat-expand.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                  </div>
+                }
+                reverseOnDesktop={true}
+              />
+            </div>
           </ScrollSpySection>
 
           {/* Design Exploration Section */}
           <ScrollSpySection value="design-exploration">
             <ProjectSection bgClassName="bg-wihte" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]" showBorder={true} borderColor="border-[#C1C1C1]">
-                Design Exploration
-              </ProjectSectionTitle>
+              <ProjectSectionTitle dotColor="text-[#3888D0]">Design Exploration</ProjectSectionTitle>
               <p className="mx-auto mb-12">
                 Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
                 <strong>engineering complexity</strong>.

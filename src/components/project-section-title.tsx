@@ -11,7 +11,7 @@ interface ProjectSectionTitleProps {
 
 export default function ProjectSectionTitle({ children, color = 'text-black', dotColor, textAlign, showBorder = false, borderColor = 'border-[#C1C1C1]' }: ProjectSectionTitleProps) {
   return (
-    <div className="flex flex-col mb-8 md:mb-12">
+    <div className="flex flex-col mb-8 md:mb-4">
       <h2 className={`text-4xl font-normal mb-2 ${color} ${textAlign}`}>
         {children}
         <span className={`text-[64px] ${dotColor}`}>.</span>
