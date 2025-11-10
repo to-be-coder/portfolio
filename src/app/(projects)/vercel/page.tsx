@@ -330,13 +330,9 @@ export default function VercelPage() {
                 </ul>
               </div>
               <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
-                <TabsList className="grid w-full grid-cols-2 bg-gray-100 text-black rounded-md">
-                  <TabsTrigger value="1" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
-                    New Design
-                  </TabsTrigger>
-                  <TabsTrigger value="2" className="data-[state=active]:bg-[#3888D0] data-[state=active]:text-white">
-                    Current Design
-                  </TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="1">New Design</TabsTrigger>
+                  <TabsTrigger value="2">Current Design</TabsTrigger>
                 </TabsList>
                 <TabsContent value="1" className="flex justify-center w-full">
                   <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 p-4 h-auto w-auto rounded-md border border-gray-200" priority />
