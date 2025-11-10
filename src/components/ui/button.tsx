@@ -1,5 +1,6 @@
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { ArrowRight } from 'lucide-react'
 import * as React from 'react'
 
 import { cn } from '@/lib/utils'
@@ -41,4 +42,70 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, va
 })
 Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export interface CallToActionButtonProps extends Omit<ButtonProps, 'children' | 'variant'> {
+  children: React.ReactNode
+}
+
+const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButtonProps>(({ className, size, children, asChild, ...props }, ref) => {
+  const [isHovered, setIsHovered] = React.useState(false)
+
+  const iconElement = (
+    <span className={cn('flex items-center justify-center rounded-full transition-all duration-300 shrink-0 overflow-visible', isHovered ? 'w-6 h-6 bg-white' : 'w-2 h-2 bg-black')}>
+      <span
+        className={cn('text-black [&_svg]:w-3 [&_svg]:h-3 ease-out', isHovered ? 'translate-x-0 opacity-100 transition-all duration-500' : '-translate-x-[200%] opacity-0 transition-all duration-200')}
+      >
+        <ArrowRight strokeWidth={2.5} />
+      </span>
+    </span>
+  )
+
+  if (asChild && React.isValidElement(children)) {
+    const child = children as React.ReactElement<React.HTMLAttributes<HTMLElement> & { className?: string }>
+    return (
+      <Button
+        ref={ref}
+        size={size}
+        className={cn('hover:pl-2 group relative rounded-full bg-gray-200 text-black transition-all duration-300 hover:bg-black hover:text-white', className)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        asChild={asChild}
+        {...props}
+      >
+        {React.cloneElement(child, {
+          className: cn('inline-flex items-center gap-2', child.props.className),
+          onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
+            setIsHovered(true)
+            child.props.onMouseEnter?.(e)
+          },
+          onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
+            setIsHovered(false)
+            child.props.onMouseLeave?.(e)
+          },
+          children: (
+            <>
+              {iconElement}
+              {child.props.children}
+            </>
+          ),
+        })}
+      </Button>
+    )
+  }
+
+  return (
+    <Button
+      ref={ref}
+      size={size}
+      className={cn('group relative rounded-full bg-gray-200 text-black transition-all duration-300 hover:bg-black hover:text-white', className)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      {...props}
+    >
+      {iconElement}
+      {children}
+    </Button>
+  )
+})
+CallToActionButton.displayName = 'CallToActionButton'
+
+export { Button, buttonVariants, CallToActionButton }

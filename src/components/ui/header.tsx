@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Button } from './button'
+import { CallToActionButton } from './button'
 
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
@@ -162,9 +162,9 @@ export default function Header() {
                 ))}
               </div>
               <NavigationMenuItem className="list-none flex items-center h-full">
-                <Button variant="default" className=" ml-4" asChild>
+                <CallToActionButton className="ml-4" asChild>
                   <Link href={`/contact`}>Contact</Link>
-                </Button>
+                </CallToActionButton>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -207,11 +207,11 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-6">
-                  <Button variant="secondary" className="w-full">
+                  <CallToActionButton className="w-full" asChild>
                     <Link href={`/contact`} onClick={() => setMobileMenuOpen(false)}>
                       Contact
                     </Link>
-                  </Button>
+                  </CallToActionButton>
                 </div>
               </div>
             </div>
