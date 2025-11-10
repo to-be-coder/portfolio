@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button } from './button'
 
 const navigationItems = [
@@ -17,42 +17,103 @@ const navigationItems = [
   { path: '/blog', label: 'Thoughts', id: 'thoughts' },
 ]
 
+const projectRoutes = ['/vercel', '/mozilla', '/lilypad', '/vision-track', '/hobby']
+
+const SCROLL_THRESHOLD = 30 // Minimum scroll distance before header hides/shows
+const TOP_THRESHOLD = 20 // Distance from top where header always shows
+
 export default function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isProjectsSection, setIsProjectsSection] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const lastScrollYRef = useRef(0)
+  const rafIdRef = useRef<number | null>(null)
 
-  useEffect(() => {
-    // Function to check if projects section is visible
-    const checkProjectsSection = () => {
-      if (pathname !== '/') {
-        setIsProjectsSection(false)
-        return
-      }
+  const isProjectPage = projectRoutes.some((route) => pathname.startsWith(route))
 
-      const projectsSection = document.getElementById('projects')
-      if (!projectsSection) {
-        setIsProjectsSection(false)
-        return
-      }
-
-      const rect = projectsSection.getBoundingClientRect()
-      const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2
-
-      setIsProjectsSection(isVisible)
+  const checkProjectsSection = useCallback(() => {
+    if (pathname !== '/') {
+      setIsProjectsSection(false)
+      return
     }
 
-    // Initial check
+    const projectsSection = document.getElementById('projects')
+    if (!projectsSection) {
+      setIsProjectsSection(false)
+      return
+    }
+
+    const rect = projectsSection.getBoundingClientRect()
+    const isVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2
+
+    setIsProjectsSection(isVisible)
+  }, [pathname])
+
+  const handleProjectPageScroll = useCallback(() => {
+    const currentScrollY = window.scrollY
+    const lastScrollY = lastScrollYRef.current
+
+    // Always show header at the top of the page
+    if (currentScrollY <= TOP_THRESHOLD) {
+      setIsHeaderVisible(true)
+      lastScrollYRef.current = currentScrollY
+      return
+    }
+
+    // Only update if scrolled past threshold distance
+    const scrollDelta = Math.abs(currentScrollY - lastScrollY)
+    if (scrollDelta < SCROLL_THRESHOLD) {
+      lastScrollYRef.current = currentScrollY
+      return
+    }
+
+    // Only hide when scrolling down, don't show when scrolling up
+    if (currentScrollY > lastScrollY) {
+      setIsHeaderVisible(false)
+    }
+
+    lastScrollYRef.current = currentScrollY
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current)
+      }
+
+      rafIdRef.current = requestAnimationFrame(() => {
+        if (!isProjectPage) {
+          checkProjectsSection()
+          return
+        }
+
+        handleProjectPageScroll()
+      })
+    }
+
+    // Initialize
+    lastScrollYRef.current = window.scrollY
     checkProjectsSection()
 
+    // Reset header visibility when navigating to/from project pages
+    if (isProjectPage) {
+      setIsHeaderVisible(window.scrollY <= TOP_THRESHOLD)
+    } else {
+      setIsHeaderVisible(true)
+    }
+
     // Add scroll event listener
-    window.addEventListener('scroll', checkProjectsSection)
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     // Clean up
     return () => {
-      window.removeEventListener('scroll', checkProjectsSection)
+      window.removeEventListener('scroll', handleScroll)
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current)
+      }
     }
-  }, [pathname])
+  }, [pathname, isProjectPage, checkProjectsSection, handleProjectPageScroll])
 
   const isNavItemActive = (path: string) => {
     if (path === '/') {
@@ -83,7 +144,7 @@ export default function Header() {
   )
 
   return (
-    <header className={`sticky top-0 z-50 ${mobileMenuOpen ? 'bg-white/50' : 'bg-white/50'} backdrop-blur-md border-b border-gray-200/20`}>
+    <header className={cn('sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20 transition-transform duration-300', isProjectPage && !isHeaderVisible && '-translate-y-full')}>
       <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" legacyBehavior passHref>
