@@ -181,7 +181,7 @@ export default function VercelPage() {
               </div>
             }
             right={
-              <ProjectVerticalBlock title="On Hovered" titleColor="text-black" borderColor="border-[#C1C1C1]">
+              <ProjectVerticalBlock title="On Hover" titleColor="text-black" borderColor="border-[#C1C1C1]">
                 <p className=" mb-8 lg:mb-12">
                   Chevron shows up only on hover. Without hovering, it is unclear that this component is an accordion. This will also require Vercel to design a new UI for the mobile view.
                 </p>
