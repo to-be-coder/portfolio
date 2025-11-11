@@ -383,7 +383,7 @@ function ScrollSpyViewport(props: ScrollSpyViewportProps) {
 
   const ViewportPrimitive = asChild ? Slot : 'div'
 
-  return <ViewportPrimitive data-orientation={orientation} data-slot="scroll-spy-viewport" dir={dir} {...viewportProps} className={cn('flex flex-1 flex-col gap-8', className)} />
+  return <ViewportPrimitive data-orientation={orientation} data-slot="scroll-spy-viewport" dir={dir} {...viewportProps} className={cn('flex flex-1 flex-col gap-32', className)} />
 }
 
 interface ScrollSpySectionProps extends React.ComponentProps<'div'> {

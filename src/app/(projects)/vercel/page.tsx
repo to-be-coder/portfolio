@@ -3,9 +3,7 @@
 import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectHorizontalBlock from '@/components/project-horizontal-block'
-import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
-import ProjectVerticalBlock, { default as VerticalBlock } from '@/components/project-vertical-block'
 import CtaSection from '@/components/ui/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -38,47 +36,51 @@ export default function VercelPage() {
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
           {/* Overview Section */}
-          <ScrollSpySection value="overview">
+          <ScrollSpySection value="overview" className="flex flex-col">
             <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
               Overview
             </ProjectSectionTitle>
-            <p>
-              This is a <strong>design thinking exercise</strong> exploring how I approach product improvement opportunities. I have tremendous respect for Vercel&apos;s design team and the work
-              they&apos;ve done with V0.
-              <br /> <br />
-              As a user of V0, I noticed a recurring moment of friction that sparked this exploration. Rather than a critique of existing decisions, this case study demonstrates{' '}
-              <strong>my process</strong>, <strong>systems thinking</strong>, and how I <strong>balance user needs with constraints</strong>.
-              <br /> <br />
-            </p>
-            <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">My Approach</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
-              <div className="flex flex-col p-4 rounded-lg border border-border">
-                <span className="font-semibold">Problem Identification:</span>
-                <p>Observed friction during real usage and defined the user impact.</p>
-              </div>
-              <div className="flex flex-col p-4 rounded-lg border border-border">
-                <span className="font-semibold">Solution Exploration:</span>
-                <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
-              </div>
-              <div className="flex flex-col p-4 rounded-lg border border-border">
-                <span className="font-semibold">Strategic Thinking:</span>
-                <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
+            <div className="flex flex-col gap-y-8">
+              <p>
+                This is a <strong>design thinking exercise</strong> exploring how I approach product improvement opportunities. I have tremendous respect for Vercel&apos;s design team and the work
+                they&apos;ve done with V0.
+                <br /> <br />
+                As a user of V0, I noticed a recurring moment of friction that sparked this exploration. Rather than a critique of existing decisions, this case study demonstrates{' '}
+                <strong>my process</strong>, <strong>systems thinking</strong>, and how I <strong>balance user needs with constraints</strong>.
+                <br />
+              </p>
+              <div className="flex flex-col gap-y-2">
+                <h2 className="text-2xl text-[#a1a1a1]">My Approach</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold">Problem Identification:</span>
+                    <p>Observed friction during real usage and defined the user impact.</p>
+                  </div>
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold">Solution Exploration:</span>
+                    <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
+                  </div>
+                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                    <span className="font-semibold">Strategic Thinking:</span>
+                    <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </ScrollSpySection>
 
           {/* The Observation Section */}
-          <ScrollSpySection value="observation">
+          <ScrollSpySection value="observation" className="flex flex-col gap-y-16">
             <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
               The Observation & Research
             </ProjectSectionTitle>
             <div className="flex-1">
               <p className="text-black mb-8">
-                While reviewing past interactions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
+                While reviewing past interacions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
                 distinguish between expandable accordions and static content when scanning through the conversation.
               </p>
-              <div className="flex-1 pt-2 mt-12 mb-20">
-                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Research</h2>
+              <div className="flex-1 gap-y-8 ">
+                <h2 className="text-2xl  text-[#a1a1a1]">Research</h2>
                 <ProjectHorizontalBlock title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>3 friends</p>
                   <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
@@ -162,15 +164,16 @@ export default function VercelPage() {
           {/* Current State Section */}
           <ScrollSpySection value="current-state">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Current App Behavior</ProjectSectionTitle>
-            <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
+            <div className="flex-1 flex-col space-y-8 lg:gap-y-8">
               <ProjectFlexBlock
                 left={
-                  <ProjectVerticalBlock title="No Visual Indicator for Expandable Components" titleColor="text-black" borderColor="border-border">
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">No Visual Indicator for Expandable Components</h2>
                     <p>
                       When users skim through the V0 chat, there&apos;s no visual indicator to distinguish which components are accordions (expandable) from those that aren&apos;t. This creates
                       unnecessary friction as users must click or hover to discover expandability.
                     </p>
-                  </ProjectVerticalBlock>
+                  </div>
                 }
                 right={
                   <div className="flex flex-col space-y-8">
@@ -186,18 +189,20 @@ export default function VercelPage() {
                   </div>
                 }
                 right={
-                  <ProjectVerticalBlock title="On Hover" titleColor="text-black" borderColor="border-border">
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">On Hover</h2>
                     <p className=" mb-8 lg:mb-12">
                       Chevron shows up only on hover. Without hovering, it is unclear that this component is an accordion. This will also require Vercel to design a new UI for the mobile view.
                     </p>
-                  </ProjectVerticalBlock>
+                  </div>
                 }
               />
               <ProjectFlexBlock
                 left={
-                  <ProjectVerticalBlock title="When Accordion is Expanded" titleColor="text-black" borderColor="border-border">
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When Accordion is Expanded</h2>
                     <p className=" mb-8 lg:mb-12">Icon on the left turns into a chevron down icon. </p>
-                  </ProjectVerticalBlock>
+                  </div>
                 }
                 right={
                   <div className="flex flex-col space-y-8">
@@ -346,104 +351,94 @@ export default function VercelPage() {
 
           {/* Success Metrics Section */}
           <ScrollSpySection value="success-metrics">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-[#3888D0]">Expected Impact & Success Metrics</ProjectSectionTitle>
-              <VerticalBlock title="Impact" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Reduced Friction</span>
-                    <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Faster Scanning</span>
-                    <p>Reduced Time-to-Expand</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
-                    <span className="font-semibold">Increased Confidence</span>
-                    <p>More Intentional Expansions</p>
-                  </div>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Expected Impact & Success Metrics</ProjectSectionTitle>
+            <div className="flex flex-col">
+              <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
+                <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <span className="font-semibold">Reduced Friction</span>
+                  <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
                 </div>
-              </VerticalBlock>
-              <VerticalBlock title="How to Validate" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <p>
-                  A/B test comparing click patterns, hover frequency, and time-to-interaction between current and proposed designs. Track whether users expand accordions more confidently (fewer
-                  hover-then-abandon patterns). Additionally, gather qualitative feedback on whether the visual indicator feels natural and helpful in context.
-                </p>
-              </VerticalBlock>
-            </ProjectSection>
+                <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <span className="font-semibold">Faster Scanning</span>
+                  <p>Reduced Time-to-Expand</p>
+                </div>
+                <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <span className="font-semibold">Increased Confidence</span>
+                  <p>More Intentional Expansions</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col mt-8">
+              <h2 className="text-2xl mb-2 text-[#a1a1a1]">How to Validate</h2>
+              <p>
+                A/B test comparing click patterns, hover frequency, and time-to-interaction between current and proposed designs. Track whether users expand accordions more confidently (fewer
+                hover-then-abandon patterns). Additionally, gather qualitative feedback on whether the visual indicator feels natural and helpful in context.
+              </p>
+            </div>
           </ScrollSpySection>
 
           {/* Constraints & Tradeoffs Section */}
           <ScrollSpySection value="constraints">
-            <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-              <ProjectSectionTitle color="text-white" dotColor="text-[#3888D0]" showBorder={true}>
-                Constraints & Tradeoffs
-              </ProjectSectionTitle>
-              <p className="text-white mb-8">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Constraints & Tradeoffs</ProjectSectionTitle>
+            <p className="text-black mb-8">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Visual Density</h3>
-                  <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
-                </div>
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Engineering Cost</h3>
-                  <p className="text-sm">How complex is implementation across all accordion instances? What&apos;s the development timeline?</p>
-                </div>
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Mobile Optimization</h3>
-                  <p className="text-sm">Does this work well on smaller screens with touch interactions? Are touch targets sufficient?</p>
-                </div>
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Brand Aesthetic</h3>
-                  <p className="text-sm">Does this align with V0&apos;s minimalist design philosophy and Vercel&apos;s overall brand?</p>
-                </div>
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">User Preference</h3>
-                  <p className="text-sm">Some power users may prefer the cleaner, current interface. How do we balance different user needs?</p>
-                </div>
-                <div className="bg-white text-black p-6 rounded-lg">
-                  <h3 className="font-semibold mb-2">Strategic Priorities</h3>
-                  <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">Visual Density</h3>
+                <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
               </div>
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">Engineering Cost</h3>
+                <p className="text-sm">How complex is implementation across all accordion instances? What&apos;s the development timeline?</p>
+              </div>
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">Mobile Optimization</h3>
+                <p className="text-sm">Does this work well on smaller screens with touch interactions? Are touch targets sufficient?</p>
+              </div>
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">Brand Aesthetic</h3>
+                <p className="text-sm">Does this align with V0&apos;s minimalist design philosophy and Vercel&apos;s overall brand?</p>
+              </div>
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">User Preference</h3>
+                <p className="text-sm">Some power users may prefer the cleaner, current interface. How do we balance different user needs?</p>
+              </div>
+              <div className="border border-border p-6 rounded-lg">
+                <h3 className="font-semibold mb-2">Strategic Priorities</h3>
+                <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
+              </div>
+            </div>
 
-              <div className="mt-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
-                <p className="text-white">
-                  <strong>The solution should be validated against these constraints with actual user data, not assumptions.</strong> Without access to usage analytics, technical architecture details,
-                  and strategic priorities, these are educated hypotheses that would need refinement.
-                </p>
-              </div>
-            </ProjectSection>
+            <div className="mt-8 border border-border rounded-lg p-6">
+              <p className="text-black">
+                <strong>The solution should be validated against these constraints with actual user data, not assumptions.</strong> Without access to usage analytics, technical architecture details,
+                and strategic priorities, these are educated hypotheses that would need refinement.
+              </p>
+            </div>
           </ScrollSpySection>
 
           {/* Final Thoughts Section */}
           <ScrollSpySection value="final-thoughts">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <div className="max-w-4xl mx-auto">
-                <ProjectSectionTitle dotColor="text-[#3888D0]" textAlign="text-center">
-                  Final Thoughts
-                </ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#3888D0]">Final Thoughts</ProjectSectionTitle>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 mt-8">
-                  <p className="text-lg mb-6">
-                    I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
-                    priorities, my recommendations would likely evolve.
-                  </p>
-                  <p className="text-lg mb-6">
-                    What I like about Vercel is the attention to craft evident in every interaction. Products like V0 represent the future of how designers and developers work, and my career dream is
-                    to contribute to that vision.
-                  </p>
-                  <p className="text-lg font-semibold">If I have an oppotunity to talk to Vercel&apos;s design team, I&apos;d like to learn:</p>
-                  <ul className="mt-4 space-y-2 text-lg">
-                    <li>• What I might be missing in my analysis</li>
-                    <li>• How this fits (or doesn&apos;t) with Vercel&apos;s design philosophy</li>
-                    <li>• What you&apos;ve learned from real user data about the current pattern</li>
-                    <li>• How the design team approaches similar challenges</li>
-                  </ul>
-                </div>
-              </div>
-            </ProjectSection>
+            <div className="mt-4">
+              <p className="text-lg mb-4">
+                I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
+                priorities, my recommendations would likely evolve.
+              </p>
+              <p className="text-lg mb-4">
+                What I like about Vercel is the attention to craft evident in every interaction. Products like V0 represent the future of how designers and developers work, and my career dream is to
+                contribute to that vision.
+              </p>
+              <p className="text-lg font-semibold mb-4">If I have an oppotunity to talk to Vercel&apos;s design team, I&apos;d like to learn:</p>
+              <ul className="mt-4 space-y-2 text-lg">
+                <li>• What I might be missing in my analysis</li>
+                <li>• How this fits (or doesn&apos;t) with Vercel&apos;s design philosophy</li>
+                <li>• What you&apos;ve learned from real user data about the current pattern</li>
+                <li>• How the design team approaches similar challenges</li>
+              </ul>
+            </div>
           </ScrollSpySection>
         </ScrollSpyViewport>
       </ScrollSpy>
