@@ -6,7 +6,6 @@ import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectHorizontalBlock from '@/components/project-horizontal-block'
 import ProjectHorizontalCard from '@/components/project-horizontal-card'
-import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/project-vertical-block'
 import CtaSection from '@/components/ui/cta'
@@ -71,7 +70,7 @@ export default function MozillaPage() {
           </ScrollSpyLink>
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
-          <ProjectHeroSection title="Mozilla - Ghostcat" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
+          <ProjectHeroSection title="Mozilla - Thunderbolt" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
 
           {/* Overview Section */}
           <ScrollSpySection value="overview" className="flex flex-col">
@@ -81,7 +80,7 @@ export default function MozillaPage() {
             <ProjectContent>
               <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
-                  Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
+                  Thunderbolt is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
                   <br /> <br />
                   The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and{' '}
                   <strong>user control</strong> could shape the product. <br /> <br /> We focused on a few core questions:
@@ -135,14 +134,12 @@ export default function MozillaPage() {
 
           {/* Initial Vision Section */}
           <ScrollSpySection value="initial-vision">
+            <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Thunderbolt</ProjectSectionTitle>
             <ProjectContent>
-              <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
-                Initial Vision of Ghostcat
-              </ProjectSectionTitle>
               <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
-                  Ghostcat aims to be a true <strong>personal AI assistant</strong>, one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
-                  encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
+                  Thunderbolt aims to be a true <strong>personal AI assistant</strong>, one that understands users&apos; preferences and routines while keeping data secure and private. It builds a
+                  local, encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
                 </p>
               </VerticalBlock>
               <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
@@ -220,8 +217,8 @@ export default function MozillaPage() {
 
           {/* Transparency about data usage */}
           <ScrollSpySection value="transparency">
+            <ProjectSectionTitle dotColor="text-green-500">Transparency about data usage</ProjectSectionTitle>
             <ProjectContent>
-              <ProjectSectionTitle dotColor="text-green-500">Transparency about data usage</ProjectSectionTitle>
               <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
                 <ProjectFlexBlock
                   left={
@@ -477,21 +474,19 @@ export default function MozillaPage() {
 
           {/* Mobile Mockups */}
           <ScrollSpySection value="mobile">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <div className="flex flex-col lg:flex-row space-y-0 lg:space-y-8 lg:space-x-16 items-center justify-center">
-                <div className="flex-1 flex-col gap-y-8 items-center w-full lg:w-auto">
-                  <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
-                    Designing with Mobile in Mind
-                  </ProjectSectionTitle>
-                  <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
-                  <p className=" items-center">
-                    Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how
-                    the experience could <strong>translate to smaller screens with minimal rework.</strong>
-                  </p>
-                </div>
+            <div className="flex">
+              <div className="flex  flex-1 flex-col space-y-0 justify-center">
+                <ProjectSectionTitle dotColor="text-green-500">Mobile First</ProjectSectionTitle>
+                <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
+                <p className=" items-center">
+                  Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
+                  experience could <strong>translate to smaller screens with minimal rework.</strong>
+                </p>
+              </div>
+              <div className="flex-2 flex justify-center">
                 <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
               </div>
-            </ProjectSection>
+            </div>
           </ScrollSpySection>
 
           {/* Typography Section */}

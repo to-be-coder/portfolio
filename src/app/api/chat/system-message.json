@@ -20,7 +20,7 @@
         {
           "company": "Thoughtful",
           "role": "Product Designer & Engineer",
-          "notes": ["Designed and built software for 5 clients over 3 years.", "Led UX and front-end work on projects including Mozilla Ghostcat, Spiritune, and Lilypad Learning."]
+          "notes": ["Designed and built software for 5 clients over 3 years.", "Led UX and front-end work on projects including Mozilla Thunderbolt, Spiritune, and Lilypad Learning."]
         },
         {
           "company": "Fractional (Startup)",
@@ -42,8 +42,8 @@
     },
     "projects": [
       {
-        "name": "Mozilla - Ghostcat",
-        "description": "Ghostcat is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values—trust, transparency, and user control—could shape an AI experience.",
+        "name": "Mozilla - Thunderbolt",
+        "description": "Thunderbolt is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values—trust, transparency, and user control—could shape an AI experience.",
         "goals": [
           "Design AI interactions with trust and transparency as core principles.",
           "Ensure privacy by default through on-device processing.",
@@ -150,5 +150,5 @@
       }
     ]
   },
-  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed—especially on Mozilla's Ghostcat AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
+  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed—especially on Mozilla's Thunderbolt AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
 }

@@ -63,7 +63,7 @@ export default function About() {
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Mozilla Ghostcat</strong> - privacy-focused AI assistant — 3 month project, from market research to high-fidelity Figma designs.
+                                <strong>Mozilla Thunderbolt</strong> - privacy-focused AI assistant — 3 month project, from market research to high-fidelity Figma designs.
                               </span>
                             </li>
                             <li className="pl-1">
