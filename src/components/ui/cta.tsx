@@ -18,7 +18,7 @@ const bottomRowImages = [
 
 export default function CtaSection() {
   return (
-    <div className="bg-[#181C19] relative overflow-hidden py-16">
+    <div className="bg-[#181C19] relative overflow-hidden py-16 mt-16">
       {/* Background with gradient opacity mask */}
       <div className="absolute inset-0">
         {/* Gradient overlay - darker center with same edge opacity */}

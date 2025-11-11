@@ -15,13 +15,6 @@ export default function VercelPage() {
   return (
     <main>
       {/* Hero Section */}
-      <ProjectHeroSection
-        title="V0 Design Thinking Exercise"
-        subtitle="Improving Visual Affordances in Chat Interfaces"
-        imageSrc="/vercel-cover.png"
-        imageAlt="Vercel V0 interface showcase"
-        imagePosition="top"
-      />
 
       <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full">
         <ScrollSpyNav className="hidden lg:flex w-60 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
@@ -36,9 +29,11 @@ export default function VercelPage() {
           <ScrollSpyLink value="final-thoughts">Final Thoughts</ScrollSpyLink>
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
+          <ProjectHeroSection title="V0 Design Exercise" subtitle="Improving Visual Affordances in Chat Interfaces" imageSrc="/vercel-cover.png" imageAlt="Vercel V0 interface showcase" />
+
           {/* Overview Section */}
           <ScrollSpySection value="overview" className="flex flex-col">
-            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+            <ProjectSectionTitle color="text-black" dotColor="text-[#9333EA]">
               Overview
             </ProjectSectionTitle>
             <ProjectContent>
@@ -53,15 +48,15 @@ export default function VercelPage() {
               <div className="flex flex-col gap-y-2">
                 <h2 className="text-2xl text-[#a1a1a1]">My Approach</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
                     <span className="font-semibold">Problem Identification:</span>
                     <p>Observed friction during real usage and defined the user impact.</p>
                   </div>
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
                     <span className="font-semibold">Solution Exploration:</span>
                     <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
                   </div>
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
                     <span className="font-semibold">Strategic Thinking:</span>
                     <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
                   </div>
@@ -72,7 +67,7 @@ export default function VercelPage() {
 
           {/* The Observation Section */}
           <ScrollSpySection value="observation">
-            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+            <ProjectSectionTitle color="text-black" dotColor="text-[#9333EA]">
               The Observation & Research
             </ProjectSectionTitle>
             <ProjectContent>
@@ -87,7 +82,7 @@ export default function VercelPage() {
                   <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
                     <div className="flex gap-1">
                       {[...Array(3)].map((_, i) => (
-                        <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                        <User key={i} className="w-6 h-6 fill-purple-400 stroke-none" />
                       ))}
                     </div>
                   </div>
@@ -122,15 +117,15 @@ export default function VercelPage() {
                 <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When This Matters Most</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col">
                     <span className="font-semibold mb-2 text-black">Long Conversations</span>
                     <p className="text-black">When users have 10+ exchanges and need to reference previous outputs quickly.</p>
                   </div>
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col">
                     <span className="font-semibold mb-2 text-black">Skimming Mode</span>
                     <p className="text-black">When quickly scanning for specific information without reading every detail.</p>
                   </div>
-                  <div className="flex flex-col p-4 rounded-lg border border-border">
+                  <div className="flex flex-col">
                     <span className="font-semibold mb-2 text-black">Decision-Making</span>
                     <p className="text-black">When choosing which details to explore without trial-and-error clicking.</p>
                   </div>
@@ -140,14 +135,14 @@ export default function VercelPage() {
           </ScrollSpySection>
 
           {/* Problem Statement Section */}
-          <ScrollSpySection value="problem-statement">
-            <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
+          <ScrollSpySection value="problem-statement" className="bg-purple-50 p-8 rounded-lg">
+            <ProjectSectionTitle color="text-black" textAlign="text-center" dotColor="text-[#9333EA]">
               The Problem Statement
             </ProjectSectionTitle>
             <ProjectContent>
               <div className="flex flex-col max-w-3xl mx-auto relative">
                 <div className="flex justify-start h-[64px] lg:h-[92px]">
-                  <span className="text-[#3888D0] text-[64px] lg:text-[92px]">&quot;</span>
+                  <span className="text-[#9333EA] text-[64px] lg:text-[92px]">&quot;</span>
                 </div>
                 <div className="flex flex-col">
                   <p className="text-[24px] lg:text-[24px] font-medium text-center text-black">
@@ -156,7 +151,7 @@ export default function VercelPage() {
                   </p>
                 </div>
                 <div className="flex justify-end h-[64px] lg:h-[92px]">
-                  <span className="text-[#3888D0] text-[64px] lg:text-[92px] ">&quot;</span>
+                  <span className="text-[#9333EA] text-[64px] lg:text-[92px] ">&quot;</span>
                 </div>
               </div>
             </ProjectContent>
@@ -164,7 +159,7 @@ export default function VercelPage() {
 
           {/* Current State Section */}
           <ScrollSpySection value="current-state">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Current App Behavior</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Current App Behavior</ProjectSectionTitle>
             <ProjectContent>
               <ProjectFlexBlock
                 left={
@@ -217,17 +212,17 @@ export default function VercelPage() {
 
           {/* Design Exploration Section */}
           <ScrollSpySection value="design-exploration">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Design Exploration</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Design Exploration</ProjectSectionTitle>
             <ProjectContent>
-              <p className="mx-auto mb-12">
+              <p className="mx-auto">
                 Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
                 <strong>engineering complexity</strong>.
               </p>
 
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-4">
                 {/* Solution 1 */}
-                <div className="bg-gray-50 border-2 border-[#3888D0] rounded-lg p-6 relative flex gap-4">
-                  <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
+                <div className="bg-gray-50 border-2 border-[#9333EA] rounded-lg p-6 relative flex gap-4">
+                  <div className="absolute -top-3 left-4 bg-[#9333EA] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
                   <div className="flex flex-col flex-1 justify-between">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-semibold">
@@ -238,11 +233,11 @@ export default function VercelPage() {
                     </div>
                     <div className="space-y-2 text-sm mt-4">
                       <div>
-                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <span className="font-semibold text-gray-500">Pros:</span>
                         <p className="text-gray-700">Clear affordance, minimal visual weight, industry standard pattern</p>
                       </div>
                       <div>
-                        <span className="font-semibold text-red-600">Cons:</span>
+                        <span className="font-semibold text-gray-500">Cons:</span>
                         <p className="text-gray-700">Adds visual element to every accordion</p>
                       </div>
                     </div>
@@ -251,7 +246,7 @@ export default function VercelPage() {
                 </div>
 
                 {/* Solution 2 */}
-                <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                <div className="bg-gray-50 rounded-lg p-6 relative flex gap-4">
                   <div className="flex flex-col flex-1 justify-between">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-semibold">
@@ -262,11 +257,11 @@ export default function VercelPage() {
                     </div>
                     <div className="space-y-2 text-sm mt-4">
                       <div>
-                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <span className="font-semibold text-gray-500">Pros:</span>
                         <p className="text-gray-700">More visible than just a chevron icon</p>
                       </div>
                       <div>
-                        <span className="font-semibold text-red-600">Cons:</span>
+                        <span className="font-semibold text-gray-500">Cons:</span>
                         <p className="text-gray-700">More visual noise than just a chevron icon</p>
                       </div>
                     </div>
@@ -286,11 +281,11 @@ export default function VercelPage() {
                     </div>
                     <div className="space-y-2 text-sm mt-4">
                       <div>
-                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <span className="font-semibold text-gray-500">Pros:</span>
                         <p className="text-gray-700">Extremely explicit, accessible with text labels</p>
                       </div>
                       <div>
-                        <span className="font-semibold text-red-600">Cons:</span>
+                        <span className="font-semibold text-gray-500">Cons:</span>
                         <p className="text-gray-700">Adds visual noise than just a chevron icon</p>
                       </div>
                     </div>
@@ -303,7 +298,7 @@ export default function VercelPage() {
 
           {/* Proposed Solution Section */}
           <ScrollSpySection value="proposed-solution">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
 
             <ProjectContent>
               <div className="flex flex-col">
@@ -354,20 +349,20 @@ export default function VercelPage() {
 
           {/* Success Metrics Section */}
           <ScrollSpySection value="success-metrics">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Expected Impact & Success Metrics</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Expected Impact & Success Metrics</ProjectSectionTitle>
             <ProjectContent>
               <div className="flex flex-col">
                 <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <div className="flex flex-col">
                     <span className="font-semibold">Reduced Friction</span>
                     <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
                   </div>
-                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <div className="flex flex-col">
                     <span className="font-semibold">Faster Scanning</span>
                     <p>Reduced Time-to-Expand</p>
                   </div>
-                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                  <div className="flex flex-col">
                     <span className="font-semibold">Increased Confidence</span>
                     <p>More Intentional Expansions</p>
                   </div>
@@ -385,7 +380,7 @@ export default function VercelPage() {
 
           {/* Constraints & Tradeoffs Section */}
           <ScrollSpySection value="constraints">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Constraints & Tradeoffs</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Constraints & Tradeoffs</ProjectSectionTitle>
             <ProjectContent>
               <p className="text-black">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
 
@@ -416,7 +411,7 @@ export default function VercelPage() {
                 </div>
               </div>
 
-              <div className="border border-border rounded-lg p-6">
+              <div className="">
                 <p className="text-black">
                   <strong>The solution should be validated against these constraints with actual user data, not assumptions.</strong> Without access to usage analytics, technical architecture details,
                   and strategic priorities, these are educated hypotheses that would need refinement.
@@ -427,19 +422,19 @@ export default function VercelPage() {
 
           {/* Final Thoughts Section */}
           <ScrollSpySection value="final-thoughts">
-            <ProjectSectionTitle dotColor="text-[#3888D0]">Final Thoughts</ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-[#9333EA]">Final Thoughts</ProjectSectionTitle>
 
             <ProjectContent>
-              <p className="text-lg mb-4">
+              <p className="text-lg">
                 I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
                 priorities, my recommendations would likely evolve.
               </p>
-              <p className="text-lg mb-4">
+              <p className="text-lg">
                 What I like about Vercel is the attention to craft evident in every interaction. Products like V0 represent the future of how designers and developers work, and my career dream is to
                 contribute to that vision.
               </p>
-              <p className="text-lg font-semibold mb-4">If I have an oppotunity to talk to Vercel&apos;s design team, I&apos;d like to learn:</p>
-              <ul className="mt-4 space-y-2 text-lg">
+              <p className="text-lg font-semibold">If I have an oppotunity to talk to Vercel&apos;s design team, I&apos;d like to learn:</p>
+              <ul className="space-y-2 text-lg">
                 <li>• What I might be missing in my analysis</li>
                 <li>• How this fits (or doesn&apos;t) with Vercel&apos;s design philosophy</li>
                 <li>• What you&apos;ve learned from real user data about the current pattern</li>
