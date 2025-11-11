@@ -16,8 +16,8 @@ export default function VercelPage() {
     <main>
       {/* Hero Section */}
 
-      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full">
-        <ScrollSpyNav className="hidden lg:flex w-60 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
+      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full max-w-7xl mx-auto">
+        <ScrollSpyNav className="hidden lg:flex w-60 p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
           <ScrollSpyLink value="overview" activeClassName="data-[state=active]:text-[#9333EA]">
             Overview
           </ScrollSpyLink>
@@ -66,15 +66,15 @@ export default function VercelPage() {
               <div className="flex flex-col gap-y-2">
                 <h2 className="text-2xl text-[#a1a1a1]">My Approach</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">Problem Identification:</span>
                     <p>Observed friction during real usage and defined the user impact.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">Solution Exploration:</span>
                     <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-lg">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">Strategic Thinking:</span>
                     <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
                   </div>
@@ -94,7 +94,7 @@ export default function VercelPage() {
                 distinguish between expandable accordions and static content when scanning through the conversation.
               </p>
               <div className="flex-1 gap-y-8 ">
-                <h2 className="text-2xl  text-[#a1a1a1]">Research</h2>
+                <h2 className="text-2xl  text-[#a1a1a1] mb-4">Research</h2>
                 <ProjectHorizontalBlock title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>3 friends</p>
                   <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
@@ -153,7 +153,7 @@ export default function VercelPage() {
           </ScrollSpySection>
 
           {/* Problem Statement Section */}
-          <ScrollSpySection value="problem-statement" className="bg-purple-50 p-8 rounded-lg">
+          <ScrollSpySection value="problem-statement" className="bg-purple-50 p-8 rounded-xl">
             <ProjectSectionTitle color="text-black" textAlign="text-center" dotColor="text-[#9333EA]">
               The Problem Statement
             </ProjectSectionTitle>
@@ -191,7 +191,7 @@ export default function VercelPage() {
                 }
                 right={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/vercel-chat.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                    <Image src="/vercel-chat.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-xl border border-border" priority />
                   </div>
                 }
                 reverseOnDesktop={true}
@@ -199,7 +199,7 @@ export default function VercelPage() {
               <ProjectFlexBlock
                 left={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/vercel-onhover.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                    <Image src="/vercel-onhover.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-xl border border-border" priority />
                   </div>
                 }
                 right={
@@ -220,7 +220,7 @@ export default function VercelPage() {
                 }
                 right={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/vercel-chat-expand.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-md border border-border" priority />
+                    <Image src="/vercel-chat-expand.png" alt="Vercel chat interface" width={800} height={800} className="p-4 h-auto w-auto rounded-xl border border-border" priority />
                   </div>
                 }
                 reverseOnDesktop={true}
@@ -239,8 +239,8 @@ export default function VercelPage() {
 
               <div className="flex flex-col gap-4">
                 {/* Solution 1 */}
-                <div className="bg-gray-50 border-2 border-[#9333EA] rounded-lg p-6 relative flex gap-4">
-                  <div className="absolute -top-3 left-4 bg-[#9333EA] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
+                <div className="bg-gray-50 border-2 border-[#9333EA] rounded-xl p-6 relative flex gap-4">
+                  <div className="absolute -top-3 left-4 bg-[#9333EA] text-white px-3 py-1 text-sm font-semibold rounded-xl">My Pick</div>
                   <div className="flex flex-col flex-1 justify-between">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-semibold">
@@ -260,11 +260,11 @@ export default function VercelPage() {
                       </div>
                     </div>
                   </div>
-                  <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-md border border-gray-200" priority />
+                  <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-xl border border-gray-200" priority />
                 </div>
 
                 {/* Solution 2 */}
-                <div className="bg-gray-50 rounded-lg p-6 relative flex gap-4">
+                <div className="bg-gray-50 rounded-xl p-6 relative flex gap-4">
                   <div className="flex flex-col flex-1 justify-between">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-semibold">
@@ -284,11 +284,11 @@ export default function VercelPage() {
                       </div>
                     </div>
                   </div>
-                  <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
+                  <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
                 </div>
 
                 {/* Solution 3 */}
-                <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                <div className="bg-gray-50  rounded-xl p-6 relative flex gap-4">
                   <div className="flex flex-col flex-1 justify-between">
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-semibold">
@@ -308,7 +308,7 @@ export default function VercelPage() {
                       </div>
                     </div>
                   </div>
-                  <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
+                  <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
                 </div>
               </div>
             </ProjectContent>
@@ -403,27 +403,27 @@ export default function VercelPage() {
               <p className="text-black">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Visual Density</h3>
                   <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
                 </div>
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Engineering Cost</h3>
                   <p className="text-sm">How complex is implementation across all accordion instances? What&apos;s the development timeline?</p>
                 </div>
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Mobile Optimization</h3>
                   <p className="text-sm">Does this work well on smaller screens with touch interactions? Are touch targets sufficient?</p>
                 </div>
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Brand Aesthetic</h3>
                   <p className="text-sm">Does this align with V0&apos;s minimalist design philosophy and Vercel&apos;s overall brand?</p>
                 </div>
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">User Preference</h3>
                   <p className="text-sm">Some power users may prefer the cleaner, current interface. How do we balance different user needs?</p>
                 </div>
-                <div className="border border-border p-6 rounded-lg">
+                <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Strategic Priorities</h3>
                   <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
                 </div>
