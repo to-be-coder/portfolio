@@ -1,5 +1,6 @@
 'use client'
 
+import ProjectContent from '@/components/project-content'
 import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectHorizontalBlock from '@/components/project-horizontal-block'
@@ -40,7 +41,7 @@ export default function VercelPage() {
             <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
               Overview
             </ProjectSectionTitle>
-            <div className="flex flex-col gap-y-8">
+            <ProjectContent>
               <p>
                 This is a <strong>design thinking exercise</strong> exploring how I approach product improvement opportunities. I have tremendous respect for Vercel&apos;s design team and the work
                 they&apos;ve done with V0.
@@ -66,16 +67,16 @@ export default function VercelPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* The Observation Section */}
-          <ScrollSpySection value="observation" className="flex flex-col gap-y-16">
+          <ScrollSpySection value="observation">
             <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
               The Observation & Research
             </ProjectSectionTitle>
-            <div className="flex-1">
-              <p className="text-black mb-8">
+            <ProjectContent>
+              <p className="text-black">
                 While reviewing past interacions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
                 distinguish between expandable accordions and static content when scanning through the conversation.
               </p>
@@ -117,7 +118,7 @@ export default function VercelPage() {
                 </ProjectHorizontalBlock>
               </div>
 
-              <div className="flex-1 pt-2 mt-12">
+              <div className="flex-1">
                 <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When This Matters Most</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
@@ -135,7 +136,7 @@ export default function VercelPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Problem Statement Section */}
@@ -143,7 +144,7 @@ export default function VercelPage() {
             <ProjectSectionTitle color="text-black" dotColor="text-[#3888D0]">
               The Problem Statement
             </ProjectSectionTitle>
-            <div className="flex flex-col relative">
+            <ProjectContent>
               <div className="flex flex-col max-w-3xl mx-auto relative">
                 <div className="flex justify-start h-[64px] lg:h-[92px]">
                   <span className="text-[#3888D0] text-[64px] lg:text-[92px]">&quot;</span>
@@ -158,13 +159,13 @@ export default function VercelPage() {
                   <span className="text-[#3888D0] text-[64px] lg:text-[92px] ">&quot;</span>
                 </div>
               </div>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Current State Section */}
           <ScrollSpySection value="current-state">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Current App Behavior</ProjectSectionTitle>
-            <div className="flex-1 flex-col space-y-8 lg:gap-y-8">
+            <ProjectContent>
               <ProjectFlexBlock
                 left={
                   <div className="flex flex-col">
@@ -211,98 +212,100 @@ export default function VercelPage() {
                 }
                 reverseOnDesktop={true}
               />
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Design Exploration Section */}
           <ScrollSpySection value="design-exploration">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Design Exploration</ProjectSectionTitle>
-            <p className="mx-auto mb-12">
-              Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
-              <strong>engineering complexity</strong>.
-            </p>
+            <ProjectContent>
+              <p className="mx-auto mb-12">
+                Here are three approaches I considered, evaluated against criteria of <strong>discoverability</strong>, <strong>consistency</strong>, <strong>accessibility</strong>, and{' '}
+                <strong>engineering complexity</strong>.
+              </p>
 
-            <div className="flex flex-col gap-8">
-              {/* Solution 1 */}
-              <div className="bg-gray-50 border-2 border-[#3888D0] rounded-lg p-6 relative flex gap-4">
-                <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
-                <div className="flex flex-col flex-1 justify-between">
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-semibold">
-                      Solution 1: <br />
-                      Persistent Chevron Icon
-                    </h3>
-                    <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
-                  </div>
-                  <div className="space-y-2 text-sm mt-4">
-                    <div>
-                      <span className="font-semibold text-[#3888D0]">Pros:</span>
-                      <p className="text-gray-700">Clear affordance, minimal visual weight, industry standard pattern</p>
+              <div className="flex flex-col gap-8">
+                {/* Solution 1 */}
+                <div className="bg-gray-50 border-2 border-[#3888D0] rounded-lg p-6 relative flex gap-4">
+                  <div className="absolute -top-3 left-4 bg-[#3888D0] text-white px-3 py-1 text-sm font-semibold rounded">My Pick</div>
+                  <div className="flex flex-col flex-1 justify-between">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-semibold">
+                        Solution 1: <br />
+                        Persistent Chevron Icon
+                      </h3>
+                      <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
                     </div>
-                    <div>
-                      <span className="font-semibold text-red-600">Cons:</span>
-                      <p className="text-gray-700">Adds visual element to every accordion</p>
+                    <div className="space-y-2 text-sm mt-4">
+                      <div>
+                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <p className="text-gray-700">Clear affordance, minimal visual weight, industry standard pattern</p>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-red-600">Cons:</span>
+                        <p className="text-gray-700">Adds visual element to every accordion</p>
+                      </div>
                     </div>
                   </div>
+                  <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-md border border-gray-200" priority />
                 </div>
-                <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-md border border-gray-200" priority />
-              </div>
 
-              {/* Solution 2 */}
-              <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
-                <div className="flex flex-col flex-1 justify-between">
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-semibold">
-                      Solution 2: <br />
-                      Subtle Border Treatment
-                    </h3>
-                    <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
-                  </div>
-                  <div className="space-y-2 text-sm mt-4">
-                    <div>
-                      <span className="font-semibold text-[#3888D0]">Pros:</span>
-                      <p className="text-gray-700">More visible than just a chevron icon</p>
+                {/* Solution 2 */}
+                <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                  <div className="flex flex-col flex-1 justify-between">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-semibold">
+                        Solution 2: <br />
+                        Subtle Border Treatment
+                      </h3>
+                      <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
                     </div>
-                    <div>
-                      <span className="font-semibold text-red-600">Cons:</span>
-                      <p className="text-gray-700">More visual noise than just a chevron icon</p>
+                    <div className="space-y-2 text-sm mt-4">
+                      <div>
+                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <p className="text-gray-700">More visible than just a chevron icon</p>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-red-600">Cons:</span>
+                        <p className="text-gray-700">More visual noise than just a chevron icon</p>
+                      </div>
                     </div>
                   </div>
+                  <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
                 </div>
-                <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
-              </div>
 
-              {/* Solution 3 */}
-              <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
-                <div className="flex flex-col flex-1 justify-between">
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-semibold">
-                      Solution 3: <br />
-                      Text Label Indicator
-                    </h3>
-                    <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
-                  </div>
-                  <div className="space-y-2 text-sm mt-4">
-                    <div>
-                      <span className="font-semibold text-[#3888D0]">Pros:</span>
-                      <p className="text-gray-700">Extremely explicit, accessible with text labels</p>
+                {/* Solution 3 */}
+                <div className="bg-gray-50  rounded-lg p-6 relative flex gap-4">
+                  <div className="flex flex-col flex-1 justify-between">
+                    <div className="flex flex-col gap-4">
+                      <h3 className="text-xl font-semibold">
+                        Solution 3: <br />
+                        Text Label Indicator
+                      </h3>
+                      <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
                     </div>
-                    <div>
-                      <span className="font-semibold text-red-600">Cons:</span>
-                      <p className="text-gray-700">Adds visual noise than just a chevron icon</p>
+                    <div className="space-y-2 text-sm mt-4">
+                      <div>
+                        <span className="font-semibold text-[#3888D0]">Pros:</span>
+                        <p className="text-gray-700">Extremely explicit, accessible with text labels</p>
+                      </div>
+                      <div>
+                        <span className="font-semibold text-red-600">Cons:</span>
+                        <p className="text-gray-700">Adds visual noise than just a chevron icon</p>
+                      </div>
                     </div>
                   </div>
+                  <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
                 </div>
-                <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-md border border-gray-200" priority />
               </div>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Proposed Solution Section */}
           <ScrollSpySection value="proposed-solution">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
 
-            <div className="flex flex-col gap-x-8 gap-y-8">
+            <ProjectContent>
               <div className="flex flex-col">
                 <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Why This Solution?</h2>
 
@@ -346,83 +349,87 @@ export default function VercelPage() {
                   <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto " priority />
                 </TabsContent>
               </Tabs>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Success Metrics Section */}
           <ScrollSpySection value="success-metrics">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Expected Impact & Success Metrics</ProjectSectionTitle>
-            <div className="flex flex-col">
-              <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                <div className="flex flex-col border border-border p-4 rounded-lg">
-                  <span className="font-semibold">Reduced Friction</span>
-                  <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
-                </div>
-                <div className="flex flex-col border border-border p-4 rounded-lg">
-                  <span className="font-semibold">Faster Scanning</span>
-                  <p>Reduced Time-to-Expand</p>
-                </div>
-                <div className="flex flex-col border border-border p-4 rounded-lg">
-                  <span className="font-semibold">Increased Confidence</span>
-                  <p>More Intentional Expansions</p>
+            <ProjectContent>
+              <div className="flex flex-col">
+                <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
+                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                    <span className="font-semibold">Reduced Friction</span>
+                    <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
+                  </div>
+                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                    <span className="font-semibold">Faster Scanning</span>
+                    <p>Reduced Time-to-Expand</p>
+                  </div>
+                  <div className="flex flex-col border border-border p-4 rounded-lg">
+                    <span className="font-semibold">Increased Confidence</span>
+                    <p>More Intentional Expansions</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="flex flex-col mt-8">
-              <h2 className="text-2xl mb-2 text-[#a1a1a1]">How to Validate</h2>
-              <p>
-                A/B test comparing click patterns, hover frequency, and time-to-interaction between current and proposed designs. Track whether users expand accordions more confidently (fewer
-                hover-then-abandon patterns). Additionally, gather qualitative feedback on whether the visual indicator feels natural and helpful in context.
-              </p>
-            </div>
+              <div className="flex flex-col">
+                <h2 className="text-2xl mb-2 text-[#a1a1a1]">How to Validate</h2>
+                <p>
+                  A/B test comparing click patterns, hover frequency, and time-to-interaction between current and proposed designs. Track whether users expand accordions more confidently (fewer
+                  hover-then-abandon patterns). Additionally, gather qualitative feedback on whether the visual indicator feels natural and helpful in context.
+                </p>
+              </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Constraints & Tradeoffs Section */}
           <ScrollSpySection value="constraints">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Constraints & Tradeoffs</ProjectSectionTitle>
-            <p className="text-black mb-8">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
+            <ProjectContent>
+              <p className="text-black">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Visual Density</h3>
-                <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Visual Density</h3>
+                  <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
+                </div>
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Engineering Cost</h3>
+                  <p className="text-sm">How complex is implementation across all accordion instances? What&apos;s the development timeline?</p>
+                </div>
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Mobile Optimization</h3>
+                  <p className="text-sm">Does this work well on smaller screens with touch interactions? Are touch targets sufficient?</p>
+                </div>
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Brand Aesthetic</h3>
+                  <p className="text-sm">Does this align with V0&apos;s minimalist design philosophy and Vercel&apos;s overall brand?</p>
+                </div>
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">User Preference</h3>
+                  <p className="text-sm">Some power users may prefer the cleaner, current interface. How do we balance different user needs?</p>
+                </div>
+                <div className="border border-border p-6 rounded-lg">
+                  <h3 className="font-semibold mb-2">Strategic Priorities</h3>
+                  <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
+                </div>
               </div>
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Engineering Cost</h3>
-                <p className="text-sm">How complex is implementation across all accordion instances? What&apos;s the development timeline?</p>
-              </div>
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Mobile Optimization</h3>
-                <p className="text-sm">Does this work well on smaller screens with touch interactions? Are touch targets sufficient?</p>
-              </div>
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Brand Aesthetic</h3>
-                <p className="text-sm">Does this align with V0&apos;s minimalist design philosophy and Vercel&apos;s overall brand?</p>
-              </div>
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">User Preference</h3>
-                <p className="text-sm">Some power users may prefer the cleaner, current interface. How do we balance different user needs?</p>
-              </div>
-              <div className="border border-border p-6 rounded-lg">
-                <h3 className="font-semibold mb-2">Strategic Priorities</h3>
-                <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
-              </div>
-            </div>
 
-            <div className="mt-8 border border-border rounded-lg p-6">
-              <p className="text-black">
-                <strong>The solution should be validated against these constraints with actual user data, not assumptions.</strong> Without access to usage analytics, technical architecture details,
-                and strategic priorities, these are educated hypotheses that would need refinement.
-              </p>
-            </div>
+              <div className="border border-border rounded-lg p-6">
+                <p className="text-black">
+                  <strong>The solution should be validated against these constraints with actual user data, not assumptions.</strong> Without access to usage analytics, technical architecture details,
+                  and strategic priorities, these are educated hypotheses that would need refinement.
+                </p>
+              </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Final Thoughts Section */}
           <ScrollSpySection value="final-thoughts">
             <ProjectSectionTitle dotColor="text-[#3888D0]">Final Thoughts</ProjectSectionTitle>
 
-            <div className="mt-4">
+            <ProjectContent>
               <p className="text-lg mb-4">
                 I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
                 priorities, my recommendations would likely evolve.
@@ -438,7 +445,7 @@ export default function VercelPage() {
                 <li>• What you&apos;ve learned from real user data about the current pattern</li>
                 <li>• How the design team approaches similar challenges</li>
               </ul>
-            </div>
+            </ProjectContent>
           </ScrollSpySection>
         </ScrollSpyViewport>
       </ScrollSpy>
