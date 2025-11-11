@@ -9,7 +9,7 @@ interface HorizontalBlockProps {
 
 export default function ProjectHorizontalBlock({ title, children, titleColor = 'text-black', borderColor = 'border-[#000000]' }: HorizontalBlockProps) {
   return (
-    <div className={`${borderColor} space-y-4 mb-4 bg-gray-50 p-4 rounded-xl`}>
+    <div className={`${borderColor} space-y-4 mb-4 bg-gray-100 p-4 rounded-xl`}>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="col-span-1">
           <h3 className={`text-lg ${titleColor}`}>{title}</h3>

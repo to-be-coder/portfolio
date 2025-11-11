@@ -4,6 +4,7 @@ import ProjectContent from '@/components/project-content'
 import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectHorizontalBlock from '@/components/project-horizontal-block'
+import ProjectHorizontalCard from '@/components/project-horizontal-card'
 import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
@@ -239,77 +240,89 @@ export default function VercelPage() {
 
               <div className="flex flex-col gap-4">
                 {/* Solution 1 */}
-                <div className="bg-gray-50 border-2 border-[#9333EA] rounded-xl p-6 relative flex gap-4">
-                  <div className="absolute -top-3 left-4 bg-[#9333EA] text-white px-3 py-1 text-sm font-semibold rounded-xl">My Pick</div>
-                  <div className="flex flex-col flex-1 justify-between">
-                    <div className="flex flex-col gap-4">
-                      <h3 className="text-xl font-semibold">
-                        Solution 1: <br />
-                        Persistent Chevron Icon
-                      </h3>
-                      <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
-                    </div>
-                    <div className="space-y-2 text-sm mt-4">
-                      <div>
-                        <span className="font-semibold text-gray-500">Pros:</span>
-                        <p className="text-gray-700">Clear affordance, minimal visual weight, industry standard pattern</p>
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">
+                          Solution 1: <br />
+                          Persistent Chevron Icon
+                        </h3>
+                        <p className="mb-4 min-h-[80px]">Add an always-visible chevron indicator positioned on the right side of accordion components.</p>
                       </div>
-                      <div>
-                        <span className="font-semibold text-gray-500">Cons:</span>
-                        <p className="text-gray-700">Adds visual element to every accordion</p>
+                      <div className="space-y-2 text-sm mt-4">
+                        <div>
+                          <span className="font-semibold text-gray-500">Pros:</span>
+                          <p className="text-gray-700">Clear affordance, minimal visual weight, industry standard pattern</p>
+                        </div>
+                        <div>
+                          <span className="font-semibold text-gray-500">Cons:</span>
+                          <p className="text-gray-700">Adds visual element to every accordion</p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto  rounded-xl border border-gray-200" priority />
-                </div>
+                    </>
+                  }
+                  rightContent={<Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  badge="My Pick"
+                  badgeColor="bg-[#9333EA]"
+                  border={true}
+                  borderColor="border-[#9333EA]"
+                  bgColor="bg-gray-50"
+                />
 
                 {/* Solution 2 */}
-                <div className="bg-gray-50 rounded-xl p-6 relative flex gap-4">
-                  <div className="flex flex-col flex-1 justify-between">
-                    <div className="flex flex-col gap-4">
-                      <h3 className="text-xl font-semibold">
-                        Solution 2: <br />
-                        Subtle Border Treatment
-                      </h3>
-                      <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
-                    </div>
-                    <div className="space-y-2 text-sm mt-4">
-                      <div>
-                        <span className="font-semibold text-gray-500">Pros:</span>
-                        <p className="text-gray-700">More visible than just a chevron icon</p>
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">
+                          Solution 2: <br />
+                          Subtle Border Treatment
+                        </h3>
+                        <p className="mb-4 min-h-[80px]">Use a subtle border style to indicate expandable content.</p>
                       </div>
-                      <div>
-                        <span className="font-semibold text-gray-500">Cons:</span>
-                        <p className="text-gray-700">More visual noise than just a chevron icon</p>
+                      <div className="space-y-2 text-sm mt-4">
+                        <div>
+                          <span className="font-semibold text-gray-500">Pros:</span>
+                          <p className="text-gray-700">More visible than just a chevron icon</p>
+                        </div>
+                        <div>
+                          <span className="font-semibold text-gray-500">Cons:</span>
+                          <p className="text-gray-700">More visual noise than just a chevron icon</p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
-                </div>
+                    </>
+                  }
+                  rightContent={<Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  bgColor="bg-gray-50"
+                />
 
                 {/* Solution 3 */}
-                <div className="bg-gray-50  rounded-xl p-6 relative flex gap-4">
-                  <div className="flex flex-col flex-1 justify-between">
-                    <div className="flex flex-col gap-4">
-                      <h3 className="text-xl font-semibold">
-                        Solution 3: <br />
-                        Text Label Indicator
-                      </h3>
-                      <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
-                    </div>
-                    <div className="space-y-2 text-sm mt-4">
-                      <div>
-                        <span className="font-semibold text-gray-500">Pros:</span>
-                        <p className="text-gray-700">Extremely explicit, accessible with text labels</p>
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">
+                          Solution 3: <br />
+                          Text Label Indicator
+                        </h3>
+                        <p className="mb-4 min-h-[80px]">Add small &quot;Show all&quot; or &quot;Expand&quot; text label to accordion headers.</p>
                       </div>
-                      <div>
-                        <span className="font-semibold text-gray-500">Cons:</span>
-                        <p className="text-gray-700">Adds visual noise than just a chevron icon</p>
+                      <div className="space-y-2 text-sm mt-4">
+                        <div>
+                          <span className="font-semibold text-gray-500">Pros:</span>
+                          <p className="text-gray-700">Extremely explicit, accessible with text labels</p>
+                        </div>
+                        <div>
+                          <span className="font-semibold text-gray-500">Cons:</span>
+                          <p className="text-gray-700">Adds visual noise than just a chevron icon</p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
-                </div>
+                    </>
+                  }
+                  rightContent={<Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  bgColor="bg-gray-50"
+                />
               </div>
             </ProjectContent>
           </ScrollSpySection>

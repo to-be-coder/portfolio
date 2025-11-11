@@ -5,9 +5,16 @@ import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { motion } from 'framer-motion'
 import { createContext, useContext, useState } from 'react'
 
-const TabsContext = createContext<{ value?: string; onValueChange?: (value: string) => void }>({})
+const TabsContext = createContext<{ value?: string; onValueChange?: (value: string) => void; pillBgColor?: string }>({})
 
-function Tabs({ className, value: controlledValue, defaultValue, onValueChange, ...props }: React.ComponentProps<typeof TabsPrimitive.Root>) {
+function Tabs({
+  className,
+  value: controlledValue,
+  defaultValue,
+  onValueChange,
+  pillBgColor = 'bg-black dark:bg-input/30',
+  ...props
+}: React.ComponentProps<typeof TabsPrimitive.Root> & { pillBgColor?: string }) {
   const [uncontrolledValue, setUncontrolledValue] = useState(defaultValue || '')
   const value = controlledValue ?? uncontrolledValue
 
@@ -20,7 +27,7 @@ function Tabs({ className, value: controlledValue, defaultValue, onValueChange, 
   }
 
   return (
-    <TabsContext.Provider value={{ value, onValueChange: handleValueChange }}>
+    <TabsContext.Provider value={{ value, onValueChange: handleValueChange, pillBgColor }}>
       <TabsPrimitive.Root data-slot="tabs" value={value} onValueChange={handleValueChange} className={cn('flex flex-col gap-2', className)} {...props} />
     </TabsContext.Provider>
   )
@@ -31,7 +38,7 @@ function TabsList({ className, ...props }: React.ComponentProps<typeof TabsPrimi
 }
 
 function TabsTrigger({ className, children, value, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
-  const { value: selectedValue } = useContext(TabsContext)
+  const { value: selectedValue, pillBgColor } = useContext(TabsContext)
   const isActive = selectedValue === value
 
   return (
@@ -46,7 +53,7 @@ function TabsTrigger({ className, children, value, ...props }: React.ComponentPr
     >
       <span className="relative z-10">{children}</span>
       {isActive && (
-        <motion.span layoutId="pill-tab" transition={{ type: 'spring', duration: 0.5 }} className="absolute inset-0 z-0 bg-black dark:bg-input/30 rounded-full" style={{ pointerEvents: 'none' }} />
+        <motion.span layoutId="pill-tab" transition={{ type: 'spring', duration: 0.5 }} className={cn('absolute inset-0 z-0 rounded-full', pillBgColor)} style={{ pointerEvents: 'none' }} />
       )}
     </TabsPrimitive.Trigger>
   )

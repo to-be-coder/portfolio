@@ -5,6 +5,7 @@ import ProjectContent from '@/components/project-content'
 import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
 import ProjectHorizontalBlock from '@/components/project-horizontal-block'
+import ProjectHorizontalCard from '@/components/project-horizontal-card'
 import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/project-vertical-block'
@@ -102,16 +103,16 @@ export default function MozillaPage() {
                 </p>
               </VerticalBlock>
               <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">UX Strategy & Hypothesis Building:</span>
                     <p>Framed product assumptions and prioritized what to explore first.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">Design & Prototyping:</span>
                     <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">Cross-Functional Collaboration:</span>
                     <p>Partnered with engineering to translate technical limits into UX.</p>
                   </div>
@@ -123,13 +124,9 @@ export default function MozillaPage() {
           {/* Workflow Section */}
           <ScrollSpySection value="workflow" className="flex flex-col bg-green-100 rounded-xl p-8">
             <ProjectContent>
-              <div className="flex items-center justify-center">
-                <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
-                <ProjectSectionTitle color="text-black" dotColor="text-green-500">
-                  Workflow
-                </ProjectSectionTitle>
-                <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
-              </div>
+              <ProjectSectionTitle color="text-black" dotColor="text-green-500" textAlign="text-center">
+                Workflow
+              </ProjectSectionTitle>
               <div className="w-full flex justify-center mt-8">
                 <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
               </div>
@@ -155,18 +152,16 @@ export default function MozillaPage() {
           </ScrollSpySection>
 
           {/*Hypothesis Section */}
-          <ScrollSpySection value="hypothesis">
-            <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-              <ProjectSectionTitle color="text-white" dotColor="text-green-500" showBorder={true}>
-                Hypothesis
-              </ProjectSectionTitle>
+          <ScrollSpySection value="hypothesis" className="flex flex-col bg-green-50 rounded-xl p-8">
+            <ProjectContent>
+              <ProjectSectionTitle dotColor="text-green-500">Hypothesis</ProjectSectionTitle>
               <div className="flex flex-col p-4 lg:p-8 relative">
                 <div className="flex flex-col max-w-3xl mx-auto relative">
                   <div className="flex justify-start h-[64px] lg:h-[92px]">
                     <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
                   </div>
                   <div className="flex flex-col">
-                    <p className="text-[24px] lg:text-[32px] font-medium text-center text-white">
+                    <p className="text-[24px] lg:text-[32px] font-medium text-center text-black">
                       For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
                     </p>
                   </div>
@@ -175,66 +170,58 @@ export default function MozillaPage() {
                   </div>
                 </div>
               </div>
-              <div className="flex-1 pt-2 mt-12">
-                <h2 className="text-2xl font-regular pb-2 text-white">How might we design data practices that build trust with privacy-aware users? </h2>
-                <div className="border-t border-[#C1C1C1]"></div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mt-8">
-                  <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+              <VerticalBlock title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="flex flex-col bg-green-100 p-4 rounded-xl">
                     <span className="font-semibold  mb-2 text-black">Be transparent about data usage</span>
                     <p className="  text-black">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
                   </div>
-                  <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                  <div className="flex flex-col bg-green-100  p-4 rounded-xl">
                     <span className="font-semibold mb-2 text-black">Let users control their data in settings</span>
                     <p className="  text-black">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
                   </div>
-                  <div className="flex flex-col bg-white p-4 rounded-lg border border-gray-200">
+                  <div className="flex flex-col bg-green-100 p-4 rounded-xl">
                     <span className="font-semibold   mb-2 text-black">Use familiar patterns to reduce friction</span>
                     <p className=" text-black">We leaned on UI patterns people already know to make privacy feel simple, not technical.</p>
                   </div>
                 </div>
-              </div>
-            </ProjectSection>
-          </ScrollSpySection>
-
-          {/* Design Challenge Section */}
-          <ScrollSpySection value="design-challenges">
-            <ProjectContent>
-              <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
-              <VerticalBlock titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-                <ProjectHorizontalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
-                  <p className=" text-black">
-                    To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                    shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
-                    evolved.
-                  </p>
-                </ProjectHorizontalBlock>
-                {/* Privacy-first UX */}
-                <ProjectHorizontalBlock title="Privacy-first UX">
-                  <p className=" text-black">
-                    Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
-                    used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
-                    meaningful, and ensuring the assistant felt helpful—not intrusive.
-                  </p>
-                </ProjectHorizontalBlock>
-                {/* Designing for scale */}
-                <ProjectHorizontalBlock title="Designing for scale">
-                  <p className=" text-black">
-                    With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                    evolved—
-                    <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
-                  </p>
-                </ProjectHorizontalBlock>
               </VerticalBlock>
             </ProjectContent>
           </ScrollSpySection>
 
+          {/* Design Challenge Section */}
+          <ScrollSpySection value="design-challenges">
+            <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
+            {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
+            <ProjectHorizontalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
+              <p className=" text-black">
+                To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
+                shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
+                evolved.
+              </p>
+            </ProjectHorizontalBlock>
+            {/* Privacy-first UX */}
+            <ProjectHorizontalBlock title="Privacy-first UX">
+              <p className=" text-black">
+                Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used—while
+                giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices meaningful,
+                and ensuring the assistant felt helpful—not intrusive.
+              </p>
+            </ProjectHorizontalBlock>
+            {/* Designing for scale */}
+            <ProjectHorizontalBlock title="Designing for scale">
+              <p className=" text-black">
+                With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
+                evolved—
+                <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
+              </p>
+            </ProjectHorizontalBlock>
+          </ScrollSpySection>
+
           {/* Transparency about data usage */}
           <ScrollSpySection value="transparency">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <ProjectSectionTitle color="text-black" dotColor="text-green-500" textAlign="text-center">
-                Transparency about data usage
-              </ProjectSectionTitle>
+            <ProjectContent>
+              <ProjectSectionTitle dotColor="text-green-500">Transparency about data usage</ProjectSectionTitle>
               <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
                 <ProjectFlexBlock
                   left={
@@ -269,7 +256,7 @@ export default function MozillaPage() {
                 />
                 <ProjectFlexBlock
                   left={
-                    <ProjectVerticalBlock title="Graceful Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <ProjectVerticalBlock title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p className=" mb-8 lg:mb-12">
                         If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                       </p>
@@ -283,75 +270,117 @@ export default function MozillaPage() {
                   reverseOnDesktop={true}
                 />
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Settings screens */}
           <ScrollSpySection value="settings">
-            <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
-                Designing Trust Through Settings
-              </ProjectSectionTitle>
-              <p className=" mb-8 lg:mb-12">
+            <ProjectSectionTitle dotColor="text-green-500">Designing Trust Through Settings</ProjectSectionTitle>
+            <ProjectContent>
+              <p>
                 Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core
                 part of the experience.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-8 gap-y-12 lg:gap-y-8">
-                <div className="flex flex-col gap-y-2 ">
-                  <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <p>Users can delete their account at any time—no questions asked.</p>
-                </div>
-                <div className="flex flex-col gap-y-2">
-                  <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <p>Users can clear their memory and past interactions whenever they choose.</p>
-                </div>
-                <div className="flex flex-col gap-y-2">
-                  <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <p>Users can select which AI model powers their assistant experience.</p>
-                </div>
-                <div className="flex flex-col gap-y-2">
-                  <Image src="/mozilla-setting-extentions-2.png" alt="Extensions control screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <p>Users can enable or disable extensions based on what they need or trust.</p>
-                </div>
+              <div className="flex flex-col gap-4">
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">Account Deletion</h3>
+                        <p className="mb-4 min-h-[80px]">Users can delete their account at any time, no questions asked.</p>
+                      </div>
+                    </>
+                  }
+                  rightContent={
+                    <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
+                  }
+                  bgColor="bg-gray-100"
+                />
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">Clear Memory</h3>
+                        <p className="mb-4 min-h-[80px]">Users can clear their memory and past interactions whenever they choose.</p>
+                      </div>
+                    </>
+                  }
+                  rightContent={
+                    <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
+                  }
+                  bgColor="bg-gray-100"
+                />
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">Model Selection</h3>
+                        <p className="mb-4 min-h-[80px]">Users can select which AI model powers their assistant experience.</p>
+                      </div>
+                    </>
+                  }
+                  rightContent={
+                    <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
+                  }
+                  bgColor="bg-gray-100"
+                />
+                <ProjectHorizontalCard
+                  leftContent={
+                    <>
+                      <div className="flex flex-col gap-4">
+                        <h3 className="text-xl font-semibold">Extensions Control</h3>
+                        <p className="mb-4 min-h-[80px]">Users can enable or disable extensions based on what they need or trust.</p>
+                      </div>
+                    </>
+                  }
+                  rightContent={
+                    <Image
+                      src="/mozilla-setting-extentions-2.png"
+                      alt="Extensions control screen"
+                      width={800}
+                      height={800}
+                      className="flex-1 h-auto w-auto rounded-xl border border-gray-200"
+                      priority
+                    />
+                  }
+                  bgColor="bg-gray-100"
+                />
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Iteration and Familiar Use */}
           <ScrollSpySection value="iteration">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                <div className="flex flex-col">
-                  <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
-                    Designing for Fast Iteration and Familiar Use
-                  </ProjectSectionTitle>
-                  <p className=" mb-8 lg:mb-12">
-                    To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-                    <strong>quickly prototype and evolve</strong>—without compromising usability.
-                  </p>
-                </div>
-                <Tabs defaultValue="3" className="max-w-3xl flex gap-y-4 lg:gap-y-8">
-                  <TabsList className="grid w-full grid-cols-3 bg-gray-100 text-black rounded-md">
-                    <TabsTrigger value="3" className="border-r border-gray-200">
-                      Full Screen
-                    </TabsTrigger>
-                    <TabsTrigger value="2" className="border-r border-gray-200">
-                      Right Sidebar Closed
-                    </TabsTrigger>
-                    <TabsTrigger value="1">Both Sidebars Closed</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="3" className="flex justify-center w-full">
-                    <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
-                  </TabsContent>
-                  <TabsContent value="2" className="flex justify-center  w-full">
-                    <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
-                  </TabsContent>
-                  <TabsContent value="1" className="flex justify-center  w-full">
-                    <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full rounded-md border border-gray-200" priority />
-                  </TabsContent>
-                </Tabs>
-              </div>
-            </ProjectSection>
+            <ProjectSectionTitle dotColor="text-green-500">Designing for Fast Iteration and Familiar Use</ProjectSectionTitle>
+            <ProjectContent>
+              <p>
+                To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
+                <strong>quickly prototype and evolve</strong>—without compromising usability.
+              </p>
+
+              <Tabs defaultValue="3" className="w-full gap-y-4 lg:gap-y-8" pillBgColor="bg-green-300">
+                <TabsList className="w-full">
+                  <TabsTrigger value="3" className="border-r border-gray-200 data-[state=active]:text-black">
+                    Full Screen
+                  </TabsTrigger>
+                  <TabsTrigger value="2" className="border-r border-gray-200 data-[state=active]:text-black">
+                    Right Sidebar Closed
+                  </TabsTrigger>
+                  <TabsTrigger value="1" className="data-[state=active]:text-black">
+                    Both Sidebars Closed
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="3" className="flex justify-center bg-green-100 p-8 rounded-xl">
+                  <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                </TabsContent>
+                <TabsContent value="2" className="flex justify-center bg-green-100 p-8 rounded-xl">
+                  <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                </TabsContent>
+                <TabsContent value="1" className="flex justify-center bg-green-100 p-8 rounded-xl">
+                  <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                </TabsContent>
+              </Tabs>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Sign up flow */}
@@ -426,33 +455,32 @@ export default function MozillaPage() {
 
           {/* Light and Dark Mode Mockups */}
           <ScrollSpySection value="dark-mode">
-            <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                <div className="flex flex-col">
-                  <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
-                    Dark Mode for Modern Use
-                  </ProjectSectionTitle>
-                  <p>
-                    Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
-                    <strong>modern platform expectations.</strong>
-                  </p>
-                </div>
-                <div className="flex">
-                  <Tabs defaultValue="dark" className="w-full gap-y-4 lg:gap-y-8">
-                    <TabsList className="grid w-full grid-cols-2">
-                      <TabsTrigger value="light">Light Mode</TabsTrigger>
-                      <TabsTrigger value="dark">Dark Mode</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="light" className="flex justify-center">
-                      <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
-                    </TabsContent>
-                    <TabsContent value="dark" className="flex justify-center">
-                      <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
-                    </TabsContent>
-                  </Tabs>
-                </div>
+            <ProjectSectionTitle dotColor="text-green-500">Dark Mode for Modern Use</ProjectSectionTitle>
+            <ProjectContent>
+              <p>
+                Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
+                <strong>modern platform expectations.</strong>
+              </p>
+
+              <div className="flex">
+                <Tabs defaultValue="dark" className="w-full gap-y-4 lg:gap-y-8" pillBgColor="bg-green-300">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="light" className="data-[state=active]:text-black">
+                      Light Mode
+                    </TabsTrigger>
+                    <TabsTrigger value="dark" className="data-[state=active]:text-black">
+                      Dark Mode
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="light" className="flex justify-center bg-green-100 p-8 rounded-xl">
+                    <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  </TabsContent>
+                  <TabsContent value="dark" className="flex justify-center bg-green-100 p-8 rounded-xl  ">
+                    <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  </TabsContent>
+                </Tabs>
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Mobile Mockups */}
@@ -475,32 +503,28 @@ export default function MozillaPage() {
           </ScrollSpySection>
 
           {/* Typography Section */}
-          <ScrollSpySection value="typography">
-            <ProjectSection bgClassName="bg-[#212121]" textClassName="text-white">
-              <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-                Typography
-              </ProjectSectionTitle>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
-                {/* Left Column - Large "Aa" Display */}
-                <div className="flex items-center justify-center">
-                  <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
-                </div>
-                {/* Right Column - Typography Details */}
-                <div className="flex flex-col">
-                  {/* Typeface */}
-                  <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-                    <p>Inter</p>
-                  </VerticalBlock>
-                  {/* Weights */}
-                  <VerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-                    <div className="space-y-1 md:space-y-2">
-                      <p className=" font-normal">Regular</p>
-                      <p className=" font-semibold">Semi-Bold</p>
-                    </div>
-                  </VerticalBlock>
-                </div>
+          <ScrollSpySection value="typography" className="bg-[#212121] text-white p-8 rounded-2xl">
+            <ProjectSectionTitle color="text-white" dotColor="text-green-500">
+              Typography
+            </ProjectSectionTitle>
+            <ProjectContent>
+              {/* Left Column - Large "Aa" Display */}
+              <div className="flex-1 flex items-center justify-center">
+                <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
               </div>
-            </ProjectSection>
+              {/* Right Column - Typography Details */}
+              <div className="flex-1 flex gap-x-4 justify-center">
+                {/* Typeface */}
+                <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
+                  <p>Inter</p>
+                </VerticalBlock>
+                {/* Weights */}
+                <VerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
+                  <p className=" font-normal">Regular</p>
+                  <p className=" font-semibold">Semi-Bold</p>
+                </VerticalBlock>
+              </div>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Colors Section */}
@@ -527,7 +551,7 @@ export default function MozillaPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
                 {/* Build Fast, Learn Faster */}
-                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">Build Fast, Learn Faster:</span>
                   <p>
                     This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
@@ -535,7 +559,7 @@ export default function MozillaPage() {
                   </p>
                 </div>
                 {/* Balancing Agility with Control */}
-                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">Balancing Agility with Control:</span>
                   <p>
                     One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
@@ -543,7 +567,7 @@ export default function MozillaPage() {
                   </p>
                 </div>
                 {/* I Am Not the User */}
-                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">I Am Not the User:</span>
                   <p>
                     While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
@@ -552,7 +576,7 @@ export default function MozillaPage() {
                   </p>
                 </div>
                 {/* Designing for Trust */}
-                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">Designing for Trust:</span>
                   <p>
                     Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just
@@ -560,7 +584,7 @@ export default function MozillaPage() {
                   </p>
                 </div>
                 {/* Staying Curious and Outcome-Oriented */}
-                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">Staying Curious and Outcome-Oriented:</span>
                   <p>
                     Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
