@@ -16,31 +16,62 @@ import Link from 'next/link'
 export default function MozillaPage() {
   return (
     <main>
-      {/* Hero Section */}
-      <ProjectHeroSection title="Mozilla - Ghostcat" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
-
-      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full">
-        <ScrollSpyNav className="hidden lg:flex w-48 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
-          <ScrollSpyLink value="overview">Overview</ScrollSpyLink>
-          <ScrollSpyLink value="workflow">Workflow</ScrollSpyLink>
-          <ScrollSpyLink value="initial-vision">Initial Vision</ScrollSpyLink>
-          <ScrollSpyLink value="hypothesis">Hypothesis</ScrollSpyLink>
-          <ScrollSpyLink value="design-challenges">Design Challenges</ScrollSpyLink>
-          <ScrollSpyLink value="transparency">Transparency</ScrollSpyLink>
-          <ScrollSpyLink value="settings">Settings</ScrollSpyLink>
-          <ScrollSpyLink value="iteration">Fast Iteration</ScrollSpyLink>
-          <ScrollSpyLink value="clarity">Clarity at Every Step</ScrollSpyLink>
-          <ScrollSpyLink value="early-concepts">Early Concepts</ScrollSpyLink>
-          <ScrollSpyLink value="dark-mode">Dark Mode</ScrollSpyLink>
-          <ScrollSpyLink value="mobile">Mobile</ScrollSpyLink>
-          <ScrollSpyLink value="typography">Typography</ScrollSpyLink>
-          <ScrollSpyLink value="colors">Colors</ScrollSpyLink>
-          <ScrollSpyLink value="learning">Learning</ScrollSpyLink>
-          <ScrollSpyLink value="figma">Figma</ScrollSpyLink>
+      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full max-w-7xl mx-auto">
+        <ScrollSpyNav className="hidden lg:flex w-60 p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
+          <ScrollSpyLink value="overview" activeClassName="data-[state=active]:text-green-500">
+            Overview
+          </ScrollSpyLink>
+          <ScrollSpyLink value="workflow" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Workflow
+          </ScrollSpyLink>
+          <ScrollSpyLink value="initial-vision" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Initial Vision
+          </ScrollSpyLink>
+          <ScrollSpyLink value="hypothesis" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Hypothesis
+          </ScrollSpyLink>
+          <ScrollSpyLink value="design-challenges" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Design Challenges
+          </ScrollSpyLink>
+          <ScrollSpyLink value="transparency" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Transparency
+          </ScrollSpyLink>
+          <ScrollSpyLink value="settings" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Settings
+          </ScrollSpyLink>
+          <ScrollSpyLink value="iteration" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Fast Iteration
+          </ScrollSpyLink>
+          <ScrollSpyLink value="clarity" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Clarity at Every Step
+          </ScrollSpyLink>
+          <ScrollSpyLink value="early-concepts" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Early Concepts
+          </ScrollSpyLink>
+          <ScrollSpyLink value="dark-mode" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Dark Mode
+          </ScrollSpyLink>
+          <ScrollSpyLink value="mobile" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Mobile
+          </ScrollSpyLink>
+          <ScrollSpyLink value="typography" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Typography
+          </ScrollSpyLink>
+          <ScrollSpyLink value="colors" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Colors
+          </ScrollSpyLink>
+          <ScrollSpyLink value="learning" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Learning
+          </ScrollSpyLink>
+          <ScrollSpyLink value="figma" activeClassName="data-[state=active]:text-green-500 data-[state=active]:font-semibold">
+            Figma
+          </ScrollSpyLink>
         </ScrollSpyNav>
-        <ScrollSpyViewport className="flex-1">
+        <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
+          <ProjectHeroSection title="Mozilla - Ghostcat" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
+
           {/* Overview Section */}
-          <ScrollSpySection value="overview">
+          <ScrollSpySection value="overview" className="flex flex-col">
             <ProjectSection>
               <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
