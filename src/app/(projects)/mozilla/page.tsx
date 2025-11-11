@@ -385,10 +385,8 @@ export default function MozillaPage() {
 
           {/* Sign up flow */}
           <ScrollSpySection value="clarity">
-            <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
-                Clarity at Every Step
-              </ProjectSectionTitle>
+            <ProjectSectionTitle dotColor="text-green-500">Clarity at Every Step</ProjectSectionTitle>
+            <ProjectContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-y-0 gap-x-8">
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
@@ -415,42 +413,36 @@ export default function MozillaPage() {
                   </VerticalBlock>
                 </div>
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Exploring Early Concepts Section */}
           <ScrollSpySection value="early-concepts">
-            <ProjectSection bgClassName="bg-white" textClassName="text-black">
-              <div className="grid grid-cols-1 md:grid-cols-2  gap-4 lg:gap-8">
+            <ProjectSectionTitle dotColor="text-green-500">Exploring Early Concepts</ProjectSectionTitle>
+            <ProjectContent>
+              <ProjectVerticalBlock>
                 {/* Left Column - Text Content */}
-                <div className="col-span-1">
-                  <ProjectSectionTitle dotColor="text-green-500" showBorder={true} borderColor="border-[#C1C1C1]">
-                    Exploring Early Concepts
-                  </ProjectSectionTitle>
-                  <p className=" mb-8">I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
-                  <ul className="list-disc pl-8 mb-8 ">
-                    <li>
-                      <strong>Explore layout and interaction ideas with speed</strong>
-                    </li>
-                    <li>
-                      <strong>Gather fast, actionable feedback from stakeholders</strong>
-                    </li>
-                    <li>
-                      <strong>Identify technical constraints early and adapt confidently</strong>
-                    </li>
-                  </ul>
-                  <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
-                </div>
-                {/* Right Column - Images */}
-                <div className="col-span-1 flex items-end">
-                  <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-                </div>
+                <p>I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
+                <ul className="list-disc ml-5">
+                  <li>
+                    <strong>Explore layout and interaction ideas with speed</strong>
+                  </li>
+                  <li>
+                    <strong>Gather fast, actionable feedback from stakeholders</strong>
+                  </li>
+                  <li>
+                    <strong>Identify technical constraints early and adapt confidently</strong>
+                  </li>
+                </ul>
+                <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
+              </ProjectVerticalBlock>
+              {/* Right Column - Images */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
+                <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
+                <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-4 lg:mt-8">
-                <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-                <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-md border border-gray-200" priority />
-              </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Light and Dark Mode Mockups */}
