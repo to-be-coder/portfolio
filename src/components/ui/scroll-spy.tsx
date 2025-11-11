@@ -339,10 +339,11 @@ function ScrollSpyNav(props: ScrollSpyNavProps) {
 interface ScrollSpyLinkProps extends React.ComponentProps<'a'> {
   value: string
   asChild?: boolean
+  activeClassName?: string
 }
 
 function ScrollSpyLink(props: ScrollSpyLinkProps) {
-  const { value: linkValue, asChild, onClick, className, ...linkProps } = props
+  const { value: linkValue, asChild, onClick, className, activeClassName, ...linkProps } = props
 
   const { orientation, onScrollToSection } = useScrollSpyContext(LINK_NAME)
   const value = useStore((state) => state.value)
@@ -366,7 +367,13 @@ function ScrollSpyLink(props: ScrollSpyLinkProps) {
       data-state={isActive ? 'active' : 'inactive'}
       {...linkProps}
       href={asChild ? undefined : `#${linkValue}`}
-      className={cn('rounded px-3 py-1.5 font-medium text-sm transition-colors', 'text-black hover:bg-gray-100', 'data-[state=active]:text-secondary', className)}
+      className={cn(
+        'rounded px-3 py-1.5 font-medium text-sm transition-colors',
+        'text-black hover:bg-gray-100',
+        'data-[state=active]:font-semibold',
+        activeClassName || 'data-[state=active]:text-secondary',
+        className
+      )}
       onClick={onLinkClick}
     />
   )

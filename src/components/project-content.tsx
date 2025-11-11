@@ -1,5 +1,4 @@
-interface HorizontalBlockProps {
-  title: React.ReactNode
+interface ProjectContentProps {
   children: React.ReactNode
 }
 

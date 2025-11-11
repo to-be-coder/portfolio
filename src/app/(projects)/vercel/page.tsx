@@ -18,15 +18,33 @@ export default function VercelPage() {
 
       <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full">
         <ScrollSpyNav className="hidden lg:flex w-60 border-l p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
-          <ScrollSpyLink value="overview">Overview</ScrollSpyLink>
-          <ScrollSpyLink value="observation">Observation & Research</ScrollSpyLink>
-          <ScrollSpyLink value="problem-statement">Problem Statement</ScrollSpyLink>
-          <ScrollSpyLink value="current-state">Current App Behavior</ScrollSpyLink>
-          <ScrollSpyLink value="design-exploration">Design Exploration</ScrollSpyLink>
-          <ScrollSpyLink value="proposed-solution">Proposed Solution</ScrollSpyLink>
-          <ScrollSpyLink value="success-metrics">Success Metrics</ScrollSpyLink>
-          <ScrollSpyLink value="constraints">Constraints & Tradeoffs</ScrollSpyLink>
-          <ScrollSpyLink value="final-thoughts">Final Thoughts</ScrollSpyLink>
+          <ScrollSpyLink value="overview" activeClassName="data-[state=active]:text-[#9333EA]">
+            Overview
+          </ScrollSpyLink>
+          <ScrollSpyLink value="observation" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Observation & Research
+          </ScrollSpyLink>
+          <ScrollSpyLink value="problem-statement" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Problem Statement
+          </ScrollSpyLink>
+          <ScrollSpyLink value="current-state" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Current App Behavior
+          </ScrollSpyLink>
+          <ScrollSpyLink value="design-exploration" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Design Exploration
+          </ScrollSpyLink>
+          <ScrollSpyLink value="proposed-solution" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Proposed Solution
+          </ScrollSpyLink>
+          <ScrollSpyLink value="success-metrics" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Success Metrics
+          </ScrollSpyLink>
+          <ScrollSpyLink value="constraints" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Constraints & Tradeoffs
+          </ScrollSpyLink>
+          <ScrollSpyLink value="final-thoughts" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Final Thoughts
+          </ScrollSpyLink>
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
           <ProjectHeroSection title="V0 Design Exercise" subtitle="Improving Visual Affordances in Chat Interfaces" imageSrc="/vercel-cover.png" imageAlt="Vercel V0 interface showcase" />
