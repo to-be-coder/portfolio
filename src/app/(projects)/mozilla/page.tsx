@@ -522,47 +522,52 @@ export default function MozillaPage() {
 
           {/* Learning Section */}
           <ScrollSpySection value="learning">
-            <ProjectSection bgClassName="bg-gray-100" textClassName="text-black">
+            <ProjectContent>
               {/* Title */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
                 {/* Build Fast, Learn Faster */}
-                <VerticalBlock title="Build Fast, Learn Faster" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <span className="font-semibold">Build Fast, Learn Faster:</span>
                   <p>
                     This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
                     feedback is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
                   </p>
-                </VerticalBlock>
+                </div>
                 {/* Balancing Agility with Control */}
-                <VerticalBlock title="Balancing Agility with Control" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <span className="font-semibold">Balancing Agility with Control:</span>
                   <p>
                     One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
                     learn fast while keeping scope focused and risk manageable at each stage.
                   </p>
-                </VerticalBlock>
+                </div>
                 {/* I Am Not the User */}
-                <VerticalBlock title="I Am Not the User" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <span className="font-semibold">I Am Not the User:</span>
                   <p>
                     While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
                     user—and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
                     knowing what to test next and why.
                   </p>
-                </VerticalBlock>
+                </div>
                 {/* Designing for Trust */}
-                <VerticalBlock title="Designing for Trust" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <span className="font-semibold">Designing for Trust:</span>
                   <p>
                     Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just
                     about features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
                   </p>
-                </VerticalBlock>
+                </div>
                 {/* Staying Curious and Outcome-Oriented */}
-                <VerticalBlock title="Staying Curious and Outcome-Oriented" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
+                  <span className="font-semibold">Staying Curious and Outcome-Oriented:</span>
                   <p>
                     Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
                   </p>
-                </VerticalBlock>
+                </div>
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Figma Exploration Section */}
