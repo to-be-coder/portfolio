@@ -1,8 +1,10 @@
 'use client'
 
 import ProjectColorsSection from '@/components/project-colors-section'
+import ProjectContent from '@/components/project-content'
 import ProjectFlexBlock from '@/components/project-flex-block'
 import ProjectHeroSection from '@/components/project-hero-section'
+import ProjectHorizontalBlock from '@/components/project-horizontal-block'
 import ProjectSection from '@/components/project-section'
 import ProjectSectionTitle from '@/components/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/project-vertical-block'
@@ -72,7 +74,10 @@ export default function MozillaPage() {
 
           {/* Overview Section */}
           <ScrollSpySection value="overview" className="flex flex-col">
-            <ProjectSection>
+            <ProjectSectionTitle color="text-black" dotColor="text-green-500">
+              Overview
+            </ProjectSectionTitle>
+            <ProjectContent>
               <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   Ghostcat is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
@@ -98,27 +103,27 @@ export default function MozillaPage() {
               </VerticalBlock>
               <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">UX Strategy & Hypothesis Building:</span>
                     <p>Framed product assumptions and prioritized what to explore first.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">Design & Prototyping:</span>
                     <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
                   </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-lg border border-gray-200">
+                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
                     <span className="font-semibold">Cross-Functional Collaboration:</span>
                     <p>Partnered with engineering to translate technical limits into UX.</p>
                   </div>
                 </div>
               </VerticalBlock>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Workflow Section */}
-          <ScrollSpySection value="workflow">
-            <ProjectSection bgClassName="bg-green-100">
-              <div className="flex items-center justify-center gap-4">
+          <ScrollSpySection value="workflow" className="flex flex-col bg-green-100 rounded-xl p-8">
+            <ProjectContent>
+              <div className="flex items-center justify-center">
                 <div className="flex-1 border-t border-[#C1C1C1] h-8 flex items-center"></div>
                 <ProjectSectionTitle color="text-black" dotColor="text-green-500">
                   Workflow
@@ -128,25 +133,25 @@ export default function MozillaPage() {
               <div className="w-full flex justify-center mt-8">
                 <Image src="/mozilla-workflow.png" alt="Project workflow timeline showing hypothesis, research, and synthesis phases" width={1728} height={600} className="w-full h-auto" priority />
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Initial Vision Section */}
           <ScrollSpySection value="initial-vision">
-            <ProjectSection>
+            <ProjectContent>
               <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
                 Initial Vision of Ghostcat
               </ProjectSectionTitle>
               <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
-                  Ghostcat aims to be a true <strong>personal AI assistant</strong> — one that understands users&apos; preferences and routines while keeping data secure and private. It builds a
-                  local, encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
+                  Ghostcat aims to be a true <strong>personal AI assistant</strong>, one that understands users&apos; preferences and routines while keeping data secure and private. It builds a local,
+                  encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
                 </p>
               </VerticalBlock>
               <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>I am unable to show this section due to a request.</p>
               </VerticalBlock>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/*Hypothesis Section */}
@@ -193,37 +198,35 @@ export default function MozillaPage() {
 
           {/* Design Challenge Section */}
           <ScrollSpySection value="design-challenges">
-            <ProjectSection bgClassName="bg-green-100" textClassName="text-black">
-              <ProjectSectionTitle dotColor="text-green-500" textAlign="text-center">
-                Design Challenges
-              </ProjectSectionTitle>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8">
+            <ProjectContent>
+              <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
+              <VerticalBlock titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-                <VerticalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
+                <ProjectHorizontalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
                   <p className=" text-black">
                     To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
                     shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
                     evolved.
                   </p>
-                </VerticalBlock>
+                </ProjectHorizontalBlock>
                 {/* Privacy-first UX */}
-                <VerticalBlock title="Privacy-first UX">
+                <ProjectHorizontalBlock title="Privacy-first UX">
                   <p className=" text-black">
                     Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and
                     used—while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
                     meaningful, and ensuring the assistant felt helpful—not intrusive.
                   </p>
-                </VerticalBlock>
+                </ProjectHorizontalBlock>
                 {/* Designing for scale */}
-                <VerticalBlock title="Designing for scale">
+                <ProjectHorizontalBlock title="Designing for scale">
                   <p className=" text-black">
                     With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                     evolved—
                     <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
                   </p>
-                </VerticalBlock>
-              </div>
-            </ProjectSection>
+                </ProjectHorizontalBlock>
+              </VerticalBlock>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Transparency about data usage */}
@@ -563,8 +566,8 @@ export default function MozillaPage() {
           </ScrollSpySection>
 
           {/* Figma Exploration Section */}
-          <ScrollSpySection value="figma">
-            <ProjectSection bgClassName="bg-primary" textClassName="text-white">
+          <ScrollSpySection value="figma" className="flex flex-col bg-primary rounded-xl p-8 text-white">
+            <ProjectContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 {/* Left Column - Text Content */}
                 <div>
@@ -587,7 +590,7 @@ export default function MozillaPage() {
                   <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
                 </div>
               </div>
-            </ProjectSection>
+            </ProjectContent>
           </ScrollSpySection>
         </ScrollSpyViewport>
       </ScrollSpy>
