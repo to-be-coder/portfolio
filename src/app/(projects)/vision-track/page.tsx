@@ -59,7 +59,7 @@ export default function VisionTrackPage() {
               Overview
             </ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                 <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <p className=" font-semibold">Role: </p>
                   <p>UX Research & Product Discovery</p>
@@ -74,17 +74,17 @@ export default function VisionTrackPage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-                <VerticalBlock title="Overview" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
-                    VisionTrack helps teams stay aligned in fast-paced, remote environments by translating company goals into daily clarity. We started by designing for startup founders—but early
-                    research revealed they didn&apos;t want another tool to log into. More importantly, they weren&apos;t struggling to set goals—they were struggling to act on them. People understood
-                    company priorities, but couldn&apos;t connect them to day-to-day decisions. Alignment wasn&apos;t the issue—translation was. So we pivoted to SMB Sales and Marketing teams, cut 80%
-                    of features, and defined a Slack-based MVP: one reminder loop, delivered inside the tools they already used.
+                    VisionTrack helps teams stay aligned in fast-paced, remote environments by translating company goals into daily clarity. We started by designing for startup founders, but early
+                    research revealed they didn&apos;t want another tool to log into. More importantly, they weren&apos;t struggling to set goals, they were struggling to act on them. People
+                    understood company priorities, but couldn&apos;t connect them to day-to-day decisions. Alignment wasn&apos;t the issue, translation was. So we pivoted to SMB Sales and Marketing
+                    teams, cut 80% of features, and defined a Slack-based MVP: one reminder loop, delivered inside the tools they already used.
                   </p>
                 </VerticalBlock>
-                <VerticalBlock title="Design Objective" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                <VerticalBlock title="Design Objective" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
-                    Our main objective was to apply lean startup principles—experimenting, iterating, and pivoting quickly—to define an MVP that meets user needs. We aimed to address the core pain
+                    Our main objective was to apply lean startup principles, experimenting, iterating, and pivoting quickly, to define an MVP that meets user needs. We aimed to address the core pain
                     points around goal alignment, while testing innovative ways to keep teams focused and motivated.
                   </p>
                 </VerticalBlock>
@@ -98,18 +98,18 @@ export default function VisionTrackPage() {
             </ProjectSectionTitle>
             <ProjectHorizontalBlock title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
-                We uncovered the real gap: teams didn&apos;t struggle to set goals—they struggled to act on them day to day. <br />
+                We uncovered the real gap: teams didn&apos;t struggle to set goals, they struggled to act on them day to day. <br />
               </p>
               <p>
                 We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around "goal translation," and scoped a focused MVP: one Slack-based reminder loop, delivered
-                inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction—setting a clear foundation for future
+                inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear foundation for future
                 prototyping.
               </p>
             </ProjectHorizontalBlock>
             <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
-                We spent too long validating the segment before testing behavior—so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
-                came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner—testing
+                We spent too long validating the segment before testing behavior, so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
+                came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner, testing
                 one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
               </p>
             </ProjectHorizontalBlock>
@@ -128,7 +128,7 @@ export default function VisionTrackPage() {
                 <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
 
                 <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
-                  <p>Founders didn&apos;t want &ldquo;another dashboard&rdquo;—they defaulted to Excel or Notion.</p>
+                  <p>Founders didn&apos;t want &ldquo;another dashboard&rdquo;,they defaulted to Excel or Notion.</p>
                 </div>
                 <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
                   <p>They didn&apos;t want another tool to manage and log into.</p>
@@ -166,20 +166,20 @@ export default function VisionTrackPage() {
             <ProjectContent>
               <ProjectVerticalBlock title="What Surprised Me" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
-                  Most teams didn&apos;t lack strategy—they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
-                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; — Marketing
-                  Manager. This realization reframed our entire direction.
+                  Most teams didn&apos;t lack strategy, they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
+                  struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; (Marketing
+                  Manager). This realization reframed our entire direction. Manager. This realization reframed our entire direction.
                 </p>
               </ProjectVerticalBlock>
 
               <ProjectVerticalBlock title="MVP Direction" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
-                  We cut <span className="font-bold">80%</span> of our feature ideas—dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
+                  We cut <span className="font-bold">80%</span> of our feature ideas, dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className=" font-semibold">Why Build on Slack?</p>
                   <p className=" bg-gray-100 p-4 rounded-xl">
-                    Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow—and frictionless adoption was a requirement, not a nice-to-have.
+                    Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow, and frictionless adoption was a requirement, not a nice-to-have.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -192,7 +192,7 @@ export default function VisionTrackPage() {
                       <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: "Which of your tasks support this objective?"
                     </p>
                     <p className=" bg-gray-100 p-4 rounded-xl flex-1">
-                      <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries—no login required.
+                      <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries, no login required.
                     </p>
                   </div>
                 </div>
@@ -353,7 +353,7 @@ export default function VisionTrackPage() {
               <div className="space-y-1 md:space-y-2">
                 <div>
                   <span className="font-semibold ">01</span>
-                  <span> &ldquo;Goals often get lost in translation—through constant updates or simply being forgotten.&rdquo;</span>
+                  <span> &ldquo;Goals often get lost in translation, through constant updates or simply being forgotten.&rdquo;</span>
                 </div>
                 <div>
                   <span className="font-semibold ">02</span>
@@ -379,7 +379,7 @@ export default function VisionTrackPage() {
                 </div>
                 <div>
                   <span className="font-semibold ">03</span>
-                  <span> Not everything is captured by KPIs alone—some critical tasks are unquantifiable yet vital.</span>
+                  <span> Not everything is captured by KPIs alone, some critical tasks are unquantifiable yet vital.</span>
                 </div>
               </div>
             </ProjectHorizontalBlock>
@@ -387,8 +387,8 @@ export default function VisionTrackPage() {
             {/* Decision + Learning */}
             <ProjectHorizontalBlock title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
-                We decided to focus on a single department within an SMB—specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and avoid
-                developing a watered-down product trying to serve every department at once.
+                We decided to focus on a single department within an SMB, specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
+                avoid developing a watered-down product trying to serve every department at once.
               </p>
             </ProjectHorizontalBlock>
           </ScrollSpySection>
