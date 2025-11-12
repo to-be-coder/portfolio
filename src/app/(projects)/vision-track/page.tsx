@@ -101,9 +101,9 @@ export default function VisionTrackPage() {
                 We uncovered the real gap: teams didn&apos;t struggle to set goals, they struggled to act on them day to day. <br />
               </p>
               <p>
-                We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around "goal translation," and scoped a focused MVP: one Slack-based reminder loop, delivered
-                inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear foundation for future
-                prototyping.
+                We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around &ldquo;goal translation,&rdquo; and scoped a focused MVP: one Slack-based reminder loop,
+                delivered inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear foundation for
+                future prototyping.
               </p>
             </ProjectHorizontalBlock>
             <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
@@ -122,7 +122,7 @@ export default function VisionTrackPage() {
             <ProjectContent>
               <p>
                 We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of pitching features, we focused on context and behavior. Using open-ended prompts like
-                "walk me through how your team tracks goals today."
+                &ldquo;walk me through how your team tracks goals today.&rdquo;
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-stretch">
                 <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
@@ -189,7 +189,7 @@ export default function VisionTrackPage() {
                       <span className="font-bold">1. Manager</span> sets OKRs at the start of the cycle.
                     </p>
                     <p className=" bg-gray-100 p-4 rounded-xl flex-1">
-                      <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: "Which of your tasks support this objective?"
+                      <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: &ldquo;Which of your tasks support this objective?&rdquo;
                     </p>
                     <p className=" bg-gray-100 p-4 rounded-xl flex-1">
                       <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries, no login required.
