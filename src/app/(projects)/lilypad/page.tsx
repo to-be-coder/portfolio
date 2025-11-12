@@ -6,7 +6,7 @@ import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import { VerticalStack } from '@/components/ui-block/project-stack'
+import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import ProjectTypographySection from '@/components/ui-block/project-typography-section'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -57,7 +57,7 @@ export default function LilypadPage() {
               Overview
             </ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+              <HorizontalStack mobileCols={1} desktopCols={2}>
                 <VerticalStack title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
                     I collaborated with a startup to redesign their landing page concept before it was published. With no existing analytics or user feedback to draw from, I focused on creating a
@@ -81,7 +81,7 @@ export default function LilypadPage() {
                     </div>
                   </div>
                 </VerticalStack>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -123,41 +123,38 @@ export default function LilypadPage() {
           {/* Design Approach Section */}
           <ScrollSpySection value="design-approach" className="flex flex-col">
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                {/* Left Column - Title */}
-                <div>
-                  <ProjectSectionTitle dotColor="text-[#DDA15F]">Design Approach</ProjectSectionTitle>
-                </div>
+              <ProjectFlexBlock
+                left={<ProjectSectionTitle dotColor="text-[#DDA15F]">Design Approach</ProjectSectionTitle>}
+                right={
+                  <div className="space-y-4 md:space-y-8">
+                    {/* Content */}
+                    <VerticalStack title="Content" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                      <p>Collaborated with the startup team to define and highlight their core benefits, ensuring every section of the page directly addressed key user questions and pain points.</p>
+                    </VerticalStack>
 
-                {/* Right Column - Approach Details */}
-                <div className="space-y-4 md:space-y-8">
-                  {/* Content */}
-                  <VerticalStack title="Content" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <p>Collaborated with the startup team to define and highlight their core benefits, ensuring every section of the page directly addressed key user questions and pain points.</p>
-                  </VerticalStack>
+                    {/* Visual Hierarchy & Layout */}
+                    <VerticalStack title="Visual Hierarchy & Layout" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                      <p>
+                        Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and
+                        understand the page&apos;s content.
+                      </p>
+                    </VerticalStack>
 
-                  {/* Visual Hierarchy & Layout */}
-                  <VerticalStack title="Visual Hierarchy & Layout" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <p>
-                      Created a clean, minimalist design that draws attention to the most important information first. I also used consistent typography and spacing so users can quickly scan and
-                      understand the page&apos;s content.
-                    </p>
-                  </VerticalStack>
+                    {/* Calls-to-Action */}
+                    <VerticalStack title="Calls-to-Action" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                      <p>Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
+                    </VerticalStack>
 
-                  {/* Calls-to-Action */}
-                  <VerticalStack title="Calls-to-Action" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <p>Strategically placed CTAs in prominent locations, making it easy for users to take the next step.</p>
-                  </VerticalStack>
-
-                  {/* Responsive Design */}
-                  <VerticalStack title="Responsive Design" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                    <p>
-                      Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. and ensured images and text scaled
-                      appropriately to maintain readability across various screen sizes.
-                    </p>
-                  </VerticalStack>
-                </div>
-              </div>
+                    {/* Responsive Design */}
+                    <VerticalStack title="Responsive Design" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                      <p>
+                        Optimized the layout for mobile and tablet devices since the startup anticipates a significant portion of traffic coming from mobile users. and ensured images and text scaled
+                        appropriately to maintain readability across various screen sizes.
+                      </p>
+                    </VerticalStack>
+                  </div>
+                }
+              />
             </ProjectContent>
           </ScrollSpySection>
 
@@ -167,7 +164,7 @@ export default function LilypadPage() {
               Mobile-First Design
             </ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 md:gap-5 w-full h-auto">
+              <HorizontalStack mobileCols={2} desktopCols={4} gapClassName="gap-2 md:gap-5">
                 <div className="flex justify-center">
                   <Image src="/lilypad-iphone-1.png" alt="First mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
                 </div>
@@ -182,7 +179,7 @@ export default function LilypadPage() {
                 <div className="flex justify-center">
                   <Image src="/lilypad-iphone-4.png" alt="Fourth mobile screen of Lilypad's responsive design" width={240} height={480} className="w-3/4 sm:w-full h-auto" priority />
                 </div>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -223,7 +220,8 @@ export default function LilypadPage() {
             <ProjectContent>
               <div className="flex flex-col gap-4">
                 <ProjectFlexBlock
-                  leftContent={
+                  variant="card"
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Consistent Layout Primitives</h3>
@@ -234,7 +232,7 @@ export default function LilypadPage() {
                       </div>
                     </>
                   }
-                  rightContent={
+                  right={
                     <Image
                       src="/lilypad-grid.png"
                       alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
@@ -247,7 +245,8 @@ export default function LilypadPage() {
                   bgColor="bg-gray-100"
                 />
                 <ProjectFlexBlock
-                  leftContent={
+                  variant="card"
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Built for Responsive & Future Growth</h3>
@@ -258,7 +257,7 @@ export default function LilypadPage() {
                       </div>
                     </>
                   }
-                  rightContent={
+                  right={
                     <Image
                       src="/lilypad-breakpoints.png"
                       alt="UI Kit showing typography, colors, and responsive grid system for Lilypad's design system"
@@ -278,7 +277,7 @@ export default function LilypadPage() {
           <ScrollSpySection value="next-steps" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-[#DDA15F]">Next Steps</ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <HorizontalStack mobileCols={1} desktopCols={3}>
                 <VerticalStack title="Gather Real-World Feedback" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>Once the page goes live, we plan to track engagement metrics (e.g., click-through rates, sign-ups) and collect user feedback to evaluate the effectiveness of the design.</p>
                 </VerticalStack>
@@ -290,21 +289,21 @@ export default function LilypadPage() {
                 <VerticalStack title="Potential User Testing" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>After launch, moderated or unmoderated user testing could provide valuable qualitative feedback to guide future iterations.</p>
                 </VerticalStack>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
           {/* Figma Exploration Section */}
-          <ScrollSpySection value="figma" className="flex flex-col bg-[#DDA15F] p-8 rounded-2xl">
+          <ScrollSpySection value="figma" className="flex flex-col bg-[#FEFAE1] p-8 rounded-2xl">
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+              <HorizontalStack mobileCols={1} desktopCols={2}>
                 {/* Left Column - Text Content */}
                 <div>
                   <ProjectSectionTitle dotColor="text-[#af5800]">ExploreFigma File</ProjectSectionTitle>
                   <p className="mb-12">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
                   <Link
                     href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page--Public-?node-id=0-1&t=aKdPgE6gQyG0cSwq-1"
-                    className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+                    className="inline-flex items-center bg-[#DDA15F] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -317,7 +316,7 @@ export default function LilypadPage() {
                 <div className="flex justify-center">
                   <Image src="/lilypad-iphone-1.png" alt="iPhone mockup of Lilypad's mobile design" width={240} height={480} className="h-auto max-w-[800px]" priority />
                 </div>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
         </ScrollSpyViewport>
