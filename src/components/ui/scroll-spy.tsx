@@ -315,7 +315,13 @@ function ScrollSpyRootImpl(props: Omit<ScrollSpyRootProps, 'onValueChange'>) {
 
   return (
     <ScrollSpyContext.Provider value={contextValue}>
-      <RootPrimitive data-orientation={orientation} data-slot="scroll-spy" dir={dir} {...rootProps} className={cn('flex', orientation === 'horizontal' ? 'flex-row' : 'flex-col', className)} />
+      <RootPrimitive
+        data-orientation={orientation}
+        data-slot="scroll-spy"
+        dir={dir}
+        {...rootProps}
+        className={cn('flex', orientation === 'horizontal' ? 'flex-row' : 'flex-col', 'w-full max-w-7xl mx-auto', className)}
+      />
     </ScrollSpyContext.Provider>
   )
 }
@@ -332,7 +338,13 @@ function ScrollSpyNav(props: ScrollSpyNavProps) {
   const NavPrimitive = asChild ? Slot : 'nav'
 
   return (
-    <NavPrimitive data-orientation={orientation} data-slot="scroll-spy-nav" dir={dir} {...navProps} className={cn('flex gap-2', orientation === 'horizontal' ? 'flex-col' : 'flex-row', className)} />
+    <NavPrimitive
+      data-orientation={orientation}
+      data-slot="scroll-spy-nav"
+      dir={dir}
+      {...navProps}
+      className={cn('flex gap-2', orientation === 'horizontal' ? 'flex-col' : 'flex-row', 'hidden lg:flex w-60 p-6 sticky top-0 h-screen flex-col gap-2 shrink-0', className)}
+    />
   )
 }
 

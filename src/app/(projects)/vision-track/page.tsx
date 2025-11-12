@@ -13,8 +13,8 @@ import Image from 'next/image'
 export default function VisionTrackPage() {
   return (
     <main>
-      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal" className="w-full max-w-7xl mx-auto">
-        <ScrollSpyNav className="hidden lg:flex w-60 p-6 sticky top-0 h-screen flex-col gap-2 shrink-0">
+      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal">
+        <ScrollSpyNav>
           <ScrollSpyLink value="overview" activeClassName="data-[state=active]:text-blue-400">
             Overview
           </ScrollSpyLink>
