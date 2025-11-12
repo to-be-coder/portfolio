@@ -1,5 +1,5 @@
 'use client'
-import HomeHeroSection from '@/components/home-hero-section'
+import HomeHeroSection from '@/components/ui-block/home-hero-section'
 import { Badge } from '@/components/ui/badge'
 import CtaSection from '@/components/ui/cta'
 import Image from 'next/image'

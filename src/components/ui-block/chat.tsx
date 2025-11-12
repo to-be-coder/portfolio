@@ -4,8 +4,8 @@ import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 import { ArrowUp } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { BorderBeam } from './magicui/border-beam'
-import { Textarea } from './ui/textarea'
+import { BorderBeam } from '../magicui/border-beam'
+import { Textarea } from '../ui/textarea'
 
 export default function Page() {
   const { messages, sendMessage, status } = useChat({

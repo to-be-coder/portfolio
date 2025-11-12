@@ -1,4 +1,4 @@
-import FilteredNotionPosts from '@/components/filtered-notion-posts'
+import FilteredNotionPosts from '@/components/ui-block/filtered-notion-posts'
 import CtaSection from '@/components/ui/cta'
 import { getArticles } from '@/lib/notion'
 

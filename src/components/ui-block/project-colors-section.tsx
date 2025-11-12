@@ -1,4 +1,4 @@
-import ProjectSectionTitle from '@/components/project-section-title'
+import ProjectSectionTitle from './project-section-title'
 
 interface Color {
   hex: string
