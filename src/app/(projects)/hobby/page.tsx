@@ -21,7 +21,7 @@ export default function Hobby() {
           {/* Images */}
           {[...Array(40)].map((_, i) => (
             <div key={i} className="break-inside-avoid">
-              <Image src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="rounded-md w-full h-auto object-cover" width={600} height={600} />
+              <Image src={`/hobby-${i + 1}.jpeg`} alt={`Hobby Image ${i + 1}`} className="rounded-xl w-full h-auto object-cover" width={600} height={600} />
             </div>
           ))}
         </div>
