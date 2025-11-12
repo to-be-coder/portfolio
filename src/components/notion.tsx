@@ -23,7 +23,14 @@ export const NotionPosts = async () => {
         {posts
           .filter((post): post is Post => Boolean(post.path && post.title))
           .map((post, index) => (
-            <NotionCard key={index} title={post.title} url={post.path} category={post.category || 'Uncategorized'} />
+            <NotionCard
+              key={index}
+              title={post.title}
+              url={post.path}
+              category={post.category || 'Uncategorized'}
+              subtitle={post.subtitle}
+              index={index}
+            />
           ))}
       </>
     )
