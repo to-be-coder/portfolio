@@ -35,7 +35,7 @@ export function VerticalCard({ title = null, children, titleColor = 'text-black'
   return (
     <div className={`flex flex-col ${bgColor} p-4 rounded-xl ${className}`}>
       {title && <span className={`font-semibold mb-2 ${titleColor}`}>{title}</span>}
-      <p className={contentColor}>{children}</p>
+      <div className={contentColor}>{children}</div>
     </div>
   )
 }

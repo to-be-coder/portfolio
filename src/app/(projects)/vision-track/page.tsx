@@ -249,47 +249,49 @@ export default function VisionTrackPage() {
           {/* Research #1 Section */}
           <ScrollSpySection value="research-1" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Research #1</ProjectSectionTitle>
-            {/* Interviewed */}
-            <HorizontalCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>5 Founders</p>
-              <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
-                  ))}
+            <VerticalStack>
+              {/* Interviewed */}
+              <HorizontalCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>5 Founders</p>
+                <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </HorizontalCard>
+              </HorizontalCard>
 
-            {/* Challenges */}
-            <HorizontalCard title="Challenges" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <div className="space-y-1 md:space-y-2">
-                <div>
-                  <span className="font-semibold ">Budget Constraints:</span>
-                  <span> Founders often hesitate to pay for yet another tool.</span>
+              {/* Challenges */}
+              <HorizontalCard title="Challenges" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <div className="space-y-1 md:space-y-2">
+                  <div>
+                    <span className="font-semibold ">Budget Constraints:</span>
+                    <span> Founders often hesitate to pay for yet another tool.</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold ">Habitual Tools:</span>
+                    <span> Excel is already free and familiar.</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="font-semibold ">Habitual Tools:</span>
-                  <span> Excel is already free and familiar.</span>
-                </div>
-              </div>
-            </HorizontalCard>
+              </HorizontalCard>
 
-            {/* Decision + Learning */}
-            <HorizontalCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>
-                Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question our
-                target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
-                address their unique challenges and needs.
-              </p>
-            </HorizontalCard>
+              {/* Decision + Learning */}
+              <HorizontalCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>
+                  Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question
+                  our target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
+                  address their unique challenges and needs.
+                </p>
+              </HorizontalCard>
+            </VerticalStack>
           </ScrollSpySection>
 
           {/* Hypothesis #2 Section */}
           <ScrollSpySection value="hypothesis-2" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Hypothesis #2</ProjectSectionTitle>
             <ProjectContent>
-              <HorizontalStack mobileCols={1} desktopCols={3}>
+              <HorizontalStack>
                 <VerticalCard title="Target Customers" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
                   SMB in the US (50-200 people).
                 </VerticalCard>
@@ -323,66 +325,68 @@ export default function VisionTrackPage() {
           {/* Research #2 Section */}
           <ScrollSpySection value="research-2" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Research #2</ProjectSectionTitle>
-            {/* Interviewed */}
-            <HorizontalCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>20 People (Product manager, CTO, CEO, CPO, Founder)</p>
-              <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
-                <div className="flex gap-1">
-                  {[...Array(10)].map((_, i) => (
-                    <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
-                  ))}
+            <VerticalStack>
+              {/* Interviewed */}
+              <HorizontalCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>20 People (Product manager, CTO, CEO, CPO, Founder)</p>
+                <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
+                  <div className="flex gap-1">
+                    {[...Array(10)].map((_, i) => (
+                      <User key={i} className="w-6 h-6 fill-blue-400 stroke-none" />
+                    ))}
+                  </div>
+                  <div className="flex gap-1">
+                    {[...Array(10)].map((_, i) => (
+                      <User key={i + 10} className="w-6 h-6 fill-blue-400 stroke-none" />
+                    ))}
+                  </div>
                 </div>
-                <div className="flex gap-1">
-                  {[...Array(10)].map((_, i) => (
-                    <User key={i + 10} className="w-6 h-6 fill-blue-400 stroke-none" />
-                  ))}
-                </div>
-              </div>
-            </HorizontalCard>
+              </HorizontalCard>
 
-            {/* Quotes */}
-            <HorizontalCard title="Quotes" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <div className="space-y-1 md:space-y-2">
-                <div>
-                  <span className="font-semibold ">01</span>
-                  <span> &ldquo;Goals often get lost in translation, through constant updates or simply being forgotten.&rdquo;</span>
+              {/* Quotes */}
+              <HorizontalCard title="Quotes" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <div className="space-y-1 md:space-y-2">
+                  <div>
+                    <span className="font-semibold ">01</span>
+                    <span> &ldquo;Goals often get lost in translation, through constant updates or simply being forgotten.&rdquo;</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold ">02</span>
+                    <span> &ldquo;Great leadership means catching all ideas, nurturing innovation, and knowing when to let go of those that don&apos;t fit.&rdquo;</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold ">03</span>
+                    <span> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="font-semibold ">02</span>
-                  <span> &ldquo;Great leadership means catching all ideas, nurturing innovation, and knowing when to let go of those that don&apos;t fit.&rdquo;</span>
-                </div>
-                <div>
-                  <span className="font-semibold ">03</span>
-                  <span> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
-                </div>
-              </div>
-            </HorizontalCard>
+              </HorizontalCard>
 
-            {/* Pain Points */}
-            <HorizontalCard title="Pain Points" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <div className="space-y-1 md:space-y-2">
-                <div>
-                  <span className="font-semibold ">01</span>
-                  <span> Translating abstract goals into actionable tasks.</span>
+              {/* Pain Points */}
+              <HorizontalCard title="Pain Points" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <div className="space-y-1 md:space-y-2">
+                  <div>
+                    <span className="font-semibold ">01</span>
+                    <span> Translating abstract goals into actionable tasks.</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold ">02</span>
+                    <span> Employees already juggling multiple logins.</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold ">03</span>
+                    <span> Not everything is captured by KPIs alone, some critical tasks are unquantifiable yet vital.</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="font-semibold ">02</span>
-                  <span> Employees already juggling multiple logins.</span>
-                </div>
-                <div>
-                  <span className="font-semibold ">03</span>
-                  <span> Not everything is captured by KPIs alone, some critical tasks are unquantifiable yet vital.</span>
-                </div>
-              </div>
-            </HorizontalCard>
+              </HorizontalCard>
 
-            {/* Decision + Learning */}
-            <HorizontalCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>
-                We decided to focus on a single department within an SMB, specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
-                avoid developing a watered-down product trying to serve every department at once.
-              </p>
-            </HorizontalCard>
+              {/* Decision + Learning */}
+              <HorizontalCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>
+                  We decided to focus on a single department within an SMB, specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
+                  avoid developing a watered-down product trying to serve every department at once.
+                </p>
+              </HorizontalCard>
+            </VerticalStack>
           </ScrollSpySection>
 
           {/* Competitive Analysis Section */}
