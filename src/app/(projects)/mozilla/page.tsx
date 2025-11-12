@@ -82,7 +82,7 @@ export default function MozillaPage() {
                 <p>
                   Thunderbolt is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
                   <br /> <br />
-                  The goal wasn&apos;t polish or launch-readiness—it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and{' '}
+                  The goal wasn&apos;t polish or launch-readiness, it was to explore how Mozilla&apos;s values of <strong>trust</strong>, <strong>transparency</strong>, and{' '}
                   <strong>user control</strong> could shape the product. <br /> <br /> We focused on a few core questions:
                 </p>
                 <ul className="list-disc ml-5">
@@ -193,23 +193,23 @@ export default function MozillaPage() {
             <ProjectHorizontalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
               <p className=" text-black">
                 To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                shaped my UX approach—favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
+                shaped my UX approach, favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
                 evolved.
               </p>
             </ProjectHorizontalBlock>
             {/* Privacy-first UX */}
             <ProjectHorizontalBlock title="Privacy-first UX">
               <p className=" text-black">
-                Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used—while
-                giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices meaningful,
-                and ensuring the assistant felt helpful—not intrusive.
+                Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used,
+                while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
+                meaningful, and ensuring the assistant felt helpful, not intrusive.
               </p>
             </ProjectHorizontalBlock>
             {/* Designing for scale */}
             <ProjectHorizontalBlock title="Designing for scale">
               <p className=" text-black">
                 With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                evolved—
+                evolved,
                 <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
               </p>
             </ProjectHorizontalBlock>
@@ -224,7 +224,7 @@ export default function MozillaPage() {
                   left={
                     <ProjectVerticalBlock title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p>
-                        This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choice—so users know
+                        This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choices, so users know
                         what&apos;s being asked and why, without digging through settings.
                       </p>
                     </ProjectVerticalBlock>
@@ -245,8 +245,8 @@ export default function MozillaPage() {
                   right={
                     <ProjectVerticalBlock title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p className=" mb-8 lg:mb-12">
-                        When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel
-                        natural—without interrupting the flow.
+                        When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural,
+                        without interrupting the flow.
                       </p>
                     </ProjectVerticalBlock>
                   }
@@ -275,7 +275,7 @@ export default function MozillaPage() {
             <ProjectSectionTitle dotColor="text-green-500">Designing Trust Through Settings</ProjectSectionTitle>
             <ProjectContent>
               <p>
-                Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior—making control a core
+                Trust in AI begins with <strong>transparency and control</strong>. These settings give users meaningful choices over data, preferences, and assistant behavior, making control a core
                 part of the experience.
               </p>
               <div className="flex flex-col gap-4">
@@ -352,7 +352,7 @@ export default function MozillaPage() {
             <ProjectContent>
               <p>
                 To speed up iteration, I leaned on <strong>familiar UX patterns</strong> and avoided complex custom UI. This kept the design intuitive, reduced dev effort, and let us{' '}
-                <strong>quickly prototype and evolve</strong>—without compromising usability.
+                <strong>quickly prototype and evolve</strong>, without compromising usability.
               </p>
 
               <Tabs defaultValue="3" className="w-full gap-y-4 lg:gap-y-8" pillBgColor="bg-green-300">
@@ -388,15 +388,15 @@ export default function MozillaPage() {
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalBlock title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                    <p>The flow starts with a focused, distraction-free prompt to connect an account—carefully designed to avoid confusion or unnecessary navigation.</p>
+                    <p>The flow starts with a focused, distraction-free prompt to connect an account, carefully designed to avoid confusion or unnecessary navigation.</p>
                   </VerticalBlock>
                 </div>
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalBlock title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
-                      Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working—reducing drop-off during
-                      wait time.
+                      Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working, reducing drop-off
+                      during wait time.
                     </p>
                   </VerticalBlock>
                 </div>
@@ -404,7 +404,7 @@ export default function MozillaPage() {
                   <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalBlock title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
-                      Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps—just a smooth transition that respects their time and keeps
+                      Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps, just a smooth transition that respects their time and keeps
                       momentum going.
                     </p>
                   </VerticalBlock>
@@ -447,7 +447,7 @@ export default function MozillaPage() {
             <ProjectSectionTitle dotColor="text-green-500">Dark Mode for Modern Use</ProjectSectionTitle>
             <ProjectContent>
               <p>
-                Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments—meeting both <strong>user needs</strong> and{' '}
+                Dark mode was designed not just for aesthetics, but to reduce eye strain and improve comfort in low-light environments, meeting both <strong>user needs</strong> and{' '}
                 <strong>modern platform expectations.</strong>
               </p>
 
@@ -542,14 +542,14 @@ export default function MozillaPage() {
                   <span className="font-semibold">Build Fast, Learn Faster:</span>
                   <p>
                     This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
-                    feedback is essential—not just for usability, but for achieving <strong>product-market fit.</strong>
+                    feedback is essential, not just for usability, but for achieving <strong>product-market fit.</strong>
                   </p>
                 </div>
                 {/* Balancing Agility with Control */}
                 <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">Balancing Agility with Control:</span>
                   <p>
-                    One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>—moving quickly, but within clearly defined phases. This allows us to
+                    One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>, moving quickly, but within clearly defined phases. This allows us to
                     learn fast while keeping scope focused and risk manageable at each stage.
                   </p>
                 </div>
@@ -557,8 +557,8 @@ export default function MozillaPage() {
                 <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                   <span className="font-semibold">I Am Not the User:</span>
                   <p>
-                    While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the
-                    user—and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
+                    While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user,
+                    and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
                     knowing what to test next and why.
                   </p>
                 </div>
@@ -567,7 +567,7 @@ export default function MozillaPage() {
                   <span className="font-semibold">Designing for Trust:</span>
                   <p>
                     Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just
-                    about features—it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+                    about features, it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
                   </p>
                 </div>
                 {/* Staying Curious and Outcome-Oriented */}
@@ -590,7 +590,7 @@ export default function MozillaPage() {
                   <ProjectSectionTitle color="text-white" dotColor="text-green-500">
                     Explore my portfolio in Figma
                   </ProjectSectionTitle>
-                  <p className=" mb-4 md:mb-8">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+                  <p className=" mb-4 md:mb-8">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
                   <Link
                     href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=3-13787&p=f&t=q6fbCWhConRjHDu0-0"
                     className="inline-flex items-center bg-green-300 hover:bg-green-500 text-black px-6 py-3 rounded-lg transition-all"
