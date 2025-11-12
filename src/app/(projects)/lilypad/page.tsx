@@ -60,7 +60,7 @@ export default function LilypadPage() {
                 <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
                     I collaborated with a startup to redesign their landing page concept before it was published. With no existing analytics or user feedback to draw from, I focused on creating a
-                    clear and compelling layout that highlighted the startup&apos;s value proposition and guided visitors toward key actions—such as requesting more information.
+                    clear and compelling layout that highlighted the startup&apos;s value proposition and guided visitors toward key action, such as requesting more information.
                   </p>
                 </VerticalBlock>
 
@@ -243,8 +243,8 @@ export default function LilypadPage() {
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Consistent Layout Primitives</h3>
                         <p className="mb-4 min-h-[80px]">
-                          The layout system was built on a strict, responsive grid — not just for visual balance, but to make development predictable and scalable. Each breakpoint uses a defined
-                          column count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl, px-8, and my-16.
+                          The layout system was built on a strict, responsive grid, not just for visual balance, but to make development predictable and scalable. Each breakpoint uses a defined column
+                          count, gutter width, and max container size (as shown). Instead of custom padding on every section, I used consistent primitives like max-w-7xl, px-8, and my-16.
                         </p>
                       </div>
                     </>
@@ -267,8 +267,8 @@ export default function LilypadPage() {
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Built for Responsive & Future Growth</h3>
                         <p className="mb-4 min-h-[80px]">
-                          I designed every section with clear breakpoints in mind — mobile, tablet, desktop — so devs could rely on consistent stacking behavior and spacing logic. The system also
-                          leaves room to scale as new content types or layouts are added.
+                          I designed every section with clear breakpoints in mind, mobile, tablet, desktop, so devs could rely on consistent stacking behavior and spacing logic. The system also leaves
+                          room to scale as new content types or layouts are added.
                         </p>
                       </div>
                     </>
@@ -316,7 +316,7 @@ export default function LilypadPage() {
                 {/* Left Column - Text Content */}
                 <div>
                   <ProjectSectionTitle dotColor="text-[#af5800]">ExploreFigma File</ProjectSectionTitle>
-                  <p className="mb-12">Design speaks louder than words—Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+                  <p className="mb-12">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
                   <Link
                     href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
                     className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
