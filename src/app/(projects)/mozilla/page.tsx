@@ -9,6 +9,7 @@ import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
+import ProjectTypographySection from '@/components/ui-block/project-typography-section'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -466,44 +467,36 @@ export default function MozillaPage() {
 
           {/* Mobile Mockups */}
           <ScrollSpySection value="mobile">
-            <div className="flex">
-              <div className="flex  flex-1 flex-col space-y-0 justify-center">
+            <HorizontalStack mobileCols={1} desktopCols={2}>
+              <VerticalStack>
                 <ProjectSectionTitle dotColor="text-green-500">Mobile First</ProjectSectionTitle>
                 <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto block lg:hidden w-auto mb-4 items-center justify-center" priority />
                 <p className=" items-center">
                   Although the current product is web-based, I approached the design with a mobile-first mindset where it made sense. From layout choices to interaction patterns, I considered how the
                   experience could <strong>translate to smaller screens with minimal rework.</strong>
                 </p>
-              </div>
-              <div className="flex-2 flex justify-center">
-                <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
-              </div>
-            </div>
+              </VerticalStack>
+              <Image src="/mozilla-mobiles.png" alt="mozilla mockup" width={800} height={800} className="flex-1 h-auto hidden lg:block w-auto" priority />
+            </HorizontalStack>
           </ScrollSpySection>
 
           {/* Typography Section */}
           <ScrollSpySection value="typography" className="bg-[#212121] text-white p-8 rounded-2xl">
-            <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-              Typography
-            </ProjectSectionTitle>
-            <ProjectContent>
-              {/* Left Column - Large "Aa" Display */}
-              <div className="flex-1 flex items-center justify-center">
-                <span className='text-[200px] font-regular font-["Inter"] tracking-tight'>Aa</span>
-              </div>
-              {/* Right Column - Typography Details */}
-              <div className="flex-1 flex gap-x-4 justify-center">
-                {/* Typeface */}
-                <VerticalStack title="Typeface" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
-                  <p>Inter</p>
-                </VerticalStack>
-                {/* Weights */}
-                <VerticalStack title="Weights" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
-                  <p className=" font-normal">Regular</p>
-                  <p className=" font-semibold">Semi-Bold</p>
-                </VerticalStack>
-              </div>
-            </ProjectContent>
+            <ProjectTypographySection
+              title="Typography"
+              titleColor="text-white"
+              dotColor="text-green-500"
+              displayText="Aa"
+              displayTextClassName="text-[200px] font-regular font-['Inter'] tracking-tight"
+              typeface="Inter"
+              weights={[
+                { name: 'Regular', className: 'font-normal' },
+                { name: 'Semi-Bold', className: 'font-semibold' },
+              ]}
+              typefaceTitleColor="text-gray-400"
+              weightsTitleColor="text-gray-400"
+              borderColor="border-[#3b3b3b]"
+            />
           </ScrollSpySection>
 
           {/* Colors Section */}
@@ -526,50 +519,35 @@ export default function MozillaPage() {
           {/* Learning Section */}
           <ScrollSpySection value="learning">
             <ProjectContent>
-              {/* Title */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <HorizontalStack mobileCols={1} desktopCols={3}>
                 <ProjectSectionTitle dotColor="text-green-500">Learning</ProjectSectionTitle>
+
                 {/* Build Fast, Learn Faster */}
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <span className="font-semibold">Build Fast, Learn Faster:</span>
-                  <p>
-                    This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
-                    feedback is essential, not just for usability, but for achieving <strong>product-market fit.</strong>
-                  </p>
-                </div>
+                <VerticalCard title="Build Fast, Learn Faster:" bgColor="bg-gray-100" titleColor="text-black">
+                  This project reinforced the need for an agile, test-and-learn mindset over a linear build. Given the complexity and ambition of the product, fast iteration based on real-world
+                  feedback is essential, not just for usability, but for achieving <strong>product-market fit.</strong>
+                </VerticalCard>
                 {/* Balancing Agility with Control */}
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <span className="font-semibold">Balancing Agility with Control:</span>
-                  <p>
-                    One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>, moving quickly, but within clearly defined phases. This allows us to
-                    learn fast while keeping scope focused and risk manageable at each stage.
-                  </p>
-                </div>
+                <VerticalCard title="Balancing Agility with Control:" bgColor="bg-gray-100" titleColor="text-black">
+                  One key takeaway was the value of combining an <strong>agile approach with a gated release strategy</strong>, moving quickly, but within clearly defined phases. This allows us to
+                  learn fast while keeping scope focused and risk manageable at each stage.
+                </VerticalCard>
                 {/* I Am Not the User */}
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <span className="font-semibold">I Am Not the User:</span>
-                  <p>
-                    While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user,
-                    and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and
-                    knowing what to test next and why.
-                  </p>
-                </div>
+                <VerticalCard title="I Am Not the User:" bgColor="bg-gray-100" titleColor="text-black">
+                  While I&apos;m personally excited about the vision, I&apos;ve learned to check that excitement against <strong>user behavior, data, and testing signals.</strong> I am not the user,
+                  and assuming otherwise can derail even the best ideas. The real impact comes from <strong>asking better questions</strong>, observing how people actually use the product, and knowing
+                  what to test next and why.
+                </VerticalCard>
                 {/* Designing for Trust */}
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <span className="font-semibold">Designing for Trust:</span>
-                  <p>
-                    Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just
-                    about features, it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
-                  </p>
-                </div>
+                <VerticalCard title="Designing for Trust:" bgColor="bg-gray-100" titleColor="text-black">
+                  Designing for privacy and trust adds a unique layer of responsibility. Every opt-in, every permission request, every moment of friction must be intentional. It&apos;s not just about
+                  features, it&apos;s about ensuring the <strong>experience reflects user values and long-term strategy.</strong>
+                </VerticalCard>
                 {/* Staying Curious and Outcome-Oriented */}
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <span className="font-semibold">Staying Curious and Outcome-Oriented:</span>
-                  <p>
-                    Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
-                  </p>
-                </div>
-              </div>
+                <VerticalCard title="Staying Curious and Outcome Oriented:" bgColor="bg-gray-100" titleColor="text-black">
+                  Moving forward, I&apos;m focused on staying curious, integrating feedback loops early, and making sure design decisions are grounded in both user needs and measurable outcomes.
+                </VerticalCard>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 

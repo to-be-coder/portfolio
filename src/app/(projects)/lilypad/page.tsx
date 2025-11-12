@@ -1,12 +1,13 @@
 'use client'
 
+import CtaSection from '@/components/ui-block/cta'
 import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { VerticalStack } from '@/components/ui-block/project-stack'
-import CtaSection from '@/components/ui-block/cta'
+import ProjectTypographySection from '@/components/ui-block/project-typography-section'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -86,34 +87,18 @@ export default function LilypadPage() {
 
           {/* Typography Section */}
           <ScrollSpySection value="typography" className="flex flex-col bg-[#212121] text-white p-8 rounded-2xl">
-            <ProjectSectionTitle color="text-white" dotColor="text-[#DDA15F]">
-              Typography
-            </ProjectSectionTitle>
-            <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-                {/* Left Column - Large "Aa" Display */}
-                <div className="flex items-center justify-center">
-                  <span className="text-[200px] font-regular">Aa</span>
-                </div>
-
-                {/* Right Column - Typography Details */}
-                <div className="space-y-4 md:space-y-8">
-                  {/* Typeface */}
-                  <VerticalStack title="Typeface" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-                    <p className=" font-['Plus_Jakarta_Sans']">Plus Jakarta Sans</p>
-                  </VerticalStack>
-
-                  {/* Weights */}
-                  <VerticalStack title="Weights" titleColor="text-gray-400" borderColor="border-[#C1C1C1]">
-                    <div className="space-y-1 md:space-y-2">
-                      <p className=" font-normal">Regular</p>
-                      <p className=" font-semibold">Semi-Bold</p>
-                      <p className=" font-bold">Bold</p>
-                    </div>
-                  </VerticalStack>
-                </div>
-              </div>
-            </ProjectContent>
+            <ProjectTypographySection
+              title="Typography"
+              titleColor="text-white"
+              dotColor="text-[#DDA15F]"
+              typeface="Plus Jakarta Sans"
+              typefaceClassName="font-['Plus_Jakarta_Sans']"
+              weights={[
+                { name: 'Regular', className: 'font-normal' },
+                { name: 'Semi-Bold', className: 'font-semibold' },
+                { name: 'Bold', className: 'font-bold' },
+              ]}
+            />
           </ScrollSpySection>
 
           {/* Colors Section */}

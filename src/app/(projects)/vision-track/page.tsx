@@ -164,15 +164,15 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="what-changed-our-mind" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">What Changed Our Mind</ProjectSectionTitle>
             <ProjectContent>
-              <ProjectVerticalStack title="What Surprised Me" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack title="What Surprised Me" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   Most teams didn&apos;t lack strategy, they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
                   struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; (Marketing
                   Manager). This realization reframed our entire direction. Manager. This realization reframed our entire direction.
                 </p>
-              </ProjectVerticalStack>
+              </VerticalStack>
 
-              <ProjectVerticalStack title="MVP Direction" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack title="MVP Direction" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   We cut <span className="font-bold">80%</span> of our feature ideas, dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
                 </p>
@@ -196,7 +196,7 @@ export default function VisionTrackPage() {
                     </p>
                   </div>
                 </div>
-              </ProjectVerticalStack>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
