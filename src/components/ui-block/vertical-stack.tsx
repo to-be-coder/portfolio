@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface SectionProps {
+interface VerticalStackProps {
   title?: React.ReactNode
   children: React.ReactNode
   titleColor?: string
@@ -8,7 +8,7 @@ interface SectionProps {
   className?: string
 }
 
-export default function VerticalBlock({ title, children, titleColor = 'text-black', borderColor = 'border-[#000000]', className = '' }: SectionProps) {
+export default function VerticalStack({ title, children, titleColor = 'text-black', borderColor = 'border-[#000000]', className = '' }: VerticalStackProps) {
   return (
     <div className={`${borderColor} flex flex-col ${className}`}>
       <h2 className={`text-2xl mb-2 md:mb-4 ${titleColor}`}>{title}</h2>

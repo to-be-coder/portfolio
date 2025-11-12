@@ -5,7 +5,7 @@ import { HorizontalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/ui-block/project-vertical-block'
+import VerticalStack from '@/components/ui-block/vertical-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { User } from 'lucide-react'
 import Image from 'next/image'
@@ -74,20 +74,20 @@ export default function VisionTrackPage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
-                <VerticalBlock title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <VerticalStack title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
                     VisionTrack helps teams stay aligned in fast-paced, remote environments by translating company goals into daily clarity. We started by designing for startup founders, but early
                     research revealed they didn&apos;t want another tool to log into. More importantly, they weren&apos;t struggling to set goals, they were struggling to act on them. People
                     understood company priorities, but couldn&apos;t connect them to day-to-day decisions. Alignment wasn&apos;t the issue, translation was. So we pivoted to SMB Sales and Marketing
                     teams, cut 80% of features, and defined a Slack-based MVP: one reminder loop, delivered inside the tools they already used.
                   </p>
-                </VerticalBlock>
-                <VerticalBlock title="Design Objective" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                </VerticalStack>
+                <VerticalStack title="Design Objective" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
                     Our main objective was to apply lean startup principles, experimenting, iterating, and pivoting quickly, to define an MVP that meets user needs. We aimed to address the core pain
                     points around goal alignment, while testing innovative ways to keep teams focused and motivated.
                   </p>
-                </VerticalBlock>
+                </VerticalStack>
               </div>
             </ProjectContent>
           </ScrollSpySection>
@@ -164,15 +164,15 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="what-changed-our-mind" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">What Changed Our Mind</ProjectSectionTitle>
             <ProjectContent>
-              <ProjectVerticalBlock title="What Surprised Me" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <ProjectVerticalStack title="What Surprised Me" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   Most teams didn&apos;t lack strategy, they lacked daily visibility into it. In nearly every interview, people could recite their company&apos;s mission or top-line OKRs. But they
                   struggled to answer: &ldquo;What does this mean for me today?&rdquo; &ldquo;We already have goals. We just don&apos;t know what to do with them day to day.&rdquo; (Marketing
                   Manager). This realization reframed our entire direction. Manager. This realization reframed our entire direction.
                 </p>
-              </ProjectVerticalBlock>
+              </ProjectVerticalStack>
 
-              <ProjectVerticalBlock title="MVP Direction" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <ProjectVerticalStack title="MVP Direction" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   We cut <span className="font-bold">80%</span> of our feature ideas, dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
                 </p>
@@ -196,7 +196,7 @@ export default function VisionTrackPage() {
                     </p>
                   </div>
                 </div>
-              </ProjectVerticalBlock>
+              </ProjectVerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -227,23 +227,23 @@ export default function VisionTrackPage() {
               {/* Grid for 3 columns */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Target Customers */}
-                <VerticalBlock title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <p>Startups in the US.</p>
-                </VerticalBlock>
+                </VerticalStack>
                 {/* Pain Points */}
-                <VerticalBlock title="Pain Points (Assumed)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Pain Points (Assumed)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <p>Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
-                </VerticalBlock>
+                </VerticalStack>
                 {/* Proposed Solution */}
-                <VerticalBlock title="Proposed Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Proposed Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <p>A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
-                </VerticalBlock>
+                </VerticalStack>
               </div>
 
               {/* Why we chose this hypothesis */}
-              <VerticalBlock title="Why we chose this hypothesis?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack title="Why we chose this hypothesis?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>I applied lean startup methodology to test our ideas quickly. We hypothesized that startups, given their fast-paced environments, would benefit from an alignment tool.</p>
-              </VerticalBlock>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -293,11 +293,11 @@ export default function VisionTrackPage() {
               {/* Grid for 3 columns */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Target Customers */}
-                <VerticalBlock title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <p>SMB in the US (50-200 people).</p>
-                </VerticalBlock>
+                </VerticalStack>
                 {/* Pain Points */}
-                <VerticalBlock title="Pain Points (Identified)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Pain Points (Identified)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <div className="space-y-1 md:space-y-2">
                     <ul className="list-disc list-inside">
                       <li> High-level company goals become diluted or lost in translation.</li>
@@ -305,14 +305,14 @@ export default function VisionTrackPage() {
                       <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
                     </ul>
                   </div>
-                </VerticalBlock>
+                </VerticalStack>
                 {/* Proposed Solution */}
-                <VerticalBlock title="Potential Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
+                <VerticalStack title="Potential Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
                   <p>
                     VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback
                     indicators.
                   </p>
-                </VerticalBlock>
+                </VerticalStack>
               </div>
             </ProjectContent>
           </ScrollSpySection>

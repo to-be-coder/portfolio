@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
-interface ProjectHorizontalCardProps {
+interface ProjectHorizontalContentCardProps {
   leftContent: ReactNode
   rightContent: ReactNode
   badge?: string
@@ -12,7 +12,7 @@ interface ProjectHorizontalCardProps {
   className?: string
 }
 
-export default function ProjectHorizontalCard({
+export default function ProjectHorizontalContentCard({
   leftContent,
   rightContent,
   badge,
@@ -21,7 +21,7 @@ export default function ProjectHorizontalCard({
   borderColor = 'border-[#9333EA]',
   bgColor = 'bg-gray-100',
   className,
-}: ProjectHorizontalCardProps) {
+}: ProjectHorizontalContentCardProps) {
   return (
     <div className={cn('rounded-xl p-6 relative flex gap-4', bgColor, border && `border-2 ${borderColor}`, className)}>
       {badge && <div className={cn('absolute -top-3 left-4 text-white px-3 py-1 text-sm font-semibold rounded-xl', badgeColor)}>{badge}</div>}

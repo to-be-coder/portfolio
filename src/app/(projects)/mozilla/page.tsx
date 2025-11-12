@@ -6,9 +6,9 @@ import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalCard from '@/components/ui-block/project-horizontal-card'
+import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/ui-block/project-vertical-block'
+import VerticalStack from '@/components/ui-block/vertical-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -78,7 +78,7 @@ export default function MozillaPage() {
               Overview
             </ProjectSectionTitle>
             <ProjectContent>
-              <VerticalBlock titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   Thunderbolt is a <strong>privacy-first</strong>, <strong>on-device AI assistant</strong> built by Mozilla.
                   <br /> <br />
@@ -100,8 +100,8 @@ export default function MozillaPage() {
                   <br /> I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally
                   and laid the foundation for deeper testing and iteration.
                 </p>
-              </VerticalBlock>
-              <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              </VerticalStack>
+              <VerticalStack title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
                   <VerticalCard title="UX Strategy & Hypothesis Building:" bgColor="bg-gray-100" titleColor="text-black">
                     Framed product assumptions and prioritized what to explore first.
@@ -113,7 +113,7 @@ export default function MozillaPage() {
                     Partnered with engineering to translate technical limits into UX.
                   </VerticalCard>
                 </div>
-              </VerticalBlock>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -133,15 +133,15 @@ export default function MozillaPage() {
           <ScrollSpySection value="initial-vision">
             <ProjectSectionTitle dotColor="text-green-500">Initial Vision of Thunderbolt</ProjectSectionTitle>
             <ProjectContent>
-              <VerticalBlock title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack title="Our Vision" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>
                   Thunderbolt aims to be a true <strong>personal AI assistant</strong>, one that understands users&apos; preferences and routines while keeping data secure and private. It builds a
                   local, encrypted, on-device knowledge base, ensuring that users&apos; information remains fully under their <strong>control</strong>.
                 </p>
-              </VerticalBlock>
-              <VerticalBlock title="Competitive Research" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              </VerticalStack>
+              <VerticalStack title="Competitive Research" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <p>I am unable to show this section due to a request.</p>
-              </VerticalBlock>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -164,7 +164,7 @@ export default function MozillaPage() {
                   </div>
                 </div>
               </div>
-              <VerticalBlock title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+              <VerticalStack title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <VerticalCard title="Be transparent about data usage" bgColor="bg-green-100" titleColor="text-black">
                     We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
@@ -176,37 +176,39 @@ export default function MozillaPage() {
                     We leaned on UI patterns people already know to make privacy feel simple, not technical.
                   </VerticalCard>
                 </div>
-              </VerticalBlock>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
           {/* Design Challenge Section */}
           <ScrollSpySection value="design-challenges">
             <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
-            {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-            <HorizontalCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
-              <p className=" text-black">
-                To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
-                shaped my UX approach, favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
-                evolved.
-              </p>
-            </HorizontalCard>
-            {/* Privacy-first UX */}
-            <HorizontalCard title="Privacy-first UX">
-              <p className=" text-black">
-                Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used,
-                while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
-                meaningful, and ensuring the assistant felt helpful, not intrusive.
-              </p>
-            </HorizontalCard>
-            {/* Designing for scale */}
-            <HorizontalCard title="Designing for scale">
-              <p className=" text-black">
-                With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
-                evolved,
-                <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
-              </p>
-            </HorizontalCard>
+            <ProjectContent>
+              {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
+              <HorizontalCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
+                <p className=" text-black">
+                  To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
+                  shaped my UX approach, favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
+                  evolved.
+                </p>
+              </HorizontalCard>
+              {/* Privacy-first UX */}
+              <HorizontalCard title="Privacy-first UX">
+                <p className=" text-black">
+                  Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used,
+                  while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
+                  meaningful, and ensuring the assistant felt helpful, not intrusive.
+                </p>
+              </HorizontalCard>
+              {/* Designing for scale */}
+              <HorizontalCard title="Designing for scale">
+                <p className=" text-black">
+                  With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
+                  evolved,
+                  <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
+                </p>
+              </HorizontalCard>
+            </ProjectContent>
           </ScrollSpySection>
 
           {/* Transparency about data usage */}
@@ -216,12 +218,12 @@ export default function MozillaPage() {
               <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
                 <ProjectFlexBlock
                   left={
-                    <ProjectVerticalBlock title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <VerticalStack title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p>
                         This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choices, so users know
                         what&apos;s being asked and why, without digging through settings.
                       </p>
-                    </ProjectVerticalBlock>
+                    </VerticalStack>
                   }
                   right={
                     <div className="flex flex-col space-y-8">
@@ -237,21 +239,21 @@ export default function MozillaPage() {
                     </div>
                   }
                   right={
-                    <ProjectVerticalBlock title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <VerticalStack title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p className=" mb-8 lg:mb-12">
                         When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural,
                         without interrupting the flow.
                       </p>
-                    </ProjectVerticalBlock>
+                    </VerticalStack>
                   }
                 />
                 <ProjectFlexBlock
                   left={
-                    <ProjectVerticalBlock title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <VerticalStack title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
                       <p className=" mb-8 lg:mb-12">
                         If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                       </p>
-                    </ProjectVerticalBlock>
+                    </VerticalStack>
                   }
                   right={
                     <div className="flex flex-col space-y-8">
@@ -273,7 +275,7 @@ export default function MozillaPage() {
                 part of the experience.
               </p>
               <div className="flex flex-col gap-4">
-                <ProjectHorizontalCard
+                <ProjectHorizontalContentCard
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -287,7 +289,7 @@ export default function MozillaPage() {
                   }
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalCard
+                <ProjectHorizontalContentCard
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -301,7 +303,7 @@ export default function MozillaPage() {
                   }
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalCard
+                <ProjectHorizontalContentCard
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -315,7 +317,7 @@ export default function MozillaPage() {
                   }
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalCard
+                <ProjectHorizontalContentCard
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -381,27 +383,27 @@ export default function MozillaPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-y-0 gap-x-8">
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <VerticalBlock title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>The flow starts with a focused, distraction-free prompt to connect an account, carefully designed to avoid confusion or unnecessary navigation.</p>
-                  </VerticalBlock>
+                  </VerticalStack>
                 </div>
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <VerticalBlock title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
                       Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working, reducing drop-off
                       during wait time.
                     </p>
-                  </VerticalBlock>
+                  </VerticalStack>
                 </div>
                 <div className="flex flex-col gap-y-4">
                   <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
-                  <VerticalBlock title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
                       Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps, just a smooth transition that respects their time and keeps
                       momentum going.
                     </p>
-                  </VerticalBlock>
+                  </VerticalStack>
                 </div>
               </div>
             </ProjectContent>
@@ -411,7 +413,7 @@ export default function MozillaPage() {
           <ScrollSpySection value="early-concepts">
             <ProjectSectionTitle dotColor="text-green-500">Exploring Early Concepts</ProjectSectionTitle>
             <ProjectContent>
-              <ProjectVerticalBlock>
+              <VerticalStack>
                 {/* Left Column - Text Content */}
                 <p>I used low-fidelity wireframes to quickly define core user flows and align early with product and engineering. This lean approach helped us: </p>
                 <ul className="list-disc ml-5">
@@ -426,7 +428,7 @@ export default function MozillaPage() {
                   </li>
                 </ul>
                 <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
-              </ProjectVerticalBlock>
+              </VerticalStack>
               {/* Right Column - Images */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
@@ -496,14 +498,14 @@ export default function MozillaPage() {
               {/* Right Column - Typography Details */}
               <div className="flex-1 flex gap-x-4 justify-center">
                 {/* Typeface */}
-                <VerticalBlock title="Typeface" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
+                <VerticalStack title="Typeface" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
                   <p>Inter</p>
-                </VerticalBlock>
+                </VerticalStack>
                 {/* Weights */}
-                <VerticalBlock title="Weights" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
+                <VerticalStack title="Weights" titleColor="text-gray-400" borderColor="border-[#3b3b3b]" className="flex-1 border border-[#3b3b3b] p-4 rounded-xl">
                   <p className=" font-normal">Regular</p>
                   <p className=" font-semibold">Semi-Bold</p>
-                </VerticalBlock>
+                </VerticalStack>
               </div>
             </ProjectContent>
           </ScrollSpySection>
