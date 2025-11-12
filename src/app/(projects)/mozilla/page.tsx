@@ -214,7 +214,7 @@ export default function MozillaPage() {
             <ProjectContent>
               <ProjectFlexBlock
                 left={
-                  <VerticalStack title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="Designing for Informed Choice" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                     <p>
                       This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choices, so users know
                       what&apos;s being asked and why, without digging through settings.
@@ -235,7 +235,7 @@ export default function MozillaPage() {
                   </div>
                 }
                 right={
-                  <VerticalStack title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="Respectful Transparency" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                     <p className=" mb-8 lg:mb-12">
                       When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural,
                       without interrupting the flow.
@@ -245,7 +245,7 @@ export default function MozillaPage() {
               />
               <ProjectFlexBlock
                 left={
-                  <VerticalStack title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                  <VerticalStack title="Opt-Outs Without Penalty" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                     <p className=" mb-8 lg:mb-12">
                       If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
                     </p>
