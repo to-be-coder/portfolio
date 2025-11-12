@@ -178,7 +178,7 @@ const HamburgerButton = React.forwardRef<HTMLButtonElement, HamburgerButtonProps
           initial={false}
           animate={active ? 'open' : 'closed'}
           onClick={handleClick}
-          className={cn('relative h-9 w-9 rounded-full bg-white/0 transition-colors hover:bg-white/20', className)}
+          className={cn('relative h-9 w-9 rounded-full bg-white/0 transition-colors hover:bg-white/20 shrink-0 overflow-hidden', className)}
           aria-label={ariaLabel ?? 'Toggle menu'}
           aria-expanded={ariaExpanded ?? active}
           {...props}

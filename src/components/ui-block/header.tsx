@@ -189,10 +189,10 @@ export default function Header() {
               </div>
             </div>
             <div className="flow-root">
-              <div>
+              <div className="divide-y divide-gray-500/10">
                 <div className="space-y-4 py-6">
                   {navigationItems.map((item, index) => (
-                    <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }}>
+                    <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }} className="w-full">
                       <Link
                         href={item.path}
                         className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50')}
