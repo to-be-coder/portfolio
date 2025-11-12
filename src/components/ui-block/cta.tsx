@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CallToActionButton } from './button'
+import { CallToActionButton } from '../ui/button'
 
 const topRowImages = [
   { src: '/contact-1.png', alt: 'Contact 1' },

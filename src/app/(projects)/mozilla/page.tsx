@@ -8,7 +8,7 @@ import ProjectHorizontalBlock from '@/components/ui-block/project-horizontal-blo
 import ProjectHorizontalCard from '@/components/ui-block/project-horizontal-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/ui-block/project-vertical-block'
-import CtaSection from '@/components/ui/cta'
+import CtaSection from '@/components/ui-block/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'

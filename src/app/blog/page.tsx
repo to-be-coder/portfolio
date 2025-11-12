@@ -1,5 +1,5 @@
 import FilteredNotionPosts from '@/components/ui-block/filtered-notion-posts'
-import CtaSection from '@/components/ui/cta'
+import CtaSection from '@/components/ui-block/cta'
 import { getArticles } from '@/lib/notion'
 
 export default async function BlogPage() {

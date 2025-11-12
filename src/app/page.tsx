@@ -1,7 +1,7 @@
 'use client'
 import HomeHeroSection from '@/components/ui-block/home-hero-section'
 import { Badge } from '@/components/ui/badge'
-import CtaSection from '@/components/ui/cta'
+import CtaSection from '@/components/ui-block/cta'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
