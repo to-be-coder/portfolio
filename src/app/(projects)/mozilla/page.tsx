@@ -212,54 +212,52 @@ export default function MozillaPage() {
           <ScrollSpySection value="transparency">
             <ProjectSectionTitle dotColor="text-green-500">Transparency about data usage</ProjectSectionTitle>
             <ProjectContent>
-              <div className="flex-1 flex-col space-y-8 lg:gap-y-16">
-                <ProjectFlexBlock
-                  left={
-                    <VerticalStack title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p>
-                        This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choices, so users know
-                        what&apos;s being asked and why, without digging through settings.
-                      </p>
-                    </VerticalStack>
-                  }
-                  right={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  reverseOnDesktop={true}
-                />
-                <ProjectFlexBlock
-                  left={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  right={
-                    <VerticalStack title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p className=" mb-8 lg:mb-12">
-                        When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural,
-                        without interrupting the flow.
-                      </p>
-                    </VerticalStack>
-                  }
-                />
-                <ProjectFlexBlock
-                  left={
-                    <VerticalStack title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
-                      <p className=" mb-8 lg:mb-12">
-                        If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
-                      </p>
-                    </VerticalStack>
-                  }
-                  right={
-                    <div className="flex flex-col space-y-8">
-                      <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
-                    </div>
-                  }
-                  reverseOnDesktop={true}
-                />
-              </div>
+              <ProjectFlexBlock
+                left={
+                  <VerticalStack title="Designing for Informed Choice" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <p>
+                      This moment introduces a data-sharing request in plain language, placed directly in the chat to feel contextual. The goal was to offer a clear, timely choices, so users know
+                      what&apos;s being asked and why, without digging through settings.
+                    </p>
+                  </VerticalStack>
+                }
+                right={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                  </div>
+                }
+                reverseOnDesktop={true}
+              />
+              <ProjectFlexBlock
+                left={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                  </div>
+                }
+                right={
+                  <VerticalStack title="Respectful Transparency" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <p className=" mb-8 lg:mb-12">
+                      When users choose to share data, we acknowledge their choice clearly and let the assistant continue seamlessly. The goal is to reinforce trust by making consent feel natural,
+                      without interrupting the flow.
+                    </p>
+                  </VerticalStack>
+                }
+              />
+              <ProjectFlexBlock
+                left={
+                  <VerticalStack title="Opt-Outs Without Penalty" titleColor="text-black" borderColor="border-[#C1C1C1]">
+                    <p className=" mb-8 lg:mb-12">
+                      If users decline, the experience continues without pressure or penalty. The assistant adapts accordingly, respecting their choice while keeping the flow smooth and functional.
+                    </p>
+                  </VerticalStack>
+                }
+                right={
+                  <div className="flex flex-col space-y-8">
+                    <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                  </div>
+                }
+                reverseOnDesktop={true}
+              />
             </ProjectContent>
           </ScrollSpySection>
 
@@ -348,12 +346,12 @@ export default function MozillaPage() {
                 <strong>quickly prototype and evolve</strong>, without compromising usability.
               </p>
 
-              <Tabs defaultValue="3" className="w-full gap-y-4 lg:gap-y-8" pillBgColor="bg-green-300">
+              <Tabs defaultValue="3" className="w-full" pillBgColor="bg-green-300">
                 <TabsList className="w-full">
-                  <TabsTrigger value="3" className="border-r border-gray-200 data-[state=active]:text-black">
+                  <TabsTrigger value="3" className="data-[state=active]:text-black">
                     Full Screen
                   </TabsTrigger>
-                  <TabsTrigger value="2" className="border-r border-gray-200 data-[state=active]:text-black">
+                  <TabsTrigger value="2" className="data-[state=active]:text-black">
                     Right Sidebar Closed
                   </TabsTrigger>
                   <TabsTrigger value="1" className="data-[state=active]:text-black">
@@ -377,14 +375,14 @@ export default function MozillaPage() {
           <ScrollSpySection value="clarity">
             <ProjectSectionTitle dotColor="text-green-500">Clarity at Every Step</ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-y-0 gap-x-8">
-                <div className="flex flex-col gap-y-4">
+              <HorizontalStack mobileCols={1} desktopCols={3}>
+                <VerticalStack>
                   <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalStack title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>The flow starts with a focused, distraction-free prompt to connect an account, carefully designed to avoid confusion or unnecessary navigation.</p>
                   </VerticalStack>
-                </div>
-                <div className="flex flex-col gap-y-4">
+                </VerticalStack>
+                <VerticalStack>
                   <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalStack title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
@@ -392,8 +390,8 @@ export default function MozillaPage() {
                       during wait time.
                     </p>
                   </VerticalStack>
-                </div>
-                <div className="flex flex-col gap-y-4">
+                </VerticalStack>
+                <VerticalStack>
                   <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
                   <VerticalStack title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
@@ -401,8 +399,8 @@ export default function MozillaPage() {
                       momentum going.
                     </p>
                   </VerticalStack>
-                </div>
-              </div>
+                </VerticalStack>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -427,11 +425,11 @@ export default function MozillaPage() {
                 <p>Sharing early concepts kept the team aligned, minimized rework, and set us up for high-fidelity design with clarity and momentum.</p>
               </VerticalStack>
               {/* Right Column - Images */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
-                <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
-                <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="w-full h-auto rounded-xl border border-gray-200" priority />
-              </div>
+              <HorizontalStack mobileCols={1} desktopCols={2}>
+                <Image src="/mozilla-v1-1.png" alt="mozilla mockup" width={400} height={400} className="flex-1 h-auto rounded-xl border border-gray-200" priority />
+                <Image src="/mozilla-v1-4.png" alt="mozilla mockup" width={400} height={400} className="flex-1 h-auto rounded-xl border border-gray-200" priority />
+                <Image src="/mozilla-v1-3.png" alt="mozilla mockup" width={400} height={400} className="flex-1 h-auto rounded-xl border border-gray-200" priority />
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
