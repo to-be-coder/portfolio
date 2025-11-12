@@ -1,11 +1,12 @@
 'use client'
 
 import CtaSection from '@/components/ui-block/cta'
-import { HorizontalCard } from '@/components/ui-block/project-card'
+import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
+import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight, User } from 'lucide-react'
@@ -67,23 +68,20 @@ export default function VercelPage() {
                 <strong>my process</strong>, <strong>systems thinking</strong>, and how I <strong>balance user needs with constraints</strong>.
                 <br />
               </p>
-              <div className="flex flex-col gap-y-2">
+              <VerticalStack>
                 <h2 className="text-2xl text-[#a1a1a1]">My Approach</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
-                    <span className="font-semibold">Problem Identification:</span>
-                    <p>Observed friction during real usage and defined the user impact.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
-                    <span className="font-semibold">Solution Exploration:</span>
-                    <p>Evaluated multiple approaches against clear criteria before recommending one.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-50 p-4 rounded-xl">
-                    <span className="font-semibold">Strategic Thinking:</span>
-                    <p>Considered constraints, tradeoffs, and validation methods throughout.</p>
-                  </div>
-                </div>
-              </div>
+                <HorizontalStack mobileCols={1} desktopCols={3}>
+                  <VerticalCard title="Problem Identification:" bgColor="bg-gray-50" titleColor="text-black">
+                    Observed friction during real usage and defined the user impact.
+                  </VerticalCard>
+                  <VerticalCard title="Solution Exploration:" bgColor="bg-gray-50" titleColor="text-black">
+                    Evaluated multiple approaches against clear criteria before recommending one.
+                  </VerticalCard>
+                  <VerticalCard title="Strategic Thinking:" bgColor="bg-gray-50" titleColor="text-black">
+                    Considered constraints, tradeoffs, and validation methods throughout.
+                  </VerticalCard>
+                </HorizontalStack>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -97,8 +95,7 @@ export default function VercelPage() {
                 While reviewing past interacions in a lengthy V0 chat, I found myself repeatedly clicking on components to discover which ones were expandable. There was no immediate visual cue to
                 distinguish between expandable accordions and static content when scanning through the conversation.
               </p>
-              <div className="flex-1 gap-y-8 ">
-                <h2 className="text-2xl  text-[#a1a1a1] mb-4">Research</h2>
+              <VerticalStack title="Research" titleColor="text-[#a1a1a1]">
                 <HorizontalCard title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>3 friends</p>
                   <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
@@ -110,49 +107,40 @@ export default function VercelPage() {
                   </div>
                 </HorizontalCard>
                 <HorizontalCard title="Methods" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                  <div className="space-y-1 md:space-y-2">
-                    <div>
-                      <span className="font-semibold">Observation:</span>
-                      <span> Watched friends naturally navigate through their V0 chat sessions, noting how they interacted with different components</span>
-                    </div>
-                    <div>
-                      <span className="font-semibold">Follow-up Question:</span>
-                      <span> Asked if they could tell which components were expandable (accordions) just by looking at them, without hovering or clicking</span>
-                    </div>
+                  <div>
+                    <span className="font-semibold">Observation:</span>
+                    <span> Watched friends naturally navigate through their V0 chat sessions, noting how they interacted with different components</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Follow-up Question:</span>
+                    <span> Asked if they could tell which components were expandable (accordions) just by looking at them, without hovering or clicking</span>
                   </div>
                 </HorizontalCard>
                 <HorizontalCard title="Key Findings" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                  <div className="space-y-1 md:space-y-2">
-                    <div>
-                      <span className="font-semibold">Trial & Error:</span>
-                      <span> All 3 participants clicked or hovered on multiple components to discover which were expandable.</span>
-                    </div>
-                    <div>
-                      <span className="font-semibold">Frustration:</span>
-                      <span> Participants expressed minor frustration at having to &quot;guess&quot; which blocks contained hidden content.</span>
-                    </div>
+                  <div>
+                    <span className="font-semibold">Trial & Error:</span>
+                    <span> All 3 participants clicked or hovered on multiple components to discover which were expandable.</span>
+                  </div>
+                  <div>
+                    <span className="font-semibold">Frustration:</span>
+                    <span> Participants expressed minor frustration at having to &quot;guess&quot; which blocks contained hidden content.</span>
                   </div>
                 </HorizontalCard>
-              </div>
+              </VerticalStack>
 
-              <div className="flex-1">
-                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When This Matters Most</h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
-                  <div className="flex flex-col">
-                    <span className="font-semibold mb-2 text-black">Long Conversations</span>
-                    <p className="text-black">When users have 10+ exchanges and need to reference previous outputs quickly.</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-semibold mb-2 text-black">Skimming Mode</span>
-                    <p className="text-black">When quickly scanning for specific information without reading every detail.</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="font-semibold mb-2 text-black">Decision-Making</span>
-                    <p className="text-black">When choosing which details to explore without trial-and-error clicking.</p>
-                  </div>
-                </div>
-              </div>
+              <VerticalStack title="When This Matters Most" titleColor="text-[#a1a1a1]">
+                <HorizontalStack mobileCols={1} desktopCols={3}>
+                  <VerticalCard title="Long Conversations" titleColor="text-black">
+                    When users have 10+ exchanges and need to reference previous outputs quickly.
+                  </VerticalCard>
+                  <VerticalCard title="Skimming Mode" titleColor="text-black">
+                    When quickly scanning for specific information without reading every detail.
+                  </VerticalCard>
+                  <VerticalCard title="Decision-Making" titleColor="text-black">
+                    When choosing which details to explore without trial-and-error clicking.
+                  </VerticalCard>
+                </HorizontalStack>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -162,7 +150,7 @@ export default function VercelPage() {
               The Problem Statement
             </ProjectSectionTitle>
             <ProjectContent>
-              <div className="flex flex-col max-w-3xl mx-auto relative">
+              <VerticalStack>
                 <div className="flex justify-start h-[64px] lg:h-[92px]">
                   <span className="text-[#9333EA] text-[64px] lg:text-[92px]">&quot;</span>
                 </div>
@@ -175,7 +163,7 @@ export default function VercelPage() {
                 <div className="flex justify-end h-[64px] lg:h-[92px]">
                   <span className="text-[#9333EA] text-[64px] lg:text-[92px] ">&quot;</span>
                 </div>
-              </div>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -185,13 +173,12 @@ export default function VercelPage() {
             <ProjectContent>
               <ProjectFlexBlock
                 left={
-                  <div className="flex flex-col">
-                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">No Visual Indicator for Expandable Components</h2>
+                  <VerticalStack title="No Visual Indicator for Expandable Components" titleColor="text-[#a1a1a1]">
                     <p>
                       When users skim through the V0 chat, there&apos;s no visual indicator to distinguish which components are accordions (expandable) from those that aren&apos;t. This creates
                       unnecessary friction as users must click or hover to discover expandability.
                     </p>
-                  </div>
+                  </VerticalStack>
                 }
                 right={
                   <div className="flex flex-col space-y-8">
@@ -207,20 +194,18 @@ export default function VercelPage() {
                   </div>
                 }
                 right={
-                  <div className="flex flex-col">
-                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">On Hover</h2>
+                  <VerticalStack title="On Hover" titleColor="text-[#a1a1a1]">
                     <p className=" mb-8 lg:mb-12">
                       Chevron shows up only on hover. Without hovering, it is unclear that this component is an accordion. This will also require Vercel to design a new UI for the mobile view.
                     </p>
-                  </div>
+                  </VerticalStack>
                 }
               />
               <ProjectFlexBlock
                 left={
-                  <div className="flex flex-col">
-                    <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">When Accordion is Expanded</h2>
+                  <VerticalStack title="When Accordion is Expanded" titleColor="text-[#a1a1a1]">
                     <p className=" mb-8 lg:mb-12">Icon on the left turns into a chevron down icon. </p>
-                  </div>
+                  </VerticalStack>
                 }
                 right={
                   <div className="flex flex-col space-y-8">
@@ -244,7 +229,8 @@ export default function VercelPage() {
               <div className="flex flex-col gap-4">
                 {/* Solution 1 */}
                 <ProjectFlexBlock
-                  leftContent={
+                  variant="card"
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">
@@ -265,7 +251,7 @@ export default function VercelPage() {
                       </div>
                     </>
                   }
-                  rightContent={<Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  right={<Image src="/vercel-option1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
                   badge="My Pick"
                   badgeColor="bg-[#9333EA]"
                   border={true}
@@ -275,7 +261,8 @@ export default function VercelPage() {
 
                 {/* Solution 2 */}
                 <ProjectFlexBlock
-                  leftContent={
+                  variant="card"
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">
@@ -296,13 +283,14 @@ export default function VercelPage() {
                       </div>
                     </>
                   }
-                  rightContent={<Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  right={<Image src="/vercel-option2.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
                   bgColor="bg-gray-50"
                 />
 
                 {/* Solution 3 */}
                 <ProjectFlexBlock
-                  leftContent={
+                  variant="card"
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">
@@ -323,7 +311,7 @@ export default function VercelPage() {
                       </div>
                     </>
                   }
-                  rightContent={<Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  right={<Image src="/vercel-option3.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
                   bgColor="bg-gray-50"
                 />
               </div>
@@ -335,9 +323,7 @@ export default function VercelPage() {
             <ProjectSectionTitle dotColor="text-[#9333EA]">Proposed Solution: Persistent Chevron</ProjectSectionTitle>
 
             <ProjectContent>
-              <div className="flex flex-col">
-                <h2 className="text-2xl mb-2 md:mb-4 text-[#a1a1a1]">Why This Solution?</h2>
-
+              <VerticalStack title="Why This Solution?" titleColor="text-[#a1a1a1]">
                 <p className="mb-6">After exploring these options, the persistent chevron felt like the best fit. Here&apos;s why:</p>
                 <ul className="space-y-3">
                   <li className="flex">
@@ -365,7 +351,7 @@ export default function VercelPage() {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </VerticalStack>
               <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4">
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="1">New Design</TabsTrigger>
@@ -385,30 +371,23 @@ export default function VercelPage() {
           <ScrollSpySection value="success-metrics">
             <ProjectSectionTitle dotColor="text-[#9333EA]">Expected Impact & Success Metrics</ProjectSectionTitle>
             <ProjectContent>
-              <div className="flex flex-col">
-                <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">Reduced Friction</span>
-                    <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">Faster Scanning</span>
-                    <p>Reduced Time-to-Expand</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">Increased Confidence</span>
-                    <p>More Intentional Expansions</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <h2 className="text-2xl mb-2 text-[#a1a1a1]">How to Validate</h2>
+              <HorizontalStack mobileCols={1} desktopCols={3} title="Expected Impact" titleColor="text-[#a1a1a1]">
+                <VerticalCard title="Reduced Friction" bgColor="bg-gray-100" titleColor="text-black">
+                  Designed core flows and built prototypes in Figma for fast iteration.
+                </VerticalCard>
+                <VerticalCard title="Faster Scanning" bgColor="bg-gray-100" titleColor="text-black">
+                  Reduced Time-to-Expand
+                </VerticalCard>
+                <VerticalCard title="Increased Confidence" bgColor="bg-gray-100" titleColor="text-black">
+                  More Intentional Expansions
+                </VerticalCard>
+              </HorizontalStack>
+              <VerticalStack title="How to Validate" titleColor="text-[#a1a1a1]">
                 <p>
                   A/B test comparing click patterns, hover frequency, and time-to-interaction between current and proposed designs. Track whether users expand accordions more confidently (fewer
                   hover-then-abandon patterns). Additionally, gather qualitative feedback on whether the visual indicator feels natural and helpful in context.
                 </p>
-              </div>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -418,7 +397,7 @@ export default function VercelPage() {
             <ProjectContent>
               <p className="text-black">I recognize that design decisions exist within constraints. The Vercel team has likely considered:</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <HorizontalStack mobileCols={1} desktopCols={2}>
                 <div className="border border-border p-6 rounded-xl">
                   <h3 className="font-semibold mb-2">Visual Density</h3>
                   <p className="text-sm">Every icon adds visual weight. Is the tradeoff worth it for improved discoverability?</p>
@@ -443,7 +422,7 @@ export default function VercelPage() {
                   <h3 className="font-semibold mb-2">Strategic Priorities</h3>
                   <p className="text-sm">Where does this fit within the product roadmap? Are there higher-priority improvements?</p>
                 </div>
-              </div>
+              </HorizontalStack>
 
               <div className="">
                 <p className="text-black">
@@ -459,26 +438,29 @@ export default function VercelPage() {
             <ProjectSectionTitle dotColor="text-[#9333EA]">Final Thoughts</ProjectSectionTitle>
 
             <ProjectContent>
-              <p className="text-lg">
-                I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
-                priorities, my recommendations would likely evolve.
-              </p>
-              <p className="text-lg">
-                What I like about Vercel is the attention to craft evident in every interaction. Products like V0 represent the future of how designers and developers work, and my career dream is to
-                contribute to that vision.
-              </p>
-              <p className="text-lg font-semibold">If I have an oppotunity to talk to Vercel&apos;s design team, I&apos;d like to learn:</p>
-              <ul className="space-y-2 text-lg">
-                <li>• What I might be missing in my analysis</li>
-                <li>• How this fits (or doesn&apos;t) with Vercel&apos;s design philosophy</li>
-                <li>• What you&apos;ve learned from real user data about the current pattern</li>
-                <li>• How the design team approaches similar challenges</li>
-              </ul>
+              <VerticalStack>
+                <p className="text-lg">
+                  I share this not as a definitive answer, but as an example of how I approach design opportunities. With access to user analytics, technical constraints, and Vercel&apos;s strategic
+                  priorities, my recommendations would likely evolve.
+                </p>
+                <p className="text-lg">
+                  What I like about Vercel is the attention to craft evident in every interaction. Products like V0 represent the future of how designers and developers work, and my career dream is to
+                  contribute to that vision.
+                </p>
+              </VerticalStack>
+              <VerticalStack title="If I have an oppotunity to talk to Vercel's design team, I'd like to learn:" titleColor="text-[#a1a1a1]">
+                <ul className="space-y-2 text-lg">
+                  <li>• What I might be missing in my analysis</li>
+                  <li>• How this fits (or doesn&apos;t) with Vercel&apos;s design philosophy</li>
+                  <li>• What you&apos;ve learned from real user data about the current pattern</li>
+                  <li>• How the design team approaches similar challenges</li>
+                </ul>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
           <ScrollSpySection value="figma" className="flex flex-col bg-[#9233ea18] p-8 rounded-2xl">
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+              <HorizontalStack mobileCols={1} desktopCols={2}>
                 {/* Left Column - Text Content */}
                 <div>
                   <ProjectSectionTitle dotColor="text-[#9233ea]">ExploreFigma File</ProjectSectionTitle>
@@ -498,7 +480,7 @@ export default function VercelPage() {
                 <div className="flex justify-center">
                   <Image src="/vercel-figma.png" alt="iPhone mockup of Lilypad's mobile design" width={1200} height={1200} className="h-auto w-full" priority />
                 </div>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
         </ScrollSpyViewport>
