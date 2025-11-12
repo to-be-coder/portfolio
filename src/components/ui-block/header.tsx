@@ -3,7 +3,6 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -184,8 +183,7 @@ export default function Header() {
             <div className="flex items-center justify-between mb-6">
               <Link href="/" legacyBehavior passHref>
                 <div className="flex items-center gap-1">
-                  <Image src="/icon.svg" alt="Jessica Cheng" width={40} height={40} />
-                  <p className="text-md font-normal font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+                  <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
                 </div>
               </Link>
               <div className="flex-1 flex justify-end">
