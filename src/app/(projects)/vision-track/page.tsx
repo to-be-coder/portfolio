@@ -210,7 +210,7 @@ export default function VisionTrackPage() {
             </ProjectSectionTitle>
 
             <ProjectContent>
-              <div className="w-full flex justify-center mt-12 bg-blue-200 rounded-lg p-8">
+              <div className="w-full flex justify-center mt-12 bg-blue-200 rounded-xl p-8">
                 <Image
                   src="/vision-track-workflow.png"
                   alt="Project workflow timeline showing hypothesis, research, and synthesis phases"
@@ -316,8 +316,8 @@ export default function VisionTrackPage() {
             <ProjectSectionTitle dotColor="text-blue-400">User Personas</ProjectSectionTitle>
             <ProjectContent>
               <HorizontalStack mobileCols={1} desktopCols={2}>
-                <Image src="/vision-track-user-1.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
-                <Image src="/vision-track-user-2.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
+                <Image src="/vision-track-user-1.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-xl border border-gray-200" priority />
+                <Image src="/vision-track-user-2.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-xl border border-gray-200" priority />
               </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>

@@ -219,7 +219,7 @@ export default function MozillaPage() {
                 }
                 right={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-warning-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-xl border border-gray-200" priority />
                   </div>
                 }
                 reverseOnDesktop={true}
@@ -227,7 +227,7 @@ export default function MozillaPage() {
               <ProjectFlexBlock
                 left={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-warning-response-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-xl border border-gray-200" priority />
                   </div>
                 }
                 right={
@@ -249,7 +249,7 @@ export default function MozillaPage() {
                 }
                 right={
                   <div className="flex flex-col space-y-8">
-                    <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-md border border-gray-200" priority />
+                    <Image src="/mozilla-warning-response-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-auto rounded-xl border border-gray-200" priority />
                   </div>
                 }
                 reverseOnDesktop={true}
@@ -357,13 +357,13 @@ export default function MozillaPage() {
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="3" className="flex justify-center bg-green-100 p-8 rounded-xl">
-                  <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/mozilla-chat-1.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
                 <TabsContent value="2" className="flex justify-center bg-green-100 p-8 rounded-xl">
-                  <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/mozilla-chat-3.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
                 <TabsContent value="1" className="flex justify-center bg-green-100 p-8 rounded-xl">
-                  <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/mozilla-chat-2.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
               </Tabs>
             </ProjectContent>
@@ -375,13 +375,13 @@ export default function MozillaPage() {
             <ProjectContent>
               <HorizontalStack mobileCols={1} desktopCols={3}>
                 <VerticalStack>
-                  <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+                  <Image src="/mozilla-signup-1.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-xl border border-gray-200" priority />
                   <VerticalStack title="1. Account Connection" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>The flow starts with a focused, distraction-free prompt to connect an account, carefully designed to avoid confusion or unnecessary navigation.</p>
                   </VerticalStack>
                 </VerticalStack>
                 <VerticalStack>
-                  <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+                  <Image src="/mozilla-signup-2.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-xl border border-gray-200" priority />
                   <VerticalStack title="2. Syncing Progress" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
                       Showing real-time syncing feedback helps manage expectations and prevents user uncertainty. Visual cues and messaging make it clear the system is working, reducing drop-off
@@ -390,7 +390,7 @@ export default function MozillaPage() {
                   </VerticalStack>
                 </VerticalStack>
                 <VerticalStack>
-                  <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-md border border-gray-200" priority />
+                  <Image src="/mozilla-signup-3.png" alt="Account deletion screen" width={800} height={800} className="h-auto max-w-full rounded-xl border border-gray-200" priority />
                   <VerticalStack title="3. Ready to Chat" titleColor="text-black" borderColor="border-[#C1C1C1]">
                     <p>
                       Once syncing is complete, users land directly in the chat experience, with full context. No confusion, no extra steps, just a smooth transition that respects their time and keeps
@@ -451,10 +451,10 @@ export default function MozillaPage() {
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="light" className="flex justify-center bg-green-100 p-8 rounded-xl">
-                    <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                    <Image src="/mozilla-light.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                   </TabsContent>
                   <TabsContent value="dark" className="flex justify-center bg-green-100 p-8 rounded-xl  ">
-                    <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                    <Image src="/mozilla-dark.png" alt="mozilla mockup" width={800} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                   </TabsContent>
                 </Tabs>
               </div>
@@ -477,7 +477,7 @@ export default function MozillaPage() {
           </ScrollSpySection>
 
           {/* Typography Section */}
-          <ScrollSpySection value="typography" className="bg-[#212121] text-white p-8 rounded-2xl">
+          <ScrollSpySection value="typography" className="bg-[#212121] text-white p-8 rounded-xl">
             <ProjectTypographySection
               title="Typography"
               titleColor="text-white"
@@ -555,7 +555,7 @@ export default function MozillaPage() {
             figmaUrl="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio--Public-?node-id=3-13787&t=J3zCiHTUrdhoAr61-1"
             imageSrc="/mozilla-cta.png"
             imageAlt="mozilla mockup"
-            sectionClassName="bg-primary rounded-xl p-8 text-white"
+            sectionClassName="bg-primary p-8 text-white"
             titleColor="text-white"
             dotColor="text-green-500"
             buttonBgColor="bg-green-300"

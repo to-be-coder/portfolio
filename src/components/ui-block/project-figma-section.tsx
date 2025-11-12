@@ -1,10 +1,10 @@
-import ProjectContent from './project-content'
-import ProjectSectionTitle from './project-section-title'
-import { HorizontalStack } from './project-stack'
 import { ScrollSpySection } from '@/components/ui/scroll-spy'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import ProjectContent from './project-content'
+import ProjectSectionTitle from './project-section-title'
+import { HorizontalStack } from './project-stack'
 
 interface ProjectFigmaSectionProps {
   title?: string
@@ -42,7 +42,7 @@ export default function ProjectFigmaSection({
   imageClassName = 'h-auto max-w-full',
 }: ProjectFigmaSectionProps) {
   return (
-    <ScrollSpySection value="figma" className={`flex flex-col ${sectionClassName}`}>
+    <ScrollSpySection value="figma" className={`flex flex-col rounded-xl ${sectionClassName}`}>
       <ProjectContent>
         <HorizontalStack mobileCols={1} desktopCols={2}>
           {/* Left Column - Text Content */}
@@ -53,7 +53,7 @@ export default function ProjectFigmaSection({
             <p className={descriptionClassName}>{description}</p>
             <Link
               href={figmaUrl}
-              className={`inline-flex items-center ${buttonBgColor} ${buttonTextColor} px-6 py-3 rounded-lg ${buttonHoverColor} transition-all`}
+              className={`inline-flex items-center ${buttonBgColor} ${buttonTextColor} px-6 py-3 rounded-xl ${buttonHoverColor} transition-all`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -71,4 +71,3 @@ export default function ProjectFigmaSection({
     </ScrollSpySection>
   )
 }
-

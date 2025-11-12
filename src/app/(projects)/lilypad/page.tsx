@@ -84,7 +84,7 @@ export default function LilypadPage() {
           </ScrollSpySection>
 
           {/* Typography Section */}
-          <ScrollSpySection value="typography" className="flex flex-col bg-[#212121] text-white p-8 rounded-2xl">
+          <ScrollSpySection value="typography" className="flex flex-col bg-[#212121] text-white p-8 rounded-xl">
             <ProjectTypographySection
               title="Typography"
               titleColor="text-white"
@@ -155,7 +155,7 @@ export default function LilypadPage() {
           </ScrollSpySection>
 
           {/* Mobile-First Design Section */}
-          <ScrollSpySection value="mobile-first" className="flex flex-col bg-[#DDA15F] text-white p-8 rounded-2xl">
+          <ScrollSpySection value="mobile-first" className="flex flex-col bg-[#DDA15F] text-white p-8 rounded-xl">
             <ProjectContent>
               <ProjectSectionTitle dotColor="text-[#af5800]" textAlign="text-center">
                 Mobile-First Design
@@ -196,13 +196,13 @@ export default function LilypadPage() {
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent value="desktop" className="flex justify-center bg-[#FEFAE1] p-8 rounded-xl">
-                  <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/lilypad-desktop-view.png" alt="Desktop screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
                 <TabsContent value="tablet" className="flex justify-center bg-[#FEFAE1] p-8 rounded-xl">
-                  <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/lilypad-ipad-view.png" alt="Tablet screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
                 <TabsContent value="mobile" className="flex justify-center bg-[#FEFAE1] p-8 rounded-xl">
-                  <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-md" priority />
+                  <Image src="/lilypad-mobile-view.png" alt="Mobile screen of Lilypad's responsive design" width={600} height={800} className="h-auto w-full max-w-full rounded-xl" priority />
                 </TabsContent>
               </Tabs>
             </ProjectContent>
@@ -298,7 +298,7 @@ export default function LilypadPage() {
             figmaUrl="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page--Public-?node-id=0-1&t=aKdPgE6gQyG0cSwq-1"
             imageSrc="/lilypad-iphone-1.png"
             imageAlt="iPhone mockup of Lilypad's mobile design"
-            sectionClassName="bg-[#FEFAE1] p-8 rounded-2xl"
+            sectionClassName="bg-[#FEFAE1] p-8"
             dotColor="text-[#af5800]"
             buttonBgColor="bg-[#DDA15F]"
             imageWidth={240}

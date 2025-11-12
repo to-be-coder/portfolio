@@ -324,7 +324,7 @@ export default function VercelPage() {
 
             <ProjectContent>
               <VerticalStack title="Why This Solution?" titleColor="text-[#a1a1a1]">
-                <p className="mb-6">After exploring these options, the persistent chevron felt like the best fit. Here&apos;s why:</p>
+                <p>After exploring these options, the persistent chevron felt like the best fit. Here&apos;s why:</p>
                 <ul className="space-y-3">
                   <li className="flex">
                     <span className="mr-3">•</span>
@@ -352,15 +352,15 @@ export default function VercelPage() {
                   </li>
                 </ul>
               </VerticalStack>
-              <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4">
-                <TabsList className="grid w-full grid-cols-2">
+              <Tabs defaultValue="1" className="max-w-3xl flex gap-y-4" pillBgColor="bg-[#9233ea]">
+                <TabsList className="grid w-full grid-cols-2 bg-[#9233ea18]">
                   <TabsTrigger value="1">New Design</TabsTrigger>
                   <TabsTrigger value="2">Current Design</TabsTrigger>
                 </TabsList>
-                <TabsContent value="1" className="flex justify-center w-full">
-                  <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto " priority />
+                <TabsContent value="1" className="flex justify-center w-full rounded-xl p-4 bg-[#9233ea18]">
+                  <Image src="/vercel-after1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto" priority />
                 </TabsContent>
-                <TabsContent value="2" className="flex justify-center  w-full">
+                <TabsContent value="2" className="flex justify-center  w-full rounded-xl p-4 bg-[#9233ea18]">
                   <Image src="/vercel-before1.png" alt="Vercel chat interface" width={800} height={800} className="flex-1 h-auto w-auto " priority />
                 </TabsContent>
               </Tabs>
@@ -464,7 +464,7 @@ export default function VercelPage() {
             figmaUrl="https://www.figma.com/design/M3wsoTlIAYxvTij1XlxVqE/Vercel-V0--Public-?node-id=0-1&t=wb9KeRkJ0PwDqPSw-1"
             imageSrc="/vercel-figma.png"
             imageAlt="Vercel V0 Figma design"
-            sectionClassName="bg-[#9233ea18] p-8 rounded-2xl"
+            sectionClassName="bg-[#9233ea18] p-8"
             dotColor="text-[#9233ea]"
             buttonBgColor="bg-[#9233ea]"
             imageWidth={1200}
