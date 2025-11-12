@@ -320,7 +320,7 @@ function ScrollSpyRootImpl(props: Omit<ScrollSpyRootProps, 'onValueChange'>) {
         data-slot="scroll-spy"
         dir={dir}
         {...rootProps}
-        className={cn('flex', orientation === 'horizontal' ? 'flex-row' : 'flex-col', 'w-full max-w-7xl mx-auto', className)}
+        className={cn('flex', orientation === 'horizontal' ? 'flex-row' : 'flex-col', 'w-full max-w-7xl mx-auto px-4 md:px-0', className)}
       />
     </ScrollSpyContext.Provider>
   )
