@@ -5,7 +5,6 @@ import { HorizontalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -244,7 +243,7 @@ export default function VercelPage() {
 
               <div className="flex flex-col gap-4">
                 {/* Solution 1 */}
-                <ProjectHorizontalContentCard
+                <ProjectFlexBlock
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -275,7 +274,7 @@ export default function VercelPage() {
                 />
 
                 {/* Solution 2 */}
-                <ProjectHorizontalContentCard
+                <ProjectFlexBlock
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -302,7 +301,7 @@ export default function VercelPage() {
                 />
 
                 {/* Solution 3 */}
-                <ProjectHorizontalContentCard
+                <ProjectFlexBlock
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">

@@ -3,8 +3,8 @@
 import CtaSection from '@/components/ui-block/cta'
 import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
+import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { VerticalStack } from '@/components/ui-block/project-stack'
 import ProjectTypographySection from '@/components/ui-block/project-typography-section'
@@ -222,7 +222,7 @@ export default function LilypadPage() {
             </ProjectSectionTitle>
             <ProjectContent>
               <div className="flex flex-col gap-4">
-                <ProjectHorizontalContentCard
+                <ProjectFlexBlock
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">
@@ -246,7 +246,7 @@ export default function LilypadPage() {
                   }
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalContentCard
+                <ProjectFlexBlock
                   leftContent={
                     <>
                       <div className="flex flex-col gap-4">

@@ -6,7 +6,6 @@ import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import ProjectTypographySection from '@/components/ui-block/project-typography-section'
@@ -98,8 +97,8 @@ export default function MozillaPage() {
                   </li>
                 </ul>
                 <p>
-                  <br /> I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally
-                  and laid the foundation for deeper testing and iteration.
+                  I led UX strategy and prototyping, working closely with engineering to align on feasibility and surface design risks early. This work helped Mozilla align cross-functionally and laid
+                  the foundation for deeper testing and iteration.
                 </p>
               </VerticalStack>
               <HorizontalStack title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
@@ -147,22 +146,20 @@ export default function MozillaPage() {
           {/*Hypothesis Section */}
           <ScrollSpySection value="hypothesis" className="flex flex-col bg-green-50 rounded-xl p-8">
             <ProjectContent>
-              <ProjectSectionTitle dotColor="text-green-500">Hypothesis</ProjectSectionTitle>
-              <div className="flex flex-col p-4 lg:p-8 relative">
-                <div className="flex flex-col max-w-3xl mx-auto relative">
-                  <div className="flex justify-start h-[64px] lg:h-[92px]">
-                    <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-[24px] lg:text-[32px] font-medium text-center text-black">
-                      For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
-                    </p>
-                  </div>
-                  <div className="flex justify-end h-[64px] lg:h-[92px]">
-                    <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>
-                  </div>
+              <VerticalStack>
+                <ProjectSectionTitle dotColor="text-green-500">Hypothesis</ProjectSectionTitle>
+                <div className="flex justify-start h-[64px] lg:h-[92px]">
+                  <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
                 </div>
-              </div>
+                <div className="flex flex-col">
+                  <p className="text-[24px] lg:text-[32px] font-medium text-center text-black">
+                    For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
+                  </p>
+                </div>
+                <div className="flex justify-end h-[64px] lg:h-[92px]">
+                  <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>
+                </div>
+              </VerticalStack>
               <HorizontalStack title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <VerticalCard title="Be transparent about data usage" bgColor="bg-green-100" titleColor="text-black">
                   We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
@@ -270,8 +267,8 @@ export default function MozillaPage() {
                 part of the experience.
               </p>
               <div className="flex flex-col gap-4">
-                <ProjectHorizontalContentCard
-                  leftContent={
+                <ProjectFlexBlock
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Account Deletion</h3>
@@ -279,13 +276,14 @@ export default function MozillaPage() {
                       </div>
                     </>
                   }
-                  rightContent={
+                  right={
                     <Image src="/mozilla-setting-account.png" alt="Account deletion screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
                   }
+                  variant="card"
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalContentCard
-                  leftContent={
+                <ProjectFlexBlock
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Clear Memory</h3>
@@ -293,13 +291,13 @@ export default function MozillaPage() {
                       </div>
                     </>
                   }
-                  rightContent={
-                    <Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
-                  }
+                  right={<Image src="/mozilla-setting-memory.png" alt="Clear memory screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  reverseOnDesktop={true}
+                  variant="card"
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalContentCard
-                  leftContent={
+                <ProjectFlexBlock
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Model Selection</h3>
@@ -307,13 +305,12 @@ export default function MozillaPage() {
                       </div>
                     </>
                   }
-                  rightContent={
-                    <Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />
-                  }
+                  right={<Image src="/mozilla-setting-models.png" alt="Model selection screen" width={800} height={800} className="flex-1 h-auto w-auto rounded-xl border border-gray-200" priority />}
+                  variant="card"
                   bgColor="bg-gray-100"
                 />
-                <ProjectHorizontalContentCard
-                  leftContent={
+                <ProjectFlexBlock
+                  left={
                     <>
                       <div className="flex flex-col gap-4">
                         <h3 className="text-xl font-semibold">Extensions Control</h3>
@@ -321,7 +318,7 @@ export default function MozillaPage() {
                       </div>
                     </>
                   }
-                  rightContent={
+                  right={
                     <Image
                       src="/mozilla-setting-extentions-2.png"
                       alt="Extensions control screen"
@@ -331,6 +328,8 @@ export default function MozillaPage() {
                       priority
                     />
                   }
+                  reverseOnDesktop={true}
+                  variant="card"
                   bgColor="bg-gray-100"
                 />
               </div>
