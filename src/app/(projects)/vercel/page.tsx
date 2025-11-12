@@ -3,15 +3,15 @@
 import CtaSection from '@/components/ui-block/cta'
 import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
+import ProjectFigmaSection from '@/components/ui-block/project-figma-section'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ArrowUpRight, User } from 'lucide-react'
+import { User } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function VercelPage() {
   return (
@@ -458,31 +458,19 @@ export default function VercelPage() {
               </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
-          <ScrollSpySection value="figma" className="flex flex-col bg-[#9233ea18] p-8 rounded-2xl">
-            <ProjectContent>
-              <HorizontalStack mobileCols={1} desktopCols={2}>
-                {/* Left Column - Text Content */}
-                <div>
-                  <ProjectSectionTitle dotColor="text-[#9233ea]">ExploreFigma File</ProjectSectionTitle>
-                  <p className="mb-12">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
-                  <Link
-                    href="https://www.figma.com/design/M3wsoTlIAYxvTij1XlxVqE/Vercel-V0--Public-?node-id=0-1&t=wb9KeRkJ0PwDqPSw-1"
-                    className="inline-flex items-center bg-[#9233ea] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Check Out Figma
-                    <ArrowUpRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </div>
-
-                {/* Right Column - iPhone Image */}
-                <div className="flex justify-center">
-                  <Image src="/vercel-figma.png" alt="iPhone mockup of Lilypad's mobile design" width={1200} height={1200} className="h-auto w-full" priority />
-                </div>
-              </HorizontalStack>
-            </ProjectContent>
-          </ScrollSpySection>
+          <ProjectFigmaSection
+            title="ExploreFigma File"
+            description="Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project."
+            figmaUrl="https://www.figma.com/design/M3wsoTlIAYxvTij1XlxVqE/Vercel-V0--Public-?node-id=0-1&t=wb9KeRkJ0PwDqPSw-1"
+            imageSrc="/vercel-figma.png"
+            imageAlt="Vercel V0 Figma design"
+            sectionClassName="bg-[#9233ea18] p-8 rounded-2xl"
+            dotColor="text-[#9233ea]"
+            buttonBgColor="bg-[#9233ea]"
+            imageWidth={1200}
+            imageHeight={1200}
+            imageClassName="h-auto w-full"
+          />
         </ScrollSpyViewport>
       </ScrollSpy>
 

@@ -4,6 +4,7 @@ import CtaSection from '@/components/ui-block/cta'
 import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
+import ProjectFigmaSection from '@/components/ui-block/project-figma-section'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
@@ -11,9 +12,7 @@ import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-st
 import ProjectTypographySection from '@/components/ui-block/project-typography-section'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function MozillaPage() {
   return (
@@ -549,32 +548,20 @@ export default function MozillaPage() {
           </ScrollSpySection>
 
           {/* Figma Exploration Section */}
-          <ScrollSpySection value="figma" className="flex flex-col bg-primary rounded-xl p-8 text-white">
-            <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                {/* Left Column - Text Content */}
-                <div>
-                  <ProjectSectionTitle color="text-white" dotColor="text-green-500">
-                    Explore my portfolio in Figma
-                  </ProjectSectionTitle>
-                  <p className=" mb-4 md:mb-8">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
-                  <Link
-                    href="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio--Public-?node-id=3-13787&t=J3zCiHTUrdhoAr61-1"
-                    className="inline-flex items-center bg-green-300 hover:bg-green-500 text-black px-6 py-3 rounded-lg transition-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Check Out Figma
-                    <ArrowUpRight className="ml-2 w-5 h-5" />
-                  </Link>
-                </div>
-                {/* Right Column - iPhone Image */}
-                <div className="flex justify-center">
-                  <Image src="/mozilla-cta.png" alt="mozilla mockup" width={800} height={800} className="h-auto max-w-full" priority />
-                </div>
-              </div>
-            </ProjectContent>
-          </ScrollSpySection>
+          <ProjectFigmaSection
+            title="Explore my portfolio"
+            description="Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project."
+            descriptionClassName="mb-4 md:mb-8"
+            figmaUrl="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio--Public-?node-id=3-13787&t=J3zCiHTUrdhoAr61-1"
+            imageSrc="/mozilla-cta.png"
+            imageAlt="mozilla mockup"
+            sectionClassName="bg-primary rounded-xl p-8 text-white"
+            titleColor="text-white"
+            dotColor="text-green-500"
+            buttonBgColor="bg-green-300"
+            buttonTextColor="text-black"
+            buttonHoverColor="hover:bg-green-500"
+          />
         </ScrollSpyViewport>
       </ScrollSpy>
 
