@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { CallToActionButton } from './button'
+import { CallToActionButton } from '../ui/button'
 
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
