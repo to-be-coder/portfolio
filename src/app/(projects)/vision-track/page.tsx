@@ -2,7 +2,7 @@
 
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalBlock from '@/components/ui-block/project-horizontal-block'
+import ProjectCard from '@/components/ui-block/project-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/ui-block/project-vertical-block'
 import CtaSection from '@/components/ui-block/cta'
@@ -96,7 +96,7 @@ export default function VisionTrackPage() {
             <ProjectSectionTitle color="text-black" dotColor="text-blue-400">
               Conclusion First
             </ProjectSectionTitle>
-            <ProjectHorizontalBlock title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
                 We uncovered the real gap: teams didn&apos;t struggle to set goals, they struggled to act on them day to day. <br />
               </p>
@@ -105,14 +105,14 @@ export default function VisionTrackPage() {
                 delivered inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear foundation for
                 future prototyping.
               </p>
-            </ProjectHorizontalBlock>
-            <ProjectHorizontalBlock title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            </ProjectCard>
+            <ProjectCard title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
                 We spent too long validating the segment before testing behavior, so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
                 came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner, testing
                 one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
           </ScrollSpySection>
 
           <ScrollSpySection value="research-findings" className="flex flex-col bg-blue-50 p-8 rounded-xl">
@@ -251,7 +251,7 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="research-1" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Research #1</ProjectSectionTitle>
             {/* Interviewed */}
-            <ProjectHorizontalBlock title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>5 Founders</p>
               <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
                 <div className="flex gap-1">
@@ -260,10 +260,10 @@ export default function VisionTrackPage() {
                   ))}
                 </div>
               </div>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
 
             {/* Challenges */}
-            <ProjectHorizontalBlock title="Challenges" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Challenges" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <div>
                   <span className="font-semibold ">Budget Constraints:</span>
@@ -274,16 +274,16 @@ export default function VisionTrackPage() {
                   <span> Excel is already free and familiar.</span>
                 </div>
               </div>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
 
             {/* Decision + Learning */}
-            <ProjectHorizontalBlock title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
                 Through these interviews, I discovered that while startups do struggle with alignment, many wouldn&apos;t invest in a dedicated goal-tracking solution. This prompted me to question our
                 target market and refine our hypothesis to address a different segment. As a result, I made the strategic decision to shift our focus to SMBs and refine our hypothesis to better
                 address their unique challenges and needs.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
           </ScrollSpySection>
 
           {/* Hypothesis #2 Section */}
@@ -332,7 +332,7 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="research-2" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Research #2</ProjectSectionTitle>
             {/* Interviewed */}
-            <ProjectHorizontalBlock title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Interviewed" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>20 People (Product manager, CTO, CEO, CPO, Founder)</p>
               <div className="grid grid-rows-2 gap-1 mt-1 md:mt-2">
                 <div className="flex gap-1">
@@ -346,10 +346,10 @@ export default function VisionTrackPage() {
                   ))}
                 </div>
               </div>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
 
             {/* Quotes */}
-            <ProjectHorizontalBlock title="Quotes" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Quotes" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <div>
                   <span className="font-semibold ">01</span>
@@ -364,10 +364,10 @@ export default function VisionTrackPage() {
                   <span> &ldquo;We need a way to align our team without overwhelming them with yet another app.&rdquo;</span>
                 </div>
               </div>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
 
             {/* Pain Points */}
-            <ProjectHorizontalBlock title="Pain Points" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Pain Points" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <div className="space-y-1 md:space-y-2">
                 <div>
                   <span className="font-semibold ">01</span>
@@ -382,15 +382,15 @@ export default function VisionTrackPage() {
                   <span> Not everything is captured by KPIs alone, some critical tasks are unquantifiable yet vital.</span>
                 </div>
               </div>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
 
             {/* Decision + Learning */}
-            <ProjectHorizontalBlock title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+            <ProjectCard title="Decision + Learning" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
               <p>
                 We decided to focus on a single department within an SMB, specifically Marketing or Sales. This narrower scope makes it easier to pilot new tools, generate measurable results, and
                 avoid developing a watered-down product trying to serve every department at once.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
           </ScrollSpySection>
 
           {/* Competitive Analysis Section */}

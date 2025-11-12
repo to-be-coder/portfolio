@@ -1,14 +1,14 @@
 'use client'
 
+import CtaSection from '@/components/ui-block/cta'
+import ProjectCard from '@/components/ui-block/project-card'
 import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectHorizontalBlock from '@/components/ui-block/project-horizontal-block'
 import ProjectHorizontalCard from '@/components/ui-block/project-horizontal-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { default as ProjectVerticalBlock, default as VerticalBlock } from '@/components/ui-block/project-vertical-block'
-import CtaSection from '@/components/ui-block/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -190,29 +190,29 @@ export default function MozillaPage() {
           <ScrollSpySection value="design-challenges">
             <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
             {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-            <ProjectHorizontalBlock title="Designing for a Fast MVP, Aligned with Tech Constraints">
+            <ProjectCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
               <p className=" text-black">
                 To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
                 shaped my UX approach, favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
                 evolved.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
             {/* Privacy-first UX */}
-            <ProjectHorizontalBlock title="Privacy-first UX">
+            <ProjectCard title="Privacy-first UX">
               <p className=" text-black">
                 Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used,
                 while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
                 meaningful, and ensuring the assistant felt helpful, not intrusive.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
             {/* Designing for scale */}
-            <ProjectHorizontalBlock title="Designing for scale">
+            <ProjectCard title="Designing for scale">
               <p className=" text-black">
                 With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                 evolved,
                 <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
               </p>
-            </ProjectHorizontalBlock>
+            </ProjectCard>
           </ScrollSpySection>
 
           {/* Transparency about data usage */}
