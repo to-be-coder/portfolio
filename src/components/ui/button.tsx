@@ -44,9 +44,10 @@ Button.displayName = 'Button'
 
 export interface CallToActionButtonProps extends Omit<ButtonProps, 'children' | 'variant'> {
   children: React.ReactNode
+  arrowColor?: string
 }
 
-const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButtonProps>(({ className, size, children, asChild, ...props }, ref) => {
+const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButtonProps>(({ className, size, children, arrowColor = 'text-black', asChild, ...props }, ref) => {
   const [isHovered, setIsHovered] = React.useState(false)
 
   const iconElement = (
@@ -54,7 +55,7 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
       <span
         className={cn('text-black [&_svg]:w-3 [&_svg]:h-3 ease-out', isHovered ? 'translate-x-0 opacity-100 transition-all duration-500' : '-translate-x-[200%] opacity-0 transition-all duration-200')}
       >
-        <ArrowRight strokeWidth={2.5} />
+        <ArrowRight strokeWidth={2.5} className={arrowColor} />
       </span>
     </span>
   )

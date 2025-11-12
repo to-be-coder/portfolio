@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { Button } from './button'
+import Link from 'next/link'
+import { CallToActionButton } from './button'
 
 const topRowImages = [
   { src: '/contact-1.png', alt: 'Contact 1' },
@@ -57,12 +58,14 @@ export default function CtaSection() {
 
       {/* Content section with higher z-index */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <section className="py-8 md:py-16 text-center">
+        <section className="py-8 md:py-16 text-center flex flex-col items-center justify-center">
           <h2 className="text-4xl font-bold text-white mb-4">Let&apos;s make something users will love!</h2>
           <p className="text-[#ffffff] mb-8">If you&apos;re looking for a product designer who can bridge the gap between design and code, I&apos;m here to help!</p>
-          <Button variant="secondary" asChild>
-            <a href={'/contact'}>Contact Me</a>
-          </Button>
+          <div className="w-[120px] flex">
+            <CallToActionButton asChild className="bg-secondary hover:bg-secondary/80 text-white" arrowColor="text-secondary">
+              <Link href={`/contact`}>Contact</Link>
+            </CallToActionButton>
+          </div>
         </section>
       </div>
     </div>
