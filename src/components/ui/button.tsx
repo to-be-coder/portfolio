@@ -2,6 +2,7 @@
 
 import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
+import { MotionConfig, motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import * as React from 'react'
 
@@ -111,4 +112,94 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
 })
 CallToActionButton.displayName = 'CallToActionButton'
 
-export { Button, buttonVariants, CallToActionButton }
+const HAMBURGER_VARIANTS = {
+  top: {
+    open: {
+      rotate: ['0deg', '0deg', '45deg'],
+      top: ['35%', '50%', '50%'],
+    },
+    closed: {
+      rotate: ['45deg', '0deg', '0deg'],
+      top: ['50%', '50%', '35%'],
+    },
+  },
+  middle: {
+    open: {
+      rotate: ['0deg', '0deg', '-45deg'],
+    },
+    closed: {
+      rotate: ['-45deg', '0deg', '0deg'],
+    },
+  },
+  bottom: {
+    open: {
+      rotate: ['0deg', '0deg', '45deg'],
+      bottom: ['35%', '50%', '50%'],
+      left: '50%',
+    },
+    closed: {
+      rotate: ['45deg', '0deg', '0deg'],
+      bottom: ['50%', '50%', '35%'],
+      left: 'calc(50% + 0.375rem)',
+    },
+  },
+}
+
+export interface HamburgerButtonProps {
+  active?: boolean
+  onToggle?: (active: boolean) => void
+  className?: string
+  'aria-label'?: string
+  'aria-expanded'?: boolean
+}
+
+const HamburgerButton = React.forwardRef<HTMLButtonElement, HamburgerButtonProps>(
+  ({ active: controlledActive, onToggle, className, 'aria-label': ariaLabel, 'aria-expanded': ariaExpanded, ...props }, ref) => {
+    const [internalActive, setInternalActive] = React.useState(false)
+    const active = controlledActive ?? internalActive
+
+    const handleClick = () => {
+      const newActive = !active
+      if (controlledActive === undefined) {
+        setInternalActive(newActive)
+      }
+      onToggle?.(newActive)
+    }
+
+    return (
+      <MotionConfig
+        transition={{
+          duration: 0.25,
+          ease: 'easeInOut',
+        }}
+      >
+        <motion.button
+          ref={ref}
+          initial={false}
+          animate={active ? 'open' : 'closed'}
+          onClick={handleClick}
+          className={cn('relative h-9 w-9 rounded-full bg-white/0 transition-colors hover:bg-white/20', className)}
+          aria-label={ariaLabel ?? 'Toggle menu'}
+          aria-expanded={ariaExpanded ?? active}
+          {...props}
+        >
+          <motion.span variants={HAMBURGER_VARIANTS.top} className="absolute h-1 w-6 bg-white" style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }} />
+          <motion.span variants={HAMBURGER_VARIANTS.middle} className="absolute h-1 w-6 bg-white" style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }} />
+          <motion.span
+            variants={HAMBURGER_VARIANTS.bottom}
+            className="absolute h-1 w-3 bg-white"
+            style={{
+              x: '-50%',
+              y: '50%',
+              bottom: '35%',
+              left: 'calc(50% + 0.375rem)',
+            }}
+          />
+        </motion.button>
+      </MotionConfig>
+    )
+  }
+)
+HamburgerButton.displayName = 'HamburgerButton'
+
+export { Button, CallToActionButton, HamburgerButton, buttonVariants }

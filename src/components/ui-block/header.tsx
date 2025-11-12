@@ -2,11 +2,10 @@
 
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
-import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { CallToActionButton } from '../ui/button'
+import { CallToActionButton, HamburgerButton } from '../ui/button'
 
 const navigationItems = [
   { path: '/', label: 'Home', id: 'home' },
@@ -172,9 +171,7 @@ export default function Header() {
         </div>
 
         <div className="flex sm:hidden">
-          <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu />
-          </button>
+          <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
         </div>
       </div>
       {mobileMenuOpen && (
@@ -187,9 +184,7 @@ export default function Header() {
                 </div>
               </Link>
               <div className="flex-1 flex justify-end">
-                <button type="button" className="rounded-md  text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                  <X />
-                </button>
+                <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
               </div>
             </div>
             <div className="flow-root">
