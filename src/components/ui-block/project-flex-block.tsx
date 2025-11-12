@@ -3,23 +3,10 @@ import React from 'react'
 interface ProjectFlexBlockProps {
   left: React.ReactNode
   right: React.ReactNode
-  /**
-   * If true, swaps the order of left/right on desktop (lg+)
-   * Useful for alternating layouts.
-   */
   reverseOnDesktop?: boolean
-  /**
-   * Optional border and color classes for the left and right blocks
-   */
   leftClassName?: string
   rightClassName?: string
-  /**
-   * Optional class for the flex container
-   */
   containerClassName?: string
-  /**
-   * Optional gap classes (default: gap-x-8 flex-col lg:flex-row gap-y-8 lg:gap-y-0)
-   */
   gapClassName?: string
 }
 
