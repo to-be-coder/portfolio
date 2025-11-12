@@ -385,15 +385,15 @@ export default function VercelPage() {
               <div className="flex flex-col">
                 <h2 className="text-2xl mb-2 text-[#a1a1a1]">Expected Impact</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">Reduced Friction</span>
                     <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">Faster Scanning</span>
                     <p>Reduced Time-to-Expand</p>
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
                     <span className="font-semibold">Increased Confidence</span>
                     <p>More Intentional Expansions</p>
                   </div>
