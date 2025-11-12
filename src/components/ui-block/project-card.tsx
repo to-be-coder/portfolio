@@ -23,18 +23,19 @@ export function HorizontalCard({ title, children, titleColor = 'text-black', bor
 }
 
 interface VerticalCardProps {
-  title: React.ReactNode
+  title?: React.ReactNode
   children: React.ReactNode
   titleColor?: string
+  contentColor?: string
   bgColor?: string
   className?: string
 }
 
-export function VerticalCard({ title, children, titleColor = 'text-black', bgColor = 'bg-gray-100', className = '' }: VerticalCardProps) {
+export function VerticalCard({ title = null, children, titleColor = 'text-black', contentColor = 'text-black', bgColor = 'bg-gray-100', className = '' }: VerticalCardProps) {
   return (
     <div className={`flex flex-col ${bgColor} p-4 rounded-xl ${className}`}>
-      <span className={`font-semibold mb-2 ${titleColor}`}>{title}</span>
-      <p className={titleColor}>{children}</p>
+      {title && <span className={`font-semibold mb-2 ${titleColor}`}>{title}</span>}
+      <p className={contentColor}>{children}</p>
     </div>
   )
 }

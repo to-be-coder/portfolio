@@ -1,11 +1,11 @@
 'use client'
 
 import CtaSection from '@/components/ui-block/cta'
-import { HorizontalCard } from '@/components/ui-block/project-card'
+import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import { VerticalStack } from '@/components/ui-block/project-stack'
+import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { User } from 'lucide-react'
 import Image from 'next/image'
@@ -59,21 +59,18 @@ export default function VisionTrackPage() {
               Overview
             </ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <p className=" font-semibold">Role: </p>
-                  <p>UX Research & Product Discovery</p>
-                </div>
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <p className=" font-semibold">Timeframe: </p>
-                  <p> 2 months</p>
-                </div>
-                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                  <p className=" font-semibold">Stage: </p>
-                  <p> Pre-MVP</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+              <HorizontalStack mobileCols={1} desktopCols={3} gapClassName="gap-2 md:gap-4">
+                <VerticalCard title="Role:" bgColor="bg-gray-100" titleColor="text-black">
+                  UX Research & Product Discovery
+                </VerticalCard>
+                <VerticalCard title="Timeframe:" bgColor="bg-gray-100" titleColor="text-black">
+                  2 months
+                </VerticalCard>
+                <VerticalCard title="Stage:" bgColor="bg-gray-100" titleColor="text-black">
+                  Pre-MVP
+                </VerticalCard>
+              </HorizontalStack>
+              <HorizontalStack mobileCols={1} desktopCols={2} gapClassName="gap-x-16 gap-y-8">
                 <VerticalStack title="Overview" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>
                     VisionTrack helps teams stay aligned in fast-paced, remote environments by translating company goals into daily clarity. We started by designing for startup founders, but early
@@ -88,7 +85,7 @@ export default function VisionTrackPage() {
                     points around goal alignment, while testing innovative ways to keep teams focused and motivated.
                   </p>
                 </VerticalStack>
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -96,23 +93,25 @@ export default function VisionTrackPage() {
             <ProjectSectionTitle color="text-black" dotColor="text-blue-400">
               Conclusion First
             </ProjectSectionTitle>
-            <HorizontalCard title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>
-                We uncovered the real gap: teams didn&apos;t struggle to set goals, they struggled to act on them day to day. <br />
-              </p>
-              <p>
-                We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around &ldquo;goal translation,&rdquo; and scoped a focused MVP: one Slack-based reminder loop,
-                delivered inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear foundation for
-                future prototyping.
-              </p>
-            </HorizontalCard>
-            <HorizontalCard title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-              <p>
-                We spent too long validating the segment before testing behavior, so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
-                came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner, testing
-                one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
-              </p>
-            </HorizontalCard>
+            <VerticalStack>
+              <HorizontalCard title="Outcome" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>
+                  We uncovered the real gap: teams didn&apos;t struggle to set goals, they struggled to act on them day to day. <br />
+                </p>
+                <p>
+                  We pivoted from startup founders to SMB Sales and Marketing teams, reframed the problem around &ldquo;goal translation,&rdquo; and scoped a focused MVP: one Slack-based reminder
+                  loop, delivered inside the tools teams already use. This direction reduced product complexity, aligned tightly with behavior, and eliminated adoption friction, setting a clear
+                  foundation for future prototyping.
+                </p>
+              </HorizontalCard>
+              <HorizontalCard title="What I Learned" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <p>
+                  We spent too long validating the segment before testing behavior, so by the time we were ready to prototype, we ran out of time. The research gave us confidence in the pivot, but it
+                  came at the cost of momentum. I learned that deep research is valuable, but only when balanced with early behavioral validation. In future projects, I&apos;d prototype sooner,
+                  testing one high-signal behavior after just 5–6 interviews, rather than waiting for full certainty. Fast feedback beats over-validating assumptions.
+                </p>
+              </HorizontalCard>
+            </VerticalStack>
           </ScrollSpySection>
 
           <ScrollSpySection value="research-findings" className="flex flex-col bg-blue-50 p-8 rounded-xl">
@@ -124,29 +123,26 @@ export default function VisionTrackPage() {
                 We ran interviews with 5 startup founders and 20 SMB execs (CPOs, PMs, team leads). Instead of pitching features, we focused on context and behavior. Using open-ended prompts like
                 &ldquo;walk me through how your team tracks goals today.&rdquo;
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-stretch">
-                <p className="text-xl font-bold flex-1">Insights That Informed Our MVP Pivot</p>
-
-                <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
+              <HorizontalStack mobileCols={1} desktopCols={3} gapClassName="gap-2 md:gap-4" title="Insights That Informed Our MVP Pivot" titleColor="text-black">
+                <div className="flex flex-col bg-blue-100 p-4 rounded-xl">
                   <p>Founders didn&apos;t want &ldquo;another dashboard&rdquo;,they defaulted to Excel or Notion.</p>
                 </div>
-                <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
+                <div className="flex flex-col bg-blue-100 p-4 rounded-xl">
                   <p>They didn&apos;t want another tool to manage and log into.</p>
                 </div>
-                <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
+                <div className="flex flex-col bg-blue-100 p-4 rounded-xl">
                   <p>The real pain was not &ldquo;setting goals,&rdquo; but translating them into meaningful, actionable work.</p>
                 </div>
-                <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
+                <div className="flex flex-col bg-blue-100 p-4 rounded-xl">
                   <p>Slack was the best channel for driving behavior change without requiring login friction.</p>
                 </div>
-                <div className="flex flex-col bg-blue-100 p-4 rounded-xl flex-1">
+                <div className="flex flex-col bg-blue-100 p-4 rounded-xl">
                   <p>Trying to serve every team diluted the value. Narrowing to Sales and Marketing gave us clarity and focus.</p>
                 </div>
-              </div>
+              </HorizontalStack>
 
               {/* Value Propositions Section */}
-              <div className="col-span-1 space-y-4">
-                <p className="text-xl font-bold">Value Propositions</p>
+              <VerticalStack title="Value Propositions" titleColor="text-black">
                 <div className="w-full flex justify-center">
                   <Image
                     src="/vision-track-value.png"
@@ -157,7 +153,7 @@ export default function VisionTrackPage() {
                     priority
                   />
                 </div>
-              </div>
+              </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -176,26 +172,33 @@ export default function VisionTrackPage() {
                 <p>
                   We cut <span className="font-bold">80%</span> of our feature ideas, dashboards, metrics views, onboarding flows. Instead, we focused on a single Slack-based reminder loop.
                 </p>
-                <div className="flex flex-col gap-2">
+                <VerticalStack>
                   <p className=" font-semibold">Why Build on Slack?</p>
-                  <p className=" bg-gray-100 p-4 rounded-xl">
-                    Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow, and frictionless adoption was a requirement, not a nice-to-have.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2">
+                  <VerticalCard>
+                    <p>Users told us they didn&apos;t want to log into yet another tool. Slack was already in their flow, and frictionless adoption was a requirement, not a nice-to-have.</p>
+                  </VerticalCard>
+                </VerticalStack>
+
+                <VerticalStack>
                   <p className=" font-semibold">We designed a lightweight flow:</p>
-                  <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-stretch">
-                    <p className=" bg-gray-100 p-4 rounded-xl flex-1">
-                      <span className="font-bold">1. Manager</span> sets OKRs at the start of the cycle.
-                    </p>
-                    <p className=" bg-gray-100 p-4 rounded-xl flex-1">
-                      <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: &ldquo;Which of your tasks support this objective?&rdquo;
-                    </p>
-                    <p className=" bg-gray-100 p-4 rounded-xl flex-1">
-                      <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries, no login required.
-                    </p>
-                  </div>
-                </div>
+                  <HorizontalStack>
+                    <VerticalCard>
+                      <p>
+                        <span className="font-bold">1. Manager</span> sets OKRs at the start of the cycle.
+                      </p>
+                    </VerticalCard>
+                    <VerticalCard>
+                      <p>
+                        <span className="font-bold">2. ICs</span> get simple, periodic Slack reminders: &ldquo;Which of your tasks support this objective?&rdquo;
+                      </p>
+                    </VerticalCard>
+                    <VerticalCard>
+                      <p>
+                        <span className="font-bold">3. Managers</span> get aggregate insights via Slack thread summaries, no login required.
+                      </p>
+                    </VerticalCard>
+                  </HorizontalStack>
+                </VerticalStack>
               </VerticalStack>
             </ProjectContent>
           </ScrollSpySection>
@@ -224,21 +227,17 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="hypothesis-1" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Hypothesis #1</ProjectSectionTitle>
             <ProjectContent>
-              {/* Grid for 3 columns */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Target Customers */}
-                <VerticalStack title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <p>Startups in the US.</p>
-                </VerticalStack>
-                {/* Pain Points */}
-                <VerticalStack title="Pain Points (Assumed)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <p>Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.</p>
-                </VerticalStack>
-                {/* Proposed Solution */}
-                <VerticalStack title="Proposed Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <p>A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.</p>
-                </VerticalStack>
-              </div>
+              <HorizontalStack mobileCols={1} desktopCols={3}>
+                <VerticalCard title="Target Customers" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
+                  Startups in the US.
+                </VerticalCard>
+                <VerticalCard title="Pain Points (Assumed)" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
+                  Startups struggle to stay focused on their goals amid daily distractions. They need effective ways to set, track, and achieve objectives efficiently.
+                </VerticalCard>
+                <VerticalCard title="Proposed Solution" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
+                  A goal-alignment app with reminders (e.g., via Slack) to keep teams on track.
+                </VerticalCard>
+              </HorizontalStack>
 
               {/* Why we chose this hypothesis */}
               <VerticalStack title="Why we chose this hypothesis?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
@@ -290,30 +289,23 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="hypothesis-2" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">Hypothesis #2</ProjectSectionTitle>
             <ProjectContent>
-              {/* Grid for 3 columns */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Target Customers */}
-                <VerticalStack title="Target Customers" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <p>SMB in the US (50-200 people).</p>
-                </VerticalStack>
-                {/* Pain Points */}
-                <VerticalStack title="Pain Points (Identified)" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <div className="space-y-1 md:space-y-2">
-                    <ul className="list-disc list-inside">
-                      <li> High-level company goals become diluted or lost in translation.</li>
-                      <li> Employees struggle to connect daily tasks to broader objectives.</li>
-                      <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
-                    </ul>
-                  </div>
-                </VerticalStack>
-                {/* Proposed Solution */}
-                <VerticalStack title="Potential Solution" titleColor="text-[#a1a1a1]" className="flex-1 bg-gray-100 p-4 rounded-xl">
-                  <p>
-                    VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback
-                    indicators.
-                  </p>
-                </VerticalStack>
-              </div>
+              <HorizontalStack mobileCols={1} desktopCols={3}>
+                <VerticalCard title="Target Customers" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
+                  SMB in the US (50-200 people).
+                </VerticalCard>
+                <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
+                  <span className="font-semibold mb-2 text-[#a1a1a1]">Pain Points (Identified)</span>
+                  <ul className="list-disc list-inside space-y-1 md:space-y-2">
+                    <li> High-level company goals become diluted or lost in translation.</li>
+                    <li> Employees struggle to connect daily tasks to broader objectives.</li>
+                    <li> Existing tools are overwhelming and fail to provide quick clarity.</li>
+                  </ul>
+                </div>
+                <VerticalCard title="Potential Solution" bgColor="bg-gray-100" titleColor="text-[#a1a1a1]">
+                  VisionTrack ensures seamless goal alignment from CEOs to individual contributors by translating objectives into tasks, sending reminders, and providing empathetic feedback
+                  indicators.
+                </VerticalCard>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -321,10 +313,10 @@ export default function VisionTrackPage() {
           <ScrollSpySection value="user-personas" className="flex flex-col">
             <ProjectSectionTitle dotColor="text-blue-400">User Personas</ProjectSectionTitle>
             <ProjectContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <HorizontalStack mobileCols={1} desktopCols={2}>
                 <Image src="/vision-track-user-1.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
                 <Image src="/vision-track-user-2.png" alt="User personas" width={1728} height={900} className="w-full h-auto rounded-lg border border-gray-200" priority />
-              </div>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
