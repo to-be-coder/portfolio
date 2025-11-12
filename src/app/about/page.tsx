@@ -33,7 +33,7 @@ export default function About() {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>How I Can Help</AccordionTrigger>
                   <AccordionContent>
-                    I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>—aligning
+                    I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>, aligning
                     teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it&apos;s product strategy, hands-on design, or rapid prototyping, I build focused, usable
                     experiences that ship fast—across web and mobile.
                   </AccordionContent>
@@ -42,9 +42,8 @@ export default function About() {
                   <AccordionTrigger>Empathy-Driven Approach</AccordionTrigger>
                   <AccordionContent>
                     <p className="text-Black">
-                      Before UX, I spent <strong>2+ years volunteering</strong> at a hospital, where I learned the <strong>power of active listening</strong> and navigating difficult
-                      conversations—skills I now bring to user interviews and team workshops. That foundation in empathy shapes every design decision I make, keeping real human needs at the core of my
-                      work.
+                      Before UX, I spent <strong>2+ years volunteering</strong> at a hospital, where I learned the <strong>power of active listening</strong> and navigating difficult conversations,
+                      skills I now bring to user interviews and team workshops. That foundation in empathy shapes every design decision I make, keeping real human needs at the core of my work.
                     </p>
                   </AccordionContent>
                 </AccordionItem>
@@ -63,17 +62,17 @@ export default function About() {
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Mozilla Thunderbolt</strong> - privacy-focused AI assistant — 3 month project, from market research to high-fidelity Figma designs.
+                                <strong>Mozilla Thunderbolt</strong> - privacy-focused AI assistant, 3 month project, from market research to high-fidelity Figma designs.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Spiritune</strong> - music streaming that adapts to your mood — ongoing design support, including revamping the sign-up and login flow.
+                                <strong>Spiritune</strong> - music streaming that adapts to your mood, ongoing design support, including revamping the sign-up and login flow.
                               </span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">
-                                <strong>Lilypad Learning</strong> - edtech startup helping schools manage student psychological evaluations — 3-month project to design the SaaS product and website.
+                                <strong>Lilypad Learning</strong> - edtech startup helping schools manage student psychological evaluations, 3-month project to design the SaaS product and website.
                               </span>
                             </li>
                           </ul>
