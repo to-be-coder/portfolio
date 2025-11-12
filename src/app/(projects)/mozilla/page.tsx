@@ -8,7 +8,7 @@ import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectHorizontalContentCard from '@/components/ui-block/project-horizontal-content-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import VerticalStack from '@/components/ui-block/vertical-stack'
+import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight } from 'lucide-react'
@@ -101,19 +101,17 @@ export default function MozillaPage() {
                   and laid the foundation for deeper testing and iteration.
                 </p>
               </VerticalStack>
-              <VerticalStack title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <VerticalCard title="UX Strategy & Hypothesis Building:" bgColor="bg-gray-100" titleColor="text-black">
-                    Framed product assumptions and prioritized what to explore first.
-                  </VerticalCard>
-                  <VerticalCard title="Design & Prototyping:" bgColor="bg-gray-100" titleColor="text-black">
-                    Designed core flows and built prototypes in Figma for fast iteration.
-                  </VerticalCard>
-                  <VerticalCard title="Cross-Functional Collaboration:" bgColor="bg-gray-100" titleColor="text-black">
-                    Partnered with engineering to translate technical limits into UX.
-                  </VerticalCard>
-                </div>
-              </VerticalStack>
+              <HorizontalStack title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <VerticalCard title="UX Strategy & Hypothesis Building:" bgColor="bg-gray-100" titleColor="text-black">
+                  Framed product assumptions and prioritized what to explore first.
+                </VerticalCard>
+                <VerticalCard title="Design & Prototyping:" bgColor="bg-gray-100" titleColor="text-black">
+                  Designed core flows and built prototypes in Figma for fast iteration.
+                </VerticalCard>
+                <VerticalCard title="Cross-Functional Collaboration:" bgColor="bg-gray-100" titleColor="text-black">
+                  Partnered with engineering to translate technical limits into UX.
+                </VerticalCard>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -164,26 +162,24 @@ export default function MozillaPage() {
                   </div>
                 </div>
               </div>
-              <VerticalStack title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <VerticalCard title="Be transparent about data usage" bgColor="bg-green-100" titleColor="text-black">
-                    We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
-                  </VerticalCard>
-                  <VerticalCard title="Let users control their data in settings" bgColor="bg-green-100" titleColor="text-black">
-                    Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
-                  </VerticalCard>
-                  <VerticalCard title="Use familiar patterns to reduce friction" bgColor="bg-green-100" titleColor="text-black">
-                    We leaned on UI patterns people already know to make privacy feel simple, not technical.
-                  </VerticalCard>
-                </div>
-              </VerticalStack>
+              <HorizontalStack title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <VerticalCard title="Be transparent about data usage" bgColor="bg-green-100" titleColor="text-black">
+                  We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
+                </VerticalCard>
+                <VerticalCard title="Let users control their data in settings" bgColor="bg-green-100" titleColor="text-black">
+                  Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
+                </VerticalCard>
+                <VerticalCard title="Use familiar patterns to reduce friction" bgColor="bg-green-100" titleColor="text-black">
+                  We leaned on UI patterns people already know to make privacy feel simple, not technical.
+                </VerticalCard>
+              </HorizontalStack>
             </ProjectContent>
           </ScrollSpySection>
 
           {/* Design Challenge Section */}
           <ScrollSpySection value="design-challenges">
             <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
-            <ProjectContent>
+            <VerticalStack>
               {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
               <HorizontalCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
                 <p className=" text-black">
@@ -208,7 +204,7 @@ export default function MozillaPage() {
                   <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
                 </p>
               </HorizontalCard>
-            </ProjectContent>
+            </VerticalStack>
           </ScrollSpySection>
 
           {/* Transparency about data usage */}
