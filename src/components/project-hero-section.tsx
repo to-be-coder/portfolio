@@ -19,7 +19,7 @@ export default function ProjectHeroSection({ title, subtitle, imageSrc, imageAlt
         </div>
       </div>
       <div className="w-full h-auto flex flex-col items-center rounded-lg overflow-hidden">
-        <Image src={imageSrc} alt={imageAlt} width={1000} height={100} className={`w-full flex-1 object-cover max-h-[600px] object-${imagePosition} rounded-xl`} />
+        <Image src={imageSrc} alt={imageAlt} width={1000} height={100} className={`w-full flex-1 object-cover max-h-[400px] object-${imagePosition} rounded-xl`} />
       </div>
     </div>
   )
