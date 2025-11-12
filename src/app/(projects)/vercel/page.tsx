@@ -1,12 +1,12 @@
 'use client'
 
+import CtaSection from '@/components/ui-block/cta'
+import { HorizontalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
-import ProjectCard from '@/components/ui-block/project-card'
 import ProjectHorizontalCard from '@/components/ui-block/project-horizontal-card'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
-import CtaSection from '@/components/ui-block/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ArrowUpRight, User } from 'lucide-react'
@@ -100,7 +100,7 @@ export default function VercelPage() {
               </p>
               <div className="flex-1 gap-y-8 ">
                 <h2 className="text-2xl  text-[#a1a1a1] mb-4">Research</h2>
-                <ProjectCard title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                <HorizontalCard title="Participants" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <p>3 friends</p>
                   <div className="grid grid-rows-1 gap-1 mt-1 md:mt-2">
                     <div className="flex gap-1">
@@ -109,8 +109,8 @@ export default function VercelPage() {
                       ))}
                     </div>
                   </div>
-                </ProjectCard>
-                <ProjectCard title="Methods" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                </HorizontalCard>
+                <HorizontalCard title="Methods" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <div className="space-y-1 md:space-y-2">
                     <div>
                       <span className="font-semibold">Observation:</span>
@@ -121,8 +121,8 @@ export default function VercelPage() {
                       <span> Asked if they could tell which components were expandable (accordions) just by looking at them, without hovering or clicking</span>
                     </div>
                   </div>
-                </ProjectCard>
-                <ProjectCard title="Key Findings" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
+                </HorizontalCard>
+                <HorizontalCard title="Key Findings" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                   <div className="space-y-1 md:space-y-2">
                     <div>
                       <span className="font-semibold">Trial & Error:</span>
@@ -133,7 +133,7 @@ export default function VercelPage() {
                       <span> Participants expressed minor frustration at having to &quot;guess&quot; which blocks contained hidden content.</span>
                     </div>
                   </div>
-                </ProjectCard>
+                </HorizontalCard>
               </div>
 
               <div className="flex-1">

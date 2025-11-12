@@ -1,7 +1,7 @@
 'use client'
 
 import CtaSection from '@/components/ui-block/cta'
-import ProjectCard from '@/components/ui-block/project-card'
+import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectColorsSection from '@/components/ui-block/project-colors-section'
 import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
@@ -103,18 +103,15 @@ export default function MozillaPage() {
               </VerticalBlock>
               <VerticalBlock title="My Role" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-4">
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">UX Strategy & Hypothesis Building:</span>
-                    <p>Framed product assumptions and prioritized what to explore first.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">Design & Prototyping:</span>
-                    <p>Designed core flows and built prototypes in Figma for fast iteration.</p>
-                  </div>
-                  <div className="flex flex-col bg-gray-100 p-4 rounded-xl">
-                    <span className="font-semibold">Cross-Functional Collaboration:</span>
-                    <p>Partnered with engineering to translate technical limits into UX.</p>
-                  </div>
+                  <VerticalCard title="UX Strategy & Hypothesis Building:" bgColor="bg-gray-100" titleColor="text-black">
+                    Framed product assumptions and prioritized what to explore first.
+                  </VerticalCard>
+                  <VerticalCard title="Design & Prototyping:" bgColor="bg-gray-100" titleColor="text-black">
+                    Designed core flows and built prototypes in Figma for fast iteration.
+                  </VerticalCard>
+                  <VerticalCard title="Cross-Functional Collaboration:" bgColor="bg-gray-100" titleColor="text-black">
+                    Partnered with engineering to translate technical limits into UX.
+                  </VerticalCard>
                 </div>
               </VerticalBlock>
             </ProjectContent>
@@ -169,18 +166,15 @@ export default function MozillaPage() {
               </div>
               <VerticalBlock title="How might we design data practices that build trust with privacy-aware users?" titleColor="text-[#a1a1a1]" borderColor="border-[#C1C1C1]">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="flex flex-col bg-green-100 p-4 rounded-xl">
-                    <span className="font-semibold  mb-2 text-black">Be transparent about data usage</span>
-                    <p className="  text-black">We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.</p>
-                  </div>
-                  <div className="flex flex-col bg-green-100  p-4 rounded-xl">
-                    <span className="font-semibold mb-2 text-black">Let users control their data in settings</span>
-                    <p className="  text-black">Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.</p>
-                  </div>
-                  <div className="flex flex-col bg-green-100 p-4 rounded-xl">
-                    <span className="font-semibold   mb-2 text-black">Use familiar patterns to reduce friction</span>
-                    <p className=" text-black">We leaned on UI patterns people already know to make privacy feel simple, not technical.</p>
-                  </div>
+                  <VerticalCard title="Be transparent about data usage" bgColor="bg-green-100" titleColor="text-black">
+                    We ask before collecting data and explain why it&apos;s needed and how it&apos;ll be used, using plain language inside the chat.
+                  </VerticalCard>
+                  <VerticalCard title="Let users control their data in settings" bgColor="bg-green-100" titleColor="text-black">
+                    Users can delete their account, clear memory, or opt out at any time with no friction or loss of functionality.
+                  </VerticalCard>
+                  <VerticalCard title="Use familiar patterns to reduce friction" bgColor="bg-green-100" titleColor="text-black">
+                    We leaned on UI patterns people already know to make privacy feel simple, not technical.
+                  </VerticalCard>
                 </div>
               </VerticalBlock>
             </ProjectContent>
@@ -190,29 +184,29 @@ export default function MozillaPage() {
           <ScrollSpySection value="design-challenges">
             <ProjectSectionTitle dotColor="text-green-500">Design Challenges</ProjectSectionTitle>
             {/* Designing for a Fast MVP, Aligned with Tech Constraints */}
-            <ProjectCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
+            <HorizontalCard title="Designing for a Fast MVP, Aligned with Tech Constraints">
               <p className=" text-black">
                 To enable a fast, feasible MVP, I partnered closely with a team of two engineers to understand constraints around on-device AI, encryption, and data storage. This early alignment
                 shaped my UX approach, favoring <strong>familiar patterns</strong> and <strong>lightweight logic</strong> to ensure designs were implementation-ready and flexible as tech decisions
                 evolved.
               </p>
-            </ProjectCard>
+            </HorizontalCard>
             {/* Privacy-first UX */}
-            <ProjectCard title="Privacy-first UX">
+            <HorizontalCard title="Privacy-first UX">
               <p className=" text-black">
                 Designing for an AI assistant meant putting privacy and ethics at the core of the experience. It was essential to clearly communicate how user data is collected, stored, and used,
                 while giving people <strong>control without creating friction</strong>. Beyond compliance, the goal was to <strong>build trust</strong>: making transparency intuitive, choices
                 meaningful, and ensuring the assistant felt helpful, not intrusive.
               </p>
-            </ProjectCard>
+            </HorizontalCard>
             {/* Designing for scale */}
-            <ProjectCard title="Designing for scale">
+            <HorizontalCard title="Designing for scale">
               <p className=" text-black">
                 With many unknowns in the product&apos;s roadmap, designing for scalability was critical. I focused on building flexible components and patterns that could adapt as the product
                 evolved,
                 <strong>minimizing rework</strong> and enabling <strong>faster iteration</strong> down the line.
               </p>
-            </ProjectCard>
+            </HorizontalCard>
           </ScrollSpySection>
 
           {/* Transparency about data usage */}
