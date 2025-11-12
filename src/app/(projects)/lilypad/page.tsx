@@ -318,7 +318,7 @@ export default function LilypadPage() {
                   <ProjectSectionTitle dotColor="text-[#af5800]">ExploreFigma File</ProjectSectionTitle>
                   <p className="mb-12">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
                   <Link
-                    href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0"
+                    href="https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page--Public-?node-id=0-1&t=aKdPgE6gQyG0cSwq-1"
                     className="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
                     target="_blank"
                     rel="noopener noreferrer"

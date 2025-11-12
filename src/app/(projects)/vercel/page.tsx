@@ -9,8 +9,9 @@ import ProjectSectionTitle from '@/components/project-section-title'
 import CtaSection from '@/components/ui/cta'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { User } from 'lucide-react'
+import { ArrowUpRight, User } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function VercelPage() {
   return (
@@ -45,6 +46,9 @@ export default function VercelPage() {
           </ScrollSpyLink>
           <ScrollSpyLink value="final-thoughts" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
             Final Thoughts
+          </ScrollSpyLink>
+          <ScrollSpyLink value="figma" activeClassName="data-[state=active]:text-[#9333EA] data-[state=active]:font-semibold ">
+            Figma
           </ScrollSpyLink>
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
@@ -471,6 +475,31 @@ export default function VercelPage() {
                 <li>• What you&apos;ve learned from real user data about the current pattern</li>
                 <li>• How the design team approaches similar challenges</li>
               </ul>
+            </ProjectContent>
+          </ScrollSpySection>
+          <ScrollSpySection value="figma" className="flex flex-col bg-[#9233ea18] p-8 rounded-2xl">
+            <ProjectContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                {/* Left Column - Text Content */}
+                <div>
+                  <ProjectSectionTitle dotColor="text-[#9233ea]">ExploreFigma File</ProjectSectionTitle>
+                  <p className="mb-12">Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project.</p>
+                  <Link
+                    href="https://www.figma.com/design/M3wsoTlIAYxvTij1XlxVqE/Vercel-V0--Public-?node-id=0-1&t=wb9KeRkJ0PwDqPSw-1"
+                    className="inline-flex items-center bg-[#9233ea] text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Check Out Figma
+                    <ArrowUpRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </div>
+
+                {/* Right Column - iPhone Image */}
+                <div className="flex justify-center">
+                  <Image src="/vercel-figma.png" alt="iPhone mockup of Lilypad's mobile design" width={1200} height={1200} className="h-auto w-full" priority />
+                </div>
+              </div>
             </ProjectContent>
           </ScrollSpySection>
         </ScrollSpyViewport>
