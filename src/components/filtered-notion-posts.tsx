@@ -1,8 +1,8 @@
 'use client'
 
+import * as React from 'react'
 import { ChipTabs } from '@/components/ui/tabs'
 import type { ProcessedPageData } from '@/lib/notion'
-import { useState } from 'react'
 import NotionCard from './notion-card'
 
 type FilteredNotionPostsProps = {
@@ -19,17 +19,19 @@ type Post = {
 }
 
 export default function FilteredNotionPosts({ posts, tabs }: FilteredNotionPostsProps) {
-  const [selectedTab, setSelectedTab] = useState(tabs[0])
+  const [selectedTab, setSelectedTab] = React.useState(() => tabs?.[0] || 'All')
 
-  const filteredPosts = posts.filter((post): post is Post => {
-    if (!post.path || !post.title) return false
+  const filteredPosts = React.useMemo(() => {
+    return posts.filter((post): post is Post => {
+      if (!post.path || !post.title) return false
 
-    if (selectedTab === 'All') {
-      return true
-    }
+      if (selectedTab === 'All') {
+        return true
+      }
 
-    return post.category === selectedTab
-  })
+      return post.category === selectedTab
+    })
+  }, [posts, selectedTab])
 
   return (
     <>
