@@ -1,6 +1,6 @@
 import { Marquee } from '@/components/magicui/marquee'
 import { Button } from '@/components/ui/button'
-import CtaSection from '@/components/ui/cta'
+import CtaSection from '@/components/ui-block/cta'
 import Image from 'next/image'
 
 export default function DemoPage() {

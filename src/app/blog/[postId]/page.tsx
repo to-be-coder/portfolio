@@ -1,5 +1,5 @@
-import NotionContent from '@/components/notion-content'
-import CtaSection from '@/components/ui/cta'
+import NotionContent from '@/components/ui-block/notion-content'
+import CtaSection from '@/components/ui-block/cta'
 import { getAllPaths, getPageByPath } from '@/lib/notion'
 import type { Metadata } from 'next'
 import Image from 'next/image'
