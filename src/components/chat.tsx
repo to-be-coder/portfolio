@@ -16,6 +16,7 @@ export default function Page() {
   const [input, setInput] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -39,6 +40,14 @@ export default function Page() {
         top: offsetPosition,
         behavior: 'smooth',
       })
+    }
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (input.trim() && status === 'ready') {
+      sendMessage({ text: input })
+      setInput('')
     }
   }
 
@@ -83,21 +92,18 @@ export default function Page() {
         </div>
       )}
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          if (input.trim()) {
-            sendMessage({ text: input })
-            setInput('')
-          }
-        }}
-        className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-3 flex-col w-full max-w-3xl mx-auto "
-      >
+      <form ref={formRef} onSubmit={handleSubmit} className="relative flex items-center gap-2 mt-2 bg-white border border-gray-200 rounded-2xl p-3 flex-col w-full max-w-3xl mx-auto ">
         {messages.length === 0 && <BorderBeam duration={4} size={100} className="from-transparent via-secondary to-transparent" />}
         <Textarea
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault()
+              formRef.current?.requestSubmit()
+            }
+          }}
           onFocus={handleInputFocus}
           disabled={status !== 'ready'}
           placeholder="Ask me about Jessica..."
