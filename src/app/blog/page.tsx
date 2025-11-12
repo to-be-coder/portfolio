@@ -1,7 +1,11 @@
-import { NotionPosts } from '@/components/notion'
+import FilteredNotionPosts from '@/components/filtered-notion-posts'
 import CtaSection from '@/components/ui/cta'
+import { getArticles } from '@/lib/notion'
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getArticles()
+  const tabs = ['All', 'AI', 'Works']
+
   return (
     <>
       <div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -10,9 +14,7 @@ export default function BlogPage() {
           <h1 className="text-5xl md:text-6xl font-bold text-black">Thoughts</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <NotionPosts />
-        </div>
+        <FilteredNotionPosts posts={posts} tabs={tabs} />
       </div>
       <CtaSection />
     </>

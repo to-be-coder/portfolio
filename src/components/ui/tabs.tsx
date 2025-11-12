@@ -63,4 +63,60 @@ function TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPr
   return <TabsPrimitive.Content data-slot="tabs-content" className={cn('flex-1 outline-none', className)} {...props} />
 }
 
+type ChipProps = {
+  text: string
+  selected: boolean
+  setSelected: (text: string) => void
+}
+
+const Chip = ({ text, selected, setSelected }: ChipProps) => {
+  return (
+    <button
+      onClick={() => setSelected(text)}
+      className={`${
+        selected
+          ? 'text-white'
+          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+      } text-sm transition-colors px-4 py-2 rounded-md relative`}
+    >
+      <span className="relative z-10">{text}</span>
+      {selected && (
+        <motion.span
+          layoutId="pill-tab"
+          transition={{ type: 'spring', duration: 0.5 }}
+          className="absolute inset-0 z-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-md"
+        />
+      )}
+    </button>
+  )
+}
+
+type ChipTabsProps = {
+  tabs: string[]
+  selected?: string
+  onSelectionChange?: (tab: string) => void
+  className?: string
+}
+
+export const ChipTabs = ({ tabs, selected: controlledSelected, onSelectionChange, className }: ChipTabsProps) => {
+  const [uncontrolledSelected, setUncontrolledSelected] = useState(tabs[0])
+  const selected = controlledSelected ?? uncontrolledSelected
+
+  const handleSelection = (tab: string) => {
+    if (onSelectionChange) {
+      onSelectionChange(tab)
+    } else {
+      setUncontrolledSelected(tab)
+    }
+  }
+
+  return (
+    <div className={`flex items-center flex-wrap gap-2 ${className || ''}`}>
+      {tabs.map((tab) => (
+        <Chip text={tab} selected={selected === tab} setSelected={handleSelection} key={tab} />
+      ))}
+    </div>
+  )
+}
+
 export { Tabs, TabsContent, TabsList, TabsTrigger }
