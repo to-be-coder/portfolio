@@ -18,7 +18,7 @@ export default function VercelPage() {
     <main>
       {/* Hero Section */}
 
-      <ScrollSpy offset={0} defaultValue="overview" orientation="horizontal">
+      <ScrollSpy offset={0} orientation="horizontal">
         <ScrollSpyNav>
           <ScrollSpyLink value="overview" activeClassName="data-[state=active]:text-[#9333EA]">
             Overview
