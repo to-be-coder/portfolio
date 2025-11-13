@@ -69,7 +69,7 @@ export default function MozillaPage() {
           </ScrollSpyLink>
         </ScrollSpyNav>
         <ScrollSpyViewport className="flex-1 max-w-3xl mx-auto">
-          <ProjectHeroSection title="Mozilla - Thunderbolt" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
+          <ProjectHeroSection title="Mozilla Thunderbolt" subtitle="Privacy-first AI Assistant" imageSrc="/mozilla-hero.png" imageAlt="Mozilla hero background" />
 
           {/* Overview Section */}
           <ScrollSpySection value="overview" className="flex flex-col">
