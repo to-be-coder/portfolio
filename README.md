@@ -27,7 +27,6 @@ A modern, responsive portfolio website built with Next.js, showcasing UX design 
 - **Content**: Notion API
 - **AI**: OpenAI SDK (Vercel AI SDK)
 - **Package Manager**: Bun
-- **Fonts**: Geist Sans & Geist Mono
 
 ## 📦 Getting Started
 
