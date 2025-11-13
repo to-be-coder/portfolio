@@ -3,6 +3,7 @@
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
@@ -14,6 +15,7 @@ const navigationItems = [
   // { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
   { path: '/blog', label: 'Thoughts', id: 'thoughts' },
+  { path: 'https://github.com/to-be-coder/portfolio', label: 'GitHub', id: 'github' },
 ]
 
 const projectRoutes = ['/vercel', '/mozilla', '/lilypad', '/vision-track', '/hobby']
@@ -124,23 +126,44 @@ export default function Header() {
     return pathname === path
   }
 
-  const NavItem = ({ path, label, onClick }: { path: string; label: string; onClick?: () => void }) => (
-    <NavigationMenuItem>
-      <Link href={path} legacyBehavior passHref>
-        <NavigationMenuLink
-          className={cn(
-            navigationMenuTriggerStyle(),
-            'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
-            isNavItemActive(path) ? 'text-secondary' : 'text-black',
-            'hover:bg-gray-100'
-          )}
-          onClick={onClick}
-        >
-          <p className="relative font-medium">{label}</p>
-        </NavigationMenuLink>
-      </Link>
-    </NavigationMenuItem>
-  )
+  const NavItem = ({ path, label, onClick }: { path: string; label: string; onClick?: () => void }) => {
+    const isExternal = path.startsWith('http://') || path.startsWith('https://')
+
+    if (isExternal) {
+      return (
+        <NavigationMenuItem>
+          <a
+            href={path}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(navigationMenuTriggerStyle(), 'relative hover:no-underline rounded-md px-3 py-2 transition-colors', 'text-black hover:bg-gray-100 flex items-center gap-1.5')}
+            onClick={onClick}
+          >
+            <p className="relative font-medium">{label}</p>
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+        </NavigationMenuItem>
+      )
+    }
+
+    return (
+      <NavigationMenuItem>
+        <Link href={path} legacyBehavior passHref>
+          <NavigationMenuLink
+            className={cn(
+              navigationMenuTriggerStyle(),
+              'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
+              isNavItemActive(path) ? 'text-secondary' : 'text-black',
+              'hover:bg-gray-100'
+            )}
+            onClick={onClick}
+          >
+            <p className="relative font-medium">{label}</p>
+          </NavigationMenuLink>
+        </Link>
+      </NavigationMenuItem>
+    )
+  }
 
   return (
     <header className={cn('sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20 transition-transform duration-300', isProjectPage && !isHeaderVisible && '-translate-y-full')}>
@@ -191,17 +214,36 @@ export default function Header() {
             <div className="flow-root">
               <div className="divide-y divide-gray-500/10">
                 <div className="space-y-4 py-6">
-                  {navigationItems.map((item, index) => (
-                    <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }} className="w-full">
-                      <Link
-                        href={item.path}
-                        className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50')}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    </motion.div>
-                  ))}
+                  {navigationItems.map((item, index) => {
+                    const isExternal = item.path.startsWith('http://') || item.path.startsWith('https://')
+                    return (
+                      <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }} className="w-full">
+                        {isExternal ? (
+                          <a
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                              'flex items-center gap-1.5 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                              isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50'
+                            )}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                            <ArrowUpRight className="h-4 w-4" />
+                          </a>
+                        ) : (
+                          <Link
+                            href={item.path}
+                            className={cn('block rounded-lg px-3 py-2 text-base font-semibold leading-7', isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50')}
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        )}
+                      </motion.div>
+                    )
+                  })}
                 </div>
                 <div className="py-6">
                   <CallToActionButton className="w-full" asChild>
