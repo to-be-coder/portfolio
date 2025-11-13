@@ -15,14 +15,14 @@ A modern, responsive portfolio website built with Next.js, showcasing UX design 
 - **AI Chat**: Interactive chat interface using OpenAI SDK
 - **Responsive Design**: Mobile-first design with smooth animations
 - **Scroll Spy Navigation**: Active section highlighting on scroll
-- **UI Components**: Custom components built with Radix UI and Tailwind CSS
+- **UI Components**: Custom components built with shadcn/ui and Tailwind CSS
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4.0
-- **UI Components**: Radix UI
+- **UI Components**: shadcn/ui
 - **Animations**: Framer Motion
 - **Content**: Notion API
 - **AI**: OpenAI SDK (Vercel AI SDK)
