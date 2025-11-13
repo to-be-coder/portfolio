@@ -219,19 +219,18 @@ export default function Header() {
                     return (
                       <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }} className="w-full">
                         {isExternal ? (
-                          <a
+                          <Link
                             href={item.path}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={cn(
-                              'flex items-center gap-1.5 rounded-lg px-3 py-2 text-base font-semibold leading-7',
+                              'flex items-center gap-1 rounded-lg px-3 py-2 text-base font-semibold leading-7',
                               isNavItemActive(item.path) ? 'text-secondary' : 'text-black hover:bg-gray-50'
                             )}
-                            onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.label}
                             <ArrowUpRight className="h-4 w-4" />
-                          </a>
+                          </Link>
                         ) : (
                           <Link
                             href={item.path}
