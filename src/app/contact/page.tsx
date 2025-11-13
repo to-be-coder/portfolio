@@ -1,6 +1,6 @@
 import { Marquee } from '@/components/magicui/marquee'
-import { Button } from '@/components/ui/button'
 import CtaSection from '@/components/ui-block/cta'
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
 export default function DemoPage() {
@@ -18,14 +18,14 @@ export default function DemoPage() {
   ]
 
   return (
-    <main>
-      <div className="container max-w-7xl mx-auto px-8 h-[63vh] flex flex-col">
-        <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center">
-          <div className="flex flex-col gap-8 justify-center items-center">
-            <h1 className=" text-4xl lg:text-5xl font-normal text-center">Let&rsquo;s create thoughtful experiences.</h1>
-            <div>
-              <Button className="flex items-center gap-2 group" variant="contact">
-                <a href="mailto:jess@jessicacheng.studio" className="text-secondary group-hover:text-[#00D3CF] text-3xl font-semibold">
+    <main className="overflow-x-hidden">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[63vh] flex flex-col">
+        <div className="mx-auto flex flex-col gap-8 h-full justify-center items-center w-full">
+          <div className="flex flex-col gap-8 justify-center items-center w-full max-w-full">
+            <h1 className="text-4xl lg:text-5xl font-normal text-center px-4">Let&rsquo;s create thoughtful experiences.</h1>
+            <div className="w-full max-w-full px-4">
+              <Button className="flex items-center gap-2 group w-full justify-center" variant="contact">
+                <a href="mailto:jess@jessicacheng.studio" className="text-secondary group-hover:text-[#00D3CF] text-xl sm:text-2xl lg:text-3xl font-semibold break-all text-center">
                   jess@jessicacheng.studio
                 </a>
               </Button>
