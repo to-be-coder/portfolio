@@ -10,12 +10,15 @@ type Props = {
   url: string
   subtitle?: string
   index: number
+  href?: string
 }
 
-export default function NotionCard({ title, category, url, subtitle, index }: Props) {
+export default function NotionCard({ title, category, url, subtitle, index, href }: Props) {
+  const linkHref = href || `/blog/${url}`
+  
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }}>
-      <Link href={`/blog/${url}`} className="group block h-full">
+      <Link href={linkHref} className="group block h-full">
         <motion.div
           className="relative h-full flex flex-col p-6 bg-white border border-gray-200 rounded-xl cursor-pointer overflow-hidden"
           whileHover={{ y: -8, scale: 1.01 }}
