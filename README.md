@@ -5,10 +5,10 @@ A modern, responsive portfolio website built with Next.js, showcasing UX design 
 ## 🚀 Features
 
 - **Project Showcase**: Interactive project pages with detailed case studies
+
   - Mozilla (AI Design, Privacy-first)
   - Vision Track (UX Research, B2B SaaS)
   - Lilypad (UI Design, Landing Page)
-  - Vercel
   - Personal hobbies (Photography, Camping)
 
 - **Notion Integration**: Blog and content management powered by Notion API
@@ -38,17 +38,20 @@ A modern, responsive portfolio website built with Next.js, showcasing UX design 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 bun install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env.local
 ```
@@ -56,6 +59,7 @@ cp .env.example .env.local
 4. Configure your environment variables (see [Environment Variables](#environment-variables) below)
 
 5. Run the development server:
+
 ```bash
 bun dev
 ```
@@ -118,6 +122,7 @@ portfolio/
 ## 🎨 Key Components
 
 ### UI Components (`src/components/ui/`)
+
 - Accordion
 - Badge
 - Button
@@ -128,6 +133,7 @@ portfolio/
 - And more...
 
 ### Page Components (`src/components/ui-block/`)
+
 - Header with navigation
 - Footer
 - Home Hero Section
@@ -176,6 +182,7 @@ The site will automatically deploy on every push to your main branch.
 ### Other Platforms
 
 The site can be deployed to any platform that supports Next.js:
+
 - Netlify
 - AWS Amplify
 - Railway
@@ -187,6 +194,7 @@ Content is managed through Notion. To add or update:
 
 1. Create or edit pages in your Notion database
 2. Ensure pages have the required properties:
+
    - `Name` (Title)
    - `Path` (Rich text - URL slug)
    - `Date` (Date)
@@ -200,15 +208,19 @@ Content is managed through Notion. To add or update:
 ## 🎯 Features in Detail
 
 ### Scroll Spy Navigation
+
 The homepage features an interactive scroll spy that highlights the active project section as you scroll.
 
 ### Notion Integration
+
 Blog posts and project content are fetched from Notion, allowing for easy content updates without code changes.
 
 ### AI Chat
+
 Interactive chat interface powered by OpenAI, accessible via the `/api/chat` endpoint.
 
 ### Responsive Design
+
 Mobile-first approach with breakpoints optimized for all device sizes.
 
 ## 🤝 Contributing
@@ -222,6 +234,7 @@ This project is private and personal. All rights reserved.
 ## 👤 Author
 
 **Jessica Cheng**
+
 - Portfolio: [jessicacheng.studio](https://jessicacheng.studio)
 - UX Designer focused on privacy-first design, scalable systems, and ethical AI experiences
 
