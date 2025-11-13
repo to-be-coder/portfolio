@@ -9,7 +9,7 @@ import { Minus, Plus } from 'lucide-react'
 const Accordion = AccordionPrimitive.Root
 
 const AccordionItem = React.forwardRef<React.ElementRef<typeof AccordionPrimitive.Item>, React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>>(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item ref={ref} className={cn(' bg-gray-100 mb-2 rounded-xl', className)} {...props} />
+  <AccordionPrimitive.Item ref={ref} className={cn(' bg-gray-100 mb-2 rounded-xl hover:bg-gray-200', className)} {...props} />
 ))
 AccordionItem.displayName = 'AccordionItem'
 
