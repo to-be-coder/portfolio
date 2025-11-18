@@ -76,7 +76,7 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
         {...props}
       >
         {React.cloneElement(child, {
-          className: cn('inline-flex items-center gap-2', child.props.className),
+          className: cn('inline-flex items-center gap-2 leading-none', child.props.className),
           onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
             setIsHovered(true)
             child.props.onMouseEnter?.(e)
@@ -88,7 +88,7 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
           children: (
             <>
               {iconElement}
-              {child.props.children}
+              <span className="inline-block translate-y-[0.7px]">{child.props.children}</span>
             </>
           ),
         })}
@@ -100,13 +100,13 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
     <Button
       ref={ref}
       size={size}
-      className={cn('group relative rounded-full bg-gray-200 text-black transition-all duration-300 hover:bg-black hover:text-white', className)}
+      className={cn('group relative rounded-full bg-gray-200 text-black transition-all duration-300 hover:bg-black hover:text-white leading-none', className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       {...props}
     >
       {iconElement}
-      {children}
+      <span className="inline-block -translate-y-[1px]">{children}</span>
     </Button>
   )
 })
