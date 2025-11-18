@@ -29,7 +29,7 @@ function CodeBlock({ code, language = 'typescript' }: { code: string; language?:
 export default function DesignTokenBlogPage() {
   return (
     <main>
-      <ScrollSpy offset={80} defaultValue="introduction" orientation="horizontal">
+      <ScrollSpy offset={0} orientation="horizontal">
         <ScrollSpyNav className="top-[72px]">
           <ScrollSpyLink value="introduction" activeClassName="data-[state=active]:text-secondary">
             Introduction

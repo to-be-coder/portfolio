@@ -1,10 +1,10 @@
-import FilteredNotionPosts from '@/components/ui-block/filtered-notion-posts'
 import CtaSection from '@/components/ui-block/cta'
+import FilteredNotionPosts from '@/components/ui-block/filtered-notion-posts'
 import { getArticles } from '@/lib/notion'
 
 export default async function BlogPage() {
   const posts = await getArticles()
-  const tabs = ['All', 'AI', 'Works']
+  const tabs = ['All', 'AI', 'Design System', 'Works']
 
   return (
     <>

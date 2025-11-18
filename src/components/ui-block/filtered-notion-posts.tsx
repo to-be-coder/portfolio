@@ -42,11 +42,20 @@ const projects: readonly Project[] = [
   },
 ] as const
 
+const designSystemPosts: readonly Post[] = [
+  {
+    title: 'Building Design Tokens: From Figma to Code',
+    path: 'design-system/design-token',
+    subtitle: 'Design Tokens are a way to manage design tokens in a project.',
+    category: 'Design System',
+  },
+] as const
+
 export default function FilteredNotionPosts({ posts, tabs }: FilteredNotionPostsProps) {
   const [selectedTab, setSelectedTab] = useState(() => tabs?.[0] || 'All')
 
   const filteredPosts = useMemo(() => {
-    if (selectedTab === 'Works') {
+    if (selectedTab === 'Works' || selectedTab === 'Design System') {
       return []
     }
     return posts.filter((post): post is Post => {
@@ -74,12 +83,22 @@ export default function FilteredNotionPosts({ posts, tabs }: FilteredNotionPosts
       isProject: true,
     }))
 
+    const designSystemItems: DisplayItem[] = designSystemPosts.map((post) => ({
+      ...post,
+      category: post.category || 'Uncategorized',
+      isProject: false,
+    }))
+
+    if (selectedTab === 'Design System') {
+      return designSystemItems
+    }
+
     if (selectedTab === 'Works') {
       return projectItems
     }
 
     if (selectedTab === 'All') {
-      return [...projectItems, ...postItems]
+      return [...projectItems, ...postItems, ...designSystemItems]
     }
 
     return postItems
