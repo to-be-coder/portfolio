@@ -161,7 +161,7 @@ function ScrollSpyRootImpl(props: Omit<ScrollSpyRootProps, 'onValueChange'>) {
     defaultValue,
     rootMargin,
     threshold = 0.1,
-    offset = 0,
+    offset = 80,
     scrollBehavior = 'smooth',
     scrollContainer = null,
     dir: dirProp,
