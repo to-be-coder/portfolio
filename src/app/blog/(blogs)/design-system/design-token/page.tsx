@@ -16,7 +16,6 @@ const DEFAULT_METADATA = {
   profileImage: '/profile-small.jpg',
 } as const
 
-// Simple static code block component
 function CodeBlock({ code, language = 'typescript' }: { code: string; language?: string }) {
   return (
     <div className="my-6 w-full">
