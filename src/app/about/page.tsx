@@ -18,11 +18,10 @@ export default function About() {
                 <div className="order-2 md:order-1 w-full col-span-2">
                   <h1 className="text-4xl font-bold mb-6 md:mb-8 hidden md:block">Hi, I&apos;m Jessica Cheng</h1>
                   <p className="text-black">
-                    A <span className="font-semibold">product designer</span> devoted to creating digital experiences that feel natural. My background in{' '}
-                    <span className="font-semibold">psychology</span> helps me uncover the &quot;why&quot; behind user behavior, while my <span className="font-semibold">coding skills </span>
-                    let me translate insights into real, working solutions. Whether I&apos;m
-                    <span className="font-semibold"> sketching wireframes, running user interviews</span>, or <span className="font-semibold">prototyping in Figma</span>, my goal is always to remove
-                    friction so people can just get things done.
+                    I&apos;m a <strong>design engineer</strong> (design + frontend) who uses design to align teams and get people excited about what they&apos;re building. I&apos;ve mostly worked at
+                    startups, so I&apos;m comfortable figuring things out when nothing&apos;s clear yet. My strength is my engineering background. It helps me connect with devs quickly and set up
+                    design systems and tokens in a way that actually makes collaboration easier. Sometimes that even saves time and resources. And if you don&apos;t have a frontend engineer, I can
+                    help build the frontend too. It&apos;s always exciting to see a new idea become a product that users love. <strong>Let&apos;s build something users will love!</strong>
                   </p>
                 </div>
                 <div className="stack space-y-4 h-full w-full block lg:hidden order-1 md:order-2 col-span-1 mb-4 md:mb-0">
@@ -32,34 +31,25 @@ export default function About() {
               </div>
               <Accordion type="single" collapsible className="w-full mt-8 ">
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0 }}>
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>How I Can Help</AccordionTrigger>
-                    <AccordionContent>
-                      I specialize in helping early-stage teams turn ambiguity into clarity. With a background in consulting for startups, I <strong>bring structure to messy problems</strong>,
-                      aligning teams quickly, testing ideas early, and evolving UX through constant feedback. Whether it&apos;s product strategy, hands-on design, or rapid prototyping, I build
-                      focused, usable experiences that ship fast across web and mobile.
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }}>
                   <AccordionItem value="item-2">
-                    <AccordionTrigger>Empathy-Driven Approach</AccordionTrigger>
+                    <AccordionTrigger>Design Philosophy</AccordionTrigger>
                     <AccordionContent>
                       <p className="text-Black">
-                        Before UX, I spent <strong>2+ years volunteering</strong> at a hospital, where I learned the <strong>power of active listening</strong> and navigating difficult conversations,
-                        skills I now bring to user interviews and team workshops. That foundation in empathy shapes every design decision I make, keeping real human needs at the core of my work.
+                        Design serves two things: the business and the user. Revenue, efficiency, growth on one side. A product people genuinely enjoy using on the other. The best work happens when
+                        both are aligned. <br /> <br /> I also see design as a communication tool to align people across different teams. It surfaces problems early, makes goals visible, and sparks
+                        excitement for what we&apos;re building.
                       </p>
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.2 }}>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.1 }}>
                   <AccordionItem value="item-3">
                     <AccordionTrigger>Experience Highlights</AccordionTrigger>
                     <AccordionContent>
                       <div className="space-y-8 md:space-y-12 mb-8 border-t border-[#C1C1C1] pt-[4px]">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                           <div className="col-span-1">
-                            <h3 className="text-base font-regular">Thoughtful (Product Designer & Engineer)</h3>
+                            <h3 className="text-base font-regular">Thoughtful - Product Studio (Product Designer & Engineer)</h3>
                           </div>
                           <div className="md:col-span-2">
                             <ul className="list-disc list-outside space-y-2 text-Black pl-5">
@@ -119,7 +109,7 @@ export default function About() {
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }}>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.2 }}>
                   <AccordionItem value="item-4">
                     <AccordionTrigger>Core Skills</AccordionTrigger>
                     <AccordionContent>
@@ -140,16 +130,13 @@ export default function About() {
                               <span className="block ml-[-1px]">Design Systems</span>
                             </li>
                             <li className="pl-1">
-                              <span className="block ml-[-1px]">Systematic UX</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">Modular Thinking</span>
-                            </li>
-                            <li className="pl-1">
                               <span className="block ml-[-1px]">User Research</span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">0→1 Product Design</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Cross-functional Collaboration</span>
                             </li>
                           </ul>
                         </div>
@@ -157,12 +144,6 @@ export default function About() {
                         <div className="border-t border-[#C1C1C1] pt-[4px]">
                           <h3 className="text-base font-regular mb-2 md:mb-4">Development</h3>
                           <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">HTML</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">CSS</span>
-                            </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">JavaScript</span>
                             </li>
@@ -187,35 +168,36 @@ export default function About() {
                             <li className="pl-1">
                               <span className="block ml-[-1px]">Mantine UI</span>
                             </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">HTML</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">CSS</span>
+                            </li>
                           </ul>
                         </div>
 
                         <div className="border-t border-[#C1C1C1] pt-[4px]">
-                          <h3 className="text-base font-regular mb-2 md:mb-4">Tools</h3>
+                          <h3 className="text-base font-regular mb-2 md:mb-4">Favorite Tools</h3>
                           <ul className="list-disc list-outside space-y-1 md:space-y-2 pl-5">
                             <li className="pl-1">
                               <span className="block ml-[-1px]">Figma</span>
                             </li>
                             <li className="pl-1">
+                              <span className="block ml-[-1px]">Figma MCP</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">Figma Make</span>
+                            </li>
+                            <li className="pl-1">
+                              <span className="block ml-[-1px]">ShadCN MCP</span>
+                            </li>
+                            <li className="pl-1">
                               <span className="block ml-[-1px]">Cursor</span>
                             </li>
+
                             <li className="pl-1">
-                              <span className="block ml-[-1px]">ChatGPT</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">VS Code</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">UX Pilot</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">Midjourney</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">DSLR</span>
-                            </li>
-                            <li className="pl-1">
-                              <span className="block ml-[-1px]">Adobe Photoshop/Lightroom</span>
+                              <span className="block ml-[-1px]">Claude Code</span>
                             </li>
                           </ul>
                         </div>
@@ -230,7 +212,7 @@ export default function About() {
                               <span className="block ml-[-1px]">Japanese</span>
                             </li>
                             <li className="pl-1">
-                              <span className="block ml-[-1px]">Chinese (Mandarin)</span>
+                              <span className="block ml-[-1px]">Mandarin (Chinese)</span>
                             </li>
                             <li className="pl-1">
                               <span className="block ml-[-1px]">Taiwanese</span>
@@ -241,7 +223,7 @@ export default function About() {
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }}>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.3 }}>
                   <AccordionItem value="item-5">
                     <AccordionTrigger>Outside of Work</AccordionTrigger>
                     <AccordionContent>
