@@ -148,8 +148,9 @@ export default function Header() {
 
     return (
       <NavigationMenuItem>
-        <Link href={path} legacyBehavior passHref>
-          <NavigationMenuLink
+        <NavigationMenuLink asChild>
+          <Link
+            href={path}
             className={cn(
               navigationMenuTriggerStyle(),
               'relative hover:no-underline rounded-md px-3 py-2 transition-colors',
@@ -159,8 +160,8 @@ export default function Header() {
             onClick={onClick}
           >
             <p className="relative font-medium">{label}</p>
-          </NavigationMenuLink>
-        </Link>
+          </Link>
+        </NavigationMenuLink>
       </NavigationMenuItem>
     )
   }
@@ -169,10 +170,8 @@ export default function Header() {
     <header className={cn('sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20 transition-transform duration-300', isProjectPage && !isHeaderVisible && '-translate-y-full')}>
       <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
-          <Link href="/" legacyBehavior passHref>
-            <div className="flex items-center gap-1">
-              <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-            </div>
+          <Link href="/" className="flex items-center gap-1">
+            <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
           </Link>
         </div>
         <div className="hidden sm:flex sm:flex-1 justify-end">
@@ -202,10 +201,8 @@ export default function Header() {
         <div className="fixed inset-0 top-0 left-0 z-50 w-full h-full min-h-screen bg-white" role="dialog" aria-modal="true">
           <div className="px-4 sm:px-6 lg:px-8 py-2">
             <div className="flex items-center justify-between mb-6">
-              <Link href="/" legacyBehavior passHref>
-                <div className="flex items-center gap-1">
-                  <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-                </div>
+              <Link href="/" className="flex items-center gap-1">
+                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
               </Link>
               <div className="flex-1 flex justify-end">
                 <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
