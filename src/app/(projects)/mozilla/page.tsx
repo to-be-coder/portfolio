@@ -7,6 +7,7 @@ import ProjectContent from '@/components/ui-block/project-content'
 import ProjectFigmaSection from '@/components/ui-block/project-figma-section'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
+import ProjectPullQuote from '@/components/ui-block/project-pull-quote'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import ProjectTypographySection from '@/components/ui-block/project-typography-section'
@@ -151,9 +152,7 @@ export default function MozillaPage() {
                   <span className="text-green-500 text-[64px] lg:text-[92px]">&quot;</span>
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-[24px] lg:text-[32px] font-medium text-center text-black">
-                    For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.
-                  </p>
+                  <ProjectPullQuote>For privacy-aware users, trust is the main barrier to AI adoption, and transparent data practices increase both trust and adoption.</ProjectPullQuote>
                 </div>
                 <div className="flex justify-end h-[64px] lg:h-[92px]">
                   <span className="text-green-500 text-[64px] lg:text-[92px] ">&quot;</span>

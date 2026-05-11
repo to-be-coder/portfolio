@@ -2,11 +2,13 @@
 import CtaSection from '@/components/ui-block/cta'
 import HomeHeroSection from '@/components/ui-block/home-hero-section'
 import { Badge } from '@/components/ui/badge'
+import { PausableGif } from '@/components/ui/pausable-gif'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
-  const mozillaRef = useRef<HTMLDivElement>(null)
+  const thunderboltRef = useRef<HTMLDivElement>(null)
+  const gridlandRef = useRef<HTMLDivElement>(null)
   const visionTrackRef = useRef<HTMLDivElement>(null)
   const lilypadRef = useRef<HTMLDivElement>(null)
   const hobbyRef = useRef<HTMLDivElement>(null)
@@ -22,7 +24,8 @@ export default function Home() {
 
       // Get all sections
       const sections = [
-        { id: 'mozilla', ref: mozillaRef.current },
+        { id: 'thunderbolt', ref: thunderboltRef.current },
+        { id: 'gridland', ref: gridlandRef.current },
         { id: 'visionTrack', ref: visionTrackRef.current },
         { id: 'lilypad', ref: lilypadRef.current },
         { id: 'hobby', ref: hobbyRef.current },
@@ -67,34 +70,71 @@ export default function Home() {
 
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-8 mb-8 lg:mb-16 space-y-4 md:space-y-8 scroll-mt-10" id="projects">
-        {/* Mozilla */}
+        {/* Thunderbolt */}
         <div
-          ref={mozillaRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02] 
-            ${activeSection === 'mozilla' ? 'bg-green-50' : 'bg-gray-100/80 '}`}
+          ref={thunderboltRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+            ${activeSection === 'thunderbolt' ? 'bg-purple-50' : 'bg-gray-100/80 '}`}
         >
-          <a href="/mozilla" className="w-full h-full">
+          <a href="/thunderbolt" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="flex items-center justify-center mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[400px]">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/mozilla-cover.png"
-                    alt="Mozilla Project"
-                    className="rounded-lg object-contain lg:object-contain w-full h-full"
-                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+              <div className="space-y-4 lg:w-1/3 lg:self-start">
+                <h3 className="text-4xl font-bold">
+                  <span className={activeSection === 'thunderbolt' ? 'bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent' : ''}>Thunderbolt</span>
+                </h3>
+                <p className="text-lg">Designed an extensible Skills feature for Thunderbolt, Mozilla&apos;s open-source AI client. Ships in one week and absorbs three rounds of feature growth without rewriting the data model.</p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Design Lead</Badge>
+                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>AI Design</Badge>
+                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
+                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>0 → 1</Badge>
+                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Agent Skills</Badge>
+                </div>
+              </div>
+              <div className="flex items-center justify-center lg:justify-end lg:self-end mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[460px]">
+                <div className="relative max-h-full max-w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '800 / 518' }}>
+                  <PausableGif
+                    src="/thunderbolt-demo.gif"
+                    posterSrc="/thunderbolt-demo-poster.png"
+                    alt="Thunderbolt Project"
+                    isPlaying={activeSection === 'thunderbolt'}
+                    className="block w-full h-full"
                   />
                 </div>
               </div>
-              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start ">
+            </div>
+          </a>
+        </div>
+
+        {/* Gridland */}
+        <div
+          ref={gridlandRef}
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+            ${activeSection === 'gridland' ? 'bg-pink-50' : 'bg-gray-100/80 '}`}
+        >
+          <a href="/gridland" className="w-full h-full">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+              <div className="flex items-center justify-center lg:justify-start lg:self-end mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[460px]">
+                <div className="relative max-h-full max-w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '800 / 529' }}>
+                  <PausableGif
+                    src="/gridland-demo.gif"
+                    posterSrc="/gridland-demo-poster.png"
+                    alt="gridland Project"
+                    isPlaying={activeSection === 'gridland'}
+                    className="block w-full h-full"
+                  />
+                </div>
+              </div>
+              <div className="space-y-4 order-first lg:order-last lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'mozilla' ? 'bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent' : ''}>Mozilla</span>
+                  <span className={activeSection === 'gridland' ? 'bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent' : ''}>gridland</span>
                 </h3>
-                <p className="text-lg">Designed a privacy-first AI assistant from the ground-up.</p>
+                <p className="text-lg">gridland (300+ ★ on GitHub) is an open-source terminal UI framework I designed and built that renders in both the terminal and the browser, making terminal apps more approachable for non-technical users.</p>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>AI Design</Badge>
-                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>App Design</Badge>
-                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Prototyping</Badge>
-                  <Badge className={`${activeSection === 'mozilla' ? 'bg-green-200' : 'bg-gray-200'} `}>Transparency and Trust</Badge>
+                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Developer Tools</Badge>
+                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
+                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Component Design</Badge>
+                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>TUI</Badge>
                 </div>
               </div>
             </div>
