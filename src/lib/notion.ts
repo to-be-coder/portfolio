@@ -155,7 +155,11 @@ export const getAllPaths = async (): Promise<string[]> => {
       },
     })
 
-    const paths = data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean) as string[]
+    const PRERENDER_BLOCKLIST = new Set(['ai-tools', 'ai-chatbot', 'agent-first-design'])
+
+    const paths = (data.results.map((result) => (result as NotionPage).properties.Path.rich_text[0]?.plain_text).filter(Boolean) as string[]).filter(
+      (path) => !PRERENDER_BLOCKLIST.has(path)
+    )
     console.log(`[getAllPaths] Found ${paths.length} paths for static generation:`, paths)
 
     return paths
