@@ -6,7 +6,7 @@
       "summary": "Jessica Cheng is a product designer with a background in psychology and front-end development. She's passionate about designing digital experiences that feel intuitive and reduce friction. Jessica specializes in early-stage product discovery, rapid prototyping, and translating ambiguous ideas into clear, scalable UX.",
       "approach": {
         "philosophy": "Empathy-driven and outcome-oriented. Jessica brings structure to messy problems, aligning teams quickly and iterating through constant feedback.",
-        "influences": ["Background in psychology", "2+ years volunteering in hospitals — active listening & empathy", "Hybrid design-engineering fluency"],
+        "influences": ["Background in psychology", "2+ years volunteering in hospitals (active listening & empathy)", "Hybrid design-engineering fluency"],
         "how_she_helps": "Helps early-stage teams turn ambiguity into clarity. Brings a blend of product strategy, hands-on UX, and lightweight prototyping to ship fast across web and mobile."
       },
       "interview": {
@@ -43,7 +43,7 @@
     "projects": [
       {
         "name": "Mozilla - Thunderbolt",
-        "description": "Thunderbolt is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values—trust, transparency, and user control—could shape an AI experience.",
+        "description": "Thunderbolt is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values (trust, transparency, and user control) could shape an AI experience.",
         "goals": [
           "Design AI interactions with trust and transparency as core principles.",
           "Ensure privacy by default through on-device processing.",
@@ -67,7 +67,7 @@
           "Build fast, learn faster.",
           "Balance agility with control.",
           "Always design for trust and user control.",
-          "I am not the user—design must reflect real behavior and feedback.",
+          "I am not the user; design must reflect real behavior and feedback.",
           "Design with scalability and clarity in mind."
         ],
         "media": {
@@ -130,7 +130,7 @@
           "Delivered a polished, production-ready Figma file for developers."
         ],
         "principles": [
-          "Start with user clarity—even without data, anticipate key questions.",
+          "Start with user clarity; even without data, anticipate key questions.",
           "Design systems that scale with the product.",
           "Build for responsiveness from the start.",
           "Let design reflect confidence and clarity in early-stage messaging.",
@@ -150,5 +150,5 @@
       }
     ]
   },
-  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed—especially on Mozilla's Thunderbolt AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
+  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed, especially on Mozilla's Thunderbolt AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
 }

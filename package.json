@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint ."
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.0-beta.11",
     "@ai-sdk/react": "^2.0.0-beta.26",
+    "@gridland/utils": "^0.4.3",
+    "@gridland/web": "^0.4.3",
     "@notionhq/client": "^4.0.1",
     "@radix-ui/react-accordion": "^1.2.8",
     "@radix-ui/react-label": "^2.1.2",
@@ -42,6 +44,7 @@
     "@types/node": "^20",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
+    "baseline-browser-mapping": "^2.10.28",
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "postcss": "^8",
