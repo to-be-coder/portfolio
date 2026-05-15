@@ -314,7 +314,6 @@ export default function ThunderboltPage() {
                   Shortcuts was a row of buttons above the chat input. Press one, and its saved prompt filled the chat input, ready for the user to edit and send.
                 </VerticalCard>
               </HorizontalStack>
-              <p>Same primitive (a saved prompt), two surfaces, two mental models, two pages of docs trying to explain the difference.</p>
               <VerticalCard title="The PM ask" titleColor="text-[#a1a1a1]" bgColor="bg-gray-100">
                 <p>
                   &ldquo;Remove Automation and Shortcuts. Replace them with Skills. We want a Skills page in settings, a shortcut button row above the chat input, navigation to the Skills page from the
@@ -370,13 +369,13 @@ export default function ThunderboltPage() {
               <p className="text-center">We broke the work into three phases so v1 could ship in one week without committing to surface no one had vetted.</p>
               <HorizontalStack mobileCols={1} desktopCols={3}>
                 <VerticalCard title="v1" bgColor="bg-purple-100" titleColor="text-purple-700">
-                  Skills as a single-file primitive. Create, edit, invoke. Foundation only.
+                  Skills as a single-file feature. Create, edit, invoke. Foundation only.
                 </VerticalCard>
                 <VerticalCard title="v2" bgColor="bg-purple-100" titleColor="text-purple-700">
                   Marketplace + uploads + capability awareness. Skills become folders with multiple files.
                 </VerticalCard>
-                <VerticalCard title="v3 Direction 1" bgColor="bg-purple-100" titleColor="text-purple-700">
-                  Composition with full editability. Users can install marketplace skills, edit them, and revert to original at any time.
+                <VerticalCard title="v3" bgColor="bg-purple-100" titleColor="text-purple-700">
+                  User control over installed marketplace skills. Users shape what they install from the marketplace to fit their own work.
                 </VerticalCard>
               </HorizontalStack>
             </ProjectContent>
