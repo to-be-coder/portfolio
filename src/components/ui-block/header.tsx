@@ -14,8 +14,8 @@ const navigationItems = [
   { path: '/#projects', label: 'Works', id: 'works' },
   // { path: '/ui-templates', label: 'Interactive UI', id: 'ui-templates' },
   { path: '/about', label: 'About', id: 'about' },
-  { path: '/blog', label: 'Thoughts', id: 'thoughts' },
-  { path: 'https://github.com/to-be-coder/portfolio', label: 'GitHub', id: 'github' },
+  { path: '/labs', label: 'Labs', id: 'labs' },
+  { path: 'https://github.com/to-be-coder', label: 'GitHub', id: 'github' },
 ]
 
 const projectRoutes = ['/vercel', '/mozilla', '/lilypad', '/vision-track', '/hobby']

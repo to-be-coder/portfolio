@@ -20,6 +20,14 @@ export default function Footer() {
               LinkedIn
               <ArrowUpRight className="w-4 h-4 hover:text-secondary" />
             </Link>
+            <Link href="https://github.com/to-be-coder" className="text-white hover:text-secondary flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+              GitHub
+              <ArrowUpRight className="w-4 h-4 hover:text-secondary" />
+            </Link>
+            <Link href="https://www.threads.com/@mukajitu" className="text-white hover:text-secondary flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+              Threads
+              <ArrowUpRight className="w-4 h-4 hover:text-secondary" />
+            </Link>
           </div>
           <div className="flex-1 flex justify-end">
             <p className="text-white">© 2025 Jessica Cheng</p>
