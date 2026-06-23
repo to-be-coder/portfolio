@@ -3,7 +3,6 @@
 import CtaSection from '@/components/ui-block/cta'
 import { VerticalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
-import ProjectFigmaSection from '@/components/ui-block/project-figma-section'
 import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectPullQuote from '@/components/ui-block/project-pull-quote'
@@ -165,9 +164,6 @@ export default function ThunderboltPage() {
           <ScrollSpyLink value="final-design" activeClassName="data-[state=active]:text-purple-500 data-[state=active]:font-semibold">
             Final Design
           </ScrollSpyLink>
-          <ScrollSpyLink value="walkthrough" activeClassName="data-[state=active]:text-purple-500 data-[state=active]:font-semibold">
-            Walkthrough
-          </ScrollSpyLink>
           <ScrollSpyLink value="prototype" activeClassName="data-[state=active]:text-purple-500 data-[state=active]:font-semibold">
             Try the Prototype
           </ScrollSpyLink>
@@ -263,16 +259,6 @@ export default function ThunderboltPage() {
                   <img src="/thunderbolt-final-5.png" alt="Reorder skills modal above the chat input" className="w-full h-auto rounded-xl" />
                 </HorizontalStack>
               </VerticalStack>
-            </ProjectContent>
-          </ScrollSpySection>
-
-          {/* Walkthrough video */}
-          <ScrollSpySection value="walkthrough" className="flex flex-col">
-            <ProjectSectionTitle dotColor="text-purple-500">Walkthrough</ProjectSectionTitle>
-            <ProjectContent>
-              <div className="aspect-video w-full rounded-xl bg-gray-100 flex items-center justify-center text-[#a1a1a1] text-center overflow-hidden">
-                <span className="text-5xl md:text-6xl font-semibold">Coming soon</span>
-              </div>
             </ProjectContent>
           </ScrollSpySection>
 
@@ -753,21 +739,6 @@ export default function ThunderboltPage() {
             </ProjectContent>
           </ScrollSpySection>
 
-          {/* Figma Exploration Section */}
-          <ProjectFigmaSection
-            title="Explore my portfolio"
-            description="Design speaks louder than words. Check out the full Figma file to see the process, decisions, and iterations behind this project."
-            descriptionClassName="mb-4 md:mb-8"
-            figmaUrl="https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio--Public-?node-id=3-13787&t=J3zCiHTUrdhoAr61-1"
-            imageSrc="/mozilla-cta.png"
-            imageAlt="mozilla mockup"
-            sectionClassName="bg-primary p-8 text-white"
-            titleColor="text-white"
-            dotColor="text-purple-500"
-            buttonBgColor="bg-purple-300"
-            buttonTextColor="text-black"
-            buttonHoverColor="hover:bg-purple-500"
-          />
         </ScrollSpyViewport>
       </ScrollSpy>
 
