@@ -197,7 +197,9 @@ export default function Home() {
                     src="/lilypad-cover.png"
                     alt="Lilypad Project"
                     className="rounded-lg object-contain lg:object-contain w-full h-full"
-                    {...(typeof window !== 'undefined' && window.innerWidth >= 768 && window.innerWidth < 1024 ? { fill: true } : { width: 500, height: 300 })}
+                    width={500}
+                    height={300}
+                    sizes="(min-width: 1024px) 67vw, 100vw"
                   />
                 </div>
               </div>

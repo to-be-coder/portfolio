@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@source "../../node_modules/streamdown/dist/*.js";
+@source "../../node_modules/@streamdown/code/dist/*.js";
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap') layer(utilities);
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap') layer(utilities);
 /*
@@ -191,6 +193,219 @@ h6 {
 /* https://stackoverflow.com/questions/32035406/how-to-limit-pre-tag-width-inside-flex-container#comment126297471_32038209 */
 * {
   min-width: 0;
+}
+
+@keyframes chat-thinking-cube-orbit {
+  0% {
+    transform: rotateX(-24deg) rotateY(30deg) rotateZ(-2deg);
+  }
+  25% {
+    transform: rotateX(-28deg) rotateY(120deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(-24deg) rotateY(210deg) rotateZ(2deg);
+  }
+  75% {
+    transform: rotateX(-20deg) rotateY(300deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(-24deg) rotateY(390deg) rotateZ(-2deg);
+  }
+}
+
+@keyframes chat-thinking-cube-slice-x {
+  to {
+    transform: rotateX(var(--chat-cube-turn));
+  }
+}
+
+@keyframes chat-thinking-cube-slice-y {
+  to {
+    transform: rotateY(var(--chat-cube-turn));
+  }
+}
+
+@keyframes chat-thinking-cube-slice-z {
+  to {
+    transform: rotateZ(var(--chat-cube-turn));
+  }
+}
+
+@keyframes chat-thinking-text-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes chat-caret-pulse {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.chat-thinking-cube-scene {
+  display: inline-block;
+  height: 28px;
+  perspective: 96px;
+  position: relative;
+  width: 30px;
+}
+
+.chat-thinking-cube {
+  animation: chat-thinking-cube-orbit 14s linear infinite;
+  height: 18px;
+  left: 6px;
+  position: absolute;
+  top: 5px;
+  transform: rotateX(-24deg) rotateY(38deg);
+  transform-style: preserve-3d;
+  width: 18px;
+  will-change: transform;
+}
+
+.chat-thinking-cube-slice {
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.chat-thinking-cube-slice--turn-x {
+  animation: chat-thinking-cube-slice-x 1.05s cubic-bezier(0.45, 0, 0.2, 1) both;
+  will-change: transform;
+}
+
+.chat-thinking-cube-slice--turn-y {
+  animation: chat-thinking-cube-slice-y 1.05s cubic-bezier(0.45, 0, 0.2, 1) both;
+  will-change: transform;
+}
+
+.chat-thinking-cube-slice--turn-z {
+  animation: chat-thinking-cube-slice-z 1.05s cubic-bezier(0.45, 0, 0.2, 1) both;
+  will-change: transform;
+}
+
+.chat-thinking-cubie {
+  height: 5px;
+  left: 6.5px;
+  position: absolute;
+  top: 6.5px;
+  transform-style: preserve-3d;
+  width: 5px;
+}
+
+.chat-thinking-cubie-face {
+  backface-visibility: hidden;
+  background: color-mix(in srgb, var(--color-gray-700) 78%, var(--color-gray-50));
+  box-shadow: inset 0 0 0 0.6px var(--color-gray-950);
+  height: 5px;
+  position: absolute;
+  width: 5px;
+}
+
+.chat-thinking-cubie-face--front {
+  background: color-mix(in srgb, var(--color-gray-700) 78%, var(--color-gray-50));
+  transform: translateZ(2.5px);
+}
+
+.chat-thinking-cubie-face--back {
+  background: color-mix(in srgb, var(--color-gray-900) 78%, var(--color-gray-50));
+  transform: rotateY(180deg) translateZ(2.5px);
+}
+
+.chat-thinking-cubie-face--right {
+  background: color-mix(in srgb, var(--color-gray-500) 78%, var(--color-gray-50));
+  transform: rotateY(90deg) translateZ(2.5px);
+}
+
+.chat-thinking-cubie-face--left {
+  background: color-mix(in srgb, var(--color-gray-900) 78%, var(--color-gray-50));
+  transform: rotateY(-90deg) translateZ(2.5px);
+}
+
+.chat-thinking-cubie-face--top {
+  background: color-mix(in srgb, var(--color-gray-600) 78%, var(--color-gray-50));
+  transform: rotateX(90deg) translateZ(2.5px);
+}
+
+.chat-thinking-cubie-face--bottom {
+  background: color-mix(in srgb, var(--color-gray-900) 78%, var(--color-gray-50));
+  transform: rotateX(-90deg) translateZ(2.5px);
+}
+
+.chat-thinking-label {
+  animation: chat-thinking-text-shimmer 4s linear infinite;
+  background: linear-gradient(
+    100deg,
+    var(--color-gray-500) 34%,
+    var(--color-gray-300) 48%,
+    var(--color-gray-300) 52%,
+    var(--color-gray-500) 66%
+  );
+  background-clip: text;
+  background-size: 220% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.chat-stream-caret::after {
+  animation: chat-caret-pulse 900ms steps(1, end) infinite;
+  color: var(--color-secondary);
+  content: '▋';
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.chat-scrollbar {
+  scrollbar-color: color-mix(in srgb, currentColor 18%, transparent) transparent;
+  scrollbar-width: thin;
+}
+
+.chat-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, currentColor 16%, transparent);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 9999px;
+}
+
+.chat-response > :first-child,
+.chat-reasoning > :first-child {
+  margin-top: 0;
+}
+
+.chat-response > :last-child,
+.chat-reasoning > :last-child {
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-thinking-cube,
+  .chat-thinking-cube-slice--turn-x,
+  .chat-thinking-cube-slice--turn-y,
+  .chat-thinking-cube-slice--turn-z,
+  .chat-thinking-label,
+  .chat-stream-caret::after {
+    animation: none;
+  }
+
+  .chat-thinking-label {
+    background: none;
+    color: var(--color-gray-500);
+  }
 }
 /*
   ---break---
