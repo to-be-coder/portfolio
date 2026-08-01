@@ -7,7 +7,9 @@ import path from 'path'
 
 export const maxDuration = 60
 
-const modelId = process.env.AI_CHAT_MODEL ?? 'gpt-5-mini'
+// GPT-4.1 mini does not require the organization verification that GPT-5 models do.
+// AI_CHAT_MODEL can still opt the deployment into another model once it has access.
+const modelId = process.env.AI_CHAT_MODEL ?? 'gpt-4.1-mini'
 
 // Load system message and context from JSON file
 const systemMessagePath = path.join(process.cwd(), 'src/app/api/chat/system-message.json')
@@ -103,16 +105,14 @@ export async function POST(req: Request) {
     system: systemMessage,
     messages: await convertToModelMessages(messages),
     maxOutputTokens: 1400,
+    maxRetries: 1,
     experimental_transform: smoothStream({
       chunking: 'word',
       delayInMs: 12,
     }),
     providerOptions: {
       openai: {
-        reasoningEffort: 'low',
-        reasoningSummary: 'auto',
         store: false,
-        textVerbosity: 'medium',
       } satisfies OpenAILanguageModelResponsesOptions,
     },
   })
