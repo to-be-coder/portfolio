@@ -562,25 +562,24 @@ export default function Chat() {
       </AnimatePresence>
 
       <div className="relative z-10 shrink-0 bg-white/95 px-3 pb-3 pt-3 backdrop-blur-xl sm:px-5 sm:pb-4">
-        {messages.length === 0 && (
-          <div
-            className="mx-auto mb-2 flex w-full max-w-3xl gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            aria-label="Suggested questions"
-          >
-            {starterPrompts.map((item) => (
-              <button
-                key={item.prompt}
-                type="button"
-                onClick={() => void submitText(item.prompt)}
-                title={item.prompt}
-                aria-label={item.prompt}
-                className="inline-flex h-8 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-3.5 text-sm font-medium text-gray-600 transition-colors hover:border-gray-950 hover:bg-gray-950 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
-              >
-                {item.eyebrow}
-              </button>
-            ))}
-          </div>
-        )}
+        <div
+          className="mx-auto mb-2 flex w-full max-w-3xl gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          aria-label="Suggested questions"
+        >
+          {starterPrompts.map((item) => (
+            <button
+              key={item.prompt}
+              type="button"
+              onClick={() => void submitText(item.prompt)}
+              disabled={busy}
+              title={item.prompt}
+              aria-label={item.prompt}
+              className="inline-flex h-8 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-full border border-gray-200 bg-white px-3.5 text-sm font-medium text-gray-600 transition-colors hover:border-gray-950 hover:bg-gray-950 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:border-gray-200 disabled:hover:bg-white disabled:hover:text-gray-600"
+            >
+              {item.eyebrow}
+            </button>
+          ))}
+        </div>
         <form onSubmit={handleSubmit} className="mx-auto max-w-3xl">
           <div className="rounded-3xl border border-gray-200 bg-white p-2 shadow-[0_10px_35px_-15px_rgba(15,23,42,0.3)] transition-shadow focus-within:border-gray-300 focus-within:shadow-[0_12px_40px_-15px_rgba(14,165,233,0.28)]">
             <textarea

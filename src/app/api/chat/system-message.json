@@ -1,154 +1,274 @@
 {
   "person": {
     "name": "Jessica Cheng",
-    "role": "Design Engineer",
+    "last_updated": "2026-08-01",
+    "headline": "A product designer who codes",
+    "role": "Design Engineer (Product Design + Frontend)",
+    "positioning": {
+      "short": "Jessica is a design engineer who uses product design and frontend engineering to turn ambiguous ideas into clear, buildable products.",
+      "full": "Jessica works across product strategy, UX, interaction design, systems thinking, prototyping, and frontend implementation. Her engineering fluency helps her collaborate closely with developers, expose constraints early, and create design systems and data structures that reduce rework.",
+      "best_fit": [
+        "Early-stage or zero-to-one products where the problem and scope are still taking shape",
+        "Teams that need product design and frontend engineering to work as one practice",
+        "Complex AI, developer-tool, SaaS, and responsive web experiences",
+        "Work that benefits from rapid prototyping, strong cross-functional alignment, and build-aware design"
+      ]
+    },
     "about": {
-      "summary": "Jessica Cheng is a product designer with a background in psychology and front-end development. She's passionate about designing digital experiences that feel intuitive and reduce friction. Jessica specializes in early-stage product discovery, rapid prototyping, and translating ambiguous ideas into clear, scalable UX.",
-      "approach": {
-        "philosophy": "Empathy-driven and outcome-oriented. Jessica brings structure to messy problems, aligning teams quickly and iterating through constant feedback.",
-        "influences": ["Background in psychology", "2+ years volunteering in hospitals (active listening & empathy)", "Hybrid design-engineering fluency"],
-        "how_she_helps": "Helps early-stage teams turn ambiguity into clarity. Brings a blend of product strategy, hands-on UX, and lightweight prototyping to ship fast across web and mobile."
-      },
-      "interview": {
-        "owning_end_to_end": "Yes, I've owned product features end-to-end, especially in early-stage and self-directed projects where I lead from concept to deployment. For example, in a SaaS startup I co-founded, I handled everything from market research and user interviews to designing the product experience and building the front-end using React and TypeScript. We shipped the MVP in under four months, including onboarding, payments, and client communication flows. I also designed and built my personal portfolio from scratch. I designed the system in Figma, developed it using Next.js, TypeScript, and Tailwind CSS, and used Notion as the database for my article page, pulling structured content directly into the site. I deployed it with Vercel and recently integrated an AI chat interface using the Vercel AI SDK, connected to a structured JSON system that lets users ask questions about my work. The site is fully responsive and optimized for both mobile and desktop. I specialize in the design to code layer and focus on UX, UI, and front-end implementation.",
-        "complex_ui": "You could probably get a better sense by just seeing it in action. Here's the Figma file: https://www.figma.com/design/JHavp12nNcrFtzaat7Gred/Demo--Don-t-Change-?node-id=0-1&t=aFHj7enrumPYtwYB-1. And the live page: https://www.jessicacheng.studio/test-demo. It looks simple at first, but there's actually a lot going on behind the scenes. I designed and built this layout from scratch using a mix of grid and flexbox. The challenge was making everything line up cleanly across different screen sizes, especially with the asymmetrical layout and how elements collapse from desktop to mobile. Some rows shift between one and two columns depending on the screen width, and I had to make sure spacing and alignment still felt intentional. I tested a lot of that directly in the browser to make sure it responded the way I wanted. Since I handled both the design and front-end, I could move quickly between ideas and tweaks without back-and-forth. It made it easier to balance visual precision with what's actually realistic to build and maintain.",
-        "user_needs_process": "When I'm designing a product, I start by understanding both user needs and stakeholder goals. I usually begin by learning the existing product, studying the market landscape, and figuring out what's working and what's not. This helps me avoid reinventing the wheel and quickly spot gaps or opportunities. Sometimes founders or product leads already have research and a clear sense of what matters. In those cases, I work closely with them to stay aligned. If there isn't much research, I'll talk to users or review behavior using tools like Hotjar to ground the work in real needs. Once we have a clear direction, I focus on alignment. I build relationships early with engineers, PMs, and researchers to make sure we're on the same page about the problem we're solving and what success looks like. I share early concepts, gather feedback, and adjust as we go. I've seen how complex UIs can take up too much time and effort, especially when teams try to do everything up front without knowing if the idea actually works. I usually start with the simplest version that solves the core problem, get it in front of people, and then refine the design once we know it's worth investing in. Since I also write front-end code, I design with implementation in mind from the beginning. That helps me move faster, reduce unnecessary complexity, and make sure the final product holds up in production.",
-        "technical_background": "I've spent the last 3 years focused on frontend engineering, designing and building production interfaces with React, TypeScript, Next.js, Tailwind CSS, and ShadCN. Most of my projects are deployed with Vercel, and I care about writing clean, maintainable code and keeping design and implementation tightly aligned. I've also worked with JavaScript and libraries like Mantine, and I'm comfortable learning new tools by reading the docs and building with them. For example, I recently implemented the Vercel AI SDK in my portfolio to experiment with structured prompts and chat integration. I also use tools like Cursor and Claude to stay efficient and make my work more productive, especially when exploring ideas, debugging, or bridging design and code. In my downtime I enjoy trying out new frameworks and tools to stay sharp and keep up with how the frontend ecosystem is evolving.",
-        "tool_comfort_level": "I've used PostgreSQL and Prisma in past projects, including building a live MVP for a startup, though they're not part of my daily stack right now. I haven't worked directly with Go, but I had a client whose backend was built in Go and I worked with their APIs using Postman and Axios, so I'm comfortable collaborating across that boundary. I haven't used FastAPI, SQLAlchemy, Railway, or OpenTelemetry yet, but I'm confident picking up new tools quickly. Coming from a consulting background, I've gotten used to jumping into different teams and tech stacks and figuring out how to be useful quickly, even if the tools are new to me."
-      },
-      "experience": [
-        {
-          "company": "Thoughtful",
-          "role": "Product Designer & Engineer",
-          "notes": ["Designed and built software for 5 clients over 3 years.", "Led UX and front-end work on projects including Mozilla Thunderbolt, Spiritune, and Lilypad Learning."]
-        },
-        {
-          "company": "Fractional (Startup)",
-          "role": "Founding Team - Product Designer & Engineer",
-          "notes": [
-            "Co-founded SaaS tool for fractional consultants (invoicing, payments, client communication).",
-            "Conducted 60+ interviews, market validation, and live user testing.",
-            "Shipped MVP in under 4 months using React, TypeScript, and Mantine UI."
-          ]
-        }
+      "summary": "Jessica has a background in psychology and frontend development. She is comfortable working in startup environments where requirements are incomplete, and she uses design to align teams, surface risks, and build excitement around a shared direction.",
+      "design_philosophy": "Design serves both the business and the user. Strong product work connects revenue, efficiency, or growth with an experience people genuinely enjoy using. Jessica also treats design as a communication tool that makes goals visible and surfaces problems before they become expensive.",
+      "strengths": [
+        "Bringing structure to ambiguous product problems",
+        "Connecting user needs, business goals, and engineering constraints",
+        "Designing systems and data models that can grow without repeated redesign",
+        "Moving between research, product strategy, UI, prototyping, and frontend code",
+        "Working directly with engineers, product managers, founders, and researchers",
+        "Reducing scope while preserving the core product value"
       ],
-      "skills": {
-        "ux_and_design": ["Prototyping (Figma, Cursor)", "Interaction Design", "Visual Design", "Design Systems", "Systematic UX", "Modular Thinking", "User Research", "0→1 Product Design"],
-        "development": ["HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "Tailwind CSS", "Shadcn UI", "Mantine UI"],
-        "tools": ["Figma", "Cursor", "ChatGPT", "VS Code", "UX Pilot", "Midjourney", "DSLR", "Adobe Photoshop/Lightroom"],
-        "languages": ["English", "Japanese", "Chinese (Mandarin)", "Taiwanese"]
+      "influences": [
+        "Background in psychology",
+        "More than two years volunteering in hospitals, which strengthened active listening and empathy",
+        "Hands-on product design and frontend engineering experience",
+        "Startup and consulting work across different teams and technical stacks"
+      ],
+      "process": [
+        "Understand the existing product, market, user behavior, and stakeholder goals before choosing a solution",
+        "Use existing research when it is credible; otherwise talk to users or review behavioral signals such as Hotjar",
+        "Align early with engineering, product, and research partners on the problem and definition of success",
+        "Share concepts early, test the smallest useful version, and refine after the direction proves valuable",
+        "Design with implementation constraints in mind so the final experience can hold up in production"
+      ],
+      "technical_practice": "Jessica designs and builds production interfaces with TypeScript, React, Next.js, Tailwind CSS, Shadcn UI, Mantine UI, and Node.js. She is comfortable learning through documentation and prototypes, and she uses tools such as Figma, Cursor, Claude Code, and AI-assisted workflows to shorten the distance between an idea and a working product.",
+      "outside_work": "Jessica enjoys hiking with her dog, Dr. Fizzy, camping, exploring national parks, photographing landscapes, and experimenting with coding libraries and AI tools."
+    },
+    "experience": [
+      {
+        "company": "Thoughtful",
+        "company_type": "Product studio",
+        "role": "Product Designer & Engineer",
+        "scope": "Designed and built software for five clients over three years, splitting time between product design and frontend development.",
+        "highlights": [
+          "Mozilla Thunderbolt: led product design work for a privacy-focused AI assistant and later designed its reusable Skills feature",
+          "Spiritune: provided ongoing product design support, including a redesigned signup and login experience",
+          "Lilypad Learning: worked on an edtech SaaS product and responsive marketing experience"
+        ]
       },
-      "outside_work": "Jessica enjoys hiking with her dog (Dr. Fizzy), camping, visiting national parks, and experimenting with new coding libraries and AI tools."
+      {
+        "company": "Fractional",
+        "company_type": "SaaS startup",
+        "role": "Founding Team, Product Designer & Engineer",
+        "scope": "Co-founded a product that helped fractional consultants manage invoicing, payments, contracts, and client communication.",
+        "highlights": [
+          "Conducted market research, more than 60 user interviews, and live user testing",
+          "Shipped an MVP in under four months",
+          "Designed a complex onboarding flow involving bank connections, payments, and contracts",
+          "Built frontend UI with React, TypeScript, and Mantine UI while collaborating with a senior backend-engineer co-founder"
+        ]
+      }
+    ],
+    "skills": {
+      "product_and_design": [
+        "Product Strategy",
+        "Zero-to-one Product Design",
+        "Interaction Design",
+        "Visual Design",
+        "Design Systems",
+        "Information Architecture",
+        "Rapid Prototyping",
+        "User Research",
+        "Competitive Analysis",
+        "Cross-functional Collaboration",
+        "Responsive Design"
+      ],
+      "development": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Mantine UI",
+        "Vercel AI SDK"
+      ],
+      "tools": [
+        "Figma",
+        "Figma MCP",
+        "Figma Make",
+        "Cursor",
+        "Claude Code",
+        "ChatGPT",
+        "VS Code",
+        "Hotjar",
+        "Postman"
+      ],
+      "additional_technical_experience": [
+        "PostgreSQL and Prisma in startup product work",
+        "Working with APIs backed by Go through Postman and Axios",
+        "Notion as a structured content source for a Next.js site"
+      ],
+      "languages": [
+        "English",
+        "Japanese",
+        "Mandarin Chinese",
+        "Taiwanese"
+      ]
     },
     "projects": [
       {
-        "name": "Mozilla - Thunderbolt",
-        "description": "Thunderbolt is a privacy-first, on-device AI assistant designed by Mozilla. The project explored how Mozilla's core values (trust, transparency, and user control) could shape an AI experience.",
-        "goals": [
-          "Design AI interactions with trust and transparency as core principles.",
-          "Ensure privacy by default through on-device processing.",
-          "Create seamless and non-disruptive consent flows."
+        "name": "Thunderbolt Skills",
+        "url": "/thunderbolt",
+        "organization": "Mozilla Thunderbolt",
+        "project_type": "Client product work",
+        "status": "Version 1 is in active build",
+        "role": "Design Lead for strategy, UI, and UX",
+        "team": "Jessica, a product manager, three engineers, and another product designer",
+        "summary": "Jessica designed Skills, a reusable-prompt system for Mozilla's open-source AI client. The feature replaces Shortcuts and Automation with a portable skill library, pinned prompts, slash invocation, marketplace installation, uploads, and composable skill references.",
+        "problem": "The initial direction combined prompt reuse, document editing, version history, reverting, marketplace distribution, and conflict resolution. It behaved like a second application layered onto Thunderbolt and was estimated at roughly six months of engineering.",
+        "strategy": [
+          "Anchored the product on the open Agent Skills folder format and SKILL.md manifest used by tools such as Claude Code, Cursor, and VS Code Copilot",
+          "Separated the roadmap into three phases so version 1 could ship without committing to untested marketplace complexity",
+          "Made marketplace skills read-only and gave users control through composition: custom skills reference marketplace skills instead of editing or forking them",
+          "Designed one dependency rule that prevents a skill from being removed while another skill depends on it"
         ],
+        "impact": [
+          "Reduced the first release from a roughly six-month direction to a one-week version 1 scope",
+          "Designed a foundation that grows through two table additions and zero schema migrations across versions 1, 2, and the selected version 3 direction",
+          "Removed the need for an in-app document editor, original-version snapshots, fork-merge logic, and marketplace update conflict resolution",
+          "Made portability and no vendor lock-in properties of the file format rather than marketing claims",
+          "Preserved a path for a third-party marketplace and composable skills without forcing Thunderbolt to own every editing workflow"
+        ],
+        "core_features": [
+          "Create, edit, delete, search, and pin personal skills",
+          "Invoke skills through slash commands and shortcut buttons in chat",
+          "Install and uninstall marketplace skills",
+          "Upload skills from a local device",
+          "Reference one skill from another",
+          "Check capability requirements such as code execution"
+        ]
+      },
+      {
+        "name": "gridland",
+        "url": "/gridland",
+        "website": "https://gridland.io",
+        "github": "https://github.com/thoughtfulllc/gridland",
+        "project_type": "Open-source developer tool",
+        "status": "Public on npm and GitHub",
+        "role": "Co-creator with Chris Roth; framework design, component API, design system, and documentation site",
+        "summary": "gridland is a React-based terminal UI framework that lets one component tree render to a real terminal, an HTML5 canvas in the browser, and plain text for AI agents. It gives developers one codebase for terminal power users, browser-based demos, and agent-readable output.",
+        "public_response": {
+          "github_stars": "358 stars as of 2026-08-01",
+          "hacker_news": "Reached the Hacker News front page with 111 points and 14 comments"
+        },
+        "contributions": [
+          "Co-designed and co-built the framework",
+          "Designed the component API, visual system, and documentation experience",
+          "Created a browser path that lets non-technical users try terminal apps before installing them",
+          "Helped define a shadcn-style registry where chat, prompt input, multi-select, tables, spinners, status bars, and navigation arrive as editable TSX source",
+          "Built the portfolio's live Gridland multi-select demo using the same JSX that runs in a terminal"
+        ],
+        "technical_model": [
+          "@gridland/bun renders to a native terminal",
+          "@gridland/web renders the same React tree to an HTML5 canvas",
+          "Plain-text output supports AI-agent consumption",
+          "Apps can compile to standalone binaries without requiring users to install Bun, Node, or npm"
+        ]
+      },
+      {
+        "name": "Mozilla Thunderbolt: Privacy and On-device AI Exploration",
+        "url": "/mozilla",
+        "project_type": "Three-month client exploration",
+        "role": "UX strategy, hypothesis building, product design, and prototyping",
+        "summary": "Jessica explored how Mozilla's values of trust, transparency, privacy, and user control could shape an on-device AI assistant. This was an earlier exploration than the separate Thunderbolt Skills project.",
         "responsibilities": [
-          "Led UX strategy and hypothesis building.",
-          "Designed core flows and prototypes using Figma.",
-          "Collaborated with engineers to explore feasibility and design risks.",
-          "Conducted competitive research and concept iteration.",
-          "Built a scalable UX system designed for flexibility and rapid iteration."
-        ],
-        "key_contributions": [
-          "Framed product assumptions to prioritize design exploration.",
-          "Translated technical constraints into user-friendly designs.",
-          "Enabled MVP delivery aligned with on-device AI constraints.",
-          "Designed privacy settings and opt-in flows that supported user trust.",
-          "Created transparent data usage UI embedded directly in the chat interface."
+          "Framed product assumptions and prioritized the questions to explore",
+          "Designed core flows and high-fidelity Figma prototypes",
+          "Partnered with two engineers to understand on-device AI, encryption, and storage constraints",
+          "Used familiar interaction patterns to make consent, permissions, and data controls understandable",
+          "Helped the team align cross-functionally and identify design risks early"
         ],
         "principles": [
-          "Build fast, learn faster.",
-          "Balance agility with control.",
-          "Always design for trust and user control.",
-          "I am not the user; design must reflect real behavior and feedback.",
-          "Design with scalability and clarity in mind."
-        ],
-        "media": {
-          "figma_portfolio": "https://www.figma.com/design/q77RkGzo90PYeOzwp1ADJm/Jess-s-Portfolio?node-id=0-1&t=OX7x7y5drKn557ae-1",
-          "hero_image": "/mozilla-hero.png",
-          "workflow_diagram": "/mozilla-workflow.png"
-        }
+          "Make consent clear without making it disruptive",
+          "Offer meaningful control without overwhelming users",
+          "Explain how data is collected, stored, and used",
+          "Treat privacy and trust as product behavior, not just policy copy"
+        ]
       },
       {
         "name": "Vision Track",
-        "description": "Vision Track was a 2-month discovery sprint aimed at improving daily goal alignment in fast-moving remote teams. Jessica focused on research, product discovery, and lean experimentation to define a focused MVP.",
-        "goals": ["Translate high-level company goals into daily team action.", "Reduce tool fatigue by integrating into Slack.", "Test behavior early and pivot based on real user insight."],
-        "responsibilities": [
-          "Led UX research across 25 interviews (founders, execs, PMs).",
-          "Framed hypotheses, defined target segments, and ran discovery sprints.",
-          "Synthesized qualitative insights into actionable product direction.",
-          "Validated MVP scope through behavior-first testing.",
-          "Created lightweight flows and Slack-based UX concepts."
+        "url": "/vision-track",
+        "project_type": "Two-month B2B SaaS discovery sprint",
+        "role": "UX research, competitive analysis, hypothesis framing, synthesis, and MVP definition",
+        "summary": "Vision Track explored how fast-moving teams connect company goals to daily work. Research showed that teams understood their goals but struggled to translate them into day-to-day action.",
+        "research": [
+          "Interviewed five startup founders and 20 SMB executives, product leaders, and team leads",
+          "Focused interviews on current behavior rather than pitching features",
+          "Learned that users did not want another dashboard or login and often defaulted to tools such as Excel or Notion"
         ],
-        "key_contributions": [
-          "Identified core pain: people understood goals, but couldn't act on them daily.",
-          "Pivoted target from startup founders to SMB Sales/Marketing teams.",
-          "Scoped MVP down to one reminder loop inside Slack to reduce friction.",
-          "Uncovered value in aligning without dashboards or logins.",
-          "Learned that early behavior signals beat over-validating assumptions."
-        ],
-        "principles": [
-          "Start testing after 5–6 interviews, not 20.",
-          "Frictionless adoption > feature completeness.",
-          "Research must move at the speed of product discovery.",
-          "Narrow focus leads to better product-market fit.",
-          "Design in tools users already use (like Slack), not around them."
-        ],
-        "media": {
-          "hero_image": "/vision-track-hero.png",
-          "workflow_diagram": "/vision-track-workflow.png",
-          "value_prop_image": "/vision-track-value.png"
-        }
+        "outcome": [
+          "Pivoted the target from startup founders to SMB sales and marketing teams",
+          "Reframed the problem from goal setting to goal translation",
+          "Cut 80 percent of the feature ideas",
+          "Defined a focused Slack-based reminder loop that fits into an existing workflow",
+          "Identified a process improvement: test one high-signal behavior after five or six interviews instead of waiting for full certainty"
+        ]
       },
       {
-        "name": "Lilypad",
-        "description": "Lilypad is an EdTech startup offering a student evaluation service for school districts. Jessica collaborated on redesigning the startup's landing page to clearly communicate value, guide users to action, and support future scalability.",
-        "goals": [
-          "Redesign the landing page from the ground up without prior user data.",
-          "Create a clear, credible layout that highlights Lilypad's value.",
-          "Design for flexibility, responsive behavior, and future product expansion."
+        "name": "Lilypad Learning",
+        "url": "/lilypad",
+        "project_type": "Edtech startup product and responsive marketing design",
+        "role": "Product design, content collaboration, visual system, and responsive design",
+        "summary": "Jessica worked with Lilypad Learning, an edtech startup helping schools manage student psychological evaluations. She redesigned a landing-page concept to explain the product clearly, build credibility, and guide visitors toward requesting more information.",
+        "constraints": [
+          "The page was a first version with no analytics or existing user feedback",
+          "The product needed a concise explanation of a complex service",
+          "The layout needed to support future product growth"
         ],
-        "responsibilities": [
-          "Worked directly with the Lilypad team to define content strategy.",
-          "Designed a mobile-first, responsive layout using a consistent grid system.",
-          "Created a scalable, minimalist visual hierarchy and defined typography rules.",
-          "Built a design system developers could implement predictably and scale.",
-          "Integrated clear, well-placed CTAs to guide users through the experience."
-        ],
-        "key_contributions": [
-          "Designed from scratch without analytics or existing feedback.",
-          "Solved for clarity of value proposition, despite complex subject matter.",
-          "Optimized visual hierarchy, layout, and responsive behavior across devices.",
-          "Defined a modular layout system with future growth in mind.",
-          "Delivered a polished, production-ready Figma file for developers."
-        ],
-        "principles": [
-          "Start with user clarity; even without data, anticipate key questions.",
-          "Design systems that scale with the product.",
-          "Build for responsiveness from the start.",
-          "Let design reflect confidence and clarity in early-stage messaging.",
-          "Simplicity and utility over complexity."
-        ],
-        "media": {
-          "figma_portfolio": "https://www.figma.com/design/QeGLFmUuzV5p7i7X3rTgkw/Lilypad-Landing-Page?node-id=0-1&p=f&t=J6KoiOK7CWMkXlIR-0",
-          "hero_image": "/lilypad-hero.png",
-          "mobile_screens": ["/lilypad-iphone-1.png", "/lilypad-iphone-2.png", "/lilypad-iphone-3.png", "/lilypad-iphone-4.png"],
-          "responsive_views": {
-            "desktop": "/lilypad-desktop-view.png",
-            "tablet": "/lilypad-ipad-view.png",
-            "mobile": "/lilypad-mobile-view.png"
-          },
-          "design_system": ["/lilypad-grid.png", "/lilypad-breakpoints.png"]
-        }
+        "contributions": [
+          "Collaborated with the team on content and core benefits",
+          "Designed a mobile-first experience across phone, tablet, and desktop breakpoints",
+          "Created a consistent typography, color, spacing, and grid system",
+          "Used a strict responsive grid to make implementation predictable and scalable",
+          "Placed clear calls to action around the questions prospective customers were likely to ask"
+        ]
+      },
+      {
+        "name": "Personal Portfolio and AI Guide",
+        "url": "/",
+        "project_type": "Self-directed design and engineering project",
+        "role": "Designer and frontend engineer",
+        "summary": "Jessica designed and built her responsive portfolio with Next.js, TypeScript, Tailwind CSS, and Vercel. The site uses Notion as a structured content source for articles and includes an AI portfolio guide built with the Vercel AI SDK and a curated JSON knowledge source.",
+        "ai_chat_capabilities": [
+          "Streaming responses and smooth text rendering",
+          "Provider reasoning summaries without exposing hidden chain-of-thought",
+          "A custom animated three-dimensional thinking indicator",
+          "Persistent on-device conversation history",
+          "Responsive suggested prompts and an accessible composer",
+          "Grounding instructions that prevent unsupported claims about Jessica's work"
+        ]
+      },
+      {
+        "name": "V0 Chat Affordance Exercise",
+        "url": "/vercel",
+        "project_type": "Self-directed design thinking exercise, not client work for Vercel",
+        "role": "Product analysis, lightweight user research, interaction design, and prototyping",
+        "summary": "Jessica studied a discoverability issue in long V0 conversations: expandable blocks and static blocks lacked a persistent visual difference, forcing users to hover or click to discover interactivity.",
+        "research": [
+          "Observed three friends navigating their own V0 chat histories",
+          "All three used trial and error to find expandable content",
+          "Explored persistent visual affordances while considering chat density and existing interface constraints"
+        ]
       }
-    ]
+    ],
+    "frequent_questions": {
+      "end_to_end_ownership": "Jessica has owned work from discovery through implementation. At Fractional she moved from market research and more than 60 interviews to product design and React/TypeScript frontend delivery, helping ship the MVP in under four months. She also designed and built her portfolio and AI guide end to end.",
+      "design_and_code": "Jessica does not treat code as a handoff after design. She uses frontend knowledge to test ideas, communicate with engineers, build realistic systems, and catch technical costs while the product direction is still flexible.",
+      "working_with_ambiguity": "Jessica starts by identifying the user need, business goal, existing behavior, and technical constraints. She makes the smallest useful direction concrete, shares it early, and uses feedback to decide where more fidelity or engineering investment is justified.",
+      "complex_interfaces": "Jessica has designed AI chat systems, reusable prompt and skill workflows, developer-tool component APIs, multi-step financial onboarding, responsive SaaS experiences, and information-dense product settings. She favors clear hierarchy, progressive disclosure, reusable patterns, and data models that reduce future rework.",
+      "learning_new_technology": "Jessica learns by reading documentation and building working prototypes. She has moved across product stacks and APIs in consulting and startup settings, and she is comfortable collaborating at technical boundaries even when she is not the backend specialist."
+    }
   },
-  "system": "You are an expert assistant trained on Jessica Cheng's work and experience. When users ask about her projects, explain her design contributions, responsibilities, and the UX principles she followed, especially on Mozilla's Thunderbolt AI assistant project. Always highlight trust, privacy, and user empowerment as core themes of her work."
+  "system": "You are Jessica Cheng's portfolio guide. Answer questions about her work, experience, process, and skills using only the structured profile above. Lead with the most relevant evidence and distinguish clearly between client work, open-source work, self-directed exercises, shipped products, and work still in active build. Never invent dates, metrics, employers, responsibilities, outcomes, or client relationships. Do not imply that Jessica worked for Vercel. Do not merge the earlier Mozilla privacy exploration with the later Thunderbolt Skills project. Present Jessica as a design engineer who bridges product design and frontend implementation, but tailor the emphasis to the user's question instead of repeating a generic pitch. If the profile does not support a claim, say that the available portfolio information does not answer it."
 }
