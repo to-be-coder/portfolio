@@ -325,7 +325,7 @@ function ChatMessage({
           <div>
             {reasoning && <ReasoningSummary text={reasoning} streaming={isStreaming} />}
             {text && (
-              <div className={`chat-response text-[15px] leading-7 text-gray-800 ${isStreaming ? 'chat-stream-caret' : ''}`}>
+              <div className="chat-response text-[15px] leading-7 text-gray-800">
                 <Streamdown
                   animated={!reduceMotion}
                   isAnimating={isStreaming}

@@ -240,17 +240,6 @@ h6 {
   }
 }
 
-@keyframes chat-caret-pulse {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  46%,
-  100% {
-    opacity: 0;
-  }
-}
-
 .chat-thinking-cube-scene {
   display: inline-block;
   height: 28px;
@@ -358,14 +347,6 @@ h6 {
   -webkit-background-clip: text;
 }
 
-.chat-stream-caret::after {
-  animation: chat-caret-pulse 900ms steps(1, end) infinite;
-  color: var(--color-secondary);
-  content: '▋';
-  display: inline-block;
-  margin-left: 2px;
-}
-
 .chat-scrollbar {
   scrollbar-color: color-mix(in srgb, currentColor 18%, transparent) transparent;
   scrollbar-width: thin;
@@ -397,8 +378,7 @@ h6 {
   .chat-thinking-cube-slice--turn-x,
   .chat-thinking-cube-slice--turn-y,
   .chat-thinking-cube-slice--turn-z,
-  .chat-thinking-label,
-  .chat-stream-caret::after {
+  .chat-thinking-label {
     animation: none;
   }
 
