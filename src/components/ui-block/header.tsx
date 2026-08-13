@@ -28,6 +28,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isProjectsSection, setIsProjectsSection] = useState(false)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [isScrolled, setIsScrolled] = useState(false)
   const lastScrollYRef = useRef(0)
   const rafIdRef = useRef<number | null>(null)
 
@@ -84,6 +85,8 @@ export default function Header() {
       }
 
       rafIdRef.current = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 0)
+
         if (!isProjectPage) {
           checkProjectsSection()
           return
@@ -95,14 +98,17 @@ export default function Header() {
 
     // Initialize
     lastScrollYRef.current = window.scrollY
-    checkProjectsSection()
+    rafIdRef.current = requestAnimationFrame(() => {
+      setIsScrolled(window.scrollY > 0)
+      checkProjectsSection()
 
-    // Reset header visibility when navigating to/from project pages
-    if (isProjectPage) {
-      setIsHeaderVisible(window.scrollY <= TOP_THRESHOLD)
-    } else {
-      setIsHeaderVisible(true)
-    }
+      // Reset header visibility when navigating to/from project pages
+      if (isProjectPage) {
+        setIsHeaderVisible(window.scrollY <= TOP_THRESHOLD)
+      } else {
+        setIsHeaderVisible(true)
+      }
+    })
 
     // Add scroll event listener
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -167,7 +173,13 @@ export default function Header() {
   }
 
   return (
-    <header className={cn('sticky top-0 z-50 bg-white/50 backdrop-blur-md border-b border-gray-200/20 transition-transform duration-300', isProjectPage && !isHeaderVisible && '-translate-y-full')}>
+    <header
+      className={cn(
+        'sticky top-0 z-50 border-b bg-white/50 backdrop-blur-md transition-[transform,border-color] duration-300',
+        isScrolled ? 'border-gray-200/20' : 'border-transparent',
+        isProjectPage && !isHeaderVisible && '-translate-y-full'
+      )}
+    >
       <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
         <div className="flex cursor-pointer">
           <Link href="/" className="flex items-center gap-1">

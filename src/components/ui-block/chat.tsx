@@ -1,6 +1,6 @@
 'use client'
 
-import { CHAT_LIMITS, type PortfolioChatMessage } from '@/lib/chat'
+import { CHAT_LIMITS, PORTFOLIO_PROCESS_PROMPT, type PortfolioChatMessage } from '@/lib/chat'
 import { useChat } from '@ai-sdk/react'
 import { code } from '@streamdown/code'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
@@ -9,6 +9,7 @@ import {
   ArrowUp,
   ChevronDown,
   LoaderCircle,
+  MessageSquarePlus,
   RotateCcw,
   Sparkles,
   Square,
@@ -23,16 +24,16 @@ const streamdownPlugins = { code }
 
 const starterPrompts = [
   {
+    eyebrow: 'Process',
+    prompt: PORTFOLIO_PROCESS_PROMPT,
+  },
+  {
     eyebrow: 'Featured work',
     prompt: 'What did Jessica contribute to Mozilla Thunderbolt?',
   },
   {
     eyebrow: 'Design + code',
     prompt: 'How does Jessica bridge product design and front-end engineering?',
-  },
-  {
-    eyebrow: 'Process',
-    prompt: 'Walk me through Jessica’s product design process with examples.',
   },
   {
     eyebrow: 'Quick intro',
@@ -376,8 +377,8 @@ export default function Chat() {
   const [hydrated, setHydrated] = useState(false)
   const [showScrollButton, setShowScrollButton] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+  const scrollContentRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const followStreamRef = useRef(true)
   const busy = status === 'submitted' || status === 'streaming'
   const remainingCharacters = CHAT_LIMITS.maxInputCharacters - input.length
 
@@ -420,30 +421,35 @@ export default function Chat() {
     const viewport = scrollRef.current
     if (!viewport) return
     const distance = viewport.scrollHeight - viewport.scrollTop - viewport.clientHeight
-    followStreamRef.current = distance < 96
-    setShowScrollButton(distance >= 96)
+    setShowScrollButton(distance > 24)
   }, [])
 
-  const scrollToBottom = useCallback((behavior: ScrollBehavior = 'smooth') => {
+  const scrollToBottom = useCallback(() => {
     const viewport = scrollRef.current
     if (!viewport) return
-    followStreamRef.current = true
-    viewport.scrollTo({ top: viewport.scrollHeight, behavior })
+    viewport.scrollTo({ top: viewport.scrollHeight, behavior: reduceMotion ? 'auto' : 'smooth' })
     setShowScrollButton(false)
-  }, [])
+  }, [reduceMotion])
 
   useEffect(() => {
-    if (!followStreamRef.current) return
-    const frame = window.requestAnimationFrame(() => scrollToBottom(status === 'streaming' || reduceMotion ? 'auto' : 'smooth'))
+    const frame = window.requestAnimationFrame(updateScrollState)
     return () => window.cancelAnimationFrame(frame)
-  }, [messages, reduceMotion, scrollToBottom, status])
+  }, [messages, status, updateScrollState])
+
+  useEffect(() => {
+    const content = scrollContentRef.current
+    if (!content) return
+
+    const observer = new ResizeObserver(updateScrollState)
+    observer.observe(content)
+    return () => observer.disconnect()
+  }, [messages.length, updateScrollState])
 
   const submitText = useCallback(
     async (text: string) => {
       const cleaned = text.trim()
       if (!cleaned || busy || cleaned.length > CHAT_LIMITS.maxInputCharacters) return
       clearError()
-      followStreamRef.current = true
       setInput('')
       await sendMessage({
         text: cleaned,
@@ -470,30 +476,69 @@ export default function Chat() {
     }
   }
 
+  const startNewChat = useCallback(() => {
+    if (busy) stop()
+    clearError()
+    setMessages([])
+    setInput('')
+    setShowScrollButton(false)
+    try {
+      window.localStorage.removeItem(CHAT_STORAGE_KEY)
+    } catch {
+      // Clearing the visible chat still works when storage is unavailable.
+    }
+    scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' })
+    window.requestAnimationFrame(() => textareaRef.current?.focus())
+  }, [busy, clearError, setMessages, stop])
+
   return (
     <section
       data-home-hero-section
       className="relative flex h-[calc(100svh-6rem)] min-h-[600px] max-h-[900px] w-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_24px_80px_-36px_rgba(15,23,42,0.35)]"
       aria-label="Chat with Jessica's portfolio assistant"
     >
+      <AnimatePresence>
+        {messages.length > 0 && (
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-end bg-gradient-to-b from-white via-white/90 to-transparent p-3 pb-8 sm:p-4 sm:pb-10"
+          >
+            <button
+              type="button"
+              onClick={startNewChat}
+              className="pointer-events-auto inline-flex h-9 items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 text-sm font-medium text-gray-600 shadow-sm transition-colors hover:border-gray-300 hover:bg-gray-50 hover:text-gray-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+              aria-label="Start a new chat and clear this conversation"
+              title="Start a new chat"
+            >
+              <MessageSquarePlus className="h-4 w-4" />
+              New chat
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div
         ref={scrollRef}
         onScroll={updateScrollState}
-        className="chat-scrollbar relative flex-1 overflow-y-auto overscroll-contain"
+        className="chat-scrollbar relative flex-1 overflow-y-auto overscroll-contain [overflow-anchor:none]"
       >
         {messages.length === 0 ? (
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-4 py-8 text-center">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 aspect-video w-full max-w-3xl -translate-x-1/2 -translate-y-1/2 overflow-hidden">
-              <video
-                className="h-full w-full scale-[1.01] border-0 object-cover outline-none"
-                src="/videos/background.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-hidden="true"
-              />
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="relative aspect-video w-full max-w-3xl overflow-hidden bg-white">
+                <video
+                  className="absolute -inset-1 block h-[calc(100%+0.5rem)] w-[calc(100%+0.5rem)] max-w-none border-0 bg-white object-cover outline-none"
+                  src="/videos/background.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
             <motion.div
               initial={reduceMotion ? false : { opacity: 0, y: 10 }}
@@ -510,7 +555,7 @@ export default function Chat() {
             </motion.div>
           </div>
         ) : (
-          <div className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 py-6 sm:gap-6 sm:px-6 sm:py-8">
+          <div ref={scrollContentRef} className="mx-auto flex w-full max-w-3xl flex-col gap-5 px-4 pb-6 pt-20 sm:gap-6 sm:px-6 sm:pb-8 sm:pt-24">
             <AnimatePresence initial={false}>
               {messages.map((message, index) => (
                 <ChatMessage
@@ -545,23 +590,24 @@ export default function Chat() {
         )}
       </div>
 
-      <AnimatePresence>
-        {showScrollButton && messages.length > 0 && (
-          <motion.button
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.9, y: 6 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 6 }}
-            type="button"
-            onClick={() => scrollToBottom()}
-            className="absolute bottom-[138px] left-1/2 z-20 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-lg transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
-            aria-label="Scroll to latest message"
-          >
-            <ArrowDown className="h-4 w-4" />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
       <div className="relative z-10 shrink-0 bg-white/95 px-3 pb-3 pt-3 backdrop-blur-xl sm:px-5 sm:pb-4">
+        <AnimatePresence>
+          {showScrollButton && messages.length > 0 && (
+            <motion.button
+              initial={reduceMotion ? false : { opacity: 0, scale: 0.9, y: 6 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 6 }}
+              type="button"
+              onClick={scrollToBottom}
+              className="absolute -top-12 left-1/2 z-20 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-700 shadow-lg transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+              aria-label="Scroll to latest message"
+              title="Jump to latest message"
+            >
+              <ArrowDown className="h-4 w-4" />
+            </motion.button>
+          )}
+        </AnimatePresence>
+
         <div
           className="mx-auto mb-2 flex w-full max-w-3xl gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           aria-label="Suggested questions"

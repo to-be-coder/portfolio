@@ -1,6 +1,6 @@
 import { openai } from '@ai-sdk/openai'
 import type { OpenAILanguageModelResponsesOptions } from '@ai-sdk/openai'
-import { CHAT_LIMITS, type PortfolioChatMessage } from '@/lib/chat'
+import { CHAT_LIMITS, PORTFOLIO_PROCESS_PROMPT, PORTFOLIO_PROCESS_RESPONSE, type PortfolioChatMessage } from '@/lib/chat'
 import { convertToModelMessages, createUIMessageStream, createUIMessageStreamResponse, smoothStream, streamText, validateUIMessages } from 'ai'
 import fs from 'fs'
 import path from 'path'
@@ -27,6 +27,31 @@ try {
   }
 } catch {
   // fallback to default
+}
+
+function createStaticChatResponse(messages: PortfolioChatMessage[], reply: string, startedAt: number, model: string, initialDelay = 450) {
+  const textId = `static-${startedAt}`
+  const stream = createUIMessageStream<PortfolioChatMessage>({
+    originalMessages: messages,
+    execute: async ({ writer }) => {
+      writer.write({ type: 'start', messageMetadata: { createdAt: startedAt, model } })
+      await new Promise((resolve) => setTimeout(resolve, initialDelay))
+      writer.write({ type: 'text-start', id: textId })
+
+      for (const chunk of reply.match(/\S+\s*/g) ?? []) {
+        writer.write({ type: 'text-delta', id: textId, delta: chunk })
+        await new Promise((resolve) => setTimeout(resolve, 6))
+      }
+
+      writer.write({ type: 'text-end', id: textId })
+      writer.write({
+        type: 'finish',
+        messageMetadata: { createdAt: startedAt, durationMs: Date.now() - startedAt, model },
+      })
+    },
+  })
+
+  return createUIMessageStreamResponse({ stream })
 }
 
 export async function POST(req: Request) {
@@ -69,32 +94,15 @@ export async function POST(req: Request) {
 
   const startedAt = Date.now()
 
+  if (latestUserText.trim() === PORTFOLIO_PROCESS_PROMPT) {
+    return createStaticChatResponse(messages, PORTFOLIO_PROCESS_RESPONSE, startedAt, 'Curated portfolio guide')
+  }
+
   if (!process.env.OPENAI_API_KEY) {
     if (process.env.NODE_ENV !== 'production') {
       const previewReply =
-        'Jessica Cheng is a product designer who codes. She combines product strategy, interaction design, and front-end craft to turn complex ideas into clear, working experiences. Her portfolio includes AI product work for Mozilla Thunderbolt, the open-source gridland developer tool, and research-led product design for Vision Track.'
-      const textId = `preview-${startedAt}`
-      const stream = createUIMessageStream<PortfolioChatMessage>({
-        originalMessages: messages,
-        execute: async ({ writer }) => {
-          writer.write({ type: 'start', messageMetadata: { createdAt: startedAt, model: 'Local preview' } })
-          await new Promise((resolve) => setTimeout(resolve, 2000))
-          writer.write({ type: 'text-start', id: textId })
-
-          for (const word of previewReply.split(' ')) {
-            writer.write({ type: 'text-delta', id: textId, delta: `${word} ` })
-            await new Promise((resolve) => setTimeout(resolve, 18))
-          }
-
-          writer.write({ type: 'text-end', id: textId })
-          writer.write({
-            type: 'finish',
-            messageMetadata: { createdAt: startedAt, durationMs: Date.now() - startedAt, model: 'Local preview' },
-          })
-        },
-      })
-
-      return createUIMessageStreamResponse({ stream })
+        'I’m a product designer who codes. I use product strategy, interaction design, and frontend craft to turn complex ideas into clear, working experiences. My work includes AI product design for Mozilla Thunderbolt, the open-source gridland developer tool, and research-led product design for Vision Track.'
+      return createStaticChatResponse(messages, previewReply, startedAt, 'Local preview', 2000)
     }
 
     return Response.json({ error: 'Chat is not configured.' }, { status: 503 })
