@@ -522,7 +522,9 @@ export default function Chat() {
       <div
         ref={scrollRef}
         onScroll={updateScrollState}
-        className="chat-scrollbar relative flex-1 overflow-y-auto overscroll-contain [overflow-anchor:none]"
+        className={`relative flex-1 ${
+          messages.length > 0 ? 'chat-scrollbar overflow-y-auto overscroll-contain [overflow-anchor:none]' : 'overflow-visible'
+        }`}
       >
         {messages.length === 0 ? (
           <div className="absolute inset-0 flex items-center justify-center overflow-hidden px-4 py-8 text-center">
