@@ -140,7 +140,7 @@ const HAMBURGER_VARIANTS = {
     closed: {
       rotate: ['45deg', '0deg', '0deg'],
       bottom: ['50%', '50%', '35%'],
-      left: 'calc(50% + 0.375rem)',
+      left: '50%',
     },
   },
 }
@@ -183,16 +183,16 @@ const HamburgerButton = React.forwardRef<HTMLButtonElement, HamburgerButtonProps
           aria-expanded={ariaExpanded ?? active}
           {...props}
         >
-          <motion.span variants={HAMBURGER_VARIANTS.top} className="absolute h-1 w-6 bg-white" style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }} />
-          <motion.span variants={HAMBURGER_VARIANTS.middle} className="absolute h-1 w-6 bg-white" style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }} />
+          <motion.span variants={HAMBURGER_VARIANTS.top} className="absolute h-0.5 w-6 rounded-full bg-white" style={{ y: '-50%', left: '50%', x: '-50%', top: '35%' }} />
+          <motion.span variants={HAMBURGER_VARIANTS.middle} className="absolute h-0.5 w-6 rounded-full bg-white" style={{ left: '50%', x: '-50%', top: '50%', y: '-50%' }} />
           <motion.span
             variants={HAMBURGER_VARIANTS.bottom}
-            className="absolute h-1 w-3 bg-white"
+            className="absolute h-0.5 w-6 rounded-full bg-white"
             style={{
               x: '-50%',
               y: '50%',
               bottom: '35%',
-              left: 'calc(50% + 0.375rem)',
+              left: '50%',
             }}
           />
         </motion.button>

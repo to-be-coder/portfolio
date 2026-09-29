@@ -1,14 +1,16 @@
-import Image from 'next/image'
+import ExpandableImage from '@/components/ui-block/expandable-image'
+import React from 'react'
 
 interface ProjectHeroSectionProps {
   title: string
   subtitle: string
-  imageSrc: string
-  imageAlt: string
+  imageSrc?: string
+  imageAlt?: string
   imagePosition?: string
+  media?: React.ReactNode
 }
 
-export default function ProjectHeroSection({ title, subtitle, imageSrc, imageAlt, imagePosition = 'center' }: ProjectHeroSectionProps) {
+export default function ProjectHeroSection({ title, subtitle, imageSrc, imageAlt, imagePosition = 'center', media }: ProjectHeroSectionProps) {
   return (
     <div className="">
       <div className="w-full h-auto flex flex-col relative  mx-auto">
@@ -19,7 +21,19 @@ export default function ProjectHeroSection({ title, subtitle, imageSrc, imageAlt
         </div>
       </div>
       <div className="w-full h-auto flex flex-col items-center rounded-lg overflow-hidden">
-        <Image src={imageSrc} alt={imageAlt} width={1000} height={100} className={`w-full flex-1 object-cover max-h-[450px] object-${imagePosition} rounded-xl`} />
+        {media ??
+          (imageSrc && imageAlt ? (
+            <ExpandableImage
+              src={imageSrc}
+              alt={imageAlt}
+              width={1000}
+              height={100}
+              imagePosition={imagePosition}
+              className="w-full flex-1 object-cover max-h-[450px] rounded-xl"
+              triggerClassName="rounded-xl"
+              priority
+            />
+          ) : null)}
       </div>
     </div>
   )

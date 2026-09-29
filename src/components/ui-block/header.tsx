@@ -18,7 +18,7 @@ const navigationItems = [
   { path: 'https://github.com/to-be-coder', label: 'GitHub', id: 'github' },
 ]
 
-const projectRoutes = ['/vercel', '/mozilla', '/lilypad', '/vision-track', '/hobby']
+const projectRoutes = ['/peasy', '/careerbot', '/vercel', '/mozilla', '/lilypad', '/vision-track', '/hobby']
 
 const SCROLL_THRESHOLD = 30 // Minimum scroll distance before header hides/shows
 const TOP_THRESHOLD = 20 // Distance from top where header always shows
@@ -180,8 +180,12 @@ export default function Header() {
         isProjectPage && !isHeaderVisible && '-translate-y-full'
       )}
     >
-      <div className="px-4 sm:px-6 lg:px-8 flex justify-between py-2 max-w-7xl mx-auto" aria-label="Global">
-        <div className="flex cursor-pointer">
+      <div className="relative mx-auto flex max-w-7xl items-center px-4 py-2 sm:px-6 lg:px-8" aria-label="Global">
+        <div className="flex sm:hidden">
+          <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
+        </div>
+
+        <div className="absolute left-1/2 flex -translate-x-1/2 cursor-pointer sm:static sm:translate-x-0">
           <Link href="/" className="flex items-center gap-1">
             <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
           </Link>
@@ -205,20 +209,17 @@ export default function Header() {
           </NavigationMenu>
         </div>
 
-        <div className="flex sm:hidden">
-          <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
-        </div>
       </div>
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-0 left-0 z-50 w-full h-full min-h-screen bg-white" role="dialog" aria-modal="true">
           <div className="px-4 sm:px-6 lg:px-8 py-2">
-            <div className="flex items-center justify-between mb-6">
-              <Link href="/" className="flex items-center gap-1">
-                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
-              </Link>
-              <div className="flex-1 flex justify-end">
+            <div className="relative mb-6 flex items-center">
+              <div className="flex">
                 <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
               </div>
+              <Link href="/" className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1" onClick={() => setMobileMenuOpen(false)}>
+                <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
+              </Link>
             </div>
             <div className="flow-root">
               <div className="divide-y divide-gray-500/10">
