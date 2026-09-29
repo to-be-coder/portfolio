@@ -224,7 +224,7 @@ export default function Home() {
           {/* Project Vision Track */}
           <div
             ref={visionTrackRef}
-            className={`group relative min-h-[500px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
               ${activeSection?.includes('visionTrack') ? 'bg-blue-50' : 'bg-gray-100/80'}`}
           >
             <a href="/vision-track" className="block h-full w-full">
@@ -244,7 +244,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="-mb-6 -mr-6 mt-auto flex items-end justify-end">
-                  <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-full" width={1280} height={914} />
+                  <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-[90%]" width={1280} height={914} />
                 </div>
               </div>
             </a>
@@ -253,7 +253,7 @@ export default function Home() {
           {/* Lilypad */}
           <div
             ref={lilypadRef}
-            className={`group relative min-h-[500px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
               ${activeSection?.includes('lilypad') ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
           >
             <a href="/lilypad" className="block h-full w-full">
@@ -269,8 +269,8 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
                   </div>
                 </div>
-                <div className="mt-auto flex w-full items-end justify-center">
-                  <Image src="/lilypad-cover.png" alt="Lilypad Project" className="block h-auto w-full" width={1280} height={960} sizes="(min-width: 1024px) 28vw, 100vw" />
+                <div className="aspect-[2/1] w-full overflow-hidden">
+                  <Image src="/lilypad-cover.png" alt="Lilypad Project" className="block h-full w-full object-cover object-[center_65%]" width={1280} height={960} sizes="(min-width: 1024px) 28vw, 100vw" />
                 </div>
               </div>
             </a>
@@ -279,7 +279,7 @@ export default function Home() {
           {/* Other Fun Works */}
           <div
             ref={hobbyRef}
-            className={`group relative min-h-[500px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
               ${activeSection?.includes('hobby') ? 'bg-rose-50' : 'bg-gray-100/80'}`}
           >
             <a href="/hobby" className="block h-full w-full">
@@ -294,7 +294,7 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
                   </div>
                 </div>
-                <div className="mt-auto grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
                   <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
                   <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
