@@ -294,13 +294,31 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
-                  <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
-                  <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
-                  <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
-                  <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
-                  <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
-                  <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                <div className="grid min-h-[200px] flex-1 grid-cols-3 gap-2">
+                  <div className="grid min-h-0 grid-rows-[2fr_3fr] gap-2">
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-14.jpeg" alt="Misty mountain above a forest" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-17.jpeg" alt="Two silhouettes by the water at sunset" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                  </div>
+                  <div className="grid min-h-0 grid-rows-[3fr_2fr] gap-2">
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-3.jpeg" alt="Deer sculpture outside a lodge" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-20.jpeg" alt="Badlands under a cloudy sky" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                  </div>
+                  <div className="grid min-h-0 grid-rows-[5fr_4fr] gap-2">
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-16.jpeg" alt="Dog sitting in the grass" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                    <div className="relative min-h-0 overflow-hidden rounded-lg">
+                      <Image src="/hobby-19.jpeg" alt="People on a lakeshore" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </a>
