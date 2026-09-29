@@ -553,7 +553,7 @@ export default function Chat() {
                 <br />a{' '}
                 <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text font-bold text-transparent">product designer </span>
                 who <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-bold text-transparent">codes</span>
-                <br />at <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text font-bold text-transparent">San Francisco</span>
+                <br />in <span className="bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text font-bold text-transparent">San Francisco</span>
               </h1>
             </motion.div>
           </div>
