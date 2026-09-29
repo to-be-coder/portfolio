@@ -228,7 +228,7 @@ export default function Home() {
               ${activeSection?.includes('visionTrack') ? 'bg-blue-50' : 'bg-gray-100/80'}`}
           >
             <a href="/vision-track" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="flex h-full flex-col gap-6">
                 <div className="space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('visionTrack') ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
@@ -243,8 +243,8 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
                   </div>
                 </div>
-                <div className="flex min-h-[220px] items-end justify-end lg:min-h-0">
-                  <Image src="/vision-track-cover.png" alt="Vision Track Project" className="h-full w-full object-contain object-right-bottom" width={700} height={600} />
+                <div className="-mb-6 -mr-6 mt-auto flex items-end justify-end">
+                  <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-full" width={1280} height={914} />
                 </div>
               </div>
             </a>
@@ -257,7 +257,7 @@ export default function Home() {
               ${activeSection?.includes('lilypad') ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
           >
             <a href="/lilypad" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="flex h-full flex-col gap-6">
                 <div className="space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('lilypad') ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
@@ -269,8 +269,8 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
                   </div>
                 </div>
-                <div className="flex min-h-[220px] items-center justify-center lg:min-h-0">
-                  <Image src="/lilypad-cover.png" alt="Lilypad Project" className="h-full w-full rounded-lg object-contain" width={500} height={300} sizes="(min-width: 1024px) 16vw, 100vw" />
+                <div className="mt-auto flex w-full items-end justify-center">
+                  <Image src="/lilypad-cover.png" alt="Lilypad Project" className="block h-auto w-full" width={1280} height={960} sizes="(min-width: 1024px) 28vw, 100vw" />
                 </div>
               </div>
             </a>
