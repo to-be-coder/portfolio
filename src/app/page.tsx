@@ -283,7 +283,7 @@ export default function Home() {
               ${activeSection?.includes('hobby') ? 'bg-rose-50' : 'bg-gray-100/80'}`}
           >
             <a href="/hobby" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="flex h-full flex-col gap-6">
                 <div className="space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('hobby') ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
@@ -294,13 +294,13 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
                   </div>
                 </div>
-                <div className="grid min-h-[240px] grid-cols-2 gap-2 lg:min-h-0">
-                  <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
-                  <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
-                  <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
-                  <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
-                  <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
-                  <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="h-full min-h-0 w-full rounded-lg object-cover" />
+                <div className="mt-auto grid grid-cols-3 gap-2">
+                  <Image src="/hobby-14.jpeg" alt="Hobby 14" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                  <Image src="/hobby-3.jpeg" alt="Hobby 15" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                  <Image src="/hobby-16.jpeg" alt="Hobby 16" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                  <Image src="/hobby-17.jpeg" alt="Hobby 17" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                  <Image src="/hobby-20.jpeg" alt="Hobby 20" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
+                  <Image src="/hobby-19.jpeg" alt="Hobby 19" width={500} height={300} className="aspect-[4/3] h-auto w-full rounded-lg object-cover" />
                 </div>
               </div>
             </a>
