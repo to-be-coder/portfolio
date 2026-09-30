@@ -131,13 +131,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-950 shadow-2xl ring-1 ring-black/10 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                <div className="relative w-full overflow-hidden rounded-2xl bg-[#101512] shadow-2xl ring-1 ring-black/10 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
-                    src="/peasy-web-walkthrough.gif"
-                    posterSrc="/peasy-web-walkthrough-poster.png"
+                    src="/peasy-home-walkthrough.gif"
+                    posterSrc="/peasy-home-walkthrough-poster.png"
                     alt="Peasy web app walkthrough from recipes to meal plan and shopping list"
                     isPlaying={activeSection === 'peasy'}
-                    className="block h-full w-full object-contain"
+                    className="block h-full w-full"
                   />
                 </div>
               </div>
