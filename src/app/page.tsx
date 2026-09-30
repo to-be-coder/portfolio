@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '800 / 518' }}>
+                <div className="relative w-full overflow-hidden rounded-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/thunderbolt-demo.gif"
                     posterSrc="/thunderbolt-demo-poster.png"
@@ -131,13 +131,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/10 lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '960 / 467' }}>
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/10 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/peasy-web-walkthrough.gif"
                     posterSrc="/peasy-web-walkthrough-poster.png"
                     alt="Peasy web app walkthrough from recipes to meal plan and shopping list"
                     isPlaying={activeSection === 'peasy'}
-                    className="block h-full w-full"
+                    className="block h-full w-full object-cover object-left"
                   />
                 </div>
               </div>
@@ -166,7 +166,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '1200 / 656' }}>
+                <div className="relative w-full overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/careerbot-demo-latest.gif"
                     posterSrc="/careerbot-demo-poster-latest.png"
@@ -201,13 +201,13 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-start">
-                <div className="relative w-full overflow-hidden rounded-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '800 / 529' }}>
+                <div className="relative w-full overflow-hidden rounded-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/gridland-demo.gif"
                     posterSrc="/gridland-demo-poster.png"
                     alt="gridland Project"
                     isPlaying={activeSection === 'gridland'}
-                    className="block w-full h-full"
+                    className="block w-full h-full object-cover"
                   />
                 </div>
               </div>
