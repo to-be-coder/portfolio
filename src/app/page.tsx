@@ -166,16 +166,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative flex w-full items-center justify-center overflow-hidden rounded-2xl bg-zinc-950 ring-1 ring-black/10 shadow-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
-                  <div className="relative w-full" style={{ aspectRatio: '1200 / 656' }}>
-                    <PausableGif
-                      src="/careerbot-demo-latest.gif"
-                      posterSrc="/careerbot-demo-poster-latest.png"
-                      alt="Careerbot application dashboard and job detail panel"
-                      isPlaying={activeSection === 'careerbot'}
-                      className="block h-auto w-full"
-                    />
-                  </div>
+                <div className="relative w-full overflow-hidden rounded-2xl bg-[#09090c] ring-1 ring-black/10 shadow-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                  <PausableGif
+                    src="/careerbot-home-demo.gif"
+                    posterSrc="/careerbot-home-demo-poster.png"
+                    alt="Careerbot application dashboard and job detail panel"
+                    isPlaying={activeSection === 'careerbot'}
+                    className="block h-full w-full"
+                  />
                 </div>
               </div>
             </div>
