@@ -130,24 +130,15 @@ export default function Home() {
                   <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>0 → 1</Badge>
                 </div>
               </div>
-              <div className="mt-5 grid w-full grid-cols-[minmax(0,3fr)_minmax(0,1fr)] items-end gap-2 lg:hidden">
-                <Image src="/peasy-web-shopping-list.png" alt="Peasy web shopping workspace" width={1440} height={700} className="h-auto w-full rounded-xl shadow-md" />
-                <Image src="/peasy-plan-screen.png" alt="Peasy native iOS meal planner" width={1206} height={2622} className="h-auto w-full rounded-xl shadow-md" />
-              </div>
-              <div className="relative mt-8 hidden h-[330px] items-center justify-center overflow-hidden rounded-3xl bg-[#15211a] lg:mt-0 lg:flex lg:h-[460px] lg:w-2/3">
-                <Image src="/peasy-broccoli.png" alt="" width={640} height={640} aria-hidden className="absolute -right-20 -top-20 w-64 rotate-12 opacity-75" />
-                <div className="relative z-10 w-full px-4 md:px-8">
-                  <div className="overflow-hidden rounded-xl bg-zinc-950 p-1.5 shadow-2xl ring-1 ring-white/20">
-                    <div className="flex h-6 items-center gap-1.5 px-2" aria-hidden>
-                      <span className="h-2 w-2 rounded-full bg-white/20" />
-                      <span className="h-2 w-2 rounded-full bg-white/20" />
-                      <span className="h-2 w-2 rounded-full bg-white/20" />
-                    </div>
-                    <Image src="/peasy-web-shopping-list.png" alt="Peasy web shopping workspace" width={1440} height={700} className="h-auto w-full rounded-lg" />
-                  </div>
-                  <div className="absolute -bottom-28 right-2 hidden w-[145px] rotate-3 overflow-hidden rounded-[1.8rem] bg-zinc-950 p-1.5 shadow-2xl ring-1 ring-white/20 sm:block lg:-bottom-36 lg:right-3 lg:w-[185px]">
-                    <Image src="/peasy-plan-screen.png" alt="Peasy native iOS meal planner" width={1206} height={2622} className="h-auto w-full rounded-[1.45rem]" />
-                  </div>
+              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-black/10 lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '960 / 467' }}>
+                  <PausableGif
+                    src="/peasy-web-walkthrough.gif"
+                    posterSrc="/peasy-web-walkthrough-poster.png"
+                    alt="Peasy web app walkthrough from recipes to meal plan and shopping list"
+                    isPlaying={activeSection === 'peasy'}
+                    className="block h-full w-full"
+                  />
                 </div>
               </div>
             </div>
