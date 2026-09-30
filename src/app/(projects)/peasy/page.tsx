@@ -4,7 +4,6 @@ import ExpandableImage from '@/components/ui-block/expandable-image'
 import CtaSection from '@/components/ui-block/cta'
 import { HorizontalCard, VerticalCard } from '@/components/ui-block/project-card'
 import ProjectContent from '@/components/ui-block/project-content'
-import ProjectFlexBlock from '@/components/ui-block/project-flex-block'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectPullQuote from '@/components/ui-block/project-pull-quote'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
@@ -272,28 +271,19 @@ export default function PeasyPage() {
               </VerticalStack>
 
               <div className="flex flex-col gap-y-8 md:gap-y-12">
-                {webHighlights.map((highlight, index) => (
-                  <ProjectFlexBlock
-                    key={highlight.title}
-                    left={
-                      <VerticalStack title={highlight.title} titleColor="text-gray-500">
-                        <p>{highlight.description}</p>
-                      </VerticalStack>
-                    }
-                    right={
-                      <ExpandableImage
-                        src={highlight.src}
-                        alt={highlight.alt}
-                        width={1440}
-                        height={700}
-                        className="h-auto w-full rounded-xl"
-                        triggerClassName="border border-border"
-                        sizes="(min-width: 768px) 384px, 100vw"
-                      />
-                    }
-                    leftClassName={index % 2 === 1 ? 'md:order-2' : ''}
-                    rightClassName={index % 2 === 1 ? 'md:order-1' : ''}
-                  />
+                {webHighlights.map((highlight) => (
+                  <VerticalStack key={highlight.title} title={highlight.title} titleColor="text-gray-500">
+                    <p>{highlight.description}</p>
+                    <ExpandableImage
+                      src={highlight.src}
+                      alt={highlight.alt}
+                      width={1440}
+                      height={700}
+                      className="h-auto w-full rounded-xl"
+                      triggerClassName="border border-border"
+                      sizes="(min-width: 768px) 768px, 100vw"
+                    />
+                  </VerticalStack>
                 ))}
               </div>
             </ProjectContent>
