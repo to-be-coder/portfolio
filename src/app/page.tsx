@@ -200,7 +200,7 @@ export default function Home() {
                   <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>TUI</Badge>
                 </div>
               </div>
-              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-start">
+              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
                 <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-950 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/gridland-demo.gif"
