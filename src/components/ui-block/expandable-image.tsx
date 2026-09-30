@@ -94,7 +94,7 @@ export default function ExpandableImage({
         onClick={openDialog}
         aria-label={`Expand image: ${alt}`}
         className={cn(
-          'group relative block w-full cursor-zoom-in overflow-hidden rounded-xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2',
+          'group relative block w-full overflow-hidden rounded-xl text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2',
           triggerClassName
         )}
       >

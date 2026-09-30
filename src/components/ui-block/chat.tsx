@@ -670,7 +670,7 @@ export default function Chat() {
               )}
             </div>
           </div>
-          <p className="mt-2 text-center text-[11px] leading-4 text-gray-400">AI can make mistakes. Check project pages for the source of truth.</p>
+          <p className="mt-2 text-center text-[11px] leading-4 text-gray-400">AI can make mistakes. Browse the portfolio to learn more about Jessica&apos;s work.</p>
         </form>
       </div>
     </section>

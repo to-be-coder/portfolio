@@ -7,74 +7,10 @@ import ProjectContent from '@/components/ui-block/project-content'
 import ProjectHeroSection from '@/components/ui-block/project-hero-section'
 import ProjectPullQuote from '@/components/ui-block/project-pull-quote'
 import ProjectSectionTitle from '@/components/ui-block/project-section-title'
+import PeasyIOSFlow from '@/components/ui-block/peasy-ios-flow'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
-import { ArrowDown, ArrowLeft, ArrowRight } from 'lucide-react'
 import Image from 'next/image'
-import { Fragment } from 'react'
-
-const iosFlowScreens = [
-  {
-    label: 'Set up household',
-    src: '/peasy-flow-household.png',
-    alt: 'Peasy iOS onboarding screen for household members',
-  },
-  {
-    label: 'Choose meals',
-    src: '/peasy-flow-meals.png',
-    alt: 'Peasy iOS onboarding screen for choosing meal types',
-  },
-  {
-    label: 'Recipe library',
-    src: '/peasy-ios-recipes-dark.png',
-    alt: 'Peasy iOS recipe library with illustrated import options',
-  },
-  {
-    label: 'Add a recipe',
-    src: '/peasy-ios-add-recipe-dark.png',
-    alt: 'Peasy iOS Add Recipe screen with web, photo, file, manual, and social import options',
-  },
-  {
-    label: 'Import from web',
-    src: '/peasy-flow-web-import.png',
-    alt: 'Peasy iOS web recipe import screen with source link and language controls',
-  },
-  {
-    label: 'Recipe instructions',
-    src: '/peasy-ios-recipe-instructions-dark.png',
-    alt: 'Peasy iOS ginger salmon recipe with ingredients and instructions',
-  },
-  {
-    label: 'Meal settings',
-    src: '/peasy-ios-meal-settings-dark.png',
-    alt: 'Peasy iOS meal settings with meal toggles and recipe language preference',
-  },
-  {
-    label: 'Build a meal plan',
-    src: '/peasy-plan-screen.png',
-    alt: 'Peasy iOS meal planner choosing recipes and household participants',
-  },
-  {
-    label: 'Choose shopping days',
-    src: '/peasy-flow-shopping-days.png',
-    alt: 'Peasy iOS screen for choosing which days to include in a shopping list',
-  },
-  {
-    label: 'Review the list',
-    src: '/peasy-flow-shopping-review.png',
-    alt: 'Peasy iOS screen reviewing meals before creating a shopping list',
-  },
-  {
-    label: 'Shop the list',
-    src: '/peasy-shopping-list-screen.png',
-    alt: 'Peasy iOS shopping list with grocery items and store selection controls',
-  },
-  {
-    label: 'Add grocery items',
-    src: '/peasy-flow-ingredients.png',
-    alt: 'Peasy iOS grocery ingredient browser with food choices and search',
-  },
-]
 
 const webHighlights = [
   {
@@ -113,44 +49,6 @@ function PhonePreview({ src, alt, className = '', priority = false }: { src: str
       priority={priority}
       unoptimized
     />
-  )
-}
-
-function IOSFlowChart() {
-  const rows = Array.from({ length: Math.ceil(iosFlowScreens.length / 3) }, (_, index) => iosFlowScreens.slice(index * 3, index * 3 + 3))
-
-  return (
-    <div className="rounded-3xl bg-emerald-950 px-5 py-8 text-white sm:px-7 sm:py-10" aria-label="Peasy iOS flow from onboarding to shopping">
-      {rows.map((row, rowIndex) => (
-        <Fragment key={row[0].src}>
-          <div className={`flex flex-col items-center gap-4 sm:gap-2 ${rowIndex % 2 === 1 ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
-            {row.map((screen, screenIndex) => (
-              <Fragment key={screen.src}>
-                <figure className="w-full max-w-[220px] sm:min-w-0 sm:flex-1">
-                  <PhonePreview src={screen.src} alt={screen.alt} className="w-full" />
-                  <figcaption className="mt-3 text-center text-sm font-medium text-emerald-50">{screen.label}</figcaption>
-                </figure>
-                {screenIndex < row.length - 1 && (
-                  <div className="flex w-8 shrink-0 items-center justify-center text-emerald-300" aria-hidden="true">
-                    <ArrowDown className="h-6 w-6 sm:hidden" strokeWidth={1.5} />
-                    {rowIndex % 2 === 1 ? (
-                      <ArrowLeft className="hidden h-6 w-6 sm:block" strokeWidth={1.5} />
-                    ) : (
-                      <ArrowRight className="hidden h-6 w-6 sm:block" strokeWidth={1.5} />
-                    )}
-                  </div>
-                )}
-              </Fragment>
-            ))}
-          </div>
-          {rowIndex < rows.length - 1 && (
-            <div className={`flex h-16 items-center justify-center text-emerald-300 sm:h-20 ${rowIndex % 2 === 1 ? 'sm:justify-start sm:pl-[14%]' : 'sm:justify-end sm:pr-[14%]'}`} aria-hidden="true">
-              <ArrowDown className="h-7 w-7" strokeWidth={1.5} />
-            </div>
-          )}
-        </Fragment>
-      ))}
-    </div>
   )
 }
 
@@ -239,7 +137,10 @@ export default function PeasyPage() {
               Product flow on iOS
             </ProjectSectionTitle>
             <ProjectContent>
-              <IOSFlowChart />
+              <p className="mb-6 text-base leading-relaxed text-gray-600">
+                Explore 63 pages and states across access, Plan, Recipes, Shop, and Settings. Every card includes an iOS screen capture. Click the map to zoom in and jump between branches.
+              </p>
+              <PeasyIOSFlow />
             </ProjectContent>
           </ScrollSpySection>
 
@@ -262,7 +163,7 @@ export default function PeasyPage() {
                   posterSrc="/peasy-web-walkthrough-poster.png"
                   alt="Animated Peasy web walkthrough with a pointer clicking Recipes, Plan, and Shop"
                   width={960}
-                  height={467}
+                  height={640}
                   className="h-auto w-full rounded-xl"
                   triggerClassName="border border-border bg-emerald-950 shadow-xl"
                   sizes="(min-width: 768px) 768px, 100vw"
@@ -277,11 +178,12 @@ export default function PeasyPage() {
                     <ExpandableImage
                       src={highlight.src}
                       alt={highlight.alt}
-                      width={1440}
-                      height={700}
+                      width={1350}
+                      height={900}
                       className="h-auto w-full rounded-xl"
                       triggerClassName="border border-border"
                       sizes="(min-width: 768px) 768px, 100vw"
+                      unoptimized
                     />
                   </VerticalStack>
                 ))}

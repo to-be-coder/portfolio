@@ -7,13 +7,13 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
-  const peasyRef = useRef<HTMLDivElement>(null)
-  const careerbotRef = useRef<HTMLDivElement>(null)
-  const thunderboltRef = useRef<HTMLDivElement>(null)
-  const gridlandRef = useRef<HTMLDivElement>(null)
-  const visionTrackRef = useRef<HTMLDivElement>(null)
-  const lilypadRef = useRef<HTMLDivElement>(null)
-  const hobbyRef = useRef<HTMLDivElement>(null)
+  const peasyRef = useRef<HTMLAnchorElement>(null)
+  const careerbotRef = useRef<HTMLAnchorElement>(null)
+  const thunderboltRef = useRef<HTMLAnchorElement>(null)
+  const gridlandRef = useRef<HTMLAnchorElement>(null)
+  const visionTrackRef = useRef<HTMLAnchorElement>(null)
+  const lilypadRef = useRef<HTMLAnchorElement>(null)
+  const hobbyRef = useRef<HTMLAnchorElement>(null)
 
   const [activeSection, setActiveSection] = useState<string | null>(null)
 
@@ -74,250 +74,243 @@ export default function Home() {
       {/* Projects Section */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-8 mb-8 lg:mb-16 space-y-4 md:space-y-8 scroll-mt-10" id="projects">
         {/* Thunderbolt */}
-        <div
+        <a
+          href="/thunderbolt"
           ref={thunderboltRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative block overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'thunderbolt' ? 'bg-purple-50' : 'bg-gray-100/80 '}`}
         >
-          <a href="/thunderbolt" className="w-full h-full">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'thunderbolt' ? 'bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent' : ''}>Thunderbolt</span>
-                </h3>
-                <p className="text-lg">Designed an extensible Skills feature for Thunderbolt, Mozilla&apos;s open-source AI client. Ships in one week and absorbs three rounds of feature growth without rewriting the data model.</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Design Lead</Badge>
-                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>AI Design</Badge>
-                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
-                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>0 → 1</Badge>
-                  <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Agent Skills</Badge>
-                </div>
-              </div>
-              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
-                  <PausableGif
-                    src="/thunderbolt-demo.gif"
-                    posterSrc="/thunderbolt-demo-poster.png"
-                    alt="Thunderbolt Project"
-                    isPlaying={activeSection === 'thunderbolt'}
-                    className="block w-full h-full"
-                  />
-                </div>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+            <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
+              <h3 className="text-4xl font-bold">
+                <span className={activeSection === 'thunderbolt' ? 'bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent' : ''}>Thunderbolt</span>
+              </h3>
+              <p className="text-lg">Designed an extensible Skills feature for Thunderbolt, Mozilla&apos;s open-source AI client. Ships in one week and absorbs three rounds of feature growth without rewriting the data model.</p>
+              <div className="flex flex-wrap gap-2">
+                <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Design Lead</Badge>
+                <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>AI Design</Badge>
+                <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
+                <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>0 → 1</Badge>
+                <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Agent Skills</Badge>
               </div>
             </div>
-          </a>
-        </div>
+            <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+              <div className="relative w-full overflow-hidden rounded-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                <PausableGif
+                  src="/thunderbolt-demo.gif"
+                  posterSrc="/thunderbolt-demo-poster.png"
+                  alt="Thunderbolt Project"
+                  isPlaying={activeSection === 'thunderbolt'}
+                  className="block w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
 
         {/* Peasy */}
-        <div
+        <a
+          href="/peasy"
           ref={peasyRef}
-          className={`group relative overflow-hidden rounded-3xl bg-gray-100/80 p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[500px] lg:p-8
+          className={`group relative block overflow-hidden rounded-3xl bg-gray-100/80 p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[500px] lg:p-8
             ${activeSection === 'peasy' ? 'lg:bg-emerald-50' : 'lg:bg-gray-100/80'}`}
         >
-          <a href="/peasy" className="w-full h-full">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'peasy' ? 'bg-gradient-to-r from-emerald-600 to-lime-500 bg-clip-text text-transparent' : ''}>Peasy</span>
-                </h3>
-                <p className="text-lg">Designed and built a cross-platform meal-planning product that turns saved recipes and real household choices into a shopping list people can depend on.</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
-                  <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>UX/UI</Badge>
-                  <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
-                  <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>iOS + Web</Badge>
-                  <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>0 → 1</Badge>
-                </div>
-              </div>
-              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl bg-[#101512] shadow-2xl ring-1 ring-black/10 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
-                  <PausableGif
-                    src="/peasy-home-walkthrough.gif"
-                    posterSrc="/peasy-home-walkthrough-poster.png"
-                    alt="Peasy web app walkthrough from recipes to meal plan and shopping list"
-                    isPlaying={activeSection === 'peasy'}
-                    className="block h-full w-full"
-                  />
-                </div>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+            <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
+              <h3 className="text-4xl font-bold">
+                <span className={activeSection === 'peasy' ? 'bg-gradient-to-r from-emerald-600 to-lime-500 bg-clip-text text-transparent' : ''}>Peasy</span>
+              </h3>
+              <p className="text-lg">Designed and built a cross-platform meal-planning product that turns saved recipes and real household choices into a shopping list people can depend on.</p>
+              <div className="flex flex-wrap gap-2">
+                <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
+                <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>UX/UI</Badge>
+                <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
+                <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>iOS + Web</Badge>
+                <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>0 → 1</Badge>
               </div>
             </div>
-          </a>
-        </div>
+            <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+              <div className="relative w-full overflow-hidden rounded-2xl bg-[#101512] shadow-2xl ring-1 ring-black/10 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                <PausableGif
+                  src="/peasy-home-walkthrough.gif"
+                  posterSrc="/peasy-home-walkthrough-poster.png"
+                  alt="Peasy web app walkthrough from recipes to meal plan and shopping list"
+                  isPlaying={activeSection === 'peasy'}
+                  className="block h-full w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
 
         {/* Careerbot */}
-        <div
+        <a
+          href="/careerbot"
           ref={careerbotRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative block overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'careerbot' ? 'bg-indigo-50' : 'bg-gray-100/80 '}`}
         >
-          <a href="/careerbot" className="w-full h-full">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'careerbot' ? 'bg-gradient-to-r from-indigo-500 to-violet-600 bg-clip-text text-transparent' : ''}>Careerbot</span>
-                </h3>
-                <p className="text-lg">Designed and built an agent-first career assistant that lets AI handle open-ended research while a focused dashboard makes review and tracking fast.</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Agent-first Design</Badge>
-                  <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
-                  <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
-                  <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>0 → 1</Badge>
-                </div>
-              </div>
-              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl bg-[#09090c] ring-1 ring-black/10 shadow-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
-                  <PausableGif
-                    src="/careerbot-home-demo.gif"
-                    posterSrc="/careerbot-home-demo-poster.png"
-                    alt="Careerbot application dashboard and job detail panel"
-                    isPlaying={activeSection === 'careerbot'}
-                    className="block h-full w-full"
-                  />
-                </div>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+            <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
+              <h3 className="text-4xl font-bold">
+                <span className={activeSection === 'careerbot' ? 'bg-gradient-to-r from-indigo-500 to-violet-600 bg-clip-text text-transparent' : ''}>Careerbot</span>
+              </h3>
+              <p className="text-lg">Designed and built an agent-first career assistant that lets AI handle open-ended research while a focused dashboard makes review and tracking fast.</p>
+              <div className="flex flex-wrap gap-2">
+                <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Agent-first Design</Badge>
+                <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Product Strategy</Badge>
+                <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
+                <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>0 → 1</Badge>
               </div>
             </div>
-          </a>
-        </div>
+            <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+              <div className="relative w-full overflow-hidden rounded-2xl bg-[#09090c] ring-1 ring-black/10 shadow-2xl lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                <PausableGif
+                  src="/careerbot-home-demo.gif"
+                  posterSrc="/careerbot-home-demo-poster.png"
+                  alt="Careerbot application dashboard and job detail panel"
+                  isPlaying={activeSection === 'careerbot'}
+                  className="block h-full w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
 
         {/* Gridland */}
-        <div
+        <a
+          href="/gridland"
           ref={gridlandRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative block overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'gridland' ? 'bg-pink-50' : 'bg-gray-100/80 '}`}
         >
-          <a href="/gridland" className="w-full h-full">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
-                <h3 className="text-4xl font-bold">
-                  <span className={activeSection === 'gridland' ? 'bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent' : ''}>gridland</span>
-                </h3>
-                <p className="text-lg">gridland (300+ ★ on GitHub) is an open-source terminal UI framework I designed and built that renders in both the terminal and the browser, making terminal apps more approachable for non-technical users.</p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Developer Tools</Badge>
-                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
-                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Component Design</Badge>
-                  <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>TUI</Badge>
-                </div>
-              </div>
-              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
-                <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-950 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
-                  <PausableGif
-                    src="/gridland-demo.gif"
-                    posterSrc="/gridland-demo-poster.png"
-                    alt="gridland Project"
-                    isPlaying={activeSection === 'gridland'}
-                    className="block w-full h-full object-contain"
-                  />
-                </div>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
+            <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
+              <h3 className="text-4xl font-bold">
+                <span className={activeSection === 'gridland' ? 'bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent' : ''}>gridland</span>
+              </h3>
+              <p className="text-lg">gridland (300+ ★ on GitHub) is an open-source terminal UI framework I designed and built that renders in both the terminal and the browser, making terminal apps more approachable for non-technical users.</p>
+              <div className="flex flex-wrap gap-2">
+                <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Developer Tools</Badge>
+                <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Design Engineering</Badge>
+                <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>Component Design</Badge>
+                <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>TUI</Badge>
               </div>
             </div>
-          </a>
-        </div>
+            <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+              <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-950 lg:max-w-[710px]" style={{ aspectRatio: '800 / 518' }}>
+                <PausableGif
+                  src="/gridland-demo.gif"
+                  posterSrc="/gridland-demo-poster.png"
+                  alt="gridland Project"
+                  isPlaying={activeSection === 'gridland'}
+                  className="block w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </a>
 
         <div className="grid grid-cols-1 gap-4 md:gap-8 lg:grid-cols-3">
           {/* Project Vision Track */}
-          <div
+          <a
+            href="/vision-track"
             ref={visionTrackRef}
-            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
+            className={`group relative block overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('visionTrack') ? 'bg-blue-50' : 'bg-gray-100/80'}`}
           >
-            <a href="/vision-track" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-4 lg:gap-6">
-                <div className="space-y-3 lg:space-y-4 lg:self-start">
-                  <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
-                    <span className={activeSection?.includes('visionTrack') ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
-                  </h3>
-                  <p className="text-base">Competitive analysis and user interviews for a B2B SaaS startup</p>
-                  <div className="flex flex-wrap gap-2 lg:hidden">
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>UX Research</Badge>
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>Competitive Analysis</Badge>
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>User Interviews</Badge>
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>User Personas</Badge>
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>B2B</Badge>
-                    <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
-                  </div>
-                </div>
-                <div className="-mb-5 -mr-5 mt-auto flex items-end justify-end sm:-mb-6 sm:-mr-6">
-                  <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-[90%]" width={1280} height={914} />
+            <div className="flex h-full flex-col gap-4 lg:gap-6">
+              <div className="space-y-3 lg:space-y-4 lg:self-start">
+                <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
+                  <span className={activeSection?.includes('visionTrack') ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
+                </h3>
+                <p className="text-base">Competitive analysis and user interviews for a B2B SaaS startup</p>
+                <div className="flex flex-wrap gap-2 lg:hidden">
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>UX Research</Badge>
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>Competitive Analysis</Badge>
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>User Interviews</Badge>
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>User Personas</Badge>
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>B2B</Badge>
+                  <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
                 </div>
               </div>
-            </a>
-          </div>
+              <div className="-mb-5 -mr-5 mt-auto flex items-end justify-end sm:-mb-6 sm:-mr-6">
+                <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-[90%]" width={1280} height={914} />
+              </div>
+            </div>
+          </a>
 
           {/* Lilypad */}
-          <div
+          <a
+            href="/lilypad"
             ref={lilypadRef}
-            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
+            className={`group relative block overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('lilypad') ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
           >
-            <a href="/lilypad" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-4 lg:gap-6">
-                <div className="space-y-3 lg:space-y-4 lg:self-start">
-                  <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
-                    <span className={activeSection?.includes('lilypad') ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
-                  </h3>
-                  <p className="text-base">Designed and developed a mobile-first landing page for an AI ed-tech startup</p>
-                  <div className="flex flex-wrap gap-2 lg:hidden">
-                    <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>UI Design</Badge>
-                    <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Landing Page</Badge>
-                    <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
-                  </div>
-                </div>
-                <div className="aspect-[2/1] w-full overflow-hidden">
-                  <Image src="/lilypad-cover.png" alt="Lilypad Project" className="block h-full w-full object-cover object-[center_65%]" width={1280} height={960} sizes="(min-width: 1024px) 28vw, 100vw" />
+            <div className="flex h-full flex-col gap-4 lg:gap-6">
+              <div className="space-y-3 lg:space-y-4 lg:self-start">
+                <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
+                  <span className={activeSection?.includes('lilypad') ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
+                </h3>
+                <p className="text-base">Designed and developed a mobile-first landing page for an AI ed-tech startup</p>
+                <div className="flex flex-wrap gap-2 lg:hidden">
+                  <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>UI Design</Badge>
+                  <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Landing Page</Badge>
+                  <Badge className={`${activeSection?.includes('lilypad') ? 'bg-orange-200' : 'bg-gray-200'} `}>Responsive Design</Badge>
                 </div>
               </div>
-            </a>
-          </div>
+              <div className="aspect-[2/1] w-full overflow-hidden">
+                <Image src="/lilypad-cover.png" alt="Lilypad Project" className="block h-full w-full object-cover object-[center_65%]" width={1280} height={960} sizes="(min-width: 1024px) 28vw, 100vw" />
+              </div>
+            </div>
+          </a>
 
           {/* Other Fun Works */}
-          <div
+          <a
+            href="/hobby"
             ref={hobbyRef}
-            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
+            className={`group relative block overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('hobby') ? 'bg-rose-50' : 'bg-gray-100/80'}`}
           >
-            <a href="/hobby" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-4 lg:gap-6">
-                <div className="space-y-3 lg:space-y-4 lg:self-start">
-                  <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
-                    <span className={activeSection?.includes('hobby') ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
-                  </h3>
-                  <p className="text-base">Camping and photography</p>
-                  <div className="flex flex-wrap gap-2 lg:hidden">
-                    <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Photography</Badge>
-                    <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
+            <div className="flex h-full flex-col gap-4 lg:gap-6">
+              <div className="space-y-3 lg:space-y-4 lg:self-start">
+                <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
+                  <span className={activeSection?.includes('hobby') ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
+                </h3>
+                <p className="text-base">Camping and photography</p>
+                <div className="flex flex-wrap gap-2 lg:hidden">
+                  <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Photography</Badge>
+                  <Badge className={`${activeSection?.includes('hobby') ? 'bg-rose-200' : 'bg-gray-200'} `}>Camping</Badge>
+                </div>
+              </div>
+              <div className="grid min-h-[200px] flex-1 grid-cols-3 gap-2">
+                <div className="grid min-h-0 grid-rows-[2fr_3fr] gap-2">
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-14.jpeg" alt="Misty mountain above a forest" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                  </div>
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-17.jpeg" alt="Two silhouettes by the water at sunset" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
                   </div>
                 </div>
-                <div className="grid min-h-[200px] flex-1 grid-cols-3 gap-2">
-                  <div className="grid min-h-0 grid-rows-[2fr_3fr] gap-2">
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-14.jpeg" alt="Misty mountain above a forest" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-17.jpeg" alt="Two silhouettes by the water at sunset" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
+                <div className="grid min-h-0 grid-rows-[3fr_2fr] gap-2">
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-3.jpeg" alt="Deer sculpture outside a lodge" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
                   </div>
-                  <div className="grid min-h-0 grid-rows-[3fr_2fr] gap-2">
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-3.jpeg" alt="Deer sculpture outside a lodge" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-20.jpeg" alt="Badlands under a cloudy sky" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-20.jpeg" alt="Badlands under a cloudy sky" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
                   </div>
-                  <div className="grid min-h-0 grid-rows-[5fr_4fr] gap-2">
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-16.jpeg" alt="Dog sitting in the grass" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
-                    <div className="relative min-h-0 overflow-hidden rounded-lg">
-                      <Image src="/hobby-19.jpeg" alt="People on a lakeshore" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
-                    </div>
+                </div>
+                <div className="grid min-h-0 grid-rows-[5fr_4fr] gap-2">
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-16.jpeg" alt="Dog sitting in the grass" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
+                  </div>
+                  <div className="relative min-h-0 overflow-hidden rounded-lg">
+                    <Image src="/hobby-19.jpeg" alt="People on a lakeshore" fill sizes="(min-width: 1024px) 10vw, 30vw" className="object-cover" />
                   </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         {/* Miscellaneous Section*/}

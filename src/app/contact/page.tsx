@@ -24,8 +24,12 @@ export default function DemoPage() {
           <div className="flex flex-col gap-8 justify-center items-center w-full max-w-full">
             <h1 className="text-4xl lg:text-5xl font-normal text-center px-4">Let&rsquo;s create thoughtful experiences.</h1>
             <div className="w-full max-w-full px-4">
-              <Button className="flex items-center gap-2 group w-full justify-center" variant="contact">
-                <a href="mailto:jess@jessicacheng.studio" className="text-secondary group-hover:text-[#00D3CF] text-xl sm:text-2xl lg:text-3xl font-semibold break-all text-center">
+              <Button
+                asChild
+                variant="contact"
+                className="flex w-full items-center justify-center gap-2 break-all text-center text-xl font-semibold text-secondary hover:text-[#00D3CF] sm:text-2xl lg:text-3xl"
+              >
+                <a href="mailto:jess@jessicacheng.studio">
                   jess@jessicacheng.studio
                 </a>
               </Button>

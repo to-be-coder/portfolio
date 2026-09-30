@@ -185,7 +185,7 @@ export default function Header() {
           <HamburgerButton active={mobileMenuOpen} onToggle={(active) => setMobileMenuOpen(active)} className="h-12 w-12 [&_span]:bg-gray-700 hover:bg-gray-100" />
         </div>
 
-        <div className="absolute left-1/2 flex -translate-x-1/2 cursor-pointer sm:static sm:translate-x-0">
+        <div className="absolute left-1/2 flex -translate-x-1/2 sm:static sm:translate-x-0">
           <Link href="/" className="flex items-center gap-1">
             <p className="text-lg font-semibold font-['Helvetica_Neue'] -m-1.5 p-1.5">Jessica Cheng</p>
           </Link>

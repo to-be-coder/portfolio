@@ -51,14 +51,12 @@ export interface CallToActionButtonProps extends Omit<ButtonProps, 'children' | 
 }
 
 const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButtonProps>(({ className, size, children, arrowColor = 'text-black', asChild, ...props }, ref) => {
-  const [isHovered, setIsHovered] = React.useState(false)
-
   const iconElement = (
-    <span className={cn('flex items-center justify-center rounded-full transition-all duration-300 shrink-0 overflow-visible', isHovered ? 'w-6 h-6 bg-white' : 'w-2 h-2 bg-white')}>
-      <span
-        className={cn('text-black [&_svg]:w-3 [&_svg]:h-3 ease-out', isHovered ? 'translate-x-0 opacity-100 transition-all duration-500' : '-translate-x-[200%] opacity-0 transition-all duration-200')}
-      >
-        <ArrowRight strokeWidth={2.5} className={arrowColor} />
+    <span className="flex h-6 w-6 shrink-0 items-center justify-center" aria-hidden="true">
+      <span className="flex h-2 w-2 items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-300 group-hover:h-6 group-hover:w-6">
+        <span className="-translate-x-full text-black opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100 group-hover:duration-500 [&_svg]:h-3 [&_svg]:w-3">
+          <ArrowRight strokeWidth={2.5} className={arrowColor} />
+        </span>
       </span>
     </span>
   )
@@ -69,22 +67,12 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
       <Button
         ref={ref}
         size={size}
-        className={cn('hover:pl-2 group relative rounded-full bg-black text-white transition-all duration-300 hover:bg-black hover:text-white', className)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        className={cn('group relative rounded-full bg-black pl-2 text-white transition-colors duration-300 hover:bg-black hover:text-white', className)}
         asChild={asChild}
         {...props}
       >
         {React.cloneElement(child, {
           className: cn('inline-flex items-center gap-2 leading-none', child.props.className),
-          onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
-            setIsHovered(true)
-            child.props.onMouseEnter?.(e)
-          },
-          onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
-            setIsHovered(false)
-            child.props.onMouseLeave?.(e)
-          },
           children: (
             <>
               {iconElement}
@@ -101,8 +89,6 @@ const CallToActionButton = React.forwardRef<HTMLButtonElement, CallToActionButto
       ref={ref}
       size={size}
       className={cn('group relative rounded-full bg-gray-200 text-black transition-all duration-300 hover:bg-black hover:text-white leading-none', className)}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       {...props}
     >
       {iconElement}
