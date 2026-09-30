@@ -76,12 +76,12 @@ export default function Home() {
         {/* Thunderbolt */}
         <div
           ref={thunderboltRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'thunderbolt' ? 'bg-purple-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/thunderbolt" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
+              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'thunderbolt' ? 'bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent' : ''}>Thunderbolt</span>
                 </h3>
@@ -94,8 +94,8 @@ export default function Home() {
                   <Badge className={`${activeSection === 'thunderbolt' ? 'bg-purple-200' : 'bg-gray-200'} `}>Agent Skills</Badge>
                 </div>
               </div>
-              <div className="flex items-center justify-center lg:justify-end lg:self-end mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[460px]">
-                <div className="relative max-h-full max-w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '800 / 518' }}>
+              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+                <div className="relative w-full overflow-hidden rounded-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '800 / 518' }}>
                   <PausableGif
                     src="/thunderbolt-demo.gif"
                     posterSrc="/thunderbolt-demo-poster.png"
@@ -112,12 +112,12 @@ export default function Home() {
         {/* Peasy */}
         <div
           ref={peasyRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
-            ${activeSection === 'peasy' ? 'bg-emerald-50' : 'bg-gray-100/80 '}`}
+          className={`group relative overflow-hidden rounded-3xl bg-gray-100/80 p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[500px] lg:p-8
+            ${activeSection === 'peasy' ? 'lg:bg-emerald-50' : 'lg:bg-gray-100/80'}`}
         >
           <a href="/peasy" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
+              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'peasy' ? 'bg-gradient-to-r from-emerald-600 to-lime-500 bg-clip-text text-transparent' : ''}>Peasy</span>
                 </h3>
@@ -130,7 +130,11 @@ export default function Home() {
                   <Badge className={`${activeSection === 'peasy' ? 'bg-emerald-200' : 'bg-gray-200'} `}>0 → 1</Badge>
                 </div>
               </div>
-              <div className="relative mt-8 flex h-[330px] items-center justify-center overflow-hidden rounded-3xl bg-[#15211a] lg:mt-0 lg:h-[460px] lg:w-2/3">
+              <div className="mt-5 grid w-full grid-cols-[minmax(0,3fr)_minmax(0,1fr)] items-end gap-2 lg:hidden">
+                <Image src="/peasy-web-shopping-list.png" alt="Peasy web shopping workspace" width={1440} height={700} className="h-auto w-full rounded-xl shadow-md" />
+                <Image src="/peasy-plan-screen.png" alt="Peasy native iOS meal planner" width={1206} height={2622} className="h-auto w-full rounded-xl shadow-md" />
+              </div>
+              <div className="relative mt-8 hidden h-[330px] items-center justify-center overflow-hidden rounded-3xl bg-[#15211a] lg:mt-0 lg:flex lg:h-[460px] lg:w-2/3">
                 <Image src="/peasy-broccoli.png" alt="" width={640} height={640} aria-hidden className="absolute -right-20 -top-20 w-64 rotate-12 opacity-75" />
                 <div className="relative z-10 w-full px-4 md:px-8">
                   <div className="overflow-hidden rounded-xl bg-zinc-950 p-1.5 shadow-2xl ring-1 ring-white/20">
@@ -153,12 +157,12 @@ export default function Home() {
         {/* Careerbot */}
         <div
           ref={careerbotRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'careerbot' ? 'bg-indigo-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/careerbot" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
+              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'careerbot' ? 'bg-gradient-to-r from-indigo-500 to-violet-600 bg-clip-text text-transparent' : ''}>Careerbot</span>
                 </h3>
@@ -170,8 +174,8 @@ export default function Home() {
                   <Badge className={`${activeSection === 'careerbot' ? 'bg-indigo-200' : 'bg-gray-200'} `}>0 → 1</Badge>
                 </div>
               </div>
-              <div className="flex items-center justify-center lg:justify-end lg:self-end mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[460px]">
-                <div className="relative max-h-full max-w-full rounded-2xl overflow-hidden ring-1 ring-black/10 shadow-2xl" style={{ aspectRatio: '1200 / 656' }}>
+              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-end">
+                <div className="relative w-full overflow-hidden rounded-2xl ring-1 ring-black/10 shadow-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '1200 / 656' }}>
                   <PausableGif
                     src="/careerbot-demo-latest.gif"
                     posterSrc="/careerbot-demo-poster-latest.png"
@@ -188,12 +192,12 @@ export default function Home() {
         {/* Gridland */}
         <div
           ref={gridlandRef}
-          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-8 min-h-[500px] transition-all duration-300 hover:scale-[1.02]
+          className={`group relative overflow-hidden rounded-3xl backdrop-blur-sm p-5 sm:p-6 lg:p-8 lg:min-h-[500px] transition-all duration-300 hover:scale-[1.02]
             ${activeSection === 'gridland' ? 'bg-pink-50' : 'bg-gray-100/80 '}`}
         >
           <a href="/gridland" className="w-full h-full">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8 h-full">
-              <div className="space-y-4 lg:w-1/3 lg:self-start">
+              <div className="space-y-3 lg:space-y-4 lg:w-1/3 lg:self-start">
                 <h3 className="text-4xl font-bold">
                   <span className={activeSection === 'gridland' ? 'bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent' : ''}>gridland</span>
                 </h3>
@@ -205,8 +209,8 @@ export default function Home() {
                   <Badge className={`${activeSection === 'gridland' ? 'bg-pink-200' : 'bg-gray-200'} `}>TUI</Badge>
                 </div>
               </div>
-              <div className="flex items-center justify-center lg:justify-start lg:self-end mt-4 lg:mt-0 lg:w-2/3 relative h-[300px] lg:h-[460px]">
-                <div className="relative max-h-full max-w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '800 / 529' }}>
+              <div className="relative mt-5 flex w-full items-center justify-center lg:mt-0 lg:h-[460px] lg:w-2/3 lg:self-end lg:justify-start">
+                <div className="relative w-full overflow-hidden rounded-2xl lg:w-auto lg:max-h-full lg:max-w-full" style={{ aspectRatio: '800 / 529' }}>
                   <PausableGif
                     src="/gridland-demo.gif"
                     posterSrc="/gridland-demo-poster.png"
@@ -224,12 +228,12 @@ export default function Home() {
           {/* Project Vision Track */}
           <div
             ref={visionTrackRef}
-            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('visionTrack') ? 'bg-blue-50' : 'bg-gray-100/80'}`}
           >
             <a href="/vision-track" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6">
-                <div className="space-y-4 lg:self-start">
+              <div className="flex h-full flex-col gap-4 lg:gap-6">
+                <div className="space-y-3 lg:space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('visionTrack') ? 'bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent' : ''}>Vision Track</span>
                   </h3>
@@ -243,7 +247,7 @@ export default function Home() {
                     <Badge className={`${activeSection?.includes('visionTrack') ? 'bg-blue-200' : 'bg-gray-200'} `}>SaaS</Badge>
                   </div>
                 </div>
-                <div className="-mb-6 -mr-6 mt-auto flex items-end justify-end">
+                <div className="-mb-5 -mr-5 mt-auto flex items-end justify-end sm:-mb-6 sm:-mr-6">
                   <Image src="/vision-track-cover.png" alt="Vision Track Project" className="block h-auto w-[90%]" width={1280} height={914} />
                 </div>
               </div>
@@ -253,12 +257,12 @@ export default function Home() {
           {/* Lilypad */}
           <div
             ref={lilypadRef}
-            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('lilypad') ? 'bg-[#fff4ea]' : 'bg-gray-100/80'}`}
           >
             <a href="/lilypad" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6">
-                <div className="space-y-4 lg:self-start">
+              <div className="flex h-full flex-col gap-4 lg:gap-6">
+                <div className="space-y-3 lg:space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('lilypad') ? 'bg-gradient-to-r from-[#ff9f56] to-[#ff5003] bg-clip-text text-transparent' : ''}>Lilypad</span>
                   </h3>
@@ -279,12 +283,12 @@ export default function Home() {
           {/* Other Fun Works */}
           <div
             ref={hobbyRef}
-            className={`group relative min-h-[380px] overflow-hidden rounded-3xl p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]
+            className={`group relative overflow-hidden rounded-3xl p-5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] sm:p-6 lg:min-h-[380px]
               ${activeSection?.includes('hobby') ? 'bg-rose-50' : 'bg-gray-100/80'}`}
           >
             <a href="/hobby" className="block h-full w-full">
-              <div className="flex h-full flex-col gap-6">
-                <div className="space-y-4 lg:self-start">
+              <div className="flex h-full flex-col gap-4 lg:gap-6">
+                <div className="space-y-3 lg:space-y-4 lg:self-start">
                   <h3 className="text-3xl font-bold lg:text-2xl xl:text-3xl">
                     <span className={activeSection?.includes('hobby') ? 'bg-gradient-to-r from-rose-400 to-rose-500 bg-clip-text text-transparent' : ''}>Outside of Work</span>
                   </h3>
