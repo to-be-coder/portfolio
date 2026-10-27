@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict'
-import { execFileSync, execSync } from 'node:child_process'
-import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { execFileSync } from 'node:child_process'
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 // Verify the repository default, without passing --ignore-scripts. Both
 // fixtures are local and only attempt to write an inert marker in this temp dir.
@@ -30,17 +31,13 @@ try {
   assert.equal(existsSync(join(fixture, 'dependency-script-ran')), false, 'Trusted dependency install script ran despite repository policy')
   console.log('Repository policy blocks project and trusted-dependency lifecycle scripts.')
 
-  // Exercise the real deployment bootstrap from a cold npm cache. Its narrow
+  // Exercise the deployment bootstrap from a cold npm cache. Its narrow
   // exception permits Bun's own setup, while Bun must still block app scripts.
   // Remove bunfig so it cannot mask a missing --ignore-scripts in the command.
   rmSync(join(fixture, 'node_modules'), { recursive: true, force: true })
   rmSync(join(fixture, 'bunfig.toml'))
-  mkdirSync(join(fixture, 'scripts'))
-  copyFileSync(new URL('./vercel-bun.mjs', import.meta.url), join(fixture, 'scripts/vercel-bun.mjs'))
-  copyFileSync(new URL('../.bun-version', import.meta.url), join(fixture, '.bun-version'))
   writeFileSync(join(fixture, '.npmrc'), 'ignore-scripts=true\n')
-  const { installCommand } = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'))
-  execSync(installCommand, {
+  execFileSync(process.execPath, [fileURLToPath(new URL('./vercel-bun.mjs', import.meta.url)), 'install'], {
     cwd: fixture,
     env: {
       ...env,
@@ -50,10 +47,10 @@ try {
     timeout: 90000,
     stdio: 'pipe',
   })
-  assert.ok(existsSync(join(fixture, 'node_modules/portfolio-policy-dependency/package.json')), 'Deployment command must install the fixture dependency')
-  assert.equal(existsSync(join(fixture, 'project-script-ran')), false, 'Deployment command ran the project install script')
-  assert.equal(existsSync(join(fixture, 'dependency-script-ran')), false, 'Deployment command ran the trusted dependency install script')
-  console.log('Vercel command bootstraps Bun while blocking project and trusted-dependency lifecycle scripts.')
+  assert.ok(existsSync(join(fixture, 'node_modules/portfolio-policy-dependency/package.json')), 'Deployment bootstrap must install the fixture dependency')
+  assert.equal(existsSync(join(fixture, 'project-script-ran')), false, 'Deployment bootstrap ran the project install script')
+  assert.equal(existsSync(join(fixture, 'dependency-script-ran')), false, 'Deployment bootstrap ran the trusted dependency install script')
+  console.log('Deployment bootstrap installs Bun while blocking project and trusted-dependency lifecycle scripts.')
 } finally {
   rmSync(fixture, { recursive: true, force: true })
 }
