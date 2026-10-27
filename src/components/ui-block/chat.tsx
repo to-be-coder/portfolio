@@ -19,7 +19,17 @@ import { FormEvent, KeyboardEvent, type CSSProperties, useCallback, useEffect, u
 import { Streamdown } from 'streamdown'
 
 const CHAT_STORAGE_KEY = 'jessica-portfolio-chat-v2'
-const chatTransport = new DefaultChatTransport({ api: '/api/chat' })
+const chatTransport = new DefaultChatTransport<PortfolioChatMessage>({
+  api: '/api/chat',
+  prepareSendMessagesRequest: ({ messages }) => ({
+    body: {
+      messages: messages.flatMap((message) => {
+        const text = message.parts.filter((part) => part.type === 'text').map((part) => part.text).join('\n')
+        return text ? [{ id: message.id, role: message.role, parts: [{ type: 'text', text }] }] : []
+      }),
+    },
+  }),
+})
 const streamdownPlugins = { code }
 
 const starterPrompts = [

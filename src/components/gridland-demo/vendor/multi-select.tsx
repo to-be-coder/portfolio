@@ -1,9 +1,9 @@
-// @ts-nocheck
 // Vendored from @gridland/ui — packages/ui/components/multi-select/multi-select.tsx
-import { useReducer, useMemo, useRef } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useReducer, useMemo, useRef } from 'react'
 import { textStyle } from './text-style'
 import { useTheme } from './theme'
-import { useInteractive } from '@gridland/utils'
+import { useInteractive, type KeyEvent } from '@gridland/utils'
+import { Box, Span, Text } from './primitives'
 
 export type MultiSelectItem<V> = {
   key?: string
@@ -92,7 +92,7 @@ export function MultiSelect<V>({
   autoFocus,
 }: MultiSelectProps<V>) {
   const theme = useTheme()
-  const interactive = useInteractive({
+  const { onKey, focusRef } = useInteractive({
     id: focusId,
     autoFocus,
     disabled,
@@ -116,9 +116,11 @@ export function MultiSelect<V>({
 
   const isControlled = controlledSelected !== undefined
   const controlledRef = useRef(isControlled)
-  if (controlledRef.current !== isControlled) {
-    console.warn('MultiSelect: switching between controlled and uncontrolled is not supported.')
-  }
+  useEffect(() => {
+    if (controlledRef.current !== isControlled) {
+      console.warn('MultiSelect: switching between controlled and uncontrolled is not supported.')
+    }
+  }, [isControlled])
 
   const [state, dispatch] = useReducer(reducer<V>, {
     cursor: 0,
@@ -161,13 +163,15 @@ export function MultiSelect<V>({
   const cursor = totalPositions > 0 ? Math.min(state.cursor, totalPositions - 1) : 0
 
   const cursorRef = useRef(cursor)
-  cursorRef.current = cursor
   const currentSelectedRef = useRef(currentSelected)
-  currentSelectedRef.current = currentSelected
   const selectableItemsRef = useRef(selectableItems)
-  selectableItemsRef.current = selectableItems
   const submittedRef = useRef(state.submitted)
-  submittedRef.current = state.submitted
+  useLayoutEffect(() => {
+    cursorRef.current = cursor
+    currentSelectedRef.current = currentSelected
+    selectableItemsRef.current = selectableItems
+    submittedRef.current = state.submitted
+  }, [cursor, currentSelected, selectableItems, state.submitted])
 
   const isOnSubmit = hasSubmitRow && cursor === selectableItems.length
   const visibleCount = limit ?? VISIBLE
@@ -175,132 +179,135 @@ export function MultiSelect<V>({
   const scrollOffset = Math.max(0, Math.min(cursorRowIndex - Math.floor(visibleCount / 2), flatRows.length - visibleCount))
   const visibleRows = flatRows.slice(scrollOffset, scrollOffset + visibleCount)
 
-  const setSelected = (values: V[]) => {
+  const setSelected = useCallback((values: V[]) => {
     if (!isControlled) dispatch({ type: 'SET_SELECTED', values })
     onChange?.(values)
-  }
+  }, [isControlled, onChange])
 
   const diamondColor = invalid ? theme.error : disabled ? theme.muted : theme.accent
 
-  interactive.onKey((event: any) => {
-    if (submittedRef.current || disabled) return
-    const sel = currentSelectedRef.current
-    const selItems = selectableItemsRef.current
-    const hasSubmit = allowEmpty || sel.size > 0
-    const total = selItems.length + (hasSubmit ? 1 : 0)
+  useLayoutEffect(() => {
+    onKey((event: KeyEvent) => {
+      if (submittedRef.current || disabled) return
+      const sel = currentSelectedRef.current
+      const selItems = selectableItemsRef.current
+      const hasSubmit = allowEmpty || sel.size > 0
+      const total = selItems.length + (hasSubmit ? 1 : 0)
 
-    const move = (direction: 1 | -1) => {
-      let next = cursorRef.current
-      for (let i = 0; i < total; i++) {
-        next += direction
-        if (next < 0) next = total - 1
-        if (next >= total) next = 0
-        if (next >= selItems.length || !selItems[next]?.item.disabled) break
-      }
-      cursorRef.current = next
-      dispatch({ type: 'SET_CURSOR', cursor: next })
-    }
-
-    if (event.name === 'up' || event.name === 'k') {
-      move(-1)
-      event.preventDefault?.()
-    } else if (event.name === 'down' || event.name === 'j') {
-      move(1)
-      event.preventDefault?.()
-    } else if (event.name === 'return' || event.name === 'space') {
-      const onSubmitRow = hasSubmit && cursorRef.current === selItems.length
-      if (onSubmitRow) {
-        submittedRef.current = true
-        dispatch({ type: 'SUBMIT' })
-        onSubmit?.(Array.from(sel))
-      } else {
-        const current = selItems[cursorRef.current]
-        if (current && !current.item.disabled) {
-          const isDeselecting = sel.has(current.item.value)
-          if (!isDeselecting && maxCount !== undefined && sel.size >= maxCount) return
-          const next = new Set(sel)
-          if (isDeselecting) next.delete(current.item.value)
-          else next.add(current.item.value)
-          setSelected(Array.from(next))
+      const move = (direction: 1 | -1) => {
+        let next = cursorRef.current
+        for (let i = 0; i < total; i++) {
+          next += direction
+          if (next < 0) next = total - 1
+          if (next >= total) next = 0
+          if (next >= selItems.length || !selItems[next]?.item.disabled) break
         }
+        cursorRef.current = next
+        dispatch({ type: 'SET_CURSOR', cursor: next })
       }
-      event.preventDefault?.()
-    } else if (event.name === 'a' && enableSelectAll) {
-      const enabledValues = items.filter((i) => !i.disabled).map((i) => i.value)
-      setSelected(maxCount !== undefined ? enabledValues.slice(0, maxCount) : enabledValues)
-      event.preventDefault?.()
-    } else if (event.name === 'x' && enableClear) {
-      setSelected([])
-      event.preventDefault?.()
-    }
-  })
+
+      if (event.name === 'up' || event.name === 'k') {
+        move(-1)
+        event.preventDefault?.()
+      } else if (event.name === 'down' || event.name === 'j') {
+        move(1)
+        event.preventDefault?.()
+      } else if (event.name === 'return' || event.name === 'space') {
+        const onSubmitRow = hasSubmit && cursorRef.current === selItems.length
+        if (onSubmitRow) {
+          submittedRef.current = true
+          dispatch({ type: 'SUBMIT' })
+          onSubmit?.(Array.from(sel))
+        } else {
+          const current = selItems[cursorRef.current]
+          if (current && !current.item.disabled) {
+            const isDeselecting = sel.has(current.item.value)
+            if (!isDeselecting && maxCount !== undefined && sel.size >= maxCount) return
+            const next = new Set(sel)
+            if (isDeselecting) next.delete(current.item.value)
+            else next.add(current.item.value)
+            setSelected(Array.from(next))
+          }
+        }
+        event.preventDefault?.()
+      } else if (event.name === 'a' && enableSelectAll) {
+        const enabledValues = items.filter((i) => !i.disabled).map((i) => i.value)
+        setSelected(maxCount !== undefined ? enabledValues.slice(0, maxCount) : enabledValues)
+        event.preventDefault?.()
+      } else if (event.name === 'x' && enableClear) {
+        setSelected([])
+        event.preventDefault?.()
+      }
+    })
+    return () => onKey(() => {})
+  }, [onKey, disabled, allowEmpty, onSubmit, maxCount, setSelected, enableSelectAll, enableClear, items])
 
   if (state.submitted) {
     const selectedItems = items.filter((i) => currentSelected.has(i.value))
     return (
-      <box ref={interactive.focusRef} flexDirection="column">
-        <text>
-          <span style={textStyle({ fg: theme.success })}>{'◆ '}</span>
-          <span style={textStyle({ bold: true, fg: theme.foreground })}>{title}</span>
-        </text>
+      <Box ref={focusRef} flexDirection="column">
+        <Text>
+          <Span style={textStyle({ fg: theme.success })}>{'◆ '}</Span>
+          <Span style={textStyle({ bold: true, fg: theme.foreground })}>{title}</Span>
+        </Text>
         {selectedItems.map((item) => (
-          <text key={item.key ?? String(item.value)}>
-            <span style={textStyle({ fg: theme.success })}>{BAR + ' '}</span>
-            <span>{'  '}</span>
-            <span style={textStyle({ fg: theme.success })}>{CHECKED + ' '}</span>
-            <span style={textStyle({ fg: theme.foreground })}>{item.label}</span>
-          </text>
+          <Text key={item.key ?? String(item.value)}>
+            <Span style={textStyle({ fg: theme.success })}>{BAR + ' '}</Span>
+            <Span>{'  '}</Span>
+            <Span style={textStyle({ fg: theme.success })}>{CHECKED + ' '}</Span>
+            <Span style={textStyle({ fg: theme.foreground })}>{item.label}</Span>
+          </Text>
         ))}
-        <text> </text>
-        <text>
-          <span style={textStyle({ dim: true, fg: theme.muted })}>
+        <Text> </Text>
+        <Text>
+          <Span style={textStyle({ dim: true, fg: theme.muted })}>
             {selectedItems.length + ' selected — ' + submittedStatus}
-          </span>
-        </text>
-      </box>
+          </Span>
+        </Text>
+      </Box>
     )
   }
 
   const hasItems = selectableItems.length > 0
 
   return (
-    <box ref={interactive.focusRef} flexDirection="column">
-      <text>
-        <span style={textStyle({ fg: diamondColor, dim: disabled })}>{'◆ '}</span>
-        <span style={textStyle({ bold: true, dim: disabled, fg: theme.foreground })}>{title}</span>
-        {required && <span style={textStyle({ fg: theme.error })}>{' *'}</span>}
+    <Box ref={focusRef} flexDirection="column">
+      <Text>
+        <Span style={textStyle({ fg: diamondColor, dim: disabled })}>{'◆ '}</Span>
+        <Span style={textStyle({ bold: true, dim: disabled, fg: theme.foreground })}>{title}</Span>
+        {required && <Span style={textStyle({ fg: theme.error })}>{' *'}</Span>}
         {maxCount !== undefined && (
-          <span style={textStyle({ dim: true, fg: theme.muted })}>{` (${currentSelected.size}/${maxCount})`}</span>
+          <Span style={textStyle({ dim: true, fg: theme.muted })}>{` (${currentSelected.size}/${maxCount})`}</Span>
         )}
-      </text>
+      </Text>
       {invalid && (
-        <text>
-          <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-          <span style={textStyle({ fg: theme.error })}>{'  ' + errorMessage}</span>
-        </text>
+        <Text>
+          <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+          <Span style={textStyle({ fg: theme.error })}>{'  ' + errorMessage}</Span>
+        </Text>
       )}
       {!hasItems && placeholder && (
-        <text>
-          <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-          <span style={textStyle({ dim: true, fg: theme.muted })}>{'  ' + placeholder}</span>
-        </text>
+        <Text>
+          <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+          <Span style={textStyle({ dim: true, fg: theme.muted })}>{'  ' + placeholder}</Span>
+        </Text>
       )}
       {visibleRows.map((row, i) => {
         if (row.type === 'separator') {
           const flatIndex = scrollOffset + i
           return (
-            <text key={'sep-' + flatIndex}>
-              <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-              <span style={textStyle({ fg: theme.muted })}>{'  ' + SEPARATOR.repeat(20)}</span>
-            </text>
+            <Text key={'sep-' + flatIndex}>
+              <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+              <Span style={textStyle({ fg: theme.muted })}>{'  ' + SEPARATOR.repeat(20)}</Span>
+            </Text>
           )
         }
         if (row.type === 'group') {
           return (
-            <text key={'group-' + row.label}>
-              <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-              <span style={textStyle({ bold: true, fg: theme.muted })}>{' ' + row.label}</span>
-            </text>
+            <Text key={'group-' + row.label}>
+              <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+              <Span style={textStyle({ bold: true, fg: theme.muted })}>{' ' + row.label}</Span>
+            </Text>
           )
         }
         const { item, index: itemIndex } = row
@@ -316,28 +323,28 @@ export function MultiSelect<V>({
               : theme.foreground
 
         return (
-          <text key={item.key ?? String(item.value)}>
-            <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-            <span style={textStyle({ fg: isHighlighted ? resolvedHighlight : undefined })}>
+          <Text key={item.key ?? String(item.value)}>
+            <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+            <Span style={textStyle({ fg: isHighlighted ? resolvedHighlight : undefined })}>
               {(isHighlighted ? CURSOR : ' ') + ' '}
-            </span>
-            <span style={textStyle({ fg: isSelected && !isItemDisabled ? resolvedCheckbox : theme.muted, dim: isItemDisabled })}>
+            </Span>
+            <Span style={textStyle({ fg: isSelected && !isItemDisabled ? resolvedCheckbox : theme.muted, dim: isItemDisabled })}>
               {(isSelected ? CHECKED : UNCHECKED) + ' '}
-            </span>
-            <span style={textStyle({ fg: itemColor, dim: isItemDisabled })}>{item.label}</span>
-          </text>
+            </Span>
+            <Span style={textStyle({ fg: itemColor, dim: isItemDisabled })}>{item.label}</Span>
+          </Text>
         )
       })}
       {hasSubmitRow && (
-        <text>
-          <span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</span>
-          <span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : undefined })}>
+        <Text>
+          <Span style={textStyle({ fg: theme.muted })}>{BAR + ' '}</Span>
+          <Span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : undefined })}>
             {(isOnSubmit ? CURSOR : ' ') + ' '}
-          </span>
-          <span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : theme.muted })}>{'↳ '}</span>
-          <span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : theme.foreground })}>{'Submit'}</span>
-        </text>
+          </Span>
+          <Span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : theme.muted })}>{'↳ '}</Span>
+          <Span style={textStyle({ fg: isOnSubmit ? resolvedHighlight : theme.foreground })}>{'Submit'}</Span>
+        </Text>
       )}
-    </box>
+    </Box>
   )
 }

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
 
 type NavigationProps = {
   items: {
@@ -15,13 +14,7 @@ type NavigationProps = {
 
 export default function Navigation({ items, defaultPage }: NavigationProps) {
   const pathname = usePathname()
-  const [currentPage, setCurrentPage] = useState('')
-
-  useEffect(() => {
-    // Extract the last segment from the pathname
-    const segment = pathname?.split('/').pop() || defaultPage
-    setCurrentPage(segment)
-  }, [pathname, defaultPage])
+  const currentPage = pathname?.split('/').pop() || defaultPage
 
   return (
     <nav>

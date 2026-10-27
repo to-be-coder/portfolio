@@ -138,7 +138,9 @@ function ScrollSpyRoot(props: ScrollSpyRootProps) {
           onValueChangeRef.current?.(value)
         }
 
-        store.notify()
+        for (const callback of listenersRef.current) {
+          callback()
+        }
       },
       notify: () => {
         for (const cb of listenersRef.current) {

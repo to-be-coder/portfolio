@@ -1,12 +1,12 @@
 'use client'
 
 import { ChipTabs } from '@/components/ui/tabs'
-import type { ProcessedPageData } from '@/lib/notion'
+import type { ArticleSummary } from '@/lib/articles'
 import { useMemo, useState } from 'react'
-import NotionCard from './notion-card'
+import ContentCard from './content-card'
 
-type FilteredNotionPostsProps = {
-  posts: ProcessedPageData[]
+type FilteredPostsProps = {
+  posts: readonly ArticleSummary[]
   tabs: string[]
 }
 
@@ -51,16 +51,14 @@ const designSystemPosts: readonly Post[] = [
   },
 ] as const
 
-export default function FilteredNotionPosts({ posts, tabs }: FilteredNotionPostsProps) {
+export default function FilteredPosts({ posts, tabs }: FilteredPostsProps) {
   const [selectedTab, setSelectedTab] = useState(() => tabs?.[0] || 'All')
 
   const filteredPosts = useMemo(() => {
     if (selectedTab === 'Works' || selectedTab === 'Design System') {
       return []
     }
-    return posts.filter((post): post is Post => {
-      if (!post.path || !post.title) return false
-
+    return posts.filter((post) => {
       if (selectedTab === 'All') {
         return true
       }
@@ -112,10 +110,10 @@ export default function FilteredNotionPosts({ posts, tabs }: FilteredNotionPosts
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {displayItems.length === 0 ? (
-          <div className="col-span-full py-8 text-center text-gray-500">Currently Working on it.</div>
+          <div className="col-span-full py-8 text-center text-gray-500">No articles in this category yet.</div>
         ) : (
           displayItems.map((item, index) => (
-            <NotionCard key={item.path} title={item.title} url={item.path} category={item.category} subtitle={item.subtitle} index={index} href={item.isProject ? `/${item.path}` : undefined} />
+            <ContentCard key={item.path} title={item.title} url={item.path} category={item.category} subtitle={item.subtitle} index={index} href={item.isProject ? `/${item.path}` : undefined} />
           ))
         )}
       </div>

@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { Check } from 'lucide-react'
+import Image from 'next/image'
 
 type DataModelCard = {
   name: string
@@ -249,14 +250,14 @@ export default function ThunderboltPage() {
             <ProjectSectionTitle dotColor="text-purple-500">Final Design</ProjectSectionTitle>
             <ProjectContent>
               <VerticalStack>
-                <img src="/thunderbolt-final-1.png" alt="Skills settings page with the meeting-notes skill selected and the starter-skills welcome banner" className="w-full h-auto rounded-xl" />
+                <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-1.png" alt="Skills settings page with the meeting-notes skill selected and the starter-skills welcome banner" className="w-full h-auto rounded-xl" />
                 <HorizontalStack mobileCols={1} desktopCols={2}>
-                  <img src="/thunderbolt-final-2.png" alt="Marketplace with the tast-triage skill detail panel open" className="w-full h-auto rounded-xl" />
-                  <img src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="w-full h-auto rounded-xl" />
+                  <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-2.png" alt="Marketplace with the tast-triage skill detail panel open" className="w-full h-auto rounded-xl" />
+                  <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="w-full h-auto rounded-xl" />
                 </HorizontalStack>
                 <HorizontalStack mobileCols={1} desktopCols={2}>
-                  <img src="/thunderbolt-final-4.png" alt="Chat input with the slash skill picker open" className="w-full h-auto rounded-xl" />
-                  <img src="/thunderbolt-final-5.png" alt="Reorder skills modal above the chat input" className="w-full h-auto rounded-xl" />
+                  <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-4.png" alt="Chat input with the slash skill picker open" className="w-full h-auto rounded-xl" />
+                  <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-5.png" alt="Reorder skills modal above the chat input" className="w-full h-auto rounded-xl" />
                 </HorizontalStack>
               </VerticalStack>
             </ProjectContent>
@@ -469,7 +470,7 @@ export default function ThunderboltPage() {
                       </>
                     }
                     right={
-                      <img src="/thunderbolt-final-2.png" alt="Marketplace with the tast-triage skill detail panel open" className="flex-1 w-full h-auto rounded-lg" />
+                      <Image unoptimized width={2560} height={1664} src="/thunderbolt-final-2.png" alt="Marketplace with the tast-triage skill detail panel open" className="flex-1 w-full h-auto rounded-lg" />
                     }
                     variant="card"
                     bgColor="bg-gray-100"
@@ -487,7 +488,7 @@ export default function ThunderboltPage() {
                       </>
                     }
                     right={
-                      <img src="/thunderbolt-skill-reference.png" alt="Create Skill form referencing /product-strategy in the instructions" className="flex-1 w-full h-auto rounded-lg" />
+                      <Image unoptimized width={2560} height={1664} src="/thunderbolt-skill-reference.png" alt="Create Skill form referencing /product-strategy in the instructions" className="flex-1 w-full h-auto rounded-lg" />
                     }
                     reverseOnDesktop={true}
                     variant="card"
@@ -505,7 +506,7 @@ export default function ThunderboltPage() {
                       </>
                     }
                     right={
-                      <img src="/thunderbolt-marketplace-update.png" alt="Skills settings showing the marketplace tast-triage skill with version 1.0.0" className="flex-1 w-full h-auto rounded-lg" />
+                      <Image unoptimized width={2560} height={1664} src="/thunderbolt-marketplace-update.png" alt="Skills settings showing the marketplace tast-triage skill with version 1.0.0" className="flex-1 w-full h-auto rounded-lg" />
                     }
                     variant="card"
                     bgColor="bg-gray-100"
@@ -655,7 +656,7 @@ export default function ThunderboltPage() {
                       </div>
                     </>
                   }
-                  right={<img src="/thunderbolt-final-4.png" alt="Chat input with the slash skill picker open" className="flex-1 w-full h-auto rounded-lg" />}
+                  right={<Image unoptimized width={2560} height={1664} src="/thunderbolt-final-4.png" alt="Chat input with the slash skill picker open" className="flex-1 w-full h-auto rounded-lg" />}
                   variant="card"
                   bgColor="bg-gray-100"
                 />
@@ -671,7 +672,7 @@ export default function ThunderboltPage() {
                       </div>
                     </>
                   }
-                  right={<img src="/thunderbolt-skill-reference.png" alt="Create Skill form referencing /product-strategy in the instructions" className="flex-1 w-full h-auto rounded-lg" />}
+                  right={<Image unoptimized width={2560} height={1664} src="/thunderbolt-skill-reference.png" alt="Create Skill form referencing /product-strategy in the instructions" className="flex-1 w-full h-auto rounded-lg" />}
                   variant="card"
                   bgColor="bg-gray-100"
                 />
@@ -689,7 +690,7 @@ export default function ThunderboltPage() {
                       </div>
                     </>
                   }
-                  right={<img src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="flex-1 w-full h-auto rounded-lg" />}
+                  right={<Image unoptimized width={2560} height={1664} src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="flex-1 w-full h-auto rounded-lg" />}
                   reverseOnDesktop={true}
                   variant="card"
                   bgColor="bg-gray-100"
@@ -706,7 +707,7 @@ export default function ThunderboltPage() {
                       </div>
                     </>
                   }
-                  right={<img src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="flex-1 w-full h-auto rounded-lg" />}
+                  right={<Image unoptimized width={2560} height={1664} src="/thunderbolt-final-3.png" alt="Marketplace grid view showing installable skills" className="flex-1 w-full h-auto rounded-lg" />}
                   variant="card"
                   bgColor="bg-gray-100"
                 />

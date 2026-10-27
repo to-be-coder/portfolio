@@ -16,7 +16,7 @@ type Props = {
   stars?: number | null
 }
 
-export default function NotionCard({ title, category, url, subtitle, index, href, external, ctaLabel, stars }: Props) {
+export default function ContentCard({ title, category, url, subtitle, index, href, external, ctaLabel, stars }: Props) {
   const linkHref = href || `/blog/${url}`
   const linkProps = external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
   const CtaIcon = external ? ArrowUpRight : ArrowRight

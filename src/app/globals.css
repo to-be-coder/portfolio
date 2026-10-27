@@ -1,8 +1,21 @@
 @import 'tailwindcss';
 @source "../../node_modules/streamdown/dist/*.js";
 @source "../../node_modules/@streamdown/code/dist/*.js";
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap') layer(utilities);
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap') layer(utilities);
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/WorkSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./fonts/InstrumentSans.ttf') format('truetype');
+}
 /*
   ---break---
 */

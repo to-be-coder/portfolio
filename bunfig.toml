@@ -1,0 +1,6 @@
+[install]
+# Keep everyday local installs and updates under the same policy as CI.
+ignoreScripts = true
+exact = true
+# Missing dependencies must be deliberately installed, never fetched on import.
+auto = "disable"

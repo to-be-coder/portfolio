@@ -1,242 +1,51 @@
-# Jessica Cheng's UX Portfolio
+# Jessica Cheng's portfolio
 
-A modern, responsive portfolio website built with Next.js, showcasing UX design work, projects, and blog content powered by Notion.
+A Next.js App Router portfolio with local case studies, a blog UI for future writing, and a portfolio guide. Pages are prerendered; `/api/chat` is the only custom API route. There is no CMS connection or account system.
 
-## 🚀 Features
+## Local development
 
-- **Project Showcase**: Interactive project pages with detailed case studies
+Use the versions in `.node-version` (Node 24) and `.bun-version` (Bun 1.4). Dependencies are pinned in `package.json` and `bun.lock`.
 
-  - Mozilla (AI Design, Privacy-first)
-  - Vision Track (UX Research, B2B SaaS)
-  - Lilypad (UI Design, Landing Page)
-  - Personal hobbies (Photography, Camping)
+The version files do not switch your shell automatically. Confirm `node --version` and `bun --version` match them before using the commands below. This review used scoped Node 24.22.1 and Bun 1.4.4; it did not update the machine's global Bun installation. For example, on a machine with a patched Node/npm bootstrap, run `npm exec --yes --package=bun@1.4.4 --package=node@24.22.1 -- bun run check` to select the verified toolchain explicitly.
 
-- **Notion Integration**: Blog and content management powered by Notion API
-- **AI Chat**: Interactive chat interface using OpenAI SDK
-- **Responsive Design**: Mobile-first design with smooth animations
-- **Scroll Spy Navigation**: Active section highlighting on scroll
-- **UI Components**: Custom components built with shadcn/ui and Tailwind CSS
+`bunfig.toml` also disables dependency lifecycle scripts and automatic installation on import, and saves new dependencies as exact versions. Deliberate dependency changes still require review and verification.
 
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4.0
-- **UI Components**: shadcn/ui
-- **Animations**: Framer Motion
-- **Content**: Notion API
-- **AI**: OpenAI SDK (Vercel AI SDK)
-- **Package Manager**: Bun
-
-## 📦 Getting Started
-
-### Prerequisites
-
-- [Bun](https://bun.sh) installed on your system
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd portfolio
+```sh
+bun install --frozen-lockfile --ignore-scripts
+bun run dev
 ```
 
-2. Install dependencies:
+No environment variables are needed for the site or the four curated guide prompts. Live AI is disabled by default, even if an API key already exists. Optional settings are documented in `.env.example` and [SECURITY.md](SECURITY.md).
 
-```bash
-bun install
+## Content
+
+- Case studies and the existing design-token article live in `src/app/`.
+- The blog filters and cards remain available. `src/lib/articles.ts` contains an empty, reviewed local article catalog; add plain text paragraphs there when publishing new writing. Unknown article slugs return 404.
+- The guide's public portfolio context lives in `src/app/api/chat/system-message.json`. Never put confidential information or credentials in model context.
+- Images and video are local assets. Remote image optimization is disabled.
+- Fonts are self-hosted in `src/app/fonts/`, with their licenses. Third-party session tracking has been removed.
+
+Changes to career or project facts must also follow the user's Icca maintenance instructions.
+
+## Verification
+
+```sh
+bun run audit
+bun run check
+bunx --no-install playwright install chromium
+bun run test:e2e
 ```
 
-3. Set up environment variables:
+`check` runs ESLint, lint-plugin compatibility fixtures, a disposable install-script policy check, type generation/checking, request-protection tests, and a production build. Browser tests start that production build on loopback port 3100 and check desktop/mobile pages, navigation, chat, security headers, and image restrictions. They disable live AI and need no API secrets.
 
-```bash
-cp .env.example .env.local
-```
+The optional Redis integration test uses a disposable local Redis database 15. See [SECURITY.md](SECURITY.md) before running it.
 
-4. Configure your environment variables (see [Environment Variables](#environment-variables) below)
+## Maintenance and deployment
 
-5. Run the development server:
+GitHub Actions repeats verification on pushes, pull requests, and a weekly schedule. A separate daily advisory check reads the lockfile without installing application dependencies. Dependabot proposes weekly Bun and GitHub Actions updates. These workflows become active after they reach the repository's default branch; they do not merge or deploy updates automatically. Verification installs the exact lockfile with dependency lifecycle scripts disabled and a read-only GitHub token.
 
-```bash
-bun dev
-```
+`vercel.json` pins the Bun executable for install and build, and enforces the frozen lockfile and disabled lifecycle scripts on Vercel. The `node` engine selects the Node 24 runtime; Vercel controls its exact patch version, so confirm it in deployment logs.
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
+Next.js and its ESLint config should be updated together. React stays on the patched 19.2 line while Gridland requires `react-reconciler@0.33.0`. TypeScript 6 is the current compatible line for the lint parser; TypeScript 7 requires a separate tooling migration. ESLint 10 uses the official `@eslint/compat` bridge for the legacy plugin APIs in Next's configuration; all rules remain enabled and representative rules are tested.
 
-## 🔐 Environment Variables
-
-Create a `.env.local` file in the root directory with the following variables:
-
-```env
-# Notion API Configuration
-NOTION_API_KEY=your_notion_api_key
-NOTION_PAGES_DATABASE_ID=your_notion_database_id
-
-# OpenAI Configuration (for chat feature)
-OPENAI_API_KEY=your_openai_api_key
-```
-
-### Getting Notion API Credentials
-
-1. Go to [Notion Integrations](https://www.notion.so/my-integrations)
-2. Create a new integration
-3. Copy the API key
-4. Share your Notion database with the integration
-5. Copy the database ID from the database URL
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── src/
-│   ├── app/                    # Next.js app directory
-│   │   ├── (projects)/        # Project pages route group
-│   │   │   ├── mozilla/
-│   │   │   ├── vision-track/
-│   │   │   ├── lilypad/
-│   │   │   ├── vercel/
-│   │   │   └── hobby/
-│   │   ├── (designs)/         # UI templates route group
-│   │   ├── about/             # About page
-│   │   ├── blog/              # Blog pages
-│   │   ├── contact/           # Contact page
-│   │   ├── api/               # API routes
-│   │   │   └── chat/          # Chat API endpoint
-│   │   └── layout.tsx         # Root layout
-│   ├── components/
-│   │   ├── ui/                # Reusable UI components
-│   │   ├── ui-block/          # Page-specific components
-│   │   ├── demo/              # Demo components
-│   │   └── magicui/           # Magic UI components
-│   └── lib/
-│       ├── notion.ts          # Notion API utilities
-│       ├── utils.ts           # Utility functions
-│       └── compose-refs.ts    # React ref composition
-├── public/                    # Static assets
-└── package.json
-```
-
-## 🎨 Key Components
-
-### UI Components (`src/components/ui/`)
-
-- Accordion
-- Badge
-- Button
-- Card
-- Navigation Menu
-- Scroll Spy
-- Tabs
-- And more...
-
-### Page Components (`src/components/ui-block/`)
-
-- Header with navigation
-- Footer
-- Home Hero Section
-- Project Cards
-- Notion Content Renderer
-- Chat Interface
-- CTA Section
-
-## 🧪 Development
-
-### Available Scripts
-
-```bash
-# Start development server
-bun dev
-
-# Build for production
-bun run build
-
-# Start production server
-bun run start
-
-# Run linter
-bun run lint
-```
-
-### Code Style
-
-- TypeScript strict mode enabled
-- No `any` types allowed
-- Prefer `const` over `let`
-- Use async/await over promises
-- Direct imports (e.g., `useMemo` not `React.useMemo`)
-
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Import your repository in [Vercel](https://vercel.com)
-3. Add your environment variables in the Vercel dashboard
-4. Deploy!
-
-The site will automatically deploy on every push to your main branch.
-
-### Other Platforms
-
-The site can be deployed to any platform that supports Next.js:
-
-- Netlify
-- AWS Amplify
-- Railway
-- Or any Node.js hosting service
-
-## 📝 Content Management
-
-Content is managed through Notion. To add or update:
-
-1. Create or edit pages in your Notion database
-2. Ensure pages have the required properties:
-
-   - `Name` (Title)
-   - `Path` (Rich text - URL slug)
-   - `Date` (Date)
-   - `Image` (Files)
-   - `Subtitle` (Rich text)
-   - `Category` (Select)
-   - `Visibility` (Select - "Visible" for published)
-
-3. The site will automatically fetch and display the content
-
-## 🎯 Features in Detail
-
-### Scroll Spy Navigation
-
-The homepage features an interactive scroll spy that highlights the active project section as you scroll.
-
-### Notion Integration
-
-Blog posts and project content are fetched from Notion, allowing for easy content updates without code changes.
-
-### AI Chat
-
-Interactive chat interface powered by OpenAI, accessible via the `/api/chat` endpoint.
-
-### Responsive Design
-
-Mobile-first approach with breakpoints optimized for all device sizes.
-
-## 🤝 Contributing
-
-This is a personal portfolio project. If you'd like to use it as a template or reference, feel free to fork and adapt it to your needs!
-
-## 📄 License
-
-This project is private and personal. All rights reserved.
-
-## 👤 Author
-
-**Jessica Cheng**
-
-- Portfolio: [jessicacheng.studio](https://jessicacheng.studio)
-- UX Designer focused on privacy-first design, scalable systems, and ethical AI experiences
-
----
-
-Built with ❤️ using Next.js, TypeScript, and Tailwind CSS
+The production project was intentionally paused by its owner. Publishing a branch or passing local checks does not confirm a production release. Follow the deployment checklist in [SECURITY.md](SECURITY.md) before resuming it.

@@ -107,7 +107,7 @@
       "additional_technical_experience": [
         "PostgreSQL and Prisma in startup product work",
         "Working with APIs backed by Go through Postman and Axios",
-        "Notion as a structured content source for a Next.js site"
+        "Local, reviewed content for a Next.js site"
       ],
       "languages": [
         "English",
@@ -239,14 +239,14 @@
         "url": "/",
         "project_type": "Self-directed design and engineering project",
         "role": "Designer and frontend engineer",
-        "summary": "Jessica designed and built her responsive portfolio with Next.js, TypeScript, Tailwind CSS, and Vercel. The site uses Notion as a structured content source for articles and includes an AI portfolio guide built with the Vercel AI SDK and a curated JSON knowledge source.",
+        "summary": "Jessica designed and built her responsive portfolio with Next.js, TypeScript, Tailwind CSS, and Vercel. The site keeps its article UI with a local catalog for future writing. Its portfolio guide uses curated JSON knowledge, with live AI available only when explicitly enabled and protected.",
         "ai_chat_capabilities": [
           "Streaming responses and smooth text rendering",
-          "Provider reasoning summaries without exposing hidden chain-of-thought",
+          "Curated answers to suggested portfolio questions without a paid model call",
           "A custom animated three-dimensional thinking indicator",
           "Persistent on-device conversation history",
           "Responsive suggested prompts and an accessible composer",
-          "Grounding instructions that prevent unsupported claims about Jessica's work"
+          "Grounding instructions that tell the guide to use the supplied portfolio evidence and acknowledge missing information"
         ]
       },
       {

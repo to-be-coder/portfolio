@@ -1,4 +1,3 @@
-// @ts-nocheck
 // Mirrors gridland/packages/demo/demos/focus.tsx (the demo on
 // https://gridland.io/docs/interaction/focus). Components are vendored from
 // @gridland/ui (which is private — never published to npm).
@@ -8,6 +7,7 @@ import { FocusProvider, useFocusedShortcuts, useInteractive } from '@gridland/ut
 import { MultiSelect } from './vendor/multi-select'
 import { StatusBar } from './vendor/status-bar'
 import { useFocusBorderStyle } from './vendor/theme'
+import { Box } from './vendor/primitives'
 
 const focusMultiSelects = [
   {
@@ -56,8 +56,8 @@ function FocusMultiSelectPanel({
   const { borderColor, borderStyle } = useFocusBorderStyle({ isFocused, isSelected, isAnySelected })
 
   return (
-    <box ref={focusRef} border borderStyle={borderStyle} borderColor={borderColor} flexGrow={1}>
-      <box flexDirection="column" paddingX={1} flexGrow={1}>
+    <Box ref={focusRef} border borderStyle={borderStyle} borderColor={borderColor} flexGrow={1}>
+      <Box flexDirection="column" paddingX={1} flexGrow={1}>
         <MultiSelect
           focusId={id}
           autoFocus={autoFocus}
@@ -67,25 +67,25 @@ function FocusMultiSelectPanel({
           enableSelectAll={false}
           enableClear={false}
         />
-      </box>
-    </box>
+      </Box>
+    </Box>
   )
 }
 
 function FocusNavStatusBar() {
   const shortcuts = useFocusedShortcuts()
   return (
-    <box paddingX={1} paddingBottom={1}>
+    <Box paddingX={1} paddingBottom={1}>
       <StatusBar items={shortcuts} />
-    </box>
+    </Box>
   )
 }
 
 export function FocusApp() {
   return (
     <FocusProvider selectable>
-      <box flexDirection="column" flexGrow={1}>
-        <box flexDirection="row" gap={1} padding={1} flexGrow={1}>
+      <Box flexDirection="column" flexGrow={1}>
+        <Box flexDirection="row" gap={1} padding={1} flexGrow={1}>
           {focusMultiSelects.map((panel, i) => (
             <FocusMultiSelectPanel
               key={panel.id}
@@ -95,9 +95,9 @@ export function FocusApp() {
               autoFocus={i === 0}
             />
           ))}
-        </box>
+        </Box>
         <FocusNavStatusBar />
-      </box>
+      </Box>
     </FocusProvider>
   )
 }

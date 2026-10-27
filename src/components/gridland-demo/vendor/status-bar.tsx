@@ -1,8 +1,8 @@
-// @ts-nocheck
 // Vendored from @gridland/ui — packages/ui/components/status-bar/status-bar.tsx
 import type { ReactNode } from 'react'
 import { textStyle } from './text-style'
 import { useTheme } from './theme'
+import { Span, Text } from './primitives'
 
 export interface StatusBarItem {
   key: string
@@ -16,36 +16,36 @@ export interface StatusBarProps {
 
 export function StatusBar({ items, extra }: StatusBarProps) {
   const theme = useTheme()
-  const parts: any[] = []
+  const parts: ReactNode[] = []
 
   if (extra != null) {
-    parts.push(<span key="extra">{extra}</span>)
+    parts.push(<Span key="extra">{extra}</Span>)
     if (items.length > 0) {
       parts.push(
-        <span key="pipe" style={textStyle({ dim: true, fg: theme.placeholder })}>
+        <Span key="pipe" style={textStyle({ dim: true, fg: theme.placeholder })}>
           {'  │  '}
-        </span>,
+        </Span>,
       )
     }
   }
 
   items.forEach((item, i) => {
     if (i > 0) {
-      parts.push(<span key={'gap-' + i}>{' '}</span>)
+      parts.push(<Span key={'gap-' + i}>{' '}</Span>)
     }
     parts.push(
-      <span key={'key-' + i} style={textStyle({ bold: true, fg: theme.background, bg: theme.muted })}>
+      <Span key={'key-' + i} style={textStyle({ bold: true, fg: theme.background, bg: theme.muted })}>
         {' ' + item.key + ' '}
-      </span>,
+      </Span>,
     )
     parts.push(
-      <span key={'label-' + i} style={textStyle({ dim: true, fg: theme.placeholder })}>
+      <Span key={'label-' + i} style={textStyle({ dim: true, fg: theme.placeholder })}>
         {' ' + item.label}
-      </span>,
+      </Span>,
     )
   })
 
   if (parts.length === 0) return null
 
-  return <text>{parts}</text>
+  return <Text>{parts}</Text>
 }

@@ -1,5 +1,5 @@
 import CtaSection from '@/components/ui-block/cta'
-import NotionCard from '@/components/ui-block/notion-card'
+import ContentCard from '@/components/ui-block/content-card'
 
 type LabsProject = {
   title: string
@@ -56,7 +56,7 @@ export default async function LabsPage() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <NotionCard
+            <ContentCard
               key={project.href + index}
               title={project.title}
               url={project.href}

@@ -1,6 +1,5 @@
-import NotionContent from '@/components/ui-block/notion-content'
 import CtaSection from '@/components/ui-block/cta'
-import { getAllPaths, getPageByPath } from '@/lib/notion'
+import { articles, getArticleByPath } from '@/lib/articles'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
@@ -18,29 +17,26 @@ const DEFAULT_METADATA = {
   profileImage: '/profile-small.jpg',
 } as const
 
-// Generate static params for all blog posts
-export async function generateStaticParams() {
-  const paths = await getAllPaths()
-  return paths.map((path: string) => ({
-    postId: path,
+// Unknown slugs cannot trigger server-side content fetching or on-demand pages.
+export const dynamicParams = false
+
+export function generateStaticParams() {
+  return articles.map((article) => ({
+    postId: article.path,
   }))
 }
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { postId } = await params
-  const pageData = await getPageByPath(postId)
+  const article = getArticleByPath(postId)
 
-  if (!pageData) {
-    return {
-      title: 'Post Not Found',
-      description: 'The requested blog post could not be found.',
-    }
+  if (!article) {
+    notFound()
   }
 
-  const { pageData: metadata } = pageData
-  const title = metadata.title || DEFAULT_METADATA.title
-  const description = metadata.subtitle || DEFAULT_METADATA.description
+  const title = article.title || DEFAULT_METADATA.title
+  const description = article.subtitle || DEFAULT_METADATA.description
 
   return {
     title,
@@ -48,27 +44,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      images: metadata.image ? [metadata.image] : [],
+      images: article.image ? [article.image] : [],
     },
   }
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { postId } = await params
-  const pageData = await getPageByPath(postId)
+  const article = getArticleByPath(postId)
 
-  if (!pageData) {
+  if (!article) {
     notFound()
   }
-
-  const { recordMap, pageData: metadata } = pageData
 
   return (
     <main>
       <section className="container mx-auto px-4 py-8 max-w-3xl">
         {/* Article Header */}
         <div className="my-12 px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{metadata.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">{article.title}</h1>
 
           <div className="border-b border-gray-200 w-full" />
 
@@ -78,9 +72,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Notion Content */}
+        {/* Locally authored article content */}
         <div className="min-h-screen">
-          <NotionContent recordMap={recordMap} fullPage={false} darkMode={false} />
+          {article.paragraphs.map((paragraph, index) => (
+            <p key={index} className="mb-6 leading-relaxed text-gray-700">{paragraph}</p>
+          ))}
         </div>
       </section>
 

@@ -2,8 +2,6 @@ import Footer from '@/components/ui-block/footer'
 import Header from '@/components/ui-block/header'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Script from 'next/script'
-import 'react-notion-x/src/styles.css'
 import 'streamdown/styles.css'
 import './globals.css'
 const geistSans = localFont({
@@ -18,6 +16,7 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jessicacheng.studio'),
   title: "Jessica Cheng's UX Portfolio",
   description:
     'UX designer portfolio showcasing thoughtful, privacy-first product design, scalable systems, and ethical AI experiences. Highlights include design for iteration, technical collaboration, and user-centered problem solving.',
@@ -56,18 +55,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <Script id="hotjar-tracking" strategy="afterInteractive">
-          {`
-            (function(h,o,t,j,a,r){
-              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-              h._hjSettings={hjid:6412780,hjsv:6};
-              a=o.getElementsByTagName('head')[0];
-              r=o.createElement('script');r.async=1;
-              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-              a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-          `}
-        </Script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <Header />

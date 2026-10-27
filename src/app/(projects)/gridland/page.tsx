@@ -10,6 +10,7 @@ import ProjectSectionTitle from '@/components/ui-block/project-section-title'
 import { HorizontalStack, VerticalStack } from '@/components/ui-block/project-stack'
 import { ScrollSpy, ScrollSpyLink, ScrollSpyNav, ScrollSpySection, ScrollSpyViewport } from '@/components/ui/scroll-spy'
 import { ArrowUpRight, Github } from 'lucide-react'
+import Image from 'next/image'
 
 const ImagePlaceholder = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <div className={`bg-gray-100 rounded-xl p-12 flex items-center justify-center text-[#a1a1a1] text-base text-center ${className}`}>{children}</div>
@@ -133,8 +134,8 @@ export default function GridlandPage() {
                 <a href="https://gridland.io/docs/interaction/focus" target="_blank" rel="noopener noreferrer" className="text-pink-600 underline">
                   gridland.io/docs/interaction/focus
                 </a>
-                , running here on an HTML <code>&lt;canvas&gt;</code> via <code>@gridland/web</code>. Click the canvas to focus it, then <strong>Tab</strong> moves between columns, <strong>↑/↓</strong>{' '}
-                navigates options, <strong>Space/Enter</strong> toggles. Selected items show in cyan; the focused panel gets a dashed pink border.
+                , running here on an HTML <code>&lt;canvas&gt;</code> via <code>@gridland/web</code>. Click the canvas to focus it. Use <strong>Tab</strong> to choose a column and <strong>Enter</strong> to activate it, then <strong>↑/↓</strong>{' '}
+                to move and <strong>Space</strong> to toggle an option. Press <strong>Escape</strong> to return to column navigation. Selected items show in cyan; the focused panel gets a dashed pink border.
               </p>
               <GridlandMultiSelectDemo />
               <p className="text-center text-[#a1a1a1] text-base">The same JSX, run with <code>bunx</code>, renders to your real terminal.</p>
@@ -154,7 +155,7 @@ export default function GridlandPage() {
                     </div>
                   )
                   const image = feature.imageSrc ? (
-                    <img src={feature.imageSrc} alt={feature.imageAlt ?? feature.title} className="w-full h-auto rounded-xl" />
+                    <Image unoptimized width={1440} height={1024} src={feature.imageSrc} alt={feature.imageAlt ?? feature.title} className="w-full h-auto rounded-xl" />
                   ) : (
                     <ImagePlaceholder className="h-[240px] w-full">{feature.placeholder}</ImagePlaceholder>
                   )

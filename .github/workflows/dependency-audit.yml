@@ -1,0 +1,31 @@
+name: Daily dependency advisory check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 12 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version-file: .bun-version
+      # Reads bun.lock directly; application dependencies are never installed
+      # or executed in this scheduled advisory check.
+      - name: Check every locked dependency
+        run: bun audit
