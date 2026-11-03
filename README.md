@@ -24,6 +24,7 @@ No environment variables are needed for the site or the four curated guide promp
 - The guide's public portfolio context lives in `src/app/api/chat/system-message.json`. Never put confidential information or credentials in model context.
 - Images and video are local assets. Remote image optimization is disabled.
 - Fonts are self-hosted in `src/app/fonts/`, with their licenses. Third-party session tracking has been removed.
+- The Labs page reads public star counts for two fixed GitHub repositories on the server, with hourly revalidation. Visitors cannot choose the destination or repository.
 
 Changes to career or project facts must also follow the user's Icca maintenance instructions.
 
@@ -47,5 +48,7 @@ GitHub Actions repeats verification on pushes, pull requests, and a weekly sched
 `vercel.json` pins the Bun executable for install and build, and enforces the frozen lockfile and disabled lifecycle scripts on Vercel. The `node` engine selects the Node 24 runtime; Vercel controls its exact patch version, so confirm it in deployment logs.
 
 Next.js and its ESLint config should be updated together. React stays on the patched 19.2 line while Gridland requires `react-reconciler@0.33.0`. TypeScript 6 is the current compatible line for the lint parser; TypeScript 7 requires a separate tooling migration. ESLint 10 uses the official `@eslint/compat` bridge for the legacy plugin APIs in Next's configuration; all rules remain enabled and representative rules are tested.
+
+The `minimatch` override installs 11.0.4 for all lint consumers. Versioned Bun patches adapt three legacy lint plugins to its current API so the old dependency can be removed without disabling rules or suppressing audit alerts. See [patch maintenance](patches/README.md) before updating those plugins. Use the pinned Bun 1.4.4 for reproducible installs; the November review in [SECURITY.md](SECURITY.md) records verification and the pending Next.js security release.
 
 The production project was intentionally paused by its owner. Publishing a branch or passing local checks does not confirm a production release. Follow the deployment checklist in [SECURITY.md](SECURITY.md) before resuming it.

@@ -1,6 +1,7 @@
 'use client'
 
 import { CHAT_LIMITS, PORTFOLIO_PROCESS_PROMPT, type PortfolioChatMessage } from '@/lib/chat'
+import { clearStoredChat, readStoredChat, writeStoredChat } from '@/lib/chat-storage'
 import { useChat } from '@ai-sdk/react'
 import { code } from '@streamdown/code'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
@@ -18,7 +19,6 @@ import { DefaultChatTransport } from 'ai'
 import { FormEvent, KeyboardEvent, type CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Streamdown } from 'streamdown'
 
-const CHAT_STORAGE_KEY = 'jessica-portfolio-chat-v2'
 const chatTransport = new DefaultChatTransport<PortfolioChatMessage>({
   api: '/api/chat',
   prepareSendMessagesRequest: ({ messages }) => ({
@@ -50,24 +50,6 @@ const starterPrompts = [
     prompt: 'Give me a 30-second overview of Jessica and her strongest work.',
   },
 ]
-
-function isStoredChat(value: unknown): value is PortfolioChatMessage[] {
-  return (
-    Array.isArray(value) &&
-    value.length <= CHAT_LIMITS.maxMessages &&
-    value.every(
-      (message) =>
-        typeof message === 'object' &&
-        message !== null &&
-        'id' in message &&
-        typeof message.id === 'string' &&
-        'role' in message &&
-        (message.role === 'user' || message.role === 'assistant') &&
-        'parts' in message &&
-        Array.isArray(message.parts)
-    )
-  )
-}
 
 function messageText(message: PortfolioChatMessage) {
   return message.parts
@@ -393,31 +375,18 @@ export default function Chat() {
   const remainingCharacters = CHAT_LIMITS.maxInputCharacters - input.length
 
   useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(CHAT_STORAGE_KEY)
-      if (stored) {
-        const parsed: unknown = JSON.parse(stored)
-        if (isStoredChat(parsed)) {
-          const isPreviewConversation = parsed.some((message) => message.metadata?.model === 'Local preview')
-          if (isPreviewConversation) window.localStorage.removeItem(CHAT_STORAGE_KEY)
-          else setMessages(parsed)
-        }
-      }
-    } catch {
-      window.localStorage.removeItem(CHAT_STORAGE_KEY)
-    } finally {
+    // Restore optional browser state after mounting, with the same initial
+    // markup on the server and client. Do not persist until this read finishes.
+    const frame = window.requestAnimationFrame(() => {
+      setMessages(readStoredChat())
       setHydrated(true)
-    }
+    })
+    return () => window.cancelAnimationFrame(frame)
   }, [setMessages])
 
   useEffect(() => {
     if (!hydrated) return
-    try {
-      if (messages.length === 0) window.localStorage.removeItem(CHAT_STORAGE_KEY)
-      else window.localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages.slice(-CHAT_LIMITS.maxMessages)))
-    } catch {
-      // Chat remains usable when storage is unavailable.
-    }
+    writeStoredChat(messages)
   }, [hydrated, messages])
 
   useEffect(() => {
@@ -492,11 +461,7 @@ export default function Chat() {
     setMessages([])
     setInput('')
     setShowScrollButton(false)
-    try {
-      window.localStorage.removeItem(CHAT_STORAGE_KEY)
-    } catch {
-      // Clearing the visible chat still works when storage is unavailable.
-    }
+    clearStoredChat()
     scrollRef.current?.scrollTo({ top: 0, behavior: 'auto' })
     window.requestAnimationFrame(() => textareaRef.current?.focus())
   }, [busy, clearError, setMessages, stop])

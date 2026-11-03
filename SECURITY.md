@@ -5,6 +5,7 @@ Security patches reduce known risk; an empty audit is not a guarantee against un
 ## Application boundaries
 
 - All writing and images come from reviewed local source. The former Notion integration and its dependency chain are removed. The existing blog UI and static design-token article remain.
+- The Labs page separately reads public GitHub star counts for two fixed repositories on the server, cached with hourly revalidation. No request input controls the destination; only numeric counts reach the page.
 - Unknown dynamic article slugs return 404. No public upload, login, administrative action, or content-writing endpoint exists.
 - Remote image optimization, SVG optimization, image redirects, and local-network image fetches are disabled. Sharp remains patched for local raster processing.
 - Browser headers restrict resources to this origin, prevent framing and inline event handlers, block objects and base-URL injection, disable unnecessary device permissions, and set MIME-sniffing/referrer/HSTS policies. Hotjar is removed; fonts are local.
@@ -15,6 +16,8 @@ Security patches reduce known risk; an empty audit is not a guarantee against un
 The four suggested questions return curated answers with no paid model call. With `AI_CHAT_ENABLED` unset or `false`, other questions receive an honest curated-guide message. Keeping an old OpenAI key in the environment does not activate billing.
 
 The API requires an exact allowed browser origin and JSON. It reads at most 128 KiB within five seconds, reconstructs text-only user/assistant messages, bounds each message/history, and rejects files, tools, and system-role input. Caller metadata is discarded. Origin checks constrain browsers; they are not caller authentication.
+
+Saved browser conversations are also treated as untrusted input. Restoration caps serialized input before parsing, validates IDs, roles, text and history limits, and reconstructs text-only messages without provider metadata, reasoning, or source links. Invalid history is discarded. Denied or full browser storage does not prevent using or clearing the visible chat.
 
 Live AI requires all of these settings:
 
@@ -99,4 +102,50 @@ Version-only alerts for libraries bundled inside Next were investigated separate
 
 The cancellation fix follows [Vercel's opt-in and retained-cleanup requirements](https://vercel.com/docs/functions/functions-api-reference#cancel-requests), [AI SDK cancellation guidance](https://ai-sdk.dev/docs/advanced/stopping-streams), and [Next.js `after`](https://nextjs.org/docs/app/api-reference/functions/after). Regression tests cover platform closure before the request abort signal and while lease release is already pending. Actual Vercel propagation must still be verified on a protected deployment.
 
-The two-clean-round stopping rule is satisfied for this local scope. No review guarantees immunity to unknown vulnerabilities, and this result does not authorize resuming an old deployment. Complete the production checklist above against the patched revision.
+The historical two-clean-round stopping rule was satisfied for that local scope. The November review below supersedes that result for the current working tree. No review guarantees immunity to unknown vulnerabilities, and this result does not authorize resuming an old deployment. Complete the production checklist above against the patched revision.
+
+## Initial defensive review and hardening: 3 November 2026
+
+The audit-remediation follow-up below supersedes this initial candidate's dependency status and artifact identifiers.
+
+Reviewed the architecture before editing: prerendered local pages, one custom text-only chat API, optional public GitHub star reads, and no application login, upload, administration, or Server Action endpoints. Three independent reviews covered server controls, browser rendering/storage, and dependency/build configuration. Work used source inspection, current maintainer advisories, existing local regression tests, and ordinary browser flows against a loopback production build. No public deployment was scanned or changed, and no live paid provider was used.
+
+### Findings and changes
+
+- **Lint dependency advisory:** the fresh full-lockfile audit reported [GHSA-g3hv-75wg-m249](https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249). A version-scoped override replaces modern `minimatch` 10.2.6 with 11.0.4. ESLint and its TypeScript/config consumers use the supported named/class interfaces. Ordinary file-selection and lint-rule fixtures verify compatibility. The override requires Bun lockfile version 3; use the repository's pinned Bun 1.4.4.
+- **Saved-chat resilience:** the previous restoration guard accepted arbitrary message parts, and its error handler could throw again when browser storage was denied. A dedicated storage module now bounds input before JSON parsing, validates the text history, drops unsupported parts and metadata, and guards storage access and cleanup. Tests cover ordinary curated-response reload, malformed history, limits, and unavailable storage. This was a local saved-state failure, not evidence of remote compromise.
+- **Boundary documentation:** documented the Labs page's fixed, server-side GitHub star-count reads. No career facts or project claims changed.
+
+### Five post-fix verification passes
+
+The initial findings reset the count. The following five focused defensive passes found no additional confirmed application issue on the final code/configuration candidate. They are separate review scopes, not five penetration tests, and do not clear the unresolved upstream items below.
+
+| Pass | Scope and evidence | New findings |
+| --- | --- | --- |
+| 1 | Dependency compatibility: scoped override, manifest/lock review, modern file globs, legacy plugin glob APIs, frozen install with scripts disabled. | None; existing legacy advisory retained. |
+| 2 | Independent server/storage review: request boundaries, permit/cancellation lifecycle, bounded saved history, guarded storage failures and hydration-before-persistence. | None. |
+| 3 | Full local verification: lint, lint-rule fixtures, cold-bootstrap install-policy fixtures, type checks, 16 request/security tests, eight storage tests, and production build. | None; all checks passed. |
+| 4 | Running production build on loopback: all 16 desktop/mobile Chromium tests passed, including ordinary navigation, curated chat, storage recovery, headers, and image restrictions. | None. |
+| 5 | Final artifact and dependency review: 28 build traces covering 1,201 unique files; no lint/minimatch packages in traced server files; no application Server Actions; one custom API route. Credential-pattern checks found no high-confidence matches in 123 source text files or 378 browser artifacts. Production dependency audit passed for 269 packages; primary release/advisory information was rechecked. | None beyond the unresolved items below. |
+
+The checks used Node 24.22.1 and scoped Bun 1.4.4; the machine's global Bun was not changed. Production build ID: `IgT-6kZpEt-Ma476NaHhf`. The application/configuration/test candidate SHA-256 is `b2b54ac60f43522e4325870b753a17fb806f4deba595dad726e9ccdefb64b0f7`: sorted tracked/non-ignored repository-relative paths excluding Markdown, each followed by a NUL and the raw SHA-256 of its content, then hashed together (374 files). Lockfile SHA-256: `8ceed53511b203b2177223464bb2381562ba301ba8859c829896b9a778a564f3`. This identifies the local working tree, not a deployed revision. Credential-pattern checks cannot establish that every possible secret format is absent.
+
+### Items remaining after the initial review
+
+**The initial full dependency audit was nonzero.** Three legacy lint plugins required `minimatch` 3.1.5's callable export and `makeRe`, preventing a direct v11 substitution. The advisory database flagged all versions below 11.0.1, although the described preprocessing mechanism was absent from v3. No ignore flag, audit suppression, or weakened CI gate was added. The follow-up below removes these legacy copies by adapting the plugins to the current API.
+
+**Next.js has announced an additional security release.** The [27 October advance notice](https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026) schedules seven medium-severity fixes for 3 November. At the final check, the registry's latest Next.js and ESLint config were 16.4.4; the [16.4.4 release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly say that 2 November maintenance release precedes the security release. Full November advisories and an identified patched version were not yet available in the sources checked. The repository therefore remains on 16.4.3; no claim is made that today's pending issues are fixed or inapplicable. Once published, assess the advisories, update Next.js and its ESLint config together, then rerun verification before release.
+
+Live Vercel firewall, runtime, environment, trusted-IP and disconnect propagation, account access, and existing production state were not verified. Redis/provider behavior used local fixtures; the optional real-Redis integration suite was not run in this review. The five-pass local result is complete, but production security certification remains open under the release procedure above.
+
+### Audit remediation follow-up: 3 November 2026
+
+The remaining audit alert is resolved. A global `minimatch: 11.0.4` override replaces all legacy copies, with exact-version Bun patches for `eslint-plugin-import` 2.32.0, `eslint-plugin-react` 7.37.5, and `eslint-plugin-jsx-a11y` 6.10.2. The patches update 14 distributed JavaScript files to the named matching API; the import plugin's removed `makeRe` use becomes cached `Minimatch.match` calls. All six installed consumers resolve 11.0.4, and the lockfile contains no older minimatch version. Audit remains the unmodified `bun audit` command, and every lint rule remains configured as before.
+
+Expanded lint fixtures passed on both the original plugins and the patched installation, checking file selection, scoped and resolved imports, allow/forbid rules, restricted-path exceptions, React ignore globs, and accessibility control globs. The optional `no-internal-modules` rule now follows standard matcher dotfile semantics; it is not enabled in the portfolio configuration. See [patch maintenance and compatibility scope](patches/README.md) before changing its patterns or upgrading these plugins.
+
+Verification passed with Node 24.22.1 and Bun 1.4.4: the full audit found no known vulnerabilities across 622 packages; `bun run check` passed lint, compatibility fixtures, install-policy fixtures, type checks, all 24 tests, and the production build; all 16 desktop/mobile browser tests passed. A separate temporary project installed the frozen lockfile from an empty dependency cache with lifecycle scripts disabled, applied all three patches, left the lockfile unchanged, and passed the same lint compatibility fixtures. Independent patch review found no missed matcher imports or manifest/lock mismatch.
+
+Final local build ID: `-ukUHRREwVuxb_ooXCGU2`. Final lockfile SHA-256: `84ebc8eeda7c102857f86610d7a9fcc1ea39119f1998d71d333fdf835e21be47`. These replace the initial candidate identifiers above for this follow-up; no deployment was made.
+
+At **12:36 p.m. Eastern on 3 November**, fresh npm registry requests and GitHub's release API still reported Next.js and `eslint-config-next` 16.4.4 as latest stable. Its [release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly precede the announced November security release. No identified stable security patch was available, so both repository pins remain 16.4.3. The pending Next.js advisory assessment and deployed-platform checks remain open; a clean package audit does not establish that unpublished issues are absent.

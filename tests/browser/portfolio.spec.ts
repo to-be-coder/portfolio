@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { CHAT_STORAGE_KEY } from '../../src/lib/chat-storage'
 
 test('pages render without script errors or third-party browser requests', async ({ page }) => {
   const errors: string[] = []
@@ -101,5 +102,59 @@ test('Gridland demo moves its cursor and toggles selection with the keyboard', a
   await expect.poll(async () => (await canvas.screenshot()).equals(moved)).toBe(false)
   await page.keyboard.press('Space')
   await expect.poll(async () => (await canvas.screenshot()).equals(moved)).toBe(true)
+  expect(errors).toEqual([])
+})
+
+test('curated chat survives reload as text-only saved history', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Give me a 30-second overview of Jessica and her strongest work.', exact: true }).click()
+  await expect(page.locator('.chat-response').first()).toContainText('Thunderbolt Skills')
+  await expect(page.getByRole('button', { name: 'Send message', exact: true })).toBeVisible()
+  await page.reload()
+  await expect(page.locator('.chat-response').first()).toContainText('Thunderbolt Skills')
+  const saved = await page.evaluate((key) => JSON.parse(localStorage.getItem(key) ?? 'null'), CHAT_STORAGE_KEY)
+  expect(saved).toHaveLength(2)
+  for (const message of saved) {
+    expect(Object.keys(message).sort()).toEqual(['id', 'parts', 'role'])
+    expect(message.parts).toHaveLength(1)
+    expect(message.parts[0].type).toBe('text')
+    expect(typeof message.parts[0].text).toBe('string')
+  }
+  expect(errors).toEqual([])
+})
+
+test('corrupt saved chat is discarded while the guide remains usable', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  await page.goto('/')
+  for (const stored of ['{', JSON.stringify([{ id: 'saved-1', role: 'assistant', parts: [null] }])]) {
+    await page.evaluate(({ key, value }) => localStorage.setItem(key, value), { key: CHAT_STORAGE_KEY, value: stored })
+    await page.reload()
+    await expect(page.getByRole('textbox', { name: "Message Jessica's portfolio assistant" })).toBeVisible()
+    await expect.poll(() => page.evaluate((key) => localStorage.getItem(key), CHAT_STORAGE_KEY)).toBeNull()
+    await page.getByRole('button', { name: 'Give me a 30-second overview of Jessica and her strongest work.', exact: true }).click()
+    await expect(page.locator('.chat-response').first()).toContainText('Thunderbolt Skills')
+    await expect(page.getByRole('button', { name: 'Send message', exact: true })).toBeVisible()
+  }
+  expect(errors).toEqual([])
+})
+
+test('denied browser storage does not interrupt chat or clearing', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  await page.addInitScript(() => {
+    Object.defineProperty(window, 'localStorage', {
+      configurable: true,
+      get() { throw new DOMException('Storage is disabled', 'SecurityError') },
+    })
+  })
+  await page.goto('/')
+  await page.getByRole('button', { name: 'Give me a 30-second overview of Jessica and her strongest work.', exact: true }).click()
+  await expect(page.locator('.chat-response').first()).toContainText('Thunderbolt Skills')
+  await page.getByRole('button', { name: 'Start a new chat and clear this conversation', exact: true }).click()
+  await expect(page.locator('.chat-response')).toHaveCount(0)
+  await expect(page.getByRole('textbox', { name: "Message Jessica's portfolio assistant" })).toBeVisible()
   expect(errors).toEqual([])
 })

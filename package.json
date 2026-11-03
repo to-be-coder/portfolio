@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "next typegen && tsc --noEmit --incremental false",
-    "test": "bun test tests/chat-security.test.ts",
+    "test": "bun test tests/chat-security.test.ts tests/chat-storage.test.ts",
     "test:e2e": "playwright test",
     "audit": "bun audit",
     "check": "bun run lint && bun run test:lint-rules && bun run test:install-policy && bun run typecheck && bun run test && bun run build",
@@ -57,10 +57,16 @@
   },
   "overrides": {
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7"
+    "@types/react-dom": "19.2.7",
+    "minimatch": "11.0.4"
   },
   "packageManager": "bun@1.4.4",
   "engines": {
     "node": "24.x"
+  },
+  "patchedDependencies": {
+    "eslint-plugin-import@2.32.0": "patches/eslint-plugin-import@2.32.0.patch",
+    "eslint-plugin-react@7.37.5": "patches/eslint-plugin-react@7.37.5.patch",
+    "eslint-plugin-jsx-a11y@6.10.2": "patches/eslint-plugin-jsx-a11y@6.10.2.patch"
   }
 }
