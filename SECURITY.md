@@ -2,6 +2,8 @@
 
 Security patches reduce known risk; an empty audit is not a guarantee against undiscovered vulnerabilities or account compromise. The repository is the authority for application controls. Hosting, billing, credentials, and domain settings need separate verification.
 
+Latest local verification: Next.js and `eslint-config-next` 16.4.5 passed the full audit, build, and test checks on 4 November 2026. See the [November security update](#nextjs-security-release-applied-4-november-2026) below. Deployment verification remains separate.
+
 ## Application boundaries
 
 - All writing and images come from reviewed local source. The former Notion integration and its dependency chain are removed. The existing blog UI and static design-token article remain.
@@ -134,7 +136,7 @@ The checks used Node 24.22.1 and scoped Bun 1.4.4; the machine's global Bun was 
 
 **The initial full dependency audit was nonzero.** Three legacy lint plugins required `minimatch` 3.1.5's callable export and `makeRe`, preventing a direct v11 substitution. The advisory database flagged all versions below 11.0.1, although the described preprocessing mechanism was absent from v3. No ignore flag, audit suppression, or weakened CI gate was added. The follow-up below removes these legacy copies by adapting the plugins to the current API.
 
-**Next.js has announced an additional security release.** The [27 October advance notice](https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026) schedules seven medium-severity fixes for 3 November. At the final check, the registry's latest Next.js and ESLint config were 16.4.4; the [16.4.4 release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly say that 2 November maintenance release precedes the security release. Full November advisories and an identified patched version were not yet available in the sources checked. The repository therefore remains on 16.4.3; no claim is made that today's pending issues are fixed or inapplicable. Once published, assess the advisories, update Next.js and its ESLint config together, then rerun verification before release.
+**The Next.js security release was pending at this initial review.** The [27 October advance notice](https://nextjs.org/blog/upcoming-nextjs-security-release-november-2026) scheduled seven fixes for 3 November. At this check, the registry's latest Next.js and ESLint config were 16.4.4; the [16.4.4 release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly say that 2 November maintenance release preceded the security release. Full November advisories and an identified patched version were not yet available in the sources checked, so the repository remained on 16.4.3 at that time. The 4 November update below resolves this pending framework upgrade.
 
 Live Vercel firewall, runtime, environment, trusted-IP and disconnect propagation, account access, and existing production state were not verified. Redis/provider behavior used local fixtures; the optional real-Redis integration suite was not run in this review. The five-pass local result is complete, but production security certification remains open under the release procedure above.
 
@@ -148,4 +150,21 @@ Verification passed with Node 24.22.1 and Bun 1.4.4: the full audit found no kno
 
 Final local build ID: `-ukUHRREwVuxb_ooXCGU2`. Final lockfile SHA-256: `84ebc8eeda7c102857f86610d7a9fcc1ea39119f1998d71d333fdf835e21be47`. These replace the initial candidate identifiers above for this follow-up; no deployment was made.
 
-At **12:36 p.m. Eastern on 3 November**, fresh npm registry requests and GitHub's release API still reported Next.js and `eslint-config-next` 16.4.4 as latest stable. Its [release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly precede the announced November security release. No identified stable security patch was available, so both repository pins remain 16.4.3. The pending Next.js advisory assessment and deployed-platform checks remain open; a clean package audit does not establish that unpublished issues are absent.
+At **12:36 p.m. Eastern on 3 November**, fresh npm registry requests and GitHub's release API still reported Next.js and `eslint-config-next` 16.4.4 as latest stable. Its [release notes](https://github.com/vercel/next.js/releases/tag/v16.4.4) explicitly preceded the announced November security release. No identified stable security patch was available at that check, so both repository pins remained 16.4.3. The 4 November update below supersedes that dependency status; deployed-platform checks remain open.
+
+## Next.js security release applied: 4 November 2026
+
+The [official November announcement](https://nextjs.org/blog/november-2026-security-release), [16.4.5 release notes](https://github.com/vercel/next.js/releases/tag/v16.4.5), GitHub release metadata, and fresh npm registry responses confirm the published security patch. Next.js and `eslint-config-next` are now pinned together to **16.4.5**, replacing 16.4.3. The lockfile updates only these packages and their matching `@next/env`, SWC platform packages, and Next ESLint plugin. The existing minimatch override and all three exact-version compatibility patches are unchanged.
+
+The release addresses seven advisories. Source review found no Cache Components, `use cache`, or `unstable_cache` usage required by the four cache issues; the dynamic article route also rejects ungenerated parameters. The app does not forward an attacker-controlled fetched `Response` unchanged. Its only API route uses Node.js and sets no cookies, so the Edge cookie-disclosure path is absent. Remote image sources and uploads are disabled, removing the described attacker-controlled image input. These are source applicability findings, not deployment certification; the framework was upgraded regardless. The announcement labels the cross-tenant cache issue high severity while the release list labels it moderate, so this record does not describe all seven uniformly as moderate.
+
+Verification used the pinned Node **24.22.1** and Bun **1.4.4**, with dependency lifecycle scripts disabled:
+
+- The repository's frozen-lockfile install passed without changing the lockfile. The unmodified `bun run audit` reported **no vulnerabilities across 622 packages**.
+- `bun run check` passed lint, lint compatibility fixtures, install-policy fixtures, type generation/checking, all **24 unit tests**, and the production build.
+- All **16 desktop/mobile Chromium tests** passed against that production build on loopback, with live AI disabled and no paid provider calls. An additional ordinary local check confirmed `/icon.svg` serves successfully while image optimization rejects it with HTTP 400.
+- A disposable project installed from an initially empty dependency cache using `--frozen-lockfile --ignore-scripts`. All three patches matched the installed plugin sources, the lint compatibility fixtures passed, and both copied and repository lockfiles remained unchanged. Temporary directories were removed.
+
+Work began with a clean `codex/portfolio-security-hardening` branch at `2ce015c5c9dc347ff412dd70409e3c32ac0246d7`. The prior security/storage changes were preserved. At completion of local verification, the update was uncommitted and no push, deployment, hosting resumption, or public-site scan had been performed. The completed patch monitor was removed. Hosting/runtime/account checks and real Redis/provider integration remain subject to the production procedure above.
+
+Verified local build ID: `qCvIEJmjCnQkBBcQrcotN`. Lockfile SHA-256: `d33ecfcc7b028ed45f3c3d58c5ddfb15188d2a671d9260703a3fbb85db636c87`. These supersede the 3 November artifact identifiers for the current local candidate.
