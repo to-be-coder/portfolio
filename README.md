@@ -43,7 +43,7 @@ The optional Redis integration test uses a disposable local Redis database 15. S
 
 ## Maintenance and deployment
 
-GitHub Actions repeats verification on pushes, pull requests, and a weekly schedule. A separate daily advisory check reads the lockfile without installing application dependencies. Dependabot proposes weekly Bun and GitHub Actions updates. These workflows become active after they reach the repository's default branch; they do not merge or deploy updates automatically. Verification installs the exact lockfile with dependency lifecycle scripts disabled and a read-only GitHub token.
+GitHub Actions repeats verification on pushes, pull requests, and a weekly schedule. A separate daily advisory check reads the lockfile without installing application dependencies. Dependabot proposes weekly Bun and GitHub Actions updates. These workflows are on the repository's default branch; they do not merge or deploy dependency updates automatically. Verification installs the exact lockfile with dependency lifecycle scripts disabled and a read-only GitHub token.
 
 `vercel.json` pins the Bun executable for install and build, and enforces the frozen lockfile and disabled lifecycle scripts on Vercel. The `node` engine selects the Node 24 runtime; Vercel controls its exact patch version, so confirm it in deployment logs.
 
@@ -51,4 +51,4 @@ Next.js and its ESLint config should be updated together. React stays on the pat
 
 The `minimatch` override installs 11.0.4 for all lint consumers. Versioned Bun patches adapt three legacy lint plugins to its current API so the old dependency can be removed without disabling rules or suppressing audit alerts. See [patch maintenance](patches/README.md) before updating those plugins. Use the pinned Bun 1.4.4 for reproducible installs. Next.js and its ESLint config are pinned to the November security release, 16.4.5; [SECURITY.md](SECURITY.md#nextjs-security-release-applied-4-november-2026) records the advisory assessment and successful local verification.
 
-The production project was intentionally paused by its owner. Publishing a branch or passing local checks does not confirm a production release. Follow the deployment checklist in [SECURITY.md](SECURITY.md) before resuming it.
+Production source `36caa99` was redeployed with live AI enabled on 5 November 2026; Preview remains curated-only. The [production record](SECURITY.md#production-live-ai-and-linux-verification-5-november-2026) documents the provider budget, shared limiter, hosting controls, live cancellation checks, and remaining verification limits. Follow the production release procedure for future deployments; passing local checks alone does not verify the deployed service.
