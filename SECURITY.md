@@ -2,7 +2,7 @@
 
 Security patches reduce known risk; an empty audit is not a guarantee against undiscovered vulnerabilities or account compromise. The repository is the authority for application controls. Hosting, billing, credentials, and domain settings need separate verification.
 
-Latest verification: the Linux baseline passed on 5 November 2026, and production source `36caa99` was redeployed with live AI enabled only in Production. The [production record](#production-live-ai-and-linux-verification-5-november-2026) below records the observed hosting controls, live request and cancellation checks, and remaining verification limits.
+Latest verification: production source `9d85bbc` is Current with GPT-6 Luna live chat, and four noncurated response checks passed on 5 November 2026. The [latest deployment record](#deployment-and-live-model-verification-5-november-2026) records that result; the earlier [production record](#production-live-ai-and-linux-verification-5-november-2026) retains the hosting, cancellation, and verification-limit evidence. Preview remains curated-only.
 
 ## Application boundaries
 
@@ -203,7 +203,7 @@ No cloud Redis outage was induced, no cloud quota boundary was exercised, and pr
 
 ## Lower-cost model selection: 5 November 2026
 
-The local candidate changes live chat's default from `gpt-4.1-mini` to `gpt-6-luna`, explicitly selects the Responses API, and sets `reasoning.effort` to `none` for that model. This configuration is intended for short, text-only portfolio answers without adding tools or increasing the 1,400-token output allowance or 45-second deadline. Server-side `AI_CHAT_MODEL` overrides remain available; other model IDs retain their own reasoning defaults rather than receiving Luna-specific settings. `store: false`, disabled retries, curated starters, quotas, and cancellation cleanup are unchanged.
+The deployed update changes live chat's default from `gpt-4.1-mini` to `gpt-6-luna`, explicitly selects the Responses API, and sets `reasoning.effort` to `none` for that model. This configuration is intended for short, text-only portfolio answers without adding tools or increasing the 1,400-token output allowance or 45-second deadline. Server-side `AI_CHAT_MODEL` overrides remain available; other model IDs retain their own reasoning defaults rather than receiving Luna-specific settings. `store: false`, disabled retries, curated starters, quotas, and cancellation cleanup are unchanged.
 
 [GPT-6 Luna supports Responses, streaming, and reasoning disabled](https://developers.openai.com/api/docs/models/gpt-6-luna). GPT-5 nano has a lower listed token price, but its alias and snapshot are [scheduled to shut down on 11 December 2026](https://developers.openai.com/api/docs/deprecations#2026-06-11-gpt-5-and-o3-model-deprecations); it was not selected as a new default. Model prices and availability must be rechecked for future changes. Reasoning tokens share a model's output allowance and can exhaust it before visible text, so model overrides require their own quality and latency checks; see [reasoning-token limits](https://developers.openai.com/api/docs/guides/reasoning).
 
@@ -213,11 +213,24 @@ The previous portfolio key remains visible in the provider dashboard as a **Revo
 
 Local verification ran entirely in OrbStack `dev` Linux aarch64 with Node **24.22.1** and scoped Bun **1.4.4**. The frozen install with lifecycle scripts disabled left dependencies unchanged. The unmodified audit reported no known vulnerabilities across **622 packages**. Full checks passed lint, lint compatibility, install-policy fixtures, types, **25 unit tests**, and the production build. All **16 desktop/mobile Chromium tests** passed with live AI disabled. The installed SDK was exercised with fake network responses to verify the exact Responses endpoint, selected model, streaming, `store: false`, token cap, developer grounding role, and `reasoning.effort: none`; isolated processes verified an older model and a custom model override receive no Luna-specific options. Existing completion, error, disconnect, and retained-cleanup fixtures still passed. Independent source review found no additional issue in this change.
 
-Local build ID: `oSmL8OeiMx6mmmfBbBO2h`. The lockfile remains unchanged at SHA-256 `d33ecfcc7b028ed45f3c3d58c5ddfb15188d2a671d9260703a3fbb85db636c87`. These checks made no provider calls. This model change has not yet been deployed or evaluated against the live provider; the earlier production observations above describe the previous default.
+Local build ID: `oSmL8OeiMx6mmmfBbBO2h`. The lockfile remains unchanged at SHA-256 `d33ecfcc7b028ed45f3c3d58c5ddfb15188d2a671d9260703a3fbb85db636c87`. These local checks made no provider calls. The production deployment and bounded live evaluation are recorded below; the earlier production observations above describe the previous default.
 
 
-### Deployment follow-up: 5 November 2026
+### Deployment and live model verification: 5 November 2026
 
-[PR #42](https://github.com/to-be-coder/portfolio/pull/42) merged as `9d85bbc0b7c4128fa32997c3f95178a5a692e656`; all five GitHub checks on its reviewed head passed. At this follow-up, the manual production-deployment request in Vercel's dashboard remained stalled, and the CLI device-authorization page's approval control remained disabled. A new production deployment was not verified.
+[PR #42](https://github.com/to-be-coder/portfolio/pull/42) merged as `9d85bbc0b7c4128fa32997c3f95178a5a692e656`; all five GitHub checks on its reviewed head passed. The [Git-integrated production deployment](https://vercel.com/tobecoders-projects-b22221f8/portfolio/GPBgMvehPvWexLmS3jheif3B7q31) was verified as **Ready and Current**, with `www.jessicacheng.studio` assigned to that source revision. It reached Ready at **1:45:59 p.m. Eastern on 5 November**, after a **42-second** build. Logs reported Node **24.22.2**, npm **11.19.1**, Bun **1.4.4**, and Next.js **16.4.5**. Vercel restored the build cache; the pinned repository bootstrap then installed and built the app, reporting no dependency changes. Two npm cache-directory warnings were nonfatal. These Node details describe the build machine; the function runtime patch was not independently verified.
 
-The previously verified production source `36caa99eb0c02118970bc9a3231f90e183e5a55d` remained Current, with Standard Protection restored while authorization was unresolved. It continues to use the previous GPT-4.1 mini default. The former portfolio key remains revoked. GPT-6 Luna deployment and live quality/latency evaluation are still pending; the local and GitHub checks above do not establish live-provider behavior.
+The earlier dashboard deployment request and CLI authorization appeared stalled, so the previous production deployment was retained while their status was unresolved. The Git deployment was subsequently verified as complete. The old CLI device request expired; a fresh attempt was cancelled when that successful deployment was confirmed. No CLI deployment was needed.
+
+For the live checks, Vercel Authentication temporarily covered All Deployments; an unauthenticated command-line request returned **HTTP 302**. Four noncurated requests then completed in the authenticated browser:
+
+| Check | Observed response | Approximate completion upper bound |
+| --- | --- | --- |
+| Why Vision Track used Slack | Connected the choice to research with five founders and 20 SMB executives, product leaders, and team leads, and the aim of avoiding another dashboard. | 5.2 seconds |
+| Follow-up about audience and scope | Distinguished initial startup founders from SMB sales/marketing users, described the Slack MVP and 80% scope reduction, and linked to `/vision-track`. | 2.2 seconds |
+| Unsupported revenue and customer figures | Explicitly said the requested figures were unknown rather than inventing numbers. | 1.2 seconds |
+| Incorrect premise of Vercel v0 employment | Corrected the premise and described the work as a self-directed exercise. | 2.2 seconds |
+
+These timings include browser interaction and observation overhead; they are approximate upper bounds from four samples, not a latency benchmark. The answers support basic completion, conversation continuity, and grounding for the checked questions. They do not establish general model accuracy or provide a new security certification. The final application code was unchanged from the Linux checks that passed **25 unit tests**, **16 browser tests**, and the clean **622-package** audit.
+
+After testing, **Standard Protection** was restored and confirmed in the dashboard. Test conversations were cleared from the browser, and a canonical reload in authenticated Chrome completed with zero console errors. No additional provider calls were made after the four checks. An unauthenticated command-line request returned **HTTP 429 from Vercel Bot Protection**, matching the known limitation; separate anonymous-browser behavior and independent command-line response-header verification were not established. The **$5 monthly project limit**, **$4 and $5 alerts**, shared Redis quotas, and concurrency controls were unchanged. The former key remains a revoked dashboard record. The earlier cloud-outage, quota-boundary, billing-timing, runtime-patch, and account-security verification limits continue to apply.
