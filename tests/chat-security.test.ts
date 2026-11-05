@@ -17,6 +17,7 @@ import { acquireChatPermit, CHAT_ADMISSION_SCRIPT, CHAT_PROTECTION_LIMITS, ChatP
 // retained work before restoring the network mock.
 const afterCallbacks: Array<() => unknown> = []
 mock.module('next/server', () => ({ after: (callback: () => unknown) => { afterCallbacks.push(callback) } }))
+const expectedModelId = process.env.AI_CHAT_MODEL ?? 'gpt-6-luna'
 const { POST } = await import('../src/app/api/chat/route')
 async function finishRequestLifecycle() {
   await Promise.all(afterCallbacks.splice(0).map((callback) => callback()))
@@ -259,7 +260,7 @@ test('live streaming fixtures release leases and abort open providers on errors 
   const originalFetch = globalThis.fetch
   process.env = { ...originalEnv, ...protectedEnv, AI_CHAT_ENABLED: 'true', OPENAI_API_KEY: 'fake-provider-key' }
   const encodeEvent = (event: object) => new TextEncoder().encode(`data: ${JSON.stringify(event)}\n\n`)
-  const created = { type: 'response.created', response: { id: 'response-fixture', created_at: 0, model: 'gpt-4.1-mini' } }
+  const created = { type: 'response.created', response: { id: 'response-fixture', created_at: 0, model: expectedModelId } }
   try {
     for (const scenario of ['success', 'error-open', 'disconnect'] as const) {
       let upstreamSignal: AbortSignal | null | undefined
@@ -280,9 +281,19 @@ test('live streaming fixtures release leases and abort open providers on errors 
         assert.equal(url, 'https://api.openai.com/v1/responses', 'unexpected outbound URL')
         providerCalls += 1
         upstreamSignal = options?.signal
-        const sent = JSON.parse(String(options?.body)) as { store: boolean; max_output_tokens: number }
+        const sent = JSON.parse(String(options?.body)) as {
+          model: string; store: boolean; stream: boolean; max_output_tokens: number
+          reasoning?: { effort?: string; summary?: string }
+          input: Array<{ role: string; content: unknown }>
+        }
+        assert.equal(sent.model, expectedModelId)
         assert.equal(sent.store, false)
+        assert.equal(sent.stream, true)
         assert.equal(sent.max_output_tokens, 1400)
+        assert.deepEqual(sent.reasoning, expectedModelId === 'gpt-6-luna' ? { effort: 'none' } : undefined)
+        assert.equal(sent.input[0].role, expectedModelId === 'gpt-6-luna' ? 'developer' : 'system')
+        assert.match(JSON.stringify(sent.input[0].content), /Use only the portfolio information/)
+        assert.equal(sent.input.at(-1)?.role, 'user')
         return new Response(new ReadableStream<Uint8Array>({
           start(controller) {
             controller.enqueue(encodeEvent(created))
@@ -337,6 +348,21 @@ test('live streaming fixtures release leases and abort open providers on errors 
   }
 })
 
+test('server model overrides preserve Responses without Luna-specific options', async () => {
+  // The route captures its model at import. Fresh Bun processes exercise that
+  // real configuration boundary and the installed SDK, with only fetch faked.
+  for (const model of ['gpt-4.1-mini', 'portfolio-custom-model']) {
+    const { stdout, stderr } = await promisify(execFile)(process.execPath, [
+      'test', 'tests/chat-security.test.ts', '--test-name-pattern', '^live streaming fixtures',
+    ], {
+      env: { ...process.env, AI_CHAT_MODEL: model, OPENAI_API_KEY: '' },
+      encoding: 'utf8', timeout: 15000, maxBuffer: 256 * 1024,
+    })
+    assert.match(stdout + stderr, /1 pass/)
+    assert.match(stdout + stderr, /0 fail/)
+  }
+})
+
 test('retained platform cleanup aborts generation and awaits an already-running lease release', async () => {
   const originalEnv = process.env
   const originalFetch = globalThis.fetch
@@ -367,7 +393,7 @@ test('retained platform cleanup aborts generation and awaits an already-running 
         return new Response(new ReadableStream<Uint8Array>({
           start(controller) {
             upstreamSignal?.addEventListener('abort', () => controller.error(new DOMException('Aborted fixture', 'AbortError')), { once: true })
-            controller.enqueue(encodeEvent({ type: 'response.created', response: { id: 'retained-fixture', created_at: 0, model: 'gpt-4.1-mini' } }))
+            controller.enqueue(encodeEvent({ type: 'response.created', response: { id: 'retained-fixture', created_at: 0, model: expectedModelId } }))
             controller.enqueue(encodeEvent({ type: 'response.output_item.added', output_index: 0, item: { type: 'message', id: 'retained-message' } }))
             controller.enqueue(encodeEvent({ type: 'response.output_text.delta', item_id: 'retained-message', output_index: 0, delta: 'Partial ' }))
           },
