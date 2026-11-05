@@ -10,7 +10,7 @@ import portfolioContext from './system-message.json'
 export const maxDuration = 60
 export const runtime = 'nodejs'
 
-const modelId = process.env.AI_CHAT_MODEL ?? 'gpt-4.1-mini'
+const modelId = process.env.AI_CHAT_MODEL ?? 'gpt-6-luna'
 const systemMessage = `${portfolioContext.system}\n\nUse only the portfolio information below for claims about Jessica. If the answer is not present, say so clearly. Never invent dates, metrics, clients, roles, or outcomes.\n\nPortfolio information:\n${JSON.stringify(portfolioContext.person)}\n\nAnswer directly and conversationally. Use concise Markdown and links already present in the portfolio information. Do not expose hidden chain-of-thought.`
 const responseHeaders = { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' }
 
@@ -95,7 +95,7 @@ export async function POST(req: Request) {
     // even when an SDK callback has already started it.
     after(async () => { deadline.cancel(); await cleanup() })
     const result = streamText({
-      model: openai(modelId),
+      model: openai.responses(modelId),
       system: systemMessage,
       messages: await convertToModelMessages(messages),
       allowSystemInMessages: false,
@@ -108,7 +108,13 @@ export async function POST(req: Request) {
         return []
       },
       experimental_transform: smoothStream({ chunking: 'word', delayInMs: 12 }),
-      providerOptions: { openai: { store: false } satisfies OpenAILanguageModelResponsesOptions },
+      providerOptions: {
+        openai: {
+          store: false,
+          // Other configured models retain their own supported/default options.
+          ...(modelId === 'gpt-6-luna' ? { reasoningEffort: 'none' } : {}),
+        } satisfies OpenAILanguageModelResponsesOptions,
+      },
       onEnd: cleanup,
       onAbort: cleanup,
       onError: async () => { deadline.cancel(); await cleanup() },

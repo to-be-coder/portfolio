@@ -15,7 +15,7 @@ bun install --frozen-lockfile --ignore-scripts
 bun run dev
 ```
 
-No environment variables are needed for the site or the four curated guide prompts. Live AI is disabled by default, even if an API key already exists. Optional settings are documented in `.env.example` and [SECURITY.md](SECURITY.md).
+No environment variables are needed for the site or the four curated guide prompts. Live AI is disabled by default, even if an API key already exists. When enabled, live chat defaults to `gpt-6-luna` through the Responses API with reasoning disabled, a 1,400-token output cap, and a 45-second deadline. `AI_CHAT_MODEL` can override the server-side model; Luna-specific options are not applied to other models. Optional settings are documented in `.env.example` and [SECURITY.md](SECURITY.md).
 
 ## Content
 
