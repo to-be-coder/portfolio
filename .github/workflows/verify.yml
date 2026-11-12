@@ -45,6 +45,8 @@ jobs:
         run: bun run test:lint-rules
       - name: Verify default install-script protection
         run: bun run test:install-policy
+      - name: Verify dependency security regressions
+        run: bun run test:dependency-security
       - name: Check types
         run: bun run typecheck
       - name: Test request protections
