@@ -1,7 +1,16 @@
 diff --git a/dist/index.js b/dist/index.js
-index 8716a99b2dae0638b85323ec231248f957ef6e2c..224f8f5e20768f5320f5927075cf7ad94fa1125a 100644
+index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa9159f094 100644
 --- a/dist/index.js
 +++ b/dist/index.js
+@@ -16305,7 +16305,7 @@ var blockGfm = {
+ var blockPedantic = {
+   ...blockNormal,
+   html: edit(
+-    `^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`
++    `^ *(?:comment(?: *\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1>(?: *\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?>(?: *\\n{2,}|\\s*$))`
+   ).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+   def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+   heading: /^(#{1,6})(.*)(?:\n+|$)/,
 @@ -16343,7 +16343,7 @@ var tag = edit(
    "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>"
  ).replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
@@ -11,10 +20,151 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..224f8f5e20768f5320f5927075cf7ad9
  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
+@@ -16531,6 +16531,68 @@ function indentCodeCompensation(raw, text, rules) {
+     return node;
+   }).join("\n");
+ }
++
++// Backport of markedjs/marked eab1e48: retain closer hints only for active
++// inline passes, including nested/reentrant passes on the same tokenizer.
++const portfolioMarkdownCloserHintStacks = new WeakMap();
++function portfolioMarkdownScanClosers(src) {
++  const frame = { maskedSrc: src, emphasis: { "*": -1, "_": -1 }, del: -1 };
++  for (let i = 0; i < src.length; i++) {
++    const ch = src[i];
++    if (ch !== "*" && ch !== "_" && ch !== "~") continue;
++    const prev = i === 0 ? "\n" : src[i - 1];
++    let j = i + 1;
++    while (j < src.length && src[j] === ch) j++;
++    if (prev !== " " && prev !== "\t" && prev !== "\n" && prev !== "\r" && prev !== "\f") {
++      if (ch === "~") frame.del = i;
++      else frame.emphasis[ch] = i;
++    }
++    i = j - 1;
++  }
++  return frame;
++}
++function portfolioMarkdownBeginScan(tokenizer, maskedSrc, rawSrc) {
++  const frame = portfolioMarkdownScanClosers(maskedSrc);
++  if (rawSrc !== undefined) {
++    frame.rawSrc = rawSrc;
++    frame.rawDel = portfolioMarkdownScanRawDel(rawSrc);
++  }
++  const stack = portfolioMarkdownCloserHintStacks.get(tokenizer);
++  if (stack) stack.push(frame);
++  else portfolioMarkdownCloserHintStacks.set(tokenizer, [frame]);
++}
++function portfolioMarkdownEndScan(tokenizer) {
++  const stack = portfolioMarkdownCloserHintStacks.get(tokenizer);
++  if (!stack) return;
++  stack.pop();
++  if (stack.length === 0) portfolioMarkdownCloserHintStacks.delete(tokenizer);
++}
++function portfolioMarkdownLastCloser(tokenizer, maskedSrc, delimiter) {
++  const active = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
++  const frame = active && active.maskedSrc === maskedSrc ? active : portfolioMarkdownScanClosers(maskedSrc);
++  return delimiter === "~" ? frame.del : frame.emphasis[delimiter];
++}
++
++// Marked 15's del() reads raw source, not the masked source used by emStrong.
++// Keep its existing regex semantics: an escaped whitespace or escaped tilde
++// can finish the body. Extra candidate closers are safe; omitting one is not.
++function portfolioMarkdownScanRawDel(src) {
++  let last = -1;
++  for (let i = 0; i < src.length; i++) {
++    if (src[i] !== "~") continue;
++    const prev = i === 0 ? "\n" : src[i - 1];
++    let j = i + 1;
++    while (j < src.length && src[j] === "~") j++;
++    if ((prev !== " " && prev !== "\t" && prev !== "\n" && prev !== "\r" && prev !== "\f")
++      || (i >= 2 && src[i - 2] === "\\")) last = j - 1;
++    i = j - 1;
++  }
++  return last;
++}
++function portfolioMarkdownLastRawDelCloser(tokenizer, rawSrc) {
++  const frame = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
++  return frame && frame.rawSrc === rawSrc ? frame.rawDel : portfolioMarkdownScanRawDel(rawSrc);
++}
+ var _Tokenizer = class {
+   options;
+   rules;
+@@ -17054,9 +17116,13 @@ ${currentText}` : currentText;
+       const lLength = [...match[0]].length - 1;
+       let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
+       const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
++      const lastCloser = portfolioMarkdownLastCloser(this, maskedSrc, match[0][0]);
++      const closerWindowStart = maskedSrc.length - src.length + lLength;
++      if (lastCloser < closerWindowStart) return;
+       endReg.lastIndex = 0;
+       maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
+       while ((match = endReg.exec(maskedSrc)) != null) {
++        if (match.index > lastCloser - closerWindowStart) break;
+         rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
+         if (!rDelim) continue;
+         rLength = [...rDelim].length;
+@@ -17118,7 +17184,9 @@ ${currentText}` : currentText;
+       };
+     }
+   }
+-  del(src) {
++  del(src, rawSrc = src) {
++    const closerWindowStart = rawSrc.length - src.length + (src.startsWith("~~") ? 2 : 1);
++    if (portfolioMarkdownLastRawDelCloser(this, rawSrc) < closerWindowStart) return;
+     const cap = this.rules.inline.del.exec(src);
+     if (cap) {
+       return {
+@@ -17451,6 +17519,9 @@ var _Lexer = class __Lexer {
+     while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
+       maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+     }
++    const portfolioMarkdownRawSrc = src;
++    portfolioMarkdownBeginScan(this.tokenizer, maskedSrc, portfolioMarkdownRawSrc);
++    try {
+     let keepPrevChar = false;
+     let prevChar = "";
+     while (src) {
+@@ -17510,7 +17581,7 @@ var _Lexer = class __Lexer {
+         tokens.push(token);
+         continue;
+       }
+-      if (token = this.tokenizer.del(src)) {
++      if (token = this.tokenizer.del(src, portfolioMarkdownRawSrc)) {
+         src = src.substring(token.raw.length);
+         tokens.push(token);
+         continue;
+@@ -17566,7 +17637,8 @@ var _Lexer = class __Lexer {
+       }
+     }
+     return tokens;
+-  }
++  } finally { portfolioMarkdownEndScan(this.tokenizer); }
++}
+ };
+ var _Renderer = class {
+   options;
+@@ -18039,7 +18111,7 @@ var Marked = class {
+     return values;
+   }
+   use(...args) {
+-    const extensions = this.defaults.extensions || { renderers: {}, childTokens: {} };
++    const extensions = this.defaults.extensions || { renderers: Object.create(null), childTokens: Object.create(null) };
+     args.forEach((pack) => {
+       const opts = { ...pack };
+       opts.async = this.defaults.async || opts.async || false;
 diff --git a/dist/next.js b/dist/next.js
-index be6734844335476e3b3104c4b1668c60c54cf243..60919565dd246f760a2104a0f6cd1c5770538bd1 100644
+index be6734844335476e3b3104c4b1668c60c54cf243..59d79b3a86047fe18fc7dcfa5aeb3180c0d1f838 100644
 --- a/dist/next.js
 +++ b/dist/next.js
+@@ -16300,7 +16300,7 @@ var blockGfm = {
+ var blockPedantic = {
+   ...blockNormal,
+   html: edit(
+-    `^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`
++    `^ *(?:comment(?: *\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1>(?: *\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?>(?: *\\n{2,}|\\s*$))`
+   ).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+   def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+   heading: /^(#{1,6})(.*)(?:\n+|$)/,
 @@ -16338,7 +16338,7 @@ var tag = edit(
    "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>"
  ).replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
@@ -24,3 +174,135 @@ index be6734844335476e3b3104c4b1668c60c54cf243..60919565dd246f760a2104a0f6cd1c57
  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
+@@ -16526,6 +16526,68 @@ function indentCodeCompensation(raw, text, rules) {
+     return node;
+   }).join("\n");
+ }
++
++// Backport of markedjs/marked eab1e48: retain closer hints only for active
++// inline passes, including nested/reentrant passes on the same tokenizer.
++const portfolioMarkdownCloserHintStacks = new WeakMap();
++function portfolioMarkdownScanClosers(src) {
++  const frame = { maskedSrc: src, emphasis: { "*": -1, "_": -1 }, del: -1 };
++  for (let i = 0; i < src.length; i++) {
++    const ch = src[i];
++    if (ch !== "*" && ch !== "_" && ch !== "~") continue;
++    const prev = i === 0 ? "\n" : src[i - 1];
++    let j = i + 1;
++    while (j < src.length && src[j] === ch) j++;
++    if (prev !== " " && prev !== "\t" && prev !== "\n" && prev !== "\r" && prev !== "\f") {
++      if (ch === "~") frame.del = i;
++      else frame.emphasis[ch] = i;
++    }
++    i = j - 1;
++  }
++  return frame;
++}
++function portfolioMarkdownBeginScan(tokenizer, maskedSrc, rawSrc) {
++  const frame = portfolioMarkdownScanClosers(maskedSrc);
++  if (rawSrc !== undefined) {
++    frame.rawSrc = rawSrc;
++    frame.rawDel = portfolioMarkdownScanRawDel(rawSrc);
++  }
++  const stack = portfolioMarkdownCloserHintStacks.get(tokenizer);
++  if (stack) stack.push(frame);
++  else portfolioMarkdownCloserHintStacks.set(tokenizer, [frame]);
++}
++function portfolioMarkdownEndScan(tokenizer) {
++  const stack = portfolioMarkdownCloserHintStacks.get(tokenizer);
++  if (!stack) return;
++  stack.pop();
++  if (stack.length === 0) portfolioMarkdownCloserHintStacks.delete(tokenizer);
++}
++function portfolioMarkdownLastCloser(tokenizer, maskedSrc, delimiter) {
++  const active = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
++  const frame = active && active.maskedSrc === maskedSrc ? active : portfolioMarkdownScanClosers(maskedSrc);
++  return delimiter === "~" ? frame.del : frame.emphasis[delimiter];
++}
++
++// Marked 15's del() reads raw source, not the masked source used by emStrong.
++// Keep its existing regex semantics: an escaped whitespace or escaped tilde
++// can finish the body. Extra candidate closers are safe; omitting one is not.
++function portfolioMarkdownScanRawDel(src) {
++  let last = -1;
++  for (let i = 0; i < src.length; i++) {
++    if (src[i] !== "~") continue;
++    const prev = i === 0 ? "\n" : src[i - 1];
++    let j = i + 1;
++    while (j < src.length && src[j] === "~") j++;
++    if ((prev !== " " && prev !== "\t" && prev !== "\n" && prev !== "\r" && prev !== "\f")
++      || (i >= 2 && src[i - 2] === "\\")) last = j - 1;
++    i = j - 1;
++  }
++  return last;
++}
++function portfolioMarkdownLastRawDelCloser(tokenizer, rawSrc) {
++  const frame = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
++  return frame && frame.rawSrc === rawSrc ? frame.rawDel : portfolioMarkdownScanRawDel(rawSrc);
++}
+ var _Tokenizer = class {
+   options;
+   rules;
+@@ -17049,9 +17111,13 @@ ${currentText}` : currentText;
+       const lLength = [...match[0]].length - 1;
+       let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
+       const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
++      const lastCloser = portfolioMarkdownLastCloser(this, maskedSrc, match[0][0]);
++      const closerWindowStart = maskedSrc.length - src.length + lLength;
++      if (lastCloser < closerWindowStart) return;
+       endReg.lastIndex = 0;
+       maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
+       while ((match = endReg.exec(maskedSrc)) != null) {
++        if (match.index > lastCloser - closerWindowStart) break;
+         rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
+         if (!rDelim) continue;
+         rLength = [...rDelim].length;
+@@ -17113,7 +17179,9 @@ ${currentText}` : currentText;
+       };
+     }
+   }
+-  del(src) {
++  del(src, rawSrc = src) {
++    const closerWindowStart = rawSrc.length - src.length + (src.startsWith("~~") ? 2 : 1);
++    if (portfolioMarkdownLastRawDelCloser(this, rawSrc) < closerWindowStart) return;
+     const cap = this.rules.inline.del.exec(src);
+     if (cap) {
+       return {
+@@ -17446,6 +17514,9 @@ var _Lexer = class __Lexer {
+     while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
+       maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
+     }
++    const portfolioMarkdownRawSrc = src;
++    portfolioMarkdownBeginScan(this.tokenizer, maskedSrc, portfolioMarkdownRawSrc);
++    try {
+     let keepPrevChar = false;
+     let prevChar = "";
+     while (src) {
+@@ -17505,7 +17576,7 @@ var _Lexer = class __Lexer {
+         tokens.push(token);
+         continue;
+       }
+-      if (token = this.tokenizer.del(src)) {
++      if (token = this.tokenizer.del(src, portfolioMarkdownRawSrc)) {
+         src = src.substring(token.raw.length);
+         tokens.push(token);
+         continue;
+@@ -17561,7 +17632,8 @@ var _Lexer = class __Lexer {
+       }
+     }
+     return tokens;
+-  }
++  } finally { portfolioMarkdownEndScan(this.tokenizer); }
++}
+ };
+ var _Renderer = class {
+   options;
+@@ -18034,7 +18106,7 @@ var Marked = class {
+     return values;
+   }
+   use(...args) {
+-    const extensions = this.defaults.extensions || { renderers: {}, childTokens: {} };
++    const extensions = this.defaults.extensions || { renderers: Object.create(null), childTokens: Object.create(null) };
+     args.forEach((pack) => {
+       const opts = { ...pack };
+       opts.async = this.defaults.async || opts.async || false;
