@@ -124,6 +124,7 @@ export async function POST(req: Request) {
       originalMessages: messages,
       headers: responseHeaders,
       sendReasoning: false,
+      redactToolErrors: true,
       messageMetadata: ({ part }) => {
         if (part.type === 'start') return { createdAt: startedAt, model: modelId }
         if (part.type === 'finish') return {
