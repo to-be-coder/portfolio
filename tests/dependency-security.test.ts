@@ -6,6 +6,29 @@ import { test } from 'bun:test'
 
 const run = promisify(execFile)
 
+// The old validator expanded every schema alternative for every malformed
+// part. Bound the real installed SDK with an external deadline and heap cap,
+// and retain a valid-message compatibility control. No network calls occur.
+test('installed AI SDK bounds malformed UI-message validation', async () => {
+  const script = String.raw`
+    import assert from 'node:assert/strict'
+    import { safeValidateUIMessages } from 'ai'
+    const valid = [{ id: 'valid', role: 'user', parts: [{ type: 'text', text: 'Portfolio question.' }] }]
+    assert.equal((await safeValidateUIMessages({ messages: valid })).success, true)
+    const messages = [{ id: 'invalid', role: 'user', parts: Array.from({ length: 4000 }, () => ({ type: 'invalid' })) }]
+    assert.ok(JSON.stringify(messages).length < 128 * 1024)
+    assert.equal((await safeValidateUIMessages({ messages })).success, false)
+    process.stdout.write('passed')
+  `
+  const { stdout } = await run('node', ['--max-old-space-size=128', '--input-type=module', '--eval', script], {
+    encoding: 'utf8',
+    timeout: 5000,
+    killSignal: 'SIGKILL',
+    maxBuffer: 64 * 1024,
+  })
+  assert.equal(stdout, 'passed')
+}, 10000)
+
 // Run the installed parsers in Node, with an external deadline: a synchronous
 // RegExp stall cannot be interrupted by a timer in the parser's own process.
 // The upstream regression is fixed in Marked 18.1.0 (commit 0d20220); the older
