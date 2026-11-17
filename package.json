@@ -14,7 +14,7 @@
     "check": "bun run lint && bun run test:lint-rules && bun run test:install-policy && bun run test:dependency-security && bun run typecheck && bun run test && bun run build",
     "test:lint-rules": "node scripts/verify-lint-rules.mjs",
     "test:install-policy": "node scripts/verify-install-policy.mjs",
-    "test:dependency-security": "bun test tests/dependency-security.test.ts tests/postcss-dependency-security.test.ts tests/semver-dependency-security.test.ts"
+    "test:dependency-security": "bun test tests/dependency-security.test.ts tests/postcss-dependency-security.test.ts tests/semver-dependency-security.test.ts tests/streamdown-dependency-security.test.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "4.0.117",
@@ -37,7 +37,7 @@
     "next": "16.4.5",
     "react": "19.2.9",
     "react-dom": "19.2.9",
-    "streamdown": "2.7.1",
+    "streamdown": "2.8.0",
     "tailwind-merge": "3.7.0",
     "zod": "4.6.7"
   },

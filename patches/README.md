@@ -18,20 +18,23 @@ References: [Minimatch advisory](https://github.com/isaacs/minimatch/security/ad
 
 ## Markdown parser backports
 
-Streamdown resolves Marked 18.1.3, including the [18.1.0 Unicode-whitespace fix](https://github.com/markedjs/marked/commit/0d2022025d3cd44750a3ffbb77e2da60635589ee) and the [18.1.3 parser hardening](https://github.com/markedjs/marked/releases/tag/v18.1.3). Gridland 0.4.3 still declares Marked 17.x, whose latest release is 17.0.6, and also embeds Marked 15.0.12 in its published browser bundles. Neither older line has an upstream release containing these fixes.
+Streamdown resolves Marked 18.2.1, including the [18.1.0 Unicode-whitespace fix](https://github.com/markedjs/marked/commit/0d2022025d3cd44750a3ffbb77e2da60635589ee), the [18.1.3 parser hardening](https://github.com/markedjs/marked/releases/tag/v18.1.3), and the [18.2.1 unmatched-run follow-up](https://github.com/markedjs/marked/releases/tag/v18.2.1). Gridland 0.4.3 still declares Marked 17.x, whose latest release is 17.0.6, and also embeds Marked 15.0.12 in its published browser bundles. Neither older line has an upstream release containing these fixes.
 
 Two exact-version Bun patches preserve the older APIs while adapting these upstream changes:
 
 - Restrict the whitespace gaps around inline link destinations to ASCII space, tab, and newline ([0d20220](https://github.com/markedjs/marked/commit/0d2022025d3cd44750a3ffbb77e2da60635589ee)).
 - Avoid repeatedly scanning the rest of the input for unmatched emphasis delimiters ([eab1e48](https://github.com/markedjs/marked/commit/eab1e483fe88e559288d3003d493bbc0ec4ecf53)). Closer hints belong to a tokenizer's active inline pass, support nested parsing, and are removed in a `finally` block.
+- Batch unmatched asterisk/underscore runs instead of rescanning their greedy opener expressions one character at a time ([0b8b3b3](https://github.com/markedjs/marked/commit/0b8b3b33863822681a1cb5a365baec684c368230)). Both older parsers already batch tilde runs in their text tokenizer, so their new fast path handles only asterisks/underscores and retains the existing strikethrough logic, including Marked 15's raw-source guard. The last character remains on the original tokenizer path; underscore previous-character behavior and email handling are preserved.
 - Remove overlapping trailing-whitespace alternatives from the pedantic HTML rules ([2d4a23c](https://github.com/markedjs/marked/commit/2d4a23c50e5c4fe64de67762d19a0c9741a811d4)).
 - Use maps without inherited prototype properties for registered extension renderers and child-token names ([5cb03bd](https://github.com/markedjs/marked/commit/5cb03bd)).
 
 `marked@17.0.6` patches its ESM and UMD runtime entrypoints. `@gridland/web@0.4.3` patches its embedded parsers in `dist/index.js` and `dist/next.js`. These are locally maintained backports, not upstream fixed releases. The generated source maps remain upstream artifacts; the runtime patches are the authority for the changed code.
 
+The local run-skipping backports apply only to the standard tokenizer without custom inline extensions or masking hooks. Custom tokenizer methods and extension start positions retain their original per-position dispatch; the default-grammar resource bounds do not promise bounded custom extension code. New batch tokens preserve raw-HTML escaping state; merging retains the original text token's flag, matching the older inlineText behavior. The upstream 18.2.1 fast path does not provide these custom-dispatch/raw-HTML compatibility protections. The application does not register custom Marked tokenizers, and Streamdown's inspected use is a default-GFM block-tokenization pass for link definitions, so that upstream difference has no identified application regression.
+
 The portfolio currently uses Gridland only for its fixed multi-select demo. That demo does not expose its embedded Markdown parser; the backports keep the distributed dependency hardened. The application does not enable Marked's pedantic mode or let requests register parser extensions.
 
-`bun run test:dependency-security` exercises the installed parsers with bounded adversarial inputs, ordinary Markdown, nested parsing, and extension behavior. It runs in `bun run check` and CI. When Gridland supports and ships a fixed parser, update it, remove obsolete patch entries/files, and rerun those checks. Do not carry a patch to another package version without reviewing its source.
+`bun run test:dependency-security` exercises the installed parsers with bounded adversarial inputs, ordinary Markdown, nested parsing, custom tokenizer dispatch, and extension behavior. Whole-run fixtures exercise 60,000-character runs both initially and after text under an external five-second deadline and 256 MiB child heap limit. It runs in `bun run check` and CI. When Gridland supports and ships a fixed parser, update it, remove obsolete patch entries/files, and rerun those checks. Do not carry a patch to another package version without reviewing its source.
 
 
 ## PostCSS resolution

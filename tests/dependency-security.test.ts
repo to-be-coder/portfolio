@@ -171,6 +171,19 @@ const parserRegressionScript = String.raw`
     ]
     const selected = fixture === 'unmatched-strikethrough' ? cases.slice(3) : cases.slice(0, 3)
     for (const [unit, expected] of selected) assert.equal(marked.parse(unit.repeat(count)), expected)
+  } else if (fixture === 'closerless-runs') {
+    // A closer cache alone still leaves the outer lexer consuming one
+    // character per greedy opener scan. Exercise whole runs and runs after
+    // ordinary text; Marked 15 already batches tildes in inlineText.
+    for (const delimiter of ['*', '_', '~']) {
+      const input = delimiter.repeat(60000) + 'x'
+      assert.equal(marked.parseInline(input), input)
+      assert.equal(marked.parseInline('a' + input), 'a' + input)
+      assert.equal(marked.parseInline('a ' + input), 'a ' + input)
+      assert.equal(marked.parseInline('<code>' + input + '</code>'), '<code>' + input + '</code>')
+    }
+    assert.equal(marked.parseInline('**normal** _emphasis_ ~~deleted~~'),
+      '<strong>normal</strong> <em>emphasis</em> <del>deleted</del>')
   } else if (fixture === 'pedantic-html') {
     const spaces = ' '.repeat(100000)
     for (const [prefix, expected] of [
@@ -203,6 +216,56 @@ const parserRegressionScript = String.raw`
         ['~~[a~](u)~~', '<p><del><a href="u">a~</a></del></p>\n'],
         ['~~\x60a~\x60~~', '<p><del><code>a~</code></del></p>\n'],
       ]) assert.equal(marked.parse(input), expected)
+    }
+
+    if (target !== 'streamdown-marked') {
+      // Raw HTML text must keep its escaped flag when delimiter text merges
+      // with following inlineText; otherwise '&' becomes '&amp;'.
+      for (const tag of ['code', 'pre', 'script', 'kbd']) {
+        for (const delimiter of ['*', '_', '~']) {
+          const input = '<' + tag + '>' + delimiter.repeat(3) + 'a & b</' + tag + '>'
+          assert.equal(marked.parseInline(input), input)
+          const tokens = new Lexer({ gfm: true }).inlineTokens(input)
+          assert.equal(tokens.find(token => token.type === 'text')?.escaped, true)
+        }
+      }
+      // Preserve old previous-character, backtick and email dispatch at the
+      // end of the run; literal batching must not become a syntax change.
+      for (const [input, expected] of [
+        ['&_*[* ', '&amp;_<em>[</em> '],
+        ['~\x60a\x60', '~\x60a\x60'],
+        ['***\x60a\x60', '***<code>a</code>'],
+        ['___\x60a\x60', '___<code>a</code>'],
+        ['***a@example.com', '***<a href="mailto:a@example.com">a@example.com</a>'],
+        ['___a@example.com', '<a href="mailto:___a@example.com">___a@example.com</a>'],
+      ]) assert.equal(marked.parseInline(input), expected)
+      if (target.startsWith('gridland-')) {
+        // Original inlineText retains the earlier text token's escape flag.
+        const input = '<code>~)\x60]\\*\x60_<*_[* ~< **~*]>(>])(</code>'
+        assert.equal(marked.parseInline(input, { gfm: false }),
+          '<code>~)<code>]\\*</code><em><*</em>[* ~&lt; **~*]&gt;(&gt;])(</code>')
+      }
+
+      // The older API permits custom tokenizers to consume otherwise-literal
+      // runs. The local fast path must defer to every custom dispatch point.
+      for (const [method, prefix] of [['emStrong', '***'], ['del', '~~~'], ['codespan', '***'], ['br', '***'], ['autolink', '***'], ['url', '***'], ['inlineText', '***']]) {
+        const custom = new Marked({ tokenizer: {
+          [method](src) {
+            if (src.startsWith(prefix)) return { type: 'text', raw: prefix, text: 'custom' }
+            return false
+          },
+        } })
+        assert.equal(custom.parseInline(prefix + 'x'), 'customx')
+      }
+      const suffix = new Marked({ extensions: [{
+        name: 'runSuffix', level: 'inline',
+        start(src) { return src.indexOf('*x') },
+        tokenizer(src) {
+          if (src.startsWith('*x')) return { type: 'runSuffix', raw: '*x' }
+        },
+        renderer() { return '<span>suffix</span>' },
+      }] })
+      assert.equal(suffix.parseInline('***x'), '**<span>suffix</span>')
     }
 
     for (const level of ['block', 'inline']) {
@@ -258,9 +321,9 @@ const parserRegressionScript = String.raw`
 `
 
 for (const target of ['marked-17-esm', 'marked-17-umd', 'streamdown-marked', 'gridland-index', 'gridland-next']) {
-  for (const fixture of ['unmatched-delimiters', 'unmatched-strikethrough', 'pedantic-html', 'extensions-and-nesting']) {
+  for (const fixture of ['unmatched-delimiters', 'unmatched-strikethrough', 'closerless-runs', 'pedantic-html', 'extensions-and-nesting']) {
     test('installed ' + target + ' handles ' + fixture, async () => {
-      const { stdout } = await run('node', ['--input-type=module', '--eval', parserRegressionScript, target, fixture], {
+      const { stdout } = await run('node', ['--max-old-space-size=256', '--input-type=module', '--eval', parserRegressionScript, target, fixture], {
         encoding: 'utf8',
         timeout: 5000,
         killSignal: 'SIGKILL',

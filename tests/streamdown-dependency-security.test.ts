@@ -1,0 +1,100 @@
+/// <reference types="bun" />
+import assert from 'node:assert/strict'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
+import { test } from 'bun:test'
+
+const run = promisify(execFile)
+
+// Execute the installed packages in a separate Node process: a synchronous
+// parser stall cannot be interrupted by a timer running in that same process.
+async function verifyInstalledRenderer(script: string) {
+  const { stdout } = await run('node', ['--max-old-space-size=256', '--input-type=module', '--eval', script], {
+    encoding: 'utf8',
+    timeout: 5000,
+    killSignal: 'SIGKILL',
+    maxBuffer: 64 * 1024,
+  })
+  assert.equal(stdout, 'passed')
+}
+
+const imports = String.raw`
+  import assert from 'node:assert/strict'
+  const load = async (name) => import(name)
+`
+
+// Streamdown 2.8.0 restores sanitizer ID prefixes without breaking fragments
+// or doubling the prefixes already added by the Markdown footnote parser.
+test('installed Streamdown prevents raw HTML ID clobbering and preserves links', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const React = (await load('react')).default
+    const { renderToStaticMarkup } = await load('react-dom/server')
+    const { Streamdown } = await load('streamdown')
+    const markdown = [
+      '<h1 id="portfolioClobberProbe">Details</h1>',
+      '[Jump](#portfolioClobberProbe)',
+      '[External](https://example.com/#portfolioClobberProbe)',
+      'Note[^1].',
+      '[^1]: Footnote.',
+      '\`const value = 1\`',
+      '**Bold**',
+    ].join('\n\n')
+
+    for (const mode of ['static', 'streaming']) {
+      const html = renderToStaticMarkup(React.createElement(Streamdown, {
+        mode,
+        linkSafety: { enabled: false },
+      }, markdown))
+      const ids = new Set(Array.from(html.matchAll(/\bid="([^"]*)"/g), (match) => match[1]))
+      const hrefs = Array.from(html.matchAll(/\bhref="([^"]*)"/g), (match) => match[1])
+      assert.ok(ids.has('user-content-portfolioClobberProbe'), mode + ': raw HTML ID must be prefixed')
+      assert.ok(!ids.has('portfolioClobberProbe'), mode + ': raw HTML must not create a named browser global')
+      assert.ok(hrefs.includes('#user-content-portfolioClobberProbe'), mode + ': fragment must follow the sanitized target')
+      assert.ok(hrefs.includes('https://example.com/#portfolioClobberProbe'), mode + ': external fragment must remain unchanged')
+      const fragments = hrefs.filter((href) => href.startsWith('#'))
+      assert.ok(fragments.length >= 3, mode + ': expected raw fragment and footnote reference/backreference')
+      for (const fragment of fragments) {
+        assert.ok(ids.has(fragment.slice(1)), mode + ': missing target for ' + fragment)
+        assert.ok(!fragment.includes('user-content-user-content-'), mode + ': doubled footnote prefix')
+      }
+      assert.match(html, /data-streamdown="inline-code"[^>]*>const value = 1<\/code>/)
+      assert.match(html, /data-streamdown="strong"[^>]*>Bold<\//)
+    }
+
+    const incomplete = renderToStaticMarkup(React.createElement(Streamdown, {
+      mode: 'streaming',
+    }, 'Hello **world'))
+    assert.match(incomplete, /Hello .*data-streamdown="strong"[^>]*>world<\//)
+    process.stdout.write('passed')
+  `)
+}, 10000)
+
+// Maintainer fixes 04dd684/fdc4255/63bd417 bound repeated scans in link and
+// emphasis repair. Preserve the literal input and idempotence while exercising
+// those parser paths with inputs below the application's 128 KiB body limit.
+test('installed Remend bounds bracket and delimiter repair while preserving Markdown', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const remend = (await load('remend')).default
+    assert.equal(remend('Hello **world'), 'Hello **world**')
+
+    const cases = [
+      { input: '['.repeat(100000) + '[link](url)', options: { linkMode: 'protocol' } },
+      { input: '['.repeat(100000) + '[link](url)', options: { linkMode: 'text-only' } },
+      { input: '['.repeat(20000) + '[link](url)'.repeat(2000), options: {} },
+      { input: '['.repeat(20000) + '[link](url)'.repeat(2000), options: { links: false, images: false } },
+      { input: ('*'.repeat(17) + '~~~ ').repeat(4000) + 'x', options: {} },
+      { input: '____~~~ '.repeat(10000) + 'x', options: {} },
+      { input: '*~~~ '.repeat(16000) + 'x', options: { italic: false } },
+    ]
+    for (const { input, options } of cases) {
+      assert.ok(Buffer.byteLength(input) < 128 * 1024)
+      const output = remend(input, options)
+      assert.ok(output === input, 'complete links and skipped delimiters must remain literal')
+      assert.ok(remend(output, options) === output, 'repair must be idempotent')
+    }
+    for (const input of ['A [link](https://example.com)', '**Note:**This', '**Bold**', '[Profile](/about)']) {
+      assert.equal(remend(input), input)
+    }
+    process.stdout.write('passed')
+  `)
+}, 10000)
