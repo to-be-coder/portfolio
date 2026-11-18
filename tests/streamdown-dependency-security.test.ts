@@ -98,3 +98,104 @@ test('installed Remend bounds bracket and delimiter repair while preserving Mark
     process.stdout.write('passed')
   `)
 }, 10000)
+
+// parse5 8.1.1 (9b57bf87) and hast-util-from-parse5 8.0.4 (68b7379)
+// fix crashes on tiny Unicode/foreign-template inputs before sanitization.
+test('installed Streamdown handles malformed Unicode and foreign templates safely', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const React = (await load('react')).default
+    const { renderToStaticMarkup } = await load('react-dom/server')
+    const { Streamdown } = await load('streamdown')
+    const cases = [
+      '<p>Before \udc00\udc00 after.</p>',
+      '<svg><template>Ignored foreign content</template></svg>',
+      '<math><template>Ignored foreign content</template></math>',
+    ]
+
+    for (const mode of ['static', 'streaming']) {
+      const ordinary = [
+        '<table>\n  <tbody><tr><td>A &amp; B &#169; &#x1F642;</td></tr></tbody>\n</table>',
+        '| Name | Value |\n| --- | --- |\n| Named | &copy; |',
+      ].join('\n\n')
+      const normalHtml = renderToStaticMarkup(React.createElement(Streamdown, { mode }, ordinary))
+      assert.ok(normalHtml.includes('A &amp; B © 🙂'), mode + ': HTML character references must retain their meaning')
+      assert.equal(Array.from(normalHtml.matchAll(/<table\b/g)).length, 2, mode + ': raw and GFM tables must render')
+      assert.ok(normalHtml.includes('Named') && normalHtml.includes('©'))
+
+      for (const input of cases) {
+        const markdown = input + '\n\n**Still readable** and \`safe code\`.'
+        const html = renderToStaticMarkup(React.createElement(Streamdown, { mode }, markdown))
+        assert.match(html, /data-streamdown="strong"[^>]*>Still readable<\//)
+        assert.match(html, /data-streamdown="inline-code"[^>]*>safe code<\/code>/)
+        assert.doesNotMatch(html, /<(?:svg|math|template)\b/i)
+        if (input.startsWith('<p>')) {
+          assert.ok(html.includes('Before ') && html.includes(' after.'), mode + ': surrounding text must survive')
+        }
+      }
+    }
+    process.stdout.write('passed')
+  `)
+}, 10000)
+
+// Supported transitive patches bound position lookup, literal autolink scans,
+// and repeated attention serialization. Exercise their public installed APIs.
+test('installed Markdown utilities bound text processing and preserve ordinary output', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const { location } = await load('vfile-location')
+    const place = location('x\n'.repeat(50000))
+    for (let line = 50000; line >= 1; line--) {
+      assert.deepEqual(place.toPoint((line - 1) * 2), {
+        line, column: 1, offset: (line - 1) * 2,
+      })
+    }
+    const mixed = location('a\r\nb\nc\rd')
+    assert.deepEqual([8, 0, 3, 5].map((offset) => mixed.toPoint(offset).line), [4, 1, 2, 3])
+    assert.deepEqual([4, 1, 3, 2].map((line) => mixed.toOffset({ line, column: 1 })), [7, 0, 5, 3])
+
+    const { gfmAutolinkLiteralFromMarkdown } = await load('mdast-util-gfm-autolink-literal')
+    const transform = gfmAutolinkLiteralFromMarkdown().transforms[0]
+    const textTree = (value) => ({ type: 'root', children: [{ type: 'paragraph', children: [{ type: 'text', value }] }] })
+    const email = '.'.repeat(60000) + '@'
+    const emailTree = textTree(email)
+    transform(emailTree)
+    assert.deepEqual(emailTree, textTree(email))
+    const url = 'https://example.com/' + '?'.repeat(60000) + 'x'
+    const urlTree = textTree(url)
+    transform(urlTree)
+    assert.equal(urlTree.children[0].children[0].url, url)
+    const normal = textTree('/person@example.com mailto:person@example.com')
+    normal.children[0].children.push(
+      { type: 'inlineCode', value: 'person@example.com' },
+      { type: 'link', url: '/profile', children: [{ type: 'text', value: 'person@example.com' }] },
+    )
+    transform(normal)
+    const nodes = normal.children[0].children
+    assert.equal(nodes.filter((node) => node.type === 'link' && node.url === 'mailto:person@example.com').length, 2)
+    assert.deepEqual(nodes.slice(-2), [
+      { type: 'inlineCode', value: 'person@example.com' },
+      { type: 'link', url: '/profile', children: [{ type: 'text', value: 'person@example.com' }] },
+    ])
+
+    const { toMarkdown } = await load('mdast-util-to-markdown')
+    const { fromMarkdown } = await load('mdast-util-from-markdown')
+    const runs = []
+    for (let index = 0; index < 500; index++) {
+      const a = index % 2 ? '.' : 'a'
+      const b = index % 2 ? 'a' : '.'
+      runs.push(
+        { type: 'strong', children: [{ type: 'text', value: a }] },
+        { type: 'emphasis', children: [{ type: 'text', value: b }, { type: 'strong', children: [{ type: 'text', value: a }] }] },
+        { type: 'strong', children: [{ type: 'emphasis', children: [{ type: 'text', value: b }] }] },
+      )
+    }
+    const tree = { type: 'root', children: [{ type: 'paragraph', children: runs }] }
+    const stripPosition = (value) => {
+      if (Array.isArray(value)) return value.map(stripPosition)
+      if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).filter(([key]) => key !== 'position').map(([key, item]) => [key, stripPosition(item)]))
+      return value
+    }
+    assert.deepEqual(stripPosition(fromMarkdown(toMarkdown(tree))), tree)
+    assert.equal(toMarkdown(textTree('Ordinary text.')), 'Ordinary text.\n')
+    process.stdout.write('passed')
+  `)
+}, 10000)
