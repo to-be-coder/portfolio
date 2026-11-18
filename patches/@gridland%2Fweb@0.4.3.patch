@@ -1,5 +1,5 @@
 diff --git a/dist/index.js b/dist/index.js
-index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa9159f094 100644
+index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a660ad7f2c5 100644
 --- a/dist/index.js
 +++ b/dist/index.js
 @@ -16305,7 +16305,7 @@ var blockGfm = {
@@ -114,17 +114,52 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa
      const cap = this.rules.inline.del.exec(src);
      if (cap) {
        return {
-@@ -17451,6 +17519,9 @@ var _Lexer = class __Lexer {
+@@ -17451,6 +17519,13 @@ var _Lexer = class __Lexer {
      while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
        maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
      }
 +    const portfolioMarkdownRawSrc = src;
++    // Only the standard grammar may bypass per-position tokenizer dispatch.
++    const portfolioMarkdownRunFastPath = !this.options.extensions?.inline?.length
++      && !this.options.extensions?.startInline?.length
++      && Object.getOwnPropertyNames(_Tokenizer.prototype).every(key => key === "constructor" || this.tokenizer[key] === _Tokenizer.prototype[key]);
 +    portfolioMarkdownBeginScan(this.tokenizer, maskedSrc, portfolioMarkdownRawSrc);
 +    try {
      let keepPrevChar = false;
      let prevChar = "";
      while (src) {
-@@ -17510,7 +17581,7 @@ var _Lexer = class __Lexer {
+@@ -17495,6 +17570,30 @@ var _Lexer = class __Lexer {
+         }
+         continue;
+       }
++      // Backport of markedjs/marked 0b8b3b3. Marked 15's inlineText
++      // already batches tilde runs; keep its raw-source del semantics intact.
++      if (portfolioMarkdownRunFastPath && (src[0] === "*" || src[0] === "_")) {
++        const delimiter = src[0], position = maskedSrc.length - src.length;
++        if (portfolioMarkdownLastCloser(this.tokenizer, maskedSrc, delimiter) <= position
++            && (this.state.inLink || !this.tokenizer.rules.inline.url.exec(src))) {
++          let runEnd = 1;
++          while (runEnd < src.length && src[runEnd] === delimiter) runEnd++;
++          if (runEnd > 1) {
++            // Leave the final character to the original tokenizer (e.g. backticks).
++            runEnd--;
++            const raw = src.substring(0, runEnd), previous = tokens.at(-1);
++            const escaped = this.state.inRawBlock;
++            if (previous?.type === "text") {
++              previous.raw += raw;
++              previous.text += raw;
++            } else tokens.push({ type: "text", raw, text: raw, escaped });
++            src = src.substring(runEnd);
++            if (delimiter !== "_") prevChar = delimiter;
++            keepPrevChar = true;
++            continue;
++          }
++        }
++      }
+       if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
+         src = src.substring(token.raw.length);
+         tokens.push(token);
+@@ -17510,7 +17609,7 @@ var _Lexer = class __Lexer {
          tokens.push(token);
          continue;
        }
@@ -133,7 +168,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa
          src = src.substring(token.raw.length);
          tokens.push(token);
          continue;
-@@ -17566,7 +17637,8 @@ var _Lexer = class __Lexer {
+@@ -17566,7 +17665,8 @@ var _Lexer = class __Lexer {
        }
      }
      return tokens;
@@ -143,7 +178,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa
  };
  var _Renderer = class {
    options;
-@@ -18039,7 +18111,7 @@ var Marked = class {
+@@ -18039,7 +18139,7 @@ var Marked = class {
      return values;
    }
    use(...args) {
@@ -153,7 +188,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..01ac9e8a6854769ea5a89d5ac43b74aa
        const opts = { ...pack };
        opts.async = this.defaults.async || opts.async || false;
 diff --git a/dist/next.js b/dist/next.js
-index be6734844335476e3b3104c4b1668c60c54cf243..59d79b3a86047fe18fc7dcfa5aeb3180c0d1f838 100644
+index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307cd373a44f 100644
 --- a/dist/next.js
 +++ b/dist/next.js
 @@ -16300,7 +16300,7 @@ var blockGfm = {
@@ -268,17 +303,52 @@ index be6734844335476e3b3104c4b1668c60c54cf243..59d79b3a86047fe18fc7dcfa5aeb3180
      const cap = this.rules.inline.del.exec(src);
      if (cap) {
        return {
-@@ -17446,6 +17514,9 @@ var _Lexer = class __Lexer {
+@@ -17446,6 +17514,13 @@ var _Lexer = class __Lexer {
      while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
        maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
      }
 +    const portfolioMarkdownRawSrc = src;
++    // Only the standard grammar may bypass per-position tokenizer dispatch.
++    const portfolioMarkdownRunFastPath = !this.options.extensions?.inline?.length
++      && !this.options.extensions?.startInline?.length
++      && Object.getOwnPropertyNames(_Tokenizer.prototype).every(key => key === "constructor" || this.tokenizer[key] === _Tokenizer.prototype[key]);
 +    portfolioMarkdownBeginScan(this.tokenizer, maskedSrc, portfolioMarkdownRawSrc);
 +    try {
      let keepPrevChar = false;
      let prevChar = "";
      while (src) {
-@@ -17505,7 +17576,7 @@ var _Lexer = class __Lexer {
+@@ -17490,6 +17565,30 @@ var _Lexer = class __Lexer {
+         }
+         continue;
+       }
++      // Backport of markedjs/marked 0b8b3b3. Marked 15's inlineText
++      // already batches tilde runs; keep its raw-source del semantics intact.
++      if (portfolioMarkdownRunFastPath && (src[0] === "*" || src[0] === "_")) {
++        const delimiter = src[0], position = maskedSrc.length - src.length;
++        if (portfolioMarkdownLastCloser(this.tokenizer, maskedSrc, delimiter) <= position
++            && (this.state.inLink || !this.tokenizer.rules.inline.url.exec(src))) {
++          let runEnd = 1;
++          while (runEnd < src.length && src[runEnd] === delimiter) runEnd++;
++          if (runEnd > 1) {
++            // Leave the final character to the original tokenizer (e.g. backticks).
++            runEnd--;
++            const raw = src.substring(0, runEnd), previous = tokens.at(-1);
++            const escaped = this.state.inRawBlock;
++            if (previous?.type === "text") {
++              previous.raw += raw;
++              previous.text += raw;
++            } else tokens.push({ type: "text", raw, text: raw, escaped });
++            src = src.substring(runEnd);
++            if (delimiter !== "_") prevChar = delimiter;
++            keepPrevChar = true;
++            continue;
++          }
++        }
++      }
+       if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
+         src = src.substring(token.raw.length);
+         tokens.push(token);
+@@ -17505,7 +17604,7 @@ var _Lexer = class __Lexer {
          tokens.push(token);
          continue;
        }
@@ -287,7 +357,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..59d79b3a86047fe18fc7dcfa5aeb3180
          src = src.substring(token.raw.length);
          tokens.push(token);
          continue;
-@@ -17561,7 +17632,8 @@ var _Lexer = class __Lexer {
+@@ -17561,7 +17660,8 @@ var _Lexer = class __Lexer {
        }
      }
      return tokens;
@@ -297,7 +367,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..59d79b3a86047fe18fc7dcfa5aeb3180
  };
  var _Renderer = class {
    options;
-@@ -18034,7 +18106,7 @@ var Marked = class {
+@@ -18034,7 +18134,7 @@ var Marked = class {
      return values;
    }
    use(...args) {

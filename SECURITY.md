@@ -352,3 +352,106 @@ The broader review rechecked official releases and registry data for direct, tra
 Validation ran in an isolated OrbStack `dev` Linux checkout with Node **24.22.3**, selected npm **11.21.2**, and Bun **1.4.4**. The actual deployment launcher recreated dependencies and installed **554 packages** from the frozen lock with application scripts disabled. The unmodified audit reported **zero findings across 621 packages**. Full `bun run check` passed lint, compatibility/install-policy fixtures, **32 dependency regressions**, type checks, **25 application tests**, and the production build. All **16 desktop/mobile browser tests** passed with Playwright **1.65.1** and its matching Linux Chromium **159.0.8154.6**. No checks were weakened, and local verification made no paid provider calls.
 
 Independent review confirmed the installed SDK approval fix and Playwright credential/cookie guards. Eight bounded offline SDK comparisons covered both `generateText` and `streamText`: the old version executed mutated approved input and changed history, while the updated version rejected the changed replay and preserved history; valid refinement still executed the approved input. Local build ID: `l53XAlNiTzKj0ZonN5HKY`. Lock SHA-256: `8fd00339cd5cbb48483ce3cb25d42f1617059d5224fbd2155d22b88c3fd03130`. These results establish the candidate; production must be verified after merge.
+
+## TypeScript-ESLint termination fix: 16 November 2026
+
+The 15 November daily monitor continued on 16 November from default branch `06d15a40e769fc0a60af689aacff3ac38b016776`. Scheduled full-lockfile audits on 14 and 15 November passed. The fresh baseline install matched all 36 exact direct pins and the unmodified audit reported zero findings across 621 packages. Maintainer release review nevertheless found an older missed termination fix.
+
+The lockfile now resolves `typescript-eslint` and its ten existing `@typescript-eslint/*` packages from **8.72.1 to 8.72.2**. The [9 November release](https://github.com/typescript-eslint/typescript-eslint/releases/tag/v8.72.2) includes a [circular-alias guard in no-deprecated](https://github.com/typescript-eslint/typescript-eslint/pull/13117). Previously, following a self-reexport could loop indefinitely; the fix tracks visited symbols. This is security-relevant resource hardening based on maintainer source and reproduced behavior, without claiming a CVE or a production exploit. The affected lint rule is disabled in the portfolio's effective configuration.
+
+Next's existing `typescript-eslint: ^8.56.0` range accepts the patch, and its Node, ESLint and TypeScript peers remain compatible. Only eleven existing lock entries change. The manifest, exact direct pins, minimatch/PostCSS overrides, SemVer resolutions, five reviewed patches, lifecycle protections, application code and validation gates remain unchanged. No existing open dependency PR supplies this isolated fix.
+
+Validation ran in an isolated OrbStack `dev` Linux worktree with Node **24.22.3**, selected npm **11.21.2**, and Bun **1.4.4**. The actual deployment launcher recreated dependencies with a frozen, scripts-disabled install: **554 packages**, with one postinstall blocked. The unmodified audit again reported **zero findings across 621 packages**. Full `bun run check` passed lint and compatibility/install-policy fixtures, **32 dependency regressions**, types, **25 application tests**, and the 25-route production build. All **16 desktop/mobile browser tests** passed. Local tests made no paid provider calls.
+
+Independent bounded testing held ESLint, TypeScript and parser versions constant while comparing the old and published fixed plugin. The old circular self-reexport case exceeded a five-second deadline; the patched rule completed in 465 ms. Both versions correctly reported an ordinary deprecated use. This focused comparison complements, rather than replaces, the aligned-stack checks above.
+
+Lock SHA-256: `6b865572d44a4ff989d7b4833163ff01404ff3a556c7df935eaba3ad35bea44c`. Local build ID: `OboIzqallICqIV33c3W3H`. These are candidate results, not proof of deployment.
+
+### Findings still being monitored
+
+The fresh official-source and registry sweep found no other supported compatible security update. Next's compiled matcher/SemVer, npm's bundled brace expansion, Sharp's bundled librsvg, and unreleased Tailwind resource bounds remain open as documented above.
+
+A newly merged [AI SDK metadata-validation bound](https://github.com/vercel/ai/pull/25046), commit `718824cd5959a15afe6d29765799659078e302c6`, is not yet in a published stable SDK release. The portfolio does not call the affected UI-message validation/agent-stream helpers and reconstructs bounded text-only inputs without caller metadata. Track its supported release; no unreleased package or local SDK backport is introduced.
+
+The latest public GitHub Production deployment record still reports successful deployment of `06d15a4` to Vercel deployment `6SNb2zy2WFGRXGmcpGxx9k4PC7yT`. Its Ready/Current status and actual Node 24.22.3 runtime were observed on 14 November. This run could not freshly verify the Vercel dashboard or runtime: no browser connection was available, no Vercel API authentication was configured, and the normal public HTTP request received Vercel's 429 bot challenge. The candidate must still complete the normal PR/required-check/merge workflow and exact-source production verification. Existing deployment and access controls are retained.
+
+## Markdown fixes prepared; Picomatch blocks release: 17 November 2026
+
+**Historical status on 17 November: this candidate was not approved for merge or production.** See the 18 November reassessment below. The unmodified `bun run audit` now fails on [Picomatch GHSA-fc5q-39xc-vjpf / CVE-2026-112366](https://github.com/advisories/GHSA-fc5q-39xc-vjpf), a high-severity regular-expression denial-of-service advisory affecting every published version through **4.0.7**. It was published on 19 October and reviewed/updated on 17 November; registry and advisory metadata list **no patched release**. Installed **4.0.7**, nested **2.3.2**, and Next's compiled copy exceed a bounded five-second local probe. Ordinary controls complete promptly. No public request-selected glob path was demonstrated in this application, but that exposure limit does not remove the finding or permit ignoring the audit.
+
+The same audit fails on the unchanged main-equivalent baseline and on this candidate. This supersedes the clean audit observations from prior dates; the successful 16 November scheduled audit and verification are historical evidence. Do not suppress the advisory, replace the dependency with an unreviewed override, or bypass the required CI check. Retain the working production deployment until a supported compatible fix can pass the normal release procedure.
+
+### Supported fixes retained on the security branch
+
+| Component | Previous | Candidate | Evidence |
+| --- | --- | --- | --- |
+| Streamdown | 2.7.1 | 2.8.0 | [17 November release](https://github.com/vercel/streamdown/releases/tag/streamdown%402.8.0): restore DOM-clobbering protection, isolate processor configurations, and bound custom-tag preprocessing |
+| Remend | 1.4.0 | 1.5.0 | [Matching release](https://github.com/vercel/streamdown/releases/tag/remend%401.5.0): bounded bracket/emphasis repair and literal Markdown preservation |
+| Streamdown's Marked | 18.1.3 | 18.2.1 | [16 November release](https://github.com/markedjs/marked/releases/tag/v18.2.1) and [residual delimiter-run fix](https://github.com/markedjs/marked/pull/4196) |
+| Root Marked / Gridland's embedded Marked | 17.0.6 / 15.0.12 | Same versions, expanded reviewed local patches | Narrow backports to root ESM/UMD and Gridland index/next artifacts; no unsupported major override |
+| Inline style parser | 0.2.7 | 0.2.9 | [6 July release](https://github.com/remarkablemark/inline-style-parser/releases/tag/v0.2.9): ambiguous comment-regex ReDoS fixes, previously missed |
+| TypeScript-ESLint family | 8.72.1 | 8.72.2 | Pending termination fix documented in the preceding record; eleven aligned lock entries retained |
+
+Streamdown 2.8.0 requires `hast-util-to-jsx-runtime` **2.3.6 → 2.3.7**. That supported dependency chain replaces `style-to-js` **1.1.21** and `style-to-object` **1.0.14** with `style-to-object` **2.0.2**, bringing inline-style-parser 0.2.9. Its ES6 target is compatible with this project's runtime and browsers. The default sanitizer strips caller HTML style attributes, so no request-derived CSS-parser path was identified. These are required related dependencies, not an independent application migration. `@streamdown/code` remains **2.0.0**; its new type-only patch is unnecessary here.
+
+The app's default assistant Markdown rendering is affected by the former unprefixed HTML IDs. The new release restores `user-content-` and preserves fragment/footnote targets. Custom sanitizer/plugin configurations and `allowedTags` are not used. Streamdown uses Marked's block-token path; the old standalone/embedded parsers are patched separately. The local backports batch only repeated `*` and `_`, retaining final-character dispatch, underscore state, email precedence, raw HTML escaping and custom-tokenizer behavior. Existing bounded tilde handling remains. Upstream 18.2.1's custom-inline/raw-HTML behavior is not copied into the older patches. Differential checks found zero changes in **28,832** implementation comparisons and **26,688** independent comparisons.
+
+Exact pins, all five existing dependency patches, minimatch/PostCSS overrides, lifecycle-script protections, application code, link-confirmation defaults, access controls and validation gates remain intact.
+
+### Verification and outstanding release work
+
+All development executed in verified OrbStack `dev` Linux aarch64, in the isolated `portfolio-security-nov15` worktree. The canonical checkout's existing chat edit was preserved. After Jess authorized restarting OrbStack, `dev` recovered before a global restart was needed; the other running machine was not interrupted.
+
+With Node **24.22.3**, selected npm **11.21.2** and Bun **1.4.4**, the actual deployment launcher performed a fresh frozen install with application scripts disabled: **553 packages**, one postinstall blocked. All **36** direct installed versions match exact pins. Full `bun run check` passed lint, compatibility/install-policy fixtures, **39 dependency regressions**, types, **25 application tests**, and the 25-route build. All **18 desktop/mobile browser tests** passed, including saved untrusted Markdown ID isolation, rewritten destinations, default link-confirmation focus behavior, footnotes and code. Local tests made no paid provider calls.
+
+Old Marked artifacts fail the new externally bounded run fixture; updated artifacts pass. Old Streamdown/Remend artifacts fail the intended prefix/literal-output assertions. The latter is a semantic negative control, not a claim that Remend 1.4.0 timed out. Independent review covers the dependency graph, version-specific backports and compatibility evidence. These successful checks do not override the failed audit.
+
+Lock SHA-256: `82694c81255903cd7e8eee979af508f760cc4fcdf5fbb2517532d78858833457`. Local build ID: `WfROwwkIpkMdFhLMg0nmF`.
+
+The official-source sweep covered 74 package families and compared 15 new/updated advisory records against 621 baseline names. Two newly indexed Next advisories are already fixed by the installed 16.4.5. Node 24.22.3, Bun 1.4.4 and React 19.2.9 remain unchanged. Next's compiled matcher/SemVer, npm's bundled brace expansion, [Sharp's bundled librsvg](https://raw.githubusercontent.com/GNOME/librsvg/main/NEWS), [unreleased Tailwind bounds](https://raw.githubusercontent.com/tailwindlabs/tailwindcss/main/CHANGELOG.md) and the [unreleased AI SDK metadata-validation fix](https://github.com/vercel/ai/pull/25046) remain open; no supported release closing them was found.
+
+Default `main` remains `06d15a40e769fc0a60af689aacff3ac38b016776`. Ten open optional Dependabot PRs provide no duplicate suitable fix. Reuse `codex/security-typescript-eslint-nov16` for this combined candidate. Authenticated GitHub/Code Review and Vercel browser access remain unavailable, so no PR or merge is claimed. The latest public GitHub production record still points to that main revision and successful deployment `6SNb2zy2WFGRXGmcpGxx9k4PC7yT`; Ready/Current and actual Node 24.22.3 were last observed on 14 November. Today's public HTTP request receives Vercel's 429 bot challenge. Current production runtime and smoke checks are therefore incomplete, and none of today's fixes is claimed deployed. Once Picomatch has a supported fix, rerun the unchanged audit and all required checks, complete normal PR/review/merge, and verify the exact patched source as Vercel Ready and Current with runtime and smoke evidence.
+
+## SDK, HTML parser and npm security update: 18 November 2026
+
+### Picomatch advisory withdrawal
+
+GitHub [withdrew GHSA-fc5q-39xc-vjpf](https://github.com/advisories/GHSA-fc5q-39xc-vjpf) on 18 November. Its linked [maintainer discussion](https://github.com/micromatch/picomatch/pull/235#issuecomment-6315749381) disputes classifying caller-selected complex patterns as a package vulnerability and advises against accepting untrusted patterns. No patched Picomatch version was published and none is claimed here. The previously observed expensive-pattern behavior remains a technical limitation.
+
+Independent call-site review found trusted lint/build patterns and the simple fixed Next image pattern `{ pathname: '**', search: '' }`; request input does not choose a glob expression. Remote image patterns and domains are empty. Introducing untrusted pattern selection would require a new resource-boundary review. This assessment and the upstream withdrawal remove the specific advisory hold recorded on 17 November, without suppressing findings or changing the audit command.
+
+Fresh unmodified audits now pass on both the main-equivalent baseline (**621 packages**) and this candidate (**620 packages**). The previously failed [daily workflow](https://github.com/to-be-coder/portfolio/actions/runs/44178103138) was rerun unchanged and passed as attempt 2; attempt 1 remains preserved. Required checks and normal review still gate release.
+
+### Newly confirmed supported fixes
+
+| Component | Previous | Candidate | Primary evidence |
+| --- | --- | --- | --- |
+| AI SDK | 7.0.173 | 7.0.176 | [Metadata validation bound](https://github.com/vercel/ai/pull/25046), included in [7.0.174](https://github.com/vercel/ai/releases/tag/ai%407.0.174), plus aligned published dependency fixes |
+| React / OpenAI SDK | 4.0.177 / 4.0.117 | 4.0.180 / 4.0.119 | [React release](https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Freact%404.0.180) brings the MCP close-handling fix; [OpenAI release](https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fopenai%404.0.119) resolves replayed additional tools only against registered definitions |
+| Provider / provider-utils / MCP / gateway | 4.0.38 / 5.0.81 / 2.0.99 / 4.0.146 | 4.0.39 / 5.0.82 / 2.0.101 / 4.0.149 | Required exact SDK alignment, including fail-closed Standard Schema results and pending-request rejection on premature SSE closure |
+| hast-util-raw / parse5 / entities | 9.1.0 / 7.3.0 / 6.0.1 | 9.2.1 / 8.1.1 / 9.0.0 | [Supported wrapper integration](https://github.com/syntax-tree/hast-util-raw/releases/tag/9.2.1) and [parse5 security fixes](https://github.com/inikulin/parse5/releases/tag/v8.1.1) |
+| hast-util-from-parse5 | 8.0.3 | 8.0.4 | [Foreign-template crash fix](https://github.com/syntax-tree/hast-util-from-parse5/releases/tag/8.0.4) |
+| vfile-location | 5.0.3 | 5.0.4 | [Bound repeated position lookups](https://github.com/vfile/vfile-location/releases/tag/5.0.4) |
+| mdast-util-gfm-autolink-literal | 2.0.1 | 2.1.0 | [Bound email/URL scanning](https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/releases/tag/2.1.0) |
+| mdast-util-to-markdown | 2.2.1 | 2.2.3 | [Bound repeated whole-paragraph marker repair](https://github.com/syntax-tree/mdast-util-to-markdown/releases/tag/2.2.3) |
+| Scoped npm | 11.21.2 | 11.21.3 | [Cleanup path-containment backport](https://github.com/npm/cli/pull/10266), fixing unsafe bin cleanup even when lifecycle scripts are disabled |
+
+The SDK, npm and wrapper updates are newly published; several transitive parser fixes were published earlier and missed. These findings come from maintainer release notes, published artifacts and actual behavior, not only CVE feeds. The supported wrapper is updated together with parse5; no standalone major override or unsupported parser replacement is introduced. Existing dependency ranges accept the wrapper and utility updates, and Node 24.22.3 satisfies the new parser chain's runtime requirement.
+
+The default Streamdown raw-HTML pipeline encountered crashes on tiny malformed Unicode and SVG/MathML template inputs before sanitization. Its updated installed artifacts handle those fixtures while retaining ordinary text, tables, code, entities and sanitizer exclusions. Vfile and autolink resource fixes affect the rendering chain. Markdown serialization is dependency-level hardening: no application `toMarkdown` or `remark-stringify` call was identified. The autolink release intentionally adjusts slash-prefixed email, whole `mailto:`/`xmpp:` links and invalid punctuation-start domains; regression controls cover these semantics.
+
+The route still reconstructs bounded text-only messages, strips caller metadata, registers no tools, blocks attachment downloads, redacts tool errors and returns fixed public error messages. It does not use MCP or the affected UI-validation helpers. Those limits reduce current exposure but do not replace dependency maintenance. The new benign Standard Schema test checks twelve synchronous/asynchronous success and failure results; an issue-bearing result must fail even if it also returns a value.
+
+The pending TypeScript-ESLint, Streamdown/Remend, Marked backports and style-parser updates from the previous records remain included. Exact pins, all five reviewed patches, lifecycle protections, overrides, link confirmation and access controls are unchanged.
+
+### Candidate verification and remaining risks
+
+Development ran exclusively in verified OrbStack `dev` Linux, using the existing isolated security worktree. The actual deployment launcher performed a fresh frozen install with application scripts disabled: **553 packages**, one postinstall blocked. Selected npm is **11.21.3**, Bun **1.4.4**, Node **24.22.3**; the outer hosting/bootstrap npm remains **11.19.1** and is a separate trust boundary. All **36** direct installed versions match their exact pins.
+
+The unmodified audit passes **0 findings / 620 packages**. Full `bun run check` passes lint, compatibility and install-policy checks, **42 dependency regressions**, types, **25 application tests** and the 25-route build. All **18 desktop/mobile browser tests** pass. Old renderer/Standard Schema fixtures fail for the intended crash or validation error; the old combined utility fixture exceeds its external deadline. No test threshold or validation gate was weakened. Independent review covers supported dependency alignment, npm cleanup, parser compatibility and the Picomatch reassessment. No paid local calls were made.
+
+Lock SHA-256: `1848df31b3e1547148d5e71d179d26863cef6b0aed7f59cf1eccc8e6cb037bb8`. Local build ID: `8wd4l56cVSTzCZDCaPTT7`.
+
+The fresh official-source sweep covered 91 package families, with a separate 89-family Markdown/rendering review. Six new/updated advisory records matched only the now-withdrawn Picomatch record. Next/React/Node/Bun security versions remain unchanged. Previously documented Next compiled matcher/SemVer, npm bundled brace-expansion, Sharp's librsvg and unreleased Tailwind bounds remain open. A further unpublished Marked email-scan optimization has no supported release yet; current Streamdown uses Marked block tokens and Gridland's Markdown content is fixed. It is tracked without an unreleased patch or a claim of current public exposure.
+
+Authenticated GitHub and Vercel browser access is restored. The baseline Production Deployment was freshly observed Ready at source `06d15a40e769fc0a60af689aacff3ac38b016776`, deployment `6SNb2zy2WFGRXGmcpGxx9k4PC7yT`. These local results do not establish that the new candidate is deployed. Complete normal PR/required-check/review/merge and verify the new exact production source, Current status, actual runtime and smoke behavior before certifying this release.
