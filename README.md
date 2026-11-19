@@ -6,7 +6,7 @@ A Next.js App Router portfolio with local case studies, a blog UI for future wri
 
 Use the versions in `.node-version` (Node 24) and `.bun-version` (Bun 1.4). Dependencies are pinned in `package.json` and `bun.lock`.
 
-The version files do not switch your shell automatically. Confirm `node --version` and `bun --version` match them before using the commands below. The required pins are Node 24.22.3 and Bun 1.4.4; version files do not update the machine's global installations. For example, on a machine with a patched Node/npm bootstrap, run `npm exec --yes --package=bun@1.4.4 --package=node@24.22.3 -- bun run check` to select the verified toolchain explicitly.
+The version files do not switch your shell automatically. Confirm `node --version` and `bun --version` match them before using the commands below. The required pins are Node 24.22.3 and Bun 1.4.5; version files do not update the machine's global installations. For example, on a machine with a patched Node/npm bootstrap, run `npm exec --yes --package=bun@1.4.5 --package=node@24.22.3 -- bun run check` to select the verified toolchain explicitly.
 
 `bunfig.toml` also disables dependency lifecycle scripts and automatic installation on import, and saves new dependencies as exact versions. Deliberate dependency changes still require review and verification.
 
@@ -49,6 +49,6 @@ GitHub Actions repeats verification on pushes, pull requests, and a weekly sched
 
 Next.js and its ESLint config should be updated together. React stays on the patched 19.2 line while Gridland requires `react-reconciler@0.33.0`. TypeScript 6 is the current compatible line for the lint parser; TypeScript 7 requires a separate tooling migration. ESLint 10 uses the official `@eslint/compat` bridge for the legacy plugin APIs in Next's configuration; all rules remain enabled and representative rules are tested.
 
-The `minimatch` override installs 11.0.8 for all lint consumers. Versioned Bun patches adapt three legacy lint plugins to its current API so the old dependency can be removed without disabling rules or suppressing audit alerts. See [patch maintenance](patches/README.md) before updating those plugins. Use the pinned Bun 1.4.4 for reproducible installs. Next.js and its ESLint config are pinned to the November security release, 16.4.5; [SECURITY.md](SECURITY.md#nextjs-security-release-applied-4-november-2026) records the advisory assessment and successful local verification.
+The `minimatch` override installs 11.0.8 for all lint consumers. Versioned Bun patches adapt three legacy lint plugins to its current API so the old dependency can be removed without disabling rules or suppressing audit alerts. See [patch maintenance](patches/README.md) before updating those plugins. Use the pinned Bun 1.4.5 for reproducible installs. Next.js and its ESLint config are pinned to the November security release, 16.4.5; [SECURITY.md](SECURITY.md#nextjs-security-release-applied-4-november-2026) records the advisory assessment and successful local verification.
 
 Production uses GPT-6 Luna live chat; Preview remains curated-only. The dated [security and deployment records](SECURITY.md) distinguish local validation from observed hosting, live responses, and runtime evidence. Follow the production release procedure for future deployments; passing local checks alone does not verify the deployed service.
