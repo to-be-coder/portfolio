@@ -334,3 +334,54 @@ for (const target of ['marked-17-esm', 'marked-17-umd', 'streamdown-marked', 'gr
   }
 }
 
+
+// Empty global matches previously never advanced; Unicode-aware expressions
+// must advance by a whole code point. Keep the fixture tiny and enforce the
+// deadline from the parent process so a synchronous loop can be stopped.
+test('installed Markdown find-and-replace terminates empty matches without splitting Unicode', async () => {
+  const script = String.raw`
+    import assert from 'node:assert/strict'
+    import { findAndReplace } from 'mdast-util-find-and-replace'
+
+    const tree = value => ({
+      type: 'root',
+      children: [{ type: 'paragraph', children: [{ type: 'text', value }] }],
+    })
+    const text = root => root.children[0].children.map(node => node.value).join('')
+
+    const empty = tree('ab')
+    findAndReplace(empty, [/(?:)/g, ''])
+    assert.equal(text(empty), 'ab')
+
+    for (const flags of ['gu', 'gv']) {
+      for (const replacement of ['|', false]) {
+        const root = tree('A😀B')
+        const positions = []
+        findAndReplace(root, [new RegExp('(?:)', flags), (match, info) => {
+          assert.equal(match, '')
+          positions.push(info.index)
+          return replacement
+        }])
+        assert.deepEqual(positions, [0, 1, 3, 4])
+        assert.equal(text(root), replacement === false ? 'A😀B' : '|A|😀|B|')
+      }
+    }
+
+    const ordinary = tree('Read portfolio and portfolio.')
+    findAndReplace(ordinary, [/portfolio/g, 'work'])
+    assert.equal(text(ordinary), 'Read work and work.')
+
+    const once = tree('ab')
+    findAndReplace(once, [/(?:)/, '|'])
+    assert.equal(text(once), '|ab')
+    process.stdout.write('passed')
+  `
+  const { stdout } = await run('node', ['--max-old-space-size=128', '--input-type=module', '--eval', script], {
+    encoding: 'utf8',
+    timeout: 5000,
+    killSignal: 'SIGKILL',
+    maxBuffer: 64 * 1024,
+  })
+  assert.equal(stdout, 'passed')
+}, 10000)
+
