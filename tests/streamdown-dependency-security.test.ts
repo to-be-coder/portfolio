@@ -199,3 +199,72 @@ test('installed Markdown utilities bound text processing and preserve ordinary o
     process.stdout.write('passed')
   `)
 }, 10000)
+
+
+// The 1.5.1 bracket index bounds nested repairs independently of input size.
+// Exercise both supported link modes and keep incomplete images repairable.
+test('installed Remend bounds nested bracket repair and preserves bare URLs', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const remend = (await load('remend')).default
+    const nested = '['.repeat(60000) + ']'.repeat(60000)
+    for (const linkMode of ['protocol', 'text-only']) {
+      const options = { linkMode }
+      assert.equal(remend(nested, options), nested)
+      const input = '![' + nested + '](x'
+      const expected = '![' + nested + '](streamdown:incomplete-image)'
+      assert.ok(Buffer.byteLength(input) < 128 * 1024)
+      assert.equal(remend(input, options), expected)
+      assert.equal(remend(expected, options), expected)
+    }
+    for (const input of [
+      'Visit https://example.com/_next',
+      'Visit www.example.com/docs/*/items',
+      'See https://example.com/~~draft',
+    ]) assert.equal(remend(input), input)
+    assert.equal(remend('**see https://example.com/_next'), '**see https://example.com/_next**')
+    for (const prefix of ['http://a_b.com/', 'https://a_b.com/', 'www.a_']) {
+      const input = prefix.repeat(8000) + ' **open'
+      assert.ok(Buffer.byteLength(input) < 128 * 1024)
+      assert.equal(remend(input), input + '**')
+    }
+    process.stdout.write('passed')
+  `)
+}, 10000)
+
+// Use the installed public export APIs, including the fail-fast resource
+// contract. These limits apply to the dependency API, beyond saved-chat caps.
+test('installed Streamdown table exports neutralize formulas and bound Markdown output', async () => {
+  await verifyInstalledRenderer(imports + String.raw`
+    const { tableDataToCSV, tableDataToTSV, tableDataToMarkdown } = await load('streamdown')
+    for (const formula of ['=1+1', '+SUM(A1)', '-1+1', '@SUM(A1)', '  =1', '\u0000=1']) {
+      const table = { headers: [formula], rows: [[formula]] }
+      assert.equal(tableDataToCSV(table), "'" + formula + "\n'" + formula)
+      assert.equal(tableDataToTSV(table), "'" + formula + "\n'" + formula)
+    }
+    const lineBreaks = { headers: ['Value'], rows: [['\r=1'], ['\n+2'], ['\t@3'], ['ordinary\r\ntext']] }
+    assert.equal(tableDataToCSV(lineBreaks), 'Value\n"\'\r=1"\n"\'\n+2"\n\'\t@3\n"ordinary\r\ntext"')
+    assert.equal(tableDataToTSV(lineBreaks), "Value\n'\\r=1\n'\\n+2\n'\\t@3\nordinary\\r\\ntext")
+    const normal = { headers: ['Name', 'Value'], rows: [['Jess', 'a,"b"'], ['Cheng', '42']] }
+    assert.equal(tableDataToCSV(normal), 'Name,Value\nJess,"a,""b"""\nCheng,42')
+    assert.equal(tableDataToCSV(normal, ';'), 'Name;Value\nJess;"a,""b"""\nCheng;42')
+    assert.equal(tableDataToTSV(normal), 'Name\tValue\nJess\ta,"b"\nCheng\t42')
+    assert.equal(tableDataToMarkdown({ headers: ['Name', 'Value'], rows: [['Jess', 'A|B'], ['Cheng']] }),
+      '| Name | Value |\n| --- | --- |\n| Jess | A\\|B |\n| Cheng |  |')
+    assert.equal(tableDataToMarkdown({ headers: [], rows: [['Jess', '42']] }),
+      '|  |  |\n| --- | --- |\n| Jess | 42 |')
+    assert.equal(tableDataToMarkdown({ headers: [], rows: [] }), '')
+
+    const oversized = [
+      { headers: ['Value'], rows: Array.from({ length: 100001 }, () => []) },
+      { headers: Array(100001).fill(''), rows: [] },
+      { headers: ['Value'], rows: [['x'.repeat(1100000)]] },
+      { headers: Array(1000).fill(''), rows: Array.from({ length: 101 }, () => []) },
+    ]
+    for (const table of oversized) {
+      assert.throws(() => tableDataToMarkdown(table), {
+        name: 'RangeError', message: 'Table is too large to export as Markdown',
+      })
+    }
+    process.stdout.write('passed')
+  `)
+}, 10000)

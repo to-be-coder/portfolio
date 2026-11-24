@@ -223,3 +223,142 @@ test('installed Babel parser reports each duplicate label once in recovery mode'
     process.stdout.write('passed')
   `)
 }, 10000)
+
+// Telemetry may omit private input metadata without changing the values sent to
+// the model. Use the public extraction API and a fully local mock/download.
+test('installed SDK strips private part options only from extraction telemetry', async () => {
+  await runBoundedScript(String.raw`
+    import assert from 'node:assert/strict'
+    import { experimental_extract } from 'ai'
+    import { Experimental_ExtractionMockModelV4 } from 'ai/test'
+
+    globalThis.fetch = () => { throw new Error('Network is forbidden in this fixture') }
+    const privateOptions = { fixture: { note: 'private-part-metadata' } }
+    const url = new URL('https://files.invalid/portfolio.pdf?token=private-file-token')
+    const bytes = new Uint8Array([80, 68, 70])
+    const jsonPart = { type: 'json', value: { providerOptions: { visitor: 'ordinary JSON data' } } }
+    const state = [
+      { type: 'text', text: 'Portfolio', providerOptions: privateOptions },
+      { type: 'file', data: url, mediaType: 'application/pdf', filename: 'portfolio.pdf', providerOptions: privateOptions },
+      jsonPart,
+    ]
+    const telemetry = []
+    const inputCalls = []
+    const applicationEvents = []
+    const capture = event => telemetry.push(event)
+    const model = new Experimental_ExtractionMockModelV4({
+      doExtract: async options => {
+        inputCalls.push(options)
+        return { answers: { topic: { type: 'text', value: 'gridland' } }, warnings: [] }
+      },
+    })
+    let downloads = 0
+    const result = await experimental_extract({
+      model,
+      state,
+      fields: { topic: { type: 'text', instructions: 'Portfolio topic' } },
+      maxRetries: 0,
+      abortSignal: AbortSignal.timeout(1000),
+      experimental_download: async requests => {
+        downloads += requests.length
+        return requests.map(() => ({ data: bytes, mediaType: 'application/pdf' }))
+      },
+      onStart: event => applicationEvents.push(event),
+      telemetry: {
+        recordInputs: true,
+        integrations: {
+          experimental_onExtractStart: capture,
+          experimental_onExtractionModelCallStart: capture,
+          experimental_onExtractionModelCallEnd: capture,
+          experimental_onExtractEnd: capture,
+        },
+      },
+    })
+    assert.equal(result.answers.topic.value, 'gridland')
+    assert.equal(downloads, 1)
+    assert.equal(inputCalls.length, 1)
+    assert.equal(applicationEvents.length, 1)
+    assert.equal(telemetry.length, 4)
+    for (const event of telemetry) {
+      assert.deepEqual(event.state, [
+        { type: 'text', text: 'Portfolio' },
+        {
+          type: 'file', mediaType: 'application/pdf', filename: 'portfolio.pdf',
+          data: event.operationId === 'ai.extract.doExtract'
+            ? { type: 'data', data: bytes }
+            : '[redacted]',
+        },
+        jsonPart,
+      ])
+      assert.ok(!JSON.stringify(event.state).includes('private-part-metadata'))
+      assert.ok(!JSON.stringify(event.state).includes('private-file-token'))
+    }
+    assert.deepEqual(inputCalls[0].state, [
+      state[0],
+      { ...state[1], data: { type: 'data', data: bytes } },
+      jsonPart,
+    ])
+    assert.equal(applicationEvents[0].state, state)
+    assert.equal(state[0].providerOptions, privateOptions)
+    assert.equal(state[1].providerOptions, privateOptions)
+    assert.equal(state[1].data, url)
+    process.stdout.write('passed')
+  `)
+}, 10000)
+
+// The Gateway must still receive credentials supplied for this request, while
+// its telemetry view must redact all BYOK values and retain ordinary options.
+test('installed Gateway redacts BYOK telemetry while preserving request payloads', async () => {
+  await runBoundedScript(String.raw`
+    import assert from 'node:assert/strict'
+    import { createGateway } from '@ai-sdk/gateway'
+    import { redactTelemetryValue } from '@ai-sdk/provider-utils'
+
+    globalThis.fetch = () => { throw new Error('Network is forbidden in this fixture') }
+    const requests = []
+    const reply = { content: [{ type: 'text', text: 'Portfolio answer.' }], warnings: [] }
+    const gateway = createGateway({
+      apiKey: 'fixture-gateway-key',
+      baseURL: 'https://gateway.invalid/v4/ai',
+      fetch: async (url, init) => {
+        assert.equal(String(url), 'https://gateway.invalid/v4/ai/language-model')
+        requests.push(JSON.parse(init.body))
+        return Response.json(reply)
+      },
+    })
+    const prompt = [{ role: 'user', content: [{ type: 'text', text: 'Portfolio question.' }] }]
+    const byok = {
+      openai: [{ apiKey: 'private-openai-fixture' }],
+      bedrock: [{ accessKeyId: 'private-access-fixture', secretAccessKey: 'private-secret-fixture' }],
+    }
+    const providerOptions = { gateway: { tags: ['portfolio'], byok }, fixture: { ordinary: true } }
+    const result = await gateway.languageModel('fixture/model').doGenerate({ prompt, providerOptions })
+    assert.deepEqual(result.content, reply.content)
+    assert.equal(requests.length, 1)
+    assert.deepEqual(requests[0], { prompt, providerOptions })
+    assert.deepEqual(JSON.parse(JSON.stringify(result.request.body)), requests[0])
+    assert.deepEqual(redactTelemetryValue(result.request.body), {
+      prompt,
+      providerOptions: {
+        gateway: {
+          tags: ['portfolio'],
+          byok: {
+            openai: [{ apiKey: '[redacted]' }],
+            bedrock: [{ accessKeyId: '[redacted]', secretAccessKey: '[redacted]' }],
+          },
+        },
+        fixture: { ordinary: true },
+      },
+    })
+    assert.equal(providerOptions.gateway.byok.openai[0].apiKey, 'private-openai-fixture')
+
+    const ordinaryOptions = { gateway: { tags: ['portfolio'] } }
+    const ordinary = await gateway.languageModel('fixture/model').doGenerate({
+      prompt, providerOptions: ordinaryOptions,
+    })
+    assert.equal(requests.length, 2)
+    assert.deepEqual(redactTelemetryValue(ordinary.request.body), requests[1])
+    assert.deepEqual(requests[1], { prompt, providerOptions: ordinaryOptions })
+    process.stdout.write('passed')
+  `)
+}, 10000)

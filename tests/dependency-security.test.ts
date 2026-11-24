@@ -145,7 +145,7 @@ const parserRegressionScript = String.raw`
     assert.equal(source.split(start).length, 2, 'Expected one embedded Marked module')
     const module = source.split(start)[1].split(end)
     assert.equal(module.length, 2, 'Embedded Marked boundary changed')
-    api = runInNewContext(module[0] + '\n;({marked, Marked, Lexer: _Lexer, Tokenizer: _Tokenizer, hints: portfolioMarkdownCloserHintStacks})',
+    api = runInNewContext(module[0] + '\n;({marked, Marked, Lexer: _Lexer, Tokenizer: _Tokenizer, Parser: _Parser, hints: portfolioMarkdownCloserHintStacks})',
       { console }, { timeout: 1000 })
   } else if (target === 'marked-17-umd') {
     const directory = dirname(require.resolve('marked/package.json'))
@@ -157,7 +157,7 @@ const parserRegressionScript = String.raw`
     const resolver = target === 'streamdown-marked' ? createRequire(import.meta.resolve('streamdown')) : require
     api = await import(pathToFileURL(resolver.resolve('marked')).href)
   }
-  const { marked, Marked, Lexer, Tokenizer } = api
+  const { marked, Marked, Lexer, Tokenizer, Parser } = api
 
   if (fixture === 'unmatched-delimiters' || fixture === 'unmatched-strikethrough') {
     // Much larger than the upstream 2,000-repeat fixture so the old quadratic
@@ -195,6 +195,57 @@ const parserRegressionScript = String.raw`
       assert.equal(result.replace(/ +/g, ' ').trimEnd(), expected.trimEnd())
     }
     assert.equal(marked.parse('*ordinary*', { pedantic: true, gfm: false }), '<p><em>ordinary</em></p>\n')
+  } else if (fixture === 'email-scan') {
+    // Released c6b22e8 consumes the simple local-part prefix in one pass.
+    const input = 'a'.repeat(100000) + '@'
+    assert.equal(marked.parse(input), '<p>' + input + '</p>\n')
+    for (const source of ['person@example.com', 'first.last+tag@example.com']) {
+      assert.equal(marked.parseInline(source), '<a href="mailto:' + source + '">' + source + '</a>')
+    }
+    assert.equal(marked.parseInline('plain@'), 'plain@')
+    assert.equal(marked.parseInline('**bold** plain@ _emphasis_'),
+      '<strong>bold</strong> plain@ <em>emphasis</em>')
+  } else if (fixture === 'adjacent-links') {
+    // The public grammar must stop at the first link. Older rules consume the
+    // whole suffix before the tokenizer trims it, causing repeated rescans.
+    // Keep this semantic control alongside the bounded full-parser workload.
+    assert.equal(Lexer.rules.inline.gfm.link.exec('[a](b)[next](c)')?.[0], '[a](b)')
+    const count = 40000
+    assert.equal(marked.parse('[a](b)'.repeat(count)),
+      '<p>' + '<a href="b">a</a>'.repeat(count) + '</p>\n')
+    for (const [input, expected] of [
+      ['[read](/about "Details")', '<a href="/about" title="Details">read</a>'],
+      ['[empty]()', '<a href="">empty</a>'],
+      ['[empty](<> "Title")', '<a href="" title="Title">empty</a>'],
+      ['[space](<a b>)', '<a href="a%20b">space</a>'],
+      ['[nested](a(b(c(d))))', '<a href="a(b(c(d)))">nested</a>'],
+      ['[escaped](a\\(b\\))', '<a href="a(b)">escaped</a>'],
+      ['[read](a\u00a0b)', '<a href="a%C2%A0b">read</a>'],
+    ]) assert.equal(marked.parseInline(input), expected)
+    const custom = new Marked({ tokenizer: {
+      link(src) {
+        if (src.startsWith('[custom](x)')) return { type: 'text', raw: '[custom](x)', text: 'custom' }
+        return false
+      },
+    } })
+    assert.equal(custom.parseInline('[custom](x)[read](b)'), 'custom<a href="b">read</a>')
+  } else if (fixture === 'renderer-inheritance') {
+    // Direct parser options can bypass the null-prototype registration path.
+    // Only explicitly owned renderer entries may run in either public API.
+    for (const method of ['parse', 'parseInline']) {
+      for (const [name, renderers] of [
+        ['toString', {}],
+        ['inherited', Object.create({ inherited: () => 'inherited renderer ran' })],
+      ]) {
+        const parser = new Parser({ extensions: { renderers } })
+        assert.throws(() => parser[method]([{ type: name, raw: '' }]),
+          new RegExp('Token with "' + name + '" type was not found'))
+      }
+      const renderers = Object.create({ inherited: () => 'inherited renderer ran' })
+      renderers.owned = () => 'owned renderer'
+      const parser = new Parser({ extensions: { renderers } })
+      assert.equal(parser[method]([{ type: 'owned', raw: '' }]), 'owned renderer')
+    }
   } else {
     assert.equal(fixture, 'extensions-and-nesting')
     for (const [input, expected] of [
@@ -321,7 +372,7 @@ const parserRegressionScript = String.raw`
 `
 
 for (const target of ['marked-17-esm', 'marked-17-umd', 'streamdown-marked', 'gridland-index', 'gridland-next']) {
-  for (const fixture of ['unmatched-delimiters', 'unmatched-strikethrough', 'closerless-runs', 'pedantic-html', 'extensions-and-nesting']) {
+  for (const fixture of ['unmatched-delimiters', 'unmatched-strikethrough', 'closerless-runs', 'pedantic-html', 'extensions-and-nesting', 'email-scan', 'adjacent-links', 'renderer-inheritance']) {
     test('installed ' + target + ' handles ' + fixture, async () => {
       const { stdout } = await run('node', ['--max-old-space-size=256', '--input-type=module', '--eval', parserRegressionScript, target, fixture], {
         encoding: 'utf8',

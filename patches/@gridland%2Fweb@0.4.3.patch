@@ -1,8 +1,7 @@
 diff --git a/dist/index.js b/dist/index.js
-index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a660ad7f2c5 100644
 --- a/dist/index.js
 +++ b/dist/index.js
-@@ -16305,7 +16305,7 @@ var blockGfm = {
+@@ -16305,7 +16305,7 @@
  var blockPedantic = {
    ...blockNormal,
    html: edit(
@@ -11,19 +10,29 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
    ).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
    heading: /^(#{1,6})(.*)(?:\n+|$)/,
-@@ -16343,7 +16343,7 @@ var tag = edit(
+@@ -16343,7 +16343,7 @@
    "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>"
  ).replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
  var _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
 -var link = edit(/^!?\[(label)\]\(\s*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^ \t\n\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
-+var link = edit(/^!?\[(label)\]\([ \t\n]*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?[ \t\n]*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^ \t\n\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
++var link = edit(/^!?\[(label)\]\([ \t\n]*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?[ \t\n]*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])*>|(?!<)(?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()])*\))*\))*\))+|(?=\))/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
-@@ -16531,6 +16531,68 @@ function indentCodeCompensation(raw, text, rules) {
+@@ -16381,7 +16381,7 @@
+   url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
+   _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+   del: /^(~~?)(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))\1(?=[^~]|$)/,
+-  text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
++  text: /^(?:[A-Za-z0-9.+-]+(?=@)|([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))))/
+ };
+ var inlineBreaks = {
+   ...inlineGfm,
+@@ -16530,6 +16530,68 @@
+     }
      return node;
    }).join("\n");
- }
++}
 +
 +// Backport of markedjs/marked eab1e48: retain closer hints only for active
 +// inline passes, including nested/reentrant passes on the same tokenizer.
@@ -85,11 +94,10 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
 +function portfolioMarkdownLastRawDelCloser(tokenizer, rawSrc) {
 +  const frame = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
 +  return frame && frame.rawSrc === rawSrc ? frame.rawDel : portfolioMarkdownScanRawDel(rawSrc);
-+}
+ }
  var _Tokenizer = class {
    options;
-   rules;
-@@ -17054,9 +17116,13 @@ ${currentText}` : currentText;
+@@ -17054,9 +17116,13 @@
        const lLength = [...match[0]].length - 1;
        let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
        const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
@@ -103,7 +111,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
          rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
          if (!rDelim) continue;
          rLength = [...rDelim].length;
-@@ -17118,7 +17184,9 @@ ${currentText}` : currentText;
+@@ -17118,7 +17184,9 @@
        };
      }
    }
@@ -114,7 +122,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
      const cap = this.rules.inline.del.exec(src);
      if (cap) {
        return {
-@@ -17451,6 +17519,13 @@ var _Lexer = class __Lexer {
+@@ -17451,6 +17519,13 @@
      while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
        maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
      }
@@ -128,7 +136,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
      let keepPrevChar = false;
      let prevChar = "";
      while (src) {
-@@ -17495,6 +17570,30 @@ var _Lexer = class __Lexer {
+@@ -17495,6 +17570,30 @@
          }
          continue;
        }
@@ -159,7 +167,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
        if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
          src = src.substring(token.raw.length);
          tokens.push(token);
-@@ -17510,7 +17609,7 @@ var _Lexer = class __Lexer {
+@@ -17510,7 +17609,7 @@
          tokens.push(token);
          continue;
        }
@@ -168,7 +176,7 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
          src = src.substring(token.raw.length);
          tokens.push(token);
          continue;
-@@ -17566,7 +17665,8 @@ var _Lexer = class __Lexer {
+@@ -17566,7 +17665,8 @@
        }
      }
      return tokens;
@@ -178,7 +186,25 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
  };
  var _Renderer = class {
    options;
-@@ -18039,7 +18139,7 @@ var Marked = class {
+@@ -17794,7 +17894,7 @@
+     let out = "";
+     for (let i = 0; i < tokens.length; i++) {
+       const anyToken = tokens[i];
+-      if (this.options.extensions?.renderers?.[anyToken.type]) {
++      if (this.options.extensions?.renderers&&Object.hasOwn(this.options.extensions.renderers,anyToken.type)&&this.options.extensions.renderers[anyToken.type]) {
+         const genericToken = anyToken;
+         const ret = this.options.extensions.renderers[genericToken.type].call({ parser: this }, genericToken);
+         if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(genericToken.type)) {
+@@ -17879,7 +17979,7 @@
+     let out = "";
+     for (let i = 0; i < tokens.length; i++) {
+       const anyToken = tokens[i];
+-      if (this.options.extensions?.renderers?.[anyToken.type]) {
++      if (this.options.extensions?.renderers&&Object.hasOwn(this.options.extensions.renderers,anyToken.type)&&this.options.extensions.renderers[anyToken.type]) {
+         const ret = this.options.extensions.renderers[anyToken.type].call({ parser: this }, anyToken);
+         if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(anyToken.type)) {
+           out += ret || "";
+@@ -18039,7 +18139,7 @@
      return values;
    }
    use(...args) {
@@ -188,10 +214,9 @@ index 8716a99b2dae0638b85323ec231248f957ef6e2c..4ae4dbe1eb9a8d6afb567cbd12554a66
        const opts = { ...pack };
        opts.async = this.defaults.async || opts.async || false;
 diff --git a/dist/next.js b/dist/next.js
-index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307cd373a44f 100644
 --- a/dist/next.js
 +++ b/dist/next.js
-@@ -16300,7 +16300,7 @@ var blockGfm = {
+@@ -16300,7 +16300,7 @@
  var blockPedantic = {
    ...blockNormal,
    html: edit(
@@ -200,19 +225,29 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
    ).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
    heading: /^(#{1,6})(.*)(?:\n+|$)/,
-@@ -16338,7 +16338,7 @@ var tag = edit(
+@@ -16338,7 +16338,7 @@
    "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>"
  ).replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
  var _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
 -var link = edit(/^!?\[(label)\]\(\s*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^ \t\n\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
-+var link = edit(/^!?\[(label)\]\([ \t\n]*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?[ \t\n]*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^ \t\n\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
++var link = edit(/^!?\[(label)\]\([ \t\n]*(href)(?:(?:[ \t]*(?:\n[ \t]*)?)(title))?[ \t\n]*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])*>|(?!<)(?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()]|\((?:\\[^ \t\n\x00-\x1f]|\\(?=[ \t\n])|[^ \t\n\x00-\x1f\\()])*\))*\))*\))+|(?=\))/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
-@@ -16526,6 +16526,68 @@ function indentCodeCompensation(raw, text, rules) {
+@@ -16376,7 +16376,7 @@
+   url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
+   _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+   del: /^(~~?)(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))\1(?=[^~]|$)/,
+-  text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
++  text: /^(?:[A-Za-z0-9.+-]+(?=@)|([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@))))/
+ };
+ var inlineBreaks = {
+   ...inlineGfm,
+@@ -16525,6 +16525,68 @@
+     }
      return node;
    }).join("\n");
- }
++}
 +
 +// Backport of markedjs/marked eab1e48: retain closer hints only for active
 +// inline passes, including nested/reentrant passes on the same tokenizer.
@@ -274,11 +309,10 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
 +function portfolioMarkdownLastRawDelCloser(tokenizer, rawSrc) {
 +  const frame = portfolioMarkdownCloserHintStacks.get(tokenizer)?.at(-1);
 +  return frame && frame.rawSrc === rawSrc ? frame.rawDel : portfolioMarkdownScanRawDel(rawSrc);
-+}
+ }
  var _Tokenizer = class {
    options;
-   rules;
-@@ -17049,9 +17111,13 @@ ${currentText}` : currentText;
+@@ -17049,9 +17111,13 @@
        const lLength = [...match[0]].length - 1;
        let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
        const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
@@ -292,7 +326,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
          rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
          if (!rDelim) continue;
          rLength = [...rDelim].length;
-@@ -17113,7 +17179,9 @@ ${currentText}` : currentText;
+@@ -17113,7 +17179,9 @@
        };
      }
    }
@@ -303,7 +337,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
      const cap = this.rules.inline.del.exec(src);
      if (cap) {
        return {
-@@ -17446,6 +17514,13 @@ var _Lexer = class __Lexer {
+@@ -17446,6 +17514,13 @@
      while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
        maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
      }
@@ -317,7 +351,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
      let keepPrevChar = false;
      let prevChar = "";
      while (src) {
-@@ -17490,6 +17565,30 @@ var _Lexer = class __Lexer {
+@@ -17490,6 +17565,30 @@
          }
          continue;
        }
@@ -348,7 +382,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
        if (token = this.tokenizer.emStrong(src, maskedSrc, prevChar)) {
          src = src.substring(token.raw.length);
          tokens.push(token);
-@@ -17505,7 +17604,7 @@ var _Lexer = class __Lexer {
+@@ -17505,7 +17604,7 @@
          tokens.push(token);
          continue;
        }
@@ -357,7 +391,7 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
          src = src.substring(token.raw.length);
          tokens.push(token);
          continue;
-@@ -17561,7 +17660,8 @@ var _Lexer = class __Lexer {
+@@ -17561,7 +17660,8 @@
        }
      }
      return tokens;
@@ -367,7 +401,25 @@ index be6734844335476e3b3104c4b1668c60c54cf243..7f4cf743a1b26116b7034eca7bfd307c
  };
  var _Renderer = class {
    options;
-@@ -18034,7 +18134,7 @@ var Marked = class {
+@@ -17789,7 +17889,7 @@
+     let out = "";
+     for (let i = 0; i < tokens.length; i++) {
+       const anyToken = tokens[i];
+-      if (this.options.extensions?.renderers?.[anyToken.type]) {
++      if (this.options.extensions?.renderers&&Object.hasOwn(this.options.extensions.renderers,anyToken.type)&&this.options.extensions.renderers[anyToken.type]) {
+         const genericToken = anyToken;
+         const ret = this.options.extensions.renderers[genericToken.type].call({ parser: this }, genericToken);
+         if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(genericToken.type)) {
+@@ -17874,7 +17974,7 @@
+     let out = "";
+     for (let i = 0; i < tokens.length; i++) {
+       const anyToken = tokens[i];
+-      if (this.options.extensions?.renderers?.[anyToken.type]) {
++      if (this.options.extensions?.renderers&&Object.hasOwn(this.options.extensions.renderers,anyToken.type)&&this.options.extensions.renderers[anyToken.type]) {
+         const ret = this.options.extensions.renderers[anyToken.type].call({ parser: this }, anyToken);
+         if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(anyToken.type)) {
+           out += ret || "";
+@@ -18034,7 +18134,7 @@
      return values;
    }
    use(...args) {
